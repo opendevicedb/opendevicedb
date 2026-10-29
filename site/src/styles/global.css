@@ -226,9 +226,11 @@ details > summary { cursor: pointer; }
 .container { max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
 .container.narrow { max-width: calc(var(--max-narrow) + 2 * var(--gutter)); }
 .container.prose-width { max-width: calc(var(--max-prose) + 2 * var(--gutter)); }
-main { padding-top: 32px; padding-bottom: var(--space-section-y); min-height: 60vh; }
+/* Inner pages: section spacing above and below (80px desktop, 48px mobile). The home page
+   (main.bleed) lays out its own sections. */
+main { min-height: 60vh; }
+main.container { padding-block: var(--space-section-y); }
 main.bleed { padding: 0; }
-@media (min-width: 48rem) { main { padding-top: 48px; } }
 
 .icon { flex: none; display: inline-block; vertical-align: middle; }
 
