@@ -1,6 +1,8 @@
 ---
 import Base from "../../layouts/Base.astro";
 import DeviceRow from "../../components/DeviceRow.astro";
+import Icon from "../../components/Icon.astro";
+import SearchBar from "../../components/SearchBar.astro";
 import { db, facet, sourceFacet, sourceName } from "../../lib/data.ts";
 import { STATUS_LABEL } from "../../lib/config.ts";
 import { STATUSES } from "@opendevicedb/core";
@@ -17,59 +19,76 @@ const noCloud = index.filter((e) => e.cloud === "none").length;
 const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-only").length;
 ---
 <Base title="Devices" description="Search every device known to OpenDeviceDB by name, alias, FCC ID, USB vid:pid, BLE name or chip.">
-  <h1>Devices</h1>
-  <p class="lede">
-    Search by vendor, model, alias or identifier (FCC ID, USB <code>vid:pid</code>, BLE name, chip, SKU, Zigbee model).
-    Results combine curated records and the <a href="/sources/">aggregated sources</a>.
-  </p>
+  <header class="page-head center">
+    <h1>Devices</h1>
+    <p class="lede">
+      Search by vendor, model, alias or identifier (FCC ID, USB <code>vid:pid</code>, BLE name, chip, SKU, Zigbee model).
+      Results combine curated records and the <a href="/sources/">aggregated sources</a>.
+    </p>
+  </header>
+
   <section id="directory" data-sources={JSON.stringify(names)}>
-    <form class="filters" role="search" action="/devices/" method="get">
-      <div>
-        <label for="q">Search</label>
-        <input id="q" name="q" type="search" placeholder="e.g. tello, archer c7, 2fe3:0001" autocomplete="off" spellcheck="false" />
-      </div>
-      <div>
-        <label for="category">Category</label>
-        <select id="category" name="category">
-          <option value="">All categories</option>
-          {facet("category").map(([c, n]) => <option value={c}>{c} ({n.toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="status">Status</label>
-        <select id="status" name="status">
-          <option value="">Any status</option>
-          {STATUSES.map((s) => <option value={s}>{STATUS_LABEL[s]} ({(statusCounts.get(s) ?? 0).toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="source">Source</label>
-        <select id="source" name="source">
-          <option value="">All sources</option>
-          {sourceFacet().map(([s, n]) => <option value={s}>{sourceName(s)} ({n.toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="install">Install</label>
-        <select id="install" name="install">
-          <option value="">Any</option>
-          <option value="easy">Easy to install ({easy.toLocaleString("en")})</option>
-          <option value="any">Has an install guide ({installable.toLocaleString("en")})</option>
-        </select>
-      </div>
-      <div>
-        <label for="cloud">Cloud</label>
-        <select id="cloud" name="cloud" title="Whether a project makes the device work without the vendor's cloud">
-          <option value="">Any</option>
-          <option value="none">No cloud ({noCloud.toLocaleString("en")})</option>
-          <option value="setup-only">No cloud after setup ({setupOnly.toLocaleString("en")})</option>
-        </select>
+    <form class="directory-form" role="search" action="/devices/" method="get">
+      <SearchBar id="q" placeholder="e.g. tello, archer c7, 2fe3:0001" />
+
+      <!-- Mobile: a Filters toggle + active chips; the panel opens on demand (CSS-only).
+           From 48rem the panel is always shown and the toggle row is hidden. -->
+      <div class="filter-bar">
+        <input id="filters-toggle" type="checkbox" class="sr-only" />
+        <label for="filters-toggle" class="filters-button">
+          <Icon name="filter" size={18} />Filters<span id="filter-count" class="count" hidden></span><Icon name="chevron-down" size={16} class="chev" />
+        </label>
+        <span id="active-filters" class="active-filters"></span>
+        <div class="filters">
+          <div>
+            <label for="category">Category</label>
+            <select id="category" name="category">
+              <option value="">All categories</option>
+              {facet("category").map(([c, n]) => <option value={c}>{c} ({n.toLocaleString("en")})</option>)}
+            </select>
+          </div>
+          <div>
+            <label for="status">Status</label>
+            <select id="status" name="status">
+              <option value="">Any status</option>
+              {STATUSES.map((s) => <option value={s}>{STATUS_LABEL[s]} ({(statusCounts.get(s) ?? 0).toLocaleString("en")})</option>)}
+            </select>
+          </div>
+          <div>
+            <label for="source">Source</label>
+            <select id="source" name="source">
+              <option value="">All sources</option>
+              {sourceFacet().map(([s, n]) => <option value={s}>{sourceName(s)} ({n.toLocaleString("en")})</option>)}
+            </select>
+          </div>
+          <div>
+            <label for="install">Install</label>
+            <select id="install" name="install">
+              <option value="">Any</option>
+              <option value="easy">Easy to install ({easy.toLocaleString("en")})</option>
+              <option value="any">Has an install guide ({installable.toLocaleString("en")})</option>
+            </select>
+          </div>
+          <div>
+            <label for="cloud">Cloud</label>
+            <select id="cloud" name="cloud" title="Whether a project makes the device work without the vendor's cloud">
+              <option value="">Any</option>
+              <option value="none">No cloud ({noCloud.toLocaleString("en")})</option>
+              <option value="setup-only">No cloud after setup ({setupOnly.toLocaleString("en")})</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button id="reset-filters" class="btn link" type="button" hidden>Reset filters</button>
+            <button class="btn primary apply" type="submit">Apply filters</button>
+          </div>
+        </div>
       </div>
     </form>
     <noscript><p class="muted small">Search and filters need JavaScript. Without it, the full list is in <a href="/api/index.json">/api/index.json</a>.</p></noscript>
+
     <div class="results-bar">
       <span id="count" aria-live="polite">{index.length.toLocaleString("en")} devices</span>
-      <span class="small"><a href="/api/index.json">index.json</a></span>
+      <a href="/api/index.json">index.json</a>
     </div>
     <ul id="results" class="results list-plain">
       {first.map((e) => <li><DeviceRow entry={e} /></li>)}
@@ -79,7 +98,7 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
     <nav id="pager" class="pager" aria-label="Result pages">
       {pages > 1 && <>
         <button class="btn" data-go="0" disabled>← Previous</button>
-        <span class="muted">Page 1 of {pages.toLocaleString("en")}</span>
+        <span>Page 1 of {pages.toLocaleString("en")}</span>
         <button class="btn" data-go="2">Next →</button>
       </>}
     </nav>
@@ -87,10 +106,30 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
   <script>
     import "../../scripts/directory.ts";
   </script>
-  <style>
-    @media (min-width: 720px) {
-      #directory .filters { grid-template-columns: repeat(5, 1fr); }
-      #directory .filters > :first-child { grid-column: 1 / -1; }
-    }
-  </style>
 </Base>
+
+<style>
+  .directory-form { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 58rem; margin: 0 auto var(--space-section-gap); }
+  .filter-bar { width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .filters-button { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: var(--radius-pill); border: 1px solid var(--color-border-subtle); color: var(--color-text-primary); font-size: var(--text-body-sm); font-weight: 500; cursor: pointer; user-select: none; }
+  .filters-button:hover, #filters-toggle:checked + .filters-button { border-color: var(--color-border-brand); }
+  #filters-toggle:checked + .filters-button .chev { transform: rotate(180deg); }
+  #filters-toggle:focus-visible + .filters-button { outline: 2px solid var(--yellow-400); outline-offset: 2px; }
+  .count { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--color-bg-brand); color: var(--color-text-on-brand); font-size: var(--text-caption); font-weight: 600; }
+  .count[hidden] { display: none; }
+  .active-filters { display: contents; }
+  .filters { display: none; flex-basis: 100%; padding-top: 8px; grid-template-columns: minmax(0, 1fr); }
+  #filters-toggle:checked ~ .filters { display: grid; }
+  @media (min-width: 30rem) { .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .filters > div:first-child { grid-column: auto; }
+  .filter-actions { grid-column: 1 / -1; display: flex; align-items: center; justify-content: flex-end; gap: 16px; }
+  .filter-actions .apply { flex: 1; }
+  @media (min-width: 30rem) { .filter-actions .apply { flex: none; } }
+  @media (min-width: 48rem) {
+    .filters-button, .active-filters { display: none; }
+    .filters { display: grid; padding-top: 0; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .filter-actions .apply { display: none; }
+    .filter-actions:has(#reset-filters[hidden]) { display: none; }
+  }
+  .results-bar a { font-size: var(--text-body-lg); }
+</style>

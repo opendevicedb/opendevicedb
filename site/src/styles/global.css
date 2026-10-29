@@ -473,3 +473,19 @@ a.badge.wanted:hover { background: rgb(226 227 0 / 0.1); }
 @media (min-width: 48rem) { .cta-banner { padding: 56px; } }
 @media (min-width: 64rem) { .cta-banner { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; } .cta-banner img { order: 2; max-width: none; } }
 .section > .inner.two-col { display: grid; }
+
+/* Directory: active-filter chips (mobile) and edited filters */
+.filter-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px 0 12px; border: 0; border-radius: var(--radius-pill); background: var(--color-bg-menu); color: var(--color-text-primary); font: inherit; font-size: var(--text-body-sm); cursor: pointer; }
+.filter-chip:hover { background: var(--white-a15); }
+.filter-chip.clear { background: none; color: var(--color-text-brand); text-decoration: underline; padding: 0 4px; }
+.filters .edited select { border-color: var(--color-border-brand); }
+.filters .edited label::after { content: ""; display: inline-block; width: 6px; height: 6px; margin-left: 6px; border-radius: 50%; background: var(--color-bg-brand); vertical-align: middle; }
+
+/* Device rows: category icon before the name, ↗ at the end; the whole row is the link */
+.dev-row { position: relative; }
+.dev-row .title { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.dev-row .name::after { content: ""; position: absolute; inset: 0; }
+.dev-row .row a, .dev-row .meta a { position: relative; z-index: 1; }
+.dev-row .meta { padding-left: 36px; }
+.dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; }
+@media (min-width: 48rem) { .dev-row .row-arrow { display: inline-block; } }

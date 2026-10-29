@@ -3,12 +3,13 @@ import type { IndexEntry } from "@opendevicedb/core";
 import StatusBadge from "./StatusBadge.astro";
 import { deviceUrl, sourceName } from "../lib/data.ts";
 import { displayName } from "../lib/config.ts";
+import { rowIcon, rowArrow } from "../lib/device-icons.ts";
 interface Props { entry: IndexEntry }
 const { entry: e } = Astro.props;
 ---
 <div class="dev-row">
-  <a class="name" href={deviceUrl(e.id)}>{displayName(e.vendor, e.model)}</a>
-  <span class="row"><StatusBadge status={e.status} />{e.verified && <span class="badge verified">Verified</span>}{e.install && <span class={`badge inst-${e.install}`} title={`Easiest known install route: ${e.install}`}>{e.install === "easy" ? "Easy install" : `Install: ${e.install}`}</span>}</span>
+  <span class="title"><Fragment set:html={rowIcon(e.category, e.model)} /><a class="name" href={deviceUrl(e.id)}>{displayName(e.vendor, e.model)}</a></span>
+  <span class="row"><StatusBadge status={e.status} />{e.verified && <span class="badge verified">Verified</span>}{e.install && <span class={`badge inst-${e.install}`} title={`Easiest known install route: ${e.install}`}>{e.install === "easy" ? "Easy install" : `Install: ${e.install}`}</span>}<Fragment set:html={rowArrow} /></span>
   <span class="meta">
     {e.category} · <span class="mono">{e.id}</span>
     {e.sources.length > 0 && <> · from {e.sources.map(sourceName).join(", ")}</>}

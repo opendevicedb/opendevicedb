@@ -4,6 +4,7 @@
 // (/api/wanted.json) are searched along with the devices and badged "👍 N want it".
 import { search, wantedToIndexEntry, wantedIssueUrl, type IndexEntry, type WantedEntry } from "@opendevicedb/core/browser";
 import { STATUS_LABEL, displayName } from "../lib/config.ts";
+import { rowIcon, rowArrow } from "../lib/device-icons.ts";
 
 const PAGE = 50;
 const root = document.getElementById("directory")!;
@@ -19,6 +20,25 @@ const count = root.querySelector<HTMLElement>("#count")!;
 const pager = root.querySelector<HTMLElement>("#pager")!;
 const request = root.querySelector<HTMLElement>("#request")!;
 const sourceNames: Record<string, string> = JSON.parse(root.dataset.sources || "{}");
+const chips = root.querySelector<HTMLElement>("#active-filters")!;
+const filterCount = root.querySelector<HTMLElement>("#filter-count")!;
+const resetBtn = root.querySelector<HTMLButtonElement>("#reset-filters")!;
+
+// Filters: desktop applies a change at once; on mobile (panel behind a toggle) changes are
+// staged until "Apply filters". `applied` is what the results use; the selects may be ahead.
+const desktop = window.matchMedia("(min-width: 48rem)");
+const selects = { category: catEl, status: stEl, source: srcEl, install: instEl, cloud: cloudEl };
+type FilterKey = keyof typeof selects;
+const applied: Record<FilterKey, string> = { category: "", status: "", source: "", install: "", cloud: "" };
+const snapshot = () => {
+  for (const k of Object.keys(selects) as FilterKey[]) applied[k] = selects[k].value;
+  markEdited();
+};
+function markEdited() {
+  for (const [k, el] of Object.entries(selects) as [FilterKey, HTMLSelectElement][]) {
+    el.closest("div")!.classList.toggle("edited", el.value !== applied[k]);
+  }
+}
 
 let index: IndexEntry[] | null = null;
 let wantedById = new Map<string, WantedEntry>();
@@ -68,8 +88,8 @@ function row(e: IndexEntry): string {
   const claims = e.claims ? ` · ${e.claims} live claim${e.claims > 1 ? "s" : ""}` : "";
   const verified = e.verified ? `<span class="badge verified">Verified</span>` : "";
   const install = e.install ? `<span class="badge inst-${e.install}" title="Easiest known install route: ${e.install}">${INSTALL_LABEL[e.install]}</span>` : "";
-  return `<li><div class="dev-row"><a class="name" href="${href}">${esc(displayName(e.vendor, e.model))}</a>` +
-    `<span class="row"><span class="badge s-${e.status}">${STATUS_LABEL[e.status] ?? e.status}</span>${verified}${install}${w && e.status !== "partial-protocol" && e.status !== "controllable" && e.status !== "open-firmware" ? wantedBadge(w) : ""}</span>` +
+  return `<li><div class="dev-row"><span class="title">${rowIcon(e.category, e.model)}<a class="name" href="${href}">${esc(displayName(e.vendor, e.model))}</a></span>` +
+    `<span class="row"><span class="badge s-${e.status}">${STATUS_LABEL[e.status] ?? e.status}</span>${verified}${install}${w && e.status !== "partial-protocol" && e.status !== "controllable" && e.status !== "open-firmware" ? wantedBadge(w) : ""}${rowArrow}</span>` +
     `<span class="meta">${esc(e.category)} · <span class="mono">${esc(e.id)}</span>${src}${claims}</span></div></li>`;
 }
 
@@ -85,11 +105,7 @@ function requestUrl(): string {
 function syncUrl() {
   const p = new URLSearchParams();
   if (qEl.value.trim()) p.set("q", qEl.value.trim());
-  if (catEl.value) p.set("category", catEl.value);
-  if (stEl.value) p.set("status", stEl.value);
-  if (srcEl.value) p.set("source", srcEl.value);
-  if (instEl.value) p.set("install", instEl.value);
-  if (cloudEl.value) p.set("cloud", cloudEl.value);
+  for (const k of Object.keys(applied) as FilterKey[]) if (applied[k]) p.set(k, applied[k]);
   if (page > 1) p.set("page", String(page));
   const qs = p.toString();
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
@@ -97,15 +113,15 @@ function syncUrl() {
 
 function render() {
   if (!index) return;
-  const inst = instEl.value, cloud = cloudEl.value;
+  const { install: inst, cloud, source: src } = applied;
   // "setup-only" also keeps devices that need no cloud at all (IndexEntry.cloud is the best project's).
   const cloudOk = (e: IndexEntry) => !cloud || e.cloud === "none" || (cloud === "setup-only" && e.cloud === "setup-only");
-  const pool = srcEl.value || inst || cloud
-    ? index.filter((e) => (!srcEl.value || e.sources.includes(srcEl.value)) && (!inst || (inst === "any" ? !!e.install : e.install === inst)) && cloudOk(e))
+  const pool = src || inst || cloud
+    ? index.filter((e) => (!src || e.sources.includes(src)) && (!inst || (inst === "any" ? !!e.install : e.install === inst)) && cloudOk(e))
     : index;
   const hits = search(pool, qEl.value, {
-    category: catEl.value || undefined,
-    status: (stEl.value || undefined) as IndexEntry["status"] | undefined,
+    category: applied.category || undefined,
+    status: (applied.status || undefined) as IndexEntry["status"] | undefined,
     limit: Infinity,
   });
   const pages = Math.max(1, Math.ceil(hits.length / PAGE));
@@ -126,7 +142,29 @@ function render() {
       `<span class="muted">Page ${page} of ${pages.toLocaleString("en")}</span>` +
       `<button class="btn" data-go="${page + 1}" ${page === pages ? "disabled" : ""}>Next →</button>`
     : "";
+  renderChips();
   syncUrl();
+}
+
+/** Active-filter chips (mobile), the count on the Filters button, and Reset. */
+function renderChips() {
+  const active = (Object.keys(applied) as FilterKey[]).filter((k) => applied[k]);
+  const label = (k: FilterKey) => {
+    const opt = [...selects[k].options].find((o) => o.value === applied[k]);
+    return (opt?.textContent ?? applied[k]).replace(/\s*\([\d,]+\)$/, "");
+  };
+  chips.innerHTML = active.map((k) =>
+    `<button type="button" class="filter-chip" data-clear="${k}" aria-label="Remove filter: ${esc(label(k))}">${esc(label(k))} <span aria-hidden="true">✕</span></button>`,
+  ).join("") + (active.length > 1 ? `<button type="button" class="filter-chip clear" data-clear="*">Clear all</button>` : "");
+  filterCount.hidden = active.length === 0;
+  filterCount.textContent = String(active.length);
+  resetBtn.hidden = active.length === 0;
+}
+
+function clearFilters(keys: FilterKey[]) {
+  for (const k of keys) selects[k].value = "";
+  snapshot();
+  update();
 }
 
 let timer: number | undefined;
@@ -136,9 +174,20 @@ function update(resetPage = true) {
   timer = window.setTimeout(() => load().then(render, () => {}), index ? 80 : 0);
 }
 
-form.addEventListener("submit", (ev) => { ev.preventDefault(); update(); });
+form.addEventListener("submit", (ev) => { ev.preventDefault(); snapshot(); update(); });
 qEl.addEventListener("input", () => update());
-for (const el of [catEl, stEl, srcEl, instEl, cloudEl]) el.addEventListener("change", () => update());
+for (const el of Object.values(selects)) {
+  el.addEventListener("change", () => {
+    if (desktop.matches) { snapshot(); update(); } else markEdited();
+  });
+}
+chips.addEventListener("click", (ev) => {
+  const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-clear]");
+  if (!b) return;
+  const k = b.dataset.clear!;
+  clearFilters(k === "*" ? (Object.keys(selects) as FilterKey[]) : [k as FilterKey]);
+});
+resetBtn.addEventListener("click", () => clearFilters(Object.keys(selects) as FilterKey[]));
 qEl.addEventListener("focus", () => { load().catch(() => {}); }, { once: true });
 pager.addEventListener("click", (ev) => {
   const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-go]");
@@ -152,5 +201,6 @@ pager.addEventListener("click", (ev) => {
 const params = new URLSearchParams(location.search);
 const setIf = (el: HTMLInputElement | HTMLSelectElement, k: string) => { const v = params.get(k); if (v !== null) el.value = v; };
 setIf(qEl, "q"); setIf(catEl, "category"); setIf(stEl, "status"); setIf(srcEl, "source"); setIf(instEl, "install"); setIf(cloudEl, "cloud");
+snapshot();
 page = Math.max(1, Number(params.get("page")) || 1);
 if ([...params.keys()].length) update(false);
