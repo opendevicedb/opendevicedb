@@ -6,6 +6,7 @@ import {
   type IndexEntry, type UsbDetection, type BleMatch,
 } from "@opendevicedb/core/browser";
 import { STATUS_LABEL, displayName } from "../lib/config.ts";
+import { rowIcon, rowArrow } from "../lib/device-icons.ts";
 
 const nav = navigator as any;
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -58,8 +59,8 @@ function row(e: IndexEntry, why?: string): string {
   const install = e.install
     ? `<span class="badge inst inst-${e.install}" title="Easiest install route: ${esc(INSTALL_HELP[e.install] ?? e.install)}">Install: ${esc(e.install)}</span>` : "";
   const verified = e.verified ? `<span class="badge verified">Verified</span>` : "";
-  return `<li><div class="dev-row"><a class="name" href="/devices/${e.id}/">${esc(displayName(e.vendor, e.model))}</a>` +
-    `<span class="row"><span class="badge s-${e.status}">${esc(STATUS_LABEL[e.status] ?? e.status)}</span>${verified}${install}</span>` +
+  return `<li><div class="dev-row"><span class="title">${rowIcon(e.category, e.model)}<a class="name" href="/devices/${e.id}/">${esc(displayName(e.vendor, e.model))}</a></span>` +
+    `<span class="row"><span class="badge s-${e.status}">${esc(STATUS_LABEL[e.status] ?? e.status)}</span>${verified}${install}${rowArrow}</span>` +
     `<span class="meta">${esc(e.category)} · <span class="mono">${esc(e.id)}</span>${why ? ` · ${esc(why)}` : ""}</span></div></li>`;
 }
 

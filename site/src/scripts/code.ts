@@ -12,9 +12,15 @@ for (const pre of document.querySelectorAll<HTMLPreElement>("main pre")) {
   copy.className = "copy";
   copy.textContent = "Copy";
   copy.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(pre.innerText.trim());
-    copy.textContent = "Copied";
-    setTimeout(() => (copy.textContent = "Copy"), 1500);
+    try {
+      await navigator.clipboard.writeText(pre.innerText.trim());
+      copy.textContent = "Copied";
+    } catch {
+      // No clipboard access (plain http, denied permission): select the code so it can be copied by hand.
+      getSelection()?.selectAllChildren(pre);
+      copy.textContent = "Press ⌘/Ctrl+C";
+    }
+    setTimeout(() => (copy.textContent = "Copy"), 2000);
   });
   box.append(copy);
 

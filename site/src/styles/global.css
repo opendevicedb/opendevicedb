@@ -99,6 +99,7 @@
   --st-controllable: var(--green-300);
   --st-open-firmware: var(--red-300);
   --st-danger: var(--red-300);
+  --st-ai: var(--violet-300); /* "AI assisted" label, not a status */
 
   /* ---------- Semantic: shape, type, layout ---------- */
   --radius-card: var(--radius-2xl);
@@ -248,8 +249,6 @@ th { font-weight: 500; color: var(--color-text-secondary); background: var(--col
 
 /* ========== 4. Layout ========== */
 .container { max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
-.container.narrow { max-width: calc(var(--max-narrow) + 2 * var(--gutter)); }
-.container.prose-width { max-width: calc(var(--max-prose) + 2 * var(--gutter)); }
 /* Inner pages: section spacing above and below (80px desktop, 48px mobile). The home page
    (main.bleed) lays out its own sections. */
 main { min-height: 60vh; }
@@ -270,7 +269,6 @@ main.bleed { padding: 0; }
 .two-col { display: grid; gap: 56px var(--space-section-gap); grid-template-columns: minmax(0, 1fr); }
 .two-col > * { min-width: 0; }
 @media (min-width: 48rem) { .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
-.grid { display: grid; gap: var(--space-card-gap); grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr)); }
 .stack > * + * { margin-top: 10px; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .list-plain { list-style: none; padding: 0; margin: 0; }
@@ -347,6 +345,7 @@ main.bleed { padding: 0; }
 .badge.s-controllable { --st: var(--st-controllable); }
 .badge.s-open-firmware { --st: var(--st-open-firmware); }
 .badge.verified { --st: var(--st-controllable); }
+.badge.ai { --st: var(--st-ai); }
 .badge.verified::before { content: "✓"; background: none; width: auto; height: auto; font-size: 0.9em; }
 .badge.wanted { --st: var(--color-border-brand); }
 .badge.wanted::before { display: none; }
@@ -368,7 +367,7 @@ a.badge.wanted:hover { background: rgb(226 227 0 / 0.1); }
 
 /* ========== 7. Cards and blocks ========== */
 .card { background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-card); padding: var(--space-card-padding); }
-.card.glow, .card-glow { border-color: var(--color-border-brand); background: radial-gradient(60% 60% at 105% 110%, rgb(226 227 0 / 0.75), transparent 70%), var(--color-bg-surface); }
+.card.glow { border-color: var(--color-border-brand); background: radial-gradient(60% 60% at 105% 110%, rgb(226 227 0 / 0.75), transparent 70%), var(--color-bg-surface); }
 /* Clickable cards: brand border + corner glow fade in on hover / keyboard focus. */
 .card.link { position: relative; isolation: isolate; overflow: hidden; transition: border-color 0.2s; }
 .card.link::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity 0.2s; background: radial-gradient(60% 60% at 105% 110%, rgb(226 227 0 / 0.75), transparent 70%); }
@@ -408,7 +407,6 @@ a.badge.wanted:hover { background: rgb(226 227 0 / 0.1); }
 .counter strong { font: 300 var(--text-heading-2) / 1.2 var(--font-display); color: var(--color-text-brand); font-variant-numeric: tabular-nums; }
 .counter span { display: inline-flex; align-items: center; gap: 6px; }
 .counter:hover span { text-decoration: underline; }
-.counter .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--st); display: inline-block; }
 
 /* "Help grow the database" banner: image above text, side by side from 64rem */
 .cta-banner { max-width: var(--max); margin: 0 auto; display: grid; align-items: center; gap: 32px; overflow: hidden; border-radius: var(--radius-card); padding: 32px; background: linear-gradient(135deg, var(--purple-500), rgb(160 63 244 / 0.7), var(--purple-500)); }

@@ -5,10 +5,11 @@
 // No dependencies. Run after `npm run build`: node site/scripts/check-dist.ts [distDir]
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const dist = process.argv[2] ?? new URL("../dist", import.meta.url).pathname;
+const dist = process.argv[2] ?? fileURLToPath(new URL("../dist", import.meta.url));
 // Files copied verbatim from public/ (e.g. search-engine verification pages) aren't site pages.
-const publicDir = new URL("../public", import.meta.url).pathname;
+const publicDir = fileURLToPath(new URL("../public", import.meta.url));
 if (!existsSync(dist)) {
   console.error(`No build output at ${dist}. Run "npm run build" first.`);
   process.exit(1);
@@ -24,7 +25,8 @@ function* htmlFiles(dir: string): Generator<string> {
 
 /** /devices/ → dist/devices/index.html; /api/index.json → dist/api/index.json */
 function resolves(url: string): boolean {
-  const path = decodeURIComponent(url.split(/[?#]/)[0]);
+  let path: string;
+  try { path = decodeURIComponent(url.split(/[?#]/)[0]); } catch { return false; } // malformed %-escape
   const base = join(dist, path);
   return existsSync(base) && statSync(base).isFile()
     || existsSync(join(base, "index.html"))
@@ -41,7 +43,8 @@ for (const file of htmlFiles(dist)) {
   const html = readFileSync(file, "utf8");
   const page = "/" + relative(dist, file).replace(/index\.html$/, "");
 
-  for (const [, url] of html.matchAll(/\s(?:href|src)="(\/(?!\/)[^"]*)"/g)) {
+  // href/src, and the first URL of a srcset (<picture> sources)
+  for (const [, url] of html.matchAll(/\s(?:href|src|srcset)="(\/(?!\/)[^"\s,]*)/g)) {
     if (checked.has(url)) continue;
     checked.add(url);
     if (!resolves(url)) problems.push(`${page}: broken link ${url}`);

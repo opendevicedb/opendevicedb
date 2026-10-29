@@ -79,8 +79,8 @@ const wantedBadge = (w: WantedEntry) =>
 function row(e: IndexEntry): string {
   const w = wantedById.get(e.id);
   if (e.sources.includes("wanted") && w) {
-    return `<li><div class="dev-row"><a class="name" href="${esc(w.url)}">${esc(displayName(e.vendor, e.model))}</a>` +
-      `<span class="row"><span class="badge neutral">Requested, not in the directory yet</span>${wantedBadge(w)}</span>` +
+    return `<li><div class="dev-row"><span class="title">${rowIcon(w.category ?? "", e.model)}<a class="name" href="${esc(w.url)}">${esc(displayName(e.vendor, e.model))}</a></span>` +
+      `<span class="row"><span class="badge neutral">Requested, not in the directory yet</span>${wantedBadge(w)}${rowArrow}</span>` +
       `<span class="meta">${esc(w.category ?? "uncategorised")} · <span class="mono">${esc(e.id)}</span> · requested ${esc(w.opened)}</span></div></li>`;
   }
   const href = `/devices/${e.id}/`;
@@ -188,6 +188,10 @@ chips.addEventListener("click", (ev) => {
   clearFilters(k === "*" ? (Object.keys(selects) as FilterKey[]) : [k as FilterKey]);
 });
 resetBtn.addEventListener("click", () => clearFilters(Object.keys(selects) as FilterKey[]));
+// Rotating a tablet to desktop width hides the Apply button: apply anything still staged.
+desktop.addEventListener("change", (ev) => {
+  if (ev.matches && (Object.keys(selects) as FilterKey[]).some((k) => selects[k].value !== applied[k])) { snapshot(); update(); }
+});
 qEl.addEventListener("focus", () => { load().catch(() => {}); }, { once: true });
 pager.addEventListener("click", (ev) => {
   const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-go]");
@@ -202,5 +206,6 @@ const params = new URLSearchParams(location.search);
 const setIf = (el: HTMLInputElement | HTMLSelectElement, k: string) => { const v = params.get(k); if (v !== null) el.value = v; };
 setIf(qEl, "q"); setIf(catEl, "category"); setIf(stEl, "status"); setIf(srcEl, "source"); setIf(instEl, "install"); setIf(cloudEl, "cloud");
 snapshot();
+renderChips(); // chips depend only on the URL, so show them before the index loads
 page = Math.max(1, Number(params.get("page")) || 1);
 if ([...params.keys()].length) update(false);

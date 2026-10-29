@@ -21,7 +21,7 @@ const d = Astro.props;
   </div>
   <div class="row">
     <StatusBadge status={d.status} />
-    {d.aiAssisted && <span class="badge s-in-progress">AI assisted</span>}
+    {d.aiAssisted && <span class="badge ai">AI assisted</span>}
     {d.install && <span class={`badge inst-${d.install}`}>Install: {d.install}</span>}
   </div>
 </article>

@@ -27,7 +27,11 @@ const mostWanted = (await openWanted()).slice(0, 3);
   <!-- Hero + counters share the illustration: 2300px wide so the devices sit outside the
        960px content column, faded out before the next section, hidden on small screens. -->
   <div class="hero-wrap">
-    <img class="hero-art" src="/images/hero.webp" alt="" width="1902" height="827" fetchpriority="high" />
+    <!-- Only fetched from 48rem: on small screens the source is a 1px placeholder, never the art. -->
+    <picture>
+      <source media="(min-width: 48rem)" srcset="/images/hero.webp" />
+      <img class="hero-art" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="1902" height="827" fetchpriority="high" />
+    </picture>
     <section class="section hero">
       <div class="inner narrow">
         <div class="hero-text">
