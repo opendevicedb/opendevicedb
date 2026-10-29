@@ -430,8 +430,21 @@ a.badge.wanted:hover { background: rgb(226 227 0 / 0.1); }
 .post-card p { margin: 0; color: var(--color-text-secondary); flex: 1; }
 .post h1 { font-size: var(--text-heading-1); }
 
-/* shiki: keep the theme's colours, our background */
-.astro-code { background: var(--color-bg-surface-sunken) !important; }
+/* Code highlighting (Shiki "css-variables" theme). Every colour passes WCAG AA, and AAA,
+   on the code background --purple-950 (#240149): lowest is --purple-300 at 7.2:1. */
+:root {
+  --astro-code-foreground: var(--purple-50);        /* 16.7:1 */
+  --astro-code-background: var(--color-bg-surface-sunken);
+  --astro-code-token-keyword: var(--cyan-300);       /* keys, 12.7:1 */
+  --astro-code-token-string: var(--green-300);       /* 12.7:1 */
+  --astro-code-token-string-expression: var(--green-300);
+  --astro-code-token-constant: var(--yellow-400);    /* numbers, booleans, 13.0:1 */
+  --astro-code-token-function: var(--violet-300);    /* 9.3:1 */
+  --astro-code-token-parameter: var(--purple-50);
+  --astro-code-token-comment: var(--purple-300);     /* 7.2:1 */
+  --astro-code-token-punctuation: var(--purple-300);
+  --astro-code-token-link: var(--yellow-400);
+}
 
 /* Code block box with a Copy button (built by scripts/code.ts) */
 .code-block { display: flex; align-items: flex-start; gap: 16px; margin: 1em 0; padding: var(--space-card-padding); border: 1px solid var(--color-border-default); border-radius: var(--radius-card); background: var(--color-bg-surface-sunken); }
