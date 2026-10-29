@@ -16,3 +16,6 @@ jobs:
       - run: npm test -w @opendevicedb/importers
       - run: npm test -w @opendevicedb/mcp
       - run: node --test scripts/*.test.ts
+      # The website: a failed build or a broken page must fail the pull request.
+      - run: npm run build -w site
+      - run: npm run check -w site

@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check": "node scripts/check-dist.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

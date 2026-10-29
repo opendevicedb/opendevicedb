@@ -126,7 +126,8 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
   .filter-actions .apply { flex: 1; }
   @media (min-width: 30rem) { .filter-actions .apply { flex: none; } }
   @media (min-width: 48rem) {
-    .filters-button, .active-filters { display: none; }
+    /* The toggle only exists for mobile: hide the checkbox too so keyboards skip it. */
+    #filters-toggle, .filters-button, .active-filters { display: none; }
     .filters { display: grid; padding-top: 0; grid-template-columns: repeat(5, minmax(0, 1fr)); }
     .filter-actions .apply { display: none; }
     .filter-actions:has(#reset-filters[hidden]) { display: none; }
