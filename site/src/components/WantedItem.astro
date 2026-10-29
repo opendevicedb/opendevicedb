@@ -1,0 +1,20 @@
+---
+// A wanted request: the card opens the device page (or the request when it is not in the
+// directory); the 👍 button adds a vote on the GitHub issue.
+import Icon from "./Icon.astro";
+import { deviceUrl } from "../lib/data.ts";
+import { displayName } from "../lib/config.ts";
+import { fmtLongDate } from "../lib/ui.ts";
+import type { WantedEntry } from "@opendevicedb/core";
+interface Props { w: WantedEntry & { inRegistry: boolean } }
+const { w } = Astro.props;
+---
+<article class="card link wanted-item">
+  <div class="text">
+    <h3><a class="stretched" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a></h3>
+    <p class="meta">{w.category ?? "Uncategorised"} · Requested {fmtLongDate(w.opened)}</p>
+  </div>
+  <a class="vote above" href={w.url} aria-label={`${w.votes} want${w.votes === 1 ? "s" : ""} it — add your 👍 on GitHub`}>
+    <Icon name="thumbs-up" size={16} />{w.votes}
+  </a>
+</article>

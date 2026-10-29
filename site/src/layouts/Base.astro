@@ -1,21 +1,36 @@
 ---
 import "../styles/global.css";
+import Icon from "../components/Icon.astro";
+import Logo from "../components/Logo.astro";
 import { SITE_NAME, REPO_URL, LICENSES, PITCH } from "../lib/config.ts";
 
-interface Props { title?: string; description?: string; wide?: boolean }
-const { title, description = PITCH } = Astro.props;
+// bleed: the page lays out its own full-width sections (home) instead of one container.
+interface Props { title?: string; description?: string; wide?: boolean; bleed?: boolean }
+const { title, description = PITCH, bleed = false } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE_NAME}` : `${SITE_NAME} — reverse-engineered devices, shared`;
 const path = Astro.url.pathname;
 const nav = [
   ["/devices/", "Devices"],
-  ["/detect/", "Detect"],
+  ["/contribute/", "Contribute"],
   ["/wanted/", "Wanted"],
   ["/news/", "News"],
+];
+const more = [
+  ["/detect/", "Detect"],
   ["/agents/", "For agents"],
-  ["/contribute/", "Contribute"],
   ["/sources/", "Sources"],
   ["/about/", "About"],
 ];
+const footerNav = [
+  ["/contribute/", "Contribute"],
+  ["/devices/", "Devices"],
+  ["/detect/", "Detect"],
+  ["/news/", "News"],
+  ["/sources/", "Sources"],
+  ["/about/", "About"],
+];
+const current = (href: string) => (path.startsWith(href) ? "page" : undefined);
+const moreActive = more.some(([href]) => path.startsWith(href));
 const canonical = new URL(path, Astro.site);
 ---
 <!doctype html>
@@ -28,7 +43,9 @@ const canonical = new URL(path, Astro.site);
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} news`} href="/rss.xml" />
-    <meta name="color-scheme" content="light dark" />
+    <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#380073" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <slot name="head" />
@@ -37,34 +54,62 @@ const canonical = new URL(path, Astro.site);
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="container">
-        <a class="brand" href="/" aria-label={`${SITE_NAME} home`}>
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9h2M11 9h6M7 12h6"/></svg>
-          {SITE_NAME}
-        </a>
+        <Logo />
+
         <nav class="nav" aria-label="Main">
-          {nav.map(([href, label]) => (
-            <a href={href} aria-current={path.startsWith(href) ? "page" : undefined}>{label}</a>
-          ))}
+          {nav.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+          <details class="more" data-active={moreActive || undefined}>
+            <summary>More <Icon name="chevron-down" size={16} /></summary>
+            <div class="menu-panel">
+              {more.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+            </div>
+          </details>
         </nav>
+
+        <div class="header-actions">
+          <a class="btn white" href="/detect/"><Icon name="chip" />Detect device</a>
+          <a class="btn primary" href={REPO_URL}><Icon name="github" />Star on GitHub</a>
+        </div>
+
+        <details class="mobile-menu">
+          <summary aria-label="Menu">
+            <Icon name="menu" class="open" />
+            <Icon name="close" class="close" />
+          </summary>
+          <div class="menu-panel">
+            {[...nav, ...more].map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+            <a class="btn white" href="/detect/"><Icon name="chip" />Detect device</a>
+            <a class="btn primary" href={REPO_URL}><Icon name="github" />Star on GitHub</a>
+          </div>
+        </details>
       </div>
     </header>
-    <main id="main" class="container">
+
+    <main id="main" class:list={[bleed ? "bleed" : "container"]}>
       <slot />
     </main>
+
     <footer class="site-footer">
       <div class="container">
+        <Logo />
         <p>
           {SITE_NAME} is an independent, open project with no vendor affiliation.
           Code {LICENSES.code}, data {LICENSES.data}, agent skill file {LICENSES.skill}.
         </p>
+        <nav class="footer-nav" aria-label="Footer">
+          {footerNav.map(([href, label]) => <a href={href}>{label}</a>)}
+        </nav>
         <ul class="footer-links">
-          <li><a href={REPO_URL}>Source on GitHub</a> (a ⭐ helps others find it)</li>
+          <li><a href={REPO_URL}>Source on GitHub</a></li>
           <li><a href="/policy/">Content policy</a></li>
           <li><a href="/api/index.json">JSON API</a></li>
           <li><a href="/rss.xml">RSS</a></li>
-          <li>No tracking, no cookies, no external scripts.</li>
         </ul>
+        <p class="footer-note">No tracking, no cookies, no external scripts.</p>
       </div>
     </footer>
+    <script>
+      import "../scripts/code.ts";
+    </script>
   </body>
 </html>

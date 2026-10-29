@@ -3,13 +3,17 @@ import { postUrl, fmtDate, type Post } from "../lib/news.ts";
 interface Props { post: Post; heading?: "h2" | "h3" }
 const { post, heading = "h3" } = Astro.props;
 const H = heading;
+// Words per minute for the "N min read" hint.
+const minutes = Math.max(1, Math.round((post.body ?? "").split(/\s+/).length / 220));
 ---
-<article>
-  <H style="margin:0 0 4px"><a href={postUrl(post)}>{post.data.title}</a></H>
-  <div class="post-meta">
-    <time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time>
+<article class="card link post-card">
+  <div class="row">
     {post.data.draft && <span class="tag draft">draft</span>}
-    {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+    {post.data.tags.map((t) => <span class:list={["tag", `t-${t}`]}>{t}</span>)}
   </div>
-  <p class="muted" style="margin-bottom:0">{post.data.summary}</p>
+  <H><a class="stretched" href={postUrl(post)}>{post.data.title}</a></H>
+  <p>{post.data.summary}</p>
+  <div class="post-meta">
+    <time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time> · {minutes} min read
+  </div>
 </article>

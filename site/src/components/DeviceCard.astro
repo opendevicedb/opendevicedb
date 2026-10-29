@@ -1,0 +1,27 @@
+---
+import Icon from "./Icon.astro";
+import StatusBadge from "./StatusBadge.astro";
+import { deviceUrl } from "../lib/data.ts";
+import { displayName } from "../lib/config.ts";
+import { deviceIcon, fmtLongDate } from "../lib/ui.ts";
+interface Props {
+  id: string; vendor: string; model: string; category: string; status: string;
+  updated: string; aiAssisted?: boolean; install?: string;
+}
+const d = Astro.props;
+---
+<article class="card link device-card">
+  <div class="top">
+    <Icon name={deviceIcon(d.category, d.model)} size={24} class="brand-icon" />
+    <Icon name="arrow-up-right" size={24} />
+  </div>
+  <div class="text">
+    <h3><a class="stretched" href={deviceUrl(d.id)}>{displayName(d.vendor, d.model)}</a></h3>
+    <p class="meta"><span class="cat">{d.category} · {d.vendor}</span> <span>Updated {fmtLongDate(d.updated)}</span></p>
+  </div>
+  <div class="row">
+    <StatusBadge status={d.status} />
+    {d.aiAssisted && <span class="badge s-in-progress">AI assisted</span>}
+    {d.install && <span class={`badge inst-${d.install}`}>Install: {d.install}</span>}
+  </div>
+</article>

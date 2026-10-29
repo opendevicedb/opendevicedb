@@ -1,0 +1,13 @@
+---
+import Icon from "./Icon.astro";
+interface Props { image: string; title: string; href: string; cta: string }
+const { image, title, href, cta } = Astro.props;
+---
+<article class="card link explore-card">
+  <div class="text">
+    <img src={image} alt="" width="56" height="56" loading="lazy" />
+    <h3>{title}</h3>
+    <p><slot /></p>
+  </div>
+  <a class="btn link stretched" href={href}>{cta}<Icon name="arrow-up-right" size={20} /></a>
+</article>

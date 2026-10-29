@@ -1,111 +1,222 @@
 ---
 import Base from "../layouts/Base.astro";
-import StatusBadge from "../components/StatusBadge.astro";
+import Icon from "../components/Icon.astro";
+import SearchBar from "../components/SearchBar.astro";
+import SearchSuggestions from "../components/SearchSuggestions.astro";
+import DeviceCard from "../components/DeviceCard.astro";
+import WantedItem from "../components/WantedItem.astro";
+import FeatureItem from "../components/FeatureItem.astro";
+import ExploreCard from "../components/ExploreCard.astro";
 import PostItem from "../components/PostItem.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import StatusBadge from "../components/StatusBadge.astro";
 import { counts, activeClaims, latestCurated, deviceUrl, effectiveStatus, db } from "../lib/data.ts";
 import { posts } from "../lib/news.ts";
-import { PITCH, REPO_URL, displayName } from "../lib/config.ts";
+import { displayName } from "../lib/config.ts";
 import { openWanted } from "../lib/wanted.ts";
 
 const c = counts();
-const claims = activeClaims().slice(0, 8);
+const claims = activeClaims().slice(0, 4);
 const news = (await posts()).slice(0, 3);
 const latest = latestCurated(6);
 const fmt = (n: number) => n.toLocaleString("en");
 const { on } = db();
-const mostWanted = (await openWanted()).slice(0, 5);
+const mostWanted = (await openWanted()).slice(0, 3);
 ---
-<Base>
-  <section class="hero">
-    <h1>Before you reverse engineer a device, check if someone already did.</h1>
-    <p class="lede">{PITCH}</p>
-    <form class="search-big" role="search" action="/devices/" method="get">
-      <label for="home-q" class="sr-only">Search devices</label>
-      <input id="home-q" name="q" type="search" placeholder="Model, vendor, FCC ID, USB vid:pid…" autocomplete="off" spellcheck="false" />
-      <button class="btn primary" type="submit">Search</button>
-    </form>
-    <p class="row"><a class="btn" href="/detect/">Detect my device</a> <span class="small muted">Device at hand? Plug it in over USB or find it over Bluetooth: Chrome or Edge, nothing leaves your browser.</span></p>
-    <p class="small muted">Try <a href="/devices/?q=framework">framework</a>, <a href="/devices/?q=pixel">pixel</a>, <a href="/devices/?q=tello">tello</a>, <a href="/devices/?q=car+thing">car thing</a>, or browse <a href="/devices/">all devices</a>.</p>
-    <p class="small"><a href={REPO_URL}>Open source on GitHub</a>: a ⭐ helps people with the same devices find it.</p>
-  </section>
-
-  <div class="counters" aria-label="Directory counters">
-    <a class="counter" href="/devices/"><strong>{fmt(c.devices)}</strong><span>devices</span></a>
-    <a class="counter" href="/sources/"><strong>{fmt(c.sources)}</strong><span>aggregated sources</span></a>
-    <a class="counter" href="/devices/?status=open-firmware" style="--st: var(--st-open-firmware)"><strong>{fmt(c.byStatus["open-firmware"])}</strong><span><i class="dot"></i>open firmware</span></a>
-    <a class="counter" href="/devices/?status=controllable" style="--st: var(--st-controllable)"><strong>{fmt(c.byStatus.controllable)}</strong><span><i class="dot"></i>controllable</span></a>
-    <a class="counter" href="/devices/?status=in-progress" style="--st: var(--st-in-progress)"><strong>{fmt(c.byStatus["in-progress"])}</strong><span><i class="dot"></i>in progress</span></a>
-  </div>
-
-  <div class="two-col">
-    <section>
-      <h2>Being worked on now</h2>
-      {claims.length === 0 ? (
-        <p class="empty">No live claim right now. Starting on a device? <a href="/contribute/#claims">Claim it</a> so nobody duplicates your work.</p>
-      ) : (
-        <ul class="list-plain">
-          {claims.map(({ record: r, claim }) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
-                <StatusBadge status={effectiveStatus(r, on)} />
-                <span class="meta">{claim.who} — {claim.scope} · until {claim.expires}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <h2>Most wanted</h2>
-      {mostWanted.length === 0 ? (
-        <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a> and others can add a 👍.</p>
-      ) : (
-        <ul class="list-plain">
-          {mostWanted.map((w) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
-                <a class="badge wanted" href={w.url}>👍 {w.votes}</a>
-                <span class="meta">{w.category ?? "uncategorised"} · requested {w.opened}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-      <p><a href="/wanted/">All requests</a></p>
-
-      <h2>Recently updated</h2>
-      {latest.length === 0 ? <p class="empty">No curated record yet.</p> : (
-        <ul class="list-plain">
-          {latest.map((r) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
-                <StatusBadge status={effectiveStatus(r, on)} />
-                <span class="meta">{r.category} · updated {r.updated}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-
-    <section>
-      <h2>Latest news</h2>
-      {news.length === 0 ? <p class="empty">No news yet.</p> : (
-        <ul class="list-plain">{news.map((p) => <li><PostItem post={p} /></li>)}</ul>
-      )}
-      <p><a href="/news/">All news</a> · <a href="/rss.xml">RSS</a></p>
-
-      <div class="callout" style="margin-top:28px">
-        <h2 style="margin-top:0">For AI agents</h2>
-        <p>
-          Agents can query OpenDeviceDB themselves before starting a reverse-engineering job,
-          claim the device while they work, and publish their findings when done — through an MCP server.
-        </p>
-        <pre><code>claude mcp add opendevicedb -- npx -y @opendevicedb/mcp</code></pre>
-        <p><a class="btn" href="/agents/">Set up an agent →</a></p>
+<Base bleed>
+  <!-- Hero + counters share the illustration: 2300px wide so the devices sit outside the
+       960px content column, faded out before the next section, hidden on small screens. -->
+  <div class="hero-wrap">
+    <img class="hero-art" src="/images/hero.webp" alt="" width="1902" height="827" fetchpriority="high" />
+    <section class="section hero">
+      <div class="inner narrow">
+        <div class="hero-text">
+          <p class="eyebrow">A free, community-built device database</p>
+          <h1>Find open firmware, tools, and research for your devices.</h1>
+          <p class="lede">
+            Search thousands of devices to see what's available, find existing projects, and check what the
+            community is working on.
+          </p>
+        </div>
+        <form role="search" action="/devices/" method="get" class="hero-search">
+          <SearchBar id="home-q" />
+        </form>
+        <SearchSuggestions />
       </div>
     </section>
+
+    <div class="stats-bar">
+      <div class="counters" aria-label="Directory counters">
+        <a class="counter" href="/devices/"><strong>{fmt(c.devices)}</strong><span>Devices</span></a>
+        <a class="counter" href="/sources/"><strong>{fmt(c.sources)}</strong><span>Aggregated sources</span></a>
+        <a class="counter" href="/devices/?status=open-firmware"><strong>{fmt(c.byStatus["open-firmware"])}</strong><span>Open firmware</span></a>
+        <a class="counter" href="/devices/?status=controllable"><strong>{fmt(c.byStatus.controllable)}</strong><span>Controllable</span></a>
+        <a class="counter" href="/devices/?status=in-progress"><strong>{fmt(c.byStatus["in-progress"])}</strong><span>In progress</span></a>
+      </div>
+    </div>
   </div>
+
+  <!-- Intro: stacked = text, features, buttons; from 48rem text + buttons left, features right. -->
+  <section class="section">
+    <div class="intro">
+      <div class="intro-text">
+        <h2 class="section-title">Build on what matters.</h2>
+        <p class="lede">
+          OpenDeviceDB brings scattered device research, open firmware, and protocols into one searchable
+          directory. Discover what's already been done, find what's missing, and help others build on your work.
+        </p>
+      </div>
+      <div class="intro-actions row">
+        <a class="btn primary lg" href="/contribute/">How to contribute</a>
+        <a class="btn lg" href="/agents/">View documentation</a>
+      </div>
+      <div class="features">
+        <FeatureItem icon="time" title="Save research time">Find existing tools, firmware, and research before starting your own.</FeatureItem>
+        <FeatureItem icon="unlock" title="Find where you're needed">See what's already documented and where there's still work to do.</FeatureItem>
+        <FeatureItem icon="ai-editing" title="Make your findings useful">Share your discoveries so others can continue where you left off.</FeatureItem>
+        <FeatureItem icon="book-open" title="Keep knowledge open">Help maintain a community-driven resource anyone can access and improve.</FeatureItem>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">New here? Three ways to explore.</h2>
+      <div class="card-grid three">
+        <ExploreCard image="/images/find-existing-work.webp" title="Find existing work" href="/devices/" cta="Browse devices">
+          Search devices to discover available firmware, tools, and research before starting your own.
+        </ExploreCard>
+        <ExploreCard image="/images/identify-device.webp" title="Identify a device" href="/detect/" cta="Try device detection">
+          Use a supported browser to identify compatible USB or Bluetooth devices.
+        </ExploreCard>
+        <ExploreCard image="/images/share-knowledge.webp" title="Share what you know" href="/contribute/" cta="Start contributing">
+          Add a device, link existing research, or improve a record so others can build on it.
+        </ExploreCard>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">Recently updated devices</h2>
+      {latest.length === 0 ? <p class="empty">No curated record yet.</p> : (
+        <div class="card-grid two">
+          {latest.map((r) => (
+            <DeviceCard id={r.id} vendor={r.vendor} model={r.model} category={r.category}
+              status={effectiveStatus(r, on)} updated={r.updated} aiAssisted={r.provenance?.ai_assisted} />
+          ))}
+        </div>
+      )}
+      <a class="btn primary" href="/devices/">View all devices</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="inner two-col">
+      <div class="stack-lg">
+        <h2 class="sub-title">Wanted devices</h2>
+        {mostWanted.length === 0 ? (
+          <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a> and others can add a 👍.</p>
+        ) : (
+          <div class="cards">{mostWanted.map((w) => <WantedItem w={w} />)}</div>
+        )}
+        <a href="/wanted/">View all requests</a>
+      </div>
+      <div class="stack-lg">
+        <h2 class="sub-title">Devices in progress</h2>
+        {claims.length === 0 ? (
+          <p class="muted">No live claim right now. Starting on a device? Claim it so nobody duplicates your work.</p>
+        ) : (
+          <div class="cards">
+            {claims.map(({ record: r, claim }) => (
+              <article class="card link claim-item">
+                <h3><a class="stretched" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a></h3>
+                <p class="meta">{claim.who} — {claim.scope} · until {claim.expires}</p>
+                <StatusBadge status={effectiveStatus(r, on)} />
+              </article>
+            ))}
+          </div>
+        )}
+        <a href="/contribute/#claims">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">Latest news</h2>
+      {news.length === 0 ? <p class="empty">No news yet.</p> : (
+        <div class="card-grid three">{news.map((p) => <PostItem post={p} />)}</div>
+      )}
+      <a class="btn primary" href="/news/">Read all news</a>
+    </div>
+  </section>
+
+  <section class="section center alt">
+    <div class="inner code-width">
+      <div class="stack-md">
+        <h2 class="section-title">For AI agents</h2>
+        <p class="lede">
+          Agents can query OpenDeviceDB themselves before starting a reverse-engineering job, claim the device
+          while they work, and publish their findings when done — through an MCP server.
+        </p>
+      </div>
+      <pre><code>claude mcp add opendevicedb -- npx -y @opendevicedb/mcp</code></pre>
+      <a class="btn white lg" href="/agents/">Set up an agent<Icon name="arrow-right" /></a>
+    </div>
+  </section>
+
+  <CtaBanner />
 </Base>
+
+<style>
+  .hero-wrap { position: relative; isolation: isolate; overflow: clip; }
+  .hero-art { display: none; }
+  @media (min-width: 48rem) {
+    .hero-art {
+      display: block; position: absolute; z-index: -1; top: 0; left: 50%; width: 2300px; max-width: none; height: auto;
+      transform: translateX(-50%); opacity: 0.9; pointer-events: none;
+      mask-image: linear-gradient(to bottom, #000 55%, transparent 72%);
+    }
+  }
+  .hero { padding-top: 24px; }
+  @media (min-width: 48rem) { .hero { padding-top: 48px; } }
+  .hero .inner { max-width: var(--max-narrow); align-items: center; text-align: center; gap: var(--space-stack-lg); }
+  .hero-text { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .hero h1 { margin: 0; }
+  .hero .lede { margin: 0; }
+  .hero-search { width: 100%; display: flex; justify-content: center; }
+
+  .stats-bar { padding: 32px var(--gutter); border-block: 1px solid var(--color-border-subtle); background: var(--color-bg-subtle); backdrop-filter: blur(12px); }
+
+  .intro { max-width: var(--max); margin: 0 auto; display: grid; gap: var(--space-stack-lg) var(--space-section-gap); }
+  .intro-text { display: flex; flex-direction: column; gap: 16px; }
+  .intro-text .lede { margin: 0; }
+  .intro-actions { order: 3; gap: 12px; }
+  @media (min-width: 48rem) {
+    .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+    .intro-text { grid-column: 1; grid-row: 1; align-self: end; }
+    .intro-actions { order: 0; grid-column: 1; grid-row: 2; align-self: start; }
+    .features { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+  }
+
+  .card-grid { display: grid; gap: var(--space-card-gap); width: 100%; text-align: left; }
+  @media (min-width: 48rem) {
+    .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .card-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  .two-col { gap: 56px var(--space-section-gap); }
+  .stack-lg { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  .stack-lg .cards { width: 100%; }
+  .stack-md { display: flex; flex-direction: column; gap: 16px; }
+  .stack-md .lede { margin: 0; }
+  .sub-title { margin: 0; font: 400 var(--text-heading-2) / 1.2 var(--font-display); }
+  .claim-item { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  .claim-item h3 { margin: 0; }
+  .claim-item h3 a { color: var(--color-text-primary); text-decoration: none; }
+  .claim-item .meta { margin: 0; font-size: var(--text-body-sm); color: var(--color-text-secondary); }
+
+  .code-width { max-width: var(--max-code) !important; }
+  .code-width :global(.code-block) { width: 100%; margin: 0; text-align: left; }
+</style>

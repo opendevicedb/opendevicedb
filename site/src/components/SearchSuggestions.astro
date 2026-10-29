@@ -1,0 +1,6 @@
+<div class="suggest">
+  <span>Try:</span>
+  {["Framework", "Pixel", "Tello", "Car Thing"].map((q) => <a class="chip" href={`/devices/?q=${encodeURIComponent(q.toLowerCase())}`}>{q}</a>)}
+  <span>or</span>
+  <a href="/devices/">Browse all devices</a>
+</div>

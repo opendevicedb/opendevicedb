@@ -1,0 +1,17 @@
+---
+import Icon from "./Icon.astro";
+import { REPO_URL } from "../lib/config.ts";
+---
+<section class="section">
+  <div class="cta-banner">
+    <img src="/images/cta.webp" alt="" width="1100" height="599" loading="lazy" />
+    <div class="cta-text">
+      <h2 class="section-title">Help grow the database.</h2>
+      <p>Add new devices, share your findings, improve existing guides, or help others get more life out of their devices.</p>
+      <div class="row">
+        <a class="btn primary lg" href={REPO_URL}><Icon name="github" />Star on GitHub</a>
+        <a class="btn lg" href="/contribute/">Contribute<Icon name="arrow-right" /></a>
+      </div>
+    </div>
+  </div>
+</section>

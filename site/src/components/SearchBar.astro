@@ -1,0 +1,12 @@
+---
+// Pill search field with the brand button. Submits to /devices/ (works without JS).
+import Icon from "./Icon.astro";
+interface Props { id?: string; value?: string; placeholder?: string }
+const { id = "q", value, placeholder = "Search by model, vendor, FCC ID, USB vid:pid…" } = Astro.props;
+---
+<div class="search-big">
+  <Icon name="search" />
+  <label for={id} class="sr-only">Search devices</label>
+  <input id={id} name="q" type="search" value={value} placeholder={placeholder} autocomplete="off" spellcheck="false" />
+  <button class="btn primary" type="submit"><span class="wide-only">Search device</span><span class="narrow-only">Search</span></button>
+</div>

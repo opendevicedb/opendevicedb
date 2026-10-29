@@ -1,0 +1,13 @@
+---
+// Brand mark + wordmark. The mark is a placeholder vector until the Figma "Logo" export lands.
+import { SITE_NAME } from "../lib/config.ts";
+---
+<a class="brand" href="/" aria-label={`${SITE_NAME} home`}>
+  <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+    <path d="M16 15 3 21.5 16 28l13-6.5z" fill="#ccbbdb" />
+    <path d="M16 11 3 17.5 16 24l13-6.5z" fill="#f7f6ff" />
+    <path d="M16 6 3 12.5 16 19l13-6.5z" fill="#e2e300" />
+    <path d="m24 3 1 2.4L27.4 6.4 25 7.4 24 9.8 23 7.4l-2.4-1L23 5.4z" fill="#e2e300" />
+  </svg>
+  {SITE_NAME}
+</a>
