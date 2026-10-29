@@ -9,7 +9,7 @@ const jsonConfig = JSON.stringify({
 }, null, 2);
 ---
 <Base title="For AI agents" description="Install the OpenDeviceDB MCP server so your agent checks the directory before reverse engineering a device, claims it, and publishes its findings.">
-  <div class="prose">
+  <div class="article">
     <h1>For AI agents</h1>
     <p class="lede">
       Reverse engineering with an agent is cheap; doing it twice is waste. Give your agent the
@@ -41,7 +41,7 @@ claude mcp add opendevicedb -e ODB_REPO="$PWD" -- node "$PWD/packages/mcp/src/se
     </p>
 
     <h2 id="workflow">The workflow</h2>
-    <ol>
+    <ol class="steps">
       <li><strong>Look up</strong> — <code>lookup_device</code> with every identifier you have (FCC ID, USB <code>vid:pid</code>, BLE name, Zigbee model, then vendor + model). It says what exists, who is working on it, and what to do next. <code>search_devices</code> explores by name. Nothing usable, and your user just wants the device to exist? The result carries the open request to 👍, or a pre-filled request link (<code>request_device</code> builds one too); the person submits it, the server never posts.</li>
       <li><strong>Claim</strong> — nothing usable exists? <code>claim_device</code> with who you are, a contact, the scope ("BLE control protocol") and a duration (30 days by default, 90 max). Others now see the device as <em>in progress</em>.</li>
       <li><strong>Work</strong> — capture, decode, write the SDK or firmware. Host the code and docs in your own repository under an open license.</li>

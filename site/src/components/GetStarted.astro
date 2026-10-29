@@ -91,19 +91,18 @@ const cards = routes.map((route) => {
 </section>
 
 <style>
-  .get-started { --ok: var(--st-open-firmware); --mid: var(--st-in-progress); --bad: #b91c1c; }
-  @media (prefers-color-scheme: dark) { .get-started { --bad: #f87171; } }
+  .get-started { --ok: var(--mint-300); --mid: var(--yellow-400); --bad: var(--red-300); }
   .checklist { margin: 12px 0 14px; }
   .checklist ul { margin: 6px 0 0; padding-left: 1.2em; }
   .checklist li + li { margin-top: 0.2em; }
-  .routes { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); }
-  .route { display: flex; flex-direction: column; gap: 6px; border-left: 4px solid var(--border); min-width: 0; }
-  .route.d-easy { border-left-color: var(--ok); }
-  .route.d-medium { border-left-color: var(--mid); }
-  .route.d-hard, .route.danger { border-left-color: var(--bad); }
+  .routes { display: grid; gap: var(--space-card-gap); }
+  /* Each route is a featured card: brand border + corner glow (the design's install card). */
+  .route { display: flex; flex-direction: column; gap: 10px; min-width: 0; border-color: var(--color-border-brand);
+    background: radial-gradient(60% 60% at 105% 110%, rgb(226 227 0 / 0.6), transparent 70%), var(--color-bg-surface); }
+  .route.danger { border-color: var(--bad); background: var(--color-bg-surface); }
   .route p { margin: 0; }
   .route-head { display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }
-  .route-head h3 { margin: 0; font-size: 1.05rem; }
+  .route-head h3 { margin: 0; }
   .badge.diff-easy { --st: var(--ok); }
   .badge.diff-medium { --st: var(--mid); }
   .badge.diff-hard { --st: var(--bad); }

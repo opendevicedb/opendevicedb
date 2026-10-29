@@ -57,7 +57,7 @@ const reportFormUrl = `${ODB_REPO_URL}/issues/new?template=${REPORT_TEMPLATE}`;
 const themes = { light: "github-light", dark: "github-dark" } as const;
 ---
 <Base title="Contribute" description="How to add or improve a device record, claim a device you are working on, and how verification works.">
-  <div class="prose">
+  <div class="article">
     <h1>Contribute</h1>
     <p class="lede">
       The database is a set of YAML files in git. Everything — new devices, findings, claims —
@@ -65,7 +65,7 @@ const themes = { light: "github-light", dark: "github-dark" } as const;
     </p>
 
     <h2 id="workflow">Pull request workflow</h2>
-    <ol>
+    <ol class="steps">
       <li>Fork <a href={REPO_URL}>the repository</a> (or use "Edit this record on GitHub" on any device page).</li>
       <li>Add or edit <code>data/devices/&lt;vendor&gt;/&lt;model&gt;.yaml</code>. The id is <code>&lt;vendor-slug&gt;/&lt;model-slug&gt;</code>, lowercase <code>a-z 0-9 -</code>.</li>
       <li>Run <code>npm install &amp;&amp; npm run validate</code>: every record is checked against <a href={`${REPO_URL}/blob/main/schema/device.schema.json`}><code>schema/device.schema.json</code></a>.</li>

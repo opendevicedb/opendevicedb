@@ -7,7 +7,7 @@ const list = [...snapshots].sort((a, b) => (sources.get(b.source)?.count ?? 0) -
 const fmt = (n: number) => n.toLocaleString("en");
 ---
 <Base title="Sources" description="The community databases OpenDeviceDB aggregates, with their licenses and snapshot dates.">
-  <div class="prose">
+  <div class="page-head">
     <h1>Sources</h1>
     <p class="lede">
       Most of what OpenDeviceDB knows comes from community projects that did the work first.
@@ -19,10 +19,10 @@ const fmt = (n: number) => n.toLocaleString("en");
   {list.length === 0 ? (
     <p class="empty">No imported source yet. Importers live in <code>packages/importers</code>; run <code>npm run import -- all</code>.</p>
   ) : (
-    <div class="grid" style="margin-top:20px">
+    <div class="source-grid">
       {list.map((s) => (
-        <article class="card" id={s.source}>
-          <h2 style="margin:0 0 4px; font-size:1.2rem"><a href={s.url}>{s.name}</a></h2>
+        <article class="card source-card" id={s.source}>
+          <h2><a href={s.url}>{s.name}</a></h2>
           <p class="small muted mono" style="margin:0 0 8px">{s.url.replace(/^https?:\/\//, "")}</p>
           <dl class="facts">
             <dt>Records</dt><dd><a href={`/devices/?source=${encodeURIComponent(s.source)}`}>{fmt(sources.get(s.source)?.count ?? 0)}</a></dd>
@@ -35,7 +35,7 @@ const fmt = (n: number) => n.toLocaleString("en");
     </div>
   )}
 
-  <h2 id="curated">Curated records</h2>
+  <h2 id="curated" class="section-title curated">Curated records</h2>
   <p class="prose">
     <a href={`/devices/?source=curated`}>{fmt(curated.count)} records</a> are written directly in this repository
     (<a href={curated.url}><code>data/devices/</code></a>), by people and their agents, under {curated.license}.
@@ -43,3 +43,11 @@ const fmt = (n: number) => n.toLocaleString("en");
   </p>
   <p class="small muted">Machine-readable: <a href="/api/sources.json">/api/sources.json</a>.</p>
 </Base>
+
+<style>
+  .source-grid { display: grid; gap: var(--space-card-gap); }
+  @media (min-width: 40rem) { .source-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 64rem) { .source-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .source-card h2 { margin: 0 0 4px; font: 600 var(--text-title) / 1.3 var(--font); letter-spacing: -0.02em; }
+  .curated { margin: var(--space-section-y) 0 16px; }
+</style>

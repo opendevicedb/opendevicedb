@@ -43,3 +43,21 @@ and records with more than one source, and render the rest client-side from the 
 node site/scripts/gen-fake-data.ts /tmp/odb-fake 20000   # never commit the output
 ODB_REPO=/tmp/odb-fake ODB_TIMING=1 npm run build -w site
 ```
+
+## Design system
+
+The look comes from the Figma file "OpenDeviceDB Code". `src/styles/global.css` is still the
+only stylesheet:
+
+- **Tokens** are custom properties that mirror the Figma variables: primitives
+  (`--purple-800`, `--radius-2xl`) and semantic tokens (`--color-bg-surface`,
+  `--space-card-padding`, `--text-heading-1`). Responsive tokens take their mobile value by
+  default and their desktop value from `48rem`.
+- **Fonts** are self-hosted in `public/fonts` (Geist and Geist Mono, OFL). The display face is
+  Technor (Indian Type Foundry, via Fontshare). Its files are **not committed** until its license
+  for a public repository is confirmed; headings fall back to Geist.
+- **Icons** are inline SVG paths from Hugeicons (MIT) in `src/lib/icons.ts`, rendered by
+  `components/Icon.astro`. The directory script imports only `lib/icons-device.ts`.
+- **Images** are WebP in `public/images`.
+- **Scripts** stay vanilla: `scripts/code.ts` adds Copy buttons and edge fades to code blocks.
+  The menus (`<details>`) and the mobile filter panel (checkbox toggle) work without JS.

@@ -489,3 +489,19 @@ a.badge.wanted:hover { background: rgb(226 227 0 / 0.1); }
 .dev-row .meta { padding-left: 36px; }
 .dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; }
 @media (min-width: 48rem) { .dev-row .row-arrow { display: inline-block; } }
+
+/* ---------- Long-form pages (agents, contribute, about, policy, news post) ---------- */
+.article { max-width: var(--max-prose); margin: 0 auto; color: var(--color-text-secondary); }
+.article > h1:first-child, .article > h1:first-child + .lede { text-align: center; margin-inline: auto; }
+.article > h1:first-child { margin-top: 0; margin-bottom: 16px; }
+.article > h1:first-child + .lede { margin-bottom: var(--space-section-gap); }
+.article h2 { margin: 2.2em 0 0.6em; }
+.article h3 { margin: 1.8em 0 0.5em; }
+.article ul, .article ol { padding-left: 1.25rem; }
+.article li + li { margin-top: 0.5em; }
+.article li::marker { color: var(--color-text-brand); }
+/* Numbered steps as cards (agent workflow, PR workflow) */
+.article ol.steps { list-style: none; padding: 0; counter-reset: step; display: grid; gap: 12px; }
+.article ol.steps > li { counter-increment: step; position: relative; margin: 0; padding: var(--space-card-padding); padding-left: calc(var(--space-card-padding) + 52px); border: 1px solid var(--color-border-default); border-radius: var(--radius-card); background: var(--color-bg-surface); }
+.article ol.steps > li::before { content: counter(step); position: absolute; left: var(--space-card-padding); top: var(--space-card-padding); width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: var(--color-bg-brand); color: var(--color-text-on-brand); font: 400 18px/1 var(--font-display); }
+.article .feature h3 { margin: 0 0 8px; }

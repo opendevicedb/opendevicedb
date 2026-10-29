@@ -56,6 +56,7 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
 ---
 <Base title={pageTitle} description={desc}>
   <link slot="head" rel="alternate" type="application/json" href={jsonUrl(r.id)} />
+  <div class="detail">
   <div class="dev-head">
     <p class="crumbs"><a href="/devices/">Devices</a> / <a href={`/devices/?category=${r.category}`}>{r.category}</a></p>
     <h1>{displayName(r.vendor, r.model)}</h1>
@@ -67,13 +68,12 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
       {!curated && <span class="badge lg neutral">Imported</span>}
     </div>
     <p class="muted small">{STATUS_HELP[status]}</p>
+    {r.summary && <p class="lede">{r.summary}</p>}
   </div>
-
-  {r.summary && <p class="prose" style="font-size:1.05rem">{r.summary}</p>}
 
   {r.install && r.install.length > 0 && <GetStarted record={r} reports={installReports} />}
 
-  <dl class="facts card" style="margin-top:18px">
+  <dl class="facts card">
     <dt>ID</dt><dd class="mono">{r.id}</dd>
     <dt>Category</dt><dd>{r.category}</dd>
     <dt>Vendor support</dt><dd>{vendorSupport[r.vendor_support ?? "unknown"] ?? r.vendor_support}</dd>
@@ -205,4 +205,13 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
     {r.provenance?.ai_assisted ? <><span class="badge neutral">AI-assisted</span> Parts of this record were produced with AI tools{r.provenance.tools?.length ? <> ({r.provenance.tools.join(", ")})</> : null}; check the confidence of each interface.</> : r.provenance?.ai_assisted === false ? "Not flagged as AI-assisted." : "AI assistance not stated."}
   </p>
   <p class="small muted">Status and claims as of the build date ({on}). Data licensed CC BY-SA 4.0; imported data keeps its upstream license.</p>
+  </div>
 </Base>
+
+<style>
+  /* Same reading column as the design's device page; sections use display headings. */
+  .detail { max-width: var(--max-prose); margin: 0 auto; }
+  .detail > h2 { margin: 2.2em 0 0.6em; }
+  .detail :global(.get-started h2) { margin-top: 1.4em; }
+  .facts.card { margin-top: 24px; }
+</style>

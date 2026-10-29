@@ -1,14 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
+import FeatureItem from "../components/FeatureItem.astro";
 import { REPO_URL, LICENSES } from "../lib/config.ts";
 ---
 <Base title="About" description="Why OpenDeviceDB exists, who runs it and how it is licensed.">
-  <div class="prose">
+  <div class="article">
     <h1>About</h1>
     <p class="lede">
       OpenDeviceDB is an independent, open directory of devices whose protocols or firmware have been
       reverse engineered — drones, cameras, robots, wearables and everything else whose vendor stopped caring.
     </p>
+    <img class="about-art" src="/images/about.webp" alt="A central database connected to a drone, a camera, a phone and a router" width="1200" height="900" />
 
     <h2>Why</h2>
     <p>
@@ -24,14 +26,14 @@ import { REPO_URL, LICENSES } from "../lib/config.ts";
       through an <a href="/agents/">MCP server</a>, and credits the <a href="/sources/">sources</a> it aggregates.
     </p>
 
-    <h2>Principles</h2>
-    <ul>
-      <li><strong>Files in git are the database.</strong> One YAML file per device, changed by pull request. This site is a static build of the repository; there is no server-side database.</li>
-      <li><strong>Aggregate, don't duplicate.</strong> Imported records link back to their source project.</li>
-      <li><strong>Claims prevent duplicate work.</strong> Say you are on a device; claims expire.</li>
-      <li><strong>AI output is not trusted by default.</strong> Confidence per interface; "verified" means a hardware replay.</li>
-      <li><strong>Legally boring.</strong> Descriptions, original code and links only. See the <a href="/policy/">policy</a>.</li>
-    </ul>
+    <div class="card glow principles">
+      <h2>Principles</h2>
+      <FeatureItem icon="file" title="Files in git are the database">One YAML file per device, changed by pull request. This site is a static build of the repository; there is no server-side database.</FeatureItem>
+      <FeatureItem icon="database" title="Aggregate, don't duplicate">Imported records link back to their source project.</FeatureItem>
+      <FeatureItem icon="user-check" title="Claims prevent duplicate work">Say you are on a device; claims expire.</FeatureItem>
+      <FeatureItem icon="ai-editing" title="AI output is not trusted by default">Confidence per interface; "verified" means a hardware replay.</FeatureItem>
+      <FeatureItem icon="shield" title="Legally boring">Descriptions, original code and links only. See the <a href="/policy/">policy</a>.</FeatureItem>
+    </div>
 
     <h2>Independent and open</h2>
     <p>No vendor affiliation, no accounts, no tracking, no ads.</p>
@@ -43,3 +45,9 @@ import { REPO_URL, LICENSES } from "../lib/config.ts";
     <p>Source, issues and discussions: <a href={REPO_URL}>{REPO_URL.replace("https://", "")}</a>. This is a prototype; the format and the policy are open for discussion.</p>
   </div>
 </Base>
+
+<style>
+  .about-art { display: block; width: 100%; max-width: var(--max-narrow); height: auto; margin: 0 auto var(--space-section-gap); }
+  .principles { display: flex; flex-direction: column; gap: 24px; margin: 2.2em 0; padding: 32px; }
+  .principles h2 { margin: 0; }
+</style>

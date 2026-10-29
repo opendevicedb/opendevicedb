@@ -5,10 +5,17 @@ import { posts } from "../../lib/news.ts";
 const all = await posts();
 ---
 <Base title="News" description="News from OpenDeviceDB: new sources, newly reverse-engineered devices, tooling.">
-  <h1>News</h1>
-  <p class="lede">Project updates, newly opened devices and new aggregated sources. Also available as <a href="/rss.xml">RSS</a>.</p>
+  <header class="page-head center">
+    <h1>News</h1>
+    <p class="lede">Project updates, newly opened devices and new aggregated sources. Also available as <a href="/rss.xml">RSS</a>.</p>
+  </header>
   {all.length === 0 && <p class="empty">No posts yet.</p>}
-  <ul class="list-plain">
-    {all.map((p) => <li><PostItem post={p} heading="h2" /></li>)}
-  </ul>
+  <div class="news-grid">
+    {all.map((p) => <PostItem post={p} heading="h2" />)}
+  </div>
 </Base>
+
+<style>
+  .news-grid { display: grid; gap: var(--space-card-gap); }
+  @media (min-width: 48rem) { .news-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>

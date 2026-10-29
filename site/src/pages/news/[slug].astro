@@ -1,6 +1,8 @@
 ---
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import Icon from "../../components/Icon.astro";
+import PostItem from "../../components/PostItem.astro";
 import { posts, fmtDate, type Post } from "../../lib/news.ts";
 import { REPO_URL } from "../../lib/config.ts";
 
@@ -9,17 +11,20 @@ export async function getStaticPaths() {
 }
 const { post } = Astro.props as { post: Post };
 const { Content } = await render(post);
+const more = (await posts()).filter((p) => p.id !== post.id).slice(0, 2);
 ---
 <Base title={post.data.title} description={post.data.summary}>
-  <article class="post prose">
-    <p class="crumbs" style="margin-top:26px"><a href="/news/">News</a></p>
-    <h1>{post.data.title}</h1>
-    <div class="post-meta">
-      <time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time>
-      {post.data.draft && <span class="tag draft">draft</span>}
-      {post.data.tags.map((t) => <span class="tag">{t}</span>)}
-    </div>
-    <p class="lede">{post.data.summary}</p>
+  <article class="post article">
+    <a class="back" href="/news/"><Icon name="chevron-left" size={16} />All news</a>
+    <header class="post-head">
+      <div class="row">
+        {post.data.draft && <span class="tag draft">draft</span>}
+        {post.data.tags.map((t) => <span class:list={["tag", `t-${t}`]}>{t}</span>)}
+      </div>
+      <h1>{post.data.title}</h1>
+      <div class="post-meta"><time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time></div>
+    </header>
+    <p class="lede summary">{post.data.summary}</p>
     <Content />
     <hr />
     <p class="small muted">
@@ -27,4 +32,22 @@ const { Content } = await render(post);
       Licensed CC BY-SA 4.0.
     </p>
   </article>
+  {more.length > 0 && (
+    <section class="more-news">
+      <h2 class="section-title">More news</h2>
+      <div class="more-grid">{more.map((p) => <PostItem post={p} />)}</div>
+    </section>
+  )}
 </Base>
+
+<style>
+  .back { display: inline-flex; align-items: center; gap: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: var(--text-body-sm); }
+  .back:hover { color: var(--color-text-brand); }
+  .post-head { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; margin: 24px 0; }
+  .post-head h1 { margin: 0; }
+  .post-head .row { justify-content: center; }
+  .summary { color: var(--color-text-primary); }
+  .more-news { max-width: var(--max); margin: var(--space-section-y) auto 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-section-gap); }
+  .more-grid { width: 100%; display: grid; gap: var(--space-card-gap); }
+  @media (min-width: 48rem) { .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>

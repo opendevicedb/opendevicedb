@@ -1,54 +1,48 @@
 ---
 import Base from "../layouts/Base.astro";
-import StatusBadge from "../components/StatusBadge.astro";
-import { db, deviceUrl } from "../lib/data.ts";
+import Icon from "../components/Icon.astro";
+import WantedItem from "../components/WantedItem.astro";
 import { openWanted } from "../lib/wanted.ts";
-import { displayName } from "../lib/config.ts";
 import { wantedIssueUrl } from "@opendevicedb/core";
 
 const list = await openWanted();
-const { index } = db();
-const status = new Map(index.map((e) => [e.id, e.status]));
 const people = list.reduce((n, w) => n + w.votes, 0);
 ---
 <Base title="Wanted devices" description="Devices people want reverse engineered or supported, ranked by interest. Add a 👍 to the request to count yourself in.">
-  <h1>Wanted devices</h1>
-  <p class="lede">
-    Devices people would like to use with open code, ranked by how many want them.
-    If you can reverse engineer one, this is where your work helps the most people:{" "}
-    <a href="/contribute/#claims">claim it</a> first, then publish your findings.
-  </p>
-  <div class="actions">
-    <a class="btn primary" href={wantedIssueUrl({})}>Request a device</a>
-    <a class="btn" href="/api/wanted.json">wanted.json</a>
-  </div>
-  <p class="small muted">
-    A request is a GitHub issue (a GitHub account is needed, and requests are public).
-    Already requested? Add a 👍 to its issue: that is how interest is counted.
-    A request closes by itself when a usable result reaches the directory.
-  </p>
+  <div class="wanted-page">
+    <header class="page-head center">
+      <h1>Wanted devices</h1>
+      <p class="lede">
+        Devices people would like to use with open code, ranked by how many want them.
+        If you can reverse engineer one, this is where your work helps the most people:{" "}
+        <a href="/contribute/#claims">claim it</a> first, then publish your findings.
+      </p>
+      <div class="row">
+        <a class="btn primary lg" href={wantedIssueUrl({})}><Icon name="github" />Request a device</a>
+        <a class="btn link" href="/api/wanted.json">wanted.json</a>
+      </div>
+    </header>
 
-  <div class="results-bar"><span>{list.length.toLocaleString("en")} open request{list.length === 1 ? "" : "s"} · {people.toLocaleString("en")} interested</span></div>
-  {list.length === 0 ? (
-    <p class="empty">No open request yet. Looking for a device that is not in the directory? <a href={wantedIssueUrl({})}>Request it</a>.</p>
-  ) : (
-    <ul class="list-plain results">
-      {list.map((w) => (
-        <li>
-          <div class="dev-row">
-            <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
-            <span class="row">
-              <a class="badge wanted" href={w.url} title="Add a 👍 on the request to count yourself in">👍 {w.votes} want{w.votes === 1 ? "s" : ""} it</a>
-              {w.inRegistry && <StatusBadge status={status.get(w.id)!} />}
-            </span>
-            <span class="meta">
-              {w.category ?? "uncategorised"} · <span class="mono">{w.id}</span> · requested {w.opened}
-              {w.issues.length > 1 && <> · {w.issues.length} requests</>}
-              {" · "}<a href={w.url}>request #{w.issues[0]}</a>
-            </span>
-          </div>
-        </li>
-      ))}
+    <p class="results-bar">{list.length.toLocaleString("en")} open request{list.length === 1 ? "" : "s"} · {people.toLocaleString("en")} interested</p>
+    {list.length === 0 ? (
+      <p class="empty">No open request yet. Looking for a device that is not in the directory? <a href={wantedIssueUrl({})}>Request it</a>.</p>
+    ) : (
+      <div class="cards">
+        {list.map((w) => <WantedItem w={w} />)}
+      </div>
+    )}
+
+    <ul class="notes">
+      <li>A request is a GitHub issue (a GitHub account is needed, and requests are public).</li>
+      <li>Already requested? Add a 👍 to its issue: that is how interest is counted.</li>
+      <li>A request closes by itself when a usable result reaches the directory.</li>
     </ul>
-  )}
+  </div>
 </Base>
+
+<style>
+  .wanted-page { max-width: var(--max-narrow); margin: 0 auto; }
+  .wanted-page .row { justify-content: center; gap: 16px; }
+  .notes { margin: var(--space-section-gap) 0 0; padding-left: 1.25rem; color: var(--color-text-secondary); font-size: var(--text-body-sm); }
+  .notes li + li { margin-top: 6px; }
+</style>
