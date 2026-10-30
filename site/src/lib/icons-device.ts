@@ -1,6 +1,6 @@
-// Device-row icons (Hugeicons, MIT). Kept apart from icons.ts so the directory script
-// ships only these to the browser.
-export const DEVICE_ICONS: Record<string, string> = {
+// Device icons (Hugeicons, MIT) and the SVG wrapper every icon uses. Kept apart from
+// icons.ts so the browser scripts that render device rows ship only these.
+export const DEVICE_ICONS = {
   "arrow-up-right": "<path d=\"M16.5 7.5L6 18\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"/><path d=\"M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/>",
   "dish-washer": "<path d=\"M14.5 2.5H9.5C6.20017 2.5 4.55025 2.5 3.52513 3.52513C2.5 4.55025 2.5 6.20017 2.5 9.5V14.5C2.5 17.7998 2.5 19.4497 3.52513 20.4749C4.55025 21.5 6.20017 21.5 9.5 21.5H14.5C17.7998 21.5 19.4497 21.5 20.4749 20.4749C21.5 19.4497 21.5 17.7998 21.5 14.5V9.5C21.5 6.20017 21.5 4.55025 20.4749 3.52513C19.4497 2.5 17.7998 2.5 14.5 2.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M2.5 8.5H21.5\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M6 5.5H10\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M14.5 18.5C16.433 18.5 18 16.933 18 15C18 13.067 16.433 11.5 14.5 11.5C12.567 11.5 11 13.067 11 15C11 16.933 12.567 18.5 14.5 18.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M12 12.5505C11.3647 11.9022 10.4793 11.5 9.5 11.5C7.567 11.5 6 13.067 6 15C6 16.933 7.567 18.5 9.5 18.5C10.4793 18.5 11.3647 18.0978 12 17.4495\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M18.125 5.5H18M18.25 5.5C18.25 5.63807 18.1381 5.75 18 5.75C17.8619 5.75 17.75 5.63807 17.75 5.5C17.75 5.36193 17.8619 5.25 18 5.25C18.1381 5.25 18.25 5.36193 18.25 5.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/>",
   "phone": "<path d=\"M13.5 2H10.5C8.14298 2 6.96447 2 6.23223 2.73223C5.5 3.46447 5.5 4.64298 5.5 7V17C5.5 19.357 5.5 20.5355 6.23223 21.2678C6.96447 22 8.14298 22 10.5 22H13.5C15.857 22 17.0355 22 17.7678 21.2678C18.5 20.5355 18.5 19.357 18.5 17V7C18.5 4.64298 18.5 3.46447 17.7678 2.73223C17.0355 2 15.857 2 13.5 2Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M12.125 19H12M12.25 19C12.25 19.1381 12.1381 19.25 12 19.25C11.8619 19.25 11.75 19.1381 11.75 19C11.75 18.8619 11.8619 18.75 12 18.75C12.1381 18.75 12.25 18.8619 12.25 19Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/>",
@@ -16,4 +16,33 @@ export const DEVICE_ICONS: Record<string, string> = {
   "washing-machine": "<path d=\"M3 14V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M17 13C17 15.7614 14.7614 18 12 18C9.23858 18 7 15.7614 7 13C7 10.2386 9.23858 8 12 8C14.7614 8 17 10.2386 17 13Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M7 13C8.66667 11.6667 10.3333 11.6667 12 13C13.6667 14.3333 15.3333 14.3333 17 13\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M7.125 6H7M7.25 6C7.25 6.13807 7.13807 6.25 7 6.25C6.86193 6.25 6.75 6.13807 6.75 6C6.75 5.86193 6.86193 5.75 7 5.75C7.13807 5.75 7.25 5.86193 7.25 6Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/>",
   "humidity": "<path d=\"M3.5 13.678C3.5 9.49387 7.08079 5.35907 9.59413 2.97222C10.9591 1.67593 13.0409 1.67593 14.4059 2.97222C16.9192 5.35907 20.5 9.49387 20.5 13.678C20.5 17.7804 17.2812 22 12 22C6.71878 22 3.5 17.7804 3.5 13.678Z\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M4 12.284C5.46463 11.8303 8.39159 11.6836 11.9842 13.7016C15.57 15.7157 18.516 14.9984 20 14.1354\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/>",
   "camera": "<path d=\"M12.6974 3.5H11.303C10.5884 3.5 10.2311 3.5 9.91067 3.612C9.71499 3.68039 9.53113 3.77879 9.36568 3.90367C9.09474 4.10816 8.89655 4.40544 8.50018 5L8.50017 5.00001C8.29717 5.30453 7.99794 5.75337 7.87867 5.87871C7.58314 6.18927 7.19563 6.39666 6.77329 6.47029C6.60284 6.5 6.41985 6.5 6.05387 6.5C5.07379 6.5 4.58376 6.5 4.18307 6.61342C3.18074 6.89716 2.39734 7.68055 2.1136 8.68289C2.00018 9.08357 2.00018 9.57361 2.00018 10.5537V14.5C2.00018 17.3284 2.00018 18.7426 2.87886 19.6213C3.75754 20.5 5.17176 20.5 8.00018 20.5H16.0002C18.8286 20.5 20.2428 20.5 21.1215 19.6213C22.0002 18.7426 22.0002 17.3284 22.0002 14.5V10.5537C22.0002 9.57361 22.0002 9.08357 21.8868 8.68289C21.603 7.68055 20.8196 6.89716 19.8173 6.61342C19.4166 6.5 18.9266 6.5 17.9465 6.5C17.5805 6.5 17.3975 6.5 17.2271 6.47029C16.8047 6.39666 16.4172 6.18927 16.1217 5.87871C16.0024 5.75336 15.7032 5.30451 15.5002 5C15.1038 4.40544 14.9056 4.10816 14.6347 3.90367C14.4692 3.77879 14.2854 3.68039 14.0897 3.612C13.7693 3.5 13.412 3.5 12.6974 3.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M16.0002 13C16.0002 15.2091 14.2093 17 12.0002 17C9.79104 17 8.00018 15.2091 8.00018 13C8.00018 10.7909 9.79104 9 12.0002 9C14.2093 9 16.0002 10.7909 16.0002 13Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"1.5\"/><path d=\"M19.1252 9.5H19.0002M19.2502 9.5C19.2502 9.63807 19.1383 9.75 19.0002 9.75C18.8621 9.75 18.7502 9.63807 18.7502 9.5C18.7502 9.36193 18.8621 9.25 19.0002 9.25C19.1383 9.25 19.2502 9.36193 19.2502 9.5Z\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-width=\"1.5\"/>",
+} as const satisfies Record<string, string>;
+
+export type DeviceIconName = keyof typeof DEVICE_ICONS;
+
+const CATEGORY_ICON: Record<string, DeviceIconName> = {
+  appliance: "dish-washer",
+  phone: "phone",
+  laptop: "laptop",
+  peripheral: "keyboard",
+  light: "bulb",
+  "smart-plug": "plug",
+  drone: "drone",
+  router: "router",
+  camera: "camera",
 };
+const MODEL_ICON: [RegExp, DeviceIconName][] = [
+  [/air cond/i, "air-vent"],
+  [/dryer|washer|washing/i, "washing-machine"],
+  [/dehumid/i, "humidity"],
+  [/home connect|wi-?fi/i, "wifi"],
+];
+
+/** Icon for a device: a model hint first, then its category. */
+export function deviceIcon(category: string, model = ""): DeviceIconName {
+  return MODEL_ICON.find(([re]) => re.test(model))?.[1] ?? CATEGORY_ICON[category] ?? "cpu";
+}
+
+/** An icon's inner SVG markup wrapped in the shared 24×24 <svg>. */
+export const svgIcon = (body: string, size = 20, cls = "") =>
+  `<svg class="icon${cls ? ` ${cls}` : ""}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" aria-hidden="true">${body}</svg>`;

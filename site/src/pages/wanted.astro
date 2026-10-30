@@ -3,10 +3,12 @@ import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
 import WantedItem from "../components/WantedItem.astro";
 import { openWanted } from "../lib/wanted.ts";
+import { db } from "../lib/data.ts";
 import { wantedIssueUrl } from "@opendevicedb/core";
 
 const list = await openWanted();
 const people = list.reduce((n, w) => n + w.votes, 0);
+const status = new Map(db().index.map((e) => [e.id, e.status]));
 ---
 <Base title="Wanted devices" description="Devices people want reverse engineered or supported, ranked by interest. Add a 👍 to the request to count yourself in.">
   <div class="wanted-page">
@@ -28,7 +30,13 @@ const people = list.reduce((n, w) => n + w.votes, 0);
       <p class="empty">No open request yet. Looking for a device that is not in the directory? <a href={wantedIssueUrl({})}>Request it</a>.</p>
     ) : (
       <div class="cards">
-        {list.map((w) => <WantedItem w={w} />)}
+        {list.map((w) => (
+          <WantedItem w={w} status={status.get(w.id)}>
+            {" · "}<span class="mono">{w.id}</span>
+            {w.issues.length > 1 && <> · {w.issues.length} requests</>}
+            {" · "}<a class="above" href={w.url}>request #{w.issues[0]}</a>
+          </WantedItem>
+        ))}
       </div>
     )}
 

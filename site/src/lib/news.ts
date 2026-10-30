@@ -9,4 +9,6 @@ export async function posts(): Promise<Post[]> {
 }
 
 export const postUrl = (p: Post) => `/news/${p.id}/`;
-export const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
+
+/** Rough reading time for the "N min read" hint (220 words per minute). */
+export const readingMinutes = (p: Post) => Math.max(1, Math.round((p.body ?? "").split(/\s+/).length / 220));

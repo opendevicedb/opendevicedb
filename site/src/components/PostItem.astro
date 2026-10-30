@@ -1,10 +1,9 @@
 ---
-import { postUrl, fmtDate, type Post } from "../lib/news.ts";
+import { postUrl, readingMinutes, type Post } from "../lib/news.ts";
+import { fmtDate, fmtLongDate } from "../lib/dates.ts";
 interface Props { post: Post; heading?: "h2" | "h3" }
 const { post, heading = "h3" } = Astro.props;
 const H = heading;
-// Words per minute for the "N min read" hint.
-const minutes = Math.max(1, Math.round((post.body ?? "").split(/\s+/).length / 220));
 ---
 <article class="card link post-card">
   <div class="row">
@@ -14,6 +13,6 @@ const minutes = Math.max(1, Math.round((post.body ?? "").split(/\s+/).length / 2
   <H><a class="stretched" href={postUrl(post)}>{post.data.title}</a></H>
   <p>{post.data.summary}</p>
   <div class="post-meta">
-    <time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time> · {minutes} min read
+    <time datetime={fmtDate(post.data.date)}>{fmtLongDate(post.data.date)}</time> · {readingMinutes(post)} min read
   </div>
 </article>

@@ -31,7 +31,7 @@ import FeatureItem from "../components/FeatureItem.astro";
       <p class="callout warn">Device detection needs JavaScript (Chrome or Edge). The <a href="#label">label search</a> below works without it.</p>
     </noscript>
 
-    <div class="detect-ways">
+    <div class="card-grid cols-3 detect-ways">
       <div class="card link way">
         <img src="/images/usb.webp" alt="" width="64" height="64" />
         <h3>USB</h3>
@@ -94,8 +94,7 @@ import FeatureItem from "../components/FeatureItem.astro";
 </Base>
 
 <style>
-  .detect-ways { display: grid; gap: var(--space-card-gap); margin-bottom: var(--space-section-gap); }
-  @media (min-width: 48rem) { .detect-ways { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .detect-ways { margin-bottom: var(--space-section-gap); }
   .way { display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
   .way h3 { margin: 0; font: 400 var(--text-heading-3) / 1.25 var(--font-display); letter-spacing: 0; }
   .way p { margin: 0; color: var(--color-text-secondary); font-size: var(--text-body-sm); }
@@ -113,5 +112,4 @@ import FeatureItem from "../components/FeatureItem.astro";
   :global(.detect-read) { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin: 0.4em 0; }
   :global(.detect-read .mono) { font-size: 1.05rem; font-weight: 600; color: var(--color-text-primary); }
   :global(.detect-note) { border-left: 4px solid var(--st-in-progress); padding: 8px 12px; margin: 10px 0; background: var(--color-bg-surface); border-radius: 8px; }
-  :global(.badge.inst)::before { border-radius: 2px; }
 </style>

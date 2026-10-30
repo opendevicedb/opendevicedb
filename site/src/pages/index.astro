@@ -9,10 +9,9 @@ import FeatureItem from "../components/FeatureItem.astro";
 import ExploreCard from "../components/ExploreCard.astro";
 import PostItem from "../components/PostItem.astro";
 import CtaBanner from "../components/CtaBanner.astro";
-import StatusBadge from "../components/StatusBadge.astro";
-import { counts, activeClaims, latestCurated, deviceUrl, effectiveStatus, db } from "../lib/data.ts";
+import { counts, activeClaims, latestCurated, effectiveStatus, db } from "../lib/data.ts";
 import { posts } from "../lib/news.ts";
-import { displayName } from "../lib/config.ts";
+import { fmtLongDate } from "../lib/dates.ts";
 import { openWanted } from "../lib/wanted.ts";
 
 const c = counts();
@@ -34,7 +33,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
     </picture>
     <section class="section hero">
       <div class="inner narrow">
-        <div class="hero-text">
+        <div class="hero-text stack-md">
           <p class="eyebrow">A free, community-built device database</p>
           <h1>Find open firmware, tools, and research for your devices.</h1>
           <p class="lede">
@@ -63,7 +62,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
   <!-- Intro: stacked = text, features, buttons; from 48rem text + buttons left, features right. -->
   <section class="section">
     <div class="intro">
-      <div class="intro-text">
+      <div class="intro-text stack-md">
         <h2 class="section-title">Build on what matters.</h2>
         <p class="lede">
           OpenDeviceDB brings scattered device research, open firmware, and protocols into one searchable
@@ -86,7 +85,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
   <section class="section center">
     <div class="inner">
       <h2 class="section-title">New here? Three ways to explore.</h2>
-      <div class="card-grid three">
+      <div class="card-grid cols-3">
         <ExploreCard image="/images/find-existing-work.webp" title="Find existing work" href="/devices/" cta="Browse devices">
           Search devices to discover available firmware, tools, and research before starting your own.
         </ExploreCard>
@@ -104,10 +103,9 @@ const mostWanted = (await openWanted()).slice(0, 3);
     <div class="inner">
       <h2 class="section-title">Recently updated devices</h2>
       {latest.length === 0 ? <p class="empty">No curated record yet.</p> : (
-        <div class="card-grid two">
+        <div class="card-grid cols-2">
           {latest.map((r) => (
-            <DeviceCard id={r.id} vendor={r.vendor} model={r.model} category={r.category}
-              status={effectiveStatus(r, on)} updated={r.updated} aiAssisted={r.provenance?.ai_assisted} />
+            <DeviceCard record={r} status={effectiveStatus(r, on)} />
           ))}
         </div>
       )}
@@ -133,11 +131,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
         ) : (
           <div class="cards">
             {claims.map(({ record: r, claim }) => (
-              <article class="card link claim-item">
-                <h3><a class="stretched" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a></h3>
-                <p class="meta">{claim.who} — {claim.scope} · until {claim.expires}</p>
-                <StatusBadge status={effectiveStatus(r, on)} />
-              </article>
+              <DeviceCard record={r} status={effectiveStatus(r, on)}>{claim.who} — {claim.scope} · until {fmtLongDate(claim.expires)}</DeviceCard>
             ))}
           </div>
         )}
@@ -150,14 +144,14 @@ const mostWanted = (await openWanted()).slice(0, 3);
     <div class="inner">
       <h2 class="section-title">Latest news</h2>
       {news.length === 0 ? <p class="empty">No news yet.</p> : (
-        <div class="card-grid three">{news.map((p) => <PostItem post={p} />)}</div>
+        <div class="card-grid cols-3">{news.map((p) => <PostItem post={p} />)}</div>
       )}
       <a class="btn primary" href="/news/">Read all news</a>
     </div>
   </section>
 
   <section class="section center alt">
-    <div class="inner code-width">
+    <div class="inner code">
       <div class="stack-md">
         <h2 class="section-title">For AI agents</h2>
         <p class="lede">
@@ -185,17 +179,12 @@ const mostWanted = (await openWanted()).slice(0, 3);
   }
   .hero { padding-top: 24px; }
   @media (min-width: 48rem) { .hero { padding-top: 48px; } }
-  .hero .inner { max-width: var(--max-narrow); align-items: center; text-align: center; gap: var(--space-stack-lg); }
-  .hero-text { display: flex; flex-direction: column; align-items: center; gap: 16px; }
-  .hero h1 { margin: 0; }
-  .hero .lede { margin: 0; }
+  .hero .inner { align-items: center; text-align: center; gap: var(--space-stack-lg); }
   .hero-search { width: 100%; display: flex; justify-content: center; }
 
   .stats-bar { padding: 32px var(--gutter); border-block: 1px solid var(--color-border-subtle); background: var(--color-bg-subtle); backdrop-filter: blur(12px); }
 
   .intro { max-width: var(--max); margin: 0 auto; display: grid; gap: var(--space-stack-lg) var(--space-section-gap); }
-  .intro-text { display: flex; flex-direction: column; gap: 16px; }
-  .intro-text .lede { margin: 0; }
   .intro-actions { order: 3; gap: 12px; }
   @media (min-width: 48rem) {
     .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -204,23 +193,9 @@ const mostWanted = (await openWanted()).slice(0, 3);
     .features { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
   }
 
-  .card-grid { display: grid; gap: var(--space-card-gap); width: 100%; text-align: left; }
-  @media (min-width: 48rem) {
-    .card-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .card-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  }
-
-  .two-col { gap: 56px var(--space-section-gap); }
-  .stack-lg { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
-  .stack-lg .cards { width: 100%; }
-  .stack-md { display: flex; flex-direction: column; gap: 16px; }
-  .stack-md .lede { margin: 0; }
+  .two-col > .stack-lg { align-items: flex-start; }
+  .two-col .cards { width: 100%; }
   .sub-title { margin: 0; font: 400 var(--text-heading-2) / 1.2 var(--font-display); }
-  .claim-item { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-  .claim-item h3 { margin: 0; }
-  .claim-item h3 a { color: var(--color-text-primary); text-decoration: none; }
-  .claim-item .meta { margin: 0; font-size: var(--text-body-sm); color: var(--color-text-secondary); }
 
-  .code-width { max-width: var(--max-code) !important; }
-  .code-width :global(.code-block) { width: 100%; margin: 0; text-align: left; }
+  .inner.code :global(.code-block) { width: 100%; margin: 0; text-align: left; }
 </style>

@@ -3,18 +3,12 @@
 // one page of results at a time — never the whole index in the DOM. Open device requests
 // (/api/wanted.json) are searched along with the devices and badged "👍 N want it".
 import { search, wantedToIndexEntry, wantedIssueUrl, type IndexEntry, type WantedEntry } from "@opendevicedb/core/browser";
-import { STATUS_LABEL, displayName } from "../lib/config.ts";
-import { rowIcon, rowArrow } from "../lib/device-icons.ts";
+import { deviceBadges, deviceRowHtml, esc } from "../lib/device-row.ts";
 
 const PAGE = 50;
 const root = document.getElementById("directory")!;
 const form = root.querySelector<HTMLFormElement>("form")!;
 const qEl = form.querySelector<HTMLInputElement>("#q")!;
-const catEl = form.querySelector<HTMLSelectElement>("#category")!;
-const stEl = form.querySelector<HTMLSelectElement>("#status")!;
-const srcEl = form.querySelector<HTMLSelectElement>("#source")!;
-const instEl = form.querySelector<HTMLSelectElement>("#install")!;
-const cloudEl = form.querySelector<HTMLSelectElement>("#cloud")!;
 const list = root.querySelector<HTMLElement>("#results")!;
 const count = root.querySelector<HTMLElement>("#count")!;
 const pager = root.querySelector<HTMLElement>("#pager")!;
@@ -27,17 +21,18 @@ const resetBtn = root.querySelector<HTMLButtonElement>("#reset-filters")!;
 // Filters: desktop applies a change at once; on mobile (panel behind a toggle) changes are
 // staged until "Apply filters". `applied` is what the results use; the selects may be ahead.
 const desktop = window.matchMedia("(min-width: 48rem)");
-const selects = { category: catEl, status: stEl, source: srcEl, install: instEl, cloud: cloudEl };
+const select = (id: string) => form.querySelector<HTMLSelectElement>(`#${id}`)!;
+const selects = { category: select("category"), status: select("status"), source: select("source"), install: select("install"), cloud: select("cloud") };
 type FilterKey = keyof typeof selects;
 const applied: Record<FilterKey, string> = { category: "", status: "", source: "", install: "", cloud: "" };
-const snapshot = () => {
-  for (const k of Object.keys(selects) as FilterKey[]) applied[k] = selects[k].value;
+const KEYS = Object.keys(selects) as FilterKey[];
+const staged = () => KEYS.some((k) => selects[k].value !== applied[k]);
+function applyStaged() {
+  for (const k of KEYS) applied[k] = selects[k].value;
   markEdited();
-};
+}
 function markEdited() {
-  for (const [k, el] of Object.entries(selects) as [FilterKey, HTMLSelectElement][]) {
-    el.closest("div")!.classList.toggle("edited", el.value !== applied[k]);
-  }
+  for (const k of KEYS) selects[k].closest(".field")!.classList.toggle("edited", selects[k].value !== applied[k]);
 }
 
 let index: IndexEntry[] | null = null;
@@ -69,28 +64,29 @@ function load(): Promise<IndexEntry[]> {
   return loading;
 }
 
-const INSTALL_LABEL: Record<string, string> = { easy: "Easy install", medium: "Install: medium", hard: "Install: hard" };
-
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
-
 const wantedBadge = (w: WantedEntry) =>
   `<a class="badge wanted" href="${esc(w.url)}" title="Add a 👍 on the request to count yourself in">👍 ${w.votes} want${w.votes === 1 ? "s" : ""} it</a>`;
 
+// Statuses at which a device counts as usable: its request no longer gets a 👍 badge.
+const USABLE = new Set(["partial-protocol", "controllable", "open-firmware"]);
+
 function row(e: IndexEntry): string {
   const w = wantedById.get(e.id);
-  if (e.sources.includes("wanted") && w) {
-    return `<li><div class="dev-row"><span class="title">${rowIcon(w.category ?? "", e.model)}<a class="name" href="${esc(w.url)}">${esc(displayName(e.vendor, e.model))}</a></span>` +
-      `<span class="row"><span class="badge neutral">Requested, not in the directory yet</span>${wantedBadge(w)}${rowArrow}</span>` +
-      `<span class="meta">${esc(w.category ?? "uncategorised")} · <span class="mono">${esc(e.id)}</span> · requested ${esc(w.opened)}</span></div></li>`;
-  }
-  const href = `/devices/${e.id}/`;
-  const src = e.sources.length ? ` · from ${esc(e.sources.map((s) => sourceNames[s] ?? s).join(", "))}` : "";
-  const claims = e.claims ? ` · ${e.claims} live claim${e.claims > 1 ? "s" : ""}` : "";
-  const verified = e.verified ? `<span class="badge verified">Verified</span>` : "";
-  const install = e.install ? `<span class="badge inst-${e.install}" title="Easiest known install route: ${e.install}">${INSTALL_LABEL[e.install]}</span>` : "";
-  return `<li><div class="dev-row"><span class="title">${rowIcon(e.category, e.model)}<a class="name" href="${href}">${esc(displayName(e.vendor, e.model))}</a></span>` +
-    `<span class="row"><span class="badge s-${e.status}">${STATUS_LABEL[e.status] ?? e.status}</span>${verified}${install}${w && e.status !== "partial-protocol" && e.status !== "controllable" && e.status !== "open-firmware" ? wantedBadge(w) : ""}${rowArrow}</span>` +
-    `<span class="meta">${esc(e.category)} · <span class="mono">${esc(e.id)}</span>${src}${claims}</span></div></li>`;
+  const html = e.sources.includes("wanted") && w
+    ? deviceRowHtml(e, {
+        href: w.url,
+        category: w.category ?? "uncategorised",
+        badges: `<span class="badge neutral">Requested, not in the directory yet</span>${wantedBadge(w)}`,
+        meta: [`requested ${w.opened}`],
+      })
+    : deviceRowHtml(e, {
+        badges: deviceBadges(e) + (w && !USABLE.has(e.status) ? wantedBadge(w) : ""),
+        meta: [
+          e.sources.length > 0 && `from ${e.sources.map((s) => sourceNames[s] ?? s).join(", ")}`,
+          e.claims > 0 && `${e.claims} live claim${e.claims > 1 ? "s" : ""}`,
+        ],
+      });
+  return `<li>${html}</li>`;
 }
 
 /** Pre-filled request for what was typed: "vendor model…", or a USB vid:pid as identifier. */
@@ -105,7 +101,7 @@ function requestUrl(): string {
 function syncUrl() {
   const p = new URLSearchParams();
   if (qEl.value.trim()) p.set("q", qEl.value.trim());
-  for (const k of Object.keys(applied) as FilterKey[]) if (applied[k]) p.set(k, applied[k]);
+  for (const k of KEYS) if (applied[k]) p.set(k, applied[k]);
   if (page > 1) p.set("page", String(page));
   const qs = p.toString();
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
@@ -148,11 +144,8 @@ function render() {
 
 /** Active-filter chips (mobile), the count on the Filters button, and Reset. */
 function renderChips() {
-  const active = (Object.keys(applied) as FilterKey[]).filter((k) => applied[k]);
-  const label = (k: FilterKey) => {
-    const opt = [...selects[k].options].find((o) => o.value === applied[k]);
-    return (opt?.textContent ?? applied[k]).replace(/\s*\([\d,]+\)$/, "");
-  };
+  const active = KEYS.filter((k) => applied[k]);
+  const label = (k: FilterKey) => [...selects[k].options].find((o) => o.value === applied[k])?.dataset.label ?? applied[k];
   chips.innerHTML = active.map((k) =>
     `<button type="button" class="filter-chip" data-clear="${k}" aria-label="Remove filter: ${esc(label(k))}">${esc(label(k))} <span aria-hidden="true">✕</span></button>`,
   ).join("") + (active.length > 1 ? `<button type="button" class="filter-chip clear" data-clear="*">Clear all</button>` : "");
@@ -163,7 +156,7 @@ function renderChips() {
 
 function clearFilters(keys: FilterKey[]) {
   for (const k of keys) selects[k].value = "";
-  snapshot();
+  applyStaged();
   update();
 }
 
@@ -174,23 +167,23 @@ function update(resetPage = true) {
   timer = window.setTimeout(() => load().then(render, () => {}), index ? 80 : 0);
 }
 
-form.addEventListener("submit", (ev) => { ev.preventDefault(); snapshot(); update(); });
+form.addEventListener("submit", (ev) => { ev.preventDefault(); applyStaged(); update(); });
 qEl.addEventListener("input", () => update());
 for (const el of Object.values(selects)) {
   el.addEventListener("change", () => {
-    if (desktop.matches) { snapshot(); update(); } else markEdited();
+    if (desktop.matches) { applyStaged(); update(); } else markEdited();
   });
 }
 chips.addEventListener("click", (ev) => {
   const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-clear]");
   if (!b) return;
   const k = b.dataset.clear!;
-  clearFilters(k === "*" ? (Object.keys(selects) as FilterKey[]) : [k as FilterKey]);
+  clearFilters(k === "*" ? KEYS : [k as FilterKey]);
 });
-resetBtn.addEventListener("click", () => clearFilters(Object.keys(selects) as FilterKey[]));
+resetBtn.addEventListener("click", () => clearFilters(KEYS));
 // Rotating a tablet to desktop width hides the Apply button: apply anything still staged.
 desktop.addEventListener("change", (ev) => {
-  if (ev.matches && (Object.keys(selects) as FilterKey[]).some((k) => selects[k].value !== applied[k])) { snapshot(); update(); }
+  if (ev.matches && staged()) { applyStaged(); update(); }
 });
 qEl.addEventListener("focus", () => { load().catch(() => {}); }, { once: true });
 pager.addEventListener("click", (ev) => {
@@ -204,8 +197,9 @@ pager.addEventListener("click", (ev) => {
 // Restore state from the URL (links from the home page, category links on device pages).
 const params = new URLSearchParams(location.search);
 const setIf = (el: HTMLInputElement | HTMLSelectElement, k: string) => { const v = params.get(k); if (v !== null) el.value = v; };
-setIf(qEl, "q"); setIf(catEl, "category"); setIf(stEl, "status"); setIf(srcEl, "source"); setIf(instEl, "install"); setIf(cloudEl, "cloud");
-snapshot();
+setIf(qEl, "q");
+for (const k of KEYS) setIf(selects[k], k);
+applyStaged();
 renderChips(); // chips depend only on the URL, so show them before the index loads
 page = Math.max(1, Number(params.get("page")) || 1);
 if ([...params.keys()].length) update(false);

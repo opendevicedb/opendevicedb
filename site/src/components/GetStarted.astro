@@ -98,7 +98,7 @@ const cards = routes.map((route) => {
   .routes { display: grid; gap: var(--space-card-gap); }
   /* Each route is a featured card: brand border + corner glow (the design's install card). */
   .route { display: flex; flex-direction: column; gap: 10px; min-width: 0; border-color: var(--color-border-brand);
-    background: radial-gradient(60% 60% at 105% 110%, rgb(226 227 0 / 0.6), transparent 70%), var(--color-bg-surface); }
+    background: radial-gradient(60% 60% at 105% 110%, var(--yellow-a60), transparent 70%), var(--color-bg-surface); }
   .route.danger { border-color: var(--bad); background: var(--color-bg-surface); }
   .route p { margin: 0; }
   .route-head { display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }

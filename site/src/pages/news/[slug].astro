@@ -3,7 +3,8 @@ import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Icon from "../../components/Icon.astro";
 import PostItem from "../../components/PostItem.astro";
-import { posts, fmtDate, type Post } from "../../lib/news.ts";
+import { posts, type Post } from "../../lib/news.ts";
+import { fmtDate, fmtLongDate } from "../../lib/dates.ts";
 import { REPO_URL } from "../../lib/config.ts";
 
 export async function getStaticPaths() {
@@ -22,7 +23,7 @@ const more = (await posts()).filter((p) => p.id !== post.id).slice(0, 2);
         {post.data.tags.map((t) => <span class:list={["tag", `t-${t}`]}>{t}</span>)}
       </div>
       <h1>{post.data.title}</h1>
-      <div class="post-meta"><time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time></div>
+      <div class="post-meta"><time datetime={fmtDate(post.data.date)}>{fmtLongDate(post.data.date)}</time></div>
     </header>
     <p class="lede summary">{post.data.summary}</p>
     <Content />
@@ -35,7 +36,7 @@ const more = (await posts()).filter((p) => p.id !== post.id).slice(0, 2);
   {more.length > 0 && (
     <section class="more-news">
       <h2 class="section-title">More news</h2>
-      <div class="more-grid">{more.map((p) => <PostItem post={p} />)}</div>
+      <div class="card-grid cols-2">{more.map((p) => <PostItem post={p} />)}</div>
     </section>
   )}
 </Base>
@@ -48,6 +49,4 @@ const more = (await posts()).filter((p) => p.id !== post.id).slice(0, 2);
   .post-head .row { justify-content: center; }
   .summary { color: var(--color-text-primary); }
   .more-news { max-width: var(--max); margin: var(--space-section-y) auto 0; display: flex; flex-direction: column; align-items: center; gap: var(--space-section-gap); }
-  .more-grid { width: 100%; display: grid; gap: var(--space-card-gap); }
-  @media (min-width: 48rem) { .more-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 </style>

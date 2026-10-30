@@ -5,8 +5,7 @@ import {
   usbId, matchUsb, matchBleName, bleSearchQuery, search, wantedIssueUrl,
   type IndexEntry, type UsbDetection, type BleMatch,
 } from "@opendevicedb/core/browser";
-import { STATUS_LABEL, displayName } from "../lib/config.ts";
-import { rowIcon, rowArrow } from "../lib/device-icons.ts";
+import { deviceRowHtml, esc } from "../lib/device-row.ts";
 
 const nav = navigator as any;
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -46,23 +45,10 @@ function loadIndex(): Promise<IndexEntry[]> {
 
 // ---------- rendering ----------
 
-const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
-const INSTALL_HELP: Record<string, string> = {
-  easy: "no tools, the device stays closed",
-  medium: "needs a cable or the command line",
-  hard: "opening the device, soldering or a programmer",
-};
 const plural = (n: number, w: string) => `${n} ${w}${n === 1 ? "" : "s"}`;
 const searchLink = (q: string, label = q) => `<a href="/devices/?q=${encodeURIComponent(q)}">${esc(label)}</a>`;
 
-function row(e: IndexEntry, why?: string): string {
-  const install = e.install
-    ? `<span class="badge inst inst-${e.install}" title="Easiest install route: ${esc(INSTALL_HELP[e.install] ?? e.install)}">Install: ${esc(e.install)}</span>` : "";
-  const verified = e.verified ? `<span class="badge verified">Verified</span>` : "";
-  return `<li><div class="dev-row"><span class="title">${rowIcon(e.category, e.model)}<a class="name" href="/devices/${e.id}/">${esc(displayName(e.vendor, e.model))}</a></span>` +
-    `<span class="row"><span class="badge s-${e.status}">${esc(STATUS_LABEL[e.status] ?? e.status)}</span>${verified}${install}${rowArrow}</span>` +
-    `<span class="meta">${esc(e.category)} · <span class="mono">${esc(e.id)}</span>${why ? ` · ${esc(why)}` : ""}</span></div></li>`;
-}
+const row = (e: IndexEntry, why?: string) => `<li>${deviceRowHtml(e, { meta: [why] })}</li>`;
 
 function show(o: { title: string; read?: string; notes?: string[]; rows?: string[]; next?: string }) {
   out.hidden = false;
