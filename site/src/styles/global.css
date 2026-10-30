@@ -72,7 +72,7 @@
   --purple-1000: #1c0936;
   --violet-300: #e2a4fd;
   --violet-500: #a03ff4;
-  --violet-a70: var(--violet-a70);
+  --violet-a70: rgb(160 63 244 / 0.7);
   --green-300: #86efac;
   --cyan-300: #73eaff;
   --mint-300: #81ffd5;
@@ -400,10 +400,13 @@ a.badge.wanted:hover { background: var(--color-bg-brand-hover); }
 /* ========== 7. Cards and blocks ========== */
 .card { background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-card); padding: var(--space-card-padding); }
 .card.glow { border-color: var(--color-border-brand); background: var(--glow-corner), var(--color-bg-surface); }
-/* Clickable cards: brand border + corner glow fade in on hover / keyboard focus. */
-.card.link { position: relative; isolation: isolate; overflow: hidden; transition: border-color 0.2s; }
-.card.link::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity 0.2s; background: var(--glow-corner); }
-.card.link:hover, .card.link:focus-within { border-color: var(--color-border-brand); }
+/* Clickable cards: brand border, corner glow, soft shadow and a sheen at the pointer fade in on
+   hover / keyboard focus. With a mouse, scripts/tilt.ts adds .tilt and sets --rx/--ry (tilt)
+   and --mx/--my (sheen position); leaving the card eases it back flat. */
+.card.link { position: relative; isolation: isolate; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.card.link::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; transition: opacity 0.2s; background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 0%), var(--white-a9), transparent 70%), var(--glow-corner); }
+.card.link.tilt { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s ease-out; }
+.card.link:hover, .card.link:focus-within { border-color: var(--color-border-brand); box-shadow: 0 24px 48px -24px var(--violet-a70); }
 .card.link:hover::before, .card.link:focus-within::before { opacity: 1; }
 /* .stretched: its ::after covers the card so the whole card is the link; .above sits over it. */
 .card .stretched::after { content: ""; position: absolute; inset: 0; }
