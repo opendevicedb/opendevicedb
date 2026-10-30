@@ -33,21 +33,21 @@ import FeatureItem from "../components/FeatureItem.astro";
 
     <div class="card-grid cols-3 detect-ways">
       <div class="card link way">
-        <img src="/images/usb.webp" alt="" width="64" height="64" />
+        <img src="/images/usb-64.webp" srcset="/images/usb-64.webp 1x, /images/usb.webp 2x" alt="" width="64" height="64" />
         <h3>USB</h3>
         <p>Phones in fastboot or ADB mode, cameras, RGB peripherals, printer and maker boards.</p>
         <button class="btn" type="button" data-detect="usb" disabled>Connect a USB device</button>
         <p class="note">The browser lists the plugged devices; pick one. It only reads its id, nothing is opened or written.</p>
       </div>
       <div class="card link way">
-        <img src="/images/bluetooth.webp" alt="" width="64" height="64" />
+        <img src="/images/bluetooth-64.webp" srcset="/images/bluetooth-64.webp 1x, /images/bluetooth.webp 2x" alt="" width="64" height="64" />
         <h3>Bluetooth</h3>
         <p>Watches, bands, earbuds, lights and sensors that advertise a name.</p>
         <button class="btn" type="button" data-detect="bluetooth" disabled>Find a Bluetooth device</button>
         <p class="note">Wake the device or put it in pairing mode so it shows up. Nothing is paired.</p>
       </div>
       <div class="card link way">
-        <img src="/images/serial-port.webp" alt="" width="64" height="64" />
+        <img src="/images/serial-port-64.webp" srcset="/images/serial-port-64.webp 1x, /images/serial-port.webp 2x" alt="" width="64" height="64" />
         <h3>Serial port</h3>
         <p>A board or device wired through a USB-serial (UART) adapter.</p>
         <button class="btn" type="button" data-detect="serial" disabled>Pick a serial port</button>

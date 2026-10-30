@@ -29,7 +29,6 @@ for (const pre of document.querySelectorAll<HTMLPreElement>("main pre")) {
     pre.toggleAttribute("data-fade-start", pre.scrollLeft > 1);
     pre.toggleAttribute("data-fade-end", pre.scrollLeft < max - 1);
   };
-  update();
   pre.addEventListener("scroll", update, { passive: true });
-  new ResizeObserver(update).observe(pre);
+  new ResizeObserver(update).observe(pre); // also runs once after layout, so no forced reflow here
 }

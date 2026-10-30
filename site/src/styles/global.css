@@ -19,11 +19,23 @@
  */
 
 /* ========== 1. Fonts ========== */
+/* Both files are subset to Latin, Latin Extended-A, punctuation, arrows and math (about 40 KB
+   each); other scripts fall back to the system font. Re-subset from the upstream Geist release
+   with pyftsubset if a page needs more. */
 @font-face {
   font-family: "Geist";
   src: url("/fonts/Geist-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
+}
+/* Arial scaled to Geist's width and line metrics, so text doesn't move when Geist swaps in. */
+@font-face {
+  font-family: "Geist Fallback";
+  src: local("Arial"), local("Liberation Sans");
+  size-adjust: 103.11%;
+  ascent-override: 97.46%;
+  descent-override: 28.61%;
+  line-gap-override: 0%;
 }
 @font-face {
   font-family: "Geist Mono";
@@ -114,7 +126,7 @@
   --radius-control: var(--radius-md);
   --radius-menu: var(--radius-lg);
 
-  --font: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font: "Geist", "Geist Fallback", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --font-display: "Technor", var(--font);
   --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 

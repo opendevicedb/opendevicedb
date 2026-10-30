@@ -23,6 +23,7 @@ const { on } = db();
 const mostWanted = (await openWanted()).slice(0, 3);
 ---
 <Base bleed>
+  <link slot="head" rel="preload" as="image" href="/images/hero.webp" media="(min-width: 48rem)" fetchpriority="high" />
   <!-- Hero + counters share the illustration: 2300px wide so the devices sit outside the
        960px content column, faded out before the next section, hidden on small screens. -->
   <div class="hero-wrap">
@@ -135,7 +136,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
             ))}
           </div>
         )}
-        <a href="/contribute/#claims">Learn more</a>
+        <a href="/contribute/#claims">How claims work</a>
       </div>
     </div>
   </section>
