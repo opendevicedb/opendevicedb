@@ -13,8 +13,7 @@ const dataRoot = () => process.env.ODB_REPO || repoRoot;
 export default defineConfig({
   site: "https://opendevicedb.org",
   trailingSlash: "ignore",
-  // Inline the stylesheet: one fewer render-blocking request before first paint.
-  build: { format: "directory", concurrency: 4, inlineStylesheets: "always" },
+  build: { format: "directory", concurrency: 4 },
   integrations: [deviceJson({ root: dataRoot }), sitemap({ site: "https://opendevicedb.org" })],
   vite: {
     define: { __ODB_ROOT__: JSON.stringify(repoRoot) },
