@@ -7,7 +7,7 @@ import { DEVICE_ICONS, deviceIcon, svgIcon } from "./icons-device.ts";
 export const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
 const INSTALL_LABEL: Record<string, string> = { easy: "Easy install", medium: "Install: medium", hard: "Install: hard" };
-export const INSTALL_HELP: Record<string, string> = {
+const INSTALL_HELP: Record<string, string> = {
   easy: "no tools, the device stays closed",
   medium: "needs a cable or the command line",
   hard: "opening the device, soldering or a programmer",
