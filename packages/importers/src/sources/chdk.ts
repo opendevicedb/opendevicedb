@@ -56,11 +56,21 @@ export const chdkInstall = (firmwares: string[], trunkOnly: boolean): InstallRou
   notes: `${trunkOnly ? "Development builds only so far. " : ""}Load it once with Firmware Update from the camera's menu, or make the card bootable to load it at every start. Nothing is written to the camera; without the card it starts as before.`,
 });
 
+/** Where the build server's name is ambiguous, by platform: "Digital IXUS300" is the 2010 IXUS 300 HS. */
+export const MODEL_BY_PLATFORM: Record<string, string> = { ixus300_sd4000: "Digital IXUS 300 HS" };
+
 export function fromBuilds(builds: ChdkBuild[], known = knownCameras(), date = today()): DeviceRecord[] {
+  builds = builds.map((b) => (MODEL_BY_PLATFORM[b.platform] ? { ...b, model: MODEL_BY_PLATFORM[b.platform] } : b));
+  // One platform sold under several names (IXUS in Europe, PowerShot SD/ELPH in America): a record
+  // per name, like libgphoto2, each naming the others as aliases.
+  const namesOf = new Map<string, Set<string>>();
+  for (const b of builds) namesOf.set(b.platform, (namesOf.get(b.platform) ?? new Set()).add(b.model));
   const byModel = new Map<string, ChdkBuild[]>();
   for (const b of builds) byModel.set(b.model, [...(byModel.get(b.model) ?? []), b]);
   return [...byModel].map(([name, list]) => {
-    const { model, aliases } = splitNames(name);
+    const split = splitNames(name);
+    const model = split.model;
+    const aliases = [...split.aliases, ...list.flatMap((b) => [...namesOf.get(b.platform)!]).filter((n) => n !== name)];
     const who = cameraIdentity("Canon", model, known);
     const stable = list.filter((b) => !b.trunk);
     const firmwares = [...new Set(list.map((b) => b.firmware))];
@@ -69,7 +79,7 @@ export function fromBuilds(builds: ChdkBuild[], known = knownCameras(), date = t
       id: who.id,
       vendor: who.vendor,
       model: who.model,
-      aliases: [...who.aliases, ...aliases],
+      aliases: [...new Set([...who.aliases, ...aliases])],
       category: "camera",
       status: "controllable",
       summary: `CHDK runs on it (Canon firmware ${firmwares.join(", ")}${stable.length ? "" : ", development builds"}): RAW/DNG, Lua and uBASIC scripts, manual exposure, motion detection.`,

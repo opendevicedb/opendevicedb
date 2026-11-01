@@ -53,3 +53,15 @@ test("chdk: one record per camera, merged with libgphoto2, development-only flag
   assert.match(ixus.install![0].notes!, /Development builds only/);
   for (const r of rs) assert.deepEqual(validate(r), [], r.id);
 });
+
+test("chdk: regional names of one platform alias each other; IXUS 300 is the HS", () => {
+  const rs = fromBuilds([
+    { model: "Digital IXUS100", firmware: "1.00C", platform: "ixus100_sd780", trunk: false },
+    { model: "PowerShot SD780 IS", firmware: "1.00C", platform: "ixus100_sd780", trunk: false },
+    { model: "Digital IXUS300", firmware: "1.00D", platform: "ixus300_sd4000", trunk: false },
+  ], existingCameras([]), D);
+  const by = new Map(rs.map((r) => [r.model, r]));
+  assert.deepEqual(by.get("Digital IXUS100")!.aliases, ["PowerShot SD780 IS"]);
+  assert.deepEqual(by.get("PowerShot SD780 IS")!.aliases, ["Digital IXUS100"]);
+  assert.ok(by.has("Digital IXUS 300 HS"));
+});
