@@ -9,9 +9,6 @@ on:
         description: "Importer to run (npm run import -- <source>), or all"
         required: true
         default: chdk
-  push:
-    branches: [claude/opendevicedb-purpose-6pvq7w]
-    paths: [packages/importers/src/sources/chdk.ts, packages/importers/src/camera-ids.ts]
 permissions:
   contents: write
 concurrency:
