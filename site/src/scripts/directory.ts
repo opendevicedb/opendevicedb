@@ -49,17 +49,19 @@ function load(): Promise<IndexEntry[]> {
   return loading;
 }
 
-const INSTALL_LABEL: Record<string, string> = { easy: "Easy install", medium: "Install: medium", hard: "Install: hard" };
+const INSTALL_LABEL: Record<string, string> = { easy: "Install: easy", medium: "Install: medium", hard: "Install: hard" };
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
 const wantedBadge = (w: WantedEntry) =>
   `<a class="badge wanted" href="${esc(w.url)}" title="Add a 👍 on the request to count yourself in">👍 ${w.votes} want${w.votes === 1 ? "s" : ""} it</a>`;
 
+const icon = (name: string, size = 24) => `<img class="icon" src="/design/${name}.svg" width="${size}" height="${size}" alt="" aria-hidden="true" loading="lazy">`;
+
 function row(e: IndexEntry): string {
   const w = wantedById.get(e.id);
   if (e.sources.includes("wanted") && w) {
-    return `<li><div class="dev-row"><a class="name" href="${esc(w.url)}">${esc(displayName(e.vendor, e.model))}</a>` +
+    return `<li><div class="dev-row"><a class="name" href="${esc(w.url)}">${icon("catalogue-DishWasher")}${esc(displayName(e.vendor, e.model))}</a>` +
       `<span class="row"><span class="badge neutral">Requested, not in the directory yet</span>${wantedBadge(w)}</span>` +
       `<span class="meta">${esc(w.category ?? "uncategorised")} · <span class="mono">${esc(e.id)}</span> · requested ${esc(w.opened)}</span></div></li>`;
   }
@@ -68,8 +70,8 @@ function row(e: IndexEntry): string {
   const claims = e.claims ? ` · ${e.claims} live claim${e.claims > 1 ? "s" : ""}` : "";
   const verified = e.verified ? `<span class="badge verified">Verified</span>` : "";
   const install = e.install ? `<span class="badge inst-${e.install}" title="Easiest known install route: ${e.install}">${INSTALL_LABEL[e.install]}</span>` : "";
-  return `<li><div class="dev-row"><a class="name" href="${href}">${esc(displayName(e.vendor, e.model))}</a>` +
-    `<span class="row"><span class="badge s-${e.status}">${STATUS_LABEL[e.status] ?? e.status}</span>${verified}${install}${w && e.status !== "partial-protocol" && e.status !== "controllable" && e.status !== "open-firmware" ? wantedBadge(w) : ""}</span>` +
+  return `<li><div class="dev-row"><a class="name" href="${href}">${icon("catalogue-DishWasher")}${esc(displayName(e.vendor, e.model))}</a>` +
+    `<span class="row"><span class="badge s-${e.status}">${STATUS_LABEL[e.status] ?? e.status}</span>${verified}${install}${w && e.status !== "partial-protocol" && e.status !== "controllable" && e.status !== "open-firmware" ? wantedBadge(w) : ""}<a class="result-arrow" href="${href}" aria-label="View ${esc(displayName(e.vendor, e.model))}">${icon("catalogue-ArrowUpRight03")}</a></span>` +
     `<span class="meta">${esc(e.category)} · <span class="mono">${esc(e.id)}</span>${src}${claims}</span></div></li>`;
 }
 
@@ -122,9 +124,9 @@ function render() {
     ? `${devices.toLocaleString("en")} devices${requestsOnly ? ` and ${requestsOnly} request${requestsOnly === 1 ? "" : "s"}` : ""}`
     : `${n} result${hits.length === 1 ? "" : "s"} (${devices.toLocaleString("en")} devices searched)`;
   pager.innerHTML = pages > 1
-    ? `<button class="btn" data-go="${page - 1}" ${page === 1 ? "disabled" : ""}>← Previous</button>` +
+    ? `<button class="btn" data-go="${page - 1}" ${page === 1 ? "disabled" : ""}>${icon("catalogue-ChevronLeft", 16)}Previous</button>` +
       `<span class="muted">Page ${page} of ${pages.toLocaleString("en")}</span>` +
-      `<button class="btn" data-go="${page + 1}" ${page === pages ? "disabled" : ""}>Next →</button>`
+      `<button class="btn" data-go="${page + 1}" ${page === pages ? "disabled" : ""}>Next${icon("catalogue-ChevronRight", 16)}</button>`
     : "";
   syncUrl();
 }

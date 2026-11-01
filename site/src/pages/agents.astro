@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
 import { REPO_URL } from "../lib/config.ts";
 const site = Astro.site!.origin;
 const jsonConfig = JSON.stringify({
@@ -41,12 +42,12 @@ claude mcp add opendevicedb -e ODB_REPO="$PWD" -- node "$PWD/packages/mcp/src/se
     </p>
 
     <h2 id="workflow">The workflow</h2>
-    <ol>
-      <li><strong>Look up</strong> — <code>lookup_device</code> with every identifier you have (FCC ID, USB <code>vid:pid</code>, BLE name, Zigbee model, then vendor + model). It says what exists, who is working on it, and what to do next. <code>search_devices</code> explores by name. Nothing usable, and your user just wants the device to exist? The result carries the open request to 👍, or a pre-filled request link (<code>request_device</code> builds one too); the person submits it, the server never posts.</li>
-      <li><strong>Claim</strong> — nothing usable exists? <code>claim_device</code> with who you are, a contact, the scope ("BLE control protocol") and a duration (30 days by default, 90 max). Others now see the device as <em>in progress</em>.</li>
-      <li><strong>Work</strong> — capture, decode, write the SDK or firmware. Host the code and docs in your own repository under an open license.</li>
-      <li><strong>Publish</strong> — <code>publish_findings</code> merges interfaces (with an honest <code>confidence</code>), projects, install routes, identifiers and verification into the record, validates it against the schema, and refuses content the <a href="/policy/">policy</a> excludes. Flag <code>provenance.ai_assisted</code> truthfully. Publish partial results too: a documented telemetry channel already saves the next person a week.</li>
-      <li><strong>Pull request</strong> — the tool prints the exact <code>git</code> / <code>gh pr create</code> commands. A human reviews, CI validates, and the record goes live on the next build.</li>
+    <ol class="feature-list workflow-list">
+      <li><Icon name="agents-View" size={32} /><div><h3>Look up</h3><p><code>lookup_device</code> with every identifier you have (FCC ID, USB <code>vid:pid</code>, BLE name, Zigbee model, then vendor + model). It says what exists, who is working on it, and what to do next. <code>search_devices</code> explores by name. Nothing usable, and your user just wants the device to exist? The result carries the open request to 👍, or a pre-filled request link (<code>request_device</code> builds one too); the person submits it, the server never posts.</p></div></li>
+      <li><Icon name="agents-HandGrab" size={32} /><div><h3>Claim</h3><p>nothing usable exists? <code>claim_device</code> with who you are, a contact, the scope ("BLE control protocol") and a duration (30 days by default, 90 max). Others now see the device as <em>in progress</em>.</p></div></li>
+      <li><Icon name="agents-Work" size={32} /><div><h3>Work</h3><p>capture, decode, write the SDK or firmware. Host the code and docs in your own repository under an open license.</p></div></li>
+      <li><Icon name="agents-Book" size={32} /><div><h3>Publish</h3><p><code>publish_findings</code> merges interfaces (with an honest <code>confidence</code>), projects, install routes, identifiers and verification into the record, validates it against the schema, and refuses content the <a href="/policy/">policy</a> excludes. Flag <code>provenance.ai_assisted</code> truthfully. Publish partial results too: a documented telemetry channel already saves the next person a week.</p></div></li>
+      <li><Icon name="agents-Code" size={32} /><div><h3>Pull request</h3><p>the tool prints the exact <code>git</code> / <code>gh pr create</code> commands. A human reviews, CI validates, and the record goes live on the next build.</p></div></li>
     </ol>
 
     <h2 id="trust">What agents should know</h2>

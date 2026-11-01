@@ -2,12 +2,13 @@
 import type { DeviceRecord } from "@opendevicedb/core";
 import Base from "../../../layouts/Base.astro";
 import StatusBadge from "../../../components/StatusBadge.astro";
+import Icon from "../../../components/Icon.astro";
 import GetStarted from "../../../components/GetStarted.astro";
 import { db, effectiveStatus, liveClaims, editUrl, jsonUrl } from "../../../lib/data.ts";
 import { STATUS_HELP, NONFREE_LABEL, NONFREE_HELP, CLOUD_LABEL, CLOUD_HELP, displayName } from "../../../lib/config.ts";
 import { wantedById } from "../../../lib/wanted.ts";
 import { reportsFor } from "../../../lib/reports.ts";
-import { statusRank, wantedIssueUrl } from "@opendevicedb/core";
+import { statusRank, wantedIssueUrl, sortInstallRoutes } from "@opendevicedb/core";
 
 export function getStaticPaths() {
   return db().records.map((record) => {
@@ -19,6 +20,7 @@ export function getStaticPaths() {
 const { record: r } = Astro.props as { record: DeviceRecord };
 const { on, curatedIds, sources } = db();
 const status = effectiveStatus(r, on);
+const easiestInstall = sortInstallRoutes(r.install ?? [])[0];
 const live = liveClaims(r, on);
 const expired = (r.claims ?? []).filter((c) => !live.includes(c));
 const verified = (r.verification ?? []).filter((v) => v.method === "hardware-replay");
@@ -62,8 +64,9 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
     {r.aliases && r.aliases.length > 0 && <p class="aka">Also known as {r.aliases.join(", ")}</p>}
     <div class="row">
       <StatusBadge status={status} large />
+      {easiestInstall && <span class={`badge inst-${easiestInstall.difficulty}`}>Install: {easiestInstall.difficulty}</span>}
       {verified.length > 0 && <span class="badge lg verified">Verified on hardware</span>}
-      {r.provenance?.ai_assisted && <span class="badge lg neutral">AI-assisted</span>}
+      {r.provenance?.ai_assisted && <span class="badge lg ai-assisted">AI assisted</span>}
       {!curated && <span class="badge lg neutral">Imported</span>}
     </div>
     <p class="muted small">{STATUS_HELP[status]}</p>
@@ -166,8 +169,8 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
     </table></div>
   )}
   {freedomKnown && (
-    <details class="small legend">
-      <summary class="muted">What "still non-free" and "cloud" mean</summary>
+    <details class="small legend" open>
+      <summary class="muted"><Icon name="device-ArrowDown01" />What "still non-free" and "cloud" mean</summary>
       <p>What stays proprietary or depends on the vendor's cloud once the project is in use, from the project's own documentation.</p>
       <dl class="facts">
         {Object.entries(NONFREE_HELP).map(([k, v]) => <><dt>{NONFREE_LABEL[k]}</dt><dd>{v}</dd></>)}

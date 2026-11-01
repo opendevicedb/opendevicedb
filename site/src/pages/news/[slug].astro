@@ -1,7 +1,7 @@
 ---
 import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
-import { posts, fmtDate, type Post } from "../../lib/news.ts";
+import { posts, fmtDate, displayDate, readingMinutes, type Post } from "../../lib/news.ts";
 import { REPO_URL } from "../../lib/config.ts";
 
 export async function getStaticPaths() {
@@ -12,12 +12,12 @@ const { Content } = await render(post);
 ---
 <Base title={post.data.title} description={post.data.summary}>
   <article class="post prose">
-    <p class="crumbs" style="margin-top:26px"><a href="/news/">News</a></p>
+    <p class="crumbs"><a href="/news/">News</a></p>
     <h1>{post.data.title}</h1>
     <div class="post-meta">
-      <time datetime={fmtDate(post.data.date)}>{fmtDate(post.data.date)}</time>
+      <time datetime={fmtDate(post.data.date)}>{displayDate(post.data.date)} · {readingMinutes(post)} min read</time>
       {post.data.draft && <span class="tag draft">draft</span>}
-      {post.data.tags.map((t) => <span class="tag">{t}</span>)}
+      {post.data.tags.map((t) => <span class:list={["tag", `tag-${t.toLowerCase()}`]}>{t.charAt(0).toUpperCase() + t.slice(1)}</span>)}
     </div>
     <p class="lede">{post.data.summary}</p>
     <Content />

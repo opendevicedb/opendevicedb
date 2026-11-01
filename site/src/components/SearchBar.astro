@@ -1,0 +1,20 @@
+---
+import Icon from "./Icon.astro";
+interface Props { id: string; suggestions?: boolean }
+const { id, suggestions = true } = Astro.props;
+---
+<form class="search-big" role="search" action="/devices/" method="get">
+  <label for={id} class="sr-only">Search devices by model, vendor or identifier</label>
+  <Icon name="home-Search01" />
+  <input id={id} name="q" type="search" placeholder="Search by Model, vendor, FCC ID, USB vid:pid…" autocomplete="off" spellcheck="false" />
+  <button class="btn primary" type="submit">Search <span class="search-label">Device</span></button>
+</form>
+{suggestions && <div class="search-suggestions">
+  <span>Try:</span>
+  <div class="suggestion-tags">
+    {[["framework", "Framework"], ["pixel", "Pixel"], ["tello", "Tello"], ["car thing", "Car Thing"]].map(([q, label]) =>
+      <a href={`/devices/?q=${encodeURIComponent(q)}`}>{label}</a>
+    )}
+  </div>
+  <span>or</span> <a href="/devices/">Browse all Devices</a>
+</div>}

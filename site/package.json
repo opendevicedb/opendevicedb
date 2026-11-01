@@ -7,12 +7,17 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "check:ui": "playwright test"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@opendevicedb/core": "*",
     "astro": "^7.4.0",
     "cookie": "^2.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1"
   }
 }

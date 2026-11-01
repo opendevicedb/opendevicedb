@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+interface Props { name: string; width: number; height: number; class?: string; sizes?: string; loading?: "lazy" | "eager"; fetchpriority?: "high" | "low" | "auto" }
+const { name, width, height, class: className, sizes, loading = "lazy", fetchpriority } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>("../assets/design/*.png", { eager: true });
+const source = images[`../assets/design/${name}.png`]?.default;
+if (!source) throw new Error(`Missing Figma image: ${name}`);
+const widths = [...new Set([Math.min(width, source.width), Math.min(width * 2, source.width)])];
+---
+<Image src={source} width={width} height={height} widths={widths} sizes={sizes ?? `${width}px`} format="webp" quality={90} class={className} alt="" loading={loading} fetchpriority={fetchpriority} />

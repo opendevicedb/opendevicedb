@@ -72,7 +72,7 @@ function show(o: { title: string; read?: string; notes?: string[]; rows?: string
   list.innerHTML = (o.rows ?? []).join("");
   next.innerHTML = o.next ?? "";
   title.focus({ preventScroll: true });
-  out.scrollIntoView({ block: "start", behavior: "smooth" });
+  out.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
 }
 
 const busy = (what: string) => show({ title: what });

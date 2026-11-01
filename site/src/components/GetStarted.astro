@@ -2,6 +2,7 @@
 // SPEC R1 "Get started": one card per install route, easiest first, with the official guide
 // or installer. Nothing is flashed from OpenDeviceDB; we link to each project's own tools.
 import type { DeviceRecord, InstallReport, InstallRoute } from "@opendevicedb/core";
+import Icon from "./Icon.astro";
 import {
   sortInstallRoutes, routeTitle, isDangerousRoute, reportsForRoute, summarizeReports,
   installReportUrl, reportsSearchUrl,
@@ -44,8 +45,8 @@ const cards = routes.map((route) => {
     {cards.map(({ route, s, danger, report }) => (
       <article class:list={["card", "route", `d-${route.difficulty}`, { danger }]}>
         <div class="route-head">
-          <h3>{routeTitle(route)}</h3>
-          <span class:list={["badge", `diff-${route.difficulty}`]} title={DIFFICULTY[route.difficulty]}>{route.difficulty[0].toUpperCase() + route.difficulty.slice(1)}</span>
+          <h3><Icon name="device-DishWasher" />{routeTitle(route)}</h3>
+          <span class:list={["badge", `diff-${route.difficulty}`]} title={DIFFICULTY[route.difficulty]}>Install: {route.difficulty}</span>
         </div>
         <p class="small muted">{DIFFICULTY[route.difficulty]}{projectUrl(route.project) && <> · <a href={projectUrl(route.project)}>{route.project}</a></>}</p>
         {danger && (
@@ -74,7 +75,7 @@ const cards = routes.map((route) => {
           ) : route.installer ? (
             <>
               <a class="btn primary" href={route.installer}>Open the official installer</a>
-              <a href={route.guide}>Read the guide first</a>
+              <a href={route.guide}>Read the guide first<Icon name="device-ArrowUpRight03" size={16} /></a>
             </>
           ) : (
             <a class="btn primary" href={route.guide}>Follow the official guide</a>
@@ -91,23 +92,34 @@ const cards = routes.map((route) => {
 </section>
 
 <style>
-  .get-started { --ok: var(--st-open-firmware); --mid: var(--st-in-progress); --bad: #b91c1c; }
-  @media (prefers-color-scheme: dark) { .get-started { --bad: #f87171; } }
-  .checklist { margin: 12px 0 14px; }
-  .checklist ul { margin: 6px 0 0; padding-left: 1.2em; }
-  .checklist li + li { margin-top: 0.2em; }
-  .routes { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 21rem), 1fr)); }
-  .route { display: flex; flex-direction: column; gap: 6px; border-left: 4px solid var(--border); min-width: 0; }
-  .route.d-easy { border-left-color: var(--ok); }
-  .route.d-medium { border-left-color: var(--mid); }
-  .route.d-hard, .route.danger { border-left-color: var(--bad); }
+  .get-started { --ok: #a5e8cb; --mid: #ffd49a; --bad: #fda4af; margin-top: 48px; }
+  .checklist { margin: 24px 0; padding: 0; border: 0; background: transparent; }
+  .checklist strong { font-size: 20px; font-weight: 600; }
+  .checklist ul { margin: 16px 0 0; padding-left: 21px; color: var(--muted); font-size: 14px; }
+  .checklist li + li { margin-top: 4px; }
+  .routes { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); }
+  .route { display: flex; flex-direction: column; gap: 24px; min-width: 0; padding: 32px; background: radial-gradient(ellipse at 110% 130%, #e2e300, #330365 50%); box-shadow: 0 16px 30px #00000019; }
+  .route.danger { border-color: var(--bad); }
   .route p { margin: 0; }
-  .route-head { display: flex; gap: 10px; align-items: baseline; justify-content: space-between; }
-  .route-head h3 { margin: 0; font-size: 1.05rem; }
+  .route-head { display: flex; gap: 16px; align-items: flex-start; justify-content: space-between; }
+  .route-head h3 { margin: 0; font: 600 20px/1.3 var(--font); letter-spacing: -.4px; }
+  .route-head h3 :global(.icon) { margin-right: 10px; vertical-align: middle; }
+  .route-head + p { margin-top: -12px; }
   .badge.diff-easy { --st: var(--ok); }
   .badge.diff-medium { --st: var(--mid); }
   .badge.diff-hard { --st: var(--bad); }
-  .route-facts { font-size: 0.93rem; margin: 4px 0; }
+  .route-facts { font-size: 16px; margin: 0; }
   .warn { border: 1px solid var(--bad); background: color-mix(in srgb, var(--bad) 10%, transparent); border-radius: 8px; padding: 8px 10px; }
-  .route-actions { margin-top: auto; padding-top: 6px; gap: 8px 14px; }
+  .route-actions { margin-top: auto; gap: 16px; }
+  .route-actions > a:not(.btn) { display: inline-flex; align-items: center; gap: 4px; }
+  .get-started > p:last-child { margin-top: 24px; }
+  @media (max-width: 700px) {
+    .get-started { margin-top: 32px; }
+    .route { padding: 24px 20px; gap: 20px; }
+    .route-head { flex-direction: column; gap: 12px; }
+    .route-head h3 { font-size: 18px; }
+    .route-facts { font-size: 14px; }
+    .route-actions { align-items: flex-start; flex-direction: column; }
+    .route-actions :global(.btn) { width: 100%; }
+  }
 </style>

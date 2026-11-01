@@ -1,111 +1,148 @@
 ---
 import Base from "../layouts/Base.astro";
+import Icon from "../components/Icon.astro";
+import DesignImage from "../components/DesignImage.astro";
+import SearchBar from "../components/SearchBar.astro";
 import StatusBadge from "../components/StatusBadge.astro";
 import PostItem from "../components/PostItem.astro";
 import { counts, activeClaims, latestCurated, deviceUrl, effectiveStatus, db } from "../lib/data.ts";
 import { posts } from "../lib/news.ts";
-import { PITCH, REPO_URL, displayName } from "../lib/config.ts";
+import { REPO_URL, displayName } from "../lib/config.ts";
 import { openWanted } from "../lib/wanted.ts";
-
+import "../styles/home.css";
 const c = counts();
-const claims = activeClaims().slice(0, 8);
+const claims = activeClaims().slice(0, 5);
 const news = (await posts()).slice(0, 3);
-const latest = latestCurated(6);
+const latest = latestCurated(8);
 const fmt = (n: number) => n.toLocaleString("en");
 const { on } = db();
 const mostWanted = (await openWanted()).slice(0, 5);
+const features = [
+  ["home-Time02", "Save research time", "Find existing tools, firmware, and research before starting your own."],
+  ["home-CircleUnlock01", "Find where you're needed", "See what's already documented and where there's still work to do."],
+  ["home-AiCoEditing", "Make your findings useful", "Share your discoveries so others can continue where you left off."],
+  ["home-BookOpen01", "Keep knowledge open", "Help maintain a community-driven resource anyone can access and improve."],
+];
+const explore = [
+  ["home-Image79.png", "Find existing work", "Search devices to discover available firmware, tools, and research before starting your own.", "/devices/", "Browse devices"],
+  ["home-Image80.png", "Identify a device", "Use a supported browser to identify compatible USB or Bluetooth devices.", "/detect/", "Try device detection"],
+  ["home-Image81.png", "Share what you know", "Add a device, link existing research, or improve a record so others can build on it.", "/contribute/", "Start contributing"],
+];
+const deviceIcon = (model: string) => /air.condition|refrigerator/i.test(model) ? "home-AirVent" : /wash|dryer/i.test(model) ? "home-WashingMachine" : /dehumid/i.test(model) ? "home-Humidity" : /home.connect|dishwash|microwave/i.test(model) ? "home-DishWasher" : "home-Wifi02";
 ---
 <Base>
-  <section class="hero">
-    <h1>Before you reverse engineer a device, check if someone already did.</h1>
-    <p class="lede">{PITCH}</p>
-    <form class="search-big" role="search" action="/devices/" method="get">
-      <label for="home-q" class="sr-only">Search devices</label>
-      <input id="home-q" name="q" type="search" placeholder="Model, vendor, FCC ID, USB vid:pid…" autocomplete="off" spellcheck="false" />
-      <button class="btn primary" type="submit">Search</button>
-    </form>
-    <p class="row"><a class="btn" href="/detect/">Detect my device</a> <span class="small muted">Device at hand? Plug it in over USB or find it over Bluetooth: Chrome or Edge, nothing leaves your browser.</span></p>
-    <p class="small muted">Try <a href="/devices/?q=framework">framework</a>, <a href="/devices/?q=pixel">pixel</a>, <a href="/devices/?q=tello">tello</a>, <a href="/devices/?q=car+thing">car thing</a>, or browse <a href="/devices/">all devices</a>.</p>
-    <p class="small"><a href={REPO_URL}>Open source on GitHub</a>: a ⭐ helps people with the same devices find it.</p>
+  <DesignImage slot="backdrop" class="hero-devices" name="home-Devices" width={2316} height={1007} sizes="(max-width: 700px) 1360px, (max-width: 1000px) 1800px, 2316px" loading="eager" fetchpriority="high" />
+  <div class="home-glows" aria-hidden="true"><DesignImage class="home-glow-right" name="home-Gradient" width={1455} height={632} /><DesignImage class="home-glow-left" name="home-Gradient" width={2316} height={1007} /></div>
+  <section class="home-hero container">
+    <div class="hero-content">
+      <p class="eyebrow">A FREE, COMMUNITY-BUILT DEVICE DATABASE</p>
+      <h1>Find open firmware, tools, and research for your devices.</h1>
+      <p class="lede">Search thousands of devices to see what's available, find existing projects, and check what the community is working on.</p>
+      <div class="hero-search"><SearchBar id="home-q" /></div>
+    </div>
   </section>
-
-  <div class="counters" aria-label="Directory counters">
-    <a class="counter" href="/devices/"><strong>{fmt(c.devices)}</strong><span>devices</span></a>
-    <a class="counter" href="/sources/"><strong>{fmt(c.sources)}</strong><span>aggregated sources</span></a>
-    <a class="counter" href="/devices/?status=open-firmware" style="--st: var(--st-open-firmware)"><strong>{fmt(c.byStatus["open-firmware"])}</strong><span><i class="dot"></i>open firmware</span></a>
-    <a class="counter" href="/devices/?status=controllable" style="--st: var(--st-controllable)"><strong>{fmt(c.byStatus.controllable)}</strong><span><i class="dot"></i>controllable</span></a>
-    <a class="counter" href="/devices/?status=in-progress" style="--st: var(--st-in-progress)"><strong>{fmt(c.byStatus["in-progress"])}</strong><span><i class="dot"></i>in progress</span></a>
-  </div>
-
-  <div class="two-col">
-    <section>
-      <h2>Being worked on now</h2>
-      {claims.length === 0 ? (
-        <p class="empty">No live claim right now. Starting on a device? <a href="/contribute/#claims">Claim it</a> so nobody duplicates your work.</p>
-      ) : (
-        <ul class="list-plain">
-          {claims.map(({ record: r, claim }) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
-                <StatusBadge status={effectiveStatus(r, on)} />
-                <span class="meta">{claim.who} — {claim.scope} · until {claim.expires}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      <h2>Most wanted</h2>
-      {mostWanted.length === 0 ? (
-        <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a> and others can add a 👍.</p>
-      ) : (
-        <ul class="list-plain">
-          {mostWanted.map((w) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
-                <a class="badge wanted" href={w.url}>👍 {w.votes}</a>
-                <span class="meta">{w.category ?? "uncategorised"} · requested {w.opened}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-      <p><a href="/wanted/">All requests</a></p>
-
-      <h2>Recently updated</h2>
-      {latest.length === 0 ? <p class="empty">No curated record yet.</p> : (
-        <ul class="list-plain">
-          {latest.map((r) => (
-            <li>
-              <div class="dev-row">
-                <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
-                <StatusBadge status={effectiveStatus(r, on)} />
-                <span class="meta">{r.category} · updated {r.updated}</span>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-
-    <section>
-      <h2>Latest news</h2>
-      {news.length === 0 ? <p class="empty">No news yet.</p> : (
-        <ul class="list-plain">{news.map((p) => <li><PostItem post={p} /></li>)}</ul>
-      )}
-      <p><a href="/news/">All news</a> · <a href="/rss.xml">RSS</a></p>
-
-      <div class="callout" style="margin-top:28px">
-        <h2 style="margin-top:0">For AI agents</h2>
-        <p>
-          Agents can query OpenDeviceDB themselves before starting a reverse-engineering job,
-          claim the device while they work, and publish their findings when done — through an MCP server.
-        </p>
-        <pre><code>claude mcp add opendevicedb -- npx -y @opendevicedb/mcp</code></pre>
-        <p><a class="btn" href="/agents/">Set up an agent →</a></p>
+  <section class="home-stats" aria-label="Directory counters">
+    <div class="container stats-grid">
+      {[
+        [fmt(c.devices), "Devices", "/devices/"],
+        [fmt(c.sources), "Aggregated Sources", "/sources/"],
+        [fmt(c.byStatus["open-firmware"]), "Open Firmware", "/devices/?status=open-firmware"],
+        [fmt(c.byStatus.controllable), "Controllable", "/devices/?status=controllable"],
+        [fmt(c.byStatus["in-progress"]), "In progress", "/devices/?status=in-progress"],
+      ].map(([value, label, href], i) => <a href={href} class="home-stat">{i > 0 && <img class="stat-divider" src="/design/home-Line8.svg" width="74" height="1" alt="" aria-hidden="true" />}<strong>{value}</strong><span>{label}</span></a>)}
+    </div>
+  </section>
+  <section class="home-intro home-section">
+    <DesignImage class="intro-glow" name="home-Image78" width={2316} height={1007} />
+    <div class="container intro-grid">
+      <div class="intro-copy">
+        <h2>Build on what matters.</h2>
+        <p>OpenDeviceDB brings scattered device research, open firmware, and protocols into one searchable directory. Discover what's already been done, find what's missing, and help others build on your work.</p>
+        <div class="actions">
+          <a class="btn primary" href="/contribute/">How to contribute</a>
+          <a class="btn" href={`${REPO_URL}/blob/main/SPEC.md`}>View Documentation</a>
+        </div>
       </div>
-    </section>
-  </div>
+      <div class="feature-list">
+        {features.map(([icon, title, text]) => <div class="feature">
+          <Icon name={icon} size={32} />
+          <div><h3>{title}</h3><p>{text}</p></div>
+        </div>)}
+      </div>
+    </div>
+  </section>
+  <section class="home-section home-explore container">
+    <h2>New here? Three ways to explore.</h2>
+    <div class="explore-grid">
+      {explore.map(([icon, title, text, href, label], i) => <article class:list={["card explore-card", { "highlight-card": i === 0 }]}>
+        <DesignImage name={icon.replace(".png", "")} width={56} height={56} />
+        <div><h3>{title}</h3><p>{text}</p></div>
+        <a class="text-link" href={href}>{label}<Icon name="home-ArrowUpRight03" size={16} /></a>
+      </article>)}
+    </div>
+  </section>
+  <section class="home-section home-recent container">
+    <h2>Recently updated devices</h2>
+    {latest.length ? <div class="device-card-grid">
+      {latest.map(r => <article class="card device-card">
+        <div class="device-card-icons"><Icon name={deviceIcon(r.model)} /><a href={deviceUrl(r.id)} aria-label={`View ${displayName(r.vendor, r.model)}`}><Icon name="home-ArrowUpRight4" /></a></div>
+        <div class="device-card-title"><h3><a href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a></h3>
+          <p class="device-card-meta"><span>{r.category} · {r.vendor}</span><span>Updated {new Date(r.updated + "T12:00:00Z").toLocaleDateString("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}</span></p>
+        </div>
+        <div class="row"><StatusBadge status={effectiveStatus(r, on)} />{r.provenance?.ai_assisted && <span class="badge ai-assisted">AI assisted</span>}</div>
+      </article>)}
+    </div> : <p class="empty">No curated record yet. <a href="/contribute/">Add a device</a>.</p>}
+    <a class="btn primary section-action" href="/devices/">View all devices</a>
+  </section>
+  <section class="home-section container community-grid">
+    <div>
+      <h2>Wanted devices</h2>
+      {mostWanted.length ? <ul class="list-plain home-wanted">
+        {mostWanted.map(w => <li><div class="dev-row">
+          <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
+          <a class="badge wanted" href={w.url} aria-label={`${w.votes} want ${displayName(w.vendor, w.model)}; view request`}><Icon name="home-ThumbsUp" size={16} />{w.votes}</a>
+          <span class="meta">{w.category ?? "Uncategorized"} · Requested {w.opened}</span>
+        </div></li>)}
+      </ul> : <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a>.</p>}
+      <a class="text-link" href="/wanted/">View all requests</a>
+    </div>
+    <div>
+      <h2>Devices in progress</h2>
+      {claims.length ? <ul class="list-plain">
+        {claims.map(({ record: r, claim }) => <li><div class="dev-row">
+          <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
+          <StatusBadge status={effectiveStatus(r, on)} />
+          <span class="meta">{claim.who} — {claim.scope} · until {claim.expires}</span>
+        </div></li>)}
+      </ul> : <p class="muted">No one working on a device right now? Claim one so nobody duplicates your work.</p>}
+      <a class="text-link" href="/contribute/#claims">Claim a device</a>
+    </div>
+  </section>
+  <section class="home-section home-news container">
+    <h2>Latest news</h2>
+    {news.length ? <div class="news-card-grid">{news.map((p, i) => <div class:list={["card news-card", { "highlight-card": i === 1 }]}><PostItem post={p} /></div>)}</div> : <p class="empty">No news yet.</p>}
+    <a class="btn primary section-action" href="/news/">Read all news</a>
+  </section>
+  <section class="home-agents home-section">
+    <img class="agents-pattern" src="/design/home-Pattern.svg" width="1920" height="555" alt="" loading="lazy" />
+    <div class="container agents-content">
+      <h2>For AI agents</h2>
+      <p>Agents can query OpenDeviceDB themselves before starting a reverse-engineering job, claim the device while they work, and publish their findings when done — through an MCP server.</p>
+      <pre><code>claude mcp add opendevicedb -- npx -y @opendevicedb/mcp</code></pre>
+      <a class="btn white" href="/agents/">Setup an agent <Icon name="home-ArrowRight02" /></a>
+    </div>
+  </section>
+  <section class="home-section container">
+    <div class="contribution-banner">
+      <DesignImage name="home-Image88" width={947} height={473} sizes="(max-width: 700px) 600px, 947px" />
+      <div class="banner-copy">
+        <h2>Help grow the database.</h2>
+        <p>Add new devices, share your findings, improve existing guides, or help others get more life out of their devices.</p>
+        <div class="actions">
+          <a class="btn primary" href={REPO_URL}><Icon name="home-Github1" />Star on Github</a>
+          <a class="btn" href="/contribute/">Contribute <Icon name="home-ArrowRight3" /></a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>

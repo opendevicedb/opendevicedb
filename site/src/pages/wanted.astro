@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import StatusBadge from "../components/StatusBadge.astro";
+import Icon from "../components/Icon.astro";
 import { db, deviceUrl } from "../lib/data.ts";
 import { openWanted } from "../lib/wanted.ts";
 import { displayName } from "../lib/config.ts";
@@ -12,7 +13,7 @@ const status = new Map(index.map((e) => [e.id, e.status]));
 const people = list.reduce((n, w) => n + w.votes, 0);
 ---
 <Base title="Wanted devices" description="Devices people want reverse engineered or supported, ranked by interest. Add a 👍 to the request to count yourself in.">
-  <h1>Wanted devices</h1>
+  <h1>Wanted</h1>
   <p class="lede">
     Devices people would like to use with open code, ranked by how many want them.
     If you can reverse engineer one, this is where your work helps the most people:{" "}
@@ -38,7 +39,7 @@ const people = list.reduce((n, w) => n + w.votes, 0);
           <div class="dev-row">
             <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
             <span class="row">
-              <a class="badge wanted" href={w.url} title="Add a 👍 on the request to count yourself in">👍 {w.votes} want{w.votes === 1 ? "s" : ""} it</a>
+              <a class="badge wanted" href={w.url} title="Add a 👍 on the request to count yourself in"><Icon name="wanted-ThumbsUp" size={20} />{w.votes} want{w.votes === 1 ? "s" : ""} it</a>
               {w.inRegistry && <StatusBadge status={status.get(w.id)!} />}
             </span>
             <span class="meta">

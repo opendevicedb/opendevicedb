@@ -22,8 +22,8 @@ const fmt = (n: number) => n.toLocaleString("en");
     <div class="grid" style="margin-top:20px">
       {list.map((s) => (
         <article class="card" id={s.source}>
-          <h2 style="margin:0 0 4px; font-size:1.2rem"><a href={s.url}>{s.name}</a></h2>
-          <p class="small muted mono" style="margin:0 0 8px">{s.url.replace(/^https?:\/\//, "")}</p>
+          <h2 style="margin:0 0 8px; font-size:20px"><a href={s.url}>{s.name}</a></h2>
+          <p class="small muted mono" style="margin:0 0 16px">{s.url.replace(/^https?:\/\//, "")}</p>
           <dl class="facts">
             <dt>Records</dt><dd><a href={`/devices/?source=${encodeURIComponent(s.source)}`}>{fmt(sources.get(s.source)?.count ?? 0)}</a></dd>
             <dt>License</dt><dd>{s.license}</dd>

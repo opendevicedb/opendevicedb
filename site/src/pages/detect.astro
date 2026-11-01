@@ -3,6 +3,10 @@
 // (WebUSB / WebSerial vid:pid, Web Bluetooth name) and look it up in the static index, all in
 // the browser. The island is scripts/detect.ts; the label search below works without it.
 import Base from "../layouts/Base.astro";
+import SearchBar from "../components/SearchBar.astro";
+import Icon from "../components/Icon.astro";
+import DesignImage from "../components/DesignImage.astro";
+import "../styles/detect.css";
 ---
 <Base title="Detect my device" description="Plug in a device or switch on its Bluetooth: this page reads the id it announces and finds it in OpenDeviceDB. Runs in your browser; nothing is sent anywhere.">
   <h1>Detect my device</h1>
@@ -10,7 +14,7 @@ import Base from "../layouts/Base.astro";
     Plug the device in, or switch on its Bluetooth, and this page reads the id it announces,
     then looks it up in the directory.
   </p>
-  <p class="small muted">
+  <p class="small muted detect-privacy">
     Everything runs in your browser: the id is matched against the
     <a href="/api/index.json">static index</a>, nothing is sent anywhere.
   </p>
@@ -27,19 +31,22 @@ import Base from "../layouts/Base.astro";
     </noscript>
 
     <div class="grid detect-ways">
-      <div class="card stack">
+      <div class="card stack detect-card usb-card">
+        <DesignImage name="detect-Image80" width={56} height={56} />
         <h3>USB</h3>
         <p>Phones in fastboot or ADB mode, cameras, RGB peripherals, printer and maker boards.</p>
         <p><button class="btn primary" type="button" data-detect="usb" disabled>Connect a USB device</button></p>
         <p class="small muted">The browser lists the plugged devices; pick one. It only reads its id, nothing is opened or written.</p>
       </div>
-      <div class="card stack">
+      <div class="card stack detect-card">
+        <DesignImage name="detect-Image81" width={56} height={56} />
         <h3>Bluetooth</h3>
         <p>Watches, bands, earbuds, lights and sensors that advertise a name.</p>
-        <p><button class="btn primary" type="button" data-detect="bluetooth" disabled>Find a Bluetooth device</button></p>
+        <p><button class="btn" type="button" data-detect="bluetooth" disabled>Find a Bluetooth device</button></p>
         <p class="small muted">Wake the device or put it in pairing mode so it shows up. Nothing is paired.</p>
       </div>
-      <div class="card stack">
+      <div class="card stack detect-card">
+        <DesignImage name="detect-Image82" width={56} height={56} />
         <h3>Serial port</h3>
         <p>A board or device wired through a USB-serial (UART) adapter.</p>
         <p><button class="btn" type="button" data-detect="serial" disabled>Pick a serial port</button></p>
@@ -63,21 +70,17 @@ import Base from "../layouts/Base.astro";
       Look at the label or the box: model, <strong>FCC ID</strong>, SKU, or a USB <code>vid:pid</code>
       from <code>lsusb</code>.
     </p>
-    <form class="search-big" role="search" action="/devices/" method="get">
-      <label for="label-q" class="sr-only">Model, FCC ID, SKU or vid:pid</label>
-      <input id="label-q" name="q" type="search" placeholder="Model, FCC ID, SKU or vid:pid" autocomplete="off" spellcheck="false" />
-      <button class="btn primary" type="submit">Search</button>
-    </form>
+    <SearchBar id="label-q" />
   </section>
 
   <section class="prose" aria-labelledby="limits-h">
     <h2 id="limits-h">What it can and cannot tell</h2>
-    <ul>
-      <li><strong>Phones</strong> are found in fastboot or ADB mode only if their id is listed. Many share a generic Google, Qualcomm, MediaTek or Samsung id: the page then lists every match and says the id is generic. Check the exact model in the phone's settings.</li>
-      <li><strong>USB-serial adapters</strong> (CP210x, CH340, FTDI, PL2303) and the built-in USB of chips such as the ESP32 or STM32 identify the adapter or the chip, not the device. Search by the device's label instead.</li>
-      <li><strong>Several matches</strong> mean the same id is used by several products (one chip, one vendor id reused). Compare the names with your device.</li>
-      <li><strong>Not every device appears</strong> in the browser's list: keyboards, mice and storage are hidden by the browser, and a device may need to be woken or in pairing mode.</li>
-      <li><strong>No match</strong> does not mean nothing is known: try the label search, or request the device so others can add a 👍.</li>
+    <ul class="detection-limits">
+      <li><Icon name="detect-Time02" size={32} /><div><strong>Phones</strong> are found in fastboot or ADB mode only if their id is listed. Many share a generic Google, Qualcomm, MediaTek or Samsung id: the page then lists every match and says the id is generic. Check the exact model in the phone's settings.</div></li>
+      <li><Icon name="detect-CircleUnlock01" size={32} /><div><strong>USB-serial adapters</strong> (CP210x, CH340, FTDI, PL2303) and the built-in USB of chips such as the ESP32 or STM32 identify the adapter or the chip, not the device. Search by the device's label instead.</div></li>
+      <li><Icon name="detect-AiCoEditing" size={32} /><div><strong>Several matches</strong> mean the same id is used by several products (one chip, one vendor id reused). Compare the names with your device.</div></li>
+      <li><Icon name="detect-BookOpen01" size={32} /><div><strong>Not every device appears</strong> in the browser's list: keyboards, mice and storage are hidden by the browser, and a device may need to be woken or in pairing mode.</div></li>
+      <li><Icon name="detect-BookOpen01" size={32} /><div><strong>No match</strong> does not mean nothing is known: try the label search, or request the device so others can add a 👍.</div></li>
     </ul>
   </section>
 
@@ -85,22 +88,3 @@ import Base from "../layouts/Base.astro";
     import "../scripts/detect.ts";
   </script>
 </Base>
-
-<style>
-  .detect-ways { margin: 20px 0; }
-  .detect-ways h3 { margin: 0; }
-  .detect-ways .card p { margin: 0; }
-  .detect-ways .btn { min-height: 44px; }
-  .callout.warn { border-left-color: var(--st-in-progress); }
-  .detect-out { margin: 8px 0 28px; }
-  .detect-out h2 { margin-top: 0.6em; }
-  .detect-out h2:focus { outline: none; }
-  :global(.detect-read) { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; margin: 0.4em 0; }
-  :global(.detect-read .mono) { font-size: 1.05rem; font-weight: 600; }
-  :global(.detect-note) { border-left: 4px solid var(--st-in-progress); padding: 6px 12px; margin: 10px 0; background: var(--surface); border-radius: 6px; }
-  :global(.badge.inst-easy) { --st: var(--st-open-firmware); }
-  :global(.badge.inst-medium) { --st: var(--st-partial-protocol); }
-  :global(.badge.inst-hard) { --st: var(--st-in-progress); }
-  :global(.badge.inst)::before { border-radius: 2px; }
-  #label { margin-top: 12px; }
-</style>
