@@ -32,6 +32,12 @@ test("camera keys: one body, many spellings", () => {
   // A match takes the existing record's id; no match keeps our spelling.
   assert.deepEqual(cameraIdentity("Canon", "EOS 7D Mark II", known), { id: "canon/eos-7d-markii", vendor: "Canon", model: "EOS 7D MarkII", aliases: ["EOS 7D Mark II"] });
   assert.equal(cameraIdentity("Canon", "EOS R5", known).id, "canon/eos-r5");
+  // The strict key wins; a loose key shared by two cameras matches neither.
+  const ixus = existingCameras([cam("canon/digital-ixus-300", "Canon", "Digital IXUS 300"), cam("canon/digital-ixus-300-hs", "Canon", "Digital IXUS 300 HS"), cam("canon/digital-ixus-100-is", "Canon", "Digital IXUS 100 IS")]);
+  assert.equal(cameraIdentity("Canon", "Digital IXUS 300 HS", ixus).id, "canon/digital-ixus-300-hs");
+  assert.equal(cameraIdentity("Canon", "Digital IXUS 300", ixus).id, "canon/digital-ixus-300");
+  assert.equal(cameraIdentity("Canon", "Digital IXUS300 IS", ixus).id, "canon/digital-ixus300-is", "ambiguous: no merge");
+  assert.equal(cameraIdentity("Canon", "Digital IXUS100", ixus).id, "canon/digital-ixus-100-is");
 });
 
 test("magiclantern: installable ports vs ports in development, firmwares merged", () => {
