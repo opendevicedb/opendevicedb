@@ -11,7 +11,7 @@ on:
         default: chdk
   push:
     branches: [claude/opendevicedb-purpose-6pvq7w]
-    paths: [packages/importers/src/sources/chdk.ts]
+    paths: [packages/importers/src/sources/chdk.ts, packages/importers/src/camera-ids.ts]
 permissions:
   contents: write
 concurrency:

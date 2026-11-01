@@ -13,6 +13,8 @@ export function cameraKey(model: string): string {
   // "mark-ii", "markii", "mk-ii", "-ii", "m-2" → "m2"
   s = s.replace(/-?(?:mark|mk)-?(ii|iii|iv|v|\d)\b/g, (_, n) => `m${ROMAN[n] ?? n}`);
   s = s.replace(/-(ii|iii|iv)\b/g, (_, n) => `m${ROMAN[n]}`);
+  // Canon's feature suffixes are spelled or dropped at will: "IXUS 100 IS", "IXUS100", "SX280HS".
+  s = s.replace(/^digital-ixus/, "ixus").replace(/(\d)-?(is|hs|ti)$/, "$1");
   return s.replace(/-/g, "");
 }
 

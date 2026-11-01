@@ -24,6 +24,10 @@ test("camera keys: one body, many spellings", () => {
   assert.equal(cameraKey("DSC-RX100M3"), cameraKey("RX100M3"));
   assert.equal(cameraKey("K-3 II"), cameraKey("K3 II"));
   assert.notEqual(cameraKey("EOS 5D Mark III"), cameraKey("EOS 5D Mark II"));
+  assert.equal(cameraKey("Digital IXUS100"), cameraKey("Digital IXUS 100 IS"));
+  assert.equal(cameraKey("PowerShot SX280 HS"), cameraKey("PowerShot SX280HS"));
+  assert.equal(cameraKey("IXUS 310IS"), cameraKey("Digital IXUS310"));
+  assert.notEqual(cameraKey("K-5 IIs"), cameraKey("K-5 II"));
   assert.notEqual(cameraKey("ILCE-7"), cameraKey("ILCE-7R"));
   // A match takes the existing record's id; no match keeps our spelling.
   assert.deepEqual(cameraIdentity("Canon", "EOS 7D Mark II", known), { id: "canon/eos-7d-markii", vendor: "Canon", model: "EOS 7D MarkII", aliases: ["EOS 7D Mark II"] });
