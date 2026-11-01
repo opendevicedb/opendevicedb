@@ -1,0 +1,33 @@
+id: airspy/r2
+vendor: Airspy
+model: R2
+aliases: [Airspy R2]
+category: radio
+status: open-firmware
+summary: >-
+  USB SDR receiver with open libairspy host tools and published Airspy firmware
+  source, linked by the manufacturer's R2 developer documentation. Keep the R2
+  distinct from the Mini and the separate HF+ product family.
+projects:
+  - name: libairspy and host tools
+    url: https://github.com/airspy/airspyone_host
+    kind: library
+  - name: Airspy firmware
+    url: https://github.com/airspy/airspyone_firmware
+    kind: firmware
+  - name: Airspy R2 model documentation
+    url: https://airspy.com/airspy-r2/
+    kind: protocol-doc
+install:
+  - project: libairspy and host tools
+    method: host-software
+    guide: https://github.com/airspy/airspyone_host
+    difficulty: medium
+    notes: >-
+      Use the libairspy host installation/build instructions and USB access rules.
+      This host-software route does not flash the receiver. Check the manufacturer
+      documentation for the exact model before selecting a firmware update.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

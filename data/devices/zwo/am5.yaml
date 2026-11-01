@@ -1,0 +1,38 @@
+id: zwo/am5
+vendor: ZWO
+model: AM5
+category: telescope
+status: controllable
+summary: >-
+  Telescope mount documented by INDI for USB and Wi-Fi control through its
+  indi_starbook_lx200am5 driver. This is host-side control of the existing
+  mount firmware, not a replacement firmware or an OpenDeviceDB hardware test.
+projects:
+  - name: INDI AM5 driver
+    url: https://drivers.indilib.org/mounts/zwo/am5/am5/
+    kind: driver
+    freedom:
+      notes: >-
+        The INDI driver communicates with the existing mount firmware. The driver
+        documentation does not establish the license of every embedded component.
+interfaces:
+  - name: INDI mount control
+    transport: usb
+    status: documented
+    spec: https://drivers.indilib.org/mounts/zwo/am5/am5/
+  - name: INDI mount control over Wi-Fi
+    transport: wifi
+    status: documented
+    spec: https://drivers.indilib.org/mounts/zwo/am5/am5/
+install:
+  - project: INDI AM5 driver
+    method: host-software
+    guide: https://drivers.indilib.org/mounts/zwo/am5/am5/
+    difficulty: medium
+    notes: >-
+      Install INDI and select the documented AM5 driver in an INDI client.
+      Configure the mount's USB or Wi-Fi connection using the upstream guide.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

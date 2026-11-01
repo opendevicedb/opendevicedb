@@ -15,7 +15,8 @@
         "drone", "camera", "ip-camera", "action-camera", "router", "smart-plug", "light",
         "switch", "sensor", "hub", "vacuum-robot", "wearable", "phone", "tablet", "e-reader",
         "laptop", "desktop", "single-board", "peripheral", "printer", "3d-printer", "audio", "tv", "media-player",
-        "game-console", "vehicle", "radio", "toy", "appliance", "medical", "other"
+        "game-console", "game-controller", "test-instrument", "ups", "security-token", "telescope",
+        "vehicle", "radio", "toy", "appliance", "medical", "other"
       ]
     },
     "identifiers": {
