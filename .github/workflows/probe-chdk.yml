@@ -1,0 +1,30 @@
+name: Probe CHDK (temporary)
+# Temporary: prints what the CHDK build server and wiki serve, to write the importer.
+on:
+  push:
+    branches: [claude/opendevicedb-purpose-6pvq7w]
+    paths: [.github/workflows/probe-chdk.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build server
+        run: |
+          for u in https://mighty-hoernsche.de/ https://mighty-hoernsche.de/trunk/ https://mighty-hoernsche.de/stable/; do
+            echo "===== $u"; curl -sSL -m 60 -A "opendevicedb-importer/0.1" "$u" -o page.html -w "HTTP %{http_code} %{size_download} bytes %{content_type}\n" || true
+            sed 's/></>\n</g' page.html | grep -iE "<a |<tr|<td|<h[1-4]" | head -120
+          done
+      - name: Wiki (Fandom MediaWiki API)
+        run: |
+          api=https://chdk.fandom.com/api.php
+          curl -sSL -m 60 "$api?action=query&list=search&srsearch=supported%20cameras&format=json&srlimit=20" | head -c 3000; echo
+          for p in CHDK Downloads For_Developers Camera_IDs P-ID_%28Table%29 CHDK_in_Brief; do
+            echo "===== $p"; curl -sSL -m 60 "$api?action=parse&page=$p&prop=wikitext|sections&format=json" | head -c 4000; echo
+          done
+          curl -sSL -m 60 "$api?action=query&meta=siteinfo&siprop=rightsinfo&format=json"; echo
+      - name: Source mirrors
+        run: |
+          git ls-remote https://github.com/reticulatedpines/chdk.git 2>&1 | head -3 || true
+          curl -sSL -m 30 "https://api.github.com/search/repositories?q=chdk+in:name&sort=updated&per_page=15" | grep -E '"full_name"|"pushed_at"|"size"' | head -45
