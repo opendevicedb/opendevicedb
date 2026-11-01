@@ -1,0 +1,42 @@
+name: Import
+# Runs one importer (or all) on GitHub's network and commits the snapshot it writes to
+# data/imported/ on the branch it ran on. For sources not reachable from every network (CHDK's
+# build server) and for refreshes; locally: npm run import -- <source>.
+on:
+  workflow_dispatch:
+    inputs:
+      source:
+        description: "Importer to run (npm run import -- <source>), or all"
+        required: true
+        default: chdk
+  push:
+    branches: [claude/opendevicedb-purpose-6pvq7w]
+    paths: [packages/importers/src/sources/chdk.ts]
+permissions:
+  contents: write
+concurrency:
+  group: import-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 24, cache: npm }
+      - run: npm ci
+      - name: Import
+        env:
+          SOURCE: ${{ inputs.source || 'chdk' }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run import -- "$SOURCE"
+      - run: npm run validate
+      - name: Commit the snapshot
+        env:
+          SOURCE: ${{ inputs.source || 'chdk' }}
+        run: |
+          git add data/imported
+          if git diff --cached --quiet; then echo "No change"; exit 0; fi
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit -q -m "Import: refresh $SOURCE"
+          git push
