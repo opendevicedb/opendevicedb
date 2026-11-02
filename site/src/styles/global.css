@@ -191,7 +191,7 @@
 
 /* ========== 3. Base elements ========== */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; } /* anchors land below the sticky header */
 body {
   margin: 0;
   background: var(--color-bg-page);
@@ -311,7 +311,13 @@ main.bleed { padding: 0; }
 .stack-md > *, .stack-lg > * { margin-block: 0; }
 
 /* ========== 5. Header and footer ========== */
-.site-header { position: relative; z-index: 20; padding: 24px 0; }
+/* Sticky header (scripts/header.ts): transparent at the top of the page; once scrolled, a glass
+   background keeps it readable over anything. It slides away while scrolling down and comes
+   back on any scroll up. */
+.site-header { position: sticky; top: 0; z-index: 20; padding: 24px 0; border-bottom: 1px solid transparent; transition: transform 0.3s ease, background-color 0.2s, border-color 0.2s; }
+.site-header.scrolled { background: color-mix(in srgb, var(--color-bg-page) 72%, transparent); -webkit-backdrop-filter: blur(16px) saturate(140%); backdrop-filter: blur(16px) saturate(140%); border-bottom-color: var(--color-border-subtle); }
+.site-header.away { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) { .site-header { transition: none; } }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--color-text-primary); text-decoration: none; font: 400 18px/1 var(--font-display); }
 .brand svg { flex: none; }
