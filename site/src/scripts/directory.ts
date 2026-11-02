@@ -17,6 +17,7 @@ const sourceNames: Record<string, string> = JSON.parse(root.dataset.sources || "
 const chips = root.querySelector<HTMLElement>("#active-filters")!;
 const filterCount = root.querySelector<HTMLElement>("#filter-count")!;
 const resetBtn = root.querySelector<HTMLButtonElement>("#reset-filters")!;
+const panelToggle = root.querySelector<HTMLInputElement>("#filters-toggle")!; // opens the mobile panel
 
 // Filters: desktop applies a change at once; on mobile (panel behind a toggle) changes are
 // staged until "Apply filters". `applied` is what the results use; the selects may be ahead.
@@ -167,7 +168,8 @@ function update(resetPage = true) {
   timer = window.setTimeout(() => load().then(render, () => {}), index ? 80 : 0);
 }
 
-form.addEventListener("submit", (ev) => { ev.preventDefault(); applyStaged(); update(); });
+// Apply filters / Search: apply what's staged and fold the mobile panel away to show the results.
+form.addEventListener("submit", (ev) => { ev.preventDefault(); applyStaged(); panelToggle.checked = false; update(); });
 qEl.addEventListener("input", () => update());
 for (const el of Object.values(selects)) {
   el.addEventListener("change", () => {
