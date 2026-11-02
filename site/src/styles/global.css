@@ -575,6 +575,10 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 /* The whole row is the link: no underline on the name; the ↗ turns yellow on hover / focus. */
 .dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; transition: color 0.15s; }
 .dev-row:hover .row-arrow, .dev-row:focus-within .row-arrow { color: var(--color-text-brand); }
+/* Hover / focus: a lighter background around the row. The box-shadow spreads it 12px past the
+   row into the list's padding without moving anything. */
+.dev-row { border-radius: var(--radius-lg); transition: background-color 0.15s, box-shadow 0.15s; }
+.dev-row:hover, .dev-row:focus-within { background: var(--color-bg-menu); box-shadow: 0 0 0 12px var(--color-bg-menu); }
 @media (min-width: 48rem) {
   .dev-row { grid-template-columns: minmax(0, 1fr) auto; }
   /* Indent the meta line under the name (24px icon + 12px gap); on phones everything starts flush left. */
