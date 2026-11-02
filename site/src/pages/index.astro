@@ -191,10 +191,11 @@ const mostWanted = (await openWanted()).slice(0, 3);
   .intro { max-width: var(--max); margin: 0 auto; display: grid; gap: var(--space-stack-lg) var(--space-section-gap); }
   .intro-actions { order: 3; gap: 12px; }
   @media (min-width: 48rem) {
-    .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-    .intro-text { grid-column: 1; grid-row: 1; align-self: end; }
+    .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; }
+    .intro-text { grid-column: 1; grid-row: 1; align-self: start; }
     .intro-actions { order: 0; grid-column: 1; grid-row: 2; align-self: start; }
-    .features { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+    /* Both columns start at the top: the heading lines up with the first feature. */
+    .features { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
   }
 
   .two-col > .stack-lg { align-items: flex-start; }
