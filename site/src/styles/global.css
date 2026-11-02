@@ -111,6 +111,7 @@
   --color-border-subtle: var(--white-a15);
   --color-border-brand: var(--yellow-400);
   --color-border-input: var(--white-a34);
+  --color-scrollbar-thumb: var(--white-a34);
 
   /* status: dots and borders, always next to a text label */
   --st-unknown: var(--purple-300);
@@ -192,6 +193,14 @@
 /* ========== 3. Base elements ========== */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 96px; } /* anchors land below the sticky header */
+/* Scrollbars from the tokens, never the browser's grey. scrollbar-color is inherited, so every
+   scroller gets it; the ::-webkit- rules are for Safari, which ignores scrollbar-color. */
+html { scrollbar-color: var(--color-scrollbar-thumb) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); background-clip: padding-box; border: 3px solid transparent; border-radius: 9999px; }
+/* Scrollers inside components (filter lists, the mobile sheet) use the thin variant. */
+.fopts-list, .sheet-body, .table-wrap { scrollbar-width: thin; }
 body {
   margin: 0;
   background: var(--color-bg-page);
@@ -476,10 +485,10 @@ pre {
 }
 pre[data-fade-start] { --fade-start: 40px; }
 pre[data-fade-end] { --fade-end: 56px; }
-pre:hover, pre:focus-visible { scrollbar-color: rgb(255 255 255 / 0.28) transparent; }
+pre:hover, pre:focus-visible { scrollbar-color: var(--color-scrollbar-thumb) transparent; }
 pre::-webkit-scrollbar { height: 4px; }
 pre::-webkit-scrollbar-thumb { background: transparent; border-radius: 9999px; }
-pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
+pre:hover::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); }
 /* Box with a Copy button, built around each <pre> by scripts/code.ts */
 .code-block { display: flex; align-items: flex-start; gap: 16px; margin: 1em 0; padding: var(--space-card-padding); border: 1px solid var(--color-border-default); border-radius: var(--radius-card); background: var(--color-bg-surface-sunken); }
 .code-block pre { flex: 1; min-width: 0; margin: 0; padding: 4px 0; border: 0; border-radius: 0; background: none; }
