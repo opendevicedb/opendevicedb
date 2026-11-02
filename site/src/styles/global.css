@@ -634,7 +634,6 @@ pre:hover::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); }
 .section-empty { color: var(--color-text-secondary); }
 .wanted-card { margin-top: 18px; }
 .wanted-card p { margin: 0; }
-.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
 
 /* ========== 11. News ========== */
 .post-meta { color: var(--color-text-muted); font-size: var(--text-body-sm); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
