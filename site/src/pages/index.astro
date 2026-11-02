@@ -23,16 +23,17 @@ const { on } = db();
 const mostWanted = (await openWanted()).slice(0, 3);
 ---
 <Base bleed>
-  <link slot="head" rel="preload" as="image" href="/images/hero.webp" media="(min-width: 80rem)" fetchpriority="high" />
+  <!-- Hero illustration on a backdrop layer that starts at the top of the page (as on
+       opendevicedb.org): behind the header and hero, ending under the stats bar. No fades. -->
   <div class="hero-wrap">
-    <section class="section hero">
-      <!-- The illustration sits behind the hero only (cut off at the stats bar) and is sized so
-           the devices stay beside the search bar. Below 80rem (1280px) only slivers of them would show, so the
-           source is a 1px placeholder there and the art is never downloaded. -->
+    <div class="hero-backdrop" aria-hidden="true">
       <picture>
-        <source media="(min-width: 80rem)" srcset="/images/hero.webp" />
-        <img class="hero-art" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="1902" height="827" fetchpriority="high" />
+        <!-- Phones show it at 25% opacity: a 1000px, 37 KB version is enough there. -->
+        <source media="(width <= 700px)" srcset="/images/hero-mobile.webp" />
+        <img class="hero-art" src="/images/hero.webp" alt="" width="1902" height="827" fetchpriority="high" />
       </picture>
+    </div>
+    <section class="section hero">
       <div class="inner narrow">
         <div class="hero-text stack-md">
           <p class="eyebrow">A free, community-built device database</p>
@@ -169,25 +170,21 @@ const mostWanted = (await openWanted()).slice(0, 3);
 </Base>
 
 <style>
-  .hero-wrap { overflow-x: clip; }
-  .hero { position: relative; isolation: isolate; overflow: clip; }
-  .hero-art { display: none; }
-  @media (min-width: 80rem) {
-    .hero-art {
-      /* At the search bar's height, the camera ends at 30.8% of the art's width and the
-         database starts at 77.1%: a 46.3% gap centred at 54%. Size the art so that gap is the
-         search bar's width plus 32px each side, and centre the gap on the search bar. */
-      display: block; position: absolute; z-index: -1; top: 0; left: 50%; max-width: none; height: auto;
-      width: calc((min(960px, 100vw - 2 * var(--gutter)) + 64px) / 0.463);
-      transform: translateX(-54%); opacity: 0.9; pointer-events: none;
-    }
-  }
+  /* The backdrop spans .hero-wrap (hero + stats bar) plus the 88px header above it, so the art
+     starts at the page top and ends at the stats bar's bottom edge, where the bar's blur covers
+     it. (A clip-path here would stop the stats bar's backdrop-filter from reaching the art.) */
+  .hero-wrap { position: relative; }
+  .hero-backdrop { position: absolute; inset: -88px 0 0; z-index: -1; overflow: clip; pointer-events: none; }
+  .hero-art { position: absolute; top: 15px; left: calc(50% - 44px); transform: translateX(-50%); width: 2316px; max-width: none; height: auto; }
+  @media (width <= 1200px) { .hero-art { opacity: 0.7; } }
+  @media (width <= 1000px) { .hero-art { width: 1800px; top: 90px; } }
+  @media (width <= 700px) { .hero-art { width: 1360px; top: 95px; opacity: 0.25; } }
   .hero { padding-top: 24px; }
-  @media (min-width: 48rem) { .hero { padding-top: 48px; } }
+  @media (min-width: 48rem) { .hero { padding-top: 100px; } }
   .hero .inner { align-items: center; text-align: center; gap: var(--space-stack-lg); }
   .hero-search { width: 100%; display: flex; justify-content: center; }
 
-  .stats-bar { padding: 32px var(--gutter); border-block: 1px solid var(--color-border-subtle); background: var(--color-bg-subtle); backdrop-filter: blur(12px); }
+  .stats-bar { padding: 32px var(--gutter); border-block: 1px solid var(--color-border-subtle); background: var(--color-bg-subtle); backdrop-filter: blur(86px); }
 
   .intro { max-width: var(--max); margin: 0 auto; display: grid; gap: var(--space-stack-lg) var(--space-section-gap); }
   .intro-actions { order: 3; gap: 12px; }
