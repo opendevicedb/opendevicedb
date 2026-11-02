@@ -10,8 +10,13 @@ const all = await posts();
     <p class="lede">Project updates, newly opened devices and new aggregated sources. Also available as <a href="/rss.xml">RSS</a>.</p>
   </header>
   {all.length === 0 && <p class="empty">No posts yet.</p>}
-  <div class="card-grid cols-3">
+  <!-- One post per row, newest first, at a readable width. -->
+  <div class="card-grid news-list">
     {all.map((p) => <PostItem post={p} heading="h2" />)}
   </div>
 </Base>
+
+<style>
+  .news-list { max-width: 52rem; margin: 0 auto; }
+</style>
 
