@@ -140,6 +140,22 @@ function renderCounts(searched: IndexEntry[], results: number) {
     }
   }
   root.querySelector("#sheet-show")!.textContent = `Show ${results.toLocaleString("en")} ${results === 1 ? "device" : "devices"}`;
+  root.querySelectorAll<HTMLFieldSetElement>(".fopts").forEach(refreshList);
+}
+
+/** Which options a list shows: those matching the find box that would still give results, plus
+ *  any ticked one (so it can be unticked). Says so when nothing is left. */
+function refreshList(fs: HTMLFieldSetElement) {
+  const q = fs.querySelector<HTMLInputElement>(".fopts-find")?.value.trim().toLowerCase() ?? "";
+  let shown = 0;
+  for (const opt of fs.querySelectorAll<HTMLElement>(".fopt[data-find]")) {
+    const ticked = opt.querySelector("input")!.checked;
+    opt.hidden = !opt.dataset.find!.includes(q) || (opt.classList.contains("zero") && !ticked);
+    if (!opt.hidden) shown++;
+  }
+  const none = fs.querySelector<HTMLElement>(".fopts-none")!;
+  none.hidden = shown > 0;
+  none.textContent = q ? "No options match." : "No other options for these results.";
 }
 
 /** Puts `applied` into every control: checkboxes in both copies, dropdown labels, chips, counts. */
@@ -150,6 +166,7 @@ function renderFilters() {
       input.checked = input.value ? values.includes(input.value) : !values.length;
     }
     fs.querySelector<HTMLElement>(".fopts-clear")!.hidden = !values.length;
+    refreshList(fs);
   }
   for (const g of groups) {
     const values = applied[g.key];
@@ -203,18 +220,11 @@ root.addEventListener("click", (ev) => {
   if (chip) return setFilter(chip.dataset.key as FilterKey, applied[chip.dataset.key as FilterKey].filter((v) => v !== chip.dataset.value));
   if (t.closest(".reset-filters")) { applied = readFilters(new URLSearchParams(), groups); renderFilters(); update(); }
 });
-// Long lists: narrow the options to those whose label contains what was typed.
+// Long lists: narrow the options to those whose label contains what was typed (see refreshList).
 root.addEventListener("input", (ev) => {
   const find = ev.target as HTMLInputElement;
   if (!find.classList.contains("fopts-find")) return;
-  const q = find.value.trim().toLowerCase();
-  const fs = find.closest(".fopts")!;
-  let shown = 0;
-  for (const opt of fs.querySelectorAll<HTMLElement>(".fopt[data-find]")) {
-    opt.hidden = !opt.dataset.find!.includes(q);
-    if (!opt.hidden) shown++;
-  }
-  fs.querySelector<HTMLElement>(".fopts-none")!.hidden = shown > 0;
+  refreshList(find.closest<HTMLFieldSetElement>(".fopts")!);
 });
 
 // Desktop dropdowns: one open at a time; outside click, Escape or tabbing away closes it.

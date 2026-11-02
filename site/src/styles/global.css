@@ -562,7 +562,7 @@ pre:hover::-webkit-scrollbar-thumb { background: var(--color-scrollbar-thumb); }
 .fopt input:focus-visible { outline: none; } /* the row shows the focus ring */
 .fopt-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .fopt-count { color: var(--color-text-secondary); font-variant-numeric: tabular-nums; }
-.fopt.zero { opacity: 0.5; }
+.fopt.zero { opacity: 0.5; } /* only shown while ticked: refreshList in scripts/directory.ts hides the rest */
 .fopt[hidden], .fopts-none[hidden] { display: none; }
 .fopts-none { margin: 0; padding: 8px 0; font-size: var(--text-body-sm); color: var(--color-text-secondary); }
 /* Mobile sheet: slides up from the bottom; the filters apply as they change. */
