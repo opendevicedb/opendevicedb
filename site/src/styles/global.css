@@ -575,12 +575,14 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 /* The whole row is the link: no underline on the name; the ↗ turns yellow on hover / focus. */
 .dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; transition: color 0.15s; }
 .dev-row:hover .row-arrow, .dev-row:focus-within .row-arrow { color: var(--color-text-brand); }
-/* Hover / focus: a lighter background around the row. The box-shadow spreads it 12px past the
-   row into the list's padding without moving anything. Nested corners: the highlight's radius
-   (row radius + 12px) = the list's radius - the gap left (padding - 12px), so the row's own
-   radius is the list's radius minus its padding. */
-.dev-row { border-radius: max(0px, var(--radius-card) - var(--space-card-padding)); transition: background-color 0.15s, box-shadow 0.15s; }
-.dev-row:hover, .dev-row:focus-within { background: var(--color-bg-menu); box-shadow: 0 0 0 12px var(--color-bg-menu); }
+/* Hover / focus: a lighter background, a layer 12px larger than the row on every side, so
+   nothing moves. Nested corners: its radius is the list's radius minus the gap between them
+   (list padding - 12px). (A box-shadow spread can't do this: around square corners it stays square.) */
+.dev-row { isolation: isolate; }
+.dev-row::before { content: ""; position: absolute; inset: -12px; z-index: -1; pointer-events: none;
+  border-radius: max(0px, var(--radius-card) - (var(--space-card-padding) - 12px));
+  background: var(--color-bg-menu); opacity: 0; transition: opacity 0.15s; }
+.dev-row:hover::before, .dev-row:focus-within::before { opacity: 1; }
 @media (min-width: 48rem) {
   .dev-row { grid-template-columns: minmax(0, 1fr) auto; }
   /* Indent the meta line under the name (24px icon + 12px gap); on phones everything starts flush left. */
