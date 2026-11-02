@@ -617,7 +617,6 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 .facts dt { color: var(--color-text-secondary); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 .section-empty { color: var(--color-text-secondary); }
-.claim { border-left: 4px solid var(--st-in-progress); }
 .wanted-card { margin-top: 18px; }
 .wanted-card p { margin: 0; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
