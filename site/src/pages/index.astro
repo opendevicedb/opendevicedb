@@ -173,9 +173,13 @@ const mostWanted = (await openWanted()).slice(0, 3);
   .hero-art { display: none; }
   @media (min-width: 48rem) {
     .hero-art {
-      display: block; position: absolute; z-index: -1; top: 0; left: 50%; width: 2300px; max-width: none; height: auto;
+      display: block; position: absolute; z-index: -1; top: 0; left: 50%; width: clamp(1500px, 125vw, 2300px); max-width: none; height: auto;
       transform: translateX(-50%); opacity: 0.9; pointer-events: none;
-      mask-image: linear-gradient(to bottom, #000 55%, transparent 72%);
+      /* Fade out at the bottom, and dim the middle (behind the headline and search) so the
+         devices at the sides never compete with the search. */
+      mask-image: linear-gradient(to bottom, #000 62%, transparent 86%),
+        radial-gradient(ellipse 36% 48% at 50% 42%, rgb(0 0 0 / 0.15) 62%, #000 100%);
+      mask-composite: intersect;
     }
   }
   .hero { padding-top: 24px; }
