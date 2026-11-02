@@ -24,6 +24,14 @@ import openprinting from "./sources/openprinting.ts";
 import libwacom from "./sources/libwacom.ts";
 import betaflight from "./sources/betaflight.ts";
 import edgetx from "./sources/edgetx.ts";
+import magiclantern from "./sources/magiclantern.ts";
+import openmemories from "./sources/openmemories.ts";
+import pktriggercord from "./sources/pktriggercord.ts";
+import fujihack from "./sources/fujihack.ts";
+import asteroidos from "./sources/asteroidos.ts";
+import nut from "./sources/nut.ts";
+import sigrok from "./sources/sigrok.ts";
+import gp2040ce from "./sources/gp2040-ce.ts";
 import type { Source } from "./lib.ts";
 
 export * from "./lib.ts";
@@ -33,4 +41,7 @@ export const SOURCES: Source[] = [
   zigbee2mqtt, openwrt, tasmota, esphome, thingino,
   zwaveJs, tuyaLocal, openrgb, libgphoto2, lineageos, postmarketos, coreboot, rtl433, marlin, klipper, rockbox,
   gadgetbridge, valetudo, cloudcutter, qmk, sane, openprinting, libwacom, betaflight, edgetx,
+  // Cameras: these map onto libgphoto2's records (camera-ids.ts), so they come after it.
+  magiclantern, openmemories, pktriggercord, fujihack,
+  asteroidos, nut, sigrok, gp2040ce,
 ];

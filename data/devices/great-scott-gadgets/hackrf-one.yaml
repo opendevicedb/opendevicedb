@@ -1,0 +1,40 @@
+id: great-scott-gadgets/hackrf-one
+vendor: Great Scott Gadgets
+model: HackRF One
+category: radio
+status: open-firmware
+summary: >-
+  USB software-defined radio platform with open HackRF firmware, libhackrf and
+  host tools. Use the firmware image for HackRF One and match the firmware and
+  host-tool versions. Input limits and operating requirements are documented upstream.
+projects:
+  - name: HackRF firmware
+    url: https://github.com/greatscottgadgets/hackrf/tree/main/firmware
+    kind: firmware
+  - name: libhackrf and HackRF Tools
+    url: https://github.com/greatscottgadgets/hackrf/tree/main/host
+    kind: library
+  - name: HackRF One documentation
+    url: https://hackrf.readthedocs.io/en/latest/hackrf_one.html
+    kind: protocol-doc
+install:
+  - project: libhackrf and HackRF Tools
+    method: host-software
+    guide: https://hackrf.readthedocs.io/en/latest/installing_hackrf_software.html
+    difficulty: easy
+    notes: Install the host tools using the upstream package-manager instructions.
+  - project: HackRF firmware
+    method: vendor-upload
+    guide: https://hackrf.readthedocs.io/en/latest/updating_firmware.html
+    difficulty: medium
+    firmware_constraints: >-
+      Use hackrf_one_usb.bin for SPI flash updates on HackRF One. Match the
+      host software and firmware versions. The DFU recovery image is a distinct
+      .dfu file; the normal update .bin must not be used as a DFU image.
+    notes: >-
+      The official guide describes updates using hackrf_spiflash and separate
+      DFU recovery instructions. Read the steps for HackRF One specifically.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

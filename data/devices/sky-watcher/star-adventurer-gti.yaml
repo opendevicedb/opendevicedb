@@ -1,0 +1,32 @@
+id: sky-watcher/star-adventurer-gti
+vendor: Sky-Watcher
+model: Star Adventurer GTI
+category: telescope
+status: controllable
+summary: >-
+  Telescope mount with a dedicated INDI driver, indi_staradventurergti_telescope.
+  The upstream guide requires exclusive control: disconnect the Synscan App
+  before connecting INDI after initial alignment. This is host-side control,
+  not replacement mount firmware or a hardware test by OpenDeviceDB.
+projects:
+  - name: INDI Star Adventurer GTI driver
+    url: https://drivers.indilib.org/mounts/sky-watcher/star-adventurer-gti/star-adventurer-gti/
+    kind: driver
+    freedom:
+      notes: >-
+        The INDI driver communicates with the existing mount firmware. The driver
+        documentation does not establish the license of every embedded component.
+install:
+  - project: INDI Star Adventurer GTI driver
+    method: host-software
+    guide: https://drivers.indilib.org/mounts/sky-watcher/star-adventurer-gti/star-adventurer-gti/
+    difficulty: medium
+    firmware_constraints: >-
+      Do not control the mount through Synscan App and INDI simultaneously.
+      After initial alignment in Synscan App, fully disconnect that app before
+      connecting the INDI driver, as required by the upstream connectivity guide.
+    notes: Install INDI and choose the dedicated Star Adventurer GTI driver.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

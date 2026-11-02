@@ -1,0 +1,37 @@
+id: nitrokey/3a-mini
+vendor: Nitrokey
+model: 3A Mini
+aliases: [Nitrokey 3A Mini]
+category: security-token
+status: open-firmware
+summary: >-
+  USB security key supported by Nitrokey's open Nitrokey 3 firmware and nitropy tools.
+  Keep this hardware variant distinct from the NFC models. Available features depend
+  on firmware version; an open main firmware is not a claim that every component is free.
+projects:
+  - name: Nitrokey 3 firmware
+    url: https://github.com/Nitrokey/nitrokey-3-firmware
+    kind: firmware
+    license: Apache-2.0 OR MIT
+  - name: nitropy
+    url: https://github.com/Nitrokey/pynitrokey
+    kind: tool
+  - name: Nitrokey 3 model and feature documentation
+    url: https://docs.nitrokey.com/nitrokeys/nitrokey3/faq
+    kind: protocol-doc
+install:
+  - project: Nitrokey 3 firmware
+    method: usb-bootloader
+    guide: https://docs.nitrokey.com/en/nitrokeys/nitrokey3/firmware-update
+    difficulty: medium
+    firmware_constraints: >-
+      Follow the Nitrokey 3 guide for this variant. Use stable releases and the
+      supported nitropy updater; firmware downgrade protection applies.
+    notes: >-
+      Follow the official update procedure and its backup-login requirements.
+      Data retention depends on the installed firmware version. Do not disconnect
+      the key during an update.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

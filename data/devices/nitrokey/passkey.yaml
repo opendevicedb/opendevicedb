@@ -1,0 +1,29 @@
+id: nitrokey/passkey
+vendor: Nitrokey
+model: Passkey
+category: security-token
+status: controllable
+summary: >-
+  FIDO security key with an open host-management path through nitropy's nkpk commands.
+  The Passkey is a separate product from Nitrokey 3: its features and update procedures
+  must not be inferred from the Nitrokey 3 documentation.
+projects:
+  - name: nitropy
+    url: https://github.com/Nitrokey/pynitrokey
+    kind: tool
+  - name: Nitrokey Passkey management documentation
+    url: https://docs.nitrokey.com/nitrokeys/passkey/management
+    kind: protocol-doc
+install:
+  - project: nitropy
+    method: host-software
+    guide: https://docs.nitrokey.com/nitrokeys/passkey/management
+    difficulty: easy
+    notes: >-
+      Install nitropy using its official installation guide, then use the nkpk
+      commands documented for this model to list the key, inspect status and
+      manage it. This route does not install a replacement device firmware.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01

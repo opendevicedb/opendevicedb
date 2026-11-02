@@ -1,0 +1,33 @@
+id: airspy/mini
+vendor: Airspy
+model: Mini
+aliases: [Airspy Mini]
+category: radio
+status: open-firmware
+summary: >-
+  USB SDR receiver with open libairspy host tools and published Airspy firmware
+  source. The manufacturer's Mini page links both codebases. This record does
+  not imply that every application offered on the manufacturer's downloads page is free software.
+projects:
+  - name: libairspy and host tools
+    url: https://github.com/airspy/airspyone_host
+    kind: library
+  - name: Airspy firmware
+    url: https://github.com/airspy/airspyone_firmware
+    kind: firmware
+  - name: Airspy Mini model documentation
+    url: https://airspy.com/airspy-mini/
+    kind: protocol-doc
+install:
+  - project: libairspy and host tools
+    method: host-software
+    guide: https://github.com/airspy/airspyone_host
+    difficulty: medium
+    notes: >-
+      Use the libairspy host installation/build instructions and USB access rules.
+      Firmware source availability is recorded separately; this host-software
+      route does not flash the receiver.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-01
