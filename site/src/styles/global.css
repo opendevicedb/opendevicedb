@@ -500,6 +500,8 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 .count { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--color-bg-brand); color: var(--color-text-on-brand); font-size: var(--text-caption); font-weight: 600; }
 .count[hidden] { display: none; }
 .active-filters { display: contents; }
+/* .btn sets display, which would beat the hidden attribute: Reset shows only with a filter set. */
+.reset-filters[hidden] { display: none; }
 .filter-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; max-width: 100%; padding: 0 10px 0 12px; border: 0; border-radius: var(--radius-pill); background: var(--color-bg-menu); color: var(--color-text-primary); font: inherit; font-size: var(--text-body-sm); cursor: pointer; }
 .filter-chip:hover { background: var(--white-a15); }
 .filters { display: none; }
@@ -527,9 +529,12 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 .fopts-clear { border: 0; padding: 0; background: none; color: var(--color-text-brand); font: inherit; text-decoration: underline; cursor: pointer; }
 .fopts-find { height: 40px; padding: 0 12px; border-radius: var(--radius-control); border: 1px solid var(--color-border-default); background: var(--color-bg-input); color: var(--color-text-primary); font: inherit; font-size: var(--text-body-sm); }
 .fopts-find:focus { border-color: var(--color-border-brand); outline: none; }
-.fopts-list { max-height: 16rem; overflow-y: auto; overscroll-behavior: contain; }
-.fopt { display: flex; align-items: center; gap: 12px; padding: 8px 0; font-size: var(--text-body-sm); color: var(--color-text-primary); cursor: pointer; }
-.fopt input { flex: none; margin: 0; width: 16px; height: 16px; accent-color: var(--yellow-400); }
+.fopts-list { max-height: 18rem; overflow-y: auto; overscroll-behavior: contain; padding: 0 8px; margin: 0 -8px; }
+/* The whole row is the target (box, name and count): at least 44px tall, highlighted on hover. */
+.fopt { display: flex; align-items: center; gap: 12px; min-height: 44px; margin: 0 -8px; padding: 6px 8px; border-radius: var(--radius-sm); font-size: var(--text-body-sm); color: var(--color-text-primary); cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; }
+.fopt:hover { background: var(--color-bg-menu); }
+.fopt:has(input:focus-visible) { outline: 2px solid var(--yellow-400); outline-offset: -2px; }
+.fopt input { flex: none; margin: 0; width: 18px; height: 18px; accent-color: var(--yellow-400); cursor: pointer; }
 .fopt-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .fopt-count { color: var(--color-text-secondary); font-variant-numeric: tabular-nums; }
 .fopt.zero { opacity: 0.5; }

@@ -238,7 +238,12 @@ for (const fsel of root.querySelectorAll<HTMLElement>(".fsel")) {
   fsel.addEventListener("keydown", (ev) => {
     if (ev.key === "Escape" && !panel.hidden) { ev.stopPropagation(); closeDropdowns(); trigger.focus(); }
   });
-  fsel.addEventListener("focusout", (ev) => { if (!fsel.contains(ev.relatedTarget as Node)) closeDropdowns(); });
+  // Tabbing away closes it. A click on an option's text moves focus nowhere (relatedTarget is
+  // null): that must not close it, or the click never lands. Outside clicks: pointerdown below.
+  fsel.addEventListener("focusout", (ev) => {
+    const to = ev.relatedTarget as Node | null;
+    if (to && !fsel.contains(to)) closeDropdowns();
+  });
 }
 document.addEventListener("pointerdown", (ev) => { if (!(ev.target as Element).closest(".fsel")) closeDropdowns(); });
 
