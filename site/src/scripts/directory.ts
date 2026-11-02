@@ -4,6 +4,7 @@
 // (/api/wanted.json) are searched along with the devices and badged "👍 N want it".
 import { search, wantedToIndexEntry, wantedIssueUrl, type IndexEntry, type WantedEntry } from "@opendevicedb/core/browser";
 import { deviceBadges, deviceRowHtml, esc } from "../lib/device-row.ts";
+import { FILTER_KEYS, countOptions, filterEntries, readFilters, writeFilters, type FilterGroup, type FilterKey, type Filters } from "../lib/device-filters.ts";
 
 const PAGE = 50;
 const root = document.getElementById("directory")!;
@@ -14,27 +15,20 @@ const count = root.querySelector<HTMLElement>("#count")!;
 const pager = root.querySelector<HTMLElement>("#pager")!;
 const request = root.querySelector<HTMLElement>("#request")!;
 const sourceNames: Record<string, string> = JSON.parse(root.dataset.sources || "{}");
+const groups: FilterGroup[] = JSON.parse(root.dataset.groups || "[]");
+const groupOf = (k: FilterKey) => groups.find((g) => g.key === k)!;
+const optionLabel = (k: FilterKey, v: string) => groupOf(k).options.find((o) => o.value === v)?.label ?? v;
+
+// Filters apply as they change, on every screen size. Desktop: a dropdown per filter. Phones:
+// chips + a bottom sheet (#filter-sheet). Both hold the same FilterOptions, kept in step here.
 const chips = root.querySelector<HTMLElement>("#active-filters")!;
 const filterCount = root.querySelector<HTMLElement>("#filter-count")!;
-const resetBtn = root.querySelector<HTMLButtonElement>("#reset-filters")!;
-const panelToggle = root.querySelector<HTMLInputElement>("#filters-toggle")!; // opens the mobile panel
-
-// Filters: desktop applies a change at once; on mobile (panel behind a toggle) changes are
-// staged until "Apply filters". `applied` is what the results use; the selects may be ahead.
+const resetBtns = root.querySelectorAll<HTMLButtonElement>(".reset-filters");
+const openBtn = root.querySelector<HTMLButtonElement>("#filters-open")!;
+const sheet = root.querySelector<HTMLDialogElement>("#filter-sheet")!;
 const desktop = window.matchMedia("(min-width: 48rem)");
-const select = (id: string) => form.querySelector<HTMLSelectElement>(`#${id}`)!;
-const selects = { category: select("category"), status: select("status"), source: select("source"), install: select("install"), cloud: select("cloud") };
-type FilterKey = keyof typeof selects;
-const applied: Record<FilterKey, string> = { category: "", status: "", source: "", install: "", cloud: "" };
-const KEYS = Object.keys(selects) as FilterKey[];
-const staged = () => KEYS.some((k) => selects[k].value !== applied[k]);
-function applyStaged() {
-  for (const k of KEYS) applied[k] = selects[k].value;
-  markEdited();
-}
-function markEdited() {
-  for (const k of KEYS) selects[k].closest(".field")!.classList.toggle("edited", selects[k].value !== applied[k]);
-}
+let applied: Filters = readFilters(new URLSearchParams(location.search), groups);
+const activeCount = () => FILTER_KEYS.reduce((n, k) => n + applied[k].length, 0);
 
 let index: IndexEntry[] | null = null;
 let wantedById = new Map<string, WantedEntry>();
@@ -102,25 +96,16 @@ function requestUrl(): string {
 function syncUrl() {
   const p = new URLSearchParams();
   if (qEl.value.trim()) p.set("q", qEl.value.trim());
-  for (const k of KEYS) if (applied[k]) p.set(k, applied[k]);
   if (page > 1) p.set("page", String(page));
-  const qs = p.toString();
+  const qs = writeFilters(p, applied).toString();
   history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
 }
 
 function render() {
   if (!index) return;
-  const { install: inst, cloud, source: src } = applied;
-  // "setup-only" also keeps devices that need no cloud at all (IndexEntry.cloud is the best project's).
-  const cloudOk = (e: IndexEntry) => !cloud || e.cloud === "none" || (cloud === "setup-only" && e.cloud === "setup-only");
-  const pool = src || inst || cloud
-    ? index.filter((e) => (!src || e.sources.includes(src)) && (!inst || (inst === "any" ? !!e.install : e.install === inst)) && cloudOk(e))
-    : index;
-  const hits = search(pool, qEl.value, {
-    category: applied.category || undefined,
-    status: (applied.status || undefined) as IndexEntry["status"] | undefined,
-    limit: Infinity,
-  });
+  const searched = search(index, qEl.value, { limit: Infinity });
+  const hits = filterEntries(searched, applied);
+  renderCounts(searched, hits.length);
   const pages = Math.max(1, Math.ceil(hits.length / PAGE));
   if (page > pages) page = pages;
   const slice = hits.slice((page - 1) * PAGE, page * PAGE);
@@ -139,25 +124,54 @@ function render() {
       `<span class="muted">Page ${page} of ${pages.toLocaleString("en")}</span>` +
       `<button class="btn" data-go="${page + 1}" ${page === pages ? "disabled" : ""}>Next →</button>`
     : "";
-  renderChips();
   syncUrl();
 }
 
-/** Active-filter chips (mobile), the count on the Filters button, and Reset. */
-function renderChips() {
-  const active = KEYS.filter((k) => applied[k]);
-  const label = (k: FilterKey) => [...selects[k].options].find((o) => o.value === applied[k])?.dataset.label ?? applied[k];
-  chips.innerHTML = active.map((k) =>
-    `<button type="button" class="filter-chip" data-clear="${k}" aria-label="Remove filter: ${esc(label(k))}">${esc(label(k))} <span aria-hidden="true">✕</span></button>`,
-  ).join("") + (active.length > 1 ? `<button type="button" class="filter-chip clear" data-clear="*">Clear all</button>` : "");
-  filterCount.hidden = active.length === 0;
-  filterCount.textContent = String(active.length);
-  resetBtn.hidden = active.length === 0;
+/** Each option's count: the results choosing it would give, with the other filters kept. */
+function renderCounts(searched: IndexEntry[], results: number) {
+  for (const g of groups) {
+    const counts = countOptions(filterEntries(searched, applied, g.key), g);
+    for (const o of g.options) {
+      const n = counts.get(o.value) ?? 0;
+      for (const el of root.querySelectorAll<HTMLElement>(`.fopts[data-key="${g.key}"] .fopt-count[data-value="${CSS.escape(o.value)}"]`)) {
+        el.textContent = n.toLocaleString("en");
+        el.closest(".fopt")!.classList.toggle("zero", n === 0);
+      }
+    }
+  }
+  root.querySelector("#sheet-show")!.textContent = `Show ${results.toLocaleString("en")} ${results === 1 ? "device" : "devices"}`;
 }
 
-function clearFilters(keys: FilterKey[]) {
-  for (const k of keys) selects[k].value = "";
-  applyStaged();
+/** Puts `applied` into every control: checkboxes in both copies, dropdown labels, chips, counts. */
+function renderFilters() {
+  for (const fs of root.querySelectorAll<HTMLFieldSetElement>(".fopts")) {
+    const values = applied[fs.dataset.key as FilterKey];
+    for (const input of fs.querySelectorAll<HTMLInputElement>("input[type=checkbox], input[type=radio]")) {
+      input.checked = input.value ? values.includes(input.value) : !values.length;
+    }
+    fs.querySelector<HTMLElement>(".fopts-clear")!.hidden = !values.length;
+  }
+  for (const g of groups) {
+    const values = applied[g.key];
+    const fsel = root.querySelector<HTMLElement>(`.fsel[data-key="${g.key}"]`)!;
+    fsel.classList.toggle("active", values.length > 0);
+    fsel.querySelector(".fsel-value")!.textContent =
+      !values.length ? g.placeholder : values.length === 1 ? optionLabel(g.key, values[0]) : `${values.length} selected`;
+    root.querySelector(`.sheet-group-count[data-key="${g.key}"]`)!.textContent = values.length ? ` (${values.length})` : "";
+  }
+  chips.innerHTML = FILTER_KEYS.flatMap((k) => applied[k].map((v) =>
+    `<button type="button" class="filter-chip" data-key="${k}" data-value="${esc(v)}" aria-label="Remove filter: ${esc(optionLabel(k, v))}">${esc(optionLabel(k, v))} <span aria-hidden="true">✕</span></button>`,
+  )).join("");
+  const n = activeCount();
+  filterCount.hidden = n === 0;
+  filterCount.textContent = String(n);
+  root.querySelector("#sheet-count")!.textContent = n ? ` (${n})` : "";
+  for (const b of resetBtns) b.hidden = n === 0;
+}
+
+function setFilter(k: FilterKey, values: string[]) {
+  applied = { ...applied, [k]: values };
+  renderFilters();
   update();
 }
 
@@ -168,25 +182,78 @@ function update(resetPage = true) {
   timer = window.setTimeout(() => load().then(render, () => {}), index ? 80 : 0);
 }
 
-// Apply filters / Search: apply what's staged and fold the mobile panel away to show the results.
-form.addEventListener("submit", (ev) => { ev.preventDefault(); applyStaged(); panelToggle.checked = false; update(); });
+form.addEventListener("submit", (ev) => { ev.preventDefault(); update(); });
 qEl.addEventListener("input", () => update());
-for (const el of Object.values(selects)) {
-  el.addEventListener("change", () => {
-    if (desktop.matches) { applyStaged(); update(); } else markEdited();
-  });
+
+// A choice in either copy of a filter's options.
+root.addEventListener("change", (ev) => {
+  const input = ev.target as HTMLInputElement;
+  const fs = input.closest<HTMLFieldSetElement>(".fopts");
+  if (!fs || input.classList.contains("fopts-find")) return;
+  const k = fs.dataset.key as FilterKey;
+  setFilter(k, groupOf(k).multiple
+    ? [...fs.querySelectorAll<HTMLInputElement>("input[type=checkbox]:checked")].map((i) => i.value)
+    : input.value ? [input.value] : []);
+});
+root.addEventListener("click", (ev) => {
+  const t = ev.target as HTMLElement;
+  const clear = t.closest<HTMLButtonElement>(".fopts-clear");
+  if (clear) return setFilter(clear.dataset.clear as FilterKey, []);
+  const chip = t.closest<HTMLButtonElement>(".filter-chip");
+  if (chip) return setFilter(chip.dataset.key as FilterKey, applied[chip.dataset.key as FilterKey].filter((v) => v !== chip.dataset.value));
+  if (t.closest(".reset-filters")) { applied = readFilters(new URLSearchParams(), groups); renderFilters(); update(); }
+});
+// Long lists: narrow the options to those whose label contains what was typed.
+root.addEventListener("input", (ev) => {
+  const find = ev.target as HTMLInputElement;
+  if (!find.classList.contains("fopts-find")) return;
+  const q = find.value.trim().toLowerCase();
+  const fs = find.closest(".fopts")!;
+  let shown = 0;
+  for (const opt of fs.querySelectorAll<HTMLElement>(".fopt[data-find]")) {
+    opt.hidden = !opt.dataset.find!.includes(q);
+    if (!opt.hidden) shown++;
+  }
+  fs.querySelector<HTMLElement>(".fopts-none")!.hidden = shown > 0;
+});
+
+// Desktop dropdowns: one open at a time; outside click, Escape or tabbing away closes it.
+function closeDropdowns(except?: HTMLElement) {
+  for (const fsel of root.querySelectorAll<HTMLElement>(".fsel")) {
+    if (fsel === except) continue;
+    fsel.querySelector(".fsel-trigger")!.setAttribute("aria-expanded", "false");
+    fsel.querySelector<HTMLElement>(".fsel-panel")!.hidden = true;
+  }
 }
-chips.addEventListener("click", (ev) => {
-  const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-clear]");
-  if (!b) return;
-  const k = b.dataset.clear!;
-  clearFilters(k === "*" ? KEYS : [k as FilterKey]);
+for (const fsel of root.querySelectorAll<HTMLElement>(".fsel")) {
+  const trigger = fsel.querySelector<HTMLButtonElement>(".fsel-trigger")!;
+  const panel = fsel.querySelector<HTMLElement>(".fsel-panel")!;
+  trigger.addEventListener("click", () => {
+    const open = panel.hidden;
+    closeDropdowns(fsel);
+    panel.hidden = !open;
+    trigger.setAttribute("aria-expanded", String(open));
+    if (open) load().then(render, () => {}); // live counts need the index
+  });
+  fsel.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && !panel.hidden) { ev.stopPropagation(); closeDropdowns(); trigger.focus(); }
+  });
+  fsel.addEventListener("focusout", (ev) => { if (!fsel.contains(ev.relatedTarget as Node)) closeDropdowns(); });
+}
+document.addEventListener("pointerdown", (ev) => { if (!(ev.target as Element).closest(".fsel")) closeDropdowns(); });
+
+// Mobile sheet: a modal <dialog>. The page behind doesn't scroll; closing returns focus.
+openBtn.addEventListener("click", () => {
+  sheet.showModal();
+  document.documentElement.style.overflow = "hidden";
+  load().then(render, () => {});
 });
-resetBtn.addEventListener("click", () => clearFilters(KEYS));
-// Rotating a tablet to desktop width hides the Apply button: apply anything still staged.
-desktop.addEventListener("change", (ev) => {
-  if (ev.matches && staged()) { applyStaged(); update(); }
+sheet.addEventListener("close", () => { document.documentElement.style.overflow = ""; openBtn.focus(); });
+sheet.addEventListener("click", (ev) => {
+  const t = ev.target as HTMLElement;
+  if (t === sheet || t.closest(".sheet-close, .sheet-show")) sheet.close(); // backdrop, ×, "Show N devices"
 });
+desktop.addEventListener("change", (ev) => { if (ev.matches && sheet.open) sheet.close(); });
 qEl.addEventListener("focus", () => { load().catch(() => {}); }, { once: true });
 pager.addEventListener("click", (ev) => {
   const b = (ev.target as HTMLElement).closest<HTMLButtonElement>("button[data-go]");
@@ -198,10 +265,7 @@ pager.addEventListener("click", (ev) => {
 
 // Restore state from the URL (links from the home page, category links on device pages).
 const params = new URLSearchParams(location.search);
-const setIf = (el: HTMLInputElement | HTMLSelectElement, k: string) => { const v = params.get(k); if (v !== null) el.value = v; };
-setIf(qEl, "q");
-for (const k of KEYS) setIf(selects[k], k);
-applyStaged();
-renderChips(); // chips depend only on the URL, so show them before the index loads
+qEl.value = params.get("q") ?? "";
+renderFilters(); // labels and chips depend only on the URL, so show them before the index loads
 page = Math.max(1, Number(params.get("page")) || 1);
 if ([...params.keys()].length) update(false);

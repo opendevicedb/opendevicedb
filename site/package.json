@@ -8,7 +8,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "node scripts/check-dist.ts"
+    "check": "node scripts/check-dist.ts",
+    "test": "node --test src/lib/*.test.ts"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
