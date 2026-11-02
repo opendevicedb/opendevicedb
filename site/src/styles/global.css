@@ -567,13 +567,14 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
    end; the name's ::after makes the whole row the link. */
 .dev-row { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px 16px; align-items: center; }
 .dev-row .title { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.dev-row .name { font-size: var(--text-title); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text-primary); text-decoration: underline; text-underline-offset: 0.2em; }
-.dev-row .name:hover { color: var(--color-text-brand); }
+.dev-row .name { font-size: var(--text-title); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text-primary); text-decoration: none; }
 .dev-row .name::after { content: ""; position: absolute; inset: 0; }
 .dev-row .row a, .dev-row .meta a { position: relative; z-index: 1; }
 .dev-row .meta { color: var(--color-text-secondary); font-size: var(--text-body-sm); }
 .dev-row .meta .mono { font-size: 0.9em; }
-.dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; }
+/* The whole row is the link: no underline on the name; the ↗ turns yellow on hover / focus. */
+.dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; transition: color 0.15s; }
+.dev-row:hover .row-arrow, .dev-row:focus-within .row-arrow { color: var(--color-text-brand); }
 @media (min-width: 48rem) {
   .dev-row { grid-template-columns: minmax(0, 1fr) auto; }
   /* Indent the meta line under the name (24px icon + 12px gap); on phones everything starts flush left. */
