@@ -321,7 +321,7 @@ main.bleed { padding: 0; }
 .nav summary { display: inline-flex; align-items: center; gap: 4px; list-style: none; }
 .nav summary::-webkit-details-marker { display: none; }
 .nav .more[open] summary .icon { transform: rotate(180deg); }
-.menu-panel { position: absolute; top: calc(100% + 12px); left: 0; width: 14rem; display: flex; flex-direction: column; gap: 4px; padding: 12px; border-radius: var(--radius-menu); background: rgb(50 2 100 / 0.92); backdrop-filter: blur(24px); box-shadow: 0 16px 40px rgb(0 0 0 / 0.35); }
+.menu-panel { position: absolute; top: calc(100% + 12px); left: 0; width: 14rem; display: flex; flex-direction: column; gap: 4px; padding: 12px; border: 1px solid var(--color-border-default); border-radius: var(--radius-menu); background: rgb(50 2 100 / 0.92); backdrop-filter: blur(24px); box-shadow: 0 16px 40px rgb(0 0 0 / 0.35); }
 .menu-panel a { color: var(--color-text-primary); text-decoration: none; padding: 8px; border-radius: var(--radius-sm); font-size: var(--text-body-sm); font-weight: 500; }
 .menu-panel a:hover, .menu-panel a[aria-current="page"] { background: var(--color-bg-menu); }
 .header-actions { display: none; gap: 8px; }
