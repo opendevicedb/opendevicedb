@@ -111,7 +111,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
           ))}
         </div>
       )}
-      <a class="btn primary" href="/devices/">View all devices</a>
+      <a class="btn primary lg" href="/devices/">View all devices</a>
     </div>
   </section>
 
@@ -148,7 +148,7 @@ const mostWanted = (await openWanted()).slice(0, 3);
       {news.length === 0 ? <p class="empty">No news yet.</p> : (
         <div class="card-grid cols-3">{news.map((p) => <PostItem post={p} />)}</div>
       )}
-      <a class="btn primary" href="/news/">Read all news</a>
+      <a class="btn primary lg" href="/news/">Read all news</a>
     </div>
   </section>
 
