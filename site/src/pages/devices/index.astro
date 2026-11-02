@@ -131,6 +131,9 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
     .filters { display: grid; padding-top: 0; grid-template-columns: repeat(5, minmax(0, 1fr)); }
     .filter-actions .apply { display: none; }
     .filter-actions:has(#reset-filters[hidden]) { display: none; }
+    /* With a filter set, Reset sits in a sixth column, level with the selects. */
+    .filters:has(#reset-filters:not([hidden])) { grid-template-columns: repeat(5, minmax(0, 1fr)) auto; }
+    .filter-actions { grid-column: auto; align-self: end; height: 40px; }
   }
   .results-bar a { font-size: var(--text-body-lg); }
 </style>
