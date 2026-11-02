@@ -59,6 +59,7 @@
   --white-a34: rgb(255 255 255 / 0.34);
   --yellow-100: #f5fda8;
   --yellow-400: #e2e300;
+  --gold-500: #b79630;
   --yellow-a10: rgb(226 227 0 / 0.1);
   --yellow-a60: rgb(226 227 0 / 0.6);
   --yellow-a75: rgb(226 227 0 / 0.75);
@@ -311,7 +312,7 @@ main.bleed { padding: 0; }
 /* ========== 5. Header and footer ========== */
 .site-header { position: relative; z-index: 20; padding: 24px 0; }
 .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 8px; color: var(--color-text-primary); text-decoration: none; font: 400 18px/1 var(--font-display); }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--color-text-primary); text-decoration: none; font: 400 18px/1 var(--font-display); }
 .brand svg { flex: none; }
 .nav { display: none; align-items: center; gap: 4px; }
 .nav > a, .nav summary { color: var(--color-text-primary); text-decoration: none; font-size: var(--text-body-sm); font-weight: 500; padding: 8px 12px; border-radius: var(--radius-pill); transition: background-color 0.15s; }

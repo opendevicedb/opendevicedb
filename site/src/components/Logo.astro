@@ -1,13 +1,14 @@
 ---
-// Brand mark + wordmark. The mark is a placeholder vector until the Figma "Logo" export lands.
+// Brand mark + wordmark, from the Figma "Logo" component (logo-mark: three stacked layers and a
+// spark). public/favicon.svg is the same mark with the colours written out.
 import { SITE_NAME } from "../lib/config.ts";
 ---
 <a class="brand" href="/" aria-label={`${SITE_NAME} home`}>
-  <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-    <path d="M16 15 3 21.5 16 28l13-6.5z" style="fill: var(--purple-200)" />
-    <path d="M16 11 3 17.5 16 24l13-6.5z" style="fill: var(--purple-50)" />
-    <path d="M16 6 3 12.5 16 19l13-6.5z" style="fill: var(--yellow-400)" />
-    <path d="m24 3 1 2.4L27.4 6.4 25 7.4 24 9.8 23 7.4l-2.4-1L23 5.4z" style="fill: var(--yellow-400)" />
+  <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true">
+    <path d="M2.26 24.15c-.54-.27-.54-1.04 0-1.3l16.49-8.12a.7.7 0 0 1 .64 0l16.5 8.12c.54.26.54 1.03 0 1.3l-16.5 8.12a.7.7 0 0 1-.64 0z" style="fill: var(--gold-500)" />
+    <path d="M2.26 19.68c-.54-.26-.54-1.03 0-1.3l16.49-8.12a.7.7 0 0 1 .64 0l2.82 1.39a.7.7 0 0 1 .38.47l1.65 6.64c.1.4.52.64.92.52l7.4-2.31a.7.7 0 0 1 .53.04l2.79 1.37c.54.27.54 1.04 0 1.3l-16.5 8.12a.7.7 0 0 1-.64 0z" style="fill: var(--yellow-400)" />
+    <path d="M18.75 5.8a.7.7 0 0 1 .64 0l16.5 8.12c.54.27.54 1.04 0 1.3l-16.5 8.12a.7.7 0 0 1-.64 0L2.26 15.22c-.54-.26-.54-1.03 0-1.3z" style="fill: var(--purple-50)" />
+    <path d="M27.02 3.47c.1-.41.69-.41.8 0l.19.73a5.6 5.6 0 0 0 4.07 4.08l.73.19c.42.1.42.69 0 .8l-.73.18a5.6 5.6 0 0 0-4.07 4.08l-.19.73c-.11.41-.7.41-.8 0l-.19-.73a5.6 5.6 0 0 0-4.08-4.08l-.73-.19c-.41-.1-.41-.69 0-.79l.73-.19a5.6 5.6 0 0 0 4.08-4.08z" style="fill: var(--yellow-400)" />
   </svg>
   {SITE_NAME}
 </a>
