@@ -518,12 +518,13 @@ pre:hover::-webkit-scrollbar-thumb { background: rgb(255 255 255 / 0.28); }
 .dev-row .name:hover { color: var(--color-text-brand); }
 .dev-row .name::after { content: ""; position: absolute; inset: 0; }
 .dev-row .row a, .dev-row .meta a { position: relative; z-index: 1; }
-.dev-row .meta { padding-left: 36px; color: var(--color-text-secondary); font-size: var(--text-body-sm); }
+.dev-row .meta { color: var(--color-text-secondary); font-size: var(--text-body-sm); }
 .dev-row .meta .mono { font-size: 0.9em; }
 .dev-row .row-arrow { display: none; color: var(--color-text-primary); margin-left: 8px; }
 @media (min-width: 48rem) {
   .dev-row { grid-template-columns: minmax(0, 1fr) auto; }
-  .dev-row .meta { grid-column: 1; grid-row: 2; }
+  /* Indent the meta line under the name (24px icon + 12px gap); on phones everything starts flush left. */
+  .dev-row .meta { grid-column: 1; grid-row: 2; padding-left: 36px; }
   .dev-row > .row, .dev-row > .badge { grid-column: 2; grid-row: 1 / span 2; justify-content: flex-end; }
   .dev-row .row-arrow { display: inline-block; }
 }
