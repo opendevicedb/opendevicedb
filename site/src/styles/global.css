@@ -443,7 +443,12 @@ a.badge.wanted:hover { box-shadow: 0 0 20px -2px var(--yellow-a60); }
 .callout { border: 1px solid var(--color-border-default); background: var(--color-bg-surface); border-radius: var(--radius-card); padding: var(--space-card-padding); }
 
 .device-card, .wanted-item, .explore-card { display: flex; flex-direction: column; gap: var(--space-card-gap); }
-.device-card .top { display: flex; justify-content: space-between; align-items: flex-start; }
+/* Icon, title and arrow on one line; the arrow turns yellow when the card is hovered or focused. */
+.device-card .top { display: flex; align-items: flex-start; gap: 12px; }
+.device-card .top h3 { flex: 1; min-width: 0; }
+.device-card .top .icon { flex: none; margin-top: 2px; }
+.card-arrow { color: var(--color-text-primary); transition: color 0.15s; }
+.card.link:hover .card-arrow, .card.link:focus-within .card-arrow { color: var(--color-text-brand); }
 .device-card h3, .wanted-item h3, .explore-card h3 { margin: 0; }
 .device-card h3 a, .wanted-item h3 a { color: var(--color-text-primary); text-decoration: none; }
 .device-card .text, .wanted-item .text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
