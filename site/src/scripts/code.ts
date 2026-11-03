@@ -11,6 +11,7 @@ for (const pre of document.querySelectorAll<HTMLPreElement>("main pre")) {
   copy.type = "button";
   copy.className = "copy";
   copy.textContent = "Copy";
+  copy.setAttribute("aria-label", "Copy code to clipboard"); // the visible "Copy" alone doesn't say what
   copy.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(pre.innerText.trim());

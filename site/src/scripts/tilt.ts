@@ -42,3 +42,5 @@ document.documentElement.addEventListener("pointerleave", () => {
   if (card) flatten(card);
   card = null;
 });
+
+export {}; // a module: its top-level names stay its own

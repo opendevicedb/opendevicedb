@@ -9,12 +9,17 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "node scripts/check-dist.ts",
-    "test": "node --test src/lib/*.test.ts"
+    "test": "node --test src/lib/*.test.ts",
+    "check:ui": "playwright test"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
     "@opendevicedb/core": "*",
     "astro": "^7.4.0",
     "cookie": "^2.0.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1"
   }
 }

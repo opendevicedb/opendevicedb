@@ -43,9 +43,20 @@
   font-weight: 100 900;
   font-display: swap;
 }
-/* Display face: Technor (ITF / Fontshare). Not committed here until its license for a public
-   repository is confirmed; drop the woff2 files in /public/fonts and add an @font-face. Until
-   then headings use Technor when it is installed locally, otherwise Geist. */
+/* Display face: Technor (ITF / Fontshare, self-hosted under its Free Font License, see
+   /fonts/technor-FFL.txt). Regular for headings, light for the home counters. */
+@font-face {
+  font-family: "Technor";
+  src: url("/fonts/technor-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Technor";
+  src: url("/fonts/technor-light.woff2") format("woff2");
+  font-weight: 300;
+  font-display: swap;
+}
 
 /* ========== 2. Tokens ========== */
 :root {

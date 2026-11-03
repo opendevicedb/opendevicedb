@@ -22,3 +22,21 @@ window.addEventListener("scroll", () => { if (!frame) frame = requestAnimationFr
 // Tabbing into the header while it is away brings it back.
 header.addEventListener("focusin", () => header.classList.remove("away"));
 update();
+
+// Header menus are <details> (they open without JS). With JS: Escape closes the open one and
+// returns focus to its button; a click outside it closes it; opening one closes the other.
+const menus = [...header.querySelectorAll<HTMLDetailsElement>("details")];
+for (const menu of menus) {
+  menu.addEventListener("toggle", () => { if (menu.open) for (const m of menus) if (m !== menu) m.open = false; });
+}
+document.addEventListener("keydown", (ev) => {
+  const open = menus.find((m) => m.open);
+  if (ev.key !== "Escape" || !open) return;
+  open.open = false;
+  open.querySelector("summary")!.focus();
+});
+document.addEventListener("click", (ev) => {
+  for (const m of menus) if (m.open && !m.contains(ev.target as Node)) m.open = false;
+});
+
+export {}; // a module: its top-level names stay its own
