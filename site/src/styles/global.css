@@ -349,15 +349,16 @@ main.bleed { padding: 0; }
 .nav summary::-webkit-details-marker { display: none; }
 .nav .more[open] summary .icon { transform: rotate(180deg); }
 .menu-panel { position: absolute; top: calc(100% + 12px); left: 0; width: 14rem; display: flex; flex-direction: column; gap: 4px; padding: 12px; border: 1px solid var(--color-border-default); border-radius: var(--radius-menu); background: rgb(50 2 100 / 0.92); backdrop-filter: blur(24px); box-shadow: 0 16px 40px rgb(0 0 0 / 0.35); }
-.menu-panel a { color: var(--color-text-primary); text-decoration: none; padding: 8px; border-radius: var(--radius-sm); font-size: var(--text-body-sm); font-weight: 500; }
-.menu-panel a:hover, .menu-panel a[aria-current="page"] { background: var(--color-bg-menu); }
+/* Plain menu links only: the buttons in the mobile menu keep their own pill shape and glow. */
+.menu-panel a:not(.btn) { color: var(--color-text-primary); text-decoration: none; padding: 8px; border-radius: var(--radius-sm); font-size: var(--text-body-sm); font-weight: 500; }
+.menu-panel a:not(.btn):hover, .menu-panel a:not(.btn)[aria-current="page"] { background: var(--color-bg-menu); }
 .header-actions { display: none; gap: 8px; }
 .mobile-menu summary { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-pill); background: var(--color-bg-menu); color: var(--color-text-primary); list-style: none; }
 .mobile-menu summary::-webkit-details-marker { display: none; }
 .mobile-menu .close, .mobile-menu[open] .open { display: none; }
 .mobile-menu[open] .close { display: inline-block; }
 .mobile-menu .menu-panel { left: var(--gutter); right: var(--gutter); width: auto; top: 100%; }
-.mobile-menu .menu-panel a { padding: 12px; font-size: var(--text-body); }
+.mobile-menu .menu-panel a:not(.btn) { padding: 12px; font-size: var(--text-body); }
 .mobile-menu .menu-panel .btn { margin-top: 8px; justify-content: center; }
 @media (min-width: 64rem) {
   .nav, .header-actions { display: flex; }
