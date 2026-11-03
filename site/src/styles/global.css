@@ -445,9 +445,11 @@ a.badge.wanted:hover { box-shadow: 0 0 20px -2px var(--yellow-a60); }
 
 .device-card, .wanted-item, .explore-card { display: flex; flex-direction: column; gap: var(--space-card-gap); }
 /* Icon, title and arrow on one line; the arrow turns yellow when the card is hovered or focused. */
-.device-card .top { display: flex; align-items: flex-start; gap: 12px; }
-.device-card .top h3 { flex: 1; min-width: 0; }
-.device-card .top .icon { flex: none; margin-top: 2px; }
+/* Centre the icons on the title's letters, not its line box: text-box trims the title to its cap
+   height (browsers without it keep the line box, about 1px off). */
+.device-card .top { display: flex; align-items: center; gap: 12px; }
+.device-card .top h3 { flex: 1; min-width: 0; text-box: trim-both cap alphabetic; }
+.device-card .top .icon { flex: none; }
 .card-arrow { color: var(--color-text-primary); transition: color 0.15s; }
 .card.link:hover .card-arrow, .card.link:focus-within .card-arrow { color: var(--color-text-brand); }
 .device-card h3, .wanted-item h3, .explore-card h3 { margin: 0; }
