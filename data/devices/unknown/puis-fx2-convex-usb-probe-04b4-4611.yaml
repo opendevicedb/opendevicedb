@@ -11,13 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: "Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust
-  integrated offline journal-to-General CPU image reconstruction now preserves explicit temporal
-  state and attempted-call lifecycle. Actual convex acquisition/capture-web, native RDH undefined
-  effects, GPU/visual equivalence and physical calibration remain unvalidated. First real phantom
-  bootstrap stops before configuration/Start: controlID1435 but complete EP88
-  PID0/ID0/connection0;4host writes complete,noDATA/image. Bootstrap transition remains under
-  investigation."
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435. Rust identity/configuration/receive
+  and offline CPU reconstruction are experimental. Two phantom attempts preserve an initial
+  ID-source refusal and a subsequent2.1MB counter stream with no imaging headers. Exact
+  original-instruction comparison corrects the final voltage tuple from USB-test value1 to16 in
+  Rust0.15. Real convex images, acoustic stop, calibration and physical safety remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -367,7 +365,27 @@ interfaces:
       negative bootstrap result, not a validated acquisition or acousticstop. Static APK PowerON
       lifecycle includes delayed skipGoldenVersion(true), absent from this initial experimental
       driver; necessity/effects/current golden state unresolved, no bank/firmware/reset command
-      replayed and no ID0 coerced to1435. Device-unique fields/rawpayload stay private."
+      replayed and no ID0 coerced to1435. Device-unique fields/rawpayload stay private. Second
+      owner-confirmed stable/coupled phantom attempt with Rust0.14: complete PID0
+      rawHWID0/connection0/logic0x4c02 is preserved, then all three same-handle control reads after
+      that message again match UC5-2S/ID1435. A bounded model-selection policy keeps these
+      identities separate and retains raw runtime change guards.19host OUT writes complete through
+      configuration, Start and finalFreeze; no retries, firmware/reset or skipGolden.
+      DATA2113536bytes forms1056768u16LE words incrementing exactly modulo65536,16wraps,no
+      discontinuity; strict32C replay finds0frame headers and produces0images. First DATA return
+      follows the voltage-envelope write and precedes Start. Exact original ELF bytes/instructions
+      reveal a port defect: final direct voltage tuple must be0x70034=16, not1; separate
+      USBTestStart emits0x70034=1. Rust0.15 corrects this single byte, retaining packet order and
+      all12other configuration packet hashes for the observed request.34prepared-object cases (17t6
+      values x callback0/-7) execute1088original ARM64 instructions of SendVoltageMsg in
+      Unicorn2.1.4 with declared memset/OUT callback stubs; all17408packet bytes equal the corrected
+      public Rust API. Earlier6144/17472scalar-reference fingerprint claims reproduced the same
+      wrong1 and did not validate this constant against original instructions; their voltage-pair
+      conclusion is superseded. This is an offline builder correction, not validated
+      imaging/acoustic behavior or proof of firmware golden state.347common tests pass. Owner
+      unplugs and USB absence confirmed. Static Java delayed0x60003 and explicit USB counter-test
+      verifier are distinct; no causal necessity for skipGolden established or added. Raw/unique
+      identity fields, vendor bodies/banks and derived packet payloads remain private."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -377,6 +395,14 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Second phantom trial: same-handle post-PID0 control identity confirms1435 while rawHWID
+      remains0.19host OUT complete,2113536DATA bytes exact u16 counter,0imageheaders/images. Offline
+      correction1->16 corroborated against1088original ARM64 instructions/34cases/17408packet bytes;
+      earlier scalar oracle shared the defect.347common tests pass. No firmware/skipGolden or
+      acoustic-stop claim. Raw/payloads private."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
