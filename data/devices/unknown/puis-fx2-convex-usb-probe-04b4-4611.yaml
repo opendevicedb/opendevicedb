@@ -43,7 +43,30 @@ interfaces:
       Constructor99/2 resolves isolated Start/Freeze serialization to wire type2: LE32
       [5a5aa5a5,2,0,0,00060001,0-or-1,2,a5a55a5a] plus480 zero bytes;0=Start,1=Freeze. Internal
       kind99 is not a wire field. Static analysis only; no replay, full initialization or acoustic
-      stop validation."
+      stop validation. Further static PUIS Plus ARM64 analysis establishes the guarded configuration
+      lifecycle: path and explicit B parameters precede OpenHW/Run, ATGC/Apo/ApoComp uploads, depth
+      re-emission and ScanCtrl; StartImageEngine does not directly invoke SendStartCmd, but Run
+      launches a timer that can emit Start independently of UnFreeze. Producer flush calls feed
+      per-type buffers, not necessarily USB writes. SendHardMsg can emit implicit Freeze before
+      queueing ordinary kinds; type100 bypasses this buffering. After its internal timing threshold,
+      the timer can drain buffers then emit optional direct voltage and Start when software frozen
+      is false. Transport callback returns are discarded on several paths; neither the timer
+      threshold nor caller completion is a complete-configuration barrier or hardware
+      acknowledgement. Queues can be popped before Run without sending, and several producer/write
+      errors are discarded by native callers. UC5-2S_16 file selectors are TX16/ADC8R, despite the
+      folder suffix. B fields, fixed ADC8R and fundamental TxWave8R producers, PRF8 banks and
+      bounded upload envelopes are mapped. General upload lengths including framing/alignment
+      are1536/2560/2560 bytes for ATGC/Apo/ApoComp; deterministic zero padding is an explicit port
+      policy because generic native upload padding state is unproven. The pre-Start direct voltage
+      envelope retains a repeated register key. ColorFreeze calls misleadingly named SendStartMsg,
+      which emits Freeze value1, not Start. Native PRF depth==count and generic
+      file-slice/error-loss quirks require strict bounds in a port. Complete TX/RX focusing/packing,
+      filters/up4, hardware logic-version/ScanCtrl, runtime order and acknowledgements remain
+      unresolved. No complete convex activation plan or hardware replay is established. Offline Rust
+      primitive validation now covers1024 preset/depth/fundamental-index combinations across8
+      hash-identified input groups:6144 isolated packet hashes and all selected PRF fields match an
+      independent reference. Synthetic tests and strict bounds pass; these are not complete session
+      or hardware replay results."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -53,6 +76,25 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Nine synthetic convex primitive tests and common180-test suite passed
+      (102probe-usb,50probe-frame,14study-data,2usb-trace,6bench-camera,6Python), formatting and
+      Clippy clean. Independent local file verification matched6144 isolated packet hashes over1024
+      combinations plus all PRF fields; original vendor payloads remain excluded. Four additional
+      static timer/implicit-write evidence records correct the initial UnFreeze-only interpretation
+      before public submission: Start may also be timer-triggered, implicit Freeze and immediate
+      type100 writes exist, producer flushes are not completed wire transfers. No full activation
+      plan, hardware replay, image or acoustic validation."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static native/JNI lifecycle and configuration primitive analysis, identified Plus engine
+      SHA256545082a37a335833a4022e5b9c3377df0923fb4326eea4bc2a0639f113bef03a. Evidence links
+      independently checked. Rust offline typed readers/isolated encoders are under synthetic and
+      file-hash verification; no vendor payload/code redistributed. Initial configuration remains
+      partial; no probe I/O or command replay, acoustic stop, image or physical property validated.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -138,4 +180,10 @@ provenance:
     - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
     - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
     - Existing pyusbus historical Parquet projection export
+    - REA6.5.0 / Ghidra12.1.4 static convex configuration analysis
+    - REA6.5.0 / JADX0.7.1 JNI and Java field attribution
+    - Rust probe-usb0.7 offline convex configuration primitives
+    - Independent Python struct/f32 reference checks (ignored orchestration only)
+    - Rust9 synthetic convex primitive tests and180-test common suite
+    - REA6.5.0 / Ghidra12.1.4 static timer and implicit-command evidence
 updated: 2026-11-04
