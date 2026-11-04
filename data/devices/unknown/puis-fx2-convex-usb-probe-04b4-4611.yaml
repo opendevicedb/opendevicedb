@@ -12,9 +12,10 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust General
-  preprocessing/DTGC/explicit-state compound and SRI host parameters/bindings/intent plan are
-  checked offline. Native RDH allocation/write inconsistency remains explicit. SRI image kernels,
-  DSC, full GPU/engine equivalence and actual convex imaging remain unvalidated.
+  CPU preprocessing/DTGC/compound/SRI image stages are ported with explicit native backing and
+  independent original-kernel CPU checks. Native RDH undefined-write inconsistency remains explicit.
+  DSC/display, actual convex capture/frame grouping and full GPU/engine/physical equivalence remain
+  unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -250,7 +251,29 @@ interfaces:
       SRI image kernels, DSC/display and attributed convex capture/calibration remain open. Vendor
       code, resources, banks and numerical outputs stay private/ignored; only independent findings
       and metadata are published. Earlier no-SRI statements remain historical; this is a host
-      planner, not an image SRI implementation."
+      planner, not an image SRI implementation. Rust probe-frame0.18 now computes the selected
+      General SRI image path for enhancement0..8 with42explicit complete native
+      backings,total5038080bytes. It consumes compound output and native64x1024RDH only, never its
+      outside-write trace; clamp-to-edge reads preserve width64. The verified host recipe/bindings
+      drive22active image kernels and copies/fills. HF258/HF278 and inactive General fine images
+      remain unexecuted; unwritten regions, including last2rows of350atN3, retain supplied bytes.
+      Explicit counter2 preserves supplied historical mask correlation even when current selector
+      differs; no native SetParam/Init clear or setting/acquisition continuity is inferred.216passes
+      in72three-pass sequences across8depths and9enhancements compare1088225280complete image
+      bytes,5184ordered operations and217728per-stage image hashes against32original OpenCL bodies
+      compiled for CPU(22executed), with Clang22.1.8, ASan/UBSan,noFMA, explicit
+      sampler/UNORM8/SNORM8/math helpers and real CPU workgroup barriers/atomic votes. Both sides
+      reuse their own prior states separately.16extra
+      black/white/impulse/checker/ramp/pseudorandom/block/constant inputs match80609280bytes and all
+      stages; all9direction classes occur in actually written regions. Source boundary inputs are
+      explicitly synthetic, not attributed captures.87CLI refusal/nonoverwrite cases and327common
+      tests/fmt/Clippy pass; archived actual linear14images/61030424bytes remain unchanged.47input
+      snapshots and51result hashes retain full provenance. Coefficient resources are
+      external/hash-bound; UpSampling and UpSampling2 have81bitidentical coefficients. No vendor
+      source/banks/numerical outputs or medical files are published. Actual convex
+      framing/acquisition, DSC/palette/display, full engine/GPU and physical calibration remain
+      open. Earlier no-image-SRI statements describe older checkpoints. No new USB/Android/GPU
+      execution or native session."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -260,6 +283,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: General SRI images:216passes/72three-pass explicit-state sequences
+      compare1088225280bytes,5184operations and217728stage hashes to original OpenCL bodies compiled
+      CPU with ASan/UBSan/noFMA and explicit helpers/barriers.16edge cases compare80609280bytes and
+      cover9actual output directions.87CLI refusals,327common tests/fmt/Clippy and unchanged14-image
+      linear regression pass. No native Init/SetParam lifecycle, GPU or real convex
+      capture/calibration claim. Vendor source/resources/numeric outputs remain private.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -507,4 +539,11 @@ provenance:
       API-intent stubs; no image kernel/GPU
     - 1944cases/4035744bytes/219672bindings/46656intents,28CLI refusals,325common tests and
       unchanged14-image linear regression
+    - Rust probe-frame0.18 General SRI image processor with42explicit backings, native64RDH and
+      historical mask binding
+    - Retained REA/Ghidra host plan with original source and layout hashes; no new native session
+    - Clang22.1.8 original OpenCL bodies compiled CPU, ASan/UBSan,noFMA, real CPU workgroup barriers
+      and atomic votes
+    - 216passes/1088225280bytes/217728stage hashes plus16numerical edge cases/80609280bytes;87CLI
+      refusals and327common tests
 updated: 2026-11-04
