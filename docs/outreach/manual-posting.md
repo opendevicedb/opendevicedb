@@ -65,7 +65,7 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [AntiMicroX](https://github.com/AntiMicroX/antimicrox/discussions/1387) : liens vers l’outil de configuration et les profils, en distinguant détection du périphérique et affectation des boutons. Le statut de maintenance limitée est conservé. Aucun importeur ni test matériel ; attendre les retours dans ce fil.
 
-- [MissionControl](https://github.com/ndeadly/MissionControl/discussions/1174) : liens par modèle et firmware de manette, avec transport Bluetooth et prérequis Atmosphère. La proposition cite l’avertissement DualShock 3 propre à la version 0.16.0 et sépare les essais BLE de la prise en charge officielle. Aucun importeur ni test matériel ; attendre les retours dans ce fil.
+- [MissionControl](https://github.com/ndeadly/MissionControl/discussions/1174) : le mainteneur souhaite des échanges sans assistance IA. Aucune réponse automatique ni brouillon rédigé par l’assistant ; voir la section « MissionControl : réponse personnelle uniquement » ci-dessous.
 
 ## OpenBikeSensor : pas de promotion automatisée
 
@@ -113,7 +113,7 @@ L’inscription à la [liste officielle](https://lists.gnu.org/mailman/listinfo/
 
 ## INAV : échange ouvert
 
-Une [présentation est publiée](https://github.com/iNavFlight/inav/discussions/12203) dans « Show and tell ». Continuer dans ce fil si une réponse arrive ; ne pas dupliquer l’annonce ailleurs. La proposition conserve la distinction carte/cible/version et ne constitue pas un importeur ni un essai matériel.
+Un [contributeur a indiqué une source](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308) pour les cibles/PWM, sans correspondance commerciale connue. Notre [réponse](messages/2026-11-04/inav-source-followup.md) le remercie et conserve les réserves de branche/date/version. Continuer ce fil sans nouvelle annonce ; aucun importeur ni essai matériel réalisé.
 
 ## OpenHD et Linux Hardware : contacts effectués
 
@@ -216,3 +216,8 @@ Un [email](messages/2026-11-04/pslab-fossasia.md) a été envoyé au contact off
 ## LibreVNA : groupe non contacté
 
 Le projet recommande [son groupe](https://groups.io/g/LibreVNA-support/). Ses [conditions](https://groups.io/static/tos) excluent les sollicitations promotionnelles non autorisées ; pas d’annonce ni d’inscription pour cette campagne, et pas de repli sur GitHub pour contourner cette restriction. La page publique est accessible : l’erreur 402 du lecteur ne prouve pas un abonnement payant.
+
+## CircuitPython et Red Pitaya : canaux à examiner
+
+- [Forum CircuitPython officiel](https://forums.adafruit.com/viewforum.php?f=60) : lire les règles dans le navigateur avant toute présentation ; accès anonyme de l’assistant refusé. Conserver le modèle exact, la version et les fonctions réellement disponibles. Aucun message envoyé.
+- [Forum Red Pitaya officiel](https://forum.redpitaya.com/) : catégories de projets/idées disponibles, mais conditions d’inscription non consultables par l’assistant. Aucun compte créé ni message publié ; lire les conditions par la voie normale avant de poursuivre.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:23:02.180887Z",
+  "last_verified_at": "2026-11-04T22:29:45.011092Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -872,12 +872,24 @@
     {
       "name": "INAV",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/iNavFlight/inav/discussions/12203",
       "published_at": "2026-11-04T19:48:39Z",
       "message": "messages/2026-11-04/inav.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback in this thread; no duplicate invitation or developer support email. Preserve exact board/target/release/Configurator scope. No importer, new record or hardware test."
+      "next_action": "Source acknowledged in the existing reply. Research a version-qualified target index and separately evidenced retail-model/revision links before implementation. Wiki identifies maintenance-9.x/2026-01-17 generation and caveats official build availability; current repository default is maintenance-10.x. No importer, new record, PR request or hardware validation. No duplicate introduction.",
+      "response_url": "https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308",
+      "response_received_at": "2026-11-04T21:17:23Z",
+      "response_summary": "sensei-hacker points to the generated board/target/PWM wiki and reports no known retail-brand cross-reference outside target names. This is a source suggestion, not a PR request or integration acceptance.",
+      "source_suggestion": "https://github.com/iNavFlight/inav/wiki/Boards,-Targets-and-PWM-allocations",
+      "followups": [
+        {
+          "url": "https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19407208",
+          "published_at": "2026-11-04T22:27:35Z",
+          "message": "messages/2026-11-04/inav-source-followup.md",
+          "outgoing_text_verified": true
+        }
+      ]
     },
     {
       "name": "OpenHD",
@@ -1800,8 +1812,9 @@
     {
       "name": "CircuitPython",
       "source": "https://github.com/adafruit/circuitpython/tree/66688d5d05613bd60dbf8cb0cd0e6db4f62bb23a",
-      "status": "community_route_policy_and_board_scope_review_needed",
-      "next_action": "No GitHub Discussions. Read current official support/community routes and policies before an introduction. Verify exact boards/variants and released firmware metadata. No contact, promotional issue, importer or hardware test."
+      "status": "official_forum_or_discord_rules_review_pending",
+      "next_action": "Full README, AGENTS, CONTRIBUTING, CoC and policy inventory read; official website/board page reviewed. Forum returned 403; Discord room rules not read. No promotional issue, CoC-address email or developer DM as a shortcut. Review the normal community route/rules before a proposal, and verify exact board/release/module support. No contact, import, flash or hardware test.",
+      "community_url": "https://forums.adafruit.com/viewforum.php?f=60"
     },
     {
       "name": "ESPEasy",
@@ -1983,8 +1996,8 @@
       "name": "Red Pitaya",
       "source": "https://github.com/RedPitaya/RedPitaya/tree/0e46d64396a57752bf97315789d6cc6c9fbddad8",
       "community_url": "https://forum.redpitaya.com/",
-      "status": "official_forum_rules_and_model_scope_review_needed",
-      "next_action": "Full README/COPYING/policy inventory and official contact/ecosystem pages reviewed. GitHub Discussions has categories but only one thread returned; official site emphasizes its forum. Prefer completing that route and board/app/version documentation review before a proposal. No rejection or AI ban inferred. No forum signup, GitHub post, guessed email, purchase, importer or instrument test."
+      "status": "official_forum_registration_terms_access_pending",
+      "next_action": "Official forum home is public and includes project/idea categories. Terms read timed out; registration page returned a verification interstitial. No signup, bypass, post, email or fallback merely to evade access/rules. Not an AI ban or project rejection. Board/app/version source review still needed before catalogue claims."
     },
     {
       "name": "gelanchez / crazy-hand",

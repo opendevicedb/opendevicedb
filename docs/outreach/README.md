@@ -78,7 +78,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [AntiMicroX](messages/2026-11-04/antimicrox.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/AntiMicroX/antimicrox/discussions/1387) |
 | [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `human_response_received_owner_only`; automated replies stopped | [maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844) |
 | [GNU Radio](messages/2026-11-04/gnuradio.md) | member email to official list | `sent_and_read_back`; publication unconfirmed | [official list](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) |
-| [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/iNavFlight/inav/discussions/12203) |
+| [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `substantive_response_received`; source acknowledged | [contributor response](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308) |
 | [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
 | [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
 | [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
@@ -186,3 +186,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [OpenRazer / Luca Weiss](messages/2026-11-04/openrazer-luca.md) and [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md): one proposal each sent/read back to their published professional contacts. Proposed model links would retain version/connection/feature requirements. No page/importer, upstream change or hardware validation implemented; await those email threads.
 
 - [Bitcraze presentation](https://github.com/orgs/bitcraze/discussions/2258): first Crazyflie page proposed with model/radio/deck requirements. [phyphox email](messages/2026-11-04/phyphox.md): asked about canonical phone/sensor/experiment references. No new page/importer or hardware validation; await those conversations. Red Pitaya remains under forum/model-scope review, without contact.
+
+- [INAV source response](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308): target/PWM wiki suggested, without a known retail cross-reference. [Our reply](messages/2026-11-04/inav-source-followup.md) thanks the contributor and preserves branch/date/release qualifiers. Source research remains preliminary; no importer, new record or hardware validation.
