@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:15:33.727883Z",
+  "last_verified_at": "2026-11-04T22:23:02.180887Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1214,6 +1214,32 @@
       "contact_source": "https://github.com/pfps",
       "project_source": "https://github.com/pwr-Solaar/Solaar/tree/e7304c4c451cc9bb4f206a914844525e67856a28",
       "next_action": "Await this email about proposed Solaar model/settings references. Keep receiver and paired-device identities, connection, protocol and feature scope distinct. No duplicate issue/team solicitation, copied device serial logs, page/importer or hardware test."
+    },
+    {
+      "name": "Bitcraze / Crazyflie",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/bitcraze/discussions/2258",
+      "published_at": "2026-11-04T22:20:31Z",
+      "title": "OpenDeviceDB: helping Crazyflie owners find firmware and control tools",
+      "message": "messages/2026-11-04/bitcraze-crazyflie.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/orgs/bitcraze/discussions/55",
+      "project_source": "https://github.com/bitcraze/crazyflie-firmware/tree/e828ed29b008675f4e7aedeb23754dbc6c2531f5",
+      "next_action": "Await feedback in this Show and tell thread on a proposed first model page. No duplicate email/forum/individual invitation, new record/importer, firmware/client/flight command or physical validation. Keep exact model, firmware/client/radio/deck requirements; preserve discussion history under its rules."
+    },
+    {
+      "name": "phyphox",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@phyphox.org",
+      "subject": "phyphox sensor references on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:21:21.000Z",
+      "message": "messages/2026-11-04/phyphox.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://phyphox.org/contact/",
+      "project_source": "https://github.com/phyphox/phyphox-android/tree/45fa55a0727653ccce439b86acb69c00cf435436",
+      "next_action": "Await this general-contact email about canonical model/sensor/experiment references. No repeat forum/team/ambassador message, registration, data submission/import, app change or phone test. Preserve Android/iOS, measured/reported and sample/provenance limits; data reuse terms and canonical model links remain to verify."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1952,6 +1978,21 @@
       "status": "deferred_to_avoid_parallel_peripheral_solicitation",
       "relevance": "Public personal site describes libratbag/openinput maintainership and USB HID/Wireshark work. Separate project sources, current roles/licenses and community guidance have not been fully reviewed.",
       "next_action": "Retain as a future public source/contributor lead; no personal invitation alongside the new Solaar/OpenRazer contacts. Review exact project scope, policy, channel and duplicates before any approach. Do not infer collaboration interest or treat biography as hardware validation."
+    },
+    {
+      "name": "Red Pitaya",
+      "source": "https://github.com/RedPitaya/RedPitaya/tree/0e46d64396a57752bf97315789d6cc6c9fbddad8",
+      "community_url": "https://forum.redpitaya.com/",
+      "status": "official_forum_rules_and_model_scope_review_needed",
+      "next_action": "Full README/COPYING/policy inventory and official contact/ecosystem pages reviewed. GitHub Discussions has categories but only one thread returned; official site emphasizes its forum. Prefer completing that route and board/app/version documentation review before a proposal. No rejection or AI ban inferred. No forum signup, GitHub post, guessed email, purchase, importer or instrument test."
+    },
+    {
+      "name": "gelanchez / crazy-hand",
+      "source": "https://github.com/orgs/bitcraze/discussions/2249",
+      "repository": "https://github.com/gelanchez/crazy-hand",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author describes Crazyflie 2.1 plus AI-deck/Crazyradio, Wi-Fi camera images, PC gesture recognition and custom firmware. Relevant to PC/drone/camera interoperability; these are author-reported results, not our code/license/flight validation.",
+      "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new Bitcraze introduction. Verify current source, licenses and exact hardware/software requirements before a catalogue claim. Do not infer occupation or collaboration interest."
     }
   ],
   "remaining": [
