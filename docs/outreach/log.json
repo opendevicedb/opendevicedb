@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:11:56.781974Z",
+  "last_verified_at": "2026-11-04T21:20:28.570161Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -15,7 +15,8 @@
     "declined_do_not_contact": "Community declined this kind of interaction; no further contact.",
     "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented.",
     "subscription_requested": "Administrative subscription request sent and read back; membership and any community introduction remain unconfirmed.",
-    "private_response_received": "A reply to private correspondence was observed. Its contents and personal arrangements remain outside this public repository."
+    "private_response_received": "A reply to private correspondence was observed. Its contents and personal arrangements remain outside this public repository.",
+    "human_response_received_owner_only": "A human reply asks for communication without AI assistance. Automated replies/drafts are stopped; any continuation belongs to the owner in their own words."
   },
   "contacts": [
     {
@@ -838,12 +839,16 @@
     {
       "name": "MissionControl",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "human_response_received_owner_only",
       "url": "https://github.com/ndeadly/MissionControl/discussions/1174",
       "published_at": "2026-11-04T19:26:34Z",
       "message": "messages/2026-11-04/missioncontrol.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback in this thread. Proposed downstream source-linked tool/model references only; no dedicated importer, new record or hardware test. No duplicate introduction or parallel contributor solicitation."
+      "next_action": "No AI-assisted reply, rewritten draft, alternate-channel approach or related contributor solicitation. Owner may choose to respond personally in their own words. Do not describe this as a ban on all human contact or all AI code use.",
+      "feedback_url": "https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844",
+      "feedback_received_at": "2026-11-04T19:32:46Z",
+      "feedback_summary": "Maintainer prefers communication without AI assistance, finds the introduction unclear and asks what a source-linked controller entry means.",
+      "automated_followup_allowed": false
     },
     {
       "name": "GNU Radio",
@@ -1066,6 +1071,19 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/cherry-embedded/CherryUSB/blob/1cf7193676584a0c2bbfa53bf88b13b65a063130/README.md",
       "next_action": "Await demo/source-metadata feedback in this General thread. No duplicate QQ/Discord/issue/email or personal approach. No importer, record, SDK/example build, paid support or hardware test. Preserve board, SDK/stack version, host/device role and controller instance."
+    },
+    {
+      "name": "Printalyzer / Derek Konigsberg",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "dkonigsberg@logicprobe.org",
+      "subject": "Printalyzer on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:19:07.000Z",
+      "message": "messages/2026-11-04/printalyzer-derek-konigsberg.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/dkonigsberg",
+      "project_source": "https://github.com/dektronics/printalyzer-timer/tree/16b11608119cb3da09eca94394503bae0d40d021",
+      "next_action": "Await the author’s recommendation for the timer board revision/firmware reference and feedback on a proposed page. No repeated email or alternate-channel approach; no delivery/adoption claim, new page/importer or hardware test. Keep the timer separate from densitometers and distinguish in-development from released hardware."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1543,9 +1561,9 @@
     {
       "name": "Steklorez / MissionControl BLE observations",
       "source": "https://github.com/ndeadly/MissionControl/discussions/1167",
-      "status": "deferred_to_avoid_same_community_duplicate",
+      "status": "no_ai_assisted_solicitation_in_this_community",
       "relevance": "Public report describes 8BitDo Ultimate 2 Wireless 81HE and Xbox 1914 BLE testing on one Switch; the referenced branch exists at 152dd872986a048cc9fc2c7eb03ca34a897958e6.",
-      "next_action": "Keep as a contributor lead. No invitation alongside the new MissionControl introduction. Reported tests and branch existence do not establish upstream acceptance or our validation; do not convert its Bluetooth identifiers into unique USB model matches."
+      "next_action": "Maintainer requested non-AI communication in the existing MissionControl introduction. No generated direct invitation to this related contributor or alternate-channel bypass. Public hardware claims remain unverified by us."
     },
     {
       "name": "WLED",

@@ -76,7 +76,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
 | [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
 | [AntiMicroX](messages/2026-11-04/antimicrox.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/AntiMicroX/antimicrox/discussions/1387) |
-| [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/ndeadly/MissionControl/discussions/1174) |
+| [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `human_response_received_owner_only`; automated replies stopped | [maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844) |
 | [GNU Radio](messages/2026-11-04/gnuradio.md) | member email to official list | `sent_and_read_back`; publication unconfirmed | [official list](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) |
 | [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/iNavFlight/inav/discussions/12203) |
 | [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
@@ -96,6 +96,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [FreeJoy](messages/2026-11-04/freejoy.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/FreeJoy-Team/FreeJoy/discussions/276) |
 | [TinyUSB](messages/2026-11-04/tinyusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/hathach/tinyusb/discussions/4431) |
 | [CherryUSB](messages/2026-11-04/cherryusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/cherry-embedded/CherryUSB/discussions/470) |
+| [Printalyzer / Derek Konigsberg](messages/2026-11-04/printalyzer-derek-konigsberg.md) | email | `sent_and_read_back`; delivery unconfirmed | [public author contact](https://github.com/dkonigsberg) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -157,3 +158,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [OpenFFBoard introduction](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) and [FreeJoy introduction](https://github.com/FreeJoy-Team/FreeJoy/discussions/276): distinct board-target/version and initial-install/update proposals published and read back. Neither proposal implements an importer, record or hardware-tested route. HID Remapper research remains queued pending full policy/terms and forum review.
 
 - [TinyUSB source question](https://github.com/hathach/tinyusb/discussions/4431) and [CherryUSB source question](https://github.com/cherry-embedded/CherryUSB/discussions/470): General discussions published and read back. Preserve example/BSP scope and SDK/stack/controller distinctions; no importer or hardware test. RIOT excluded from generated outreach under its explicit communication policy.
+
+- [Printalyzer author email](messages/2026-11-04/printalyzer-derek-konigsberg.md): one specific page/link proposal sent and read back; delivery and interest unconfirmed. [MissionControl maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844): prefers communication without AI assistance; automated replies and related contributor approaches stopped.

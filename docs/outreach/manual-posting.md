@@ -197,3 +197,7 @@ Les deux fils sont dans General. Continuer ces échanges en cas de retour, sans 
 ## RIOT : communication générée interdite
 
 La [politique officielle](https://github.com/RIOT-OS/RIOT/blob/4331a82c45ed2df990a7d17cc1badf2dbd1e1ab8/doc/guides/general/ai_policy.md) interdit les communications rédigées par LLM et les interventions autonomes sans validation humaine. Pas de publication, de brouillon à copier, ni de recours à un autre canal dans cette campagne automatisée. Les conditions d’usage des outils pour le code sont distinctes de cette interdiction de communication.
+
+## MissionControl : réponse personnelle uniquement
+
+Le [mainteneur a répondu](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844) et souhaite communiquer sans assistance IA. Aucune réponse automatique ni brouillon rédigé par l’assistant. Si tu souhaites poursuivre, réponds dans ce fil avec tes propres mots. Il demande ce que désigne la fiche de manette proposée ; son message ne constitue pas une interdiction de tout échange humain avec le projet.
