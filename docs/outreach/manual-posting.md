@@ -54,6 +54,10 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [pvvx / ATC_MiThermometer](https://github.com/pvvx/ATC_MiThermometer/discussions/839) : proposition de liens vers le firmware BLE et les protocoles avec les contraintes de matériel/firmware. Notre [issue 26](https://github.com/opendevicedb/opendevicedb/issues/26) décrit un prérequis manquant dans la fiche Zigbee2MQTT ; la [PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) en propose la correction, avec tests locaux et CI passés. La présentation existante a été mise à jour ; PR non fusionnée/non déployée. Utiliser ce fil pour les retours, sans nouvelle sollicitation parallèle.
 
+- [probe-rs](https://github.com/probe-rs/probe-rs/discussions/4629) : proposition de liens par modèle de sonde de débogage, avec prérequis de firmware/hôte et distinction entre sonde et cible. Aucun importeur ni test matériel ajouté ; attendre les retours dans ce fil, sans nouvelle introduction.
+
+- [Theengs Decoder](https://github.com/theengs/decoder/discussions/723) : proposition de liens vers les décodeurs BLE par modèle, en conservant les regroupements, formats de firmware et limites du décodage. Aucun importeur ni test matériel ajouté ; attendre les retours dans ce fil, sans nouvelle introduction.
+
 ## ESPHome et Home Assistant : participation personnelle uniquement
 
 La [politique de l’Open Home Foundation](https://contributors.home-assistant.io/start/ai-policy/), liée par le [guide ESPHome](https://developers.esphome.io/contributing/code/), autorise l’aide IA relue et comprise par la personne, mais interdit les agents autonomes et les contributions générées non relues. Aucune publication autonome n’est prévue. Le propriétaire peut examiner les [règles du forum](https://community.home-assistant.io/guidelines), vérifier la catégorie adaptée et participer lui-même ; les réponses aux mainteneurs doivent venir de lui. Aucun message envoyé.

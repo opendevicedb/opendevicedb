@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:37:59.006219Z",
+  "last_verified_at": "2026-11-04T18:48:18.798255Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -727,6 +727,26 @@
       "correction_proposal_status": "draft_open_unmerged_undeployed",
       "correction_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41888620876",
       "correction_ci_status": "passed_on_exact_head"
+    },
+    {
+      "name": "probe-rs",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/probe-rs/probe-rs/discussions/4629",
+      "published_at": "2026-11-04T18:47:06Z",
+      "message": "messages/2026-11-04/probe-rs.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate introduction or parallel solicitation. No dedicated importer or hardware test is implemented by this introduction."
+    },
+    {
+      "name": "Theengs Decoder",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/theengs/decoder/discussions/723",
+      "published_at": "2026-11-04T18:47:10Z",
+      "message": "messages/2026-11-04/theengs-decoder.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate introduction or parallel solicitation. No dedicated importer or hardware test is implemented by this introduction."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
