@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:47:12.571328Z",
+  "last_verified_at": "2026-11-04T20:52:50.282550Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -994,6 +994,18 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
       "next_action": "Await maintainer review of the one-entry proposal. Open and unmerged; no accepted upstream listing or measured adoption. No duplicate issue, message or direct invitation."
+    },
+    {
+      "name": "pyOCD",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/pyocd/pyOCD/discussions/2070",
+      "published_at": "2026-11-04T20:50:58Z",
+      "title": "OpenDeviceDB: linking board models to pyOCD target documentation",
+      "message": "messages/2026-11-04/pyocd.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/pyocd/pyOCD/blob/0ce0fbd201010d617d7a4e3582c39b8e8561e33d/README.md#community-resources",
+      "next_action": "Await feedback on source selection in this thread. Proposal only; no dedicated importer or hardware validation. No duplicate mailing-list, Slack, issue or contributor solicitation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1581,6 +1593,28 @@
       "status": "pull_request_submitted",
       "next_action": "Full source/policy/category and duplicate review completed; one-entry PR submitted and independently read back. Await review in the existing PR; no duplicate contact or accepted listing claim.",
       "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2"
+    },
+    {
+      "name": "Black Magic Debug",
+      "source": "https://black-magic.org/blog/codeberg-migration/",
+      "repository": "https://codeberg.org/blackmagic-debug/blackmagic",
+      "status": "excluded_from_autonomous_outreach_based_on_maintainer_position",
+      "next_action": "The official April 2026 migration post strongly rejects AI and describes its burden on maintainers. Campaign decision: no AI-assisted introduction, Codeberg/forum/chat contact or alternate-channel bypass. This is an assessment of the stated maintainer position, not a claim that a formal universal communication-ban clause was verified. Old GitHub repository is archived; do not post there."
+    },
+    {
+      "name": "nattgris / pyocd-mpsse",
+      "source": "https://github.com/pyocd/pyOCD/discussions/1701",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author presents an FTDI MPSSE probe plugin, reporting SWD-only limitations, adapter-specific USB and GPIO settings and an OpenOCD background. These are author-reported claims, not our source or hardware validation.",
+      "next_action": "Retain as a potential contributor/source lead without a direct invitation alongside the new pyOCD introduction. Verify current source, license, exact adapter/wiring and upstream state before any catalogue entry; no universal FTDI support claim."
+    },
+    {
+      "name": "Open-CMSIS-Pack / cpackget",
+      "source": "https://github.com/pyocd/pyOCD/blob/0ce0fbd201010d617d7a4e3582c39b8e8561e33d/README.md#cmsis-alignment",
+      "repository": "https://github.com/Open-CMSIS-Pack/cpackget",
+      "status": "source_policy_and_data_terms_review_needed",
+      "relevance": "Current pyOCD direction points to common pack management and vendor device descriptions, potentially useful for source-qualified board/device discovery.",
+      "next_action": "Research canonical metadata, board-versus-MCU identity and third-party pack reuse terms, plus community policy and existing contacts before any submission. No contact or importer; avoid a parallel introduction duplicating the fresh pyOCD source question."
     }
   ],
   "remaining": [

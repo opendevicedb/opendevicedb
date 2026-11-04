@@ -156,3 +156,11 @@ La [PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54) propos
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.
+
+## pyOCD : échange déjà ouvert
+
+Une [présentation](https://github.com/pyocd/pyOCD/discussions/2070) est publiée dans Show and tell. Elle demande quelles sources utiliser pour relier cartes, microcontrôleurs et CMSIS-Packs. Continuer ce fil en cas de retour ; ne pas répéter l’annonce sur Slack ou la liste. Aucun importeur ni essai matériel réalisé.
+
+## Black Magic Debug : hors campagne automatisée
+
+Le [billet officiel de migration](https://black-magic.org/blog/codeberg-migration/) annonce le passage à Codeberg et exprime un fort rejet de l’IA. Nous choisissons de ne pas contacter cette communauté dans cette campagne assistée par IA. Aucun message envoyé, et pas de repli vers son forum ou ses mainteneurs. Le dépôt GitHub archivé n’est plus le lieu des nouveaux échanges.

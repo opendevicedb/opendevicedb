@@ -90,6 +90,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [grblHAL](messages/2026-11-04/grblhal.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/grblHAL/core/discussions/1046) |
 | [Awesome Connected Things Security](messages/2026-11-04/awesome-connected-things-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/V33RU/awesome-connected-things-sec/pull/54) |
 | [Awesome IoT and Hardware Security](messages/2026-11-04/awesome-iot-hardware-security-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) |
+| [pyOCD](messages/2026-11-04/pyocd.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pyocd/pyOCD/discussions/2070) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -143,3 +144,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [Awesome Connected Things Security PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54): one README entry proposed under Search Engines. Link/placement/duplicate/byte-preservation/whitespace checks passed. Open non-draft, unmerged; no check runs reported and no acceptance/adoption claim.
 
 - [Awesome IoT and Hardware Security PR 2](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2): one README entry proposed at the bottom of Useful Websites. Contributor-guide, duplicate, canonical-link, placement, byte-preservation and whitespace checks passed. Open non-draft, unmerged; no check runs reported. Await maintainer review.
+
+- [pyOCD introduction](https://github.com/pyocd/pyOCD/discussions/2070): source-selection question published and read back. No importer, target definition or hardware test. Black Magic Debug excluded from this automated campaign based on its maintainers’ published position on AI; no contact sent.
