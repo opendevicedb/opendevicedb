@@ -34,6 +34,9 @@ characteristic, a checksum, UART pins) helps the next person or agent go faster.
 
 See [SPEC.md](SPEC.md) for the design and [POLICY.md](POLICY.md) for what we accept.
 
+Community research, outreach history and outgoing messages are tracked in the
+[outreach journal](docs/outreach/README.md).
+
 ```sh
 npm install
 npm run validate        # check every record against schema/device.schema.json
