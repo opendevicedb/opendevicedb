@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:36:50.774719Z",
+  "last_verified_at": "2026-11-04T17:44:04.209479Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -600,6 +600,18 @@
       "message": "messages/2026-11-04/open-gopro.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. Proposed model/firmware/interface index is not implemented or hardware tested."
+    },
+    {
+      "name": "HackRF / Great Scott Gadgets",
+      "channel": "email",
+      "recipient": "info@greatscottgadgets.com",
+      "subject": "OpenDeviceDB: a source-linked HackRF discovery entry",
+      "sent_at": "2026-11-04T17:43:00.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://greatscottgadgets.com/contact/",
+      "message": "messages/2026-11-04/hackrf.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not duplicate the introduction on GitHub or Discord. Proposed HackRF One entry is not implemented or hardware tested."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -936,16 +948,11 @@
       "next_action": "Find a suitable community/cooperation route; no Discussions and no message sent. PR guidance rejects LLM-written review/question responses in that workflow. Do not treat a sales/support contact as a confirmed community route."
     },
     {
-      "name": "HackRF",
-      "source": "https://github.com/greatscottgadgets/hackrf",
-      "status": "channel_research_needed",
-      "next_action": "Review official community/contact policy and concrete directory scope. No Discussions, no message sent."
-    },
-    {
       "name": "OpenPnP",
-      "source": "https://github.com/openpnp/openpnp",
-      "status": "channel_research_needed",
-      "next_action": "Review official community/contact policy and physical-machine/controller scope. No Discussions, no message sent."
+      "source": "https://openpnp.org/",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can join the official group, inspect current rules and ask about a small machine/controller index. Only members can post and new members are moderated. No message sent; no importer implemented.",
+      "community_url": "https://groups.google.com/g/openpnp"
     }
   ],
   "remaining": [

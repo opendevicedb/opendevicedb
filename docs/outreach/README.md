@@ -63,6 +63,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenWrt](messages/2026-11-04/openwrt.md) | email | `sent_and_read_back` | [contact source](https://openwrt.org/contact) |
 | [Open GoPro](messages/2026-11-04/open-gopro.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/gopro/OpenGoPro/discussions/933) |
 
+| [HackRF / Great Scott Gadgets](messages/2026-11-04/hackrf.md) | email | `sent_and_read_back` | [contact source](https://greatscottgadgets.com/contact/) |
+
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
 ## Updating this journal
