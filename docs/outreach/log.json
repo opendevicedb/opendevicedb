@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:40:56.554935Z",
+  "last_verified_at": "2026-11-04T16:54:19.477502Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -374,12 +374,39 @@
     {
       "name": "liquidctl",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/liquidctl/liquidctl/discussions/942",
       "published_at": "2026-11-04T16:12:31Z",
       "message": "messages/2026-11-04/liquidctl.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Await maintainer review of draft PR 943, particularly the representation of explicit README-family-to-match associations. No OpenDeviceDB importer is implemented.",
+      "response": {
+        "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402109",
+        "by": "jonasmalacofilho",
+        "received_at": "2026-11-04T16:38:37Z",
+        "summary": "Suggested sharing a cleaner driver/model index between the udev rule generator and OpenDeviceDB, with README information, and requested a PR."
+      },
+      "followups": [
+        {
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402348",
+          "published_at": "2026-11-04T16:53:43Z",
+          "message": "messages/2026-11-04/liquidctl-shared-index-followup.md",
+          "outgoing_text_verified": true
+        }
+      ],
+      "proposal_url": "https://github.com/liquidctl/liquidctl/pull/943",
+      "proposal_message": "messages/2026-11-04/liquidctl-shared-index-pr.md",
+      "proposal_status": "upstream_draft_pr_open",
+      "proposal_validation": {
+        "head": "312f134",
+        "python": "3.14.7",
+        "tests_passed": 543,
+        "tests_skipped": 2,
+        "udev_output": "byte-identical to pre-change generator",
+        "style": "Black passed",
+        "ci": "no checks reported at creation",
+        "initial_full_run": "Existing keyval timing test failed once; passed in isolation and on full rerun."
+      }
     },
     {
       "name": "OpenTabletDriver",

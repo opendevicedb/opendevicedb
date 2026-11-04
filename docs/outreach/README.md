@@ -45,7 +45,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenIPC](messages/2026-11-04/openipc.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenIPC/firmware#support) |
 | [BrainFlow / Andrey Parfenov](messages/2026-11-04/brainflow-andrey-parfenov.md) | email | `sent_and_read_back` | [contact source](https://brainflow.org/) |
 | [Tympan](messages/2026-11-04/tympan.md) | email | `sent_and_read_back` | [contact source](https://shop.tympan.org/pages/contact-us) |
-| [liquidctl](messages/2026-11-04/liquidctl.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/liquidctl/liquidctl/discussions/942) |
+| [liquidctl](messages/2026-11-04/liquidctl.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/liquidctl/liquidctl/discussions/942) |
 | [OpenTabletDriver](messages/2026-11-04/opentabletdriver.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) |
 | [OpenHantek6022](messages/2026-11-04/openhantek6022.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenHantek/OpenHantek6022/discussions/481) |
 | [Open Ephys](messages/2026-11-04/open-ephys.md) | email | `sent_and_read_back` | [contact source](https://github.com/open-ephys/plugin-GUI/blob/main/CONTRIBUTING.md) |
@@ -65,6 +65,8 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 5. Retain personal correspondence and private account evidence outside this public repository. Never commit mail headers, mailbox IDs, phone numbers, residence details or subscription tokens.
 
 fwupd supplied a substantive source suggestion. Our [follow-up](messages/2026-11-04/fwupd-quirks-followup.md) links [proposal issue 19](https://github.com/opendevicedb/opendevicedb/issues/19); no importer is implemented. Glasgow declined AI-assisted outreach; no further contact is queued.
+
+liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending.
 
 ## Pending external steps
 

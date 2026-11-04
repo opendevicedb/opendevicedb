@@ -23,7 +23,7 @@ Liens vérifiés le 4 novembre 2026. Cette liste indique des canaux officiels et
 Ces liens permettent de lire les échanges ou d'apporter personnellement un élément utile. Il n'est pas nécessaire de publier une nouvelle introduction.
 
 - [fwupd](https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19397020) : suggestion du mainteneur sur les identifiants dans les fichiers `.quirk`. Notre [réponse](https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19401663) renvoie à la [proposition 19](https://github.com/opendevicedb/opendevicedb/issues/19). L'importeur reste à implémenter.
-- [liquidctl](https://github.com/liquidctl/liquidctl/discussions/942) : proposition d'index des modèles et des pilotes, en conservant les versions minimales et limites de prise en charge. En attente de réponse.
+- [liquidctl](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402109) : le mainteneur a demandé un index partagé avec leur générateur udev. La [PR 943](https://github.com/liquidctl/liquidctl/pull/943) est ouverte en brouillon et [notre réponse](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402348) lui donne le lien. Attendre la revue ; aucune nouvelle introduction à publier.
 - [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) : proposition de liens entre modèles et configurations, avec les conditions de correspondance. En attente de réponse.
 
 - [OpenHantek6022](https://github.com/OpenHantek/OpenHantek6022/discussions/481) : proposition de liens depuis les fiches 6022BE/BL déjà importées via sigrok, en distinguant les fonctions oscilloscope et analyseur logique. En attente de réponse ; aucune nouvelle introduction à publier.
