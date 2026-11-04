@@ -61,6 +61,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
 | [QMK](messages/2026-11-04/qmk.md) | email | `sent_and_read_back` | [contact source](https://qmk.fm/support) |
 | [OpenWrt](messages/2026-11-04/openwrt.md) | email | `sent_and_read_back` | [contact source](https://openwrt.org/contact) |
+| [Open GoPro](messages/2026-11-04/open-gopro.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/gopro/OpenGoPro/discussions/933) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

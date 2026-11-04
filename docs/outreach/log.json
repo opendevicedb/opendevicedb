@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:30:13.558675Z",
+  "last_verified_at": "2026-11-04T17:36:50.774719Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -590,6 +590,16 @@
       "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/23",
       "issue_message": "messages/2026-11-04/openwrt-installation-issue.md",
       "next_action": "Await a substantive response; do not duplicate the introduction on a list or forum. Correct the downstream image-wording defect separately; no correction or hardware test is claimed."
+    },
+    {
+      "name": "Open GoPro",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/gopro/OpenGoPro/discussions/933",
+      "published_at": "2026-11-04T17:35:53Z",
+      "message": "messages/2026-11-04/open-gopro.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. Proposed model/firmware/interface index is not implemented or hardware tested."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -903,6 +913,39 @@
       "status": "excluded_from_ai_assisted_outreach",
       "relevance": "Existing pmaports importer; former postmarketOS is now Nura.",
       "next_action": "Do not send AI-assisted outreach or contributions, contact maintainers to bypass the community rule, or prepare generated owner-post text. Current policy explicitly prohibits generative-AI-created contributions. No contact sent."
+    },
+    {
+      "name": "LineageOS",
+      "source": "https://github.com/LineageOS/www/blob/ca73ca067d4277d1b2cf36f4af387bb7d795b70c/_data/community.yml",
+      "community_url": "https://reddit.com/r/lineageos",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect current community rules and ask whether a discussion of the existing importer is welcome. Do not use port-submission/legal addresses or a promotional issue. Bug-report rules reject AI output in that workflow; no contact sent."
+    },
+    {
+      "name": "Marlin",
+      "source": "https://github.com/MarlinFirmware/Marlin/blob/9605b4308c9b9941471fac89404e5d17d005e8eb/README.md",
+      "community_url": "https://discord.gg/marlin-firmware-461605380783472640",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect Discord/forum rules and discuss example-configuration indexing. The homepage Discussions link returns 404; no promotional issue or message sent."
+    },
+    {
+      "name": "Opentrons",
+      "source": "https://github.com/Opentrons/opentrons/blob/631207155300fe9e96e08e4cfca48d11837fbd0c/CONTRIBUTING.md",
+      "status": "channel_and_policy_review_needed",
+      "relevance": "Open laboratory-robot API and source, distinct OT-2/Flex hardware/software requirements.",
+      "next_action": "Find a suitable community/cooperation route; no Discussions and no message sent. PR guidance rejects LLM-written review/question responses in that workflow. Do not treat a sales/support contact as a confirmed community route."
+    },
+    {
+      "name": "HackRF",
+      "source": "https://github.com/greatscottgadgets/hackrf",
+      "status": "channel_research_needed",
+      "next_action": "Review official community/contact policy and concrete directory scope. No Discussions, no message sent."
+    },
+    {
+      "name": "OpenPnP",
+      "source": "https://github.com/openpnp/openpnp",
+      "status": "channel_research_needed",
+      "next_action": "Review official community/contact policy and physical-machine/controller scope. No Discussions, no message sent."
     }
   ],
   "remaining": [
