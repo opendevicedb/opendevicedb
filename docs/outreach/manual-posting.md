@@ -101,6 +101,20 @@ L'inscription du compte `smichea` n'a pas permis la soumission : « Sorry, your 
 
 Si le problème est résolu, utiliser [le formulaire officiel](https://news.ycombinator.com/submit), après une nouvelle recherche de doublons. Les [règles HN](https://news.ycombinator.com/newsguidelines.html) interdisent les textes générés, les commentaires générés ou modifiés par IA et les publications automatisées. Le propriétaire doit rédiger et publier lui-même avec ses propres mots. Cette page fournit des informations de suivi, pas un texte à copier dans HN.
 
+## WLED et OpenBeken : restrictions à respecter
+
+[WLED](https://github.com/wled/WLED) accueille l'aide IA relue par un humain, mais son [guide](https://github.com/wled/WLED/blob/a0858f71b9640f56e602a2494d0bccd861e14c06/AGENTS.md) interdit aux agents de publier des réponses de discussion/revue ou des issues au nom de l'utilisateur. Toute participation personnelle demande de lire les règles du canal choisi. Aucun message envoyé. Les modifications et PR WLED nécessiteraient en plus son accord humain spécifique ; aucune n'est en préparation.
+
+[OpenBeken](https://github.com/openshwprojects/OpenBK7231T_App) renvoie vers Elektroda. Les [conditions du forum](https://www.elektroda.com/rtvforum/faq.php) interdisent la publicité sans accord et l'accès automatisé. Ce forum est exclu de la campagne automatisée ; aucune inscription, promotion ou tentative par un autre canal. Il ne s'agit pas d'un emplacement recommandé pour copier une annonce.
+
+## GNU Radio : inscription en attente
+
+La [liste officielle](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) rejette les messages des non-membres. Une demande d'inscription a été envoyée selon la procédure documentée ; la confirmation n'est pas encore arrivée. Ne pas répéter la demande ni publier l'annonce avant une adhésion vérifiée.
+
+## INAV : échange ouvert
+
+Une [présentation est publiée](https://github.com/iNavFlight/inav/discussions/12203) dans « Show and tell ». Continuer dans ce fil si une réponse arrive ; ne pas dupliquer l’annonce ailleurs. La proposition conserve la distinction carte/cible/version et ne constitue pas un importeur ni un essai matériel.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

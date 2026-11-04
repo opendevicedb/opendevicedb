@@ -77,6 +77,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
 | [AntiMicroX](messages/2026-11-04/antimicrox.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/AntiMicroX/antimicrox/discussions/1387) |
 | [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/ndeadly/MissionControl/discussions/1174) |
+| [GNU Radio](messages/2026-11-04/gnuradio-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [official list](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) |
+| [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/iNavFlight/inav/discussions/12203) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -120,3 +122,7 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - SlimeVR: organization guidance forbids content submitted directly from AI across its repositories; no generated outreach or contribution sent.
 
 - OpenRTX: documented Sympa subscription sent/read back. Normal web confirmation returns to the same prompt, with no membership receipt observed; one documented owner-help request sent/read back. No list introduction, retry or alternate personal contact.
+
+- [HackRF One update-method PR 29](https://github.com/opendevicedb/opendevicedb/pull/29): corrects the misleading stock-web-interface label on the existing record. Catalogue/route checks and CI passed; open draft, unmerged and undeployed. No hardware test or repeat contact.
+- [GNU Radio subscription request](messages/2026-11-04/gnuradio-subscription-request.md): one documented email request sent/read back; membership unconfirmed and introduction not sent. No repeat request.
+- WLED: agent-posted discussion replies/issues disallowed; owner participation only after reviewing its rules. OpenBeken/Elektroda: unauthorized advertising and automated access prohibited; no campaign post or bypass.

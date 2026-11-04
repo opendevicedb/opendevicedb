@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T19:28:06.627131Z",
+  "last_verified_at": "2026-11-04T19:49:28.801549Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -649,7 +649,16 @@
       "contact_source": "https://greatscottgadgets.com/contact/",
       "message": "messages/2026-11-04/hackrf.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not duplicate the introduction on GitHub or Discord. Proposed HackRF One entry is not implemented or hardware tested."
+      "next_action": "Await a substantive response without a duplicate introduction. A HackRF One record already exists; draft PR 29 corrects its misleading firmware-method label. Validation and CI passed; unmerged, undeployed and not hardware tested.",
+      "correction_proposal": {
+        "url": "https://github.com/opendevicedb/opendevicedb/pull/29",
+        "head": "6dfb132f828ab97f2ea3d62d482a9d7b78979e7b",
+        "status": "open_draft_unmerged_undeployed",
+        "message": "messages/2026-11-04/hackrf-one-update-method-pr.md",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41898533635",
+        "ci_conclusion": "success",
+        "hardware_tested": false
+      }
     },
     {
       "name": "RealSense / librealsense",
@@ -835,6 +844,30 @@
       "message": "messages/2026-11-04/missioncontrol.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread. Proposed downstream source-linked tool/model references only; no dedicated importer, new record or hardware test. No duplicate introduction or parallel contributor solicitation."
+    },
+    {
+      "name": "GNU Radio",
+      "channel": "administrative email",
+      "recipient": "discuss-gnuradio-request@gnu.org",
+      "subject": "subscribe",
+      "sent_at": "2026-11-04T19:38:22.000Z",
+      "status": "subscription_requested",
+      "contact_source": "https://lists.gnu.org/mailman/listinfo/discuss-gnuradio",
+      "message": "messages/2026-11-04/gnuradio-subscription-request.md",
+      "outgoing_text_verified": true,
+      "membership_status": "unconfirmed",
+      "introduction_sent": false,
+      "next_action": "Await the normal confirmation notice; do not repeat the subscription. List discards nonmember messages; send no introduction before verified membership."
+    },
+    {
+      "name": "INAV",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/iNavFlight/inav/discussions/12203",
+      "published_at": "2026-11-04T19:48:39Z",
+      "message": "messages/2026-11-04/inav.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate invitation or developer support email. Preserve exact board/target/release/Configurator scope. No importer, new record or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1305,6 +1338,27 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public report describes 8BitDo Ultimate 2 Wireless 81HE and Xbox 1914 BLE testing on one Switch; the referenced branch exists at 152dd872986a048cc9fc2c7eb03ca34a897958e6.",
       "next_action": "Keep as a contributor lead. No invitation alongside the new MissionControl introduction. Reported tests and branch existence do not establish upstream acceptance or our validation; do not convert its Bluetooth identifiers into unique USB model matches."
+    },
+    {
+      "name": "WLED",
+      "source": "https://github.com/wled/WLED/blob/a0858f71b9640f56e602a2494d0bccd861e14c06/AGENTS.md",
+      "status": "no_agent_posted_outreach",
+      "next_action": "No agent-posted discussion replies/issues. Owner may review the official community rules and participate personally. WLED modifications/PRs require its specific human-review agreement; none requested or performed."
+    },
+    {
+      "name": "OpenBeken",
+      "source": "https://github.com/openshwprojects/OpenBK7231T_App/blob/ce1abad8dc931720167a7628840adae30b92afaf/README.md",
+      "community_url": "https://www.elektroda.com/rtvforum/forum390.html",
+      "policy_source": "https://www.elektroda.com/rtvforum/faq.php",
+      "status": "excluded_from_automated_forum_promotion",
+      "next_action": "Forum prohibits unauthorized advertising and automated access. No signup, promotion, moderator solicitation or alternate-channel bypass. Device-template reuse terms and model/revision scope remain unverified; do not import from the forum."
+    },
+    {
+      "name": "OpenHD",
+      "source": "https://github.com/OpenHD/OpenHD/blob/c75c37e6bcd014a990b81ae9b2556eb6afefd924/README.adoc",
+      "community_url": "https://openhdfpv.org/",
+      "status": "current_docs_and_channel_review_needed",
+      "next_action": "Read current contribution and hardware-support docs before contact; README GitBook docs are end-of-life. Check model/platform/adapter driver/camera and image version separately. No contact or importer/hardware test."
     }
   ],
   "remaining": [
