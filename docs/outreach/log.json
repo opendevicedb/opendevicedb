@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:06:05.207407Z",
+  "last_verified_at": "2026-11-04T17:11:50.449286Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -14,7 +14,8 @@
     "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent.",
     "declined_do_not_contact": "Community declined this kind of interaction; no further contact.",
     "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented.",
-    "subscription_requested": "Administrative subscription request sent and read back; membership and any community introduction remain unconfirmed."
+    "subscription_requested": "Administrative subscription request sent and read back; membership and any community introduction remain unconfirmed.",
+    "private_response_received": "A reply to private correspondence was observed. Its contents and personal arrangements remain outside this public repository."
   },
   "contacts": [
     {
@@ -93,10 +94,10 @@
     {
       "name": "Luc Jonveaux / un0rick",
       "channel": "private email",
-      "status": "sent",
+      "status": "private_response_received",
       "privacy": "Personal correspondence retained privately; recipient address, private message text and contact details are not published.",
       "sent_date": "2026-11-04",
-      "next_action": "Continue any personal correspondence privately."
+      "next_action": "Personal reply remains for the owner. An unsent technical response draft was prepared privately; no personal correspondence is copied into the public journal."
     },
     {
       "name": "NUT developers",
@@ -529,6 +530,30 @@
       "message": "messages/2026-11-04/pymeasure.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. No PyMeasure importer or hardware test is implemented."
+    },
+    {
+      "name": "pyLabLib",
+      "channel": "email",
+      "recipient": "pylablib@gmail.com",
+      "subject": "OpenDeviceDB: helping people find existing pyLabLib device interfaces",
+      "sent_at": "2026-11-04T17:09:17.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback",
+      "message": "messages/2026-11-04/pylablib.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. The directory sample is proposed only, with no importer or new hardware test."
+    },
+    {
+      "name": "OpenScan",
+      "channel": "email",
+      "recipient": "info@openscan.eu",
+      "subject": "OpenDeviceDB: helping people discover OpenScan hardware and software",
+      "sent_at": "2026-11-04T17:09:20.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://github.com/OpenScan-org/OpenScan3/blob/f719eebdd9faa1ddabe1042bec1512b45c392944/README.md#contact",
+      "message": "messages/2026-11-04/openscan.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. The directory sample is proposed only, with no importer or new hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -803,20 +828,6 @@
       "source": "https://github.com/orgs/fujihack/discussions/24",
       "status": "deferred_to_avoid_same_community_duplicate",
       "next_action": "Potential future contributor lead for the Android 16 compatibility patch. No direct message alongside the new Fujihack introduction; do not infer collaboration interest."
-    },
-    {
-      "name": "pyLabLib",
-      "source": "https://github.com/AlexShkarin/pyLabLib",
-      "status": "channel_research_needed",
-      "relevance": "Laboratory-device control library.",
-      "next_action": "Find an official general-discussion/contact route; no GitHub Discussions and no message sent."
-    },
-    {
-      "name": "OpenScan3",
-      "source": "https://github.com/OpenScan-org/OpenScan3",
-      "status": "channel_research_needed",
-      "relevance": "Open 3D capture hardware/software.",
-      "next_action": "Review the official community route and device/revision scope; no GitHub Discussions and no message sent."
     }
   ],
   "remaining": [

@@ -21,7 +21,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Open Source Imaging Initiative](messages/2026-11-04/open-source-imaging-initiative.md) | email | `sent` | [contact source](https://www.opensourceimaging.org/2016/05/01/about/) |
 | [Glia](messages/2026-11-04/glia.md) | email | `automatic_acknowledgement` | [contact source](https://glia.org/pages/contact) |
 | [Open Source Medical Supplies](messages/2026-11-04/open-source-medical-supplies.md) | email | `sent` | [contact source](https://opensourcemedicalsupplies.org/about/contact/) |
-| Luc Jonveaux / un0rick | private email | `sent` | Private correspondence |
+| Luc Jonveaux / un0rick | private email | `private_response_received` | Private correspondence |
 | [NUT developers](messages/2026-11-04/nut-developers.md) | email | `held_for_moderation` | [contact source](https://networkupstools.org/support.html) |
 | [gPhoto developers](messages/2026-11-04/gphoto-developers.md) | email | `held_for_moderation` | [contact source](https://gphoto.sourceforge.io/mailinglists/) |
 | [sigrok developers](messages/2026-11-04/sigrok-developers.md) | email | `subscription_help_requested` | [contact source](https://github.com/sigrokproject/libsigrok) |
@@ -56,6 +56,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
 | [SANE developers](messages/2026-11-04/sane-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [subscription procedure](https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html) |
 | [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
+| [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
+| [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
