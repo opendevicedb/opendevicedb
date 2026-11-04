@@ -137,6 +137,12 @@ Une [présentation est publiée chez MicroPython](https://github.com/orgs/microp
 
 Armbian a reçu un courriel de coopération via son [contact officiel](https://armbian.com/contact). Attendre un retour ; aucun rendez-vous, service payant, message de forum ou bug report. La proposition distingue les modèles, statuts de support, branches et versions d’images.
 
+## TinyGo et Zephyr : présentations publiées
+
+Deux échanges sont ouverts dans « Show and tell » : [TinyGo](https://github.com/orgs/tinygo-org/discussions/6164) et [Zephyr](https://github.com/zephyrproject-rtos/zephyr/discussions/124669). Continuer dans ces fils si des retours arrivent. Les propositions gardent les variantes, cibles et versions distinctes ; aucun importeur ni test matériel.
+
+Les guides demandent une prose brève et écartent les mentions automatiques d’outils IA dans les textes de contribution. Zephyr exige en plus une revue humaine et une signature DCO humaine pour les changements de code. Aucun code ni PR n’est soumis à ces projets.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

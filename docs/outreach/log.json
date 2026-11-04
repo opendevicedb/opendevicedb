@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:12:38.514989Z",
+  "last_verified_at": "2026-11-04T20:21:07.595830Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -933,6 +933,26 @@
       "contact_source": "https://armbian.com/contact",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive cooperation response; do not duplicate in forum/chat or a bug report. No importer, image build, hardware test, meeting booking, paid consultation or commercial agreement."
+    },
+    {
+      "name": "TinyGo",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/tinygo-org/discussions/6164",
+      "published_at": "2026-11-04T20:17:28Z",
+      "message": "messages/2026-11-04/tinygo.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction. Preserve exact board/target/release and feature scope. No dedicated importer, new record, compiler/firmware build, hardware test or upstream code contribution. Respect human code-review/sign-off and communication rules when applicable."
+    },
+    {
+      "name": "Zephyr",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/zephyrproject-rtos/zephyr/discussions/124669",
+      "published_at": "2026-11-04T20:20:04Z",
+      "message": "messages/2026-11-04/zephyr.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction. Preserve exact board/target/release and feature scope. No dedicated importer, new record, compiler/firmware build, hardware test or upstream code contribution. Respect human code-review/sign-off and communication rules when applicable."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1296,13 +1316,6 @@
       "next_action": "Potential future contributor lead. No personal invitation alongside the new RealSense introduction. Do not infer collaboration interest or present the port as official support; no new support route or firmware redistribution."
     },
     {
-      "name": "Zephyr",
-      "source": "https://github.com/zephyrproject-rtos/zephyr/tree/244c4a8284cb62bda585a9ab6a76cd46f0a5b9d5",
-      "status": "concrete_example_and_policy_review_needed",
-      "relevance": "Board/revision discovery and links to RTOS support documentation.",
-      "next_action": "Prepare a concrete board/revision example before an introduction in the available Show and tell category. Code/review policies require human responsibility and forbid AI sign-offs; do not interpret those alone as a universal discussion ban. No message or code submitted."
-    },
-    {
       "name": "InfiniTime organization",
       "source": "https://github.com/InfiniTimeOrg/InfiniTime/blob/9ad16304f5fd526b781a760cf1313813d232645e/AI_USAGE.md",
       "status": "excluded_from_ai_generated_outreach",
@@ -1457,6 +1470,25 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public Show and tell describes an ESP32-S3 conference badge with MicroPython software, board definition and hardware-design files. Claims are the author's, not our hardware/source verification.",
       "next_action": "Retain as a future device/contributor lead. No direct invitation alongside the new MicroPython introduction; verify source/license/hardware scope before a catalogue entry."
+    },
+    {
+      "name": "CircuitPython",
+      "source": "https://github.com/adafruit/circuitpython/tree/66688d5d05613bd60dbf8cb0cd0e6db4f62bb23a",
+      "status": "community_route_policy_and_board_scope_review_needed",
+      "next_action": "No GitHub Discussions. Read current official support/community routes and policies before an introduction. Verify exact boards/variants and released firmware metadata. No contact, promotional issue, importer or hardware test."
+    },
+    {
+      "name": "ESPEasy",
+      "source": "https://github.com/letscontrolit/ESPEasy/tree/ebaf41e7fdb2684bc191c06136fae4ed8201b5e5",
+      "status": "community_route_policy_and_device_scope_review_needed",
+      "next_action": "No GitHub Discussions. Read official forum/community rules and board/device support scope before contact. No promotional issue, message, importer or hardware test."
+    },
+    {
+      "name": "Gustavomurta / stereo ADC module documentation",
+      "source": "https://github.com/orgs/tinygo-org/discussions/4944",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public presentation describes documenting an initially undocumented ADC module and developing a schematic. Author-reported work, not our circuit/source/hardware validation.",
+      "next_action": "Retain as a future contributor lead; no direct invitation alongside the new TinyGo community introduction. Verify source/license and exact module identity before any catalogue claim."
     }
   ],
   "remaining": [
