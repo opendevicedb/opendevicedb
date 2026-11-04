@@ -1,0 +1,52 @@
+id: unknown/puis-fx2-convex-usb-probe-04b4-4611
+vendor: Unknown
+model: PUIS FX2 convex USB probe 04b4:4611
+aliases:
+  - EZ-USB FX2 Slave PUIS v1.32
+  - PUIS convex USB ultrasound probe
+category: medical
+identifiers:
+  usb:
+    - 04b4:4611
+status: in-progress
+summary: Owner-held convex USB ultrasound probe of unknown commercial brand/model. Enumerates as
+  04b4:4611 with product string EZ-USB FX2 Slave PUIS v1.32 at USB High Speed, one vendor-specific
+  interface, three bulk endpoints and one interrupt endpoint. Cypress names the USB controller, not
+  a confirmed probe brand; the v1.32 string is not independently verified firmware. Existing pyusbus
+  lookup does not select this VID/PID. USB commands and acquisition framing remain unknown.
+interfaces:
+  - name: Vendor-specific USB acquisition interface
+    transport: usb
+    status: unknown
+    confidence: medium
+    spec: https://github.com/opendevicedb/opendevicedb/issues/8
+    notes: Observed bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s. Raw
+      bInterval=0 on interrupt endpoint is corrected to 7 by Linux. Historical PUIS archive contains
+      a generic Cypress driver matching this ID, which does not prove application compatibility.
+claims:
+  - who: smichea
+    contact: https://github.com/smichea
+    scope: Identify PUIS FX2 convex probe 04b4:4611 model and USB acquisition protocol for Linux/Python
+      interoperability; initial work on bench/phantom.
+    since: 2026-11-04
+    expires: 2026-12-04
+    agent: Codex + OpenDeviceDB MCP + REA
+verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Owner-confirmed physical types; one-at-a-time swap on the same port corroborated by Linux
+      enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
+provenance:
+  sources:
+    - https://github.com/opendevicedb/opendevicedb/issues/8
+    - https://github.com/kelu124/pyusbus/tree/7f68591eaa05b217c67ac444bfa17b81b3f58f1b/probes/CONV
+  ai_assisted: true
+  tools:
+    - Codex
+    - OpenDeviceDB MCP 0.3.0
+    - REA
+    - lsusb
+    - Linux sysfs
+    - Python zipfile
+updated: 2026-11-04

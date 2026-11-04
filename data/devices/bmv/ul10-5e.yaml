@@ -1,0 +1,58 @@
+id: bmv/ul10-5e
+vendor: BMV
+model: UL10-5E
+aliases:
+  - BMV linear USB ultrasound probe
+  - UL10-5E linear
+category: medical
+identifiers:
+  usb:
+    - 04b4:00f1
+status: in-progress
+summary: Owner-held BMV linear USB ultrasound probe. UL10-5E model is supported by historical
+  vendor-application screenshots, not read from current firmware. Enumerates as Cypress FX3
+  04b4:00f1 at USB High Speed with one vendor-specific interface and six bulk endpoints. Existing
+  pyusbus lookup calls this USB ID CONVEX, but the owner confirmed this physical unit is linear.
+  Commands, sample framing and compatibility remain under investigation.
+interfaces:
+  - name: Vendor-specific USB acquisition interface
+    transport: usb
+    status: unknown
+    confidence: medium
+    spec: https://github.com/opendevicedb/opendevicedb/issues/7
+    notes: Observed endpoints OUT 01/02/03 and IN 81/82/83, all bulk, max packet 512 bytes; 480 Mb/s.
+      Generic Cypress IDs are not unique model identification. No initialization or acquisition
+      attempted.
+projects:
+  - name: pyusbus (existing work; exact unit compatibility unverified)
+    url: https://github.com/kelu124/pyusbus
+    kind: library
+    license: GPL-3.0-or-later
+    official: false
+claims:
+  - who: smichea
+    contact: https://github.com/smichea
+    scope: Document linear probe 04b4:00f1 USB commands and acquisition framing for Linux/Python
+      interoperability, reusing pyusbus; initial work on bench/phantom.
+    since: 2026-11-04
+    expires: 2026-12-04
+    agent: Codex + OpenDeviceDB MCP + REA
+verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Owner-confirmed physical types; one-at-a-time swap on the same port corroborated by Linux
+      enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
+provenance:
+  sources:
+    - https://github.com/opendevicedb/opendevicedb/issues/7
+    - https://github.com/kelu124/pyusbus/blob/7f68591eaa05b217c67ac444bfa17b81b3f58f1b/pyusbus/acq.py
+  ai_assisted: true
+  tools:
+    - Codex
+    - OpenDeviceDB MCP 0.3.0
+    - REA
+    - lsusb
+    - Linux sysfs
+    - Python zipfile
+updated: 2026-11-04
