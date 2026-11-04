@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:38:22.352874Z",
+  "last_verified_at": "2026-11-04T21:53:33.079538Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1122,6 +1122,19 @@
       "contact_source": "https://blog.fossasia.org/contact/",
       "project_source": "https://github.com/fossasia/pslab-python/tree/08de0d090599b2555f357d378f95ad7da625f08e",
       "next_action": "Await feedback on a proposed PSLab page from the official project-partnership contact. No duplicate team/developer email, vendor form, mailing-list intro or issue. Page/importer and hardware validation are not implemented; delivery and partnership interest unconfirmed."
+    },
+    {
+      "name": "Awesome Embedded and IoT Security / FKIE",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41",
+      "published_at": "2026-11-04T21:51:53Z",
+      "title": "docs: add OpenDeviceDB to websites",
+      "head": "31e8343e72aa4a654d54d38d2fa31872e56b04fe",
+      "message": "messages/2026-11-04/awesome-embedded-iot-security-fkie-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/blob/fbd0301e6690a21d98ca8d565c0657aae0fba339/contributing.md",
+      "next_action": "Await maintainer review and the upstream workflow action. Open and unmerged; no accepted listing or adoption claim. No duplicate issue, comment or direct maintainer solicitation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1332,6 +1345,19 @@
       "validation": "Canonical official page HTTP 200 without redirect; one entry at bottom of Useful Websites, original README bytes preserved outside added line, git diff --check passed. Documentation only.",
       "checks": "No check runs reported at readback; no CI success claimed.",
       "next_action": "Await maintainer review; do not claim acceptance or adoption."
+    },
+    {
+      "name": "Awesome Embedded and IoT Security / FKIE",
+      "url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41",
+      "head": "31e8343e72aa4a654d54d38d2fa31872e56b04fe",
+      "base": "fbd0301e6690a21d98ca8d565c0657aae0fba339",
+      "status": "open_unmerged_proposal",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-embedded-iot-security-fkie-pr.md",
+      "validation": "Local awesome-lint 2.3.0 passed; canonical site HTTP 200 without redirect; unique Websites entry; entry commit preserves parent bytes; license text unchanged; git diff --check passed. Separate minimal cleanup commit fixes three pre-existing content lint findings.",
+      "checks": "Upstream workflow 41920034405 completed with action_required on exact head; jobs and check runs empty. No upstream CI success claimed.",
+      "workflow_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/actions/runs/41920034405",
+      "next_action": "Await maintainer review and upstream workflow action; do not claim acceptance or merge."
     }
   ],
   "next_research": [
@@ -1809,6 +1835,12 @@
       "status": "deferred_to_avoid_same_project_duplicate",
       "relevance": "PSLab website links his public profile; repository contributors list shows PSLab Python work, and profile pins PSLab, mcbootflash and pytest-reserial. Source/license and runtime behavior of the separate tools not reviewed.",
       "next_action": "Potential future technical collaborator/source lead. FOSSASIA project-partnership contact has received one message; do not send a parallel personal invitation. No inferred occupation, collaboration interest or hardware validation."
+    },
+    {
+      "name": "Awesome Hardware and IoT Hacking / JoasASantos",
+      "source": "https://github.com/JoasASantos/Awesome-Hardware-and-IoT-Hacking/tree/f0584d4320d5bd79d23562dfeab64b7ced51a4d4",
+      "status": "deferred_to_original_resource_list",
+      "next_action": "README introduction links the FKIE list and reuses its category/resource descriptions. Prefer the original FKIE listing proposal rather than submitting a duplicate to this compilation now. No fork, issue, PR or email. Full README and attached PDF/XLSX/XMind contents not reviewed; no broader policy claim."
     }
   ],
   "remaining": [
