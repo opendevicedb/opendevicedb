@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:57:23.891514Z",
+  "last_verified_at": "2026-11-04T17:06:05.207407Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -13,7 +13,8 @@
     "held_for_moderation": "Mailing-list notice confirms a hold; publication is not established.",
     "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent.",
     "declined_do_not_contact": "Community declined this kind of interaction; no further contact.",
-    "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented."
+    "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented.",
+    "subscription_requested": "Administrative subscription request sent and read back; membership and any community introduction remain unconfirmed."
   },
   "contacts": [
     {
@@ -504,6 +505,30 @@
       "message": "messages/2026-11-04/flashrom-developers.md",
       "outgoing_text_verified": true,
       "next_action": "Await moderation notice, publication evidence or a substantive reply. Do not resend. Proposed programmer entry is not implemented or hardware tested."
+    },
+    {
+      "name": "SANE developers",
+      "channel": "administrative email",
+      "recipient": "sane-devel-request@alioth-lists.debian.net",
+      "subject": "subscribe",
+      "sent_at": "2026-11-04T17:02:30.000Z",
+      "status": "subscription_requested",
+      "membership_status": "unconfirmed",
+      "introduction_status": "not_sent",
+      "contact_source": "https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html",
+      "message": "messages/2026-11-04/sane-subscription-request.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await the documented subscription response and confirm membership before sending one tailored existing-importer introduction. Do not repeat the signup request."
+    },
+    {
+      "name": "PyMeasure",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/pymeasure/pymeasure/discussions/1587",
+      "published_at": "2026-11-04T17:04:55Z",
+      "message": "messages/2026-11-04/pymeasure.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. No PyMeasure importer or hardware test is implemented."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -731,10 +756,11 @@
     },
     {
       "name": "SoapySDR",
-      "source": "https://github.com/pothosware/SoapySDR",
-      "status": "channel_research_needed",
+      "source": "https://github.com/pothosware/SoapySDR/wiki#feedback",
+      "status": "manual_posting_candidate",
       "relevance": "SDR hardware abstraction layer and per-device backend modules.",
-      "next_action": "Review the official wiki for a suitable community channel and policy; no GitHub Discussions available and no message sent."
+      "next_action": "Owner can join the official Pothos users group, review current rules and introduce a small model/module index in their own words. Group membership is required to post. No message sent and no importer implemented.",
+      "community_url": "https://groups.google.com/g/pothos-users"
     },
     {
       "name": "tuya-local",
@@ -777,6 +803,20 @@
       "source": "https://github.com/orgs/fujihack/discussions/24",
       "status": "deferred_to_avoid_same_community_duplicate",
       "next_action": "Potential future contributor lead for the Android 16 compatibility patch. No direct message alongside the new Fujihack introduction; do not infer collaboration interest."
+    },
+    {
+      "name": "pyLabLib",
+      "source": "https://github.com/AlexShkarin/pyLabLib",
+      "status": "channel_research_needed",
+      "relevance": "Laboratory-device control library.",
+      "next_action": "Find an official general-discussion/contact route; no GitHub Discussions and no message sent."
+    },
+    {
+      "name": "OpenScan3",
+      "source": "https://github.com/OpenScan-org/OpenScan3",
+      "status": "channel_research_needed",
+      "relevance": "Open 3D capture hardware/software.",
+      "next_action": "Review the official community route and device/revision scope; no GitHub Discussions and no message sent."
     }
   ],
   "remaining": [

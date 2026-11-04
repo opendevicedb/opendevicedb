@@ -54,6 +54,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Tuya CloudCutter](messages/2026-11-04/tuya-cloudcutter.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) |
 | [Fujihack](messages/2026-11-04/fujihack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/fujihack/discussions/25) |
 | [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
+| [SANE developers](messages/2026-11-04/sane-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [subscription procedure](https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html) |
+| [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -72,6 +74,7 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 ## Pending external steps
 
 - Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.
+- SANE: documented email subscription requested and read back; membership unconfirmed. No introduction sent yet; do not repeat the request.
 - gPhoto and NUT: original messages are held for moderation; do not resend.
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
 - Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.

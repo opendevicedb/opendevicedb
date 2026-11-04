@@ -16,6 +16,7 @@ Liens vérifiés le 4 novembre 2026. Cette liste indique des canaux officiels et
 | Klipper | [Forum officiel](https://community.klipper3d.org/) | Montrer comment l'import des configurations permet de découvrir Klipper depuis un modèle d'imprimante, avec les révisions et adaptations nécessaires. La [documentation officielle](https://www.klipper3d.org/Contact.html) confirme ce forum. Les catégories et règles n'ont pas pu être consultées anonymement : les lire après connexion et choisir une catégorie adaptée avant de publier. |
 | Gadgetbridge | [Salon Matrix officiel](https://matrix.to/#/#gadgetbridge:matrix.org) | Demander d'abord si une courte discussion sur la présentation des appareils Gadgetbridge dans OpenDeviceDB est bienvenue. Le [README officiel](https://github.com/Freeyourgadget/Gadgetbridge/blob/master/README.md#community) donne ce salon et précise que les issues ne servent pas de forum. Lire les règles du salon ; ce n'est pas une invitation à une annonce générale. |
 | AsteroidOS | [Salon Matrix officiel](https://matrix.to/#/#Asteroid:matrix.org) | Présenter les liens vers les pages de montres déjà importées, avec les variantes, codenames et fonctions partielles. La [page de contact officielle](https://asteroidos.org/contact/) réserve les discussions à ce salon ; lire ses règles et demander si la présentation est bienvenue. Aucun message envoyé. |
+| SoapySDR / Pothos | [Groupe officiel Pothos Users](https://groups.google.com/g/pothos-users) | Rejoindre le groupe et lire ses règles avant de publier : seuls les membres peuvent envoyer des messages. Le [wiki SoapySDR](https://github.com/pothosware/SoapySDR/wiki#feedback) recommande ce canal. Proposer un petit index des modèles et modules, avec les fonctions RX/TX et dépendances ; aucun importeur ni message envoyé. |
 | coreboot | [Salon Matrix officiel](https://matrix.to/#/#coreboot:matrix.org) | Discuter de la présentation des cartes et modèles déjà indexés, avec les variantes et contraintes de construction. Les [canaux officiels](https://doc.coreboot.org/community/forums.html) donnent ce salon et la liste de diffusion ; lire les règles du salon avant une introduction. Aucun message envoyé. |
 
 ## Conversations déjà ouvertes : répondre dans le fil
@@ -33,6 +34,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 - [Tuya CloudCutter](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) : présentation des liens vers les profils déjà importés, avec les limites liées aux versions de firmware. En attente de réponse ; aucune nouvelle introduction à publier.
 
 - [Fujihack](https://github.com/orgs/fujihack/discussions/25) : présentation de l’annuaire et de la [correction proposée en PR 21](https://github.com/opendevicedb/opendevicedb/pull/21), distinguant les en-têtes de recherche des ports de débogueur documentés. La PR est testée mais reste en brouillon, sans déploiement ; aucune nouvelle introduction à publier.
+
+- [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587) : proposition d’index des pilotes par modèle, avec le Keithley 2400 comme exemple et les contraintes de version/adaptateur. En attente de réponse ; aucun importeur implémenté.
 
 ## Glasgow : ne plus promouvoir le projet
 
