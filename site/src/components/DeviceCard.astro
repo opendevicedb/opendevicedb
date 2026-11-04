@@ -1,0 +1,27 @@
+---
+// A device as a card (home: recently updated, in progress). The default slot replaces the
+// meta line ("category · vendor  Updated …").
+import type { DeviceRecord } from "@opendevicedb/core";
+import Icon from "./Icon.astro";
+import StatusBadge from "./StatusBadge.astro";
+import { deviceUrl } from "../lib/data.ts";
+import { displayName } from "../lib/config.ts";
+import { deviceIcon } from "../lib/icons-device.ts";
+import { fmtLongDate } from "../lib/dates.ts";
+interface Props { record: DeviceRecord; status: string }
+const { record: r, status } = Astro.props;
+---
+<article class="card link device-card">
+  <div class="top">
+    <Icon name={deviceIcon(r.category, r.model)} size={24} class="brand-icon" />
+    <h3><a class="stretched" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a></h3>
+    <Icon name="arrow-up-right" size={24} class="card-arrow" />
+  </div>
+  <div class="text">
+    <p class="meta"><slot><span class="cat">{r.category} · {r.vendor}</span> <span>Updated {fmtLongDate(r.updated)}</span></slot></p>
+  </div>
+  <div class="row">
+    <StatusBadge status={status} />
+    {r.provenance?.ai_assisted && <span class="badge ai">AI assisted</span>}
+  </div>
+</article>

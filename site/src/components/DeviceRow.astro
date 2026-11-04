@@ -1,18 +1,13 @@
 ---
 import type { IndexEntry } from "@opendevicedb/core";
-import StatusBadge from "./StatusBadge.astro";
-import Icon from "./Icon.astro";
-import { deviceUrl, sourceName } from "../lib/data.ts";
-import { displayName } from "../lib/config.ts";
+import { sourceName } from "../lib/data.ts";
+import { deviceRowHtml } from "../lib/device-row.ts";
 interface Props { entry: IndexEntry }
 const { entry: e } = Astro.props;
 ---
-<div class="dev-row">
-  <a class="name" href={deviceUrl(e.id)}><Icon name="catalogue-DishWasher" />{displayName(e.vendor, e.model)}</a>
-  <span class="row"><StatusBadge status={e.status} />{e.verified && <span class="badge verified">Verified</span>}{e.install && <span class={`badge inst-${e.install}`} title={`Easiest known install route: ${e.install}`}>{`Install: ${e.install}`}</span>}<a class="result-arrow" href={deviceUrl(e.id)} aria-label={`View ${displayName(e.vendor, e.model)}`}><Icon name="catalogue-ArrowUpRight03" /></a></span>
-  <span class="meta">
-    {e.category} · <span class="mono">{e.id}</span>
-    {e.sources.length > 0 && <> · from {e.sources.map(sourceName).join(", ")}</>}
-    {e.claims > 0 && <> · {e.claims} live claim{e.claims > 1 ? "s" : ""}</>}
-  </span>
-</div>
+<Fragment set:html={deviceRowHtml(e, {
+  meta: [
+    e.sources.length > 0 && `from ${e.sources.map(sourceName).join(", ")}`,
+    e.claims > 0 && `${e.claims} live claim${e.claims > 1 ? "s" : ""}`,
+  ],
+})} />

@@ -1,0 +1,31 @@
+---
+// One filter's choices: checkboxes (several allowed) or radios (one). Rendered twice on the
+// devices page, in the desktop dropdown and the mobile sheet; scripts/directory.ts keeps both in
+// step and updates the counts. Long lists get a box to narrow them down.
+import type { FilterGroup, FilterOption } from "../lib/device-filters.ts";
+export type CountedGroup = Omit<FilterGroup, "options"> & { options: (FilterOption & { count: number })[] };
+interface Props { group: CountedGroup; prefix: string }
+const { group: g, prefix } = Astro.props;
+const name = `${prefix}-${g.key}`;
+---
+<fieldset class="fopts" data-key={g.key}>
+  <legend class="sr-only">{g.label}</legend>
+  <div class="fopts-head">
+    <span>{g.multiple ? "Select any" : "Select one"}</span>
+    <button type="button" class="fopts-clear" data-clear={g.key} hidden>Clear<span class="sr-only"> {g.label}</span></button>
+  </div>
+  {g.options.length > 8 && <input type="search" class="fopts-find" placeholder="Find an option…" aria-label={`Find a ${g.label.toLowerCase()}`} />}
+  <div class="fopts-list">
+    {!g.multiple && (
+      <label class="fopt"><input type="radio" name={name} value="" checked /><span class="fopt-name">{g.placeholder}</span></label>
+    )}
+    {g.options.map((o) => (
+      <label class="fopt" data-find={o.label.toLowerCase()}>
+        <input type={g.multiple ? "checkbox" : "radio"} name={name} value={o.value} />
+        <span class="fopt-name">{o.label}</span>
+        <span class="fopt-count" data-value={o.value}>{o.count.toLocaleString("en")}</span>
+      </label>
+    ))}
+    <p class="fopts-none" hidden>No options match.</p>
+  </div>
+</fieldset>

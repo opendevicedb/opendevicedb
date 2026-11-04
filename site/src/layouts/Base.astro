@@ -1,20 +1,35 @@
 ---
 import "../styles/global.css";
-import Brand from "../components/Brand.astro";
 import Icon from "../components/Icon.astro";
-import DesignImage from "../components/DesignImage.astro";
+import Logo from "../components/Logo.astro";
 import { SITE_NAME, REPO_URL, LICENSES, PITCH } from "../lib/config.ts";
-interface Props { title?: string; description?: string; wide?: boolean }
-const { title, description = PITCH, wide = false } = Astro.props;
+
+// bleed: the page lays out its own full-width sections (home) instead of one container.
+interface Props { title?: string; description?: string; wide?: boolean; bleed?: boolean }
+const { title, description = PITCH, bleed = false } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE_NAME}` : `${SITE_NAME} — reverse-engineered devices, shared`;
 const path = Astro.url.pathname;
-const section = path.split("/").filter(Boolean)[0] || "home";
-const isHome = section === "home";
-const isDevice = section === "devices" && path.split("/").filter(Boolean).length > 1;
-const narrow = !wide && (isDevice || ["agents", "contribute", "policy", "news", "wanted"].includes(section));
-const nav = [["/devices/", "Devices"], ["/contribute/", "Contribute"], ["/wanted/", "Wanted"], ["/news/", "News"]];
-const more = [["/agents/", "For agents"], ["/sources/", "Sources"], ["/about/", "About"]];
-const current = (href: string) => path.startsWith(href) ? "page" as const : undefined;
+const nav = [
+  ["/devices/", "Devices"],
+  ["/contribute/", "Contribute"],
+  ["/wanted/", "Wanted"],
+  ["/news/", "News"],
+];
+const more = [
+  ["/agents/", "For agents"],
+  ["/sources/", "Sources"],
+  ["/about/", "About"],
+];
+const footerNav = [
+  ["/contribute/", "Contribute"],
+  ["/devices/", "Devices"],
+  ["/detect/", "Detect"],
+  ["/news/", "News"],
+  ["/sources/", "Sources"],
+  ["/about/", "About"],
+];
+const current = (href: string) => (path.startsWith(href) ? "page" : undefined);
+const moreActive = more.some(([href]) => path.startsWith(href));
 const canonical = new URL(path, Astro.site);
 ---
 <!doctype html>
@@ -25,68 +40,81 @@ const canonical = new URL(path, Astro.site);
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <!-- PNG for browsers without SVG favicons (Safari); the SVG, listed last, wins elsewhere. -->
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="/fonts/technor-regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/geist-400.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} news`} href="/rss.xml" />
+    <link rel="preload" href="/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/GeistMono-Variable.woff2" as="font" type="font/woff2" crossorigin />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#380073" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <script is:inline>document.documentElement.classList.add("js");</script>
     <slot name="head" />
   </head>
-  <body class:list={[`page-${section}`, { "is-home": isHome, "is-device": isDevice }]}>
+  <body>
     <a class="skip" href="#main">Skip to content</a>
-    <div class="site-backdrop" aria-hidden="true">
-      <DesignImage class="ambient ambient-left" name="home-Gradient1" width={2180} height={948} loading="eager" />
-      <DesignImage class="ambient ambient-right" name="home-Gradient1" width={1141} height={496} loading="eager" />
-      <slot name="backdrop" />
-    </div>
     <header class="site-header">
-      <div class="container header-content">
-        <Brand />
-        <button class="menu-toggle btn" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
-          <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
-          <span class="menu-label">Menu</span>
-        </button>
-        <nav id="main-navigation" class="nav" aria-label="Main">
-          <div class="nav-links">
-            {nav.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
-            <details class="nav-more">
-              <summary class:list={{ active: more.some(([href]) => current(href)) }}>More <Icon name="home-Icon" size={16} /></summary>
-              <div class="more-menu">{more.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}</div>
-            </details>
-          </div>
-          <div class="header-actions">
-            <a class="btn white" href="/detect/" aria-current={current("/detect/")}><Icon name="home-Chip" size={20} />Detect device</a>
-            <a class="btn primary" href={REPO_URL}><Icon name="home-Github" size={20} />Star on Github</a>
-          </div>
+      <div class="container">
+        <Logo />
+
+        <nav class="nav" aria-label="Main">
+          {nav.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+          <details class="more" data-active={moreActive || undefined}>
+            <summary>More <Icon name="chevron-down" size={16} /></summary>
+            <div class="menu-panel">
+              {more.map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+            </div>
+          </details>
         </nav>
+
+        <div class="header-actions">
+          <a class="btn white" href="/detect/"><Icon name="chip" />Detect device</a>
+          <a class="btn primary" href={REPO_URL}><Icon name="github" />Star on GitHub</a>
+        </div>
+
+        <details class="mobile-menu">
+          <summary aria-label="Menu">
+            <Icon name="menu" class="open" />
+            <Icon name="close" class="close" />
+          </summary>
+          <div class="menu-panel">
+            {[...nav, ...more].map(([href, label]) => <a href={href} aria-current={current(href)}>{label}</a>)}
+            <a class="btn white" href="/detect/"><Icon name="chip" />Detect device</a>
+            <a class="btn primary" href={REPO_URL}><Icon name="github" />Star on GitHub</a>
+          </div>
+        </details>
       </div>
     </header>
-    <main id="main" class:list={[isHome ? "home-content" : "container page-content", { "narrow": narrow }]} tabindex="-1">
+
+    <main id="main" class:list={[bleed ? "bleed" : "container"]}>
       <slot />
     </main>
+
     <footer class="site-footer">
-      <div class="container footer-content">
-        <Brand footer />
-        <p class="footer-about">{SITE_NAME} is an independent, open project with no vendor affiliation.
-          Code {LICENSES.code}, data {LICENSES.data}, agent skill file {LICENSES.skill}.</p>
+      <div class="container">
+        <Logo />
+        <p>
+          {SITE_NAME} is an independent, open project with no vendor affiliation.
+          Code {LICENSES.code}, data {LICENSES.data}, agent skill file {LICENSES.skill}.
+        </p>
         <nav class="footer-nav" aria-label="Footer">
-          {[["/contribute/", "Contribute"], ["/devices/", "Devices"], ["/detect/", "Detect"], ["/news/", "News"], ["/sources/", "Sources"], ["/about/", "About"]].map(([href, label]) => <a href={href}>{label}</a>)}
+          {footerNav.map(([href, label]) => <a href={href}>{label}</a>)}
         </nav>
         <ul class="footer-links">
-          <li><a href={REPO_URL}>Source on Github</a></li>
-          <li><a href="/policy/">Content Policy</a></li>
+          <li><a href={REPO_URL}>Source on GitHub</a> (a ⭐ helps others find it)</li>
+          <li><a href="/policy/">Content policy</a></li>
           <li><a href="/api/index.json">JSON API</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
-        <p class="footer-privacy">No tracking, no cookies, no external scripts.</p>
+        <p class="footer-note">No tracking, no cookies, no external scripts.</p>
       </div>
     </footer>
     <script>
-      import "../scripts/site.ts";
+      import "../scripts/code.ts";
+      import "../scripts/header.ts";
+      import "../scripts/tilt.ts";
     </script>
   </body>
 </html>

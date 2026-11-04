@@ -54,10 +54,11 @@ const freedomExample = `projects:
       cloud: none                           # setup-only, optional, required, unknown
       notes: Proprietary files are extracted from the stock firmware`;
 const reportFormUrl = `${ODB_REPO_URL}/issues/new?template=${REPORT_TEMPLATE}`;
-const themes = { light: "github-light", dark: "github-dark-high-contrast" } as const;
+// Token colours come from the design tokens (see "Code highlighting" in global.css).
+const theme = "css-variables";
 ---
 <Base title="Contribute" description="How to add or improve a device record, claim a device you are working on, and how verification works.">
-  <div class="prose">
+  <div class="article">
     <h1>Contribute</h1>
     <p class="lede">
       The database is a set of YAML files in git. Everything — new devices, findings, claims —
@@ -65,7 +66,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
     </p>
 
     <h2 id="workflow">Pull request workflow</h2>
-    <ol>
+    <ol class="steps">
       <li>Fork <a href={REPO_URL}>the repository</a> (or use "Edit this record on GitHub" on any device page).</li>
       <li>Add or edit <code>data/devices/&lt;vendor&gt;/&lt;model&gt;.yaml</code>. The id is <code>&lt;vendor-slug&gt;/&lt;model-slug&gt;</code>, lowercase <code>a-z 0-9 -</code>.</li>
       <li>Run <code>npm install &amp;&amp; npm run validate</code>: every record is checked against <a href={`${REPO_URL}/blob/main/schema/device.schema.json`}><code>schema/device.schema.json</code></a>.</li>
@@ -78,7 +79,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
 
     <h2 id="format">Record format</h2>
     <p>A real record, <code>data/devices/ryze/tello.yaml</code>:</p>
-    <Code code={example} lang="yaml" themes={themes} />
+    <Code code={example} lang="yaml" theme={theme} />
     <p class="small muted">The <a href={`${REPO_URL}/blob/main/SPEC.md`}>specification</a> describes every field; the JSON Schema is normative.</p>
 
     <h2 id="partial">Small findings are welcome</h2>
@@ -89,7 +90,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
       an interface with status <code>partial</code> and an honest <code>confidence</code>: maintainers check
       that it is relevant and plausible before merging, and the record says how far it was verified.
     </p>
-    <Code code={partialExample} lang="yaml" themes={themes} />
+    <Code code={partialExample} lang="yaml" theme={theme} />
     <h2 id="status">Status levels</h2>
     <ul class="list-plain">
       {STATUSES.map((s) => <li><StatusBadge status={s} /> <span class="muted">— {STATUS_HELP[s]}</span></li>)}
@@ -101,7 +102,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
       <StatusBadge status="in-progress" /> on the site and in agents' lookups, with your contact,
       so nobody starts the same job in parallel. Claims expire (90 days at most); renew or publish.
     </p>
-    <Code code={claimExample} lang="yaml" themes={themes} />
+    <Code code={claimExample} lang="yaml" theme={theme} />
     <p>Agents do this with the <code>claim_device</code> tool.</p>
 
     <h2 id="wanted">Requests: say you want a device</h2>
@@ -123,7 +124,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
       or hosted here. Set the safety flags honestly; a device that is mains-powered and must be opened only gets a
       warning and a plain link to the guide.
     </p>
-    <Code code={installExample} lang="yaml" themes={themes} />
+    <Code code={installExample} lang="yaml" theme={theme} />
     <p class="small muted">The values above are an illustration of the format, not a real device's route.</p>
     <p>
       Tried a route? <a href={reportFormUrl}>Report how it went</a> — worked, partly or failed, with the firmware
@@ -142,7 +143,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
       leave <code>freedom</code> out when you don't know, and write <code>nonfree: []</code> only when nothing non-free
       is known to remain. Device pages show it next to each project, and the directory's "No cloud" filter uses it.
     </p>
-    <Code code={freedomExample} lang="yaml" themes={themes} />
+    <Code code={freedomExample} lang="yaml" theme={theme} />
     <p class="small muted">The values above illustrate the format. Imported sources set only what holds for every device they list (e.g. Zigbee2MQTT: the stock firmware stays, no cloud); a curated record refines it per device.</p>
 
     <h2 id="verification">Verification levels</h2>
@@ -155,7 +156,7 @@ const themes = { light: "github-light", dark: "github-dark-high-contrast" } as c
       <li><strong><code>manual</code></strong> — someone tried it by hand on a real device.</li>
       <li><strong><code>none</code></strong> — not verified; desk research or captures only.</li>
     </ul>
-    <Code code={verificationExample} lang="yaml" themes={themes} />
+    <Code code={verificationExample} lang="yaml" theme={theme} />
     <p>Set <code>provenance.ai_assisted: true</code> whenever an AI tool wrote part of the record, and list the tools.</p>
 
     <h2 id="policy">What we accept</h2>

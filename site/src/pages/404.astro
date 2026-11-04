@@ -3,8 +3,14 @@ import Base from "../layouts/Base.astro";
 import SearchBar from "../components/SearchBar.astro";
 ---
 <Base title="Not found">
-  <h1>Not found</h1>
-  <p class="lede">This page does not exist. If you were looking for a device, it may not be listed yet.</p>
-  <div class="not-found-search"><SearchBar id="nf-q" suggestions={false} /></div>
-  <p>Nothing known? <a href="/contribute/#claims">Claim it</a> before you start, and <a href="/contribute/">add it</a> when you are done.</p>
+  <div class="page-head center">
+    <h1>Not found</h1>
+    <p class="lede">This page does not exist. If you were looking for a device, it may not be listed yet.</p>
+    <form role="search" action="/devices/" method="get" class="nf-search"><SearchBar id="nf-q" placeholder="Search devices…" /></form>
+    <p>Nothing known? <a href="/contribute/#claims">Claim it</a> before you start, and <a href="/contribute/">add it</a> when you are done.</p>
+  </div>
 </Base>
+
+<style>
+  .nf-search { width: 100%; display: flex; justify-content: center; }
+</style>

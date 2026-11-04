@@ -1,148 +1,206 @@
 ---
 import Base from "../layouts/Base.astro";
 import Icon from "../components/Icon.astro";
-import DesignImage from "../components/DesignImage.astro";
 import SearchBar from "../components/SearchBar.astro";
-import StatusBadge from "../components/StatusBadge.astro";
+import SearchSuggestions from "../components/SearchSuggestions.astro";
+import DeviceCard from "../components/DeviceCard.astro";
+import WantedItem from "../components/WantedItem.astro";
+import FeatureItem from "../components/FeatureItem.astro";
+import ExploreCard from "../components/ExploreCard.astro";
 import PostItem from "../components/PostItem.astro";
-import { counts, activeClaims, latestCurated, deviceUrl, effectiveStatus, db } from "../lib/data.ts";
+import CtaBanner from "../components/CtaBanner.astro";
+import { counts, activeClaims, latestCurated, effectiveStatus, db } from "../lib/data.ts";
 import { posts } from "../lib/news.ts";
-import { REPO_URL, displayName } from "../lib/config.ts";
+import { fmtLongDate } from "../lib/dates.ts";
 import { openWanted } from "../lib/wanted.ts";
-import "../styles/home.css";
+
 const c = counts();
-const claims = activeClaims().slice(0, 5);
+const claims = activeClaims().slice(0, 4);
 const news = (await posts()).slice(0, 3);
-const latest = latestCurated(8);
+const latest = latestCurated(6);
 const fmt = (n: number) => n.toLocaleString("en");
 const { on } = db();
-const mostWanted = (await openWanted()).slice(0, 5);
-const features = [
-  ["home-Time02", "Save research time", "Find existing tools, firmware, and research before starting your own."],
-  ["home-CircleUnlock01", "Find where you're needed", "See what's already documented and where there's still work to do."],
-  ["home-AiCoEditing", "Make your findings useful", "Share your discoveries so others can continue where you left off."],
-  ["home-BookOpen01", "Keep knowledge open", "Help maintain a community-driven resource anyone can access and improve."],
-];
-const explore = [
-  ["home-Image79.png", "Find existing work", "Search devices to discover available firmware, tools, and research before starting your own.", "/devices/", "Browse devices"],
-  ["home-Image80.png", "Identify a device", "Use a supported browser to identify compatible USB or Bluetooth devices.", "/detect/", "Try device detection"],
-  ["home-Image81.png", "Share what you know", "Add a device, link existing research, or improve a record so others can build on it.", "/contribute/", "Start contributing"],
-];
-const deviceIcon = (model: string) => /air.condition|refrigerator/i.test(model) ? "home-AirVent" : /wash|dryer/i.test(model) ? "home-WashingMachine" : /dehumid/i.test(model) ? "home-Humidity" : /home.connect|dishwash|microwave/i.test(model) ? "home-DishWasher" : "home-Wifi02";
+const mostWanted = (await openWanted()).slice(0, 3);
 ---
-<Base>
-  <DesignImage slot="backdrop" class="hero-devices" name="home-Devices" width={2316} height={1007} sizes="(max-width: 700px) 1360px, (max-width: 1000px) 1800px, 2316px" loading="eager" fetchpriority="high" />
-  <div class="home-glows" aria-hidden="true"><DesignImage class="home-glow-right" name="home-Gradient" width={1455} height={632} /><DesignImage class="home-glow-left" name="home-Gradient" width={2316} height={1007} /></div>
-  <section class="home-hero container">
-    <div class="hero-content">
-      <p class="eyebrow">A FREE, COMMUNITY-BUILT DEVICE DATABASE</p>
-      <h1>Find open firmware, tools, and research for your devices.</h1>
-      <p class="lede">Search thousands of devices to see what's available, find existing projects, and check what the community is working on.</p>
-      <div class="hero-search"><SearchBar id="home-q" /></div>
+<Base bleed>
+  <!-- Hero illustration on a backdrop layer that starts at the top of the page (as on
+       opendevicedb.org): behind the header and hero, ending under the stats bar. No fades. -->
+  <div class="hero-wrap">
+    <div class="hero-backdrop" aria-hidden="true">
+      <picture>
+        <!-- Phones show it at 25% opacity: a 1000px, 37 KB version is enough there. -->
+        <source media="(width <= 700px)" srcset="/images/hero-mobile.webp" />
+        <img class="hero-art" src="/images/hero.webp" alt="" width="1902" height="827" fetchpriority="high" />
+      </picture>
     </div>
-  </section>
-  <section class="home-stats" aria-label="Directory counters">
-    <div class="container stats-grid">
-      {[
-        [fmt(c.devices), "Devices", "/devices/"],
-        [fmt(c.sources), "Aggregated Sources", "/sources/"],
-        [fmt(c.byStatus["open-firmware"]), "Open Firmware", "/devices/?status=open-firmware"],
-        [fmt(c.byStatus.controllable), "Controllable", "/devices/?status=controllable"],
-        [fmt(c.byStatus["in-progress"]), "In progress", "/devices/?status=in-progress"],
-      ].map(([value, label, href], i) => <a href={href} class="home-stat">{i > 0 && <img class="stat-divider" src="/design/home-Line8.svg" width="74" height="1" alt="" aria-hidden="true" />}<strong>{value}</strong><span>{label}</span></a>)}
-    </div>
-  </section>
-  <section class="home-intro home-section">
-    <DesignImage class="intro-glow" name="home-Image78" width={2316} height={1007} />
-    <div class="container intro-grid">
-      <div class="intro-copy">
-        <h2>Build on what matters.</h2>
-        <p>OpenDeviceDB brings scattered device research, open firmware, and protocols into one searchable directory. Discover what's already been done, find what's missing, and help others build on your work.</p>
-        <div class="actions">
-          <a class="btn primary" href="/contribute/">How to contribute</a>
-          <a class="btn" href={`${REPO_URL}/blob/main/SPEC.md`}>View Documentation</a>
+    <section class="section hero">
+      <div class="inner narrow">
+        <div class="hero-text stack-md">
+          <p class="eyebrow">A free, community-built device database</p>
+          <h1>Find open firmware, tools, and research for your devices.</h1>
+          <p class="lede">
+            Search thousands of devices to see what's available, find existing projects, and check what the
+            community is working on.
+          </p>
         </div>
+        <form role="search" action="/devices/" method="get" class="hero-search">
+          <SearchBar id="home-q" />
+        </form>
+        <SearchSuggestions />
       </div>
-      <div class="feature-list">
-        {features.map(([icon, title, text]) => <div class="feature">
-          <Icon name={icon} size={32} />
-          <div><h3>{title}</h3><p>{text}</p></div>
-        </div>)}
+    </section>
+
+    <div class="stats-bar">
+      <div class="counters" aria-label="Directory counters">
+        <a class="counter" href="/devices/"><strong>{fmt(c.devices)}</strong><span>Devices</span></a>
+        <a class="counter" href="/sources/"><strong>{fmt(c.sources)}</strong><span>Aggregated sources</span></a>
+        <a class="counter" href="/devices/?status=open-firmware"><strong>{fmt(c.byStatus["open-firmware"])}</strong><span>Open firmware</span></a>
+        <a class="counter" href="/devices/?status=controllable"><strong>{fmt(c.byStatus.controllable)}</strong><span>Controllable</span></a>
+        <a class="counter" href="/devices/?status=in-progress"><strong>{fmt(c.byStatus["in-progress"])}</strong><span>In progress</span></a>
       </div>
     </div>
-  </section>
-  <section class="home-section home-explore container">
-    <h2>New here? Three ways to explore.</h2>
-    <div class="explore-grid">
-      {explore.map(([icon, title, text, href, label], i) => <article class:list={["card explore-card", { "highlight-card": i === 0 }]}>
-        <DesignImage name={icon.replace(".png", "")} width={56} height={56} />
-        <div><h3>{title}</h3><p>{text}</p></div>
-        <a class="text-link" href={href}>{label}<Icon name="home-ArrowUpRight03" size={16} /></a>
-      </article>)}
+  </div>
+
+  <!-- Intro: stacked = text, features, buttons; from 48rem text + buttons left, features right. -->
+  <section class="section">
+    <div class="intro">
+      <div class="intro-text stack-md">
+        <h2 class="section-title">Build on what matters.</h2>
+        <p class="lede">
+          OpenDeviceDB brings scattered device research, open firmware, and protocols into one searchable
+          directory. Discover what's already been done, find what's missing, and help others build on your work.
+        </p>
+      </div>
+      <div class="intro-actions row">
+        <a class="btn primary lg" href="/contribute/">How to contribute</a>
+        <a class="btn lg" href="/agents/">View documentation</a>
+      </div>
+      <div class="features">
+        <FeatureItem icon="time" title="Save research time">Find existing tools, firmware, and research before starting your own.</FeatureItem>
+        <FeatureItem icon="unlock" title="Find where you're needed">See what's already documented and where there's still work to do.</FeatureItem>
+        <FeatureItem icon="ai-editing" title="Make your findings useful">Share your discoveries so others can continue where you left off.</FeatureItem>
+        <FeatureItem icon="book-open" title="Keep knowledge open">Help maintain a community-driven resource anyone can access and improve.</FeatureItem>
+      </div>
     </div>
   </section>
-  <section class="home-section home-recent container">
-    <h2>Recently updated devices</h2>
-    {latest.length ? <div class="device-card-grid">
-      {latest.map(r => <article class="card device-card">
-        <div class="device-card-icons"><Icon name={deviceIcon(r.model)} /><a href={deviceUrl(r.id)} aria-label={`View ${displayName(r.vendor, r.model)}`}><Icon name="home-ArrowUpRight4" /></a></div>
-        <div class="device-card-title"><h3><a href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a></h3>
-          <p class="device-card-meta"><span>{r.category} · {r.vendor}</span><span>Updated {new Date(r.updated + "T12:00:00Z").toLocaleDateString("en", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" })}</span></p>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">New here? Three ways to explore.</h2>
+      <div class="card-grid cols-3">
+        <ExploreCard image="/images/find-existing-work.webp" title="Find existing work" href="/devices/" cta="Browse devices">
+          Search devices to discover available firmware, tools, and research before starting your own.
+        </ExploreCard>
+        <ExploreCard image="/images/identify-device.webp" title="Identify a device" href="/detect/" cta="Try device detection">
+          Use a supported browser to identify compatible USB or Bluetooth devices.
+        </ExploreCard>
+        <ExploreCard image="/images/share-knowledge.webp" title="Share what you know" href="/contribute/" cta="Start contributing">
+          Add a device, link existing research, or improve a record so others can build on it.
+        </ExploreCard>
+      </div>
+    </div>
+  </section>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">Recently updated devices</h2>
+      {latest.length === 0 ? <p class="empty">No curated record yet.</p> : (
+        <div class="card-grid cols-2">
+          {latest.map((r) => (
+            <DeviceCard record={r} status={effectiveStatus(r, on)} />
+          ))}
         </div>
-        <div class="row"><StatusBadge status={effectiveStatus(r, on)} />{r.provenance?.ai_assisted && <span class="badge ai-assisted">AI assisted</span>}</div>
-      </article>)}
-    </div> : <p class="empty">No curated record yet. <a href="/contribute/">Add a device</a>.</p>}
-    <a class="btn primary section-action" href="/devices/">View all devices</a>
-  </section>
-  <section class="home-section container community-grid">
-    <div>
-      <h2>Wanted devices</h2>
-      {mostWanted.length ? <ul class="list-plain home-wanted">
-        {mostWanted.map(w => <li><div class="dev-row">
-          <a class="name" href={w.inRegistry ? deviceUrl(w.id) : w.url}>{displayName(w.vendor, w.model)}</a>
-          <a class="badge wanted" href={w.url} aria-label={`${w.votes} want ${displayName(w.vendor, w.model)}; view request`}><Icon name="home-ThumbsUp" size={16} />{w.votes}</a>
-          <span class="meta">{w.category ?? "Uncategorized"} · Requested {w.opened}</span>
-        </div></li>)}
-      </ul> : <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a>.</p>}
-      <a class="text-link" href="/wanted/">View all requests</a>
-    </div>
-    <div>
-      <h2>Devices in progress</h2>
-      {claims.length ? <ul class="list-plain">
-        {claims.map(({ record: r, claim }) => <li><div class="dev-row">
-          <a class="name" href={deviceUrl(r.id)}>{displayName(r.vendor, r.model)}</a>
-          <StatusBadge status={effectiveStatus(r, on)} />
-          <span class="meta">{claim.who} — {claim.scope} · until {claim.expires}</span>
-        </div></li>)}
-      </ul> : <p class="muted">No one working on a device right now? Claim one so nobody duplicates your work.</p>}
-      <a class="text-link" href="/contribute/#claims">Claim a device</a>
+      )}
+      <a class="btn primary lg" href="/devices/">View all devices</a>
     </div>
   </section>
-  <section class="home-section home-news container">
-    <h2>Latest news</h2>
-    {news.length ? <div class="news-card-grid">{news.map((p, i) => <div class:list={["card news-card", { "highlight-card": i === 1 }]}><PostItem post={p} /></div>)}</div> : <p class="empty">No news yet.</p>}
-    <a class="btn primary section-action" href="/news/">Read all news</a>
+
+  <section class="section">
+    <div class="inner two-col">
+      <div class="stack-lg">
+        <h2 class="sub-title">Wanted devices</h2>
+        {mostWanted.length === 0 ? (
+          <p class="empty">No request yet. Can't find a device? <a href="/wanted/">Request it</a> and others can add a 👍.</p>
+        ) : (
+          <div class="cards">{mostWanted.map((w) => <WantedItem w={w} />)}</div>
+        )}
+        <a href="/wanted/">View all requests</a>
+      </div>
+      <div class="stack-lg">
+        <h2 class="sub-title">Devices in progress</h2>
+        {claims.length === 0 ? (
+          <p class="muted">No live claim right now. Starting on a device? Claim it so nobody duplicates your work.</p>
+        ) : (
+          <div class="cards">
+            {claims.map(({ record: r, claim }) => (
+              <DeviceCard record={r} status={effectiveStatus(r, on)}>{claim.who} — {claim.scope} · until {fmtLongDate(claim.expires)}</DeviceCard>
+            ))}
+          </div>
+        )}
+        <a href="/contribute/#claims">How claims work</a>
+      </div>
+    </div>
   </section>
-  <section class="home-agents home-section">
-    <img class="agents-pattern" src="/design/home-Pattern.svg" width="1920" height="555" alt="" loading="lazy" />
-    <div class="container agents-content">
-      <h2>For AI agents</h2>
-      <p>Agents can query OpenDeviceDB themselves before starting a reverse-engineering job, claim the device while they work, and publish their findings when done — through an MCP server.</p>
+
+  <section class="section center">
+    <div class="inner">
+      <h2 class="section-title">Latest news</h2>
+      {news.length === 0 ? <p class="empty">No news yet.</p> : (
+        <div class="card-grid cols-3">{news.map((p) => <PostItem post={p} />)}</div>
+      )}
+      <a class="btn primary lg" href="/news/">Read all news</a>
+    </div>
+  </section>
+
+  <section class="section center alt">
+    <div class="inner code">
+      <div class="stack-md">
+        <h2 class="section-title">For AI agents</h2>
+        <p class="lede">
+          Agents can query OpenDeviceDB themselves before starting a reverse-engineering job, claim the device
+          while they work, and publish their findings when done — through an MCP server.
+        </p>
+      </div>
       <pre><code>claude mcp add opendevicedb -- npx -y @opendevicedb/mcp</code></pre>
-      <a class="btn white" href="/agents/">Setup an agent <Icon name="home-ArrowRight02" /></a>
+      <a class="btn white lg" href="/agents/">Set up an agent<Icon name="arrow-right" /></a>
     </div>
   </section>
-  <section class="home-section container">
-    <div class="contribution-banner">
-      <DesignImage name="home-Image88" width={947} height={473} sizes="(max-width: 700px) 600px, 947px" />
-      <div class="banner-copy">
-        <h2>Help grow the database.</h2>
-        <p>Add new devices, share your findings, improve existing guides, or help others get more life out of their devices.</p>
-        <div class="actions">
-          <a class="btn primary" href={REPO_URL}><Icon name="home-Github1" />Star on Github</a>
-          <a class="btn" href="/contribute/">Contribute <Icon name="home-ArrowRight3" /></a>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  <CtaBanner />
 </Base>
+
+<style>
+  /* The backdrop spans .hero-wrap (hero + stats bar) plus the 88px header above it, so the art
+     starts at the page top and ends at the stats bar's bottom edge, where the bar's blur covers
+     it. (A clip-path here would stop the stats bar's backdrop-filter from reaching the art.) */
+  .hero-wrap { position: relative; }
+  .hero-backdrop { position: absolute; inset: -88px 0 0; z-index: -1; overflow: clip; pointer-events: none; }
+  .hero-art { position: absolute; top: 15px; left: calc(50% - 44px); transform: translateX(-50%); width: 2316px; max-width: none; height: auto; }
+  @media (width <= 1200px) { .hero-art { opacity: 0.7; } }
+  @media (width <= 1000px) { .hero-art { width: 1800px; top: 90px; } }
+  @media (width <= 700px) { .hero-art { width: 1360px; top: 95px; opacity: 0.25; } }
+  .hero { padding-top: 24px; }
+  @media (min-width: 48rem) { .hero { padding-top: 100px; } }
+  .hero .inner { align-items: center; text-align: center; gap: var(--space-stack-lg); }
+  /* Centre the narrower lede's box too, not just its text. */
+  .hero-text { align-items: center; }
+  .hero-search { width: 100%; display: flex; justify-content: center; }
+
+  .stats-bar { padding: 32px var(--gutter); border-block: 1px solid var(--color-border-subtle); background: var(--color-bg-subtle); backdrop-filter: blur(86px); }
+
+  .intro { max-width: var(--max); margin: 0 auto; display: grid; gap: var(--space-stack-lg) var(--space-section-gap); }
+  .intro-actions { order: 3; gap: 12px; }
+  @media (min-width: 48rem) {
+    .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: auto 1fr; }
+    .intro-text { grid-column: 1; grid-row: 1; align-self: start; }
+    .intro-actions { order: 0; grid-column: 1; grid-row: 2; align-self: start; }
+    /* Both columns start at the top: the heading lines up with the first feature. */
+    .features { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+  }
+
+  .two-col > .stack-lg { align-items: flex-start; }
+  .two-col .cards { width: 100%; }
+  .sub-title { margin: 0; font: 400 var(--text-heading-2) / 1.2 var(--font-display); }
+
+  .inner.code :global(.code-block) { width: 100%; margin: 0; text-align: left; }
+</style>

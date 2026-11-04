@@ -8,6 +8,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "node scripts/check-dist.ts",
+    "test": "node --test src/lib/*.test.ts",
     "check:ui": "playwright test"
   },
   "dependencies": {

@@ -2,13 +2,13 @@
 import type { DeviceRecord } from "@opendevicedb/core";
 import Base from "../../../layouts/Base.astro";
 import StatusBadge from "../../../components/StatusBadge.astro";
-import Icon from "../../../components/Icon.astro";
 import GetStarted from "../../../components/GetStarted.astro";
+import Icon from "../../../components/Icon.astro";
 import { db, effectiveStatus, liveClaims, editUrl, jsonUrl } from "../../../lib/data.ts";
 import { STATUS_HELP, NONFREE_LABEL, NONFREE_HELP, CLOUD_LABEL, CLOUD_HELP, displayName } from "../../../lib/config.ts";
 import { wantedById } from "../../../lib/wanted.ts";
 import { reportsFor } from "../../../lib/reports.ts";
-import { statusRank, wantedIssueUrl, sortInstallRoutes } from "@opendevicedb/core";
+import { statusRank, wantedIssueUrl } from "@opendevicedb/core";
 
 export function getStaticPaths() {
   return db().records.map((record) => {
@@ -20,7 +20,6 @@ export function getStaticPaths() {
 const { record: r } = Astro.props as { record: DeviceRecord };
 const { on, curatedIds, sources } = db();
 const status = effectiveStatus(r, on);
-const easiestInstall = sortInstallRoutes(r.install ?? [])[0];
 const live = liveClaims(r, on);
 const expired = (r.claims ?? []).filter((c) => !live.includes(c));
 const verified = (r.verification ?? []).filter((v) => v.method === "hardware-replay");
@@ -58,36 +57,33 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
 ---
 <Base title={pageTitle} description={desc}>
   <link slot="head" rel="alternate" type="application/json" href={jsonUrl(r.id)} />
+  <div class="detail">
   <div class="dev-head">
     <p class="crumbs"><a href="/devices/">Devices</a> / <a href={`/devices/?category=${r.category}`}>{r.category}</a></p>
     <h1>{displayName(r.vendor, r.model)}</h1>
     {r.aliases && r.aliases.length > 0 && <p class="aka">Also known as {r.aliases.join(", ")}</p>}
     <div class="row">
       <StatusBadge status={status} large />
-      {easiestInstall && <span class={`badge inst-${easiestInstall.difficulty}`}>Install: {easiestInstall.difficulty}</span>}
       {verified.length > 0 && <span class="badge lg verified">Verified on hardware</span>}
-      {r.provenance?.ai_assisted && <span class="badge lg ai-assisted">AI assisted</span>}
+      {r.provenance?.ai_assisted && <span class="badge lg neutral">AI-assisted</span>}
       {!curated && <span class="badge lg neutral">Imported</span>}
     </div>
     <p class="muted small">{STATUS_HELP[status]}</p>
+    {r.summary && <p class="lede">{r.summary}</p>}
   </div>
-
-  {r.summary && <p class="prose" style="font-size:1.05rem">{r.summary}</p>}
 
   {r.install && r.install.length > 0 && <GetStarted record={r} reports={installReports} />}
 
-  <dl class="facts card" style="margin-top:18px">
-    <dt>ID</dt><dd class="mono">{r.id}</dd>
-    <dt>Category</dt><dd>{r.category}</dd>
-    <dt>Vendor support</dt><dd>{vendorSupport[r.vendor_support ?? "unknown"] ?? r.vendor_support}</dd>
-    {ids.map(([k, v]) => <><dt>{k.replace("_", " ")}</dt><dd class="mono">{v!.join(", ")}</dd></>)}
-    <dt>Updated</dt><dd>{r.updated}</dd>
-  </dl>
-
-  <div class="actions">
-    <a class="btn primary" href={editUrl(r)}>{curated ? "Edit this record on GitHub" : "Curate this record on GitHub"}</a>
-    <a class="btn" href={jsonUrl(r.id)}>JSON</a>
-    <a class="btn" href="/contribute/#claims">Claim this device</a>
+  <!-- The record's facts, and the same record as JSON. -->
+  <div class="card record">
+    <dl class="facts">
+      <dt>ID</dt><dd class="mono">{r.id}</dd>
+      <dt>Category</dt><dd>{r.category}</dd>
+      <dt>Vendor support</dt><dd>{vendorSupport[r.vendor_support ?? "unknown"] ?? r.vendor_support}</dd>
+      {ids.map(([k, v]) => <><dt>{k.replace("_", " ")}</dt><dd class="mono">{v!.join(", ")}</dd></>)}
+      <dt>Updated</dt><dd>{r.updated}</dd>
+    </dl>
+    <a class="btn" href={jsonUrl(r.id)}><Icon name="file" size={18} />View JSON</a>
   </div>
 
   {wantedOpen && (
@@ -169,8 +165,8 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
     </table></div>
   )}
   {freedomKnown && (
-    <details class="small legend" open>
-      <summary class="muted"><Icon name="device-ArrowDown01" />What "still non-free" and "cloud" mean</summary>
+    <details class="small legend">
+      <summary class="muted">What "still non-free" and "cloud" mean</summary>
       <p>What stays proprietary or depends on the vendor's cloud once the project is in use, from the project's own documentation.</p>
       <dl class="facts">
         {Object.entries(NONFREE_HELP).map(([k, v]) => <><dt>{NONFREE_LABEL[k]}</dt><dd>{v}</dd></>)}
@@ -208,4 +204,28 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
     {r.provenance?.ai_assisted ? <><span class="badge neutral">AI-assisted</span> Parts of this record were produced with AI tools{r.provenance.tools?.length ? <> ({r.provenance.tools.join(", ")})</> : null}; check the confidence of each interface.</> : r.provenance?.ai_assisted === false ? "Not flagged as AI-assisted." : "AI assistance not stated."}
   </p>
   <p class="small muted">Status and claims as of the build date ({on}). Data licensed CC BY-SA 4.0; imported data keeps its upstream license.</p>
+
+  <section class="improve" aria-labelledby="improve">
+    <h2 id="improve">Help improve this device record</h2>
+    <p>Found a correction or planning to work on this device? Share an update or claim it so others can coordinate with you.</p>
+    <p class="improve-links">
+      <a href={editUrl(r)}>{curated ? "Edit on GitHub" : "Curate on GitHub"}<Icon name="arrow-up-right" size={16} /></a>
+      <a href="/contribute/#claims">Claim this device<Icon name="arrow-up-right" size={16} /></a>
+    </p>
+  </section>
+  </div>
 </Base>
+
+<style>
+  /* Same reading column as the design's device page; sections use display headings. */
+  .detail { max-width: var(--max-prose); margin: 0 auto; }
+  .detail > h2 { margin: 2.2em 0 0.6em; }
+  .detail :global(.get-started h2) { margin-top: 1.4em; }
+  .record { margin-top: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+  /* Closing call to contribute: a divider, a title-size heading, two arrow links. */
+  .improve { margin-top: var(--space-section-gap); padding-top: var(--space-section-gap); border-top: 1px solid var(--color-border-default); }
+  .detail > .improve h2 { margin: 0 0 12px; font: 600 var(--text-heading-3) / 1.3 var(--font); letter-spacing: -0.02em; }
+  .improve p { margin: 0; color: var(--color-text-secondary); }
+  .improve .improve-links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 20px; }
+  .improve-links a { display: inline-flex; align-items: center; gap: 4px; }
+</style>

@@ -1,8 +1,8 @@
 # site — opendevicedb.org
 
 Static Astro build of the repository: directory, device pages, news, and the JSON API
-described in SPEC.md ("Static API"). No client framework; small vanilla-JS modules handle directory search, device
-detection, responsive navigation and code copying.
+described in SPEC.md ("Static API"). No client framework; one small vanilla-JS island
+(`src/scripts/directory.ts`) for search.
 
 ```sh
 npm run dev -w site       # http://localhost:4321
@@ -44,31 +44,20 @@ node site/scripts/gen-fake-data.ts /tmp/odb-fake 20000   # never commit the outp
 ODB_REPO=/tmp/odb-fake ODB_TIMING=1 npm run build -w site
 ```
 
-## Design and responsive checks
+## Design system
 
-The site follows the OpenDeviceDB Figma “Hifi Desktop” design. Shared colours,
-typography, controls and page layouts live in `src/styles/global.css`; the home
-and detection pages have their own stylesheets. The navigation collapses below
-1100px, and cards, filters and tables adapt below 700px.
+The look comes from the Figma file "OpenDeviceDB Code". `src/styles/global.css` is still the
+only stylesheet:
 
-Original Figma illustrations are kept in `src/assets/design/` and exported SVGs
-in `public/design/`. `DesignImage.astro` uses Astro's image pipeline to serve
-WebP variants at appropriate sizes. Fonts and their licenses are hosted in
-`public/fonts/`; no external font or script service is loaded.
-
-Build the production site before running the UI checks:
-
-```sh
-npm run build
-npx playwright install chromium  # unnecessary when /usr/bin/chromium is available
-npm run check:ui -w site
-```
-
-The Playwright checks cover all page templates at 1920, 820, 390 and 320 pixels,
-horizontal overflow, WCAG accessibility checks with axe, mobile/keyboard
-navigation, search/filter/pagination state, failed downloads, clipboard copy,
-and detection results using simulated browser APIs. Physical device detection
-still needs a compatible browser and real hardware. Failure screenshots and
-traces go to `/tmp/opendevicedb-ui-results` (override with `ODB_UI_RESULTS`).
-Use `ODB_SITE_URL` to check an already running server, or
-`PLAYWRIGHT_CHROMIUM_EXECUTABLE` to select another Chromium binary.
+- **Tokens** are custom properties that mirror the Figma variables: primitives
+  (`--purple-800`, `--radius-2xl`) and semantic tokens (`--color-bg-surface`,
+  `--space-card-padding`, `--text-heading-1`). Responsive tokens take their mobile value by
+  default and their desktop value from `48rem`.
+- **Fonts** are self-hosted in `public/fonts`: Geist and Geist Mono (OFL, subset to Latin) for
+  text, and Technor (Indian Type Foundry via Fontshare, `technor-FFL.txt`) for headings. Geist is
+  the only text font; there is no Manrope or Inter.
+- **Icons** are inline SVG paths from Hugeicons (MIT) in `src/lib/icons.ts`, rendered by
+  `components/Icon.astro`. The directory script imports only `lib/icons-device.ts`.
+- **Images** are WebP in `public/images`.
+- **Scripts** stay vanilla: `scripts/code.ts` adds Copy buttons and edge fades to code blocks.
+  The menus (`<details>`) and the mobile filter panel (checkbox toggle) work without JS.

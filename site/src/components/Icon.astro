@@ -1,5 +1,8 @@
 ---
-interface Props { name: string; size?: number; class?: string }
-const { name, size = 24, class: className } = Astro.props;
+// Inline SVG icon (no icon font, no extra request). Names live in lib/icons.ts.
+import { ICONS, type IconName } from "../lib/icons.ts";
+import { svgIcon } from "../lib/icons-device.ts";
+interface Props { name: IconName; size?: number; class?: string }
+const { name, size = 20, class: cls } = Astro.props;
 ---
-<img class:list={["icon", className]} src={`/design/${name}.svg`} width={size} height={size} alt="" aria-hidden="true" loading="lazy" />
+<Fragment set:html={svgIcon(ICONS[name], size, cls)} />

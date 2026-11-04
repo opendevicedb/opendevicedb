@@ -1,17 +1,18 @@
 ---
-import { postUrl, fmtDate, displayDate, readingMinutes, type Post } from "../lib/news.ts";
+import { postUrl, readingMinutes, type Post } from "../lib/news.ts";
+import { fmtDate, fmtLongDate } from "../lib/dates.ts";
 interface Props { post: Post; heading?: "h2" | "h3" }
 const { post, heading = "h3" } = Astro.props;
 const H = heading;
-const date = displayDate(post.data.date);
-const minutes = readingMinutes(post);
 ---
-<article class="post-item">
+<article class="card link post-card">
   <div class="row">
     {post.data.draft && <span class="tag draft">draft</span>}
-    {post.data.tags.map((t) => <span class:list={["tag", `tag-${t.toLowerCase()}`]}>{t.charAt(0).toUpperCase() + t.slice(1)}</span>)}
+    {post.data.tags.map((t) => <span class:list={["tag", `t-${t}`]}>{t}</span>)}
   </div>
-  <H><a href={postUrl(post)}>{post.data.title}</a></H>
+  <H><a class="stretched" href={postUrl(post)}>{post.data.title}</a></H>
   <p>{post.data.summary}</p>
-  <time datetime={fmtDate(post.data.date)}>{date} · {minutes} min read</time>
+  <div class="post-meta">
+    <time datetime={fmtDate(post.data.date)}>{fmtLongDate(post.data.date)}</time> · {readingMinutes(post)} min read
+  </div>
 </article>

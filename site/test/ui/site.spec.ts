@@ -1,5 +1,20 @@
-import { test, expect } from "@playwright/test";
+import { test, expect, type Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+/** Ticks a filter option the way a visitor would: the dropdown on wider screens, the sheet on phones. */
+async function chooseFilter(page: Page, key: string, value: string) {
+  const sheetButton = page.locator("#filters-open");
+  if (await sheetButton.isVisible()) {
+    await sheetButton.click();
+    const group = page.locator(`#filter-sheet .sheet-group:has(.fopts[data-key="${key}"])`);
+    await group.evaluate((details) => { (details as HTMLDetailsElement).open = true; });
+    await group.locator(`input[value="${value}"]`).check();
+    await page.locator("#filter-sheet .sheet-show").click();
+  } else {
+    await page.locator(`.fsel[data-key="${key}"] .fsel-trigger`).click();
+    await page.locator(`#${key}-options input[value="${value}"]`).check();
+    await page.keyboard.press("Escape");
+  }
+}
 const routes = [
   "/", "/devices/", "/detect/", "/wanted/", "/news/", "/agents/",
   "/contribute/", "/sources/", "/about/", "/policy/",
@@ -35,38 +50,34 @@ for (const route of routes) {
 }
 test("navigation works with touch and keyboard", async ({ page }) => {
   await page.goto("/");
-  const toggle = page.locator(".menu-toggle");
-  if (await toggle.isVisible()) {
-    await toggle.click();
-    await expect(toggle).toHaveAttribute("aria-expanded", "true");
-    await page.keyboard.press("Escape");
-    await expect(toggle).toBeFocused();
-    await expect(toggle).toHaveAttribute("aria-expanded", "false");
-    await toggle.click();
-  }
-  await page.locator(".nav-more summary").click();
-  await expect(page.locator(".more-menu")).toBeVisible();
+  // Phones and tablets: the menu button holds every link. Wider screens: the "More" menu.
+  const mobile = page.locator(".mobile-menu");
+  const menu = (await mobile.locator("summary").isVisible()) ? mobile : page.locator(".nav .more");
+  const button = menu.locator("summary");
+  await button.click();
+  await expect(menu.locator(".menu-panel")).toBeVisible();
   await page.keyboard.press("Escape");
-  await expect(page.locator(".more-menu")).toBeHidden();
-  await page.locator(".nav-more summary").click();
-  await page.locator(".more-menu").getByRole("link", { name: "Sources", exact: true }).click();
+  await expect(menu.locator(".menu-panel")).toBeHidden();
+  await expect(button).toBeFocused();
+  await button.click();
+  await menu.locator(".menu-panel").getByRole("link", { name: "Sources", exact: true }).click();
   await expect(page).toHaveURL(/\/sources\/?$/);
   await expect(page.locator("main h1")).toHaveText("Sources");
 });
 test("home search, filters, URL restoration and empty results", async ({ page }) => {
   await page.goto("/");
   await page.getByRole("searchbox").fill("tello");
-  await page.getByRole("button", { name: /^Search(?: Device)?$/ }).click();
+  await page.getByRole("button", { name: /^Search(?: device)?$/i }).click();
   await expect(page).toHaveURL(/\/devices\/\?q=tello/);
   await expect(page.locator("#results .name")).toContainText(["Tello"]);
-  await page.locator("#category").selectOption("drone");
+  await chooseFilter(page, "category", "drone");
   await expect(page).toHaveURL(/category=drone/);
-  await page.locator("#source").selectOption("curated");
+  await chooseFilter(page, "source", "curated");
   await expect(page).toHaveURL(/source=curated/);
   await page.reload();
   await expect(page.locator("#q")).toHaveValue("tello");
-  await expect(page.locator("#category")).toHaveValue("drone");
-  await expect(page.locator("#source")).toHaveValue("curated");
+  await expect(page.locator('.fopts[data-key="category"] input[value="drone"]').first()).toBeChecked();
+  await expect(page.locator('.fopts[data-key="source"] input[value="curated"]').first()).toBeChecked();
   await expect(page.locator("#results .name")).toContainText(["Tello"]);
   await page.locator("#q").fill("odb-nonexistent-device-987654");
   await expect(page.locator("#results")).toContainText("Nothing matches");
@@ -75,14 +86,24 @@ test("home search, filters, URL restoration and empty results", async ({ page })
   const geometry = await page.evaluate(() => ({ width: innerWidth, scroll: document.documentElement.scrollWidth }));
   expect(geometry.scroll).toBeLessThanOrEqual(geometry.width + 1);
 });
+test("filter options count the current results and hide those with none", async ({ page }) => {
+  await page.goto("/devices/?category=audio");
+  await expect(page.locator("#count")).toContainText("results");
+  const status = page.locator('.fopts[data-key="status"]').first();
+  // Audio has no open-firmware device: that option must not be offered, so it can't lead to 0 results.
+  await expect(status.locator('.fopt:has(input[value="open-firmware"])')).toHaveAttribute("hidden", "");
+  await expect(status.locator('.fopt-count[data-value="controllable"]')).not.toHaveText("0");
+  await chooseFilter(page, "category", "laptop"); // several categories at once
+  await expect(page).toHaveURL(/category=audio&category=laptop/);
+});
 test("pagination changes the results and preserves the page in the URL", async ({ page }) => {
   await page.goto("/devices/");
   const first = await page.locator("#results .name").first().textContent();
-  await page.getByRole("button", { name: "Next", exact: true }).click();
+  await page.getByRole("button", { name: /Next/ }).click();
   await expect(page).toHaveURL(/page=2/);
   await expect(page.locator("#pager")).toContainText("Page 2 of");
   expect(await page.locator("#results .name").first().textContent()).not.toBe(first);
-  await page.getByRole("button", { name: "Previous", exact: true }).click();
+  await page.getByRole("button", { name: /Previous/ }).click();
   await expect(page.locator("#pager")).toContainText("Page 1 of");
 });
 test("a failed index download can be retried", async ({ page }) => {

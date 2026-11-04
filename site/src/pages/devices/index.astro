@@ -2,6 +2,9 @@
 import Base from "../../layouts/Base.astro";
 import DeviceRow from "../../components/DeviceRow.astro";
 import Icon from "../../components/Icon.astro";
+import SearchBar from "../../components/SearchBar.astro";
+import FilterOptions, { type CountedGroup } from "../../components/FilterOptions.astro";
+import type { FilterGroup } from "../../lib/device-filters.ts";
 import { db, facet, sourceFacet, sourceName } from "../../lib/data.ts";
 import { STATUS_LABEL } from "../../lib/config.ts";
 import { STATUSES } from "@opendevicedb/core";
@@ -16,63 +19,81 @@ const installable = index.filter((e) => e.install).length;
 const easy = index.filter((e) => e.install === "easy").length;
 const noCloud = index.filter((e) => e.cloud === "none").length;
 const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-only").length;
+// Counts here are for the whole directory; the script replaces them as filters and search change.
+const groups: CountedGroup[] = [
+  { key: "category", label: "Category", placeholder: "All categories", multiple: true,
+    options: facet("category").map(([c, n]) => ({ value: c, label: c, count: n })) },
+  { key: "status", label: "Status", placeholder: "Any status", multiple: true,
+    options: STATUSES.map((s) => ({ value: s, label: STATUS_LABEL[s], count: statusCounts.get(s) ?? 0 })) },
+  { key: "source", label: "Source", placeholder: "All sources", multiple: true,
+    options: sourceFacet().map(([s, n]) => ({ value: s, label: sourceName(s), count: n })) },
+  { key: "install", label: "Install", placeholder: "Any", multiple: false,
+    options: [{ value: "easy", label: "Easy to install", count: easy }, { value: "any", label: "Has an install guide", count: installable }] },
+  { key: "cloud", label: "Cloud", placeholder: "Any", multiple: false,
+    options: [{ value: "none", label: "No cloud", count: noCloud }, { value: "setup-only", label: "No cloud after setup", count: setupOnly }] },
+];
+const groupsForScript: FilterGroup[] = groups.map(({ options, ...g }) => ({ ...g, options: options.map(({ value, label }) => ({ value, label })) }));
 ---
 <Base title="Devices" description="Search every device known to OpenDeviceDB by name, alias, FCC ID, USB vid:pid, BLE name or chip.">
-  <h1>Devices</h1>
-  <p class="lede">
-    Search by vendor, model, alias or identifier (FCC ID, USB <code>vid:pid</code>, BLE name, chip, SKU, Zigbee model).
-    Results combine curated records and the <a href="/sources/">aggregated sources</a>.
-  </p>
-  <section id="directory" data-sources={JSON.stringify(names)}>
-    <form class="filters" role="search" action="/devices/" method="get">
-      <div class="directory-search search-big">
-        <label for="q" class="sr-only">Search devices</label>
-        <Icon name="catalogue-Search01" />
-        <input id="q" name="q" type="search" placeholder="Search by Model, vendor, FCC ID, USB vid:pid…" autocomplete="off" spellcheck="false" />
-        <button class="btn primary" type="submit">Search <span class="search-label">Device</span></button>
+  <header class="page-head center">
+    <h1>Devices</h1>
+    <p class="lede">
+      Search by vendor, model, alias or identifier (FCC ID, USB <code>vid:pid</code>, BLE name, chip, SKU, Zigbee model).
+      Results combine curated records and the <a href="/sources/">aggregated sources</a>.
+    </p>
+  </header>
+
+  <section id="directory" data-sources={JSON.stringify(names)} data-groups={JSON.stringify(groupsForScript)}>
+    <form class="directory-form" role="search" action="/devices/" method="get">
+      <SearchBar id="q" placeholder="e.g. tello, archer c7, 2fe3:0001" />
+
+      <!-- Mobile: a Filters button (opens the sheet below), the active filters as chips, Reset. -->
+      <div class="filter-bar">
+        <button type="button" id="filters-open" class="filters-button" aria-haspopup="dialog" aria-controls="filter-sheet">
+          <Icon name="filter" size={18} />Filters<span id="filter-count" class="count" hidden></span>
+        </button>
+        <span id="active-filters" class="active-filters"></span>
+        <button type="button" class="btn link reset-filters" hidden>Reset filters</button>
       </div>
-      <div>
-        <label for="category">Category</label>
-        <select id="category" name="category">
-          <option value="">All categories</option>
-          {facet("category").map(([c, n]) => <option value={c}>{c} ({n.toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="status">Status</label>
-        <select id="status" name="status">
-          <option value="">Any status</option>
-          {STATUSES.map((s) => <option value={s}>{STATUS_LABEL[s]} ({(statusCounts.get(s) ?? 0).toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="source">Source</label>
-        <select id="source" name="source">
-          <option value="">All sources</option>
-          {sourceFacet().map(([s, n]) => <option value={s}>{sourceName(s)} ({n.toLocaleString("en")})</option>)}
-        </select>
-      </div>
-      <div>
-        <label for="install">Install</label>
-        <select id="install" name="install">
-          <option value="">Any</option>
-          <option value="easy">Easy to install ({easy.toLocaleString("en")})</option>
-          <option value="any">Has an install guide ({installable.toLocaleString("en")})</option>
-        </select>
-      </div>
-      <div>
-        <label for="cloud">Cloud</label>
-        <select id="cloud" name="cloud" title="Whether a project makes the device work without the vendor's cloud">
-          <option value="">Any</option>
-          <option value="none">No cloud ({noCloud.toLocaleString("en")})</option>
-          <option value="setup-only">No cloud after setup ({setupOnly.toLocaleString("en")})</option>
-        </select>
+
+      <!-- From 48rem: one dropdown per filter; choices apply at once. -->
+      <div class="filters">
+        {groups.map((g) => (
+          <div class="fsel" data-key={g.key}>
+            <span class="fsel-label" id={`${g.key}-label`}>{g.label}</span>
+            <button type="button" class="fsel-trigger" aria-expanded="false" aria-controls={`${g.key}-options`} aria-labelledby={`${g.key}-label ${g.key}-value`}>
+              <span class="fsel-value" id={`${g.key}-value`}>{g.placeholder}</span><Icon name="chevron-down" size={16} />
+            </button>
+            <div class="fsel-panel" id={`${g.key}-options`} hidden><FilterOptions group={g} prefix="desktop" /></div>
+          </div>
+        ))}
+        <div class="filter-actions"><button type="button" class="btn link reset-filters" hidden>Reset filters</button></div>
       </div>
     </form>
+
+    <dialog id="filter-sheet" class="sheet" aria-labelledby="sheet-title">
+      <div class="sheet-head">
+        <h2 id="sheet-title">Filters<span id="sheet-count"></span></h2>
+        <button type="button" class="btn link reset-filters" hidden>Reset filters</button>
+        <button type="button" class="sheet-close" aria-label="Close filters"><Icon name="close" size={20} /></button>
+      </div>
+      <div class="sheet-body">
+        {groups.map((g) => (
+          <details class="sheet-group">
+            <summary>{g.label}<span class="sheet-group-count" data-key={g.key}></span><Icon name="chevron-down" size={16} /></summary>
+            <FilterOptions group={g} prefix="mobile" />
+          </details>
+        ))}
+      </div>
+      <div class="sheet-foot">
+        <button type="button" class="btn primary lg sheet-show"><span id="sheet-show" aria-live="polite">Show {index.length.toLocaleString("en")} devices</span></button>
+      </div>
+    </dialog>
     <noscript><p class="muted small">Search and filters need JavaScript. Without it, the full list is in <a href="/api/index.json">/api/index.json</a>.</p></noscript>
+
     <div class="results-bar">
       <span id="count" aria-live="polite">{index.length.toLocaleString("en")} devices</span>
-      <span class="small"><a href="/api/index.json">index.json</a></span>
+      <a href="/api/index.json">index.json</a>
     </div>
     <ul id="results" class="results list-plain">
       {first.map((e) => <li><DeviceRow entry={e} /></li>)}
@@ -81,9 +102,9 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
     <p id="request" class="small muted" hidden></p>
     <nav id="pager" class="pager" aria-label="Result pages">
       {pages > 1 && <>
-        <button class="btn" data-go="0" disabled><Icon name="catalogue-ChevronLeft" size={16} />Previous</button>
-        <span class="muted">Page 1 of {pages.toLocaleString("en")}</span>
-        <button class="btn" data-go="2">Next<Icon name="catalogue-ChevronRight" size={16} /></button>
+        <button class="btn" data-go="0" disabled>← Previous</button>
+        <span>Page 1 of {pages.toLocaleString("en")}</span>
+        <button class="btn" data-go="2">Next →</button>
       </>}
     </nav>
   </section>
@@ -91,3 +112,8 @@ const setupOnly = index.filter((e) => e.cloud === "none" || e.cloud === "setup-o
     import "../../scripts/directory.ts";
   </script>
 </Base>
+
+<style>
+  .directory-form { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 58rem; margin: 0 auto var(--space-section-gap); }
+  .results-bar a { font-size: var(--text-body-lg); }
+</style>

@@ -1,21 +1,17 @@
 ---
 import Base from "../layouts/Base.astro";
-import DesignImage from "../components/DesignImage.astro";
-import Icon from "../components/Icon.astro";
+import FeatureItem from "../components/FeatureItem.astro";
 import { REPO_URL, LICENSES } from "../lib/config.ts";
 ---
 <Base title="About" description="Why OpenDeviceDB exists, who runs it and how it is licensed.">
-  <div class="prose about-header">
+  <div class="article">
     <h1>About</h1>
     <p class="lede">
       OpenDeviceDB is an independent, open directory of devices whose protocols or firmware have been
       reverse engineered — drones, cameras, robots, wearables and everything else whose vendor stopped caring.
     </p>
+    <img class="about-art" src="/images/about.webp" alt="A central database connected to a drone, a camera, a phone and a router" width="1200" height="900" />
 
-  </div>
-  <div class="about-illustration"><DesignImage name="about-Devices" width={1200} height={900} sizes="(max-width: 1264px) calc(100vw - 64px), 1200px" /></div>
-  <div class="prose about-body">
-    <section>
     <h2>Why</h2>
     <p>
       AI agents made reverse engineering cheap. That is good news for anyone holding a drone, a camera
@@ -30,19 +26,15 @@ import { REPO_URL, LICENSES } from "../lib/config.ts";
       through an <a href="/agents/">MCP server</a>, and credits the <a href="/sources/">sources</a> it aggregates.
     </p>
 
-    </section>
-    <section class="about-principles card">
-    <h2>Principles</h2>
-    <ul class="feature-list">
-      <li><Icon name="about-File" size={32} /><div><h3>Files in git are the database</h3><p>One YAML file per device, changed by pull request. This site is a static build of the repository; there is no server-side database.</p></div></li>
-      <li><Icon name="about-Aggregate" size={32} /><div><h3>Aggregate, don't duplicate</h3><p>Imported records link back to their source project.</p></div></li>
-      <li><Icon name="about-Claims" size={32} /><div><h3>Claims prevent duplicate work.</h3><p>Say you are on a device; claims expire.</p></div></li>
-      <li><Icon name="about-AiCode" size={32} /><div><h3>AI output is not trusted by default</h3><p>Confidence per interface; "verified" means a hardware replay.</p></div></li>
-      <li><Icon name="about-Legal" size={32} /><div><h3>Legally boring</h3><p>Descriptions, original code and links only. See the <a href="/policy/">policy</a>.</p></div></li>
-    </ul>
+    <div class="card glow principles">
+      <h2>Principles</h2>
+      <FeatureItem icon="file" title="Files in git are the database">One YAML file per device, changed by pull request. This site is a static build of the repository; there is no server-side database.</FeatureItem>
+      <FeatureItem icon="database" title="Aggregate, don't duplicate">Imported records link back to their source project.</FeatureItem>
+      <FeatureItem icon="user-check" title="Claims prevent duplicate work">Say you are on a device; claims expire.</FeatureItem>
+      <FeatureItem icon="ai-editing" title="AI output is not trusted by default">Confidence per interface; "verified" means a hardware replay.</FeatureItem>
+      <FeatureItem icon="shield" title="Legally boring">Descriptions, original code and links only. See the <a href="/policy/">policy</a>.</FeatureItem>
+    </div>
 
-    </section>
-    <section>
     <h2>Independent and open</h2>
     <p>No vendor affiliation, no accounts, no tracking, no ads.</p>
     <ul>
@@ -51,6 +43,11 @@ import { REPO_URL, LICENSES } from "../lib/config.ts";
       <li>Agent skill file (<code>packages/mcp/SKILL.md</code>): <strong>{LICENSES.skill}</strong>, so other tools can embed it.</li>
     </ul>
     <p>Source, issues and discussions: <a href={REPO_URL}>{REPO_URL.replace("https://", "")}</a>. This is a prototype; the format and the policy are open for discussion.</p>
-    </section>
   </div>
 </Base>
+
+<style>
+  .about-art { display: block; width: 100%; max-width: var(--max-narrow); height: auto; margin: 0 auto var(--space-section-gap); }
+  .principles { display: flex; flex-direction: column; gap: 24px; margin: 2.2em 0; padding: 32px; }
+  .principles h2 { margin: 0; }
+</style>
