@@ -111,6 +111,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [phyphox](messages/2026-11-04/phyphox.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://phyphox.org/contact/) |
 | [IronOS](messages/2026-11-04/ironos.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/Ralim/IronOS/discussions/2257) |
 | [openFPGALoader / Gwenhael Goavec-Merou](messages/2026-11-04/openfpgaloader-gwenhael.md) | email | `sent_and_read_back`; delivery unconfirmed | [published author contact](https://github.com/trabucayre) |
+| [COLMAP](messages/2026-11-04/colmap.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/colmap/colmap/discussions/4964) |
+| [OpenMVS](messages/2026-11-04/openmvs.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/cdcseacave/openMVS/discussions/1325) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

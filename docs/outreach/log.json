@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:36:42.957357Z",
+  "last_verified_at": "2026-11-04T22:50:28.268546+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1278,6 +1278,32 @@
       "contact_source": "https://github.com/trabucayre",
       "project_source": "https://github.com/trabucayre/openFPGALoader/tree/e3d8d947a3df36b5dedbfe720cd3d242aa7ca232",
       "next_action": "Await this source-reference email; no duplicate IRC/issue/team invitation. Keep board/FPGA/cable and SRAM/flash capability separate, with pinned version/configuration. No importer, new record, tool run, bitstream download/programming or hardware validation."
+    },
+    {
+      "name": "COLMAP",
+      "channel": "GitHub Show and tell",
+      "status": "published_and_read_back",
+      "url": "https://github.com/colmap/colmap/discussions/4964",
+      "title": "Spatial Capture 3D: an experimental COLMAP-based pipeline and OpenDeviceDB",
+      "published_at": "2026-11-04T22:45:20Z",
+      "message": "messages/2026-11-04/colmap.md",
+      "outgoing_text_verified": true,
+      "project_source": "https://github.com/colmap/colmap/tree/e6644e744488a13f3aba82958500db9066341205",
+      "implementation_source": "https://github.com/smichea/spatial-capture-3d/tree/e14ec1702e934d473c3327bcaaeeafba061bc127",
+      "next_action": "Await this existing-tool presentation. Retain fixed rectified-pinhole calibration and pycolmap version requirements; continuous five-second displayed-age qualification is not met. No new integration, code change, run, hardware/flight test or parallel personal invitation."
+    },
+    {
+      "name": "OpenMVS",
+      "channel": "GitHub Show and tell",
+      "status": "published_and_read_back",
+      "url": "https://github.com/cdcseacave/openMVS/discussions/1325",
+      "title": "Spatial Capture 3D: OpenMVS orchestration and camera protocol notes on OpenDeviceDB",
+      "published_at": "2026-11-04T22:48:18Z",
+      "message": "messages/2026-11-04/openmvs.md",
+      "outgoing_text_verified": true,
+      "project_source": "https://github.com/cdcseacave/openMVS/tree/efa0b619366c5e343ef9c4279fc943cf53c082f6",
+      "implementation_source": "https://github.com/smichea/spatial-capture-3d/blob/e14ec1702e934d473c3327bcaaeeafba061bc127/src/spatial_capture/room_mvs.py",
+      "next_action": "Await this pipeline/provenance presentation. No duplicate Google Group message or private author invitation. Preserve external-tool licensing, calibration/scale and current display-age limitations. No implementation change, pipeline run, upload or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -2040,6 +2066,28 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public Show and tell describes a Pinecil V2 BLE settings page; current IronOS README links PineSAM from this account. Separate source/license and current firmware compatibility not reviewed.",
       "next_action": "Retain as a future protocol/tool contributor lead without a personal invitation alongside the new IronOS post. No assumed full identity, occupation, current collaboration interest or our hardware validation."
+    },
+    {
+      "name": "Open3D",
+      "source": "https://github.com/isl-org/Open3D/tree/b6c5e196384ad71e75b6e6f9c5da22d046221f1d",
+      "community_url": "https://github.com/isl-org/Open3D/discussions",
+      "status": "deferred_pending_demonstrated_open3d_use",
+      "relevance": "Point-cloud/mesh processing and reconstruction; potential downstream interoperability.",
+      "next_action": "Show and tell explicitly concerns work made with Open3D. No Open3D integration verified in the inspected Spatial Capture README/pyproject. No post, fake issue, Discord or personal invitation; verify a real usage example and any further applicable policy before contact."
+    },
+    {
+      "name": "colmap-wasm / browser SfM tool authors",
+      "source": "https://github.com/colmap/colmap/discussions/4878",
+      "additional_source": "https://github.com/colmap/colmap/discussions/4747",
+      "status": "deferred_fresh_community_presentation",
+      "next_action": "Related public projects found while reading venue examples. Do not send parallel personal invitations alongside the new COLMAP thread. Code, licenses, claimed native equivalence and performance have not been independently reviewed."
+    },
+    {
+      "name": "yeicor / colmap-openmvs-app",
+      "source": "https://github.com/cdcseacave/openMVS/discussions/1281",
+      "additional_source": "https://github.com/yeicor/colmap-openmvs-app",
+      "status": "deferred_fresh_community_presentation",
+      "next_action": "Relevant pipeline/UI author found in the official Show and tell examples. Read selected presentation sections and full returned maintainer/author comments, not the implementation, deployment or full license chain. No inferred identity/occupation, verified platform/performance claim or separate personal invitation alongside the new OpenMVS post."
     }
   ],
   "remaining": [

@@ -221,3 +221,10 @@ Le projet recommande [son groupe](https://groups.io/g/LibreVNA-support/). Ses [c
 
 - [Forum CircuitPython officiel](https://forums.adafruit.com/viewforum.php?f=60) : lire les règles dans le navigateur avant toute présentation ; accès anonyme de l’assistant refusé. Conserver le modèle exact, la version et les fonctions réellement disponibles. Aucun message envoyé.
 - [Forum Red Pitaya officiel](https://forum.redpitaya.com/) : catégories de projets/idées disponibles, mais conditions d’inscription non consultables par l’assistant. Aucun compte créé ni message publié ; lire les conditions par la voie normale avant de poursuivre.
+
+
+## Capture et reconstruction 3D : fils déjà ouverts
+
+- [COLMAP — présentation](https://github.com/colmap/colmap/discussions/4964) : l'outil publié utilise déjà pycolmap 4.2.1. Attendre les retours dans ce fil ; aucune nouvelle introduction ni invitation personnelle parallèle. La reconstruction continue reste expérimentale et ne satisfait pas l'objectif de fraîcheur d'affichage de cinq secondes.
+- [OpenMVS — présentation](https://github.com/cdcseacave/openMVS/discussions/1325) : parcours d'images enregistrées avec les exécutables externes, et informations de capture à conserver dans OpenDeviceDB. Attendre ce fil sans doubler sur Google Groups. Aucune précision métrique, compatibilité avec la dernière branche ou performance matérielle validée par cette recherche.
+- Open3D reste une piste à étudier : sa rubrique Show and tell concerne les réalisations faites avec Open3D. Aucun exemple de cette utilisation n'a été vérifié dans notre outil ; aucun message envoyé.
