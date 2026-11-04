@@ -175,3 +175,14 @@ La [présentation](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164) pro
 - [libsurvive](https://github.com/collabora/libsurvive) indique Discord et [un pont Matrix](https://app.element.io/#/room/#libsurvive-main:matrix.org). Vérifier les règles avant une introduction ; son rôle est le suivi, avec un runtime séparé pour le casque.
 - [WiVRn et LVRA](https://vronlinux.org/docs/community/) utilisent Matrix et Discord. Vérifier les règles du salon wivrn avant de présenter le projet. Aucune annonce envoyée.
 - [OpenHMD](https://github.com/OpenHMD/OpenHMD) se déclare non maintenu et renvoie vers Monado ; ne pas utiliser son appel à mainteneur pour une annonce promotionnelle.
+
+## OpenFFBoard et FreeJoy : échanges ouverts
+
+- [OpenFFBoard](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) : proposition autour des révisions de carte, des cibles firmware et du configurateur.
+- [FreeJoy](https://github.com/FreeJoy-Team/FreeJoy/discussions/276) : proposition autour des cartes BluePill et de la distinction première installation/mise à jour USB.
+
+Continuer ces fils en cas de retour ; ne pas répéter les annonces sur d’autres canaux. Aucun importeur ni essai matériel réalisé.
+
+## HID Remapper : forum à vérifier
+
+Le [site officiel](https://www.remapper.org/) indique le [forum du projet](https://forum.remapper.org/). Les [consignes générales](https://forum.remapper.org/guidelines) sont lues, mais les conditions complètes et le canal de publication restent à vérifier. Aucune annonce ni inscription effectuée ; ne pas utiliser les issues GitHub pour une promotion.

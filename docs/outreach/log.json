@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:58:35.241026Z",
+  "last_verified_at": "2026-11-04T21:04:57.024207Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1018,6 +1018,30 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/EyeTrackVR/EyeTrackVR/blob/5f30f86a2bee466b18c81ba87415d8a4ec6a33f1/.github/CONTRIBUTING.md",
       "next_action": "Await source/combination feedback in this thread. No parallel Discord/email/issue or personal solicitation. Proposal only; no importer, new record, physical build or hardware validation. Keep the Babble software license separate from component/documentation terms."
+    },
+    {
+      "name": "OpenFFBoard",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Ultrawipf/OpenFFBoard/discussions/200",
+      "published_at": "2026-11-04T21:02:38Z",
+      "title": "OpenDeviceDB: finding the right OpenFFBoard firmware from a board model",
+      "message": "messages/2026-11-04/openffboard.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Ultrawipf/OpenFFBoard/blob/160af9107db2606150f01586d6c092b6be065d7c/README.md",
+      "next_action": "Await source/board-revision feedback in this thread. No duplicate Discord/issue/email or personal invitation. Proposed catalogue links only; no importer, record, firmware build or controller test."
+    },
+    {
+      "name": "FreeJoy",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/FreeJoy-Team/FreeJoy/discussions/276",
+      "published_at": "2026-11-04T21:03:55Z",
+      "title": "OpenDeviceDB: helping BluePill owners find FreeJoy and its setup guides",
+      "message": "messages/2026-11-04/freejoy.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/FreeJoy-Team/FreeJoy/blob/fc697108124f9ffc4ca3f3b1c6bdb2f21f94d52d/README.md",
+      "next_action": "Await feedback on physical variants and setup prerequisites in this thread. No duplicate issue, channel or personal invitation. Proposal only; initial programming versus subsequent USB update and configurable USB identity must remain distinct. No importer, record, build or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1668,6 +1692,14 @@
       "repository": "https://github.com/nairol/LighthouseRedox",
       "status": "public_source_lead_current_scope_review_needed",
       "next_action": "libsurvive credits this project for reverse-engineering documentation. Current activity, license and detailed hardware scope not independently verified; no employment, present collaboration interest or our hardware validation inferred. No personal invitation or guessed contact."
+    },
+    {
+      "name": "HID Remapper / jfedor2",
+      "source": "https://github.com/jfedor2/hid-remapper/blob/51ab8b367b810d1deb0d3e487e9b7fe8c7e9c24e/README.md",
+      "community_url": "https://forum.remapper.org/",
+      "policy_source": "https://forum.remapper.org/guidelines",
+      "status": "full_policy_terms_and_forum_route_review_needed",
+      "next_action": "No GitHub Discussions. Website links an active project forum; general guidelines read, terms could not load and full repository policy not reviewed. No account, post, issue, direct maintainer email or alternate-channel bypass. Keep RP2040/nRF52840/serial families, board-specific binaries, dual-Pico versus custom-board update steps and host-browser configuration requirements separate. No importer, firmware build or hardware test."
     }
   ],
   "remaining": [

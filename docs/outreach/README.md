@@ -92,6 +92,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Awesome IoT and Hardware Security](messages/2026-11-04/awesome-iot-hardware-security-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) |
 | [pyOCD](messages/2026-11-04/pyocd.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pyocd/pyOCD/discussions/2070) |
 | [EyeTrackVR](messages/2026-11-04/eyetrackvr.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164) |
+| [OpenFFBoard](messages/2026-11-04/openffboard.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) |
+| [FreeJoy](messages/2026-11-04/freejoy.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/FreeJoy-Team/FreeJoy/discussions/276) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -149,3 +151,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [pyOCD introduction](https://github.com/pyocd/pyOCD/discussions/2070): source-selection question published and read back. No importer, target definition or hardware test. Black Magic Debug excluded from this automated campaign based on its maintainers’ published position on AI; no contact sent.
 
 - [EyeTrackVR introduction](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164): source-linked camera-board discovery proposed and read back. No new record, importer or hardware test. Other VR leads and their unverified community/policy steps are recorded in the research queue; no duplicate-channel introduction.
+
+- [OpenFFBoard introduction](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) and [FreeJoy introduction](https://github.com/FreeJoy-Team/FreeJoy/discussions/276): distinct board-target/version and initial-install/update proposals published and read back. Neither proposal implements an importer, record or hardware-tested route. HID Remapper research remains queued pending full policy/terms and forum review.
