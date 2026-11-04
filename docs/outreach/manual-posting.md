@@ -186,3 +186,14 @@ Continuer ces fils en cas de retour ; ne pas répéter les annonces sur d’autr
 ## HID Remapper : forum à vérifier
 
 Le [site officiel](https://www.remapper.org/) indique le [forum du projet](https://forum.remapper.org/). Les [consignes générales](https://forum.remapper.org/guidelines) sont lues, mais les conditions complètes et le canal de publication restent à vérifier. Aucune annonce ni inscription effectuée ; ne pas utiliser les issues GitHub pour une promotion.
+
+## TinyUSB et CherryUSB : questions de sources publiées
+
+- [TinyUSB](https://github.com/hathach/tinyusb/discussions/4431) : liens depuis une carte vers les exemples/BSP, avec leur portée réelle.
+- [CherryUSB](https://github.com/cherry-embedded/CherryUSB/discussions/470) : liens vers les démonstrations en conservant SDK, version et rôle USB.
+
+Les deux fils sont dans General. Continuer ces échanges en cas de retour, sans seconde annonce. Aucun importeur, build d’exemple ou essai matériel réalisé.
+
+## RIOT : communication générée interdite
+
+La [politique officielle](https://github.com/RIOT-OS/RIOT/blob/4331a82c45ed2df990a7d17cc1badf2dbd1e1ab8/doc/guides/general/ai_policy.md) interdit les communications rédigées par LLM et les interventions autonomes sans validation humaine. Pas de publication, de brouillon à copier, ni de recours à un autre canal dans cette campagne automatisée. Les conditions d’usage des outils pour le code sont distinctes de cette interdiction de communication.

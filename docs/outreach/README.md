@@ -94,6 +94,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [EyeTrackVR](messages/2026-11-04/eyetrackvr.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164) |
 | [OpenFFBoard](messages/2026-11-04/openffboard.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) |
 | [FreeJoy](messages/2026-11-04/freejoy.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/FreeJoy-Team/FreeJoy/discussions/276) |
+| [TinyUSB](messages/2026-11-04/tinyusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/hathach/tinyusb/discussions/4431) |
+| [CherryUSB](messages/2026-11-04/cherryusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/cherry-embedded/CherryUSB/discussions/470) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -153,3 +155,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [EyeTrackVR introduction](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164): source-linked camera-board discovery proposed and read back. No new record, importer or hardware test. Other VR leads and their unverified community/policy steps are recorded in the research queue; no duplicate-channel introduction.
 
 - [OpenFFBoard introduction](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) and [FreeJoy introduction](https://github.com/FreeJoy-Team/FreeJoy/discussions/276): distinct board-target/version and initial-install/update proposals published and read back. Neither proposal implements an importer, record or hardware-tested route. HID Remapper research remains queued pending full policy/terms and forum review.
+
+- [TinyUSB source question](https://github.com/hathach/tinyusb/discussions/4431) and [CherryUSB source question](https://github.com/cherry-embedded/CherryUSB/discussions/470): General discussions published and read back. Preserve example/BSP scope and SDK/stack/controller distinctions; no importer or hardware test. RIOT excluded from generated outreach under its explicit communication policy.

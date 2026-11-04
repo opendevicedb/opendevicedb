@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:04:57.024207Z",
+  "last_verified_at": "2026-11-04T21:11:56.781974Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1042,6 +1042,30 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/FreeJoy-Team/FreeJoy/blob/fc697108124f9ffc4ca3f3b1c6bdb2f21f94d52d/README.md",
       "next_action": "Await feedback on physical variants and setup prerequisites in this thread. No duplicate issue, channel or personal invitation. Proposal only; initial programming versus subsequent USB update and configurable USB identity must remain distinct. No importer, record, build or hardware test."
+    },
+    {
+      "name": "TinyUSB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/hathach/tinyusb/discussions/4431",
+      "published_at": "2026-11-04T21:10:10Z",
+      "title": "OpenDeviceDB: source links from board models to TinyUSB examples",
+      "message": "messages/2026-11-04/tinyusb.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/hathach/tinyusb/blob/91cdc7bbb4d85a3ecb4c8c640297d9c401ff4390/README.rst#getting-started",
+      "next_action": "Await source-selection feedback in this General thread. No duplicate issue, channel or individual approach. No TinyUSB code/PR, importer, board record, example build or hardware test. Development instructions apply before any future checkout/code work."
+    },
+    {
+      "name": "CherryUSB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/cherry-embedded/CherryUSB/discussions/470",
+      "published_at": "2026-11-04T21:11:05Z",
+      "title": "OpenDeviceDB: linking board models to the appropriate CherryUSB demos",
+      "message": "messages/2026-11-04/cherryusb.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/cherry-embedded/CherryUSB/blob/1cf7193676584a0c2bbfa53bf88b13b65a063130/README.md",
+      "next_action": "Await demo/source-metadata feedback in this General thread. No duplicate QQ/Discord/issue/email or personal approach. No importer, record, SDK/example build, paid support or hardware test. Preserve board, SDK/stack version, host/device role and controller instance."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1700,6 +1724,19 @@
       "policy_source": "https://forum.remapper.org/guidelines",
       "status": "full_policy_terms_and_forum_route_review_needed",
       "next_action": "No GitHub Discussions. Website links an active project forum; general guidelines read, terms could not load and full repository policy not reviewed. No account, post, issue, direct maintainer email or alternate-channel bypass. Keep RP2040/nRF52840/serial families, board-specific binaries, dual-Pico versus custom-board update steps and host-browser configuration requirements separate. No importer, firmware build or hardware test."
+    },
+    {
+      "name": "RIOT",
+      "source": "https://github.com/RIOT-OS/RIOT/blob/4331a82c45ed2df990a7d17cc1badf2dbd1e1ab8/doc/guides/general/ai_policy.md",
+      "status": "no_ai_generated_community_outreach",
+      "next_action": "Policy explicitly forbids LLM-generated communication with humans and autonomous agent actions without human approval; PR/issue descriptions and replies must be written by contributors. No campaign post, drafted copy for the owner, forum/Matrix/issue/email contact or alternate-project/channel bypass. Human-reviewed AI-assisted code can be allowed under its stated constraints; this is not a blanket ban on every private AI use."
+    },
+    {
+      "name": "Shylie / pico-ice USB webcam demonstration",
+      "source": "https://github.com/hathach/tinyusb/discussions/2817",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author describes an RP2040 plus iCE40 FPGA board producing UVC video using TinyUSB, with PIO/DMA transport. These are author-reported results, not our source or hardware validation.",
+      "next_action": "Retain as a potential device/capture contributor lead. No separate invitation alongside the new TinyUSB source question. Verify current implementation, license, board revision and evidence before any catalogue entry; do not infer occupation or collaboration interest."
     }
   ],
   "remaining": [
