@@ -131,6 +131,12 @@ Une [question technique est publiée chez Hardware Index](https://github.com/Res
 
 Le [code de conduite d’Open Know-How](https://github.com/iop-alliance/OpenKnowHow/blob/9b53cecbbbcf40bf3f8b339e4179d4f2cae2aeb9/CODE_OF_CONDUCT.md) interdit les contenus principalement promotionnels ou destinés à créer des liens entrants. Aucun contact pour cette campagne, y compris par son adresse générale ou un autre canal.
 
+## MicroPython et Armbian : contacts effectués
+
+Une [présentation est publiée chez MicroPython](https://github.com/orgs/micropython/discussions/19886) dans « Show and tell ». Continuer dans ce fil. La politique autorise l’aide IA en codage avec revue humaine, interdit les PR soumises par un agent seul et exige une participation humaine pendant la revue de PR. Aucune PR MicroPython n’est proposée.
+
+Armbian a reçu un courriel de coopération via son [contact officiel](https://armbian.com/contact). Attendre un retour ; aucun rendez-vous, service payant, message de forum ou bug report. La proposition distingue les modèles, statuts de support, branches et versions d’images.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

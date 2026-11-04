@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:06:26.738216Z",
+  "last_verified_at": "2026-11-04T20:12:38.514989Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -911,6 +911,28 @@
       "message": "messages/2026-11-04/hardware-index-hwidx.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this issue; no duplicate approach or separate maintainer invitation. Concrete full-ID/revision/reference/licensing question, not a bug or new identifier request. No importer, metadata republication or licensing agreement."
+    },
+    {
+      "name": "MicroPython",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/micropython/discussions/19886",
+      "published_at": "2026-11-04T20:10:13Z",
+      "message": "messages/2026-11-04/micropython.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this Show and tell thread without a duplicate introduction. Keep board/port/release/peripheral scope distinct. No importer, new record, firmware build/flash or hardware test. Upstream policy forbids agents submitting PRs alone and requires human PR review communication; no upstream PR/review reply."
+    },
+    {
+      "name": "Armbian",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@armbian.com",
+      "subject": "OpenDeviceDB: source-linked Armbian board discovery",
+      "sent_at": "2026-11-04T20:11:30.000Z",
+      "message": "messages/2026-11-04/armbian.md",
+      "contact_source": "https://armbian.com/contact",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive cooperation response; do not duplicate in forum/chat or a bug report. No importer, image build, hardware test, meeting booking, paid consultation or commercial agreement."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1428,6 +1450,13 @@
       "status": "scope_policy_and_contact_review_needed",
       "relevance": "Registry of USB product identifiers for open-source hardware. Device identifier allocation differs from retail-model catalogue records.",
       "next_action": "Read current eligibility, contributor guidance, data terms and an appropriate general channel before contact; do not request a PID for this catalogue or infer USB-IF endorsement. No contact or importer."
+    },
+    {
+      "name": "Circuit-Overtime / Oreo Badge",
+      "source": "https://github.com/orgs/micropython/discussions/19847",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public Show and tell describes an ESP32-S3 conference badge with MicroPython software, board definition and hardware-design files. Claims are the author's, not our hardware/source verification.",
+      "next_action": "Retain as a future device/contributor lead. No direct invitation alongside the new MicroPython introduction; verify source/license/hardware scope before a catalogue entry."
     }
   ],
   "remaining": [

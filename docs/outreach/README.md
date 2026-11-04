@@ -83,6 +83,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
 | [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
 | [Hardware Index / hwidx](messages/2026-11-04/hardware-index-hwidx.md) | documented GitHub question route | `published_and_read_back` | [public question](https://github.com/ResearchCulture/hwidx/issues/40) |
+| [MicroPython](messages/2026-11-04/micropython.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/micropython/discussions/19886) |
+| [Armbian](messages/2026-11-04/armbian.md) | email | `sent_and_read_back`; delivery unconfirmed | [official contact](https://armbian.com/contact) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
