@@ -59,6 +59,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
 | [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
 | [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
+| [QMK](messages/2026-11-04/qmk.md) | email | `sent_and_read_back` | [contact source](https://qmk.fm/support) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -77,6 +78,7 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 ## Pending external steps
 
 - Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.
+- Rockbox: subscription form accepted the request and the confirmation email was replied to; membership unconfirmed, introduction not sent. Do not repeat either administrative action.
 - SANE: documented email subscription requested and read back; membership unconfirmed. No introduction sent yet; do not repeat the request.
 - gPhoto and NUT: original messages are held for moderation; do not resend.
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.

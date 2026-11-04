@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:16:56.861438Z",
+  "last_verified_at": "2026-11-04T17:24:04.647849Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -97,7 +97,7 @@
       "status": "private_response_received",
       "privacy": "Personal correspondence retained privately; recipient address, private message text and contact details are not published.",
       "sent_date": "2026-11-04",
-      "next_action": "Personal reply remains for the owner. An unsent technical response draft was prepared privately; no personal correspondence is copied into the public journal."
+      "next_action": "Reply requires owner discussion and review before any send. Technical draft remains unsent and private; do not send autonomously."
     },
     {
       "name": "NUT developers",
@@ -564,6 +564,18 @@
       "message": "messages/2026-11-04/dji-firmware-tools-neo2.md",
       "outgoing_text_verified": true,
       "next_action": "Await protocol/directory feedback in the existing Show and tell thread; no duplicate introduction or parallel direct contributor approach. No new flight or upstream integration is claimed."
+    },
+    {
+      "name": "QMK",
+      "channel": "email",
+      "recipient": "hello@qmk.fm",
+      "subject": "OpenDeviceDB: helping people find QMK from their keyboard model",
+      "sent_at": "2026-11-04T17:21:01.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://qmk.fm/support",
+      "message": "messages/2026-11-04/qmk.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. Offer downstream corrections to build-target/layout/revision presentation; no keyboard test is claimed."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -858,6 +870,16 @@
       "source": "https://github.com/damiafuentes/DJITelloPy",
       "status": "deferred_pending_channel_and_use_case_review",
       "next_action": "No GitHub Discussions and no message sent. Verify a suitable official route and a concrete use case; Tello support does not establish Neo 2 compatibility."
+    },
+    {
+      "name": "Rockbox",
+      "source": "https://github.com/Rockbox/www/blob/fad60e84fe19aac38941774b39d9642ec042e24d/mail/index.cgi",
+      "community_url": "https://lists.haxx.se/mailman/listinfo/rockbox-dev",
+      "status": "subscription_confirmation_replied_membership_unconfirmed",
+      "subscription_requested_at": "2026-11-04T17:20:44.102557Z",
+      "confirmation_reply_sent_at": "2026-11-04T17:21:59.000Z",
+      "introduction_status": "not_sent",
+      "next_action": "Await explicit membership confirmation before a single targeted existing-importer message. The normal web form accepted the request and the confirmation email was replied to and read back. Do not repeat registration or confirmation; tokens and account evidence remain private."
     }
   ],
   "remaining": [
