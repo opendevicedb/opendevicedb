@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:27:53.649939Z",
+  "last_verified_at": "2026-11-04T16:32:34.810975Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -434,6 +434,16 @@
       "message": "messages/2026-11-04/rivalcfg-fabien-loison.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction. A small attributed directory sample is proposed; no importer is implemented."
+    },
+    {
+      "name": "Tuya CloudCutter",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931",
+      "published_at": "2026-11-04T16:31:28Z",
+      "message": "messages/2026-11-04/tuya-cloudcutter.md",
+      "next_action": "Await a substantive response in the existing discussion; do not repeat the introduction. Imported profiles are not hardware tests.",
+      "outgoing_text_verified": true
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -672,6 +682,22 @@
       "status": "channel_research_needed",
       "relevance": "Existing importer of product configurations.",
       "next_action": "Find an appropriate community channel; no GitHub Discussions. Preserve upstream caveat that local control does not prevent stock firmware cloud traffic. No message sent."
+    },
+    {
+      "name": "PkTriggerCord",
+      "source": "https://pktriggercord.melda.info/",
+      "status": "deferred_pending_catalogue_correction",
+      "issue_url": "https://github.com/opendevicedb/opendevicedb/issues/20",
+      "issue_message": "messages/2026-11-04/pktriggercord-support-issue.md",
+      "next_action": "Correct source-specific support assertions before promoting these records; the repository has no Discussions and no upstream message has been sent."
+    },
+    {
+      "name": "AsteroidOS",
+      "source": "https://asteroidos.org/contact/",
+      "community_url": "https://matrix.to/#/#Asteroid:matrix.org",
+      "status": "manual_posting_candidate",
+      "relevance": "Existing watch-model importer with hardware codenames and platform limitations.",
+      "next_action": "Owner can review room rules and ask whether an existing-importer introduction is welcome. Official project directs all discussions to Matrix; no message sent."
     }
   ],
   "remaining": [

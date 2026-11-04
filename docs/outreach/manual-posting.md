@@ -15,6 +15,7 @@ Liens vérifiés le 4 novembre 2026. Cette liste indique des canaux officiels et
 | --- | --- | --- |
 | Klipper | [Forum officiel](https://community.klipper3d.org/) | Montrer comment l'import des configurations permet de découvrir Klipper depuis un modèle d'imprimante, avec les révisions et adaptations nécessaires. La [documentation officielle](https://www.klipper3d.org/Contact.html) confirme ce forum. Les catégories et règles n'ont pas pu être consultées anonymement : les lire après connexion et choisir une catégorie adaptée avant de publier. |
 | Gadgetbridge | [Salon Matrix officiel](https://matrix.to/#/#gadgetbridge:matrix.org) | Demander d'abord si une courte discussion sur la présentation des appareils Gadgetbridge dans OpenDeviceDB est bienvenue. Le [README officiel](https://github.com/Freeyourgadget/Gadgetbridge/blob/master/README.md#community) donne ce salon et précise que les issues ne servent pas de forum. Lire les règles du salon ; ce n'est pas une invitation à une annonce générale. |
+| AsteroidOS | [Salon Matrix officiel](https://matrix.to/#/#Asteroid:matrix.org) | Présenter les liens vers les pages de montres déjà importées, avec les variantes, codenames et fonctions partielles. La [page de contact officielle](https://asteroidos.org/contact/) réserve les discussions à ce salon ; lire ses règles et demander si la présentation est bienvenue. Aucun message envoyé. |
 
 ## Conversations déjà ouvertes : répondre dans le fil
 
@@ -27,6 +28,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 - [OpenHantek6022](https://github.com/OpenHantek/OpenHantek6022/discussions/481) : proposition de liens depuis les fiches 6022BE/BL déjà importées via sigrok, en distinguant les fonctions oscilloscope et analyseur logique. En attente de réponse ; aucune nouvelle introduction à publier.
 
 - [SDRangel](https://github.com/f4exb/sdrangel/discussions/3062) : proposition d’index des modèles et plugins, en conservant les dépendances et limites. En attente de réponse ; utiliser ce fil pour tout complément utile.
+
+- [Tuya CloudCutter](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) : présentation des liens vers les profils déjà importés, avec les limites liées aux versions de firmware. En attente de réponse ; aucune nouvelle introduction à publier.
 
 ## Glasgow : ne plus promouvoir le projet
 
