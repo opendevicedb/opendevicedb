@@ -9,11 +9,11 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. Rust configuration/start/freeze
-  was exercised once on a real gulaman phantom:39host writes completed and1064960data bytes were
-  archived, but strict framing found no complete image. Offline envelope/render/SRI/palette ports
-  remain available; sustained reception, complete manufacturer equivalence, calibration and
-  acoustic/electrical validation remain open.
+summary: BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. A second Rust-only gulaman-phantom
+  trial with RAM reception preserves5128192data bytes and14strict complete80-line frames; the CPU
+  pipeline produces14uncalibrated candidate phantom images. The first negative trial is retained.
+  USB identity/configuration and targeted DSP/palette ports are documented, while manufacturer/GPU
+  equivalence, target geometry, repeatability and acoustic/electrical validation remain open.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -190,7 +190,32 @@ interfaces:
       failure. The actual first phantom capture still yields0strict frames with unchanged source
       hash. No second device trial, demonstrated lossless throughput, actual probe image, acoustic
       stop or physical validation is claimed. Manufacturer runtime assets and derived palette pixels
-      remain private and absent from publication."
+      remain private and absent from publication. Second real owner-prepared gulaman phantom trial
+      with the same UL10-5E/ID7, firmware text V1.350, uses Rust probe-usb0.12 RAM collection and
+      probe-frame0.13. After a witnessed reconnect, nine identity replies over three repetitions
+      match, then identity is rechecked on each preflight/acquisition handle. Explicit
+      Vascular/depth-index1/reinitialize/one-second requested dwell and16384-byte DATA requests
+      match the first trial; all39 OUT phase/producer/length/SHA fingerprints are identical.39host
+      writes including Start/Freeze complete, no OUT error/partial/unknown, interface released after
+      readers join. EP81 yields5128192bytes in313full reads plus3empty timeouts, a316-row durable
+      RAM seal; EP82 has8empty timeouts. Strict replay has one epoch and no declared journal gap,
+      complete bounded snapshot and valid per-file hashes. Source
+      SHA256cb5dc3fa5468aebf1e46975d611ede7af7c53b6f5463bc22fda0473c56c7b857. An independent
+      direct-byte review finds1327markers: startup128headers with4096-byte stride, then1198intervals
+      of3840bytes. Fourteen complete80-line frames of307200bytes each, beginning at offset524292
+      with the next complete line1 header, match raw slices and every line marker/counter. The
+      remaining trailing partial data are retained, not padded. The Rust Vascular/depth1 CPU
+      pipeline produces14candidate512x512phantom rasters/PNGs, enhancement0, gain50/DR60/TGC0,
+      correlation3, gray4/color-1. Owner qualitatively recognizes the phantom appearance; target
+      identification, geometric scale, repeatability and manufacturer/GPU image equivalence remain
+      unverified. Host transport-call median1.7017755ms and between-call median1193ns
+      (maximum15920ns); these are host boundaries, not exposures or device frame rate, and the
+      first-trial coarse intent/result timings are not identical boundaries. Local video uses
+      chosen10fps playback, not measured acquisition cadence. The first negative trial is preserved.
+      USB absence is observed after the second trial. No acknowledgement or acoustic stop is
+      attested and this is not complete H4/H5/H6 validation or a clinical scan. No extra/overnight
+      capture. All raw observations stay private; vendor coefficients, palette pixels, PNG/video,
+      unit-unique values and medical data are not published."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -206,6 +231,17 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: hardware-replay
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Second real UL10-5E/ID7 phantom trial, reported firmware text V1.350, Rust probe-usb0.12
+      memory/probe-frame0.13: same39command fingerprints as trial1, all host writes complete
+      including Freeze;5128192EP81bytes,316reads, durable sealed results and14strict80-line frames.
+      Independent per-file/slice/SHA and all14x80headers plus following line1 headers checked. CPU
+      Vascular/depth1 enhancement0 produces14candidate512x512images, qualitatively recognized by
+      owner. Post-trial USB absence observed. No target identification, physical calibration, device
+      ACK, acoustic stop, manufacturer/GPU equivalence or H4/H5/H6 claim. No vendor
+      payload/code/pixels/video, unit-unique identifiers or clinical data published."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -429,4 +465,9 @@ provenance:
     - Rust probe-frame0.13 strict memory-journal replay and orphan/unknown-range preservation
     - Bubblewrap isolated own Rust mock producer and actual CLI reconstruction, Python stdlib
       byte/hash orchestration;305common tests
+    - Rust probe-usb0.12 actual same-handle identity/configuration and bounded RAM acquisition on
+      gulaman phantom
+    - Rust probe-frame0.13 strict memory-journal replay and CPU phantom reconstruction
+    - Independent raw length/hash, all-frame source-slice and80-line marker/counter verification;
+      ffprobe14-frame playback metadata
 updated: 2026-11-04
