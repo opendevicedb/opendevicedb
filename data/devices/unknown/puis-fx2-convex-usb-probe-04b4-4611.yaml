@@ -11,11 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reportsUC5-2S/ID1435. Experimental Rust controller and
-  General CPU reconstruction now have a local web interface verified with synthetic replay. Third
-  phantom test after voltage correction receives770048non-counter bytes but lacks global32C framing,
-  so no real convex image is reconstructed. Acoustic stop, sustained reception and physical
-  calibration remain unvalidated.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435. Experimental Rust controller,
+  General CPU reconstruction and local web now support opt-in bounded DATA memory collection,
+  verified with synthetic transports and replay. Three phantom attempts, most
+  recently770048non-counter bytes with per-read0.15, still yield no global32C header or real convex
+  image. Physical memory-mode reception, acoustic stop and calibration remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -411,7 +411,33 @@ interfaces:
       to96x80 for yuv420p video only. No physical web0.16 capture, GPU equivalence, sustained
       loss-free reception, acoustic stop, physical calibration or clinical suitability is validated.
       Existing linear web runtime is preserved. Raw/unique fields, vendor code/resources/payloads
-      and pixels stay private."
+      and pixels stay private. Rust USB0.17 adds explicit opt-in convex DATA memory collection,
+      leaving per-read as default and keeping EP86 bulk16384, EP88 bulk512, EP81 interrupt64 and
+      every OUT byte unchanged. A durable bounded authorization precedes DATA calls; the batch
+      retains results/timestamps in RAM without collector disk/JSON/SHA between calls, then persists
+      files and a final seal. Maximum10000reads per channel,169600000aggregate requested bytes;
+      retained DATA buffer capacity bounded327680000bytes, excluding bounded metadata/transport
+      internals. Messages and notifications remain per-read durable. DATA readiness in memory mode
+      is the first valid bounded host IN return after authorization, not the later batch seal; the
+      other channels still require their first durable result and keep PID0/button guards. Unsealed
+      reservations attest no outcomes and files remain orphan evidence. Frame0.22 accepts only the
+      exact convex EP86/16384 memory profile, preserving the original journal, unknown-range gaps
+      and source hashes. Web0.3 exposes the explicit mode and shares the same controller/processor.
+      No new physical acquisition: actual trial03 was per-read0.15 and still has no global
+      header/image. Tests inject message/notification persistence failures, hardware change/button,
+      IN/OUT panic, bounded-capacity overflow and cancellation before/after Start; all joins and
+      unknown-OUT/conditional-Freeze rules remain, complete OUT packets match across storage
+      modes.354common tests pass. Five actual Rust memory-producer to strict-replay cases run in
+      bubblewrap without network, USB nodes or sysfs; three invalid CLI choices fail before output
+      creation. Browser replay uses the Rust-produced sealed memory archive:14declared synthetic
+      images,969state files/145842176bytes match independent final reconstruction. Existing
+      linear112results/61030424bytes and14preview PNG hashes remain unchanged. A synthetic
+      memory-transport replay of770048recorded trial03 bytes preserves them exactly and finds0global
+      headers; it is not another capture or repaired missing data. The hypothesis that per-read host
+      disk I/O loses framing is still unproven and requires a fresh one-second phantom comparison.
+      Sustained reception, real convex image, acoustic stop, GPU equivalence and calibration remain
+      unvalidated. No firmware/skipGolden/reset/retry added; vendor code/banks, private raw/unique
+      fields and pixels remain private."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -421,6 +447,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "USB0.17/frame0.22/web0.3 opt-in convex RAM batch; same OUT bytes and transfer plans, DATA
+      readiness after durable authorization, messages/notifications still persisted.354common tests;
+      five isolated actual Rust producer/replay scenarios, three CLI refusals. Memory-producer
+      browser replay14synthetic images/969state files/145842176bytes match final reconstruction.
+      Linear112results/61030424bytes unchanged. No new USB/physical test: trial03
+      remains770048bytes/0global headers/images. Missing-header cause and physical performance
+      remain unresolved; private vendor/raw/pixels excluded."
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
