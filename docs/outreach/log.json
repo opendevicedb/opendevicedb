@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T19:49:28.801549Z",
+  "last_verified_at": "2026-11-04T19:56:05.341318Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -868,6 +868,28 @@
       "message": "messages/2026-11-04/inav.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread; no duplicate invitation or developer support email. Preserve exact board/target/release/Configurator scope. No importer, new record or hardware test."
+    },
+    {
+      "name": "OpenHD",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "development@openhdfpv.org",
+      "subject": "OpenDeviceDB: helping people discover OpenHD hardware support",
+      "sent_at": "2026-11-04T19:52:24.000Z",
+      "message": "messages/2026-11-04/openhd.md",
+      "contact_source": "https://openhdfpv.org/general/contributing/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not duplicate on GitHub, Telegram, Discord or another team address. Proposed source-linked model/adapter/SBC discovery only; no importer, new record or hardware/radio test."
+    },
+    {
+      "name": "Linux Hardware / HWInfo",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/linuxhw/HWInfo/discussions/7",
+      "published_at": "2026-11-04T19:54:44Z",
+      "message": "messages/2026-11-04/linux-hardware-hwinfo.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread. No duplicate approach to hw-probe or personal email. Preserve observation date, bus/subsystem IDs, OS/kernel/architecture, attribution and limited status semantics. No importer, probe/log upload or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1244,13 +1266,6 @@
       "next_action": "No generated human-facing communication or autonomous contributions under the published AI agreement. Do not approach maintainers through other channels or prepare generated owner-post copy. No contact sent."
     },
     {
-      "name": "Linux Hardware / hw-probe",
-      "source": "https://github.com/linuxhw/hw-probe",
-      "status": "channel_and_data_terms_research_needed",
-      "relevance": "Hardware identifiers, driver/kernel information and contextual operability reports.",
-      "next_action": "Verify an appropriate cooperation route and database-content reuse terms. Website research timed out; public-profile email query lacked token scope. No escalation, guessed email, machine probe/log upload, importer or contact."
-    },
-    {
       "name": "OpenEPaperLink",
       "source": "https://github.com/OpenEPaperLink/OpenEPaperLink",
       "status": "channel_and_model_scope_review_needed",
@@ -1352,13 +1367,6 @@
       "policy_source": "https://www.elektroda.com/rtvforum/faq.php",
       "status": "excluded_from_automated_forum_promotion",
       "next_action": "Forum prohibits unauthorized advertising and automated access. No signup, promotion, moderator solicitation or alternate-channel bypass. Device-template reuse terms and model/revision scope remain unverified; do not import from the forum."
-    },
-    {
-      "name": "OpenHD",
-      "source": "https://github.com/OpenHD/OpenHD/blob/c75c37e6bcd014a990b81ae9b2556eb6afefd924/README.adoc",
-      "community_url": "https://openhdfpv.org/",
-      "status": "current_docs_and_channel_review_needed",
-      "next_action": "Read current contribution and hardware-support docs before contact; README GitBook docs are end-of-life. Check model/platform/adapter driver/camera and image version separately. No contact or importer/hardware test."
     }
   ],
   "remaining": [

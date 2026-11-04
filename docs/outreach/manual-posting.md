@@ -115,6 +115,12 @@ La [liste officielle](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) r
 
 Une [présentation est publiée](https://github.com/iNavFlight/inav/discussions/12203) dans « Show and tell ». Continuer dans ce fil si une réponse arrive ; ne pas dupliquer l’annonce ailleurs. La proposition conserve la distinction carte/cible/version et ne constitue pas un importeur ni un essai matériel.
 
+## OpenHD et Linux Hardware : contacts effectués
+
+OpenHD a reçu un courriel à son [adresse documentée de coopération](https://openhdfpv.org/general/contributing/). Attendre la réponse, sans dupliquer sur Telegram, Discord ou GitHub.
+
+Une [présentation est publiée chez Linux Hardware](https://github.com/linuxhw/HWInfo/discussions/7). Continuer dans ce fil si un retour arrive. Le dépôt HWInfo consulté date de 2023 ; il ne constitue pas une garantie de compatibilité actuelle.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.
