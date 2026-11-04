@@ -11,12 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, statically mapped to TX16/ADC8. USB
-  identity, selected fundamental B producers and reset/message callbacks are partially mapped. Rust
-  offline work covers13hash-bound producer families plus audited EP88 message replay and explicit
-  archived parameter binding, with synthetic validation only. Current-unit logic state, complete
-  acquisition/error handling, image reconstruction and acoustic/electrical validation remain
-  unverified.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, statically mapped to TX16/ADC8.
+  Identity, selected B producer families and message/reset callbacks are partially mapped. Rust now
+  includes an experimental same-handle message-bound bench executor and durable variable/control
+  write journals, validated on synthetic transports only. Attributed acquisition, reconnect, image
+  and electrical/acoustic validation remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -115,7 +114,28 @@ interfaces:
       can return0 without a transfer; no hardware ACK follows. Timer-triggered Start and ignored
       callback errors remain relevant. No APK/native target execution or new USB I/O; actual message
       attribution, current handle state, complete executor, voltage10 effects,
-      acquisition/stop/calibration remain open."
+      acquisition/stop/calibration remain open. Subsequent v0.10 static analysis closes software
+      callback10: native listener vtable/JNI -> Message_JNI.HardWareMsgUpdated(II)V -> HasMessage ->
+      the registered activity method, whose original APK DEX contains a sole return-void at
+      code_offset25eb78. It supplies no OUT, voltage/thermal guard or acknowledgement in that chain;
+      protections elsewhere remain unverified. A Rust experimental bench coordinator now implements
+      current-handle identity checks, explicitly selected PowerON40/b5/0/0 with two zero bytes or
+      existing power state, initial Freeze60001=1 and query60004=0, then bounded EP88 reads. Only a
+      persisted complete512-byte PID0/reported-ID1435 candidate binds logic/low-power to the
+      already-loaded known asset group. No archived or user-supplied logic is accepted by the active
+      CLI. The finite journal then plans type50062=1, distinct index50060=1, all13 producer families
+      and direct voltage, followed by explicit Start and final Freeze under known OUT boundaries.
+      Three distinct IN readers are joined before release; a persisted logical-parameter
+      change/button candidate terminates rather than silently resetting/reconfiguring.
+      Variable-length sealed bulk packets and optional named power control use durable pre-I/O
+      intentions. Any partial/error/unknown OUT, writer panic or command-journal persistence failure
+      suppresses all further OUT including Freeze, with no automatic retry/resumption. This
+      host-barrier policy is a reconstruction, not a claim of native timer or hardware equivalence.
+      Synthetic tests cover19OUT positions x6fault outcomes, bootstrap fragments/missing/wrong
+      parameters, raw-first delivery, cancellation, message guards and reader/writer
+      panics/joins.241common tests pass;416previous bundle fingerprints remain unchanged and named
+      bootstrap controls match an independent literal LE reference. No real USB I/O, current-unit
+      activation, image, hardware ACK, query causality, acoustic stop or calibration is claimed."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -125,6 +145,18 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: 24new retained REA Evidence records plus original-DEX corroboration close voltage software
+      callback10 through its unique empty registered Java consumer; no guard or ACK in that path.
+      Rust prototype tested on own synthetic transports:114fault sessions over19OUT boundaries,
+      complete variable packets, raw persistence before message use, bounded bootstrap without
+      fragment joins/defaults, logical-change/button cancellation, and scoped joins after
+      reader/writer panics.241common tests, formatting and Clippy pass. Independent literal LE
+      bootstrap comparison and416unchanged bundle fingerprints pass. No new real-device
+      I/O/activation, target execution, current-unit state, acquisition, acoustic stop, power-off or
+      calibration claimed. Vendor payloads, code, unit identifiers and medical data are excluded.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -272,4 +304,10 @@ provenance:
     - Rust probe-usb0.9 offline convex EP88 replay and explicit archived-message configuration
       binding
     - Independent struct/bitfield/raw-copy checks,32binding cases and224-test common suite
+    - REA6.5.0/JADX0.7.1/Ghidra12.1.4 callback10 vtable/JNI/Java tracing with original-APK DEX
+      corroboration
+    - Rust probe-usb0.10 experimental convex current-handle coordinator and sealed variable/control
+      write journal
+    - 114synthetic fault sessions, independent named-control LE reference,416fingerprint regression
+      checks and241-test common suite
 updated: 2026-11-04
