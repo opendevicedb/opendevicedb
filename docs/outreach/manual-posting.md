@@ -26,6 +26,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [OpenHantek6022](https://github.com/OpenHantek/OpenHantek6022/discussions/481) : proposition de liens depuis les fiches 6022BE/BL déjà importées via sigrok, en distinguant les fonctions oscilloscope et analyseur logique. En attente de réponse ; aucune nouvelle introduction à publier.
 
+- [SDRangel](https://github.com/f4exb/sdrangel/discussions/3062) : proposition d’index des modèles et plugins, en conservant les dépendances et limites. En attente de réponse ; utiliser ce fil pour tout complément utile.
+
 ## Glasgow : ne plus promouvoir le projet
 
 Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977). Le suivi est marqué `declined_do_not_contact`. Aucun nouveau contact, relance ou texte de réponse assisté par IA n'est prévu. Ce lien est conservé pour le contexte ; Glasgow ne fait pas partie des lieux recommandés pour une nouvelle publication.

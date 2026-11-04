@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:23:04.004801Z",
+  "last_verified_at": "2026-11-04T16:27:53.649939Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -412,6 +412,28 @@
       "message": "messages/2026-11-04/open-ephys.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction. Acquisition Board directory entry is proposed only."
+    },
+    {
+      "name": "SDRangel",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/f4exb/sdrangel/discussions/3062",
+      "published_at": "2026-11-04T16:26:16Z",
+      "message": "messages/2026-11-04/sdrangel.md",
+      "next_action": "Await a substantive response in the existing thread; no duplicate introduction. No SDRangel importer is implemented.",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "Fabien Loison / Rivalcfg",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "flozz@flozz.fr",
+      "sent_at": "2026-11-04T16:27:07.000Z",
+      "subject": "OpenDeviceDB : rendre les travaux comme Rivalcfg plus faciles à retrouver",
+      "contact_source": "https://blog.flozz.fr/#me-contacter",
+      "message": "messages/2026-11-04/rivalcfg-fabien-loison.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. A small attributed directory sample is proposed; no importer is implemented."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -638,11 +660,18 @@
       "next_action": "Owner can inspect current Lemmy rules and publish one concrete existing-importer discussion from their own account; no post sent."
     },
     {
-      "name": "SDRangel",
-      "source": "https://github.com/f4exb/sdrangel",
-      "relevance": "SDR device source plugins and protocol work; General and Show and tell available.",
-      "status": "research_incomplete",
-      "next_action": "Inspect device/plugin coverage, contribution policies and contact history before selecting a channel. No message sent."
+      "name": "SoapySDR",
+      "source": "https://github.com/pothosware/SoapySDR",
+      "status": "channel_research_needed",
+      "relevance": "SDR hardware abstraction layer and per-device backend modules.",
+      "next_action": "Review the official wiki for a suitable community channel and policy; no GitHub Discussions available and no message sent."
+    },
+    {
+      "name": "tuya-local",
+      "source": "https://github.com/make-all/tuya-local",
+      "status": "channel_research_needed",
+      "relevance": "Existing importer of product configurations.",
+      "next_action": "Find an appropriate community channel; no GitHub Discussions. Preserve upstream caveat that local control does not prevent stock firmware cloud traffic. No message sent."
     }
   ],
   "remaining": [
