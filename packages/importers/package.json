@@ -8,6 +8,7 @@
   },
   "scripts": {
     "import": "node src/cli.ts",
+    "fwupd:index": "node src/cli-fwupd-index.ts",
     "test": "node --test test/*.test.ts"
   },
   "dependencies": {
