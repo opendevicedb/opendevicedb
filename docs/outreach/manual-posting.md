@@ -44,6 +44,16 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [Open GoPro](https://github.com/gopro/OpenGoPro/discussions/933) : proposition d’index des caméras et de leurs interfaces selon le modèle/firmware, avec demande de la source officielle à privilégier. Aucun importeur ou nouveau test matériel ; utiliser ce fil pour les retours.
 
+- [RealSense / librealsense](https://github.com/realsenseai/librealsense/discussions/15937) : proposition de liens par modèle de caméra, génération du SDK et firmware, en conservant les limites de plateforme. Aucun importeur ou nouveau test matériel ; utiliser ce fil pour les retours.
+
+## ESPHome et Home Assistant : participation personnelle uniquement
+
+La [politique de l’Open Home Foundation](https://contributors.home-assistant.io/start/ai-policy/), liée par le [guide ESPHome](https://developers.esphome.io/contributing/code/), autorise l’aide IA relue et comprise par la personne, mais interdit les agents autonomes et les contributions générées non relues. Aucune publication autonome n’est prévue. Le propriétaire peut examiner les [règles du forum](https://community.home-assistant.io/guidelines), vérifier la catégorie adaptée et participer lui-même ; les réponses aux mainteneurs doivent venir de lui. Aucun message envoyé.
+
+## Valetudo : pas de démarche promotionnelle
+
+Le mainteneur [demande de ne pas faire de promotion ou de contenu sur Valetudo](https://valetudo.cloud/pages/general/media/) et ne recherche pas davantage d’utilisateurs ou de collaborateurs. Ne pas proposer de publication ou de sollicitation dans cette campagne. Aucun message envoyé.
+
 ## Glasgow : ne plus promouvoir le projet
 
 Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977). Le suivi est marqué `declined_do_not_contact`. Aucun nouveau contact, relance ou texte de réponse assisté par IA n'est prévu. Ce lien est conservé pour le contexte ; Glasgow ne fait pas partie des lieux recommandés pour une nouvelle publication.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:44:04.209479Z",
+  "last_verified_at": "2026-11-04T17:48:06.455250Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -612,6 +612,16 @@
       "message": "messages/2026-11-04/hackrf.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not duplicate the introduction on GitHub or Discord. Proposed HackRF One entry is not implemented or hardware tested."
+    },
+    {
+      "name": "RealSense / librealsense",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/realsenseai/librealsense/discussions/15937",
+      "published_at": "2026-11-04T17:47:04Z",
+      "message": "messages/2026-11-04/realsense.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed model/SDK/firmware index is not implemented or hardware tested."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -953,6 +963,32 @@
       "status": "manual_posting_candidate",
       "next_action": "Owner can join the official group, inspect current rules and ask about a small machine/controller index. Only members can post and new members are moderated. No message sent; no importer implemented.",
       "community_url": "https://groups.google.com/g/openpnp"
+    },
+    {
+      "name": "ESPHome / Home Assistant",
+      "source": "https://contributors.home-assistant.io/start/ai-policy/",
+      "status": "no_autonomous_outreach",
+      "community_url": "https://community.home-assistant.io/",
+      "next_action": "Do not post autonomously: the Open Home Foundation policy rejects autonomous agents and unreviewed generated contributions. Owner may participate personally after reviewing the work and current forum/category rules; maintainer answers must be their own. No message sent."
+    },
+    {
+      "name": "Valetudo",
+      "source": "https://valetudo.cloud/pages/general/media/",
+      "status": "excluded_from_promotional_outreach",
+      "next_action": "Do not send a promotion or collaboration solicitation. The maintainer explicitly does not seek promotion, additional users or collaborators. No message sent; existing imported data unchanged."
+    },
+    {
+      "name": "OpenKinect / libfreenect2",
+      "source": "https://github.com/OpenKinect/libfreenect2",
+      "status": "channel_research_needed",
+      "next_action": "Review current community route and activity for Kinect v2 driver discovery. No Discussions, message or importer; no compatibility with our separate 3D capture tool inferred."
+    },
+    {
+      "name": "ntsarb / T265 SDK port",
+      "source": "https://github.com/realsenseai/librealsense/discussions/15882",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Author publicly describes restoring T265 support in an SDK fork and asks how to share it. Firmware distribution remains an unresolved upstream discussion.",
+      "next_action": "Potential future contributor lead. No personal invitation alongside the new RealSense introduction. Do not infer collaboration interest or present the port as official support; no new support route or firmware redistribution."
     }
   ],
   "remaining": [
