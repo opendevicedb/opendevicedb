@@ -20,9 +20,14 @@ interfaces:
     status: unknown
     confidence: medium
     spec: https://github.com/opendevicedb/opendevicedb/issues/8
-    notes: Observed bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s. Raw
+    notes: "Observed bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s. Raw
       bInterval=0 on interrupt endpoint is corrected to 7 by Linux. Historical PUIS archive contains
       a generic Cypress driver matching this ID, which does not prove application compatibility.
+      Static aapt2 decoding of Citrason_PUIS_Plus.apk SHA256
+      237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643 shows 04b4:4611 in
+      res/xml/device_filter.xml. Package com.itrason.www.PUISColour_32 version code 10661. This is a
+      VID/PID lead, not demonstrated acquisition compatibility. Do not select the first IN endpoint
+      blindly: it is interrupt 81, whereas bulk IN endpoints are 86/88."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -35,10 +40,18 @@ verification:
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
+    notes: Downloaded APKs analyzed statically only. apksigner verifies their signatures; signing
+      identities differ and vendor identity is not established by signature validity. No APK
+      launched, no proprietary USB command issued, no hardware replay.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
     notes: Owner-confirmed physical types; one-at-a-time swap on the same port corroborated by Linux
       enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
 provenance:
   sources:
+    - https://itrason.cloud/
+    - https://itrason.cloud/PA12Plus.htm
     - https://github.com/opendevicedb/opendevicedb/issues/8
     - https://github.com/kelu124/pyusbus/tree/7f68591eaa05b217c67ac444bfa17b81b3f58f1b/probes/CONV
   ai_assisted: true
@@ -49,4 +62,8 @@ provenance:
     - lsusb
     - Linux sysfs
     - Python zipfile
+    - aapt2 36.0.0
+    - apksigner 36.0.0
+    - REA 6.5.0 / JADX 0.7.1
+    - Rust probe-usb (passive sysfs inspection)
 updated: 2026-11-04
