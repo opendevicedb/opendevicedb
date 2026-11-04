@@ -11,10 +11,13 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust
+summary: "Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust
   integrated offline journal-to-General CPU image reconstruction now preserves explicit temporal
   state and attempted-call lifecycle. Actual convex acquisition/capture-web, native RDH undefined
-  effects, GPU/visual equivalence and physical calibration remain unvalidated.
+  effects, GPU/visual equivalence and physical calibration remain unvalidated. First real phantom
+  bootstrap stops before configuration/Start: controlID1435 but complete EP88
+  PID0/ID0/connection0;4host writes complete,noDATA/image. Bootstrap transition remains under
+  investigation."
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -350,7 +353,21 @@ interfaces:
       digest0abec22e38b73bfdb32f77ec53fcd59b7b7beb54107edb6ea72e05108930ac78. No new
       USB/Android/GPU, vendor body/bank/pixel publication, attributed real convex acquisition,
       native FIFO scheduling, failed-API image-state inference or full engine/physical validation.
-      Convex capture/web integration and physical validation remain open."
+      Convex capture/web integration and physical validation remain open. First actual
+      owner-confirmed convex phantom bench attempt2026-11-04, Rust probe-usb0.13: current-handle
+      control identity matches UC5-2S/ID1435 and known04b4:4611 descriptors. General
+      depth0/frequency0/focus0, explicit PowerON policy. Four host writes complete: PowerON2bytes,
+      initialFreeze512, hardwarequery60004=0 of512, finalFreeze512; no unknown OUT or automatic
+      retry. Bootstrap EP88 first read code0/512bytes reports PID0, rawprobeID0, connection0,
+      logiccompile0x4c02 (candidate series6/type1), revision1/0, lowPower0. Initial/final
+      words5a5a5a5a/a5a5a5a5 are reported, not authenticated. Nine following reads timeout
+      with0bytes. The strict current-message ID1435 requirement rejects binding; no configuration or
+      Start sent, no DATA or convex image, requested1second dwell not entered. Offline command audit
+      verifies all four files/results. Owner then unplugs; USB absence enumerated. This is a
+      negative bootstrap result, not a validated acquisition or acousticstop. Static APK PowerON
+      lifecycle includes delayed skipGoldenVersion(true), absent from this initial experimental
+      driver; necessity/effects/current golden state unresolved, no bank/firmware/reset command
+      replayed and no ID0 coerced to1435. Device-unique fields/rawpayload stay private."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -360,6 +377,14 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "First actual convex phantom bootstrap: same-handle controlID1435;1complete512byte EP88
+      PID0/ID0/connection0,9emptytimeouts.4host writes (PowerON/Freeze/query/finalFreeze) complete
+      withoutACK proof. Binding rejected before configuration/Start;0DATA/images, no retry. Owner
+      unplug and USB absence confirmed. Preserved negative result, no safety/clinical/acousticstop
+      claim."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
