@@ -11,11 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust General
-  CPU preprocessing/DTGC/compound/SRI/DSC and Plus palette are ported with explicit state and
-  independent selected ARM64/original-kernel CPU checks. Native RDH undefined-write conflict remains
-  explicit. Real convex frame grouping/capture, integrated web, full lifecycle/GPU/Android visual
-  equivalence and physical validation remain open.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust
+  receive-to-B grouping and General CPU stages through DSC/Plus palette are ported with explicit
+  state and independent checks. Native RDH undefined-write conflict remains explicit. Integrated
+  temporal reconstruction/web, real convex acquisition, full engine/GPU/visual equivalence and
+  physical validation remain open.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -300,7 +300,34 @@ interfaces:
       not published. Real convex frame grouping/capture, integrated reconstruction/web, native RDH
       undefined-write effects, full native lifecycle/engine/GPU/Android visual equivalence, acoustic
       stop and physical calibration remain open. Earlier no-DSC statements describe older
-      checkpoints."
+      checkpoints. Rust probe-frame0.20 group-convex now connects bounded receive replay to B
+      candidate buffers in modes0/1/5/6. It preserves whole line prefixes/arrival order, distinct
+      wire and algorithm headers, source ranges, partial drops, shared B accumulation, separate B/BM
+      remembered headers/expected lengths and M capacity interactions. Expected lengths zero skip
+      header memorization; initial counter0 and N1 previous-header lag remain explicit. BM
+      publication patches current header26/28 and persists it until a new wire header. Non-word
+      formula lengths are conservatively rejected with source preserved because native reader copies
+      truncated32bit words, unlike the lossless byte Inspector. Explicit new-organizer per observed
+      epoch/ambiguity policy is not native Clear or a DSP reset; native Clear retains thread-local
+      expected lengths. Every modeled size publication is archived before FIFO consumption, without
+      asserting original runtime scheduling/evictions or spatial/physical completeness.
+      Generic32-line length compatibility is separate from General asset/plan/domain
+      validation.2064cases/47217original ARM64 length-helper instructions match a separate modulo32
+      scalar check; unsafe signed/overflow cases are documentary only. Independent scalar thread
+      model has91synthetic streams/103semantic checkpoints; it does not execute original
+      thread/parser/deque/concurrency. Rust product matches82supported already-parsed
+      streams,2711states,289B publications and614332payload/header bytes;218supported
+      expected-length choices match original instructions. Eight isolated
+      receive-journal->B-group->existing General BFSP cases across4modes/2phases preserve532480line
+      bytes and match8519680preprocessing bytes to original CPU-compiled kernels with explicit
+      helpers/ASan/UBSan and explicit supplied backing states.24CLI refusals/nonoverwrite checks
+      and337common tests/fmt/Clippy pass; archived linear14images/61030424bytes stay unchanged.
+      Static software Freeze resets SRIcounter and compound-init flag without clearing backings;
+      Update precedes possible BFSP failure. These are integration requirements, not an already
+      completed temporal engine. New evidence snapshots saved/closed; no new USB/Android/GPU or
+      installation. Full integrated convex reconstruction/capture/web, actual attributed convex
+      stream, native RDH undefined effects, GPU/Android visual equivalence and physical calibration
+      remain open. No vendor source/banks/pixels or medical data published."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -310,6 +337,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Rust group-convex:82scalar-reference streams/2711states/289B publications/614332full
+      bytes;218positive bounded length choices match original ARM64 helper (2064total documentary
+      cases/47217instructions). Eight synthetic journal->group->BFSP cases compare8519680bytes to
+      original CPU bodies, explicit backing;24CLI refusals,337common tests and unchanged14-image
+      linear replay pass. Native thread/parser/deque/concurrency and actual convex acquisition are
+      not claimed. Fresh-organizer policy is distinct from native Clear/DSP reset; word-truncated
+      native reader mismatch is disclosed/rejected.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -590,4 +627,11 @@ provenance:
     - Clang22.1.8 original DSC_pre/DSC_CP CPU bodies, ASan/UBSan/noFMA;737image cases and
       two-backing invariance
     - 2592host cases;66CLI refusals;329common tests;14-image actual linear replay nonregression
+    - Rust probe-frame0.20 receive-to-B group archives with exact source/header provenance
+    - REA Ghidra12.1.4 static grouping/lifecycle Evidence, both sessions saved and closed
+    - Unicorn2.1.4 Get32CFrameLineLen original ARM64 helper:2064cases/47217instructions, no external
+      stub
+    - Independent scalar B/BM thread model91streams/103checkpoints, not original thread execution
+    - Rust product82streams/2711states/289groups plus8isolated journal-to-group-to-BFSP paths,24CLI
+      refusals/337common tests
 updated: 2026-11-04
