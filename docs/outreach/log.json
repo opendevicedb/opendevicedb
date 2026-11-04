@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T14:14:37.303824+00:00",
+  "last_verified_at": "2026-11-04T14:55:30.327408+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -542,6 +542,13 @@
       "source": "https://www.klipper3d.org/Contact.html",
       "relevance": "Existing printer configuration importer",
       "next_action": "Check forum access and posting guidelines; check history before contacting"
+    },
+    {
+      "name": "Hacker News / DJI Neo 2",
+      "source": "https://news.ycombinator.com/newsguidelines.html",
+      "status": "assessed_not_submitted",
+      "research_note": "research.md#hacker-news-dji-neo-2-assessment",
+      "next_action": "Owner to consider a technical original-source submission, write the HN material personally and check for duplicates. HN prohibits generated text and automated posting."
     }
   ],
   "remaining": [

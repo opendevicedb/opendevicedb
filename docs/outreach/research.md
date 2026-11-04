@@ -63,6 +63,20 @@ The earlier [OpenDeviceDB introduction in REA](https://github.com/morluto/rea/di
 
 ## Listings and distribution
 
+### Hacker News: DJI Neo 2 assessment
+
+Assessed on 2026-11-04 following the owner's suggestion. **No submission or comment posted.**
+
+- Sources: [HN guidelines](https://news.ycombinator.com/newsguidelines.html), [Show HN guidelines](https://news.ycombinator.com/showhn.html), [Neo 2 directory record](../../data/devices/dji/neo-2.yaml), [original client repository](https://github.com/smichea/dji-neo2-lan-client), [pinned protocol scope](https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md), [pinned validation report](https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/VALIDATION.md).
+- Assessment: a concrete local Linux/Python interoperability investigation is a plausible fit for HN's technical-curiosity audience. Lead with the BLE setup, SWUDP/DUML transport, video and selected telemetry; show how OpenDeviceDB preserves links, scope and remaining unknowns. This is an editorial judgment, not evidence of audience interest or a prediction of reach.
+- A directory entry or article is best considered for a regular link submission. Show HN would require presenting the actual personally built, usable project; hardware demonstrations or a detailed hardware article can qualify under its rules. The entry alone should not be labelled Show HN.
+- Evidence limits: public documentation reports short vertical/yaw trials, while original captures remain private. Full flight control, link-loss behavior and physical calibration remain incomplete. Do not advertise a complete flight SDK, validated autonomous mapping, or independence from initial DJI account/activation requirements. No new physical demonstration was recorded for this assessment.
+- Suggested preparation: select one original-source landing page, make the architecture and implemented-versus-unvalidated scope easy to inspect, and consider a publishable demonstration with private device identities removed. Attribution should identify the owner as the author of the client and OpenDeviceDB.
+- HN explicitly prohibits generated text in submissions, generated or AI-edited comments, and automated posting. The owner should write and submit the HN material personally and be available for discussion. These research notes are not submission copy. Do not solicit votes or coordinated comments.
+- Duplicate check: public web searches did not identify a matching submission. HN's Algolia story search for `opendevicedb` returned five unrelated approximate matches; searching `dji-neo2-lan-client` returned zero stories. [OpenDeviceDB search](https://hn.algolia.com/?q=opendevicedb&type=story), [client search](https://hn.algolia.com/?q=dji-neo2-lan-client&type=story). These checks are not conclusive and should be repeated before submission. No claim of being the first implementation was established.
+
+### Other listings
+
 - [Awesome Reverse Engineering PR 14](https://github.com/morluto/awesome-reverse-engineering/pull/14) was already merged on 2026-10-18. Its review distinguishes read-only public lookup from local contribution changes requiring a PR. This is not a new result of the November outreach batch.
 - [Awesome MCP Servers PR 16737](https://github.com/punkpeye/awesome-mcp-servers/pull/16737) already existed. It was refreshed to remove a stale count and clarify the local-checkout/PR publishing workflow. Submission check passed and the PR remained open at the last check. [Follow-up](https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040).
 - The [official MCP Registry entry](https://registry.modelcontextprotocol.io/v0.1/servers?search=opendevicedb) for `org.opendevicedb/opendevicedb` v0.3.0 was already active. No duplicate publication attempted.
