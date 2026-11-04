@@ -37,7 +37,9 @@ interfaces:
       statically identified, not issued. USB firmware version is not an FPGA logic version; native
       setProcessLogicVer ignores its argument. Receive path reaches DataO::InsertData, whose initial
       mode 1 selects header-driven 32C parsing until settings change; actual captured image format
-      is still uncorroborated."
+      is still uncorroborated. Candidate32C extraction supports opaque bytes only; no
+      RF/IQ/envelope/pixel type, checksum, footer, line-counter1..N or frame-ID monotonicity is
+      established. Mode4 remains unsupported; a following header does not prove a complete frame."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -47,6 +49,29 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Follow-up to the minimal-permission startup: the owner explicitly authorized external
+      storage for PUIS Plus 1.0.8/code10661 on Samsung SM-A556E Android16/API36. After the storage
+      grants and a cold restart, the main application interface was observed without a probe. No
+      selected fatal signatures in the newest120 process-scoped main-buffer log lines; application
+      then stopped. This supersedes the earlier unresolved startup gate only: probe recognition, USB
+      streaming, acoustic display values and acquisition compatibility remain unverified. No probe
+      activation or human scan."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "PUIS Plus package com.itrason.www.PUISColour_32, 1.0.8/code10661, installed on Samsung
+      SM-A556E Android16/API36 ARM64 without a probe. A minimal-permission startup reaches the
+      application external-storage permission gate; main imaging UI/acquisition remain unverified.
+      Existing native evidence also supports candidate 32C structure: two LE7fff0000 header markers,
+      header1024 bytes, frameIDu32 at0x0c, modeu8 at0x10, Pu16 at0x18, Nu16 at0x1c. Lines retain
+      a32-byte prefix; modes5/6 total length is4*(wordLE32at+4 &0xffff), subtype=(word>>20)&0xf, B<4
+      and M==4. Modes0..3 require external DataO parameters, never assume constructor defaults.
+      Offline Rust structure/extraction tests use synthetic streams only; sample semantics, actual
+      wire applicability, completeness and image decoding are unverified. No device activation,
+      firmware change or human scan."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -90,4 +115,8 @@ provenance:
     - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
     - Rust usb-trace (offline Parquet inspection)
     - libusb 1.0.30
+    - REA 6.5.0 / ADB 37.0.1
+    - Android package installer and scoped UI hierarchy observations
+    - Rust probe-frame0.1.0 (offline synthetic structural tests)
+    - Android scoped package permissions and UI hierarchy observation
 updated: 2026-11-04

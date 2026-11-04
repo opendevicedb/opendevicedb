@@ -49,6 +49,15 @@ verification:
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
+    notes: Manufacturer B-mode package com.animal.www.portableultrasoundimagingsystem,
+      animal1.0/code3204, installed on Samsung SM-A556E Android16/API36 ARM64 after user approval of
+      the old-target Play Protect prompt. Main application UI observed with no probe attached;
+      targeted newest120 main-buffer lines had no selected fatal signatures. App then force-stopped.
+      This establishes unconnected startup only, not recognition, acquisition, clinical suitability
+      or safety.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
     notes: Static JADX, raw DEX and Ghidra call chains reviewed; passive USB descriptors confirmed. No
       active identity reads on the current linear unit, no start/freeze replay, no imaging or
       acoustic/electrical validation.
@@ -86,4 +95,7 @@ provenance:
     - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
     - Rust usb-trace (offline Parquet inspection)
     - libusb 1.0.30
+    - REA 6.5.0 / ADB 37.0.1
+    - Android package installer and scoped UI hierarchy observations
+    - Rust probe-frame0.1.0 (offline synthetic structural tests)
 updated: 2026-11-04
