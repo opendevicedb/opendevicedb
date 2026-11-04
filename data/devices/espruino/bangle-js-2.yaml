@@ -1,0 +1,28 @@
+id: espruino/bangle-js-2
+vendor: Espruino
+model: Bangle.js 2
+category: wearable
+status: open-firmware
+summary: >-
+  Programmable smartwatch running Espruino JavaScript firmware. The official
+  documentation covers the Bangle.js 2 hardware, firmware updates and browser
+  requirements. Use the Bangle.js 2 device selection in the shared App Loader.
+projects:
+  - name: Espruino for Bangle.js 2
+    url: https://www.espruino.com/Bangle.js2
+    kind: firmware
+    license: MPL-2.0
+    official: true
+  - name: Espruino source
+    url: https://github.com/espruino/Espruino
+    kind: firmware
+    license: MPL-2.0
+    official: true
+  - name: Bangle.js App Loader
+    url: https://banglejs.com/apps/
+    kind: tool
+    official: true
+provenance:
+  sources: [curated]
+  ai_assisted: true
+updated: 2026-11-04
