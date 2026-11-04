@@ -67,6 +67,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 
 | [RealSense / librealsense](messages/2026-11-04/realsense.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/realsenseai/librealsense/discussions/15937) |
 
+| [DepthAI / Luxonis](messages/2026-11-04/depthai.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/luxonis/depthai/discussions/1255) |
+
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
 ## Updating this journal

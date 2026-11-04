@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:48:06.455250Z",
+  "last_verified_at": "2026-11-04T17:52:58.433892Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -622,6 +622,16 @@
       "message": "messages/2026-11-04/realsense.md",
       "outgoing_text_verified": true,
       "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed model/SDK/firmware index is not implemented or hardware tested."
+    },
+    {
+      "name": "DepthAI / Luxonis",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/luxonis/depthai/discussions/1255",
+      "published_at": "2026-11-04T17:52:07Z",
+      "message": "messages/2026-11-04/depthai.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed OAK product/board/revision index is not implemented or hardware tested."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -979,9 +989,10 @@
     },
     {
       "name": "OpenKinect / libfreenect2",
-      "source": "https://github.com/OpenKinect/libfreenect2",
-      "status": "channel_research_needed",
-      "next_action": "Review current community route and activity for Kinect v2 driver discovery. No Discussions, message or importer; no compatibility with our separate 3D capture tool inferred."
+      "source": "https://github.com/OpenKinect/libfreenect2/blob/master/README.md",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can request membership and inspect current group rules before a source-linked Kinect v1/v2 driver introduction. Only members can post. No signup or message sent; no importer or hardware test claimed.",
+      "community_url": "https://groups.google.com/g/openkinect"
     },
     {
       "name": "ntsarb / T265 SDK port",
@@ -989,6 +1000,13 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Author publicly describes restoring T265 support in an SDK fork and asks how to share it. Firmware distribution remains an unresolved upstream discussion.",
       "next_action": "Potential future contributor lead. No personal invitation alongside the new RealSense introduction. Do not infer collaboration interest or present the port as official support; no new support route or firmware redistribution."
+    },
+    {
+      "name": "Zephyr",
+      "source": "https://github.com/zephyrproject-rtos/zephyr/tree/244c4a8284cb62bda585a9ab6a76cd46f0a5b9d5",
+      "status": "concrete_example_and_policy_review_needed",
+      "relevance": "Board/revision discovery and links to RTOS support documentation.",
+      "next_action": "Prepare a concrete board/revision example before an introduction in the available Show and tell category. Code/review policies require human responsibility and forbid AI sign-offs; do not interpret those alone as a universal discussion ban. No message or code submitted."
     }
   ],
   "remaining": [
