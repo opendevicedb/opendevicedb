@@ -34,6 +34,10 @@ characteristic, a checksum, UART pins) helps the next person or agent go faster.
 
 See [SPEC.md](SPEC.md) for the design and [POLICY.md](POLICY.md) for what we accept.
 
+An [experimental fwupd declaration index](docs/fwupd-index.md) preserves plugin
+identifiers and their source context for future device mapping. It is separate
+from the device catalogue.
+
 ```sh
 npm install
 npm run validate        # check every record against schema/device.schema.json
