@@ -87,6 +87,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Armbian](messages/2026-11-04/armbian.md) | email | `sent_and_read_back`; delivery unconfirmed | [official contact](https://armbian.com/contact) |
 | [TinyGo](messages/2026-11-04/tinygo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/tinygo-org/discussions/6164) |
 | [Zephyr](messages/2026-11-04/zephyr.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/zephyrproject-rtos/zephyr/discussions/124669) |
+| [grblHAL](messages/2026-11-04/grblhal.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/grblHAL/core/discussions/1046) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

@@ -143,6 +143,12 @@ Deux échanges sont ouverts dans « Show and tell » : [TinyGo](https://github.c
 
 Les guides demandent une prose brève et écartent les mentions automatiques d’outils IA dans les textes de contribution. Zephyr exige en plus une revue humaine et une signature DCO humaine pour les changements de code. Aucun code ni PR n’est soumis à ces projets.
 
+## grblHAL : présentation publiée
+
+Un [échange est ouvert](https://github.com/grblHAL/core/discussions/1046) dans « Show and tell ». La proposition distingue carte, révision, shield, pilote matériel et options de compilation. Continuer dans ce fil si une réponse arrive ; aucun importeur ni essai de machine. Les règles imposent une discussion préalable pour les nouvelles fonctionnalités et une revue humaine du code ; aucun changement amont n’est soumis.
+
+FluidNC reste une piste à vérifier : pas de Discussions GitHub, et le README renvoie vers un Discord sur invitation. Aucun contact pour le moment.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

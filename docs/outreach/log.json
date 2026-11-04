@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:21:07.595830Z",
+  "last_verified_at": "2026-11-04T20:26:53.620278Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -953,6 +953,16 @@
       "message": "messages/2026-11-04/zephyr.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread without a duplicate introduction. Preserve exact board/target/release and feature scope. No dedicated importer, new record, compiler/firmware build, hardware test or upstream code contribution. Respect human code-review/sign-off and communication rules when applicable."
+    },
+    {
+      "name": "grblHAL",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/grblHAL/core/discussions/1046",
+      "published_at": "2026-11-04T20:25:44Z",
+      "message": "messages/2026-11-04/grblhal.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction or personal invitation. Preserve controller revision, shield, driver, build and plugin scope. No importer, new record, firmware build, machine test or upstream code/PR change."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1489,6 +1499,20 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public presentation describes documenting an initially undocumented ADC module and developing a schematic. Author-reported work, not our circuit/source/hardware validation.",
       "next_action": "Retain as a future contributor lead; no direct invitation alongside the new TinyGo community introduction. Verify source/license and exact module identity before any catalogue claim."
+    },
+    {
+      "name": "FluidNC",
+      "source": "https://github.com/bdring/FluidNC/blob/4828e88559293d761c1c03ae09c24cf6eb815a02/README.md",
+      "wiki_source": "https://github.com/bdring/fluidnc-wiki-content",
+      "status": "current_community_route_and_policy_review_needed",
+      "next_action": "No GitHub Discussions. README routes development discussion to invitation-only Discord; wiki fetch failed. Review current wiki source/channel rules before an invitation or cooperation request. AI config helpers do not establish community posting permission or machine-config correctness. No contact, promotional issue, importer, config change or hardware test."
+    },
+    {
+      "name": "chenglianshu / GD32F4xx grblHAL port",
+      "source": "https://github.com/grblHAL/core/discussions/993",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author reports porting a hardware driver and testing it. Those claims are not our source or physical validation.",
+      "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new grblHAL introduction. Verify actual repository, license, controller/release scope and upstream status before any catalogue claim."
     }
   ],
   "remaining": [
