@@ -20,14 +20,19 @@ interfaces:
     status: unknown
     confidence: medium
     spec: https://github.com/opendevicedb/opendevicedb/issues/7
-    notes: Observed endpoints OUT 01/02/03 and IN 81/82/83, all bulk, max packet 512 bytes; 480 Mb/s.
+    notes: "Observed endpoints OUT 01/02/03 and IN 81/82/83, all bulk, max packet 512 bytes; 480 Mb/s.
       Generic Cypress IDs are not unique model identification. No initialization or acquisition
       attempted. Static aapt2 decoding of android1-animal_PUIS.apk SHA256
       2317c74a1a1f314bffdc1e5494f87715e153924f40c1c0f7f12883bbdf2bd777 shows 04b4:00f1 in
       res/xml/device_filter.xml. Package com.animal.www.portableultrasoundimagingsystem version code
       3204. Native ImageEngineNative entry points and ARM64 USB framing symbols are present. This is
       a VID/PID lead, not demonstrated acquisition compatibility. The older Citrason_en.apk filter
-      lists 00f0, not 00f1.
+      lists 00f0, not 00f1. B-mode AndroidUSB.openDevice explicitly handles PID 00f1: OUT 01
+      commands, IN 81 data, IN 82 messages. Two static identity-read candidates are bmRequestType
+      c0, bRequest b0, value/index 0/0, length 8; and c0/bb, value/index 3/0, length 32; timeout
+      5000 ms. JADX and DEX disassembly agree on these literals. This differs from historical
+      pyusbus c3 requests. Response formats and runtime compatibility remain unverified; no commands
+      replayed."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -37,8 +42,8 @@ projects:
 claims:
   - who: smichea
     contact: https://github.com/smichea
-    scope: Document linear probe 04b4:00f1 USB commands and acquisition framing for Linux/Python
-      interoperability, reusing pyusbus; initial work on bench/phantom.
+    scope: Document linear probe USB identity reads, endpoint routing and acquisition framing for
+      Linux/Rust interoperability, reusing existing pyusbus evidence; bench/phantom only.
     since: 2026-11-04
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
@@ -72,4 +77,6 @@ provenance:
     - apksigner 36.0.0
     - REA 6.5.0 / JADX 0.7.1
     - Rust probe-usb (passive sysfs inspection)
+    - Ghidra 12.1.4
+    - Android SDK dexdump 36.0.0
 updated: 2026-11-04

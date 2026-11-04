@@ -27,12 +27,14 @@ interfaces:
       237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643 shows 04b4:4611 in
       res/xml/device_filter.xml. Package com.itrason.www.PUISColour_32 version code 10661. This is a
       VID/PID lead, not demonstrated acquisition compatibility. Do not select the first IN endpoint
-      blindly: it is interrupt 81, whereas bulk IN endpoints are 86/88."
+      blindly: it is interrupt 81, whereas bulk IN endpoints are 86/88. PUIS Plus exposes
+      jni.USB_JNI callbacks for probe connection, data and messages. Endpoint routing for PID 4611
+      has not yet been traced; roles must not be transferred from another PID branch."
 claims:
   - who: smichea
     contact: https://github.com/smichea
-    scope: Identify PUIS FX2 convex probe 04b4:4611 model and USB acquisition protocol for Linux/Python
-      interoperability; initial work on bench/phantom.
+    scope: Document convex probe USB identity reads, endpoint routing and acquisition framing for
+      Linux/Rust interoperability, reusing existing pyusbus evidence; bench/phantom only.
     since: 2026-11-04
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
@@ -66,4 +68,6 @@ provenance:
     - apksigner 36.0.0
     - REA 6.5.0 / JADX 0.7.1
     - Rust probe-usb (passive sysfs inspection)
+    - Ghidra 12.1.4
+    - Android SDK dexdump 36.0.0
 updated: 2026-11-04
