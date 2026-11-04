@@ -9,12 +9,11 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350. USB
-  identity/configuration and B-mode C4/8 framing are partially mapped. Rust offline work covers
-  signed i8 lanes, CPU envelopes, K3/K4 and an enhancement0 temporal/geometry raster candidate using
-  an explicit portability policy for native SRI initialization ambiguity. Synthetic/reference tests
-  are available; current-unit image acquisition, manufacturer/GPU equivalence, calibration and
-  acoustic stop remain unverified.
+summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. USB
+  identity/configuration, C4/8 framing and image-processing formulas are partially mapped. Rust
+  offline work covers envelopes/K3/K4, enhancement0 and active SRI1..8 with explicit bounded
+  dispatch, quantized state and synthetic reference checks. Manufacturer/GPU equivalence, attributed
+  current-unit acquisition/image, calibration and acoustic stop remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -102,7 +101,31 @@ interfaces:
       earlier two-frame zero raw fixture now runs through envelopes/K3/K4 to the raster.204common
       tests pass. Active SRI, manufacturer palette, GPU oracle/equivalence, attributed current-unit
       imaging, calibration and acoustic/electrical validation remain open; no new probe I/O or
-      activation was performed."
+      activation was performed. Subsequent active SRI work covers enhancement1..8 and all six
+      supported depths in an offline CPU port. Rechecking the retained native image allocations
+      corrects an error in the local design prose: magnitude25e0 and angle25e8 are SNORM8, like both
+      gradients; positive magnitudes use127 quantization steps before requantization to the UNORM8
+      directional weights. The global128-bin histogram uses floating divisions,
+      percentile>=trunc(binary32(total)*p), strict maxima with the second argmax starting at1, and
+      an unclamped threshold which can exceed1. Degenerate m0 skips only an unused0/0 auxiliary
+      while preserving the defined threshold. A valid-kernel-input counterexample uses SNORM
+      angles120/127 and105/127 and positive UNORM weights30/255 and2/255 from SNORM amplitudes15/127
+      and1/127: the mean is exactly0.9375 and the strict wrap yields direction9 outside the
+      nine-filter bank. Full-pipeline/hardware reachability is not claimed. The port explicitly
+      initializes SRI_N, clips native oversized write dispatches, rejects out-of-bank directions
+      without clamping, and commits state only after the whole transaction succeeds. It
+      preserves30quantized image allocations, including unwritten tails, and the effective bound
+      correlation coefficient distinct from later configured values. Local known-hash coefficient
+      inputs and prederived I3 banks are required; no payload is embedded. All SRI stages, temporal
+      mask and downstream own grayscale raster are implemented. Complete snapshots resume only
+      across adjacent declared ranges with matching inputs/settings; software resets do not send
+      commands. Independent ordered binary32 NumPy evaluation matches all30images for96frames
+      over48depth/level selections, comparing368640000bytes.18archive/CLI refusals, a two-frame
+      synthetic raw-to-SRI/raster zero chain and18unchanged enhancement0 outputs pass;252common
+      tests and Clippy/format pass. The policy is a bounded reconstruction of statically mapped
+      formulas, not GPU/native equivalence or evidence that undefined native paths execute safely.
+      No new device I/O, real image, palette equivalence, calibration or acoustic/electrical
+      validation."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -118,6 +141,20 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Retained native allocation Evidence and identified kernel source rechecked; magnitude/angle
+      SNORM8, histogram float/trunc/strict-loop semantics, arithmetic order and a format-compatible
+      direction9 boundary corroborated. No new native session or target execution. Active SRI CPU
+      port matches independent ordered NumPy binary32 evaluation for96frames/48selections
+      over6depths and8levels:2880image allocations,368640000bytes. All30images and bound correlation
+      persist through snapshots.18invalid archives/CLI histories rejected before output, two
+      adjacent synthetic raw-chain zero frames proceed through SRI/raster, and18enhancement0 outputs
+      remain unchanged.252common tests, format and Clippy pass. Shared local coefficients/host math
+      and bounded-dispatch policy are explicit; no GPU oracle or current-unit
+      image/acquisition/stop/calibration. No vendor coefficients/code, unit-unique values or medical
+      data shared.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -276,4 +313,10 @@ provenance:
       guards
     - Independent per-pixel scalar binary32 reference over18synthetic outputs
     - 204-test common suite with explicit software/hardware validation boundaries
+    - Retained REA/Ghidra native allocation and identified OpenCL formula review; no new target
+      session
+    - Rust probe-frame0.7 active SRI1..8 CPU port with transactional quantized30-image state and
+      bounded dispatch
+    - Independent96-frame ordered NumPy2.5.4 binary32 evaluation and368640000byte checks;252-test
+      common suite
 updated: 2026-11-04
