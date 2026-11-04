@@ -47,6 +47,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Tympan](messages/2026-11-04/tympan.md) | email | `sent_and_read_back` | [contact source](https://shop.tympan.org/pages/contact-us) |
 | [liquidctl](messages/2026-11-04/liquidctl.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/liquidctl/liquidctl/discussions/942) |
 | [OpenTabletDriver](messages/2026-11-04/opentabletdriver.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) |
+| [OpenHantek6022](messages/2026-11-04/openhantek6022.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenHantek/OpenHantek6022/discussions/481) |
+| [Open Ephys](messages/2026-11-04/open-ephys.md) | email | `sent_and_read_back` | [contact source](https://github.com/open-ephys/plugin-GUI/blob/main/CONTRIBUTING.md) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

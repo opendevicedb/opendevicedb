@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:17:51.532603Z",
+  "last_verified_at": "2026-11-04T16:23:04.004801Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -390,6 +390,28 @@
       "message": "messages/2026-11-04/opentabletdriver.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenHantek6022",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenHantek/OpenHantek6022/discussions/481",
+      "published_at": "2026-11-04T16:21:52Z",
+      "message": "messages/2026-11-04/openhantek6022.md",
+      "next_action": "Await a substantive response in the existing discussion; no duplicate introduction. No OpenHantek6022 directory change is implemented.",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "Open Ephys",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@open-ephys.org",
+      "sent_at": "2026-11-04T16:22:14.000Z",
+      "subject": "OpenDeviceDB: helping people find Open Ephys hardware interfaces",
+      "contact_source": "https://github.com/open-ephys/plugin-GUI/blob/main/CONTRIBUTING.md",
+      "message": "messages/2026-11-04/open-ephys.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. Acquisition Board directory entry is proposed only."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -614,6 +636,13 @@
       "community_url": "https://lemmy.today/c/OpenRGB",
       "status": "manual_posting_candidate",
       "next_action": "Owner can inspect current Lemmy rules and publish one concrete existing-importer discussion from their own account; no post sent."
+    },
+    {
+      "name": "SDRangel",
+      "source": "https://github.com/f4exb/sdrangel",
+      "relevance": "SDR device source plugins and protocol work; General and Show and tell available.",
+      "status": "research_incomplete",
+      "next_action": "Inspect device/plugin coverage, contribution policies and contact history before selecting a channel. No message sent."
     }
   ],
   "remaining": [

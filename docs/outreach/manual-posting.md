@@ -24,6 +24,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 - [liquidctl](https://github.com/liquidctl/liquidctl/discussions/942) : proposition d'index des modèles et des pilotes, en conservant les versions minimales et limites de prise en charge. En attente de réponse.
 - [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) : proposition de liens entre modèles et configurations, avec les conditions de correspondance. En attente de réponse.
 
+- [OpenHantek6022](https://github.com/OpenHantek/OpenHantek6022/discussions/481) : proposition de liens depuis les fiches 6022BE/BL déjà importées via sigrok, en distinguant les fonctions oscilloscope et analyseur logique. En attente de réponse ; aucune nouvelle introduction à publier.
+
 ## Glasgow : ne plus promouvoir le projet
 
 Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977). Le suivi est marqué `declined_do_not_contact`. Aucun nouveau contact, relance ou texte de réponse assisté par IA n'est prévu. Ce lien est conservé pour le contexte ; Glasgow ne fait pas partie des lieux recommandés pour une nouvelle publication.
