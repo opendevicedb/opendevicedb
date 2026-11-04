@@ -208,3 +208,11 @@ Le [mainteneur a répondu](https://github.com/ndeadly/MissionControl/discussions
 - [HydraBus](https://hydrabus.com/contact/) : un email a été envoyé à l’adresse générale officielle. Ne pas doubler par une discussion ou un message personnel au mainteneur.
 
 Les pages proposées ne sont pas encore ajoutées. Aucun montage, firmware construit ou essai matériel réalisé.
+
+## Pocket Science Lab : contact de partenariat envoyé
+
+Un [email](messages/2026-11-04/pslab-fossasia.md) a été envoyé au contact officiel FOSSASIA pour les partenariats de projets. Il propose une page PSLab avec les liens utiles aux utilisateurs. Pas d’annonce parallèle sur Gitter, la liste, les issues ou auprès d’un autre membre de l’équipe. Aucun accord ni page déjà réalisé.
+
+## LibreVNA : groupe non contacté
+
+Le projet recommande [son groupe](https://groups.io/g/LibreVNA-support/). Ses [conditions](https://groups.io/static/tos) excluent les sollicitations promotionnelles non autorisées ; pas d’annonce ni d’inscription pour cette campagne, et pas de repli sur GitHub pour contourner cette restriction. La page publique est accessible : l’erreur 402 du lecteur ne prouve pas un abonnement payant.

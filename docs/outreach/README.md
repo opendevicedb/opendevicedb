@@ -99,6 +99,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Printalyzer / Derek Konigsberg](messages/2026-11-04/printalyzer-derek-konigsberg.md) | email | `sent_and_read_back`; delivery unconfirmed | [public author contact](https://github.com/dkonigsberg) |
 | [Sensor Watch](messages/2026-11-04/sensor-watch.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/joeycastillo/Sensor-Watch/discussions/550) |
 | [HydraBus](messages/2026-11-04/hydrabus.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://hydrabus.com/contact/) |
+| [Pocket Science Lab / FOSSASIA](messages/2026-11-04/pslab-fossasia.md) | email | `sent_and_read_back`; delivery unconfirmed | [published project-partnership contact](https://blog.fossasia.org/contact/) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -164,3 +165,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [Printalyzer author email](messages/2026-11-04/printalyzer-derek-konigsberg.md): one specific page/link proposal sent and read back; delivery and interest unconfirmed. [MissionControl maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844): prefers communication without AI assistance; automated replies and related contributor approaches stopped.
 
 - [Sensor Watch presentation](https://github.com/joeycastillo/Sensor-Watch/discussions/550) and [HydraBus email](messages/2026-11-04/hydrabus.md): proposed pages would point readers to the original firmware/design/setup guides. Sensor Watch requires a replacement PCB; hardware/LCD variants and HydraNFC v2 firmware remain distinct. No page/importer or hardware validation implemented.
+
+- [PSLab/FOSSASIA email](messages/2026-11-04/pslab-fossasia.md): one page/link proposal sent to the published project-partnership contact and read back. No partnership or page implemented. LibreVNA’s recommended Groups.io channel was researched but not contacted because its terms exclude unsolicited promotion; no signup or alternate-channel campaign.

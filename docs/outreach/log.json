@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:28:59.827522Z",
+  "last_verified_at": "2026-11-04T21:38:22.352874Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1109,6 +1109,19 @@
       "contact_source": "https://hydrabus.com/contact/",
       "project_source": "https://github.com/hydrabus/hydrafw/tree/823df8560b16b8b2872169e128e0144b72c0d604",
       "next_action": "Await feedback on the proposed HydraBus v1 page. No duplicate discussion, second email or direct maintainer approach. Distinguish HydraNFC Shield v2 and its firmware; no catalogue page/importer, build/flash, physical test, purchase or delivery/adoption claim."
+    },
+    {
+      "name": "Pocket Science Lab / FOSSASIA",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "hp@fossasia.org",
+      "subject": "Pocket Science Lab on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:36:41.000Z",
+      "message": "messages/2026-11-04/pslab-fossasia.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://blog.fossasia.org/contact/",
+      "project_source": "https://github.com/fossasia/pslab-python/tree/08de0d090599b2555f357d378f95ad7da625f08e",
+      "next_action": "Await feedback on a proposed PSLab page from the official project-partnership contact. No duplicate team/developer email, vendor form, mailing-list intro or issue. Page/importer and hardware validation are not implemented; delivery and partnership interest unconfirmed."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1780,6 +1793,22 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public author describes an RP2040 plus iCE40 FPGA board producing UVC video using TinyUSB, with PIO/DMA transport. These are author-reported results, not our source or hardware validation.",
       "next_action": "Retain as a potential device/capture contributor lead. No separate invitation alongside the new TinyUSB source question. Verify current implementation, license, board revision and evidence before any catalogue entry; do not infer occupation or collaboration interest."
+    },
+    {
+      "name": "LibreVNA / Groups.io channel",
+      "source": "https://github.com/jankae/LibreVNA/blob/c47781910221ba2b02636229920a7c8d48aeb8f8/README.md",
+      "community_url": "https://groups.io/g/LibreVNA-support/",
+      "policy_source": "https://groups.io/static/tos",
+      "status": "channel_excluded_unsolicited_promotion",
+      "next_action": "Preferred group page is publicly accessible; reader HTTP 402 was not proof of paid membership. Terms prohibit unauthorized promotional solicitation. No subscription, group announcement, owner-email request or switch to GitHub merely to evade the restriction. This is not an AI ban or a prohibition on independent source research. No page/importer, firmware/FPGA build or VNA test."
+    },
+    {
+      "name": "Alexander Bessman / PSLab tools",
+      "source": "https://github.com/bessman",
+      "project_source": "https://github.com/fossasia/pslab-python",
+      "status": "deferred_to_avoid_same_project_duplicate",
+      "relevance": "PSLab website links his public profile; repository contributors list shows PSLab Python work, and profile pins PSLab, mcbootflash and pytest-reserial. Source/license and runtime behavior of the separate tools not reviewed.",
+      "next_action": "Potential future technical collaborator/source lead. FOSSASIA project-partnership contact has received one message; do not send a parallel personal invitation. No inferred occupation, collaboration interest or hardware validation."
     }
   ],
   "remaining": [
