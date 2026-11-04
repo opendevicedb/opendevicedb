@@ -25,7 +25,7 @@ projects:
   - name: v380-lan-client
     url: https://github.com/smichea/v380-lan-client
     kind: library
-    license: MIT
+    license: AGPL-3.0-or-later
   - name: v380-lan-protocol
     url: https://github.com/smichea/v380-lan-protocol
     kind: protocol-doc
