@@ -11,12 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435; the inspected PUIS Plus path maps it
-  to UC5-2S_16 with TX16/ADC8. USB identity/acquisition paths and selected fundamental B
-  configuration producers are partially mapped. Rust offline work materializes13hash-bound producer
-  families including TX/RX, filters, HV and194ScanCtrl nodes, with explicit numerical/register-order
-  policies and declared logic state. Native immediate writes and timer-triggered Start are
-  distinguished. Actual imaging, complete lifecycle/error handling, calibration and stop remain
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, statically mapped to TX16/ADC8. USB
+  identity, selected fundamental B producers and reset/message callbacks are partially mapped. Rust
+  offline work covers13hash-bound producer families plus audited EP88 message replay and explicit
+  archived parameter binding, with synthetic validation only. Current-unit logic state, complete
+  acquisition/error handling, image reconstruction and acoustic/electrical validation remain
   unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
@@ -92,7 +91,31 @@ interfaces:
       Host libm is shared; no ARM/vendor-runtime equivalence or hardware replay.216common tests
       pass. Callback side effects, actual logical state, lifecycle executor, transfer timing/order,
       error/partial-write recovery, attributed imaging and acoustic/electrical validation remain
-      open."
+      open. Subsequent message/lifecycle work confirms the Java EP88 reader calls
+      GetHardWareParameter on its reused512-byte buffer after any positive transfer length, without
+      header/trailer checks. Rust offline replay instead preserves all recognized
+      raw/diagnostic/invalid/orphan files and interprets only complete valid512-byte host reads;
+      shorts are never padded or concatenated. LE helpers are confirmed. PID0 parameter, PID1 gyro
+      and other-PID/type2 button candidates remain distinct; DNA words are not exported in decoded
+      JSON. Explicit archived PID0/reported-ID1435 selection can bind logic/low-power to the
+      existing offline producer bundle after copied-source/raw/hash reaudits. This is not a
+      current-handle attestation, checksum validation or executable activation. Four synthetic
+      journals and32bindings/eight presets are checked;416producer fingerprints equal the
+      explicit-request path, with independent struct/bitfield and exact raw-copy checks.224common
+      tests pass. New callback trace: for changed current-probe logic/low-power and LogicType!=0,
+      b.t() debounces Runnable b$9 by500ms. With a positive cached probe ID, it calls
+      g->l.n()->native ResetHardWareParamter, then schedules gyro. Raw DEX corroborates field j
+      initialization omitted by the selected Java constructor view. Native reset clears
+      mode/parser/raw/history caches and sets the voltage-pending flag, reloads B/C/D input
+      prerequisites, and if workers run reuploads ATGC/Apo/ApoComp then emits probe-type activation
+      before depth/ScanCtrl. Type activation is50062=type, distinct from50060=index; query
+      producer60004=0 is also kind100/wire2. These extra lifecycle producers remain outside
+      the13-family bundle. Gyro uses Java key70015=1 with second/trailer word5a5a0002, distinct from
+      normal native wire2. Its delayed retry is only on negative return, while the Java write helper
+      can return0 without a transfer; no hardware ACK follows. Timer-triggered Start and ignored
+      callback errors remain relevant. No APK/native target execution or new USB I/O; actual message
+      attribution, current handle state, complete executor, voltage10 effects,
+      acquisition/stop/calibration remain open."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -102,6 +125,21 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Twenty new retained REA Evidence/artifact identities and closed native snapshot checked; raw
+      DEX corroborates anonymous Runnable selection. Static paths resolve logic-change debounce,
+      native parameter reset, immediate type activation/query, gyro format and Java no-transfer
+      return0. Eight new Rust tests cover exact512-byte field decoding, signed motion/PID
+      precedence, partial/timeout handling without stale tails, diagnostics/orphans,
+      source/hash/path/profile/symlink guards, interrupted journals and selected-source reaudits.
+      Four synthetic EP88 journals give three candidates each and one selected parameter candidate;
+      independent struct/bitfield and exact raw-copy checks pass.32bound configuration cases over
+      eight presets match416fingerprints of the explicit-request path.224common tests and
+      Clippy/format pass. No real convex message capture, target execution, OUT/Start/Freeze,
+      hardware ACK, current-handle attribution or physical calibration claimed; no vendor payloads
+      or unit-unique fields shared.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -229,4 +267,9 @@ provenance:
     - Retained REA6.5.0/Ghidra12.1.4/JADX producer Evidence and closed-snapshot identity review
     - Rust probe-usb0.8 offline convex B producer bundle with complete local input hashes
     - Independent1344-case scalar binary32/binary64 packet reference and216-test common suite
+    - REA6.5.0/JADX0.7.1/Ghidra12.1.4 logic-reset-message callback analysis with raw DEX
+      corroboration
+    - Rust probe-usb0.9 offline convex EP88 replay and explicit archived-message configuration
+      binding
+    - Independent struct/bitfield/raw-copy checks,32binding cases and224-test common suite
 updated: 2026-11-04
