@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:53:33.079538Z",
+  "last_verified_at": "2026-11-04T22:00:54.381175Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1135,6 +1135,32 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/blob/fbd0301e6690a21d98ca8d565c0657aae0fba339/contributing.md",
       "next_action": "Await maintainer review and the upstream workflow action. Open and unmerged; no accepted listing or adoption claim. No duplicate issue, comment or direct maintainer solicitation."
+    },
+    {
+      "name": "OpenMV",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "openmv@openmv.io",
+      "subject": "OpenMV cameras on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:58:35.000Z",
+      "message": "messages/2026-11-04/openmv.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://openmv.io/pages/contact",
+      "project_source": "https://github.com/openmv/openmv/tree/f128b091d3edf48014a0cbe8c01dbe286ed1e320",
+      "next_action": "Await feedback on the first camera-page proposal in this email. No duplicate forum/issue/team solicitation. Exact board firmware, IDE, RPC and sensor/shield requirements remain to select; no page/importer or physical validation implemented."
+    },
+    {
+      "name": "INDI astronomy instrumentation",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/indilib/indi/discussions/2522",
+      "published_at": "2026-11-04T21:59:15Z",
+      "title": "OpenDeviceDB: helping mount owners find INDI drivers",
+      "message": "messages/2026-11-04/indi.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/indilib/indi/discussions/1561",
+      "project_source": "https://github.com/indilib/indi/tree/2bedd4aeafbcfc2162f2b88a1bf09f776fec4fbd",
+      "next_action": "Await feedback in the existing Show and tell thread on the two already-curated mount pages and a recommended model-to-driver source. No duplicate forum/email, importer, driver change, new mount record or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1841,6 +1867,19 @@
       "source": "https://github.com/JoasASantos/Awesome-Hardware-and-IoT-Hacking/tree/f0584d4320d5bd79d23562dfeab64b7ced51a4d4",
       "status": "deferred_to_original_resource_list",
       "next_action": "README introduction links the FKIE list and reuses its category/resource descriptions. Prefer the original FKIE listing proposal rather than submitting a duplicate to this compilation now. No fork, issue, PR or email. Full README and attached PDF/XLSX/XMind contents not reviewed; no broader policy claim."
+    },
+    {
+      "name": "Hamlib",
+      "source": "https://github.com/Hamlib/Hamlib/tree/9199f8a239aed26b5eb0ee9c1a73bf51580483ce",
+      "community_url": "https://github.com/Hamlib/Hamlib/discussions",
+      "status": "full_developer_guide_and_channel_review_pending",
+      "next_action": "README, CONTRIBUTING, CoC and complete policy inventory reviewed. Developer guide is lengthy and its initial read was truncated; do not claim full review or posting approval. Finish applicable guidance and channel/dedupe checks before contact. Preserve release-branch versus development/API context and backend model IDs/status; no importer, build, radio command or transmission."
+    },
+    {
+      "name": "Petoi / OpenCat quadruped robots",
+      "source": "https://github.com/PetoiCamp/OpenCat-Quadruped-Robot",
+      "status": "source_policy_and_channel_review_needed",
+      "next_action": "Old PetoiCamp/OpenCat endpoint redirected; canonical active non-archived repository resolved from public API. Metadata only reviewed; no GitHub Discussions. Read full current source, hardware/firmware scope and official community policy/route before any contact. No message, account, issue, importer, firmware or physical robot action."
     }
   ],
   "remaining": [
