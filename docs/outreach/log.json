@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:19:48.919856Z",
+  "last_verified_at": "2026-11-04T18:27:23.825743Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -700,6 +700,18 @@
       "membership_status": "awaiting_owner_approval",
       "introduction_status": "not_sent",
       "next_action": "Await owner approval, as explicitly confirmed by the server after confirmation. No introduction before membership is confirmed; do not repeat subscription or confirmation."
+    },
+    {
+      "name": "pvvx / ATC_MiThermometer",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/pvvx/ATC_MiThermometer/discussions/839",
+      "published_at": "2026-11-04T18:26:05Z",
+      "message": "messages/2026-11-04/atc-mithermometer.md",
+      "outgoing_text_verified": true,
+      "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/26",
+      "issue_message": "messages/2026-11-04/lywsd03mmc-firmware-issue.md",
+      "next_action": "Await feedback in the existing Show and tell thread; no separate maintainer/contributor solicitation alongside it. Preserve hardware/stock-firmware and BLE/Zigbee scope. Issue 26 is reported, not fixed; no dedicated importer or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1093,6 +1105,26 @@
       "source": "https://github.com/zmkfirmware/zmk",
       "status": "channel_and_model_scope_review_needed",
       "next_action": "Review official community route/policies and keyboard/controller/shield distinctions. Main repository has no Discussions; no message or promotional issue sent."
+    },
+    {
+      "name": "NOOP / ryanbr",
+      "source": "https://github.com/ryanbr/noop/tree/2a1de7609843b095505274ad6fc811757210be80",
+      "status": "community_route_and_scope_review_needed",
+      "relevance": "Offline WHOOP interoperability and protocol documentation; source-available PolyForm Noncommercial license.",
+      "next_action": "No GitHub Discussions. Review current Reddit/Discord rules before any community introduction. Preserve clean-room boundaries, platform/strap scope and experimental Oura status. Do not describe the noncommercial license as unrestricted open source. No contact or promotional issue sent."
+    },
+    {
+      "name": "TheMysticle / TH03_ZBPS1.0 port",
+      "source": "https://github.com/pvvx/ATC_MiThermometer/discussions/791#discussioncomment-18199670",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public hardware-tracing report and firmware branch; branch existence/head verified at ee46d1918bf2fb7c51db67ae4dc2c07dd2937b48.",
+      "next_action": "Potential contributor lead. No direct invitation alongside the new ATC community introduction. Do not infer upstream acceptance, tested compatibility or collaboration interest; we did not test hardware."
+    },
+    {
+      "name": "enesbcs / BLE diagnostic app",
+      "source": "https://github.com/pvvx/ATC_MiThermometer/discussions/838",
+      "status": "deferred_contact_route_is_for_beta_testers",
+      "next_action": "No verified public app source/license and no own app or hardware test. Do not use the tester-only published address for a generic directory solicitation; no contact sent."
     }
   ],
   "remaining": [

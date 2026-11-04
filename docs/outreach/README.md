@@ -75,6 +75,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Pothos Users / SoapySDR](messages/2026-11-04/pothos-users-subscription-request.md) | administrative email | `subscription_request_rejected`; introduction not sent | [group information](https://groups.google.com/g/pothos-users/about) |
 | [OpenKinect](messages/2026-11-04/openkinect-subscription-request.md) | administrative email | `subscription_awaiting_owner_approval`; introduction not sent | [group information](https://groups.google.com/g/openkinect/about) |
 
+| [pvvx / ATC_MiThermometer](messages/2026-11-04/atc-mithermometer.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pvvx/ATC_MiThermometer/discussions/839) |
+
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
 ## Updating this journal
@@ -108,3 +110,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - OpenPnP: membership confirmed and one introduction sent/read back. First-post moderation is expected under the published rules; publication remains unconfirmed.
 - OpenKinect: normal email subscription/confirmation completed; server confirms owner approval is still pending. No introduction sent.
 - Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
+
+- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. Reported with pinned upstream evidence; no correction or hardware test.
