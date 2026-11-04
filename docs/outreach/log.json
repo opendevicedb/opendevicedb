@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T21:20:28.570161Z",
+  "last_verified_at": "2026-11-04T21:28:59.827522Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1084,6 +1084,31 @@
       "contact_source": "https://github.com/dkonigsberg",
       "project_source": "https://github.com/dektronics/printalyzer-timer/tree/16b11608119cb3da09eca94394503bae0d40d021",
       "next_action": "Await the author’s recommendation for the timer board revision/firmware reference and feedback on a proposed page. No repeated email or alternate-channel approach; no delivery/adoption claim, new page/importer or hardware test. Keep the timer separate from densitometers and distinguish in-development from released hardware."
+    },
+    {
+      "name": "Sensor Watch",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/joeycastillo/Sensor-Watch/discussions/550",
+      "published_at": "2026-11-04T21:26:44Z",
+      "title": "OpenDeviceDB: helping Casio F-91W owners discover Sensor Watch",
+      "message": "messages/2026-11-04/sensor-watch.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://www.sensorwatch.net/docs/contribution-guidelines/",
+      "next_action": "Await feedback in this General thread; no parallel Discord/email or direct creator solicitation. Proposed page only, with a required replacement PCB and separate hardware/LCD choices. No stock-Casio firmware support, new page/importer, build or hardware test."
+    },
+    {
+      "name": "HydraBus",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@hydrabus.com",
+      "subject": "HydraBus on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:27:32.000Z",
+      "message": "messages/2026-11-04/hydrabus.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://hydrabus.com/contact/",
+      "project_source": "https://github.com/hydrabus/hydrafw/tree/823df8560b16b8b2872169e128e0144b72c0d604",
+      "next_action": "Await feedback on the proposed HydraBus v1 page. No duplicate discussion, second email or direct maintainer approach. Distinguish HydraNFC Shield v2 and its firmware; no catalogue page/importer, build/flash, physical test, purchase or delivery/adoption claim."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [

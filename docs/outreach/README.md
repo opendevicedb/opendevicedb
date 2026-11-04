@@ -97,6 +97,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [TinyUSB](messages/2026-11-04/tinyusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/hathach/tinyusb/discussions/4431) |
 | [CherryUSB](messages/2026-11-04/cherryusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/cherry-embedded/CherryUSB/discussions/470) |
 | [Printalyzer / Derek Konigsberg](messages/2026-11-04/printalyzer-derek-konigsberg.md) | email | `sent_and_read_back`; delivery unconfirmed | [public author contact](https://github.com/dkonigsberg) |
+| [Sensor Watch](messages/2026-11-04/sensor-watch.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/joeycastillo/Sensor-Watch/discussions/550) |
+| [HydraBus](messages/2026-11-04/hydrabus.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://hydrabus.com/contact/) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -160,3 +162,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [TinyUSB source question](https://github.com/hathach/tinyusb/discussions/4431) and [CherryUSB source question](https://github.com/cherry-embedded/CherryUSB/discussions/470): General discussions published and read back. Preserve example/BSP scope and SDK/stack/controller distinctions; no importer or hardware test. RIOT excluded from generated outreach under its explicit communication policy.
 
 - [Printalyzer author email](messages/2026-11-04/printalyzer-derek-konigsberg.md): one specific page/link proposal sent and read back; delivery and interest unconfirmed. [MissionControl maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844): prefers communication without AI assistance; automated replies and related contributor approaches stopped.
+
+- [Sensor Watch presentation](https://github.com/joeycastillo/Sensor-Watch/discussions/550) and [HydraBus email](messages/2026-11-04/hydrabus.md): proposed pages would point readers to the original firmware/design/setup guides. Sensor Watch requires a replacement PCB; hardware/LCD variants and HydraNFC v2 firmware remain distinct. No page/importer or hardware validation implemented.

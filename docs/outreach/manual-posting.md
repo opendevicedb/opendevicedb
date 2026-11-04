@@ -201,3 +201,10 @@ La [politique officielle](https://github.com/RIOT-OS/RIOT/blob/4331a82c45ed2df99
 ## MissionControl : réponse personnelle uniquement
 
 Le [mainteneur a répondu](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844) et souhaite communiquer sans assistance IA. Aucune réponse automatique ni brouillon rédigé par l’assistant. Si tu souhaites poursuivre, réponds dans ce fil avec tes propres mots. Il demande ce que désigne la fiche de manette proposée ; son message ne constitue pas une interdiction de tout échange humain avec le projet.
+
+## Sensor Watch et HydraBus : contacts déjà faits
+
+- [Sensor Watch](https://github.com/joeycastillo/Sensor-Watch/discussions/550) : présentation publiée dans General, avec l’exemple d’une F-91W nécessitant une carte électronique de remplacement. Continuer ce fil si un retour arrive.
+- [HydraBus](https://hydrabus.com/contact/) : un email a été envoyé à l’adresse générale officielle. Ne pas doubler par une discussion ou un message personnel au mainteneur.
+
+Les pages proposées ne sont pas encore ajoutées. Aucun montage, firmware construit ou essai matériel réalisé.
