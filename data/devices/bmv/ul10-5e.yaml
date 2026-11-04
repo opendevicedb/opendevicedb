@@ -9,12 +9,11 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350 in repeated
-  direct reads. B-mode USB identity/command/data/message paths, native configuration formats and
-  lifecycle producer phases are partially mapped and ported to offline Rust plans. Concurrent
-  bounded Linux IN and cooperative host cancellation were tested without initialization and received
-  no bytes. Current-unit initialization, image acquisition, geometry, calibration and acoustic stop
-  remain unverified.
+summary: BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. A second Rust-only gulaman-phantom
+  trial with RAM reception preserves5128192data bytes and14strict complete80-line frames; the CPU
+  pipeline produces14uncalibrated candidate phantom images. The first negative trial is retained.
+  USB identity/configuration and targeted DSP/palette ports are documented, while manufacturer/GPU
+  equivalence, target geometry, repeatability and acoustic/electrical validation remain open.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -28,22 +27,195 @@ interfaces:
       c0/bb/value 3/index 0/length 32; c0/bb/value 3/index 32/length 32; timeout 5000 ms. Historical
       pyusbus uses c3 instead of c0. Native command packet: 512 bytes, four 5a bytes, eight zero
       bytes, up to 124 little-endian u32 words from offset 12, four a5 bytes at offset 508. Start
-      word a0020000 and freeze a0010000 are statically identified, not replayed on this unit. Native
-      framing candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence
-      need an attributed capture. Historical Parquet projection retains command payloads but drops
-      the large image-data column; do not treat it as a validated image capture. Current control-IN
-      reads confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine
-      exact-length replies identical. Historical packet192(Start)
+      word a0020000 and freeze a0010000 are statically identified; the later first-phantom trial
+      below sent both, without validated device acknowledgement or acoustic stop. Native framing
+      candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence need an
+      attributed capture. Historical Parquet projection retains command payloads but drops the large
+      image-data column; do not treat it as a validated image capture. Current control-IN reads
+      confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine exact-length
+      replies identical. Historical packet192(Start)
       SHA25645acfbaf3668222cb5a84eda6727c98a16d6cc976abc8d9332fbb60b48e6dca5 and3679(Freeze)
       SHA256defef81e3822ef8c1377cb80647804b72a647c46787c0ed617ba307291b62b34 match isolated512-byte
-      serialization. No current-unit Start/Freeze replay. Static configuration details: Probe
+      serialization. At the original identity-only checkpoint no Start/Freeze had been replayed; the
+      later first-phantom trial below supersedes that status. Static configuration details: Probe
       header24bytes/count@20; PRF column-major; COE8hex/stride10, padded reader blocks128words
       versus USB payload124words; TWave1536bytes per depth. Six active depths govern selection
       despite8PRF rows. StartImageEngine upload phase has13packets for the inspected
       COE128/DTGC-absent configuration; connected UnFreeze with internal flagBC8==0 repeats it then
       Start (14packets). Other UnFreeze branch sends Start only. These are static branches, not a
       measured current-unit trace. XML Vascular-default flag is ignored by Java: remembered exam
-      wins, otherwise first SmallParts. No generic ACK or shutdown guarantee established."
+      wins, otherwise first SmallParts. No generic ACK or shutdown guarantee established. Static
+      B-mode type0/m_nPA0 C4/8 framing: P=selected PRF.col2, N=Probe.focusNum; each line is2*P bytes
+      including an8-byte prefix. LE32 marker0x7fff0000 is at0 and full metadata word at4; counter is
+      byte5. Frame is2*P*N bytes with every header retained, counters1..N. Confirmation requires the
+      next complete line1 header, which is retained for the next frame. Native wrapper waits
+      for3*F/2 available bytes; F+8 is a distinct minimal-availability parser policy. Rust strict
+      profile requires even P>=4 and N2..255, checked bounded sizes and explicit phase0..3 or
+      declared all-phase recovery. The shipped algorithm kernel consumes signed char2 pairs
+      beginning at byte8: two i8 memory lanes, not a single LE16 value. Export N*(P-4) pairs without
+      asserting all terminal pairs are physically useful. RF/IQ, ADC mapping, sample timing and
+      calibration remain unknown. Native software output is a separate W*H uint8 raster with
+      palette32; Java live display uses a JNI-filled ARGB_8888 Bitmap sized from the View. Display
+      dimensions are not USB sample dimensions. The shipped simulation asset has constant counter33
+      and is not a validated C4 cyclic wire fixture. Further static UL10-5E m_nPA0 analysis
+      specifies a four-phase signed FIR, weighted delay/aperture summation, table-driven sin/cos
+      symmetric FIR and hypot envelope. Per-preset UPSampleCoef/Apo/SinCos/Coef inputs are required;
+      several coefficient files differ across the six presets. Native U storage is12MiB and its
+      known zero padding is read at some depths, so clamping to the final written sample is not
+      equivalent. Downstream reduction/log/PostDTGC, no-SRI display geometry and temporal warmup are
+      mapped; active SRI and fresh-object SRI_N initialization remain incomplete. SignalData is an
+      RGBA UNORM8 image2*N by320 with useful size2560*N excluding row padding; a fixed wrapper
+      copy0x50000 does not establish its geometry. No CPU/GPU numerical equivalence or current-unit
+      image validation claimed. A CPU Rust port now computes the statically specified K0→K1→K2
+      envelope with locally supplied, whole-preset hash-verified inputs. It binds a selected frame
+      and its confirmation header to the fully hashed archived source and checks all addresses.
+      All36 preset/depth address schedules match independent static bounds. Analytical synthetic
+      coefficients cover signed FIR shifts/saturation, lane order and hypot; generated zero-payload
+      frames with actual local coefficients yield184320zero output values. This is not GPU
+      bit-equivalence, image reconstruction or current-unit acquisition. Active SRI is now mapped
+      statically, including UNORM8/SNORM8/SIGNED_INT8 intermediates and temporal state.
+      Unresolved/unsafe-to-assume native behavior includes fresh-object SRI_N initialization,
+      inherited128/256 dispatch dimensions exceeding some N80 allocations, a local direction9
+      boundary beyond the9-filter bank, and persistent histories/tails. A bounded port must expose
+      these gaps instead of silently clamping or inventing state. CPU K3/K4 now consume the packed
+      envelope with explicit gain/DR/six-TGC settings and the same complete hash-verified local
+      input group. PostDTGC is retained from the single verified read. K3 applies reduction/log/DTGC
+      and an explicit binary32 UNORM8 round-even policy; K4 preserves quantized bytes while
+      reformatting lanes with clamp-to-edge. Computed A is exported compactly as1040x40x4,
+      omitting24unwritten native columns; B is320x160x4. Components are not colors or calibrated
+      anatomy. Independent nonzero mathematical-envelope checks cover all36preset/depth cases
+      and13363200output bytes: constant powers of two give analytic reduction/log2 values.
+      Source/envelope SHA and configuration binding, bounds and numerical errors are explicit;
+      downstream processing does not repeat the prior raw-source audit. Common190tests pass.
+      Temporal/SRI, geometry, rendering, GPU equivalence and current-unit imaging remain open.
+      Subsequent offline CPU work now covers enhancement0 temporal correlation, downstream geometry
+      and a candidate grayscale raster. Uniform-mask-portability-v1 directly uses the scalar mask
+      rather than inventing a native initial SRI_N; equivalence to a fresh native object is not
+      claimed. The coefficient is read from a known-hash local36-byte table, quantized UNORM8 before
+      mixing; no vendor payload is redistributed. First output is retained as warmup/not
+      software-accepted, followed by state1-to2 correlation. History continuation requires identical
+      configuration/input-file hashes/settings and adjacent declared frame ranges in one immutable
+      source; gaps or changes require an explicit new epoch. D320x160x4 and C280x320x4 are quantized
+      before normalized bilinear sampling with black CLAMP borders, distinct from the geometry stage
+      clamp-to-edge. Packed components become four output bands; PGM uses an own linear grayscale
+      palette, not the manufacturer palette.18synthetic outputs covering six depths and nine
+      coefficient selections match10340352bytes of an independent scalar binary32 reference. The
+      earlier two-frame zero raw fixture now runs through envelopes/K3/K4 to the raster.204common
+      tests pass. Active SRI, manufacturer palette, GPU oracle/equivalence, attributed current-unit
+      imaging, calibration and acoustic/electrical validation remain open; no new probe I/O or
+      activation was performed. Subsequent active SRI work covers enhancement1..8 and all six
+      supported depths in an offline CPU port. Rechecking the retained native image allocations
+      corrects an error in the local design prose: magnitude25e0 and angle25e8 are SNORM8, like both
+      gradients; positive magnitudes use127 quantization steps before requantization to the UNORM8
+      directional weights. The global128-bin histogram uses floating divisions,
+      percentile>=trunc(binary32(total)*p), strict maxima with the second argmax starting at1, and
+      an unclamped threshold which can exceed1. Degenerate m0 skips only an unused0/0 auxiliary
+      while preserving the defined threshold. A valid-kernel-input counterexample uses SNORM
+      angles120/127 and105/127 and positive UNORM weights30/255 and2/255 from SNORM amplitudes15/127
+      and1/127: the mean is exactly0.9375 and the strict wrap yields direction9 outside the
+      nine-filter bank. Full-pipeline/hardware reachability is not claimed. The port explicitly
+      initializes SRI_N, clips native oversized write dispatches, rejects out-of-bank directions
+      without clamping, and commits state only after the whole transaction succeeds. It
+      preserves30quantized image allocations, including unwritten tails, and the effective bound
+      correlation coefficient distinct from later configured values. Local known-hash coefficient
+      inputs and prederived I3 banks are required; no payload is embedded. All SRI stages, temporal
+      mask and downstream own grayscale raster are implemented. Complete snapshots resume only
+      across adjacent declared ranges with matching inputs/settings; software resets do not send
+      commands. Independent ordered binary32 NumPy evaluation matches all30images for96frames
+      over48depth/level selections, comparing368640000bytes.18archive/CLI refusals, a two-frame
+      synthetic raw-to-SRI/raster zero chain and18unchanged enhancement0 outputs pass;252common
+      tests and Clippy/format pass. The policy is a bounded reconstruction of statically mapped
+      formulas, not GPU/native equivalence or evidence that undefined native paths execute safely.
+      No new device I/O, real image, palette equivalence, calibration or acoustic/electrical
+      validation. Palette follow-up resolves the actual live consumer: ImageShowView uses
+      fillImagePixels(Bitmap), which calls Convert and memcpy of4*N bytes into locked Android
+      pixels. It does not use the Java int[] wrapper, whose incoming static wrapper-call search
+      found no callers. With ARGB_8888 direct memory the live bytes are RGBA and a little-endian
+      word is0xAABBGGRR; no channel swap occurs in the native copy. This follows static native/Java
+      evidence and the Android API contract, not a screen observation. JNI SetColorMap duplicates
+      composition rather than calling ChangeColorMap. JNI normalizes gray outside0..7 to0 and color
+      outside-1..7 to-1; direct ChangeColorMap has unguarded gray reads outside0..7. The gray bank
+      has8rows, color has8rows plus a fallback. Each entry takes byte2 of the selected gray word as
+      a color/fallback index. The auxiliary gray0 copy is not the Convert LUT. Fresh UL10-5E XML
+      GrayLevel3 is imported with+1, giving actual initial gray4/color-1; persisted user settings
+      can differ. UI gray8 passes unchanged and normalizes to0. All17table rows have alpha255;
+      fallback differs from identity gray at252indices, so it must not be silently replaced by
+      grayscale. Convert processes eight pixels per iteration although allocation is4*N:
+      nonmultiples8 overrun by(-N)%8 input bytes and4*((-N)%8) output bytes. Isolated Unicorn2.1.4
+      executes225300original selected AArch64 instructions for72palette/index sweeps and11tail
+      sizes, plus241098SetColorMap instructions for182selections including signed extremes.
+      Libc/allocation and thread-check calls are explicit stubs; no Android/GPU/device execution or
+      target initialization. Rust palette conversion matches182full256-index sweeps/186368bytes. Its
+      exact-index-count-v1 policy preserves all declared pixels without reproducing native
+      overflow.99offline archives compare3228944RGBA bytes and independently decoded PNGs,
+      with22invalid/non-overwrite cases; own synthetic PNGs test nonopaque alpha and dimensions up
+      to2048x2048. The live bitmap copy ignores getInfo return, stride, format, flags and
+      N==width*height; this is documented, not treated as a general safe bitmap writer. Local table
+      files remain hash-bound and absent from published artifacts; even derived full palette sweeps
+      remain ignored/private.259common software tests pass. Full-engine GPU equivalence, observed
+      Android display, attributed current-unit acquisition, calibration and acoustic/electrical
+      validation remain open. The local OpenCL loader reports no platform (-1001); no target kernel
+      executed. First current-unit Rust phantom session now sends39configuration/start/freeze
+      packets using explicit Vascular depth index1 and reinitialize, following a fresh same-handle
+      UL10-5E/ID7 preflight. All39host writes complete, no partial/error/unknown OUT; no device ACK
+      or acoustic stop is inferred. Requested dwell1second; EP81 receives1064960bytes
+      in65full16384-byte reads after4empty timeouts; EP82 has10empty timeouts. Owner confirms
+      physical unplug afterward. Archived transfer SHA/lengths and exact concatenation match the
+      replay source. Strict C4/8 replay with expected P1920/N80 finds no complete frame; no
+      image/video is claimed. Independent all-phase scan observes292aligned markers, counter
+      cycles1..128,1..80,1..80,1..4 with no internal counter skip. Startup usual stride4096 changes
+      to3840;29short1024-byte marker gaps recur at phases6024-to7048 modulo16384, inside transfers.
+      Counter-complete cycles have non-nominal spans and must not be padded or called valid frames.
+      Causes and exact physical loss remain unknown. Synchronous reads alternate with durable
+      intent/raw/result storage; successful read median0.590ms and result-end-to-next-intent
+      timestamp median9.138ms, excluding the next intent checkpoint. This motivates
+      sustained-receive investigation but does not prove causal loss. Only own findings and hashes
+      published; no vendor payload, medical image or unit-unique value. Source-only follow-up adds
+      opt-in Rust linear DATA whole-session bounded RAM collection, one durable authorization before
+      reads and one durable result seal after files. No collector disk/JSON/hash work between
+      synchronous DATA calls; message and OUT journals remain per operation. Default remains
+      per-read; explicit DATA sizes4096/16384/65536/262144/1048576, aggregate DATA+message requested
+      budget256MiB, retained payload capacities at most twice the DATA request budget (at
+      most512MiB), excluding bounded metadata/transport internals. This is not an asynchronous USB
+      queue or a proven physical fix. An unsealed reservation attests neither results nor actual
+      call count: files remain orphan evidence. A partial durable seal distinguishes committed
+      prefix, attempted but unarchived suffix and known unattempted suffix. Offline replay preserves
+      original manifests and represents an unknown range as one explicitly marked gap sentinel,
+      never as N observed transactions. Only sealed, individually hash/length/profile-checked rows
+      feed the parser. All other fixed-name artifacts remain bounded snapshots without becoming
+      payload.305common software tests pass.25isolated synthetic CLI cases cover5sizes with
+      complete/cancel/panic/seal-failure/file-failure; complete/cancel yield2strict own frames and
+      failures0. Two full synthetic images match the prior per-read pipeline over3491080bytes;
+      unknown batches yield0images. Targeted storage faults do not cover every possible fsync
+      failure. The actual first phantom capture still yields0strict frames with unchanged source
+      hash. No second device trial, demonstrated lossless throughput, actual probe image, acoustic
+      stop or physical validation is claimed. Manufacturer runtime assets and derived palette pixels
+      remain private and absent from publication. Second real owner-prepared gulaman phantom trial
+      with the same UL10-5E/ID7, firmware text V1.350, uses Rust probe-usb0.12 RAM collection and
+      probe-frame0.13. After a witnessed reconnect, nine identity replies over three repetitions
+      match, then identity is rechecked on each preflight/acquisition handle. Explicit
+      Vascular/depth-index1/reinitialize/one-second requested dwell and16384-byte DATA requests
+      match the first trial; all39 OUT phase/producer/length/SHA fingerprints are identical.39host
+      writes including Start/Freeze complete, no OUT error/partial/unknown, interface released after
+      readers join. EP81 yields5128192bytes in313full reads plus3empty timeouts, a316-row durable
+      RAM seal; EP82 has8empty timeouts. Strict replay has one epoch and no declared journal gap,
+      complete bounded snapshot and valid per-file hashes. Source
+      SHA256cb5dc3fa5468aebf1e46975d611ede7af7c53b6f5463bc22fda0473c56c7b857. An independent
+      direct-byte review finds1327markers: startup128headers with4096-byte stride, then1198intervals
+      of3840bytes. Fourteen complete80-line frames of307200bytes each, beginning at offset524292
+      with the next complete line1 header, match raw slices and every line marker/counter. The
+      remaining trailing partial data are retained, not padded. The Rust Vascular/depth1 CPU
+      pipeline produces14candidate512x512phantom rasters/PNGs, enhancement0, gain50/DR60/TGC0,
+      correlation3, gray4/color-1. Owner qualitatively recognizes the phantom appearance; target
+      identification, geometric scale, repeatability and manufacturer/GPU image equivalence remain
+      unverified. Host transport-call median1.7017755ms and between-call median1193ns
+      (maximum15920ns); these are host boundaries, not exposures or device frame rate, and the
+      first-trial coarse intent/result timings are not identical boundaries. Local video uses
+      chosen10fps playback, not measured acquisition cadence. The first negative trial is preserved.
+      USB absence is observed after the second trial. No acknowledgement or acoustic stop is
+      attested and this is not complete H4/H5/H6 validation or a clinical scan. No extra/overnight
+      capture. All raw observations stay private; vendor coefficients, palette pixels, PNG/video,
+      unit-unique values and medical data are not published."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -59,6 +231,116 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: hardware-replay
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Second real UL10-5E/ID7 phantom trial, reported firmware text V1.350, Rust probe-usb0.12
+      memory/probe-frame0.13: same39command fingerprints as trial1, all host writes complete
+      including Freeze;5128192EP81bytes,316reads, durable sealed results and14strict80-line frames.
+      Independent per-file/slice/SHA and all14x80headers plus following line1 headers checked. CPU
+      Vascular/depth1 enhancement0 produces14candidate512x512images, qualitatively recognized by
+      owner. Post-trial USB absence observed. No target identification, physical calibration, device
+      ACK, acoustic stop, manufacturer/GPU equivalence or H4/H5/H6 claim. No vendor
+      payload/code/pixels/video, unit-unique identifiers or clinical data published."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Own Rust probe-usb0.12 memory collector and probe-frame0.13 strict journal replay inspected
+      and tested:305common tests,25isolated no-USB/no-external-network synthetic producer-to-replay
+      cases, two synthetic PNG pipelines3491080byte-identical bytes, crash-unknown ranges/orphans
+      never promoted, original real capture still0frames. Independent embedded-source digests match
+      executed binaries. No new hardware access or image/safety/GPU validation; selected file-fault
+      boundaries only, not exhaustive fsync-fault coverage. No vendor payloads, coefficients,
+      palette pixels, keys, unit identifiers or medical data published.
+  - method: hardware-replay
+    by: smichea with Codex
+    date: 2026-11-04
+    firmware: USB-reported text V1.350; component version and physical output unverified
+    notes: "Scope: first explicit Vascular/depth1/reinitialize Rust phantom trial only, requested
+      dwell1second. Same-handle reported identity matched;39host OUT writes complete including
+      Start/Freeze, no ACK/acoustic-stop validation.1064960EP81bytes preserved and verified; no
+      complete fixed-stride frame, image or video. Owner unplugged afterward. Captured
+      header/counter geometry is discontinuous relative to expected profile; no repair by padding,
+      no calibration or human use. This is not a validated imaging driver or an independent
+      manufacturer reference."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static REA/Ghidra/JADX live bitmap consumer, JNI normalization, XML preference import and
+      original table identities checked. Selected original ARM64 instruction emulation with explicit
+      libc/allocation/thread stubs verifies72palettes,11tail cases and182JNI selections;
+      Rust182index sweeps match186368bytes.99offline archives/3228944RGBA bytes and PNGs
+      match,22invalid/non-overwrite cases and own nonopaque RGBA PNGs through2048x2048
+      checked.259common tests, format and Clippy pass. No Android/GPU/device execution, current-unit
+      acquisition, image calibration or safety validation. No vendor code, tables, palette sweeps,
+      firmware, unit-unique values or medical data published.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Retained native allocation Evidence and identified kernel source rechecked; magnitude/angle
+      SNORM8, histogram float/trunc/strict-loop semantics, arithmetic order and a format-compatible
+      direction9 boundary corroborated. No new native session or target execution. Active SRI CPU
+      port matches independent ordered NumPy binary32 evaluation for96frames/48selections
+      over6depths and8levels:2880image allocations,368640000bytes. All30images and bound correlation
+      persist through snapshots.18invalid archives/CLI histories rejected before output, two
+      adjacent synthetic raw-chain zero frames proceed through SRI/raster, and18enhancement0 outputs
+      remain unchanged.252common tests, format and Clippy pass. Shared local coefficients/host math
+      and bounded-dispatch policy are explicit; no GPU oracle or current-unit
+      image/acquisition/stop/calibration. No vendor coefficients/code, unit-unique values or medical
+      data shared.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline enhancement0 correlation/geometry/raster tests verify warmup, quantized coefficients,
+      state reset/resume, half-pixel interpolation, black-border sampling, geometry crop and
+      four-band order.18synthetic outputs/six depths/nine coefficient selections
+      match10340352D/C/raster bytes against an independent scalar binary32 reference; PGM
+      payload/header checked. Earlier synthetic zero raw journal proceeds through two adjacent
+      frames to the renderer.204common tests and Clippy/format pass. History guards reject
+      repeated/skipped/cross-source ranges and changed input groups/settings; downstream audit
+      checks B/manifests without reauditing E/A/raw. Uniform-mask portability is explicitly adapted,
+      not native fresh-object equivalence. No hardware replay, active SRI or manufacturer palette,
+      GPU oracle or physical validation; no vendor payloads shared.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline CPU K3/K4 verified with analytic odd/even reductions, DTGC/TGC interpolation knots,
+      gain/log, round-even saturation, lane/time/group and K4 boundary checks.36nonzero synthetic
+      constant-power-of-two envelope cases match13363200bytes of an independent scalar binary32
+      reference; existing zero-envelope chain reproduces zero outputs.190common tests and
+      Clippy/format pass. Input integrity and failed-output preservation are checked. No vendor
+      payload redistributed, no vendor/GPU execution or hardware acquisition; packed stages remain
+      uncalibrated mathematical components.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline Rust CPU-envelope port and source/segment audit verified with synthetic data and
+      local known coefficient inputs; no vendor code executed, no coefficient payload
+      redistributed.36configurations match independent address bounds. Static SRI
+      graph/formats/state mapped; native dispatch/direction/initialization ambiguities remain
+      explicit. No real image, acoustic property, physical units or hardware replay validation.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static DSP formulas and bounds were independently checked over36 shipped preset/depth
+      configurations, including3988480 index identities. This is arithmetic/static evidence, not
+      execution of the vendor algorithm or a hardware replay. CPU/GPU rounding equivalence, active
+      SRI, physical units and current-unit reconstruction remain unverified. No coefficient
+      payloads, source, keys or private identifiers published.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static framing and signed-byte layout were reconstructed from exact B-mode APK
+      SHA2562317c74a1a1f314bffdc1e5494f87715e153924f40c1c0f7f12883bbdf2bd777 and its two ARM64
+      libraries. A bounded Rust incremental parser preserves all original bytes, headers, invalid
+      candidates and EOF tails, and exports two signed lane candidates. It requires explicit
+      alignment and availability policies, and invalidates candidates at declared stream gaps.
+      Synthetic tests cover fragmentation, counters, resynchronization, gaps, bounds and lane order;
+      no current-unit image stream was acquired. A separate direct Linux identity-only driver
+      preflight succeeded with39planned command packets all unattempted and interface released; no
+      configuration/Start/Freeze sent. Journaled OUT/IN coordination is software-tested only. No
+      acoustic stop, reconnect stability, imaging or physical calibration validated. Proprietary
+      code/assets, keys, unique serials, personal data and room photos excluded.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -151,4 +433,41 @@ provenance:
     - REA6.5.0 / Ghidra12.1.4 / JADX0.7.1 / Android SDK dexdump36.0.0
     - Rust probe-usb0.4.0 concurrent bounded IN and0.5.0 offline configuration plans
     - Independent exact-APK-member metadata and packet-hash verification
+    - Rust probe-usb0.6.0 journaled coordinator and identity-only preflight
+    - Rust probe-frame0.2.0 bounded incremental C4/8 framing and signed lane candidates
+    - Independent synthetic-byte/hash/order verification
+    - Rust probe-frame0.3.0 CPU envelope and selected-source audit
+    - REA6.5.0 / Ghidra12.1.4 static SRI analysis
+    - Independent36-configuration address-bound comparison and analytic synthetic tests
+    - Rust probe-frame0.5 CPU K3/K4 and standalone envelope archive audit
+    - Independent scalar binary32/analytic constant-envelope reference over36cases
+    - 190-test common suite with synthetic source/settings/error cases
+    - Rust probe-frame0.6 enhancement0 uniform-mask temporal/geometry raster and archive lineage
+      guards
+    - Independent per-pixel scalar binary32 reference over18synthetic outputs
+    - 204-test common suite with explicit software/hardware validation boundaries
+    - Retained REA/Ghidra native allocation and identified OpenCL formula review; no new target
+      session
+    - Rust probe-frame0.7 active SRI1..8 CPU port with transactional quantized30-image state and
+      bounded dispatch
+    - Independent96-frame ordered NumPy2.5.4 binary32 evaluation and368640000byte checks;252-test
+      common suite
+    - REA Ghidra12.1.4 and JADX static JNI/live-bitmap/selection analysis with retained Evidence
+    - Unicorn2.1.4 isolated selected original ARM64 ChangeColorMap/Convert/SetColorMap instruction
+      emulation with explicit external stubs
+    - Rust probe-frame0.8 bounded RGBA/palette archive and PNG writer; Python stdlib independent
+      CRC/zlib/pixel checks;259-test common suite
+    - Rust probe-usb0.10 identity-bound first phantom acquisition and offline commands audit;
+      probe-frame0.9 strict receive replay; independent recorded-byte header/counter geometry and
+      SHA checks
+    - Rust probe-usb0.12 bounded synchronous linear DATA RAM collector and distinct durable
+      authorization/result-seal schema
+    - Rust probe-frame0.13 strict memory-journal replay and orphan/unknown-range preservation
+    - Bubblewrap isolated own Rust mock producer and actual CLI reconstruction, Python stdlib
+      byte/hash orchestration;305common tests
+    - Rust probe-usb0.12 actual same-handle identity/configuration and bounded RAM acquisition on
+      gulaman phantom
+    - Rust probe-frame0.13 strict memory-journal replay and CPU phantom reconstruction
+    - Independent raw length/hash, all-frame source-slice and80-line marker/counter verification;
+      ffprobe14-frame playback metadata
 updated: 2026-11-04
