@@ -7,3 +7,4 @@ site/.astro/
 dist/
 packages/mcp/LICENSE
 outreach/
+!/docs/outreach/

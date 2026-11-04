@@ -1,0 +1,554 @@
+{
+  "schema_version": 1,
+  "project": "OpenDeviceDB",
+  "last_verified_at": "2026-11-04T14:14:37.303824+00:00",
+  "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
+  "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
+  "status_semantics": {
+    "sent": "Outgoing email observed; delivery, public distribution and human interest are not established.",
+    "sent_and_read_back": "Stored outgoing email, recipient and content read back successfully; no delivery or engagement claim.",
+    "published": "Public GitHub permalink observed.",
+    "published_and_read_back": "Public GitHub author and exact outgoing content read back successfully.",
+    "automatic_acknowledgement": "Automatic reply only.",
+    "held_for_moderation": "Mailing-list notice confirms a hold; publication is not established.",
+    "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent."
+  },
+  "contacts": [
+    {
+      "name": "Open Healthware / OSHWA",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "OpenHealthware@oshwa.org",
+      "sent_at": "2026-11-04T08:29:02.000Z",
+      "subject": "OpenDeviceDB — connecting device knowledge with Open Healthware",
+      "message": "messages/2026-11-04/open-healthware-oshwa.md",
+      "contact_source": "https://oshwa.org/resources/open-healthware-education-guide/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Openwater",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "community@openwater.health",
+      "sent_at": "2026-11-04T08:29:05.000Z",
+      "subject": "OpenDeviceDB — a possible collaboration around open imaging device documentation",
+      "message": "messages/2026-11-04/openwater.md",
+      "contact_source": "https://openwaterhealth.github.io/openwater-community/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenBCI",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "contact@openbci.com",
+      "sent_at": "2026-11-04T08:29:07.000Z",
+      "subject": "OpenDeviceDB — sharing reusable knowledge about biosensing hardware",
+      "message": "messages/2026-11-04/openbci.md",
+      "contact_source": "https://docs.openbci.com/FAQ/GenFAQ/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open Source Imaging Initiative",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "info@opensourceimaging.org",
+      "sent_at": "2026-11-04T08:29:10.000Z",
+      "subject": "OpenDeviceDB — exploring links with the Open Source Imaging Initiative",
+      "message": "messages/2026-11-04/open-source-imaging-initiative.md",
+      "contact_source": "https://www.opensourceimaging.org/2016/05/01/about/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Glia",
+      "channel": "email",
+      "status": "automatic_acknowledgement",
+      "recipient": "info@glia.org",
+      "sent_at": "2026-11-04T08:29:12.000Z",
+      "subject": "OpenDeviceDB — helping people discover and reuse open medical hardware",
+      "message": "messages/2026-11-04/glia.md",
+      "note": "Automatic acknowledgement only; it is not a substantive response or evidence of interest.",
+      "contact_source": "https://glia.org/pages/contact",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open Source Medical Supplies",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "info@opensourcemedicalsupplies.org",
+      "sent_at": "2026-11-04T08:29:14.000Z",
+      "subject": "OpenDeviceDB — connecting reusable device documentation with OSMS",
+      "message": "messages/2026-11-04/open-source-medical-supplies.md",
+      "contact_source": "https://opensourcemedicalsupplies.org/about/contact/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Luc Jonveaux / un0rick",
+      "channel": "private email",
+      "status": "sent",
+      "privacy": "Personal correspondence retained privately; recipient address, private message text and contact details are not published.",
+      "sent_date": "2026-11-04",
+      "next_action": "Continue any personal correspondence privately."
+    },
+    {
+      "name": "NUT developers",
+      "channel": "email",
+      "status": "held_for_moderation",
+      "recipient": "nut-upsdev@alioth-lists.debian.net",
+      "sent_at": "2026-11-04T11:41:31.000Z",
+      "subject": "OpenDeviceDB: indexing the NUT HCL with its driver and connection constraints",
+      "message": "messages/2026-11-04/nut-developers.md",
+      "next_action": "Await moderator decision; do not send duplicate",
+      "note": "A Mailman notice confirms that the original post is held for moderation. Do not resend it.",
+      "contact_source": "https://networkupstools.org/support.html",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "gPhoto developers",
+      "channel": "email",
+      "status": "held_for_moderation",
+      "recipient": "gphoto-devel@lists.sourceforge.net",
+      "sent_at": "2026-11-04T11:47:54.000Z",
+      "subject": "OpenDeviceDB: linking camera model aliases to libgphoto2 support",
+      "message": "messages/2026-11-04/gphoto-developers.md",
+      "next_action": "Wait for moderator decision; do not send a duplicate",
+      "note": "A Mailman notice confirms that the original post is held for moderation. Do not resend it.",
+      "contact_source": "https://gphoto.sourceforge.io/mailinglists/",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "sigrok developers",
+      "channel": "email",
+      "status": "subscription_help_requested",
+      "recipient": "sigrok-devel@lists.sourceforge.net",
+      "sent_at": "2026-11-04T11:47:56.000Z",
+      "subject": "OpenDeviceDB: making libsigrok instrument support easier to discover",
+      "message": "messages/2026-11-04/sigrok-developers.md",
+      "next_action": "Await list-owner help with subscription; do not resend original outreach until membership and original post status are established.",
+      "note": "Required country field was supplied privately. The normal web form did not submit; the email subscription command redirected to it. Subscription help was requested from the list owners. Membership and original-post publication remain unconfirmed.",
+      "contact_source": "https://github.com/sigrokproject/libsigrok",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "CassieFox23",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7872#discussioncomment-19392275",
+      "published_at": "2026-11-04T07:34:38Z",
+      "message": "messages/2026-11-04/cassiefox23.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Eliot5566",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7974#discussioncomment-19392281",
+      "published_at": "2026-11-04T07:34:47Z",
+      "message": "messages/2026-11-04/eliot5566.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Zfinix",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7989#discussioncomment-19392280",
+      "published_at": "2026-11-04T07:34:45Z",
+      "message": "messages/2026-11-04/zfinix.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "awesomerea",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/4470#discussioncomment-19392277",
+      "published_at": "2026-11-04T07:34:41Z",
+      "message": "messages/2026-11-04/awesomerea.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "bigtower17",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/4152#discussioncomment-19392273",
+      "published_at": "2026-11-04T07:34:32Z",
+      "message": "messages/2026-11-04/bigtower17.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "zenanythin",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278",
+      "published_at": "2026-11-04T07:34:43Z",
+      "message": "messages/2026-11-04/zenanythin.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "betaflight",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466",
+      "published_at": "2026-11-04T11:41:07Z",
+      "message": "messages/2026-11-04/betaflight.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "zwave",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467",
+      "published_at": "2026-11-04T11:41:09Z",
+      "message": "messages/2026-11-04/zwave.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "tasmota",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470",
+      "published_at": "2026-11-04T11:41:10Z",
+      "message": "messages/2026-11-04/tasmota.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "gp2040",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenStickCommunity/GP2040-CE/discussions/1818",
+      "published_at": "2026-11-04T11:41:12Z",
+      "message": "messages/2026-11-04/gp2040.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "fwupd",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/fwupd/fwupd/discussions/11346",
+      "published_at": "2026-11-04T11:49:49Z",
+      "message": "messages/2026-11-04/fwupd.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "usb-rea",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3",
+      "published_at": "2026-11-04T11:49:51Z",
+      "message": "messages/2026-11-04/usb-rea.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Glasgow Interface Explorer",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/GlasgowEmbedded/glasgow/discussions/1347",
+      "published_at": "2026-11-04T13:55:57Z",
+      "message": "messages/2026-11-04/glasgow-interface-explorer.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Meshtastic",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/meshtastic/firmware/discussions/12301",
+      "published_at": "2026-11-04T13:55:59Z",
+      "message": "messages/2026-11-04/meshtastic.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open-Source Leg",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/neurobionics/opensourceleg/discussions/538",
+      "published_at": "2026-11-04T13:59:09Z",
+      "message": "messages/2026-11-04/open-source-leg.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "EmotiBit",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/EmotiBit/EmotiBit_Docs/discussions/156",
+      "published_at": "2026-11-04T14:02:07Z",
+      "message": "messages/2026-11-04/emotibit.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenFlexure",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@openflexure.org",
+      "sent_at": "2026-11-04T13:56:30.000Z",
+      "subject": "OpenDeviceDB and discoverability of open scientific hardware",
+      "message": "messages/2026-11-04/openflexure.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://openflexure.org/contact/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenIPC",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "dev@openipc.org",
+      "sent_at": "2026-11-04T14:01:13.000Z",
+      "subject": "OpenDeviceDB: helping camera owners find existing firmware and protocol work",
+      "message": "messages/2026-11-04/openipc.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://github.com/OpenIPC/firmware#support",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "BrainFlow / Andrey Parfenov",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "andrey@brainflow.org",
+      "sent_at": "2026-11-04T14:02:36.000Z",
+      "subject": "OpenDeviceDB: making BrainFlow device interfaces easier to discover",
+      "message": "messages/2026-11-04/brainflow-andrey-parfenov.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://brainflow.org/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    }
+  ],
+  "earlier_public_threads_and_contributor_followups": [
+    {
+      "url": "https://github.com/EdgeTX/edgetx/discussions/7945",
+      "title": "OpenDeviceDB lists the radios EdgeTX supports, including older ones that stay on 2.11",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/EdgeTX/edgetx/discussions/7945",
+          "published_at": "2026-10-25T07:52:49Z",
+          "message": "messages/2026-10-25/edgetx-edgetx-7945.md"
+        },
+        {
+          "url": "https://github.com/EdgeTX/edgetx/discussions/7945#discussioncomment-19330866",
+          "published_at": "2026-11-01T10:05:36Z",
+          "message": "messages/2026-11-01/edgetx-edgetx-7945-discussioncomment-19330866.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/OpenPrinting/openprinting.github.io/discussions/253",
+      "title": "OpenDeviceDB lists the printers that need a specific free driver from foomatic-db, with links to OpenPrinting",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/OpenPrinting/openprinting.github.io/discussions/253",
+          "published_at": "2026-10-25T07:52:30Z",
+          "message": "messages/2026-10-25/openprinting-openprinting-github-io-253.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/themactep/thingino-firmware/discussions/1865",
+      "title": "OpenDeviceDB lists the cameras thingino supports, with links to their build profiles",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/themactep/thingino-firmware/discussions/1865",
+          "published_at": "2026-10-25T07:53:08Z",
+          "message": "messages/2026-10-25/themactep-thingino-firmware-1865.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/merbanan/rtl_433/discussions/3738",
+      "title": "OpenDeviceDB: the sensors rtl_433 decodes, searchable by model, each linking to its decoder",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/merbanan/rtl_433/discussions/3738",
+          "published_at": "2026-10-25T07:52:20Z",
+          "message": "messages/2026-10-25/merbanan-rtl-433-3738.md"
+        },
+        {
+          "url": "https://github.com/merbanan/rtl_433/discussions/3738#discussioncomment-19330862",
+          "published_at": "2026-11-01T10:05:32Z",
+          "message": "messages/2026-11-01/merbanan-rtl-433-3738-discussioncomment-19330862.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Koenkk/zigbee2mqtt/discussions/33492",
+      "title": "OpenDeviceDB: all Zigbee2MQTT devices searchable next to 24 other open projects, with links back here",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/Koenkk/zigbee2mqtt/discussions/33492",
+          "published_at": "2026-10-25T07:52:02Z",
+          "message": "messages/2026-10-25/koenkk-zigbee2mqtt-33492.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/linuxwacom/libwacom/issues/1018",
+      "title": "FYI: libwacom's tablets are listed (with links back) on OpenDeviceDB",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/linuxwacom/libwacom/issues/1018",
+          "published_at": "2026-10-25T08:03:25Z",
+          "message": "messages/2026-10-25/linuxwacom-libwacom-1018.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/morluto/rea/discussions/4722",
+      "title": "Avoiding duplicate device reverse engineering: an opt-in lookup before analysis (OpenDeviceDB)",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/morluto/rea/discussions/4722",
+          "published_at": "2026-10-17T08:06:38Z",
+          "message": "messages/2026-10-17/morluto-rea-4722.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/betaflight/betaflight/discussions/15899",
+      "title": "OpenDeviceDB lists every Betaflight board target, with its MCU and a link to its config",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899",
+          "published_at": "2026-10-25T07:52:39Z",
+          "message": "messages/2026-10-25/betaflight-betaflight-15899.md"
+        },
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19330863",
+          "published_at": "2026-11-01T10:05:34Z",
+          "message": "messages/2026-11-01/betaflight-betaflight-15899-discussioncomment-19330863.md"
+        },
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466",
+          "published_at": "2026-11-04T11:41:07Z",
+          "message": "messages/2026-11-04/betaflight.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/zwave-js/zwave-js/discussions/9405",
+      "title": "OpenDeviceDB: the Z-Wave JS device database, searchable by product id next to 24 other open projects",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405",
+          "published_at": "2026-10-25T07:52:59Z",
+          "message": "messages/2026-10-25/zwave-js-zwave-js-9405.md"
+        },
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19330864",
+          "published_at": "2026-11-01T10:05:35Z",
+          "message": "messages/2026-11-01/zwave-js-zwave-js-9405-discussioncomment-19330864.md"
+        },
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467",
+          "published_at": "2026-11-04T11:41:09Z",
+          "message": "messages/2026-11-04/zwave.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/arendst/Tasmota/discussions/25192",
+      "title": "OpenDeviceDB lists the 2,824 devices from the Tasmota templates repository, each linking back to its template",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/arendst/Tasmota/discussions/25192",
+          "published_at": "2026-10-25T07:52:11Z",
+          "message": "messages/2026-10-25/arendst-tasmota-25192.md"
+        },
+        {
+          "url": "https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470",
+          "published_at": "2026-11-04T11:41:10Z",
+          "message": "messages/2026-11-04/tasmota.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/opendevicedb/opendevicedb/pull/4",
+      "title": "Contributor thank-you and collaboration invitation",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/4#issuecomment-6625173661",
+          "published_at": "2026-11-04T07:25:23Z",
+          "message": "messages/2026-11-04/opendevicedb-opendevicedb-4-issuecomment-6625173661.md"
+        },
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/4#issuecomment-6625243071",
+          "published_at": "2026-11-04T07:29:02Z",
+          "message": "messages/2026-11-04/opendevicedb-opendevicedb-4-issuecomment-6625243071.md"
+        }
+      ]
+    }
+  ],
+  "listings": [
+    {
+      "name": "Awesome MCP Servers",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737",
+      "head": "6e3027b26c17fb0b44c3b6151fcbe201106f38db",
+      "status": "open",
+      "ci": "check-submission passed",
+      "last_followup": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040"
+    },
+    {
+      "name": "Official MCP Registry",
+      "server": "org.opendevicedb/opendevicedb",
+      "version": "0.3.0",
+      "status": "already_active_before_this_campaign"
+    },
+    {
+      "name": "Awesome Reverse Engineering",
+      "url": "https://github.com/morluto/awesome-reverse-engineering/pull/14",
+      "status": "merged_before_this_campaign",
+      "merged_date": "2026-10-18",
+      "note": "Previously completed listing rediscovered and verified; not counted as new outreach."
+    }
+  ],
+  "next_research": [
+    {
+      "name": "Tympan",
+      "source": "https://github.com/Tympan/Tympan_Library",
+      "relevance": "Open-source hearing-aid hardware and DSP library",
+      "next_action": "Verify current community contact channel and check sent history before contacting"
+    },
+    {
+      "name": "Gadgetbridge",
+      "source": "https://gadgetbridge.org/",
+      "relevance": "Device protocols and existing importer",
+      "next_action": "Review current community channels and policy; check history before contacting"
+    },
+    {
+      "name": "Klipper",
+      "source": "https://www.klipper3d.org/Contact.html",
+      "relevance": "Existing printer configuration importer",
+      "next_action": "Check forum access and posting guidelines; check history before contacting"
+    }
+  ],
+  "remaining": [
+    "Await sigrok list-owner help with subscription; original outreach has not been reposted",
+    "Await NUT moderation; do not resend",
+    "Await gPhoto moderation; do not resend",
+    "Handle substantive replies when received; proposed new importers are not yet implemented",
+    "Continue with the research queue if further outreach is pursued; verify channel and duplicates first"
+  ]
+}
