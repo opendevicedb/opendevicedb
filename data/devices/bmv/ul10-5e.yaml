@@ -9,11 +9,12 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350. Identity,
-  USB paths, configuration producers and B-mode C4/8 line/frame structure are partially mapped. A
-  Rust offline parser preserves headers and extracts two signed i8 memory lanes; host command/IN
-  coordination is software-tested and a real identity-only preflight sent no OUT. Current-unit image
-  acquisition, DSP reconstruction, physical calibration and acoustic stop remain unverified.
+summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350. USB
+  identity/configuration and B-mode C4/8 framing are partially mapped. Rust offline work covers
+  signed i8 lanes, CPU envelopes, K3/K4 and an enhancement0 temporal/geometry raster candidate using
+  an explicit portability policy for native SRI initialization ambiguity. Synthetic/reference tests
+  are available; current-unit image acquisition, manufacturer/GPU equivalence, calibration and
+  acoustic stop remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -85,7 +86,23 @@ interfaces:
       and13363200output bytes: constant powers of two give analytic reduction/log2 values.
       Source/envelope SHA and configuration binding, bounds and numerical errors are explicit;
       downstream processing does not repeat the prior raw-source audit. Common190tests pass.
-      Temporal/SRI, geometry, rendering, GPU equivalence and current-unit imaging remain open."
+      Temporal/SRI, geometry, rendering, GPU equivalence and current-unit imaging remain open.
+      Subsequent offline CPU work now covers enhancement0 temporal correlation, downstream geometry
+      and a candidate grayscale raster. Uniform-mask-portability-v1 directly uses the scalar mask
+      rather than inventing a native initial SRI_N; equivalence to a fresh native object is not
+      claimed. The coefficient is read from a known-hash local36-byte table, quantized UNORM8 before
+      mixing; no vendor payload is redistributed. First output is retained as warmup/not
+      software-accepted, followed by state1-to2 correlation. History continuation requires identical
+      configuration/input-file hashes/settings and adjacent declared frame ranges in one immutable
+      source; gaps or changes require an explicit new epoch. D320x160x4 and C280x320x4 are quantized
+      before normalized bilinear sampling with black CLAMP borders, distinct from the geometry stage
+      clamp-to-edge. Packed components become four output bands; PGM uses an own linear grayscale
+      palette, not the manufacturer palette.18synthetic outputs covering six depths and nine
+      coefficient selections match10340352bytes of an independent scalar binary32 reference. The
+      earlier two-frame zero raw fixture now runs through envelopes/K3/K4 to the raster.204common
+      tests pass. Active SRI, manufacturer palette, GPU oracle/equivalence, attributed current-unit
+      imaging, calibration and acoustic/electrical validation remain open; no new probe I/O or
+      activation was performed."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -101,6 +118,19 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline enhancement0 correlation/geometry/raster tests verify warmup, quantized coefficients,
+      state reset/resume, half-pixel interpolation, black-border sampling, geometry crop and
+      four-band order.18synthetic outputs/six depths/nine coefficient selections
+      match10340352D/C/raster bytes against an independent scalar binary32 reference; PGM
+      payload/header checked. Earlier synthetic zero raw journal proceeds through two adjacent
+      frames to the renderer.204common tests and Clippy/format pass. History guards reject
+      repeated/skipped/cross-source ranges and changed input groups/settings; downstream audit
+      checks B/manifests without reauditing E/A/raw. Uniform-mask portability is explicitly adapted,
+      not native fresh-object equivalence. No hardware replay, active SRI or manufacturer palette,
+      GPU oracle or physical validation; no vendor payloads shared.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -242,4 +272,8 @@ provenance:
     - Rust probe-frame0.5 CPU K3/K4 and standalone envelope archive audit
     - Independent scalar binary32/analytic constant-envelope reference over36cases
     - 190-test common suite with synthetic source/settings/error cases
+    - Rust probe-frame0.6 enhancement0 uniform-mask temporal/geometry raster and archive lineage
+      guards
+    - Independent per-pixel scalar binary32 reference over18synthetic outputs
+    - 204-test common suite with explicit software/hardware validation boundaries
 updated: 2026-11-04
