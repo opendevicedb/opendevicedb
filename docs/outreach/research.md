@@ -67,6 +67,8 @@ The earlier [OpenDeviceDB introduction in REA](https://github.com/morluto/rea/di
 
 Assessed on 2026-11-04 following the owner's suggestion. **No submission or comment posted.**
 
+Follow-up: the owner subsequently reported that HN prevented submission with an account-related message. The exact error is pending, so the cause is not established and publication remains unconfirmed. No account-age, karma, domain-block or ban diagnosis is inferred. HN's guidelines direct site/moderation inquiries to `hn@ycombinator.com`; no support email has been sent.
+
 - Sources: [HN guidelines](https://news.ycombinator.com/newsguidelines.html), [Show HN guidelines](https://news.ycombinator.com/showhn.html), [Neo 2 directory record](../../data/devices/dji/neo-2.yaml), [original client repository](https://github.com/smichea/dji-neo2-lan-client), [pinned protocol scope](https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md), [pinned validation report](https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/VALIDATION.md).
 - Assessment: a concrete local Linux/Python interoperability investigation is a plausible fit for HN's technical-curiosity audience. Lead with the BLE setup, SWUDP/DUML transport, video and selected telemetry; show how OpenDeviceDB preserves links, scope and remaining unknowns. This is an editorial judgment, not evidence of audience interest or a prediction of reach.
 - A directory entry or article is best considered for a regular link submission. Show HN would require presenting the actual personally built, usable project; hardware demonstrations or a detailed hardware article can qualify under its rules. The entry alone should not be labelled Show HN.

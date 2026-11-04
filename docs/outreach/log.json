@@ -546,9 +546,9 @@
     {
       "name": "Hacker News / DJI Neo 2",
       "source": "https://news.ycombinator.com/newsguidelines.html",
-      "status": "assessed_not_submitted",
+      "status": "owner_reports_submission_blocked",
       "research_note": "research.md#hacker-news-dji-neo-2-assessment",
-      "next_action": "Owner to consider a technical original-source submission, write the HN material personally and check for duplicates. HN prohibits generated text and automated posting."
+      "next_action": "Obtain the exact HN error from the owner before diagnosing the account restriction. Publication is unconfirmed; no support email sent."
     }
   ],
   "remaining": [
