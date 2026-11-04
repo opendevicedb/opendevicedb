@@ -11,11 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435. Rust identity/configuration/receive
-  and offline CPU reconstruction are experimental. Two phantom attempts preserve an initial
-  ID-source refusal and a subsequent2.1MB counter stream with no imaging headers. Exact
-  original-instruction comparison corrects the final voltage tuple from USB-test value1 to16 in
-  Rust0.15. Real convex images, acoustic stop, calibration and physical safety remain unvalidated.
+summary: Owner-confirmed convex04b4:4611 reportsUC5-2S/ID1435. Experimental Rust controller and
+  General CPU reconstruction now have a local web interface verified with synthetic replay. Third
+  phantom test after voltage correction receives770048non-counter bytes but lacks global32C framing,
+  so no real convex image is reconstructed. Acoustic stop, sustained reception and physical
+  calibration remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -385,7 +385,33 @@ interfaces:
       imaging/acoustic behavior or proof of firmware golden state.347common tests pass. Owner
       unplugs and USB absence confirmed. Static Java delayed0x60003 and explicit USB counter-test
       verifier are distinct; no causal necessity for skipGolden established or added. Raw/unique
-      identity fields, vendor bodies/banks and derived packet payloads remain private."
+      identity fields, vendor bodies/banks and derived packet payloads remain private. Third
+      owner-confirmed stable phantom attempt uses preserved Rust0.15 with the
+      original-instruction-corrected voltage tuple0x70034=16. Automatic uaccess succeeds after a
+      fresh USB reconnect without a manual ACL/password. Same-handle post-PID0 control recheck again
+      selectsUC5-2S/1435 while rawHWID0/connection0 remains preserved.19host OUT transfers complete
+      through configuration/Start/finalFreeze, without skipGolden, firmware/reset or
+      retry.770048DATA bytes no longer form the exact counter:385024u16LE words range0..32767,
+      with361933increment breaks.117single0000ff7f markers exist, but zero double markers/global32C
+      headers at any byte phase; no real convex image is reconstructed.93single-marker intervals
+      equal7200bytes, but other intervals/field jumps prevent claims of complete lines or physical
+      frames. Host journal integrity does not establish loss-free wire reception. An
+      independent18-Evidence native framing review confirms currentPlus B calls Get32CLineData and
+      expects the1024byte global double-marker header. Initial DataO1 is B mode, not proof of
+      legacy-reader selection; InsertData offset0/2 does not synthesize headers. No applicable
+      active fallback or fixed enable-header command established; missing-header cause remains
+      unresolved. The owner unplugs after the test and USB absence is verified. Rust0.16 exposes
+      nonblocking DATA preview and external cancellation through the same controller; local web0.2
+      integrates the unchanged General CPU engine with explicit51backing state and fixed
+      resources.349common tests pass. Browser-only synthetic replay:15attempts/14published PNGs,
+      photo/video, exact preview-versus-final replay;969state files/145842176bytes match including
+      resume and software-boundary handling. Real trial03 replay preserves770048bytes
+      and0images/exports. Linear regression preserves112results/61030424bytes and14preview PNG
+      hashes. Synthetic declaration appears in UI/status/export provenance. Odd PNG95x79 is padded
+      to96x80 for yuv420p video only. No physical web0.16 capture, GPU equivalence, sustained
+      loss-free reception, acoustic stop, physical calibration or clinical suitability is validated.
+      Existing linear web runtime is preserved. Raw/unique fields, vendor code/resources/payloads
+      and pixels stay private."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -395,6 +421,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "Third phantom trial (2026-11-04): corrected0.15,19complete hostOUT,770048DATA
+      bytes,117single markers,0global headers/images. Fresh automatic uaccess succeeds.18-Evidence
+      native framing review keeps format cause unresolved. Web0.2/USB0.16 replay-only
+      proof:349common tests; synthetic14images/2exports,969state files/145842176bytes match; actual
+      trial03 still0images. Linear112results/61030424bytes unchanged. No physical
+      web/GPU/acoustic/calibration validation. Private raw/vendor payloads/pixels excluded."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
