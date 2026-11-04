@@ -10,10 +10,10 @@ identifiers:
     - 04b4:00f1
 status: partial-protocol
 summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. USB
-  identity/configuration, C4/8 framing and image-processing formulas are partially mapped. Rust
-  offline work covers envelopes/K3/K4, enhancement0 and active SRI1..8 with explicit bounded
-  dispatch, quantized state and synthetic reference checks. Manufacturer/GPU equivalence, attributed
-  current-unit acquisition/image, calibration and acoustic stop remain unverified.
+  framing/configuration and image-processing formulas are partially mapped. Rust offline
+  reconstruction covers envelopes/K3/K4, enhancement0, active SRI1..8 and manufacturer palette RGBA
+  with bounded state and targeted original-instruction emulation checks. Complete GPU/manufacturer
+  equivalence, attributed acquisition/image, calibration and acoustic stop remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -125,7 +125,35 @@ interfaces:
       tests and Clippy/format pass. The policy is a bounded reconstruction of statically mapped
       formulas, not GPU/native equivalence or evidence that undefined native paths execute safely.
       No new device I/O, real image, palette equivalence, calibration or acoustic/electrical
-      validation."
+      validation. Palette follow-up resolves the actual live consumer: ImageShowView uses
+      fillImagePixels(Bitmap), which calls Convert and memcpy of4*N bytes into locked Android
+      pixels. It does not use the Java int[] wrapper, whose incoming static wrapper-call search
+      found no callers. With ARGB_8888 direct memory the live bytes are RGBA and a little-endian
+      word is0xAABBGGRR; no channel swap occurs in the native copy. This follows static native/Java
+      evidence and the Android API contract, not a screen observation. JNI SetColorMap duplicates
+      composition rather than calling ChangeColorMap. JNI normalizes gray outside0..7 to0 and color
+      outside-1..7 to-1; direct ChangeColorMap has unguarded gray reads outside0..7. The gray bank
+      has8rows, color has8rows plus a fallback. Each entry takes byte2 of the selected gray word as
+      a color/fallback index. The auxiliary gray0 copy is not the Convert LUT. Fresh UL10-5E XML
+      GrayLevel3 is imported with+1, giving actual initial gray4/color-1; persisted user settings
+      can differ. UI gray8 passes unchanged and normalizes to0. All17table rows have alpha255;
+      fallback differs from identity gray at252indices, so it must not be silently replaced by
+      grayscale. Convert processes eight pixels per iteration although allocation is4*N:
+      nonmultiples8 overrun by(-N)%8 input bytes and4*((-N)%8) output bytes. Isolated Unicorn2.1.4
+      executes225300original selected AArch64 instructions for72palette/index sweeps and11tail
+      sizes, plus241098SetColorMap instructions for182selections including signed extremes.
+      Libc/allocation and thread-check calls are explicit stubs; no Android/GPU/device execution or
+      target initialization. Rust palette conversion matches182full256-index sweeps/186368bytes. Its
+      exact-index-count-v1 policy preserves all declared pixels without reproducing native
+      overflow.99offline archives compare3228944RGBA bytes and independently decoded PNGs,
+      with22invalid/non-overwrite cases; own synthetic PNGs test nonopaque alpha and dimensions up
+      to2048x2048. The live bitmap copy ignores getInfo return, stride, format, flags and
+      N==width*height; this is documented, not treated as a general safe bitmap writer. Local table
+      files remain hash-bound and absent from published artifacts; even derived full palette sweeps
+      remain ignored/private.259common software tests pass. Full-engine GPU equivalence, observed
+      Android display, attributed current-unit acquisition, calibration and acoustic/electrical
+      validation remain open. The local OpenCL loader reports no platform (-1001); no target kernel
+      executed."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -141,6 +169,17 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static REA/Ghidra/JADX live bitmap consumer, JNI normalization, XML preference import and
+      original table identities checked. Selected original ARM64 instruction emulation with explicit
+      libc/allocation/thread stubs verifies72palettes,11tail cases and182JNI selections;
+      Rust182index sweeps match186368bytes.99offline archives/3228944RGBA bytes and PNGs
+      match,22invalid/non-overwrite cases and own nonopaque RGBA PNGs through2048x2048
+      checked.259common tests, format and Clippy pass. No Android/GPU/device execution, current-unit
+      acquisition, image calibration or safety validation. No vendor code, tables, palette sweeps,
+      firmware, unit-unique values or medical data published.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -319,4 +358,9 @@ provenance:
       bounded dispatch
     - Independent96-frame ordered NumPy2.5.4 binary32 evaluation and368640000byte checks;252-test
       common suite
+    - REA Ghidra12.1.4 and JADX static JNI/live-bitmap/selection analysis with retained Evidence
+    - Unicorn2.1.4 isolated selected original ARM64 ChangeColorMap/Convert/SetColorMap instruction
+      emulation with explicit external stubs
+    - Rust probe-frame0.8 bounded RGBA/palette archive and PNG writer; Python stdlib independent
+      CRC/zlib/pixel checks;259-test common suite
 updated: 2026-11-04
