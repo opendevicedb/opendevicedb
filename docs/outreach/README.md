@@ -81,7 +81,7 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 4. Record substantive responses as a brief attributed summary with a public permalink where available. Keep proposed work separate from implemented changes and verified hardware behavior.
 5. Retain personal correspondence and private account evidence outside this public repository. Never commit mail headers, mailbox IDs, phone numbers, residence details or subscription tokens.
 
-fwupd supplied a substantive source suggestion. Our [follow-up](messages/2026-11-04/fwupd-quirks-followup.md) links [proposal issue 19](https://github.com/opendevicedb/opendevicedb/issues/19); no importer is implemented. Glasgow declined AI-assisted outreach; no further contact is queued.
+fwupd supplied a substantive source suggestion. Our [latest follow-up](messages/2026-11-04/fwupd-index-followup.md) links [draft PR 25](https://github.com/opendevicedb/opendevicedb/pull/25): a tested research index of 104 declarations from three plugins. Local importer tests and CI passed; full plugin coverage, physical-model mapping and user-facing lookup remain further work under [issue 19](https://github.com/opendevicedb/opendevicedb/issues/19). The draft is unmerged and undeployed. Glasgow declined AI-assisted outreach; no further contact is queued.
 
 liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending.
 
@@ -97,6 +97,6 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Draft PR remains unmerged; the live site has not been changed by this proposal.
 - [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Reported against current main; no correction or deployment claimed.
 - Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
-- New importer and joint-work suggestions in the messages are proposals, not delivered integrations.
+- Draft code and new importer/joint-work suggestions do not establish delivered integrations.
 
 - [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): validated curated overlay retains imported Gadgetbridge links/pairing. Draft remains unmerged and undeployed; no watch test or new flashing route.

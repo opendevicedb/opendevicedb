@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:00:05.781872Z",
+  "last_verified_at": "2026-11-04T18:10:52.371729Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -246,7 +246,7 @@
       "published_at": "2026-11-04T11:49:49Z",
       "message": "messages/2026-11-04/fwupd.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback; issue 19 scopes a proposed downstream importer. No importer has been implemented.",
+      "next_action": "Await feedback in the existing discussion. Draft PR 25 implements a 104-declaration, three-plugin research index; local tests and CI passed. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under issue 19. No hardware test or merge/deployment.",
       "response": {
         "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19397020",
         "by": "hughsie",
@@ -258,10 +258,20 @@
           "published_at": "2026-11-04T16:11:13Z",
           "message": "messages/2026-11-04/fwupd-quirks-followup.md",
           "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19403540",
+          "published_at": "2026-11-04T18:08:31Z",
+          "message": "messages/2026-11-04/fwupd-index-followup.md",
+          "outgoing_text_verified": true
         }
       ],
       "proposal_url": "https://github.com/opendevicedb/opendevicedb/issues/19",
-      "proposal_message": "messages/2026-11-04/fwupd-identifier-proposal.md"
+      "proposal_message": "messages/2026-11-04/fwupd-identifier-proposal.md",
+      "implementation_proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/25",
+      "implementation_proposal_message": "messages/2026-11-04/fwupd-index-pr.md",
+      "implementation_proposal_head": "3b0dcc5419c903122f218560248a5fbb5470d56d",
+      "implementation_status": "three_plugin_research_index_draft_unmerged_undeployed"
     },
     {
       "name": "usb-rea",
