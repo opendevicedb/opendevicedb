@@ -64,7 +64,18 @@ interfaces:
       mapped; active SRI and fresh-object SRI_N initialization remain incomplete. SignalData is an
       RGBA UNORM8 image2*N by320 with useful size2560*N excluding row padding; a fixed wrapper
       copy0x50000 does not establish its geometry. No CPU/GPU numerical equivalence or current-unit
-      image validation claimed."
+      image validation claimed. A CPU Rust port now computes the statically specified K0→K1→K2
+      envelope with locally supplied, whole-preset hash-verified inputs. It binds a selected frame
+      and its confirmation header to the fully hashed archived source and checks all addresses.
+      All36 preset/depth address schedules match independent static bounds. Analytical synthetic
+      coefficients cover signed FIR shifts/saturation, lane order and hypot; generated zero-payload
+      frames with actual local coefficients yield184320zero output values. This is not GPU
+      bit-equivalence, image reconstruction or current-unit acquisition. Active SRI is now mapped
+      statically, including UNORM8/SNORM8/SIGNED_INT8 intermediates and temporal state.
+      Unresolved/unsafe-to-assume native behavior includes fresh-object SRI_N initialization,
+      inherited128/256 dispatch dimensions exceeding some N80 allocations, a local direction9
+      boundary beyond the9-filter bank, and persistent histories/tails. A bounded port must expose
+      these gaps instead of silently clamping or inventing state."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -80,6 +91,14 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline Rust CPU-envelope port and source/segment audit verified with synthetic data and
+      local known coefficient inputs; no vendor code executed, no coefficient payload
+      redistributed.36configurations match independent address bounds. Static SRI
+      graph/formats/state mapped; native dispatch/direction/initialization ambiguities remain
+      explicit. No real image, acoustic property, physical units or hardware replay validation.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -197,4 +216,7 @@ provenance:
     - Rust probe-usb0.6.0 journaled coordinator and identity-only preflight
     - Rust probe-frame0.2.0 bounded incremental C4/8 framing and signed lane candidates
     - Independent synthetic-byte/hash/order verification
+    - Rust probe-frame0.3.0 CPU envelope and selected-source audit
+    - REA6.5.0 / Ghidra12.1.4 static SRI analysis
+    - Independent36-configuration address-bound comparison and analytic synthetic tests
 updated: 2026-11-04
