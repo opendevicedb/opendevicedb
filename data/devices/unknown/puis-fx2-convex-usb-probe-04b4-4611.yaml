@@ -11,11 +11,11 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, statically mapped to TX16/ADC8.
-  Identity, selected B producer families and message/reset callbacks are partially mapped. Rust now
-  includes an experimental same-handle message-bound bench executor and durable variable/control
-  write journals, validated on synthetic transports only. Attributed acquisition, reconnect, image
-  and electrical/acoustic validation remain unverified.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435 with candidate firmware1.32.
+  Identity, message/configuration producers and experimental Rust capture lifecycle are partially
+  mapped. Offline Rust journal replay now preserves gaps and opaque32C candidates. Static downstream
+  B mapping identifies unsigned16-bit vector inputs and stateful preprocessing/reshape; no convex
+  acquisition, reconstructed image, physical specification or acoustic stop has been validated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -135,7 +135,29 @@ interfaces:
       parameters, raw-first delivery, cancellation, message guards and reader/writer
       panics/joins.241common tests pass;416previous bundle fingerprints remain unchanged and named
       bootstrap controls match an independent literal LE reference. No real USB I/O, current-unit
-      activation, image, hardware ACK, query causality, acoustic stop or calibration is claimed."
+      activation, image, hardware ACK, query causality, acoustic stop or calibration is claimed.
+      Convex B payload follow-up (static Plus ARM64 framework and its distinct algorithm library):
+      DataOrganization retains whole accepted lines, including32-byte prefixes; OriginalFrame keeps
+      its1024-byte frame header separately and passes the line buffer unchanged to the algorithm.
+      The short* ABI does not establish signed samples: the linked first B kernels load unsigned
+      ushort2/ushort4, unlike the linear signed char2 path. UC5-2S_16 General enables LPF_Up4 then
+      MDown before reshape; phase-byte0x11 and recomposition settings select the reshaping branch.
+      Reshape_frame leaves two boundary pairs unwritten in a reused float buffer, so previous state
+      or an explicit initial state is required. A stateless zero-filled substitute is not
+      demonstrated equivalent. LPF interpolation requires an additional sample beyond the15-position
+      filter halo. Physical meaning/order of lanes, actual emitted format, valid kernel domains,
+      complete B parameter propagation, SRI/DSC/rendering and numerical/GPU/phantom validation
+      remain open. Rust probe-frame0.11 adds offline replay of exact convex EP86/16384 receive
+      journals: hash-checked bounded snapshots, valid timeout prefixes, explicit gap recovery or
+      stop, independent per-gap parsers and diagnostic/orphan exclusion. Recovery uses word
+      alignment relative to each observed epoch, not an asserted original wire phase. Headers/lines
+      remain opaque candidates, complete_frames is null, and no unsigned sample export or image
+      decoder is implemented by replay. Synthetic CLI checks run in bubblewrap without
+      USB/network/original repo, including split headers, timeout prefixes, a missing raw
+      interrupting a line, recovery and stop, profile/size/option rejection and
+      non-overwrite.283common software tests pass; no convex OUT or real image acquisition occurred.
+      Only independently written findings and metadata are published; no vendor code, kernels, keys,
+      coefficients or medical data."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -145,6 +167,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static REA/Ghidra22new retained Evidence and local resource hashes map B buffer ownership,
+      kernel linkage, unsigned vectors and state boundaries; no target runtime/GPU/USB. Rust
+      probe-frame0.11 replay tested with11new cases,283common tests, fmt and Clippy. Independent
+      isolated CLI:1216own synthetic bytes,1candidate header/3lines, gap destroys20pending bytes of
+      context while preserving those bytes, two recovered epochs, stop mode,5negative cases. Linear
+      regression preserves two synthetic frames at four request sizes and zero frames for the
+      archived first real linear trial. No convex hardware replay or image validation.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -310,4 +342,9 @@ provenance:
       write journal
     - 114synthetic fault sessions, independent named-control LE reference,416fingerprint regression
       checks and241-test common suite
+    - REA Ghidra12.1.4 static framework/Plus algorithm linkage with retained Evidence and closed
+      snapshots
+    - Rust probe-frame0.11 bounded convex receive-journal replay; shared snapshot engine with
+      distinct format policies
+    - bubblewrap isolated own synthetic CLI checks and linear regression;283-test common suite
 updated: 2026-11-04
