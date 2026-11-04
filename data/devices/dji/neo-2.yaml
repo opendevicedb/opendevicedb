@@ -1,0 +1,41 @@
+id: dji/neo-2
+vendor: DJI
+model: Neo 2
+category: drone
+status: partial-protocol
+summary: >-
+  Experimental MIT-licensed Linux/Python client for local BLE setup,
+  SWUDP/DUML communication, video reception and selected telemetry on stock
+  firmware. Development reports describe a short takeoff/landing cycle and
+  yaw rotations. Full flight control, link-loss behavior and physical
+  calibration remain incomplete; original hardware captures are private.
+interfaces:
+  - name: BLE setup over GATT/DUML
+    transport: ble
+    status: partial
+    confidence: medium
+    spec: https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
+    notes: Selected setup messages implemented; device-specific identities and credentials remain local.
+  - name: Wi-Fi SWUDP/DUML
+    transport: wifi
+    status: partial
+    confidence: medium
+    spec: https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
+    notes: Video reception and selected telemetry/control implemented; complete flight control remains unvalidated.
+projects:
+  - name: DJI Neo 2 LAN client
+    url: https://github.com/smichea/dji-neo2-lan-client
+    kind: library
+    license: MIT
+    official: false
+    freedom:
+      nonfree: [device-firmware]
+      cloud: unknown
+      notes: Sessions use the local BLE/Wi-Fi link; initial vendor activation/account requirements on a new device have not been established.
+provenance:
+  sources:
+    - https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
+    - https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/VALIDATION.md
+  ai_assisted: true
+  tools: [Codex]
+updated: '2026-11-04'
