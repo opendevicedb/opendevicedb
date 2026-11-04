@@ -12,10 +12,9 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust
-  receive-to-B grouping and General CPU stages through DSC/Plus palette are ported with explicit
-  state and independent checks. Native RDH undefined-write conflict remains explicit. Integrated
-  temporal reconstruction/web, real convex acquisition, full engine/GPU/visual equivalence and
-  physical validation remain open.
+  integrated offline journal-to-General CPU image reconstruction now preserves explicit temporal
+  state and attempted-call lifecycle. Actual convex acquisition/capture-web, native RDH undefined
+  effects, GPU/visual equivalence and physical calibration remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -327,7 +326,31 @@ interfaces:
       completed temporal engine. New evidence snapshots saved/closed; no new USB/Android/GPU or
       installation. Full integrated convex reconstruction/capture/web, actual attributed convex
       stream, native RDH undefined effects, GPU/Android visual equivalence and physical calibration
-      remain open. No vendor source/banks/pixels or medical data published."
+      remain open. No vendor source/banks/pixels or medical data published. Rust probe-frame0.21 now
+      integrates receive journal -> modeled B-size grouping -> General BFSP/DTGC/compound/SRI/DSC ->
+      RGBA/PNG with51complete retained backings per attempt. Immutable hash-bound
+      resources/settings; explicit caller state or deliberate cpu-zeroed-v1 OWN memory policy, not
+      native cold start (Up4 not initialized and native RDH operations exceed its declared width).
+      Native Process and nested Update execute6480prepared-object cases
+      plus8sequences,756410original ARM64 instructions with declared stage/API stubs and selected
+      ELF thunk relocation. Dirty never clears; Update advances counter before possible BFSP failure
+      and its API status is ignored by original Process.2376Rust scheduler cases match
+      returns/counters/masks/call order, including1188General/noNE/successful-Update cases; API
+      failures remain documentary, not simulated GPU state. Two recurrent numerical integration
+      chains (8complete passages,12checkpoints) match all612state files/92110848bytes to existing
+      original OpenCL bodies compiledCPU with explicit helper policies, as well as DSC outputs and
+      separate RDH outside-write trace. Freeze preserves all51backings and mask/dirty, resets only
+      SRIcounter/compoundinit. BFSP size rejection after Freeze advances counter without changing
+      backings; next valid call can publish0 without two successful image warmups. Warmup-100
+      images/states retained but not published. Explicit stop or software-Freeze-preserve-backing
+      recovery at gaps/rejected groups, never inferred acoustic stop. Seven isolated synthetic
+      receive-to-PNG CLI paths and30refusals/nonoverwrite checks,341common tests and unchanged
+      archived linear14images/61030424bytes pass. Local Chromium gallery shows only publishable
+      candidates, no external requests. Source43files
+      digest0abec22e38b73bfdb32f77ec53fcd59b7b7beb54107edb6ea72e05108930ac78. No new
+      USB/Android/GPU, vendor body/bank/pixel publication, attributed real convex acquisition,
+      native FIFO scheduling, failed-API image-state inference or full engine/physical validation.
+      Convex capture/web integration and physical validation remain open."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -337,6 +360,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Integrated Rust0.21:2376scheduler cases match original ARM64 oracle,1188General
+      domain;6480native prepared-object cases/756410original instructions. Two recurrent
+      original-CPU numerical chains compare612complete-state files/92110848bytes
+      across8passes/12checkpoints, explicit own-zero/caller state, Freeze and size-failure
+      semantics.7synthetic receive-to-image CLI paths,30refusals,341common tests and
+      unchanged14-image linear replay pass. No real convex acquisition, native cold-start/GPU or
+      physical-equivalence claim.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -634,4 +667,12 @@ provenance:
     - Independent scalar B/BM thread model91streams/103checkpoints, not original thread execution
     - Rust product82streams/2711states/289groups plus8isolated journal-to-group-to-BFSP paths,24CLI
       refusals/337common tests
+    - Rust probe-frame0.21 integrated offline convex reconstruction with51explicit-state files and
+      immutable resources
+    - Unicorn2.1.4 actual ARM64 Process/Update nested with declared API/stage
+      stubs:6480cases/756410original instructions
+    - Retained original OpenCL CPU stage harnesses, ASan/UBSan/noFMA and explicit builtin
+      policies;2recurrent integration chains/8passes
+    - Isolated7CLI journal-to-PNG cases/30refusals,341common tests and local Chromium gallery
+    - Independent own Rust backing/resume/Freeze/API invariant review; no new native provider session
 updated: 2026-11-04
