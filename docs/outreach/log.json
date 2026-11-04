@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:35:19.505849Z",
+  "last_verified_at": "2026-11-04T20:47:12.571328Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -847,17 +847,22 @@
     },
     {
       "name": "GNU Radio",
-      "channel": "administrative email",
-      "recipient": "discuss-gnuradio-request@gnu.org",
-      "subject": "subscribe",
-      "sent_at": "2026-11-04T19:38:22.000Z",
-      "status": "subscription_requested",
+      "channel": "member email to the official discussion list",
+      "recipient": "discuss-gnuradio@gnu.org",
+      "subject": "OpenDeviceDB: finding GNU Radio hardware support by device model",
+      "sent_at": "2026-11-04T20:43:43.000Z",
+      "status": "sent_and_read_back",
       "contact_source": "https://lists.gnu.org/mailman/listinfo/discuss-gnuradio",
-      "message": "messages/2026-11-04/gnuradio-subscription-request.md",
+      "message": "messages/2026-11-04/gnuradio.md",
       "outgoing_text_verified": true,
-      "membership_status": "unconfirmed",
-      "introduction_sent": false,
-      "next_action": "Await the normal confirmation notice; do not repeat the subscription. List discards nonmember messages; send no introduction before verified membership."
+      "membership_status": "confirmed",
+      "introduction_sent": true,
+      "next_action": "Await public distribution or a substantive response in the existing list thread. Do not repeat the subscription or introduction; sent state is not proof of publication or adoption.",
+      "membership_verified_at": "2026-11-04T20:38:46.000Z",
+      "administrative_messages": [
+        "messages/2026-11-04/gnuradio-subscription-request.md",
+        "messages/2026-11-04/gnuradio-subscription-confirmation.md"
+      ]
     },
     {
       "name": "INAV",
@@ -976,6 +981,19 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/contributing.md",
       "next_action": "Await maintainer review of the one-entry proposal. Open, unmerged and not an accepted upstream listing; no duplicate issue, comment or direct maintainer message."
+    },
+    {
+      "name": "Awesome IoT and Hardware Security / kayranfatih",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2",
+      "published_at": "2026-11-04T20:46:12Z",
+      "title": "docs: add OpenDeviceDB to useful websites",
+      "head": "8cb460c3e5c24f959e9ee835962ad45594866e05",
+      "message": "messages/2026-11-04/awesome-iot-hardware-security-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
+      "next_action": "Await maintainer review of the one-entry proposal. Open and unmerged; no accepted upstream listing or measured adoption. No duplicate issue, message or direct invitation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1174,6 +1192,18 @@
       "validation": "Official canonical site HTTP 200; one entry in Search Engines, original README bytes preserved outside added line, git diff --check passed. No runtime change.",
       "checks": "No check runs reported at readback; no CI success claimed.",
       "next_action": "Await maintainer review; do not claim listing acceptance or adoption."
+    },
+    {
+      "name": "Awesome IoT and Hardware Security",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2",
+      "head": "8cb460c3e5c24f959e9ee835962ad45594866e05",
+      "base": "4dfa9818769afc8372eb2c5df730c178781e8bef",
+      "status": "open_unmerged_proposal",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-iot-hardware-security-pr.md",
+      "validation": "Canonical official page HTTP 200 without redirect; one entry at bottom of Useful Websites, original README bytes preserved outside added line, git diff --check passed. Documentation only.",
+      "checks": "No check runs reported at readback; no CI success claimed.",
+      "next_action": "Await maintainer review; do not claim acceptance or adoption."
     }
   ],
   "next_research": [
@@ -1548,8 +1578,9 @@
     {
       "name": "Awesome IoT and Hardware Security / kayranfatih",
       "source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
-      "status": "readme_category_policy_and_duplicate_review_needed",
-      "next_action": "Contribution guide read; it requests one PR per resource and neutral checked canonical links. Read full README/category/policy and search earlier submissions before a separate proposal. No fork, PR or message yet."
+      "status": "pull_request_submitted",
+      "next_action": "Full source/policy/category and duplicate review completed; one-entry PR submitted and independently read back. Await review in the existing PR; no duplicate contact or accepted listing claim.",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2"
     }
   ],
   "remaining": [

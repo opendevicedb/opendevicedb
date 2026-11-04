@@ -107,9 +107,9 @@ Si le problème est résolu, utiliser [le formulaire officiel](https://news.ycom
 
 [OpenBeken](https://github.com/openshwprojects/OpenBK7231T_App) renvoie vers Elektroda. Les [conditions du forum](https://www.elektroda.com/rtvforum/faq.php) interdisent la publicité sans accord et l'accès automatisé. Ce forum est exclu de la campagne automatisée ; aucune inscription, promotion ou tentative par un autre canal. Il ne s'agit pas d'un emplacement recommandé pour copier une annonce.
 
-## GNU Radio : inscription en attente
+## GNU Radio : présentation envoyée
 
-La [liste officielle](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) rejette les messages des non-membres. Une demande d'inscription a été envoyée selon la procédure documentée ; la confirmation n'est pas encore arrivée. Ne pas répéter la demande ni publier l'annonce avant une adhésion vérifiée.
+L’inscription à la [liste officielle](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) est confirmée par son message de bienvenue. Une [présentation](messages/2026-11-04/gnuradio.md) a été envoyée après cette vérification. Sa diffusion publique et les retours restent à vérifier ; ne pas répéter l’inscription ou l’annonce.
 
 ## INAV : échange ouvert
 
