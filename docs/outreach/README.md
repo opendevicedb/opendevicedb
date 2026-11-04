@@ -58,6 +58,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
 | [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
 | [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
+| [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

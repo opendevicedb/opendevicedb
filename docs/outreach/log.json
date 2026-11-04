@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:11:50.449286Z",
+  "last_verified_at": "2026-11-04T17:16:56.861438Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -554,6 +554,16 @@
       "message": "messages/2026-11-04/openscan.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction. The directory sample is proposed only, with no importer or new hardware test."
+    },
+    {
+      "name": "dji-firmware-tools",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/o-gs/dji-firmware-tools/discussions/498",
+      "published_at": "2026-11-04T17:15:46Z",
+      "message": "messages/2026-11-04/dji-firmware-tools-neo2.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await protocol/directory feedback in the existing Show and tell thread; no duplicate introduction or parallel direct contributor approach. No new flight or upstream integration is claimed."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -828,6 +838,26 @@
       "source": "https://github.com/orgs/fujihack/discussions/24",
       "status": "deferred_to_avoid_same_community_duplicate",
       "next_action": "Potential future contributor lead for the Android 16 compatibility patch. No direct message alongside the new Fujihack introduction; do not infer collaboration interest."
+    },
+    {
+      "name": "Leonardo da Silva / lslv1243",
+      "source": "https://github.com/lslv1243/neo-control",
+      "status": "channel_research_needed",
+      "relevance": "His published first-generation Neo protocol work is already credited by our Neo 2 client.",
+      "next_action": "Find a suitable author-published contact route before a collaboration invitation. No GitHub Discussions or published general contact was found in the inspected README/profile. No message sent; no guessed email or promotional issue."
+    },
+    {
+      "name": "mobius2016",
+      "source": "https://github.com/o-gs/dji-firmware-tools/commit/3ca154490133e06e7e7aa7c70ebacc92bcff7815",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Concrete Air 3 communications, model-scoped calibration, replay and test-isolation contributions.",
+      "next_action": "Potential future contributor lead. No direct solicitation alongside the new dji-firmware-tools introduction; interest remains unknown."
+    },
+    {
+      "name": "DJITelloPy",
+      "source": "https://github.com/damiafuentes/DJITelloPy",
+      "status": "deferred_pending_channel_and_use_case_review",
+      "next_action": "No GitHub Discussions and no message sent. Verify a suitable official route and a concrete use case; Tello support does not establish Neo 2 compatibility."
     }
   ],
   "remaining": [

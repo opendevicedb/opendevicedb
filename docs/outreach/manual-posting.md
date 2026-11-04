@@ -37,6 +37,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587) : proposition d’index des pilotes par modèle, avec le Keithley 2400 comme exemple et les contraintes de version/adaptateur. En attente de réponse ; aucun importeur implémenté.
 
+- [dji-firmware-tools](https://github.com/o-gs/dji-firmware-tools/discussions/498) : présentation du client Neo 2 et de sa fiche OpenDeviceDB, avec attribution à neo-control et limites de validation. Utiliser ce fil pour les retours ; aucune nouvelle introduction à publier.
+
 ## Glasgow : ne plus promouvoir le projet
 
 Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977). Le suivi est marqué `declined_do_not_contact`. Aucun nouveau contact, relance ou texte de réponse assisté par IA n'est prévu. Ce lien est conservé pour le contexte ; Glasgow ne fait pas partie des lieux recommandés pour une nouvelle publication.
