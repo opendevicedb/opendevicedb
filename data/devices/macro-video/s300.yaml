@@ -1,0 +1,37 @@
+id: macro-video/s300
+vendor: Macro-Video
+model: S300
+aliases:
+  - V380 S300
+  - V380 dual-lens PTZ camera
+category: ip-camera
+status: partial-protocol
+summary: "Dual-lens pan/tilt Wi-Fi camera managed by the V380 Pro app (hardware HsAkQQVL, firmware
+  AppEV3L_V2_V1.0.9.10_20250731). Its native LAN protocol on TCP 8800 is documented: login with a
+  password envelope, live HEVC video (both lenses stacked in one 640x720 frame) and IMA ADPCM audio
+  with their media decryption, pan/tilt, talkback login and configuration reads were exercised on a
+  real camera; live settings, SD-card search and replay were recovered statically from the app. The
+  camera can be used locally without the phone app or the vendor cloud. Wi-Fi provisioning,
+  camera-originated alarm events and the newer port-8089 platform are not covered."
+interfaces:
+  - name: Native LAN protocol (TCP 8800)
+    transport: wifi
+    status: documented
+    confidence: medium
+    spec: https://github.com/smichea/v380-lan-protocol/blob/main/PROTOCOL.md
+projects:
+  - name: v380-lan-protocol
+    url: https://github.com/smichea/v380-lan-protocol
+    kind: protocol-doc
+    license: CC-BY-4.0
+provenance:
+  ai_assisted: true
+  tools:
+    - Claude Code
+    - REA
+    - Ghidra
+    - JADX
+    - llvm-objdump
+    - TShark
+    - FFmpeg
+updated: 2026-11-04
