@@ -1,0 +1,51 @@
+id: macro-video/s300
+vendor: Macro-Video
+model: S300
+aliases:
+  - V380 S300
+  - V380 dual-lens PTZ camera
+category: ip-camera
+status: controllable
+summary: "Dual-lens pan/tilt Wi-Fi camera managed by the V380 Pro app (hardware HsAkQQVL, firmware
+  AppEV3L_V2_V1.0.9.10_20250731). It can be driven over its stock firmware by an open client on the
+  native LAN protocol (TCP 8800): login, live HEVC video (both lenses stacked in one 640x720 frame)
+  and IMA ADPCM audio with their media decryption, pan/tilt, talkback login and configuration reads
+  were exercised on a real camera; live settings, SD-card search and replay were recovered
+  statically from the app. No phone app or vendor cloud is needed once the camera is on the Wi-Fi
+  network. The client needs three fixed constants read from the user's own copy of the V380 Pro app;
+  they are not distributed. Wi-Fi provisioning, camera-originated alarm events and the newer
+  port-8089 platform are not covered."
+interfaces:
+  - name: Native LAN protocol (TCP 8800)
+    transport: wifi
+    status: documented
+    confidence: medium
+    spec: https://github.com/smichea/v380-lan-protocol/blob/main/PROTOCOL.md
+projects:
+  - name: v380-lan-client
+    url: https://github.com/smichea/v380-lan-client
+    kind: library
+    license: AGPL-3.0-or-later
+  - name: v380-lan-protocol
+    url: https://github.com/smichea/v380-lan-protocol
+    kind: protocol-doc
+    license: CC-BY-4.0
+install:
+  - project: v380-lan-client
+    method: host-software
+    guide: https://github.com/smichea/v380-lan-client#readme
+    difficulty: medium
+    notes: Node.js 20+ client run on a computer on the camera's LAN; nothing is flashed. Requires the
+      camera's device ID and password, and three app constants read from the user's own copy of V380
+      Pro. Initial Wi-Fi pairing still uses the vendor app.
+provenance:
+  ai_assisted: true
+  tools:
+    - Claude Code
+    - REA
+    - Ghidra
+    - JADX
+    - llvm-objdump
+    - TShark
+    - FFmpeg
+updated: 2026-11-04
