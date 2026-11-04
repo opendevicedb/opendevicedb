@@ -74,6 +74,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Theengs Decoder](messages/2026-11-04/theengs-decoder.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/theengs/decoder/discussions/723) |
 | [OpenEarable / Tobias Röddiger](messages/2026-11-04/openearable-tobias-roeddiger.md) | email | `sent_and_read_back` | [contact source](https://open-earable.teco.edu/) |
 | [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
+| [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -115,3 +116,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 
 - OpenBikeSensor: forum terms prohibit solicitation and automated access; excluded from this automated promotional campaign. No contact or alternative-channel bypass.
 - SlimeVR: organization guidance forbids content submitted directly from AI across its repositories; no generated outreach or contribution sent.
+
+- OpenRTX: documented Sympa subscription sent/read back. Normal web confirmation returns to the same prompt, with no membership receipt observed; one documented owner-help request sent/read back. No list introduction, retry or alternate personal contact.

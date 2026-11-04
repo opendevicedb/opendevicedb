@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T19:07:32.615547Z",
+  "last_verified_at": "2026-11-04T19:22:17.261687Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -797,6 +797,24 @@
       "message": "messages/2026-11-04/opentrack.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread; no duplicate introduction or parallel contributor solicitation. Proposed model links only; no dedicated importer or hardware test."
+    },
+    {
+      "name": "OpenRTX",
+      "channel": "administrative email",
+      "status": "subscription_help_requested",
+      "contact_kind": "subscription_request_and_owner_help_only",
+      "sent_at": "2026-11-04T19:20:04.000Z",
+      "recipient": "users-request@lists.openrtx.org",
+      "message": "messages/2026-11-04/openrtx-subscription-help.md",
+      "subscription_message": "messages/2026-11-04/openrtx-subscription-request.md",
+      "subscription_requested_at": "2026-11-04T19:15:02.000Z",
+      "contact_source": "https://github.com/OpenRTX/openrtx.github.io/blob/a939a79474fb2e8772820dedcd4a1aa4b931991b/get_in_touch.md",
+      "subscription_procedure": "https://lists.openrtx.org/sympa/help/user-subscribe.html",
+      "community_url": "https://lists.openrtx.org/sympa/info/users",
+      "outgoing_text_verified": true,
+      "membership_status": "unconfirmed_after_web_confirmation_attempt",
+      "introduction_status": "prepared_privately_not_sent",
+      "next_action": "Await list-owner help or an authoritative membership confirmation. Do not repeat subscription/confirmation/help requests or post the prepared introduction before membership is confirmed. No importer or hardware/firmware/radio test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1237,6 +1255,29 @@
       "source": "https://gist.github.com/X-Stuff/0c21145b07a4baa3012fae8bffbe0577",
       "status": "deferred_to_avoid_same_community_duplicate",
       "next_action": "Public setup-guide author and fork are linked by opentrack. Keep as a contributor lead; no separate invitation alongside the new opentrack introduction. No inference of model-wide compatibility, employment or collaboration interest."
+    },
+    {
+      "name": "xpadneo",
+      "source": "https://github.com/atar-axis/xpadneo/tree/39625746fff63c997eeb53fe3a6fc1a3de08702e",
+      "community_url": "https://discord.gg/nCqfKa84KA",
+      "status": "manual_community_route_rules_review_needed",
+      "relevance": "Linux Bluetooth gamepad driver, shared HID identities, model/firmware/kernel-specific support.",
+      "next_action": "No GitHub Discussions. Official README links Discord; inspect room rules before an owner introduction. No promotional issue or message. AI-assisted code is allowed with human review/testing/sign-off; agents may not open external PRs, and must not sign on behalf of the owner. These are contribution-workflow requirements, not a claimed universal communication ban."
+    },
+    {
+      "name": "Kai Krakow / kakra",
+      "source": "https://github.com/atar-axis/xpadneo/commit/39625746fff63c997eeb53fe3a6fc1a3de08702e",
+      "status": "contributor_lead_contact_route_pending",
+      "relevance": "Public recent commits document controller firmware, pairing fixes and Bluetooth-adapter variants.",
+      "next_action": "Keep as a public project-based contributor lead. The published profile website was inaccessible during this check; no general contact route verified. No guessed email, solicitation through code credits or inferred collaboration interest."
+    },
+    {
+      "name": "Bluepad32 / Ricardo Quesada",
+      "source": "https://github.com/ricardoquesada/bluepad32/tree/80d6314e46f871719fbb4b721a2cc02227c4f369",
+      "community_url": "https://discord.gg/r5aMn6Cw5q",
+      "status": "manual_community_route_rules_review_needed",
+      "relevance": "Controller-to-host support matrix separates BR/EDR and BLE, chip families, firmware and controller features.",
+      "next_action": "No GitHub Discussions; official docs route support/community to Discord. Review room rules before any owner introduction. Published email examples are for hardware donations/product trades; no unrelated directory solicitation sent there, no promotional issue. No importer or hardware test."
     }
   ],
   "remaining": [
