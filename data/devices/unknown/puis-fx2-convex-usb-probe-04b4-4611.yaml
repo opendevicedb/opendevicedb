@@ -12,10 +12,10 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435 with candidate firmware1.32.
-  Identity, message/configuration producers and experimental Rust capture lifecycle are partially
-  mapped. Offline Rust journal replay now preserves gaps and opaque32C candidates. Static downstream
-  B mapping identifies unsigned16-bit vector inputs and stateful preprocessing/reshape; no convex
-  acquisition, reconstructed image, physical specification or acoustic stop has been validated.
+  Identity, configuration/messages and experimental Rust acquisition are partially mapped. Offline
+  receive replay preserves gaps and opaque32C candidates. Rust now ports selected General unsigned B
+  LPF/MDown/reshape with explicit backing state and targeted original-source CPU checks; complete
+  image processing and physical convex acquisition remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -157,7 +157,27 @@ interfaces:
       interrupting a line, recovery and stop, profile/size/option rejection and
       non-overwrite.283common software tests pass; no convex OUT or real image acquisition occurred.
       Only independently written findings and metadata are published; no vendor code, kernels, keys,
-      coefficients or medical data."
+      coefficients or medical data. Rust probe-frame0.12 now ports the selected General
+      B4/T128/m2/type8 LPF_Up4, MDown and ordinary/phase1 reshape stages. Four local input files are
+      strictly hash-bound; depth/selector and line geometry are explicit. Three active backing
+      prefixes must be supplied: no invented zero initialization/halo padding; unwritten Up4 regions
+      and phase1 boundary pairs retain caller state. The exact schedule bounds final LPF
+      interpolation reads, MDown cross-stride reads and raw overwrites; potentially overlapping
+      concurrent LPF destinations are rejected. The public asset-bound API checks the plan
+      downsample before mutation. Standalone archives retain six input snapshots and three outputs
+      with hashes, but supplied candidate grouping, frame completeness and state continuity are not
+      attested.64cases span all16General depth/selector combinations, four geometry/phase patterns,
+      high unsigned values and nonzero prior state. Three buffers per case match106975232bytes from
+      the original selected kernel bodies compiled for x86CPU with ASan/UBSan.65536retained edge
+      pairs are independently checked. This is source-kernel execution with explicit external
+      helpers, not original ARM instructions or a GPU oracle: NDRange coordinates are sequential,
+      u16 conversions use saturation/truncation, mix uses a+(b-a)*t with contraction disabled, and
+      both log implementations use host log10f.291common tests, formatting and Clippy pass,
+      plus18negative/non-overwrite CLI cases and unchanged linear/convex replay regressions. No
+      DTGC/compound/SRI/DSC/display, full-engine equivalence, actual convex stream, hardware
+      activation, calibration or acoustic stop is validated. Manufacturer
+      source/coefficients/derived outputs remain ignored/private; only independent findings and
+      metadata are published."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -167,6 +187,18 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Rust selected General LPF/MDown/reshape:64cases/all16depth-selector combinations
+      compare106975232bytes across three state buffers against selected original OpenCL kernel
+      bodies compiled for x86CPU under ASan/UBSan. Explicit NDRange, conversion, mix and host-log
+      helpers; no GPU/Android/ARM-library/device execution or full-engine equivalence.65536retained
+      boundary pairs checked.291common tests, fmt/Clippy;18invalid/non-overwrite cases, six input
+      snapshots and three output hashes verified. Existing linear replay retains two synthetic
+      frames at four sizes and zero strict frames in its archived first real trial; convex replay
+      remains candidate-only. No convex hardware replay, real image, calibration or safety
+      validation. No manufacturer code, payloads, credentials or medical data published.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -347,4 +379,10 @@ provenance:
     - Rust probe-frame0.11 bounded convex receive-journal replay; shared snapshot engine with
       distinct format policies
     - bubblewrap isolated own synthetic CLI checks and linear regression;283-test common suite
+    - Rust probe-frame0.12 selected General LPF_Up4/MDown/reshape with explicit bounded backing
+      states
+    - Clang22.1.8 original-source CPU kernel oracle with explicit OpenCL builtin adapters,
+      ASan/UBSan and bubblewrap isolation
+    - 291-test common suite,64numeric cases/106975232bytes,18CLI failure checks and unchanged
+      receive-replay regressions
 updated: 2026-11-04
