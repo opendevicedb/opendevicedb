@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:07:36.209750Z",
+  "last_verified_at": "2026-11-04T22:15:33.727883Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1188,6 +1188,32 @@
       "recipient_source": "https://www.petoi.com/pages/contact-us",
       "project_source": "https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot/tree/f5aba6b9cb7e4f2062f77365fbcd0c388acf32ef",
       "next_action": "Await this email conversation on a proposed first Bittle X page. No duplicate Reddit/forum/issue, affiliate registration, purchase or individual solicitation. NyBoard/BiBoard and exact revision/firmware/calibration remain distinct; page, partnership and physical validation not implemented."
+    },
+    {
+      "name": "OpenRazer / Luca Weiss",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "github@lucaweiss.eu",
+      "subject": "OpenRazer device pages on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:13:23.000Z",
+      "message": "messages/2026-11-04/openrazer-luca.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/z3ntu",
+      "project_source": "https://github.com/openrazer/openrazer/tree/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d",
+      "next_action": "Await this email about a proposed OpenRazer device index. Keep released/versioned scope, exact USB wired/wireless variants, kernel/daemon/app and distribution requirements. No duplicate Matrix/issue/maintainer contact, page/importer, module load or hardware test."
+    },
+    {
+      "name": "Solaar / Peter F. Patel-Schneider",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "pfpschneider@gmail.com",
+      "subject": "Solaar device information on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:13:48.000Z",
+      "message": "messages/2026-11-04/solaar-peter.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/pfps",
+      "project_source": "https://github.com/pwr-Solaar/Solaar/tree/e7304c4c451cc9bb4f206a914844525e67856a28",
+      "next_action": "Await this email about proposed Solaar model/settings references. Keep receiver and paired-device identities, connection, protocol and feature scope distinct. No duplicate issue/team solicitation, copied device serial logs, page/importer or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1700,14 +1726,16 @@
       "name": "OpenRazer",
       "source": "https://github.com/openrazer/openrazer/blob/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d/README.md",
       "community_url": "https://openrazer.github.io/",
-      "status": "channel_and_policy_review_needed",
-      "next_action": "No GitHub Discussions; verify a current general community/cooperation route and full policy guidance. Master lists may include unreleased devices; use stable/release scope and exact USB variants, kernel/daemon/app roles. No contact, promotional issue, importer or hardware test."
+      "status": "published_maintainer_contact_emailed",
+      "next_action": "README, development guidance, policy inventory and source versions reviewed. One email sent/read back to Luca Weiss at his published GitHub contact. Matrix exists but room rules unreviewed and no room post. Await this email; no duplicate issue/team approach, importer or hardware test.",
+      "contact_source": "https://github.com/z3ntu"
     },
     {
       "name": "Solaar",
       "source": "https://github.com/pwr-Solaar/Solaar/blob/e7304c4c451cc9bb4f206a914844525e67856a28/README.md",
-      "status": "channel_and_policy_review_needed",
-      "next_action": "No GitHub Discussions; review official documentation channels/policy before contacting. Solaar is a manager for supported Logitech-specific messages, not a replacement device driver. Preserve connection/receiver/device feature scope. No contact, importer or hardware test."
+      "status": "published_contributor_contact_emailed",
+      "next_action": "README, known issues, device docs, policy inventory and current public contributor evidence reviewed. One email sent/read back to Peter F. Patel-Schneider at his published GitHub contact. Await feedback; no promotional bug issue, extra contributor email, importer or hardware test.",
+      "contact_source": "https://github.com/pfps"
     },
     {
       "name": "libratbag / Piper",
@@ -1916,6 +1944,14 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public author announces a planned free Hamlib-based CAT-control application. Current release, source license and implementation have not been independently reviewed; free availability does not establish open source.",
       "next_action": "Retain as a possible future user/contributor lead without a personal invitation alongside the fresh Hamlib presentation. No guessed contact, inferred full identity or present collaboration interest."
+    },
+    {
+      "name": "Filipe Laíns / FFY00 — libratbag and openinput",
+      "source": "https://ffy00.github.io/",
+      "profile": "https://github.com/FFY00",
+      "status": "deferred_to_avoid_parallel_peripheral_solicitation",
+      "relevance": "Public personal site describes libratbag/openinput maintainership and USB HID/Wireshark work. Separate project sources, current roles/licenses and community guidance have not been fully reviewed.",
+      "next_action": "Retain as a future public source/contributor lead; no personal invitation alongside the new Solaar/OpenRazer contacts. Review exact project scope, policy, channel and duplicates before any approach. Do not infer collaboration interest or treat biography as hardware validation."
     }
   ],
   "remaining": [

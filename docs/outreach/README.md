@@ -105,6 +105,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [INDI astronomy instrumentation](messages/2026-11-04/indi.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/indilib/indi/discussions/2522) |
 | [Hamlib](messages/2026-11-04/hamlib.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/Hamlib/Hamlib/discussions/2310) |
 | [Petoi / OpenCat](messages/2026-11-04/petoi-opencat.md) | email | `sent_and_read_back`; delivery unconfirmed | [official partnership route](https://www.petoi.com/pages/partnership) |
+| [OpenRazer / Luca Weiss](messages/2026-11-04/openrazer-luca.md) | email | `sent_and_read_back`; delivery unconfirmed | [published contributor contact](https://github.com/z3ntu) |
+| [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md) | email | `sent_and_read_back`; delivery unconfirmed | [published contributor contact](https://github.com/pfps) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -178,3 +180,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [INDI presentation](https://github.com/indilib/indi/discussions/2522): two existing curated mount pages shared with a source-selection question. [OpenMV email](messages/2026-11-04/openmv.md): proposed a first camera page and asked which board/setup documentation to use. No new importer/page or hardware test; await feedback in the existing threads.
 
 - [Hamlib presentation](https://github.com/Hamlib/Hamlib/discussions/2310): proposed release-specific radio-model links; no importer or radio test. [Petoi email](messages/2026-11-04/petoi-opencat.md): first Bittle X page proposed through the official partnership route, keeping board/release requirements explicit. Await the existing conversations; no duplicate posts.
+
+- [OpenRazer / Luca Weiss](messages/2026-11-04/openrazer-luca.md) and [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md): one proposal each sent/read back to their published professional contacts. Proposed model links would retain version/connection/feature requirements. No page/importer, upstream change or hardware validation implemented; await those email threads.
