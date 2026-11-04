@@ -55,7 +55,16 @@ interfaces:
       calibration remain unknown. Native software output is a separate W*H uint8 raster with
       palette32; Java live display uses a JNI-filled ARGB_8888 Bitmap sized from the View. Display
       dimensions are not USB sample dimensions. The shipped simulation asset has constant counter33
-      and is not a validated C4 cyclic wire fixture."
+      and is not a validated C4 cyclic wire fixture. Further static UL10-5E m_nPA0 analysis
+      specifies a four-phase signed FIR, weighted delay/aperture summation, table-driven sin/cos
+      symmetric FIR and hypot envelope. Per-preset UPSampleCoef/Apo/SinCos/Coef inputs are required;
+      several coefficient files differ across the six presets. Native U storage is12MiB and its
+      known zero padding is read at some depths, so clamping to the final written sample is not
+      equivalent. Downstream reduction/log/PostDTGC, no-SRI display geometry and temporal warmup are
+      mapped; active SRI and fresh-object SRI_N initialization remain incomplete. SignalData is an
+      RGBA UNORM8 image2*N by320 with useful size2560*N excluding row padding; a fixed wrapper
+      copy0x50000 does not establish its geometry. No CPU/GPU numerical equivalence or current-unit
+      image validation claimed."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -71,6 +80,14 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static DSP formulas and bounds were independently checked over36 shipped preset/depth
+      configurations, including3988480 index identities. This is arithmetic/static evidence, not
+      execution of the vendor algorithm or a hardware replay. CPU/GPU rounding equivalence, active
+      SRI, physical units and current-unit reconstruction remain unverified. No coefficient
+      payloads, source, keys or private identifiers published.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
