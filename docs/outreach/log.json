@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:00:54.381175Z",
+  "last_verified_at": "2026-11-04T22:07:36.209750Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1161,6 +1161,33 @@
       "contact_source": "https://github.com/indilib/indi/discussions/1561",
       "project_source": "https://github.com/indilib/indi/tree/2bedd4aeafbcfc2162f2b88a1bf09f776fec4fbd",
       "next_action": "Await feedback in the existing Show and tell thread on the two already-curated mount pages and a recommended model-to-driver source. No duplicate forum/email, importer, driver change, new mount record or hardware test."
+    },
+    {
+      "name": "Hamlib",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Hamlib/Hamlib/discussions/2310",
+      "published_at": "2026-11-04T22:05:11Z",
+      "title": "OpenDeviceDB: helping radio owners discover Hamlib support",
+      "message": "messages/2026-11-04/hamlib.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Hamlib/Hamlib/discussions/1546",
+      "project_source": "https://github.com/Hamlib/Hamlib/tree/9199f8a239aed26b5eb0ee9c1a73bf51580483ce",
+      "next_action": "Await feedback in this Show and tell thread on a release-specific radio-model index. No duplicate list/email/issue, new importer or tested radio claim. Preserve development/release API context and backend status; do not treat a model identifier as a USB ID or full feature validation."
+    },
+    {
+      "name": "Petoi / OpenCat",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "support@petoi.com",
+      "subject": "Bittle X and OpenCat on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:05:59.000Z",
+      "message": "messages/2026-11-04/petoi-opencat.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://www.petoi.com/pages/partnership",
+      "recipient_source": "https://www.petoi.com/pages/contact-us",
+      "project_source": "https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot/tree/f5aba6b9cb7e4f2062f77365fbcd0c388acf32ef",
+      "next_action": "Await this email conversation on a proposed first Bittle X page. No duplicate Reddit/forum/issue, affiliate registration, purchase or individual solicitation. NyBoard/BiBoard and exact revision/firmware/calibration remain distinct; page, partnership and physical validation not implemented."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1872,14 +1899,23 @@
       "name": "Hamlib",
       "source": "https://github.com/Hamlib/Hamlib/tree/9199f8a239aed26b5eb0ee9c1a73bf51580483ce",
       "community_url": "https://github.com/Hamlib/Hamlib/discussions",
-      "status": "full_developer_guide_and_channel_review_pending",
-      "next_action": "README, CONTRIBUTING, CoC and complete policy inventory reviewed. Developer guide is lengthy and its initial read was truncated; do not claim full review or posting approval. Finish applicable guidance and channel/dedupe checks before contact. Preserve release-branch versus development/API context and backend model IDs/status; no importer, build, radio command or transmission."
+      "status": "introduction_published",
+      "next_action": "Full developer guidance, AI section, channel and duplicate review completed. One Show and tell introduction published and read back; await feedback in that thread. No duplicate list/email/issue, importer, build, radio command or transmission.",
+      "url": "https://github.com/Hamlib/Hamlib/discussions/2310"
     },
     {
       "name": "Petoi / OpenCat quadruped robots",
-      "source": "https://github.com/PetoiCamp/OpenCat-Quadruped-Robot",
-      "status": "source_policy_and_channel_review_needed",
-      "next_action": "Old PetoiCamp/OpenCat endpoint redirected; canonical active non-archived repository resolved from public API. Metadata only reviewed; no GitHub Discussions. Read full current source, hardware/firmware scope and official community policy/route before any contact. No message, account, issue, importer, firmware or physical robot action."
+      "source": "https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot/tree/f5aba6b9cb7e4f2062f77365fbcd0c388acf32ef",
+      "status": "official_partnership_route_contacted",
+      "next_action": "Legacy/current README, licenses, policy inventories and official partnership route reviewed. One email sent/read back to the published contact; await feedback. No duplicate community post or affiliate signup. Exact robot/controller/release requirements still need selecting before a catalogue page; no hardware test.",
+      "contact_source": "https://www.petoi.com/pages/partnership"
+    },
+    {
+      "name": "Mauro / IZ2BKT — CatBkt2",
+      "source": "https://github.com/Hamlib/Hamlib/discussions/2198",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author announces a planned free Hamlib-based CAT-control application. Current release, source license and implementation have not been independently reviewed; free availability does not establish open source.",
+      "next_action": "Retain as a possible future user/contributor lead without a personal invitation alongside the fresh Hamlib presentation. No guessed contact, inferred full identity or present collaboration interest."
     }
   ],
   "remaining": [
