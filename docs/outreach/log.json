@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:26:53.620278Z",
+  "last_verified_at": "2026-11-04T20:35:19.505849Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -963,6 +963,19 @@
       "message": "messages/2026-11-04/grblhal.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread without a duplicate introduction or personal invitation. Preserve controller revision, shield, driver, build and plugin scope. No importer, new record, firmware build, machine test or upstream code/PR change."
+    },
+    {
+      "name": "Awesome Connected Things Security / V33RU",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/V33RU/awesome-connected-things-sec/pull/54",
+      "published_at": "2026-11-04T20:33:39Z",
+      "title": "docs: add OpenDeviceDB device research directory",
+      "head": "0bc1000317f8538cdf6e7c547917163d2790aad6",
+      "message": "messages/2026-11-04/awesome-connected-things-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/contributing.md",
+      "next_action": "Await maintainer review of the one-entry proposal. Open, unmerged and not an accepted upstream listing; no duplicate issue, comment or direct maintainer message."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1149,6 +1162,18 @@
       "status": "merged_before_this_campaign",
       "merged_date": "2026-10-18",
       "note": "Previously completed listing rediscovered and verified; not counted as new outreach."
+    },
+    {
+      "name": "Awesome Connected Things Security",
+      "url": "https://github.com/V33RU/awesome-connected-things-sec/pull/54",
+      "head": "0bc1000317f8538cdf6e7c547917163d2790aad6",
+      "base": "0015dcee55cc0cd6eff3b4afbada2f22c245a9cc",
+      "status": "open_unmerged_proposal",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-connected-things-pr.md",
+      "validation": "Official canonical site HTTP 200; one entry in Search Engines, original README bytes preserved outside added line, git diff --check passed. No runtime change.",
+      "checks": "No check runs reported at readback; no CI success claimed.",
+      "next_action": "Await maintainer review; do not claim listing acceptance or adoption."
     }
   ],
   "next_research": [
@@ -1513,6 +1538,18 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public author reports porting a hardware driver and testing it. Those claims are not our source or physical validation.",
       "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new grblHAL introduction. Verify actual repository, license, controller/release scope and upstream status before any catalogue claim."
+    },
+    {
+      "name": "Awesome Embedded Security / hexsecs",
+      "source": "https://github.com/hexsecs/awesome-embedded-security/tree/87ab521240cab9d40e75b870a9f9d708ab4d4874",
+      "status": "deferred_scope_fit_uncertain",
+      "next_action": "No submission now: list requires embedded-security-specific resources and has no clear device-directory category. OpenDeviceDB was not found in its entry/declined registry, and no prior contact found. This is our fit assessment, not maintainer rejection or an AI ban. Do not change its declined registry or create a promotional issue."
+    },
+    {
+      "name": "Awesome IoT and Hardware Security / kayranfatih",
+      "source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
+      "status": "readme_category_policy_and_duplicate_review_needed",
+      "next_action": "Contribution guide read; it requests one PR per resource and neutral checked canonical links. Read full README/category/policy and search earlier submissions before a separate proposal. No fork, PR or message yet."
     }
   ],
   "remaining": [

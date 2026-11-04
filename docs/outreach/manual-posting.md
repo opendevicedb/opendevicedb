@@ -149,6 +149,10 @@ Un [échange est ouvert](https://github.com/grblHAL/core/discussions/1046) dans 
 
 FluidNC reste une piste à vérifier : pas de Discussions GitHub, et le README renvoie vers un Discord sur invitation. Aucun contact pour le moment.
 
+## Awesome Connected Things Security : proposition de référencement
+
+La [PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54) propose une entrée OpenDeviceDB dans « Tools → Search Engines », à côté de la base FCC ID. Elle est ouverte et attend la revue du mainteneur ; le référencement n’est pas encore accepté. Ne pas dupliquer par une issue ou un message personnel.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.
