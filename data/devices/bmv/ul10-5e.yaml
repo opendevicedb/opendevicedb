@@ -75,7 +75,17 @@ interfaces:
       Unresolved/unsafe-to-assume native behavior includes fresh-object SRI_N initialization,
       inherited128/256 dispatch dimensions exceeding some N80 allocations, a local direction9
       boundary beyond the9-filter bank, and persistent histories/tails. A bounded port must expose
-      these gaps instead of silently clamping or inventing state."
+      these gaps instead of silently clamping or inventing state. CPU K3/K4 now consume the packed
+      envelope with explicit gain/DR/six-TGC settings and the same complete hash-verified local
+      input group. PostDTGC is retained from the single verified read. K3 applies reduction/log/DTGC
+      and an explicit binary32 UNORM8 round-even policy; K4 preserves quantized bytes while
+      reformatting lanes with clamp-to-edge. Computed A is exported compactly as1040x40x4,
+      omitting24unwritten native columns; B is320x160x4. Components are not colors or calibrated
+      anatomy. Independent nonzero mathematical-envelope checks cover all36preset/depth cases
+      and13363200output bytes: constant powers of two give analytic reduction/log2 values.
+      Source/envelope SHA and configuration binding, bounds and numerical errors are explicit;
+      downstream processing does not repeat the prior raw-source audit. Common190tests pass.
+      Temporal/SRI, geometry, rendering, GPU equivalence and current-unit imaging remain open."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -91,6 +101,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Offline CPU K3/K4 verified with analytic odd/even reductions, DTGC/TGC interpolation knots,
+      gain/log, round-even saturation, lane/time/group and K4 boundary checks.36nonzero synthetic
+      constant-power-of-two envelope cases match13363200bytes of an independent scalar binary32
+      reference; existing zero-envelope chain reproduces zero outputs.190common tests and
+      Clippy/format pass. Input integrity and failed-output preservation are checked. No vendor
+      payload redistributed, no vendor/GPU execution or hardware acquisition; packed stages remain
+      uncalibrated mathematical components.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -219,4 +239,7 @@ provenance:
     - Rust probe-frame0.3.0 CPU envelope and selected-source audit
     - REA6.5.0 / Ghidra12.1.4 static SRI analysis
     - Independent36-configuration address-bound comparison and analytic synthetic tests
+    - Rust probe-frame0.5 CPU K3/K4 and standalone envelope archive audit
+    - Independent scalar binary32/analytic constant-envelope reference over36cases
+    - 190-test common suite with synthetic source/settings/error cases
 updated: 2026-11-04
