@@ -56,6 +56,7 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 
 ## Pending external steps
 
+- Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.
 - gPhoto and NUT: original messages are held for moderation; do not resend.
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
 - Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.
