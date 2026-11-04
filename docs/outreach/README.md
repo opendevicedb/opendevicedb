@@ -69,6 +69,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 
 | [DepthAI / Luxonis](messages/2026-11-04/depthai.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/luxonis/depthai/discussions/1255) |
 
+| [Espruino / Bangle.js](messages/2026-11-04/espruino.md) | official forum / GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/espruino/discussions/8038) |
+
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
 ## Updating this journal
@@ -96,3 +98,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Reported against current main; no correction or deployment claimed.
 - Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
 - New importer and joint-work suggestions in the messages are proposals, not delivered integrations.
+
+- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): validated curated overlay retains imported Gadgetbridge links/pairing. Draft remains unmerged and undeployed; no watch test or new flashing route.

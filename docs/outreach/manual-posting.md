@@ -49,6 +49,8 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [DepthAI / Luxonis](https://github.com/luxonis/depthai/discussions/1255) : proposition d’index des caméras OAK avec les noms de produit/carte, révisions et générations d’API. Aucun importeur ou nouveau test matériel ; utiliser ce fil pour les retours.
 
+- [Espruino / Bangle.js](https://github.com/orgs/espruino/discussions/8038) : présentation de la fiche existante et de la [PR 24](https://github.com/opendevicedb/opendevicedb/pull/24) ajoutant les liens officiels du firmware et de l’App Loader. Validation locale passée, PR en brouillon sans déploiement ; utiliser ce fil pour les retours.
+
 ## ESPHome et Home Assistant : participation personnelle uniquement
 
 La [politique de l’Open Home Foundation](https://contributors.home-assistant.io/start/ai-policy/), liée par le [guide ESPHome](https://developers.esphome.io/contributing/code/), autorise l’aide IA relue et comprise par la personne, mais interdit les agents autonomes et les contributions générées non relues. Aucune publication autonome n’est prévue. Le propriétaire peut examiner les [règles du forum](https://community.home-assistant.io/guidelines), vérifier la catégorie adaptée et participer lui-même ; les réponses aux mainteneurs doivent venir de lui. Aucun message envoyé.
@@ -64,6 +66,10 @@ Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.
 ## Nura/postmarketOS : pas de publication assistée par IA
 
 Le [code de conduite](https://docs.nura.eco/policies-and-processes/community/code-of-conduct.html) et la [politique IA](https://docs.nura.eco/policies-and-processes/development/ai-policy.html) interdisent les contributions créées entièrement ou partiellement avec une IA générative et la promotion de ces outils. Aucune présentation, contribution ou approche directe d’un mainteneur ne sera envoyée par cette campagne ; aucun texte généré à copier n’est proposé.
+
+## InfiniTime : pas de communication générée par IA
+
+L’[accord IA](https://github.com/InfiniTimeOrg/InfiniTime/blob/9ad16304f5fd526b781a760cf1313813d232645e/AI_USAGE.md) interdit les communications destinées aux personnes générées par IA et les contributions autonomes, dans toute l’organisation InfiniTime. Aucun contact ou contribution de cette campagne, ni texte généré à copier, n’est prévu. Ne pas utiliser un autre canal ou un mainteneur pour contourner cet accord.
 
 ## Hacker News : attendre la réponse du support
 

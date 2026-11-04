@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:52:58.433892Z",
+  "last_verified_at": "2026-11-04T18:00:05.781872Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -632,6 +632,20 @@
       "message": "messages/2026-11-04/depthai.md",
       "outgoing_text_verified": true,
       "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed OAK product/board/revision index is not implemented or hardware tested."
+    },
+    {
+      "name": "Espruino / Bangle.js",
+      "channel": "official forum / GitHub organization discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/espruino/discussions/8038",
+      "published_at": "2026-11-04T17:59:02Z",
+      "message": "messages/2026-11-04/espruino.md",
+      "outgoing_text_verified": true,
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/24",
+      "proposal_message": "messages/2026-11-04/bangle-js-2-links-pr.md",
+      "proposal_status": "draft_open_unmerged_undeployed",
+      "proposal_head": "38d56176d31c221d8fe7220974e2455a5317aa5a",
+      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 link addition is validated locally but draft PR 24 remains unmerged/undeployed; no new flashing route or watch test. Do not duplicate the introduction by email."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1007,6 +1021,19 @@
       "status": "concrete_example_and_policy_review_needed",
       "relevance": "Board/revision discovery and links to RTOS support documentation.",
       "next_action": "Prepare a concrete board/revision example before an introduction in the available Show and tell category. Code/review policies require human responsibility and forbid AI sign-offs; do not interpret those alone as a universal discussion ban. No message or code submitted."
+    },
+    {
+      "name": "InfiniTime organization",
+      "source": "https://github.com/InfiniTimeOrg/InfiniTime/blob/9ad16304f5fd526b781a760cf1313813d232645e/AI_USAGE.md",
+      "status": "excluded_from_ai_generated_outreach",
+      "next_action": "No generated human-facing communication or autonomous contributions under the published AI agreement. Do not approach maintainers through other channels or prepare generated owner-post copy. No contact sent."
+    },
+    {
+      "name": "Linux Hardware / hw-probe",
+      "source": "https://github.com/linuxhw/hw-probe",
+      "status": "channel_and_data_terms_research_needed",
+      "relevance": "Hardware identifiers, driver/kernel information and contextual operability reports.",
+      "next_action": "Verify an appropriate cooperation route and database-content reuse terms. Website research timed out; public-profile email query lacked token scope. No escalation, guessed email, machine probe/log upload, importer or contact."
     }
   ],
   "remaining": [
