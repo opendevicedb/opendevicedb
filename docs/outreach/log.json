@@ -548,7 +548,8 @@
       "source": "https://news.ycombinator.com/newsguidelines.html",
       "status": "owner_reports_submission_blocked",
       "research_note": "research.md#hacker-news-dji-neo-2-assessment",
-      "next_action": "Obtain the exact HN error from the owner before diagnosing the account restriction. Publication is unconfirmed; no support email sent."
+      "next_action": "Cause unknown. Confirm the attempted URL and HN username if pursuing diagnosis; the official support route is hn@ycombinator.com. No support email sent and publication remains unconfirmed.",
+      "reported_error": "Sorry, your account isn't able to submit this site."
     }
   ],
   "remaining": [
