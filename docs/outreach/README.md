@@ -111,4 +111,4 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - OpenKinect: normal email subscription/confirmation completed; server confirms owner approval is still pending. No introduction sent.
 - Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
 
-- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. Reported with pinned upstream evidence; no correction or hardware test.
+- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Unmerged and undeployed; no hardware test.

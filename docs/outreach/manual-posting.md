@@ -52,7 +52,7 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [OpenPnP](https://groups.google.com/g/openpnp) : adhésion confirmée puis présentation envoyée le 4 novembre à 18:17 UTC. Premier message soumis à modération selon les règles ; publication non confirmée. Attendre, sans publier une deuxième introduction.
 
-- [pvvx / ATC_MiThermometer](https://github.com/pvvx/ATC_MiThermometer/discussions/839) : proposition de liens vers le firmware BLE et les protocoles avec les contraintes de matériel/firmware. Notre [issue 26](https://github.com/opendevicedb/opendevicedb/issues/26) décrit un prérequis manquant dans la fiche Zigbee2MQTT ; elle n’est pas corrigée. Utiliser ce fil pour les retours, sans nouvelle sollicitation parallèle.
+- [pvvx / ATC_MiThermometer](https://github.com/pvvx/ATC_MiThermometer/discussions/839) : proposition de liens vers le firmware BLE et les protocoles avec les contraintes de matériel/firmware. Notre [issue 26](https://github.com/opendevicedb/opendevicedb/issues/26) décrit un prérequis manquant dans la fiche Zigbee2MQTT ; la [PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) en propose la correction, avec tests locaux et CI passés. La présentation existante a été mise à jour ; PR non fusionnée/non déployée. Utiliser ce fil pour les retours, sans nouvelle sollicitation parallèle.
 
 ## ESPHome et Home Assistant : participation personnelle uniquement
 
