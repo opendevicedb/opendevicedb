@@ -11,12 +11,10 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435 with candidate firmware1.32.
-  Configuration/messages, experimental acquisition and offline32C replay are partially mapped. Rust
-  General LPF/MDown/reshape/DTGC and explicit-state compound are ported with original
-  ARM64/CPU-kernel checks. Native RDH allocation/write inconsistency is disclosed with a separate
-  outside-write trace, without GPU equivalence. SRI/DSC and actual convex imaging remain
-  unvalidated.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust General
+  preprocessing/DTGC/explicit-state compound and SRI host parameters/bindings/intent plan are
+  checked offline. Native RDH allocation/write inconsistency remains explicit. SRI image kernels,
+  DSC, full GPU/engine equivalence and actual convex imaging remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -231,7 +229,28 @@ interfaces:
       continuity. SRI/DSC/display, native fill errors/full lifecycle, GPU equivalence and real
       convex acquisition/calibration remain open. All vendor source/banks and numerical outputs stay
       ignored/private; only independent findings/metadata are published. Earlier no-compound
-      statements describe previous checkpoints."
+      statements describe previous checkpoints. Rust probe-frame0.17 prepares the complete selected
+      General SRI host plan:60-byte parameter block, two900-byte direction banks from5external
+      hash-bound resources,13dispatch pairs,113final argument bindings over32kernels, and ordered
+      successful Process intents. Three complete General asset files are hash-bound; B_Persist must
+      be absent as in the original APK inventory.42image allocations total5038080bytes,
+      high128x320/low64x160. All known General fine iterations are0; coarse iterations
+      are1,1,2,2,2,3,3,3. HF_N_Smoothing258/HF_Smoothing278 are bound but never enqueued, so a
+      future image port must retain their supplied backings. Final N3 dispatch covers318of320rows,
+      preserving tails. RDH reads must use native64wide clamp-to-edge semantics, not the
+      outside-write trace. SetParam resets frame count; the verified protocol is fresh Set/Bind then
+      supplied prepared count then Update/Process successful intents. Count2 does not attest
+      historical correlation bindings after settings changes.1944cases cover8depths x9enhancements
+      x9correlations x3prepared counts;4035744binary bytes,219672final binding arguments
+      and46656ordered operations match5618144original selected ARM64 instructions in Unicorn2.1.4.
+      API stubs explicitly copy/record intents and return success; no image kernel, GPU, complete
+      native init/library or actual convex acquisition is executed.28CLI refusal/nonoverwrite cases
+      and325common tests/fmt/Clippy pass; archived linear14images/61030424bytes remain unchanged.
+      Seven additional native functions retained, snapshot22Evidence saved/session closed. Actual
+      SRI image kernels, DSC/display and attributed convex capture/calibration remain open. Vendor
+      code, resources, banks and numerical outputs stay private/ignored; only independent findings
+      and metadata are published. Earlier no-SRI statements remain historical; this is a host
+      planner, not an image SRI implementation."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -241,6 +260,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Selected General SRI host planner only:1944cases/4035744binary bytes/219672final
+      bindings/46656ordered intents match5618144original ARM64 instructions in Unicorn with prepared
+      objects and explicit successful API stubs.42images described, no image kernels executed.28CLI
+      refusals,325common tests/fmt/Clippy pass; actual archived linear14-image regression unchanged.
+      Seven new native functions retained with22Evidence snapshot/session closed. No USB/GPU/Android
+      execution, vendor payloads or actual convex image/calibration claims.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -472,4 +500,11 @@ provenance:
     - Unicorn152selected AArch64 window instructions; Clang22.1.8 original CPU compound kernels with
       explicit sampler/UNORM8 helpers and ASan/UBSan
     - 48passes/88080384bytes,31CLI refusals,322common tests and actual linear14-image regression
+    - Rust probe-frame0.17 General SRI host planner; external hash-bound resources,42image
+      descriptors and113final argument bindings
+    - REA6.5.0/Ghidra12.1.4 seven SRI host functions,22Evidence snapshot saved/session closed
+    - Unicorn2.1.4 original ARM64 host instructions, prepared objects, explicit successful
+      API-intent stubs; no image kernel/GPU
+    - 1944cases/4035744bytes/219672bindings/46656intents,28CLI refusals,325common tests and
+      unchanged14-image linear regression
 updated: 2026-11-04
