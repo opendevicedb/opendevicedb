@@ -198,8 +198,9 @@ interfaces:
       match the first trial; all39 OUT phase/producer/length/SHA fingerprints are identical.39host
       writes including Start/Freeze complete, no OUT error/partial/unknown, interface released after
       readers join. EP81 yields5128192bytes in313full reads plus3empty timeouts, a316-row durable
-      RAM seal; EP82 has8empty timeouts. Strict replay has one epoch and no declared journal gap,
-      complete bounded snapshot and valid per-file hashes. Source
+      RAM seal; EP82 has7empty timeouts and one reservation cancelled before I/O:8journal rows
+      but7actual calls,0bytes. Strict replay has one epoch and no declared journal gap, complete
+      bounded snapshot and valid per-file hashes. Source
       SHA256cb5dc3fa5468aebf1e46975d611ede7af7c53b6f5463bc22fda0473c56c7b857. An independent
       direct-byte review finds1327markers: startup128headers with4096-byte stride, then1198intervals
       of3840bytes. Fourteen complete80-line frames of307200bytes each, beginning at offset524292
