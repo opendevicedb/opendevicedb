@@ -9,11 +9,11 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. USB
-  framing/configuration and image-processing formulas are partially mapped. Rust offline
-  reconstruction covers envelopes/K3/K4, enhancement0, active SRI1..8 and manufacturer palette RGBA
-  with bounded state and targeted original-instruction emulation checks. Complete GPU/manufacturer
-  equivalence, attributed acquisition/image, calibration and acoustic stop remain unverified.
+summary: BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. Rust configuration/start/freeze
+  was exercised once on a real gulaman phantom:39host writes completed and1064960data bytes were
+  archived, but strict framing found no complete image. Offline envelope/render/SRI/palette ports
+  remain available; sustained reception, complete manufacturer equivalence, calibration and
+  acoustic/electrical validation remain open.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -27,15 +27,17 @@ interfaces:
       c0/bb/value 3/index 0/length 32; c0/bb/value 3/index 32/length 32; timeout 5000 ms. Historical
       pyusbus uses c3 instead of c0. Native command packet: 512 bytes, four 5a bytes, eight zero
       bytes, up to 124 little-endian u32 words from offset 12, four a5 bytes at offset 508. Start
-      word a0020000 and freeze a0010000 are statically identified, not replayed on this unit. Native
-      framing candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence
-      need an attributed capture. Historical Parquet projection retains command payloads but drops
-      the large image-data column; do not treat it as a validated image capture. Current control-IN
-      reads confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine
-      exact-length replies identical. Historical packet192(Start)
+      word a0020000 and freeze a0010000 are statically identified; the later first-phantom trial
+      below sent both, without validated device acknowledgement or acoustic stop. Native framing
+      candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence need an
+      attributed capture. Historical Parquet projection retains command payloads but drops the large
+      image-data column; do not treat it as a validated image capture. Current control-IN reads
+      confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine exact-length
+      replies identical. Historical packet192(Start)
       SHA25645acfbaf3668222cb5a84eda6727c98a16d6cc976abc8d9332fbb60b48e6dca5 and3679(Freeze)
       SHA256defef81e3822ef8c1377cb80647804b72a647c46787c0ed617ba307291b62b34 match isolated512-byte
-      serialization. No current-unit Start/Freeze replay. Static configuration details: Probe
+      serialization. At the original identity-only checkpoint no Start/Freeze had been replayed; the
+      later first-phantom trial below supersedes that status. Static configuration details: Probe
       header24bytes/count@20; PRF column-major; COE8hex/stride10, padded reader blocks128words
       versus USB payload124words; TWave1536bytes per depth. Six active depths govern selection
       despite8PRF rows. StartImageEngine upload phase has13packets for the inspected
@@ -153,7 +155,22 @@ interfaces:
       remain ignored/private.259common software tests pass. Full-engine GPU equivalence, observed
       Android display, attributed current-unit acquisition, calibration and acoustic/electrical
       validation remain open. The local OpenCL loader reports no platform (-1001); no target kernel
-      executed."
+      executed. First current-unit Rust phantom session now sends39configuration/start/freeze
+      packets using explicit Vascular depth index1 and reinitialize, following a fresh same-handle
+      UL10-5E/ID7 preflight. All39host writes complete, no partial/error/unknown OUT; no device ACK
+      or acoustic stop is inferred. Requested dwell1second; EP81 receives1064960bytes
+      in65full16384-byte reads after4empty timeouts; EP82 has10empty timeouts. Owner confirms
+      physical unplug afterward. Archived transfer SHA/lengths and exact concatenation match the
+      replay source. Strict C4/8 replay with expected P1920/N80 finds no complete frame; no
+      image/video is claimed. Independent all-phase scan observes292aligned markers, counter
+      cycles1..128,1..80,1..80,1..4 with no internal counter skip. Startup usual stride4096 changes
+      to3840;29short1024-byte marker gaps recur at phases6024-to7048 modulo16384, inside transfers.
+      Counter-complete cycles have non-nominal spans and must not be padded or called valid frames.
+      Causes and exact physical loss remain unknown. Synchronous reads alternate with durable
+      intent/raw/result storage; successful read median0.590ms and result-end-to-next-intent
+      timestamp median9.138ms, excluding the next intent checkpoint. This motivates
+      sustained-receive investigation but does not prove causal loss. Only own findings and hashes
+      published; no vendor payload, medical image or unit-unique value."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -169,6 +186,17 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: hardware-replay
+    by: smichea with Codex
+    date: 2026-11-04
+    firmware: USB-reported text V1.350; component version and physical output unverified
+    notes: "Scope: first explicit Vascular/depth1/reinitialize Rust phantom trial only, requested
+      dwell1second. Same-handle reported identity matched;39host OUT writes complete including
+      Start/Freeze, no ACK/acoustic-stop validation.1064960EP81bytes preserved and verified; no
+      complete fixed-stride frame, image or video. Owner unplugged afterward. Captured
+      header/counter geometry is discontinuous relative to expected profile; no repair by padding,
+      no calibration or human use. This is not a validated imaging driver or an independent
+      manufacturer reference."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -363,4 +391,7 @@ provenance:
       emulation with explicit external stubs
     - Rust probe-frame0.8 bounded RGBA/palette archive and PNG writer; Python stdlib independent
       CRC/zlib/pixel checks;259-test common suite
+    - Rust probe-usb0.10 identity-bound first phantom acquisition and offline commands audit;
+      probe-frame0.9 strict receive replay; independent recorded-byte header/counter geometry and
+      SHA checks
 updated: 2026-11-04
