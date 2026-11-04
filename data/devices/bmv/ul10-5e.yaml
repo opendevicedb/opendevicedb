@@ -170,7 +170,27 @@ interfaces:
       intent/raw/result storage; successful read median0.590ms and result-end-to-next-intent
       timestamp median9.138ms, excluding the next intent checkpoint. This motivates
       sustained-receive investigation but does not prove causal loss. Only own findings and hashes
-      published; no vendor payload, medical image or unit-unique value."
+      published; no vendor payload, medical image or unit-unique value. Source-only follow-up adds
+      opt-in Rust linear DATA whole-session bounded RAM collection, one durable authorization before
+      reads and one durable result seal after files. No collector disk/JSON/hash work between
+      synchronous DATA calls; message and OUT journals remain per operation. Default remains
+      per-read; explicit DATA sizes4096/16384/65536/262144/1048576, aggregate DATA+message requested
+      budget256MiB, retained payload capacities at most twice the DATA request budget (at
+      most512MiB), excluding bounded metadata/transport internals. This is not an asynchronous USB
+      queue or a proven physical fix. An unsealed reservation attests neither results nor actual
+      call count: files remain orphan evidence. A partial durable seal distinguishes committed
+      prefix, attempted but unarchived suffix and known unattempted suffix. Offline replay preserves
+      original manifests and represents an unknown range as one explicitly marked gap sentinel,
+      never as N observed transactions. Only sealed, individually hash/length/profile-checked rows
+      feed the parser. All other fixed-name artifacts remain bounded snapshots without becoming
+      payload.305common software tests pass.25isolated synthetic CLI cases cover5sizes with
+      complete/cancel/panic/seal-failure/file-failure; complete/cancel yield2strict own frames and
+      failures0. Two full synthetic images match the prior per-read pipeline over3491080bytes;
+      unknown batches yield0images. Targeted storage faults do not cover every possible fsync
+      failure. The actual first phantom capture still yields0strict frames with unchanged source
+      hash. No second device trial, demonstrated lossless throughput, actual probe image, acoustic
+      stop or physical validation is claimed. Manufacturer runtime assets and derived palette pixels
+      remain private and absent from publication."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -186,6 +206,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Own Rust probe-usb0.12 memory collector and probe-frame0.13 strict journal replay inspected
+      and tested:305common tests,25isolated no-USB/no-external-network synthetic producer-to-replay
+      cases, two synthetic PNG pipelines3491080byte-identical bytes, crash-unknown ranges/orphans
+      never promoted, original real capture still0frames. Independent embedded-source digests match
+      executed binaries. No new hardware access or image/safety/GPU validation; selected file-fault
+      boundaries only, not exhaustive fsync-fault coverage. No vendor payloads, coefficients,
+      palette pixels, keys, unit identifiers or medical data published.
   - method: hardware-replay
     by: smichea with Codex
     date: 2026-11-04
@@ -394,4 +424,9 @@ provenance:
     - Rust probe-usb0.10 identity-bound first phantom acquisition and offline commands audit;
       probe-frame0.9 strict receive replay; independent recorded-byte header/counter geometry and
       SHA checks
+    - Rust probe-usb0.12 bounded synchronous linear DATA RAM collector and distinct durable
+      authorization/result-seal schema
+    - Rust probe-frame0.13 strict memory-journal replay and orphan/unknown-range preservation
+    - Bubblewrap isolated own Rust mock producer and actual CLI reconstruction, Python stdlib
+      byte/hash orchestration;305common tests
 updated: 2026-11-04
