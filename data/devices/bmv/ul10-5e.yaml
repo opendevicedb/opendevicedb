@@ -9,13 +9,12 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed BMV linear USB probe04b4:00f1. Direct reads from the current unit now
-  report UL10-5E, product ID7 and version text V1.350, stable over three repetitions on one
-  connection. B-mode APK analysis identifies identity controls, command/data/message endpoints and
-  command framing, with historical isolated Start/Freeze packets matching512-byte Rust
-  serialization. Current acoustic initialization, reconnect stability, image acquisition, geometry
-  and performance remain unverified; the historical pyusbus label CONVEX does not establish physical
-  geometry.
+summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350 in repeated
+  direct reads. B-mode USB identity/command/data/message paths, native configuration formats and
+  lifecycle producer phases are partially mapped and ported to offline Rust plans. Concurrent
+  bounded Linux IN and cooperative host cancellation were tested without initialization and received
+  no bytes. Current-unit initialization, image acquisition, geometry, calibration and acoustic stop
+  remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -37,7 +36,14 @@ interfaces:
       exact-length replies identical. Historical packet192(Start)
       SHA25645acfbaf3668222cb5a84eda6727c98a16d6cc976abc8d9332fbb60b48e6dca5 and3679(Freeze)
       SHA256defef81e3822ef8c1377cb80647804b72a647c46787c0ed617ba307291b62b34 match isolated512-byte
-      serialization. No current-unit Start/Freeze replay."
+      serialization. No current-unit Start/Freeze replay. Static configuration details: Probe
+      header24bytes/count@20; PRF column-major; COE8hex/stride10, padded reader blocks128words
+      versus USB payload124words; TWave1536bytes per depth. Six active depths govern selection
+      despite8PRF rows. StartImageEngine upload phase has13packets for the inspected
+      COE128/DTGC-absent configuration; connected UnFreeze with internal flagBC8==0 repeats it then
+      Start (14packets). Other UnFreeze branch sends Start only. These are static branches, not a
+      measured current-unit trace. XML Vascular-default flag is ignored by Java: remembered exam
+      wins, otherwise first SmallParts. No generic ACK or shutdown guarantee established."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -53,6 +59,26 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: New Linux Rust bounded parallel EP81/82 observations used one interface claim, concurrent
+      reads, zero received bytes before initialization, and successful release. A separate SIGINT
+      test saved both in-flight results, joined readers, released the interface and exited130; this
+      is host receive cancellation, not acoustic stop. Static native/DEX analysis resolves Probe.bin
+      (24-byte header, count at20), column-major PRF.bin, COE fixed10-byte records with8 hex
+      characters and128-word reader padding, and TWave three512-byte blocks per depth. Six UL10-5E
+      presets have6 allowed Probe depths but8 PRF rows; Rust rejects extra rows as selectable
+      depths. Independent APK checks cover36 preset/depth combinations. Native StartImageEngine
+      uploads B-power, AD, ATGC, optional DTGC, depth and TX-line; UnFreeze has reinitializing and
+      non-reinitializing branches, and sends Start separately. Missing dtgc_coe_sheet.coe is
+      explicit, never replaced with PostDTGC.bin. Pure Rust plans preserve repeated uploads and
+      flush boundaries; no configuration or Start/Freeze was sent to the current unit. Java can
+      auto-start on recognized ID and also request Start during polling before readiness; its async
+      exit does not guarantee Freeze/PowerOFF or cleanup completion. No correlated command
+      acknowledgement, image reconstruction, acoustic properties, reconnect stability or validated
+      stop is established. Only technical metadata is shared; no unit-unique identifiers or
+      proprietary assets/code are included.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -122,4 +148,7 @@ provenance:
     - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
     - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
     - Existing pyusbus historical Parquet projection export
+    - REA6.5.0 / Ghidra12.1.4 / JADX0.7.1 / Android SDK dexdump36.0.0
+    - Rust probe-usb0.4.0 concurrent bounded IN and0.5.0 offline configuration plans
+    - Independent exact-APK-member metadata and packet-hash verification
 updated: 2026-11-04
