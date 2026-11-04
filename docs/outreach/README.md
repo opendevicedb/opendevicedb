@@ -72,6 +72,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [pvvx / ATC_MiThermometer](messages/2026-11-04/atc-mithermometer.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pvvx/ATC_MiThermometer/discussions/839) |
 | [probe-rs](messages/2026-11-04/probe-rs.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/probe-rs/probe-rs/discussions/4629) |
 | [Theengs Decoder](messages/2026-11-04/theengs-decoder.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/theengs/decoder/discussions/723) |
+| [OpenEarable / Tobias Röddiger](messages/2026-11-04/openearable-tobias-roeddiger.md) | email | `sent_and_read_back` | [contact source](https://open-earable.teco.edu/) |
+| [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -110,3 +112,6 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Unmerged and undeployed; no hardware test.
 
 - [Aquacomputer hwmon catalogue PR 28](https://github.com/opendevicedb/opendevicedb/pull/28): 12 curated records cover the source overview and its 12 USB match entries, with grouped identities and per-feature kernel baselines. Catalogue/source/lookup checks and CI passed; draft remains unmerged/undeployed, with no hardware test.
+
+- OpenBikeSensor: forum terms prohibit solicitation and automated access; excluded from this automated promotional campaign. No contact or alternative-channel bypass.
+- SlimeVR: organization guidance forbids content submitted directly from AI across its repositories; no generated outreach or contribution sent.

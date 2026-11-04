@@ -13,7 +13,6 @@ Liens vérifiés le 4 novembre 2026. Cette liste indique des canaux officiels et
 
 | Communauté | Où aller | Sujet concret et étape préalable |
 | --- | --- | --- |
-| OpenBikeSensor | [Forum officiel](https://forum.openbikesensor.org/) | Lire les règles actuelles avant une proposition de liens par variante. La [page de contact](https://www.openbikesensor.org/contact/) privilégie le forum. Distinguer Classic, Pro et Lite avec leurs états de développement ; aucun contact envoyé. |
 | Klipper | [Forum officiel](https://community.klipper3d.org/) | Montrer comment l'import des configurations permet de découvrir Klipper depuis un modèle d'imprimante, avec les révisions et adaptations nécessaires. La [documentation officielle](https://www.klipper3d.org/Contact.html) confirme ce forum. Les catégories et règles n'ont pas pu être consultées anonymement : les lire après connexion et choisir une catégorie adaptée avant de publier. |
 | Gadgetbridge | [Salon Matrix officiel](https://matrix.to/#/#gadgetbridge:matrix.org) | Demander d'abord si une courte discussion sur la présentation des appareils Gadgetbridge dans OpenDeviceDB est bienvenue. Le [README officiel](https://github.com/Freeyourgadget/Gadgetbridge/blob/master/README.md#community) donne ce salon et précise que les issues ne servent pas de forum. Lire les règles du salon ; ce n'est pas une invitation à une annonce générale. |
 | AsteroidOS | [Salon Matrix officiel](https://matrix.to/#/#Asteroid:matrix.org) | Présenter les liens vers les pages de montres déjà importées, avec les variantes, codenames et fonctions partielles. La [page de contact officielle](https://asteroidos.org/contact/) réserve les discussions à ce salon ; lire ses règles et demander si la présentation est bienvenue. Aucun message envoyé. |
@@ -58,6 +57,16 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 - [probe-rs](https://github.com/probe-rs/probe-rs/discussions/4629) : proposition de liens par modèle de sonde de débogage, avec prérequis de firmware/hôte et distinction entre sonde et cible. Aucun importeur ni test matériel ajouté ; attendre les retours dans ce fil, sans nouvelle introduction.
 
 - [Theengs Decoder](https://github.com/theengs/decoder/discussions/723) : proposition de liens vers les décodeurs BLE par modèle, en conservant les regroupements, formats de firmware et limites du décodage. Aucun importeur ni test matériel ajouté ; attendre les retours dans ce fil, sans nouvelle introduction.
+
+- [opentrack](https://github.com/opentrack/opentrack/discussions/2235) : proposition de liens par modèle avec XReal One en TCP comme exemple. Aucun importeur ni test matériel ; utiliser ce fil pour les retours.
+
+## OpenBikeSensor : pas de promotion automatisée
+
+Les [conditions du forum](https://forum.openbikesensor.org/tos) interdisent les publicités/sollicitations et l’accès automatisé. Aucun message, inscription ou recours à un autre canal pour cette campagne. Une participation personnelle doit respecter ces règles ; cette piste ne figure plus parmi les annonces à publier.
+
+## SlimeVR : pas de contenu généré soumis au projet
+
+La [politique de l’organisation](https://github.com/SlimeVR/.github/blob/349be3f98bf4623603aa4cd8342f6ffa1d224464/profile/CONTRIBUTING.md) interdit la soumission directe de contenus IA dans tous ses dépôts, y compris les issues, commentaires et descriptions de PR. Elle permet la recherche et le débogage privés quand la sortie IA n’est pas soumise. Aucune publication ou contribution générée, aucun texte à copier pour contourner cette règle, ni contact par un autre canal dans cette campagne.
 
 ## ESPHome et Home Assistant : participation personnelle uniquement
 

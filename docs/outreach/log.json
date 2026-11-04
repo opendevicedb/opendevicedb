@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:59:51.119950Z",
+  "last_verified_at": "2026-11-04T19:07:32.615547Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -775,6 +775,28 @@
       "message": "messages/2026-11-04/theengs-decoder.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread; no duplicate introduction or parallel solicitation. No dedicated importer or hardware test is implemented by this introduction."
+    },
+    {
+      "name": "OpenEarable / Tobias Röddiger",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "sent_at": "2026-11-04T19:02:57.000Z",
+      "recipient": "tobias.roeddiger@kit.edu",
+      "contact_source": "https://open-earable.teco.edu/",
+      "subject": "OpenDeviceDB: helping people discover OpenEarable's open tools",
+      "message": "messages/2026-11-04/openearable-tobias-roeddiger.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response. Proposed downstream model/version links only; no dedicated importer, new record or hardware test. No parallel message to the related commercial inbox."
+    },
+    {
+      "name": "opentrack",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/opentrack/opentrack/discussions/2235",
+      "published_at": "2026-11-04T19:06:01Z",
+      "message": "messages/2026-11-04/opentrack.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate introduction or parallel contributor solicitation. Proposed model links only; no dedicated importer or hardware test."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1196,18 +1218,25 @@
       "next_action": "Source suggestion acknowledged in the existing liquidctl thread with Aquacomputer draft PR 28. Gigabyte grouped X240/X280/X360 identity and ASUS newer source variants need their own kernel/feature mapping before a proposal. Do not send a separate solicitation to the same contributor."
     },
     {
-      "name": "OpenEarable / OpenWearables",
-      "source": "https://open-earable.teco.edu/",
-      "status": "contact_route_and_policy_review_pending",
-      "relevance": "Open hardware/firmware and tooling for ear-based research sensors; versioned device and streaming interfaces.",
-      "next_action": "Official site publishes a contact and links the firmware/app sources. Main firmware repository has no Discussions. Complete channel/policy review before any introduction; avoid duplicating through the related commercial custom-development inbox. No contact, record, clinical claim or hardware test."
-    },
-    {
       "name": "OpenBikeSensor",
       "source": "https://www.openbikesensor.org/community/",
       "community_url": "https://forum.openbikesensor.org/",
-      "status": "forum_rules_and_access_review_pending",
-      "next_action": "Official contact page prefers public community discussion. Review forum rules/access before one model/revision discovery proposal. Keep Classic/Pro and separate Lite firmware distinct; Lite is alpha and Pro prototype-stage in the inspected device page. No contact, record or hardware test."
+      "status": "excluded_from_automated_promotional_outreach",
+      "next_action": "Inspected official forum terms prohibit advertising/solicitations and automated access. No automated campaign post, registration, promotional issue or fallback administrative contact. Preserve this as a researched exclusion; do not bypass through GitHub.",
+      "policy_source": "https://forum.openbikesensor.org/tos"
+    },
+    {
+      "name": "SlimeVR",
+      "source": "https://github.com/SlimeVR/.github/blob/349be3f98bf4623603aa4cd8342f6ffa1d224464/profile/CONTRIBUTING.md",
+      "status": "no_ai_generated_repository_outreach",
+      "relevance": "Open motion-tracking server, ESP/IMU firmware and protocol ecosystem.",
+      "next_action": "Organization policy forbids content submitted directly from AI in all SlimeVR repositories, including issues/comments and PR text. No generated post, code, promotional issue or alternate-channel bypass; no contact sent. It allows private AI research/debugging when output is not submitted."
+    },
+    {
+      "name": "X-Stuff / XReal One tracker documentation",
+      "source": "https://gist.github.com/X-Stuff/0c21145b07a4baa3012fae8bffbe0577",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "next_action": "Public setup-guide author and fork are linked by opentrack. Keep as a contributor lead; no separate invitation alongside the new opentrack introduction. No inference of model-wide compatibility, employment or collaboration interest."
     }
   ],
   "remaining": [
