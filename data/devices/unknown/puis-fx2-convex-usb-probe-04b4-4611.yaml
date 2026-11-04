@@ -11,11 +11,13 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex USB probe 04b4:4611 reports product text UC5-2S and decimal product
-  ID 1435. Targeted Rust identity reads returned stable bytes over three repetitions on one
-  connection. Firmware bytes 20 01 map to candidate display 1.32 in the vendor parser. PUIS Plus
-  maps ID 1435 to UC5-2S_16; brand, actual acoustic properties, reconnect stability and acquisition
-  compatibility remain unverified.
+summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435; the inspected PUIS Plus path maps it
+  to UC5-2S_16 with TX16/ADC8. USB identity/acquisition paths and selected fundamental B
+  configuration producers are partially mapped. Rust offline work materializes13hash-bound producer
+  families including TX/RX, filters, HV and194ScanCtrl nodes, with explicit numerical/register-order
+  policies and declared logic state. Native immediate writes and timer-triggered Start are
+  distinguished. Actual imaging, complete lifecycle/error handling, calibration and stop remain
+  unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -66,7 +68,31 @@ interfaces:
       primitive validation now covers1024 preset/depth/fundamental-index combinations across8
       hash-identified input groups:6144 isolated packet hashes and all selected PRF fields match an
       independent reference. Synthetic tests and strict bounds pass; these are not complete session
-      or hardware replay results."
+      or hardware replay results. Further retained static evidence and offline Rust now cover the
+      selected fresh fundamental B TX16/ADC8 non-PA/NEoff branch: depth/frequency/focus TxWave
+      selection, convex TX geometry/gates and16x15-bit-delay/aperture packing, B/C RX coefficient
+      generation/ADC8 permutation, dynamic IQ/LPF/Boxcar/n/IQ_M, LPF1/Up4, strict HV-SW text
+      parsing, depth registers and194ScanCtrl nodes. Twelve local preset files plus selected HV0
+      must match one complete known hash group; all eight inspected presets share the five newly
+      mapped TX/filter/Up4/BF files. No vendor payload is embedded or exported. TX uses binary32
+      geometry followed by binary64 signed0.5/trunc; RX rounding stays binary32, with checked
+      integer/halfword bounds. ScanCtrl TX/version fields are offsets124/128, not11c/120. Full logic
+      version and low-power originate from hardware message LE32+8 and (LE16+500&6)>>1 through
+      Java/JNI, not USB firmware1.32. Actual values are still unknown. The native ScanCtrl
+      control-event count is assigned1, yielding denominator97-1=96, despite194total nodes. Direct
+      review refines the provisional low-power condition: when disable=false and lowPower!=2,
+      lowPower1 selects the branch directly; other values including3 follow the TX16
+      product-series5..21/29 condition. An offline request must explicitly declare logic/low-power
+      and fresh-B state.13producer families are materialized as fingerprinted candidates, not an
+      executable lifecycle: kind100 activation is immediate, registers are deduplicated with an
+      explicitly adapted ascending-address order, and direct voltage preserves its repeated key.
+      Native implicit Freeze/timer Start remain distinct; no timer-completion barrier or ACK is
+      inferred.1344cases (8presets x8depths x3frequencies x7focuses) match17472complete padded
+      packet SHA256 fingerprints against an independent scalar reference, covering35782656bytes.
+      Host libm is shared; no ARM/vendor-runtime equivalence or hardware replay.216common tests
+      pass. Callback side effects, actual logical state, lifecycle executor, transfer timing/order,
+      error/partial-write recovery, attributed imaging and acoustic/electrical validation remain
+      open."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -76,6 +102,20 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Retained82Evidence IDs/artifact identities and closed snapshot independently rechecked;
+      selected producers ported without native target execution. Twelve new analytic/archive-input
+      tests cover33aperture masks, f64 TX rounding, gate/packing, focus6 selection, RX bounds,
+      filter slices/all Up4 selectors, HV stride,194scan nodes and lowPower3, strict
+      request/input/overflow guards and family classification.1344offline cases across eight
+      complete local input groups match17472padded packet fingerprints (35782656bytes covered) of an
+      independent scalar binary32 reference with separate event-ordinal scan mapping. Host libm
+      shared, no manufacturer ARM runtime oracle or actual device commands.216common tests, format
+      and Clippy pass. Outputs remain nonexecutable candidates; no acquisition, acoustic stop,
+      voltage/geometric units or physical calibration validated. Vendor code/tables/payloads and
+      unique identifiers are excluded.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -186,4 +226,7 @@ provenance:
     - Independent Python struct/f32 reference checks (ignored orchestration only)
     - Rust9 synthetic convex primitive tests and180-test common suite
     - REA6.5.0 / Ghidra12.1.4 static timer and implicit-command evidence
+    - Retained REA6.5.0/Ghidra12.1.4/JADX producer Evidence and closed-snapshot identity review
+    - Rust probe-usb0.8 offline convex B producer bundle with complete local input hashes
+    - Independent1344-case scalar binary32/binary64 packet reference and216-test common suite
 updated: 2026-11-04
