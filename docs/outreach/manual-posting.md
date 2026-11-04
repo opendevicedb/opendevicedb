@@ -164,3 +164,14 @@ Une [présentation](https://github.com/pyocd/pyOCD/discussions/2070) est publié
 ## Black Magic Debug : hors campagne automatisée
 
 Le [billet officiel de migration](https://black-magic.org/blog/codeberg-migration/) annonce le passage à Codeberg et exprime un fort rejet de l’IA. Nous choisissons de ne pas contacter cette communauté dans cette campagne assistée par IA. Aucun message envoyé, et pas de repli vers son forum ou ses mainteneurs. Le dépôt GitHub archivé n’est plus le lieu des nouveaux échanges.
+
+## EyeTrackVR : échange ouvert
+
+La [présentation](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164) propose des liens depuis une carte caméra vers les guides EyeTrackVR/OpenIris. Continuer ce fil si un retour arrive ; pas de double annonce sur Discord ou par email. Le logiciel EyeTrackVR a sa propre licence Babble, distincte des autres composants. Aucun importeur ni essai matériel réalisé.
+
+## VR : canaux à vérifier avant publication
+
+- [Monado](https://monado.freedesktop.org/) indique Matrix, Discord et IRC. Le dépôt protégé n’a pas permis la lecture complète des consignes ; aucune annonce envoyée.
+- [libsurvive](https://github.com/collabora/libsurvive) indique Discord et [un pont Matrix](https://app.element.io/#/room/#libsurvive-main:matrix.org). Vérifier les règles avant une introduction ; son rôle est le suivi, avec un runtime séparé pour le casque.
+- [WiVRn et LVRA](https://vronlinux.org/docs/community/) utilisent Matrix et Discord. Vérifier les règles du salon wivrn avant de présenter le projet. Aucune annonce envoyée.
+- [OpenHMD](https://github.com/OpenHMD/OpenHMD) se déclare non maintenu et renvoie vers Monado ; ne pas utiliser son appel à mainteneur pour une annonce promotionnelle.

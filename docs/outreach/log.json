@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:52:50.282550Z",
+  "last_verified_at": "2026-11-04T20:58:35.241026Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1006,6 +1006,18 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/pyocd/pyOCD/blob/0ce0fbd201010d617d7a4e3582c39b8e8561e33d/README.md#community-resources",
       "next_action": "Await feedback on source selection in this thread. Proposal only; no dedicated importer or hardware validation. No duplicate mailing-list, Slack, issue or contributor solicitation."
+    },
+    {
+      "name": "EyeTrackVR",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/EyeTrackVR/EyeTrackVR/discussions/164",
+      "published_at": "2026-11-04T20:56:49Z",
+      "title": "OpenDeviceDB: helping camera-board owners discover EyeTrackVR",
+      "message": "messages/2026-11-04/eyetrackvr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/EyeTrackVR/EyeTrackVR/blob/5f30f86a2bee466b18c81ba87415d8a4ec6a33f1/.github/CONTRIBUTING.md",
+      "next_action": "Await source/combination feedback in this thread. No parallel Discord/email/issue or personal solicitation. Proposal only; no importer, new record, physical build or hardware validation. Keep the Babble software license separate from component/documentation terms."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1615,6 +1627,47 @@
       "status": "source_policy_and_data_terms_review_needed",
       "relevance": "Current pyOCD direction points to common pack management and vendor device descriptions, potentially useful for source-qualified board/device discovery.",
       "next_action": "Research canonical metadata, board-versus-MCU identity and third-party pack reuse terms, plus community policy and existing contacts before any submission. No contact or importer; avoid a parallel introduction duplicating the fresh pyOCD source question."
+    },
+    {
+      "name": "OpenHMD",
+      "source": "https://github.com/OpenHMD/OpenHMD/blob/85075b0c7e3c723ded2577edb79d00ee11aac339/README.md",
+      "status": "deferred_upstream_explicitly_unmaintained",
+      "next_action": "Current README says not actively maintained and routes XR driver development to Monado. GitHub repository is not archived, but that does not override its maintenance notice. No introduction or maintainer-recruitment issue. CV1 positional tracking is separately developed in the linked thaytan fork; do not transfer its capabilities to upstream."
+    },
+    {
+      "name": "Monado",
+      "source": "https://monado.freedesktop.org/",
+      "repository": "https://gitlab.freedesktop.org/monado/monado",
+      "community_url": "https://matrix.to/#/#monado:matrix.org",
+      "status": "policy_and_community_rules_review_needed",
+      "next_action": "Official site identifies Matrix/Discord/IRC and freedesktop CoC. Repository access returned Anubis access-denied; CoC fetch timed out. No bypass, account creation, issue or introduction. Verify full current contribution/community policies before contact. Preserve driver/backend, OS, tracking mode and WIP versus merged support; no importer or headset test."
+    },
+    {
+      "name": "libsurvive",
+      "source": "https://github.com/collabora/libsurvive/blob/44b1e2f0cb95e5697bc0b86f58fd8520a813b713/README.md",
+      "community_url": "https://app.element.io/#/room/#libsurvive-main:matrix.org",
+      "status": "community_rules_and_policy_review_needed",
+      "next_action": "Old cntools repository redirects to collabora/libsurvive; canonical repo has no GitHub Discussions. README directs discussion to Discord/Matrix. Review current room and source policy before contact; no promotional issue or guessed email. Tracking/calibration is not a complete HMD display runtime. No importer, local tool run or tracking/hardware test."
+    },
+    {
+      "name": "WiVRn / Linux VR Adventures",
+      "source": "https://github.com/WiVRn/WiVRn/blob/6adb188c154572a27fd6f0d97ba5a732d7095090/README.md",
+      "community_url": "https://vronlinux.org/docs/community/",
+      "status": "community_rules_and_full_policy_review_needed",
+      "next_action": "No GitHub Discussions; README routes community questions to LVRA Matrix/Discord wivrn room. Old lvra.gitlab.io redirects to vronlinux.org. Read room/full source policies before a relevant introduction; no contact or fake issue. Preserve exact headset, client/server version pairing, host/platform and package restrictions; Android VR class alone does not imply tested model support. No importer or streaming/hardware test."
+    },
+    {
+      "name": "Project Babble",
+      "source": "https://github.com/Project-Babble/ProjectBabble",
+      "status": "source_license_policy_and_channel_review_needed",
+      "next_action": "Repository metadata identifies a DIY mouth-tracking project, active/non-archived with no GitHub Discussions. Full README, current licenses, exact hardware and contribution/community policy not yet reviewed. No contact, separate solicitation alongside the new related EyeTrackVR post, importer or physical test."
+    },
+    {
+      "name": "nairol / LighthouseRedox",
+      "source": "https://github.com/collabora/libsurvive/blob/44b1e2f0cb95e5697bc0b86f58fd8520a813b713/README.md#addendum-and-notes",
+      "repository": "https://github.com/nairol/LighthouseRedox",
+      "status": "public_source_lead_current_scope_review_needed",
+      "next_action": "libsurvive credits this project for reverse-engineering documentation. Current activity, license and detailed hardware scope not independently verified; no employment, present collaboration interest or our hardware validation inferred. No personal invitation or guessed contact."
     }
   ],
   "remaining": [
