@@ -12,9 +12,9 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435 with candidate firmware1.32.
-  Identity, configuration/messages and experimental Rust acquisition are partially mapped. Offline
-  receive replay preserves gaps and opaque32C candidates. Rust now ports selected General unsigned B
-  LPF/MDown/reshape with explicit backing state and targeted original-source CPU checks; complete
+  Identity/configuration/messages and experimental Rust acquisition are partially mapped. Offline32C
+  replay and selected General LPF/MDown/reshape plus DTGC/gain/DR are ported with explicit backing
+  states, targeted original ARM64 instruction and CPU kernel checks. Compound/SRI/DSC, complete
   image processing and physical convex acquisition remain unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
@@ -177,7 +177,31 @@ interfaces:
       DTGC/compound/SRI/DSC/display, full-engine equivalence, actual convex stream, hardware
       activation, calibration or acoustic stop is validated. Manufacturer
       source/coefficients/derived outputs remain ignored/private; only independent findings and
-      metadata are published."
+      metadata are published. Rust probe-frame0.15 adds a separate offline General B
+      DTGC/gain/dynamic-range stage after the selected BFSP reshape. Five known local files
+      including6148-byte B_DTGC are hash-bound. Six banks are selected explicitly using native
+      fields0x44 and0x48; application semantics of0x48 remain unknown. Assembly corroboration
+      restores a max(depth,2) omitted by pseudocode, binary64 addition0.99 after binary32
+      divisions/doubling, and the exact base+(control+interpolation) association without FMA. Known
+      General depths give3,4,5,6,7,8,10,12; native depth>=13 branch is outside the port.
+      Dispatch1024x32 writes only columns0..31 of64x1024RGBA-UNORM8 storage; caller must supply all
+      backing and columns32..63 retain exact bytes. This is a packed mathematical intermediate, not
+      scan-converted/display color pixels. The archive verifies the copied upstream BFSP manifest,
+      matching plan/assets and exact reshaped-result SHA, retains four input snapshots and two
+      output hashes, and explicitly does not re-audit upstream raw/authenticity/continuity.192cases
+      spanning8depths,6banks and4BFSPgeometry/phase/settings variants compare51120384bytes: TGC and
+      depth/gain/DR parameters match selected original AArch64 instructions0x12cca0..0x12cfcc
+      executed in Unicorn with prepared registers/objects and no external calls; the raster matches
+      the original OpenCL kernel body compiled for x86CPU with explicit NDRange/clamp/UNORM8
+      round-even helpers under ASan/UBSan.25165824unwritten bytes are checked separately. The depth
+      argument uses original float bits although unused in this kernel.29CLI refusal/non-overwrite
+      cases and318common tests/fmt/Clippy pass. Actual archived second linear-trial regression
+      retains14images and61030424result bytes unchanged; this does not constitute convex acquisition
+      evidence. Full SetParam resets/AutoTGC/history, optional ThreeLine, compound, SRI, DSC,
+      full-engine/GPU equivalence, convex stream grouping and physical calibration remain open. No
+      new USB/Android execution or convex activation; manufacturer source/banks and derived
+      numerical outputs remain private/ignored. Earlier no-DTGC statements describe previous
+      checkpoints."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -187,6 +211,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Selected General DTGC port:192cases/51120384bytes compare prepared-range original AArch64
+      arithmetic in Unicorn and original OpenCL DTGC body compiled for x86CPU with explicit UNORM8
+      helpers and ASan/UBSan.25165824retained image bytes independently checked;29CLI
+      refusals/non-overwrite and318common tests/fmt/Clippy. Native lifecycle, GPU and full engine
+      not executed; no USB or convex acquisition/calibration. Actual archived linear14-image
+      regression unchanged over61030424bytes. Only independent findings and metadata published; no
+      vendor payload or medical data.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -385,4 +419,10 @@ provenance:
       ASan/UBSan and bubblewrap isolation
     - 291-test common suite,64numeric cases/106975232bytes,18CLI failure checks and unchanged
       receive-replay regressions
+    - Rust probe-frame0.15 General DTGC/gain/DR with hash-bound inputs and explicit full image
+      backing
+    - Unicorn selected original AArch64 SetParam arithmetic without external calls
+    - Clang22.1.8 original OpenCL DTGC CPU body, explicit UNORM8 helper, ASan/UBSan and bubblewrap
+    - 192numeric cases/51120384bytes,29CLI refusal cases,318common tests and unchanged actual
+      linear-trial regression
 updated: 2026-11-04
