@@ -548,10 +548,12 @@
       "source": "https://news.ycombinator.com/newsguidelines.html",
       "status": "owner_reports_submission_blocked",
       "research_note": "research.md#hacker-news-dji-neo-2-assessment",
-      "next_action": "Cause unknown. The attempted URL is confirmed by the owner screenshot; obtain the HN username to prepare an inquiry to hn@ycombinator.com. No support email sent and publication remains unconfirmed.",
+      "next_action": "Private support draft is prepared and verified in Gmail. Owner to review before any send; HN publication remains unconfirmed and the cause of refusal is unknown.",
       "reported_error": "Sorry, your account isn't able to submit this site.",
       "attempted_url": "https://opendevicedb.org/devices/dji/neo-2/",
-      "attempted_title": "DJI Neo 2 client"
+      "attempted_title": "DJI Neo 2 client",
+      "hn_username": "smichea",
+      "support_status": "draft_prepared_not_sent"
     }
   ],
   "remaining": [
