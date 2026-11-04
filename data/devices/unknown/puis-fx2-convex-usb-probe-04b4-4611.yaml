@@ -2,43 +2,60 @@ id: unknown/puis-fx2-convex-usb-probe-04b4-4611
 vendor: Unknown
 model: PUIS FX2 convex USB probe 04b4:4611
 aliases:
+  - UC5-2S (device-reported)
+  - UC5-2S_16 (APK mapping for product ID 1435)
   - EZ-USB FX2 Slave PUIS v1.32
   - PUIS convex USB ultrasound probe
 category: medical
 identifiers:
   usb:
     - 04b4:4611
-status: in-progress
-summary: Owner-held convex USB ultrasound probe of unknown commercial brand/model. Enumerates as
-  04b4:4611 with product string EZ-USB FX2 Slave PUIS v1.32 at USB High Speed, one vendor-specific
-  interface, three bulk endpoints and one interrupt endpoint. Cypress names the USB controller, not
-  a confirmed probe brand; the v1.32 string is not independently verified firmware. Existing pyusbus
-  lookup does not select this VID/PID. USB commands and acquisition framing remain unknown.
+status: partial-protocol
+summary: Owner-confirmed convex USB probe 04b4:4611 reports product text UC5-2S and decimal product
+  ID 1435. Targeted Rust identity reads returned stable bytes over three repetitions on one
+  connection. Firmware bytes 20 01 map to candidate display 1.32 in the vendor parser. PUIS Plus
+  maps ID 1435 to UC5-2S_16; brand, actual acoustic properties, reconnect stability and acquisition
+  compatibility remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
-    status: unknown
+    status: partial
     confidence: medium
     spec: https://github.com/opendevicedb/opendevicedb/issues/8
-    notes: "Observed bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s. Raw
-      bInterval=0 on interrupt endpoint is corrected to 7 by Linux. Historical PUIS archive contains
-      a generic Cypress driver matching this ID, which does not prove application compatibility.
-      Static aapt2 decoding of Citrason_PUIS_Plus.apk SHA256
-      237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643 shows 04b4:4611 in
-      res/xml/device_filter.xml. Package com.itrason.www.PUISColour_32 version code 10661. This is a
-      VID/PID lead, not demonstrated acquisition compatibility. Do not select the first IN endpoint
-      blindly: it is interrupt 81, whereas bulk IN endpoints are 86/88. PUIS Plus exposes
-      jni.USB_JNI callbacks for probe connection, data and messages. Endpoint routing for PID 4611
-      has not yet been traced; roles must not be transferred from another PID branch."
+    notes: "Descriptors: bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s;
+      Linux corrects interrupt bInterval 0 to 7. PUIS Plus APK SHA256
+      237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643, package
+      com.itrason.www.PUISColour_32, code 10661. Exact PID 4611 branch: OUT 02 commands, IN 86
+      asynchronous data reads of 16384 bytes, IN 88 messages; source also invokes bulkTransfer on
+      descriptor-interrupt 81, an unresolved mismatch not to copy blindly. Identity: c0/a6/value
+      0/index 0/requested length 8 returned 2 bytes 20 01; explicit observed variant accepts only 2
+      or 8 for this query. Product: c0/a9/value 1f00/index 0/32; storage serial: c0/a9/value
+      1f20/index 0/32; timeout 5000 ms. Product/storage use FF termination; NUL is preserved. Full
+      unique storage serial is omitted publicly. ID 1435 maps to UC5-2S_16, display UC5-2,
+      configured label 3.5 MHz, not a measured frequency. App connection automatically calls
+      PowerON; identity tool never invoked it. Native PowerON 40/b5 and PowerOFF 40/b4 are
+      statically identified, not issued. USB firmware version is not an FPGA logic version; native
+      setProcessLogicVer ignores its argument. Receive path reaches DataO::InsertData, whose initial
+      mode 1 selects header-driven 32C parsing until settings change; actual captured image format
+      is still uncorroborated."
 claims:
   - who: smichea
     contact: https://github.com/smichea
-    scope: Document convex probe USB identity reads, endpoint routing and acquisition framing for
-      Linux/Rust interoperability, reusing existing pyusbus evidence; bench/phantom only.
+    scope: Complete convex probe identity/reconnect tests, attributed manufacturer bench captures and
+      Rust offline/acquisition tooling; phantom only, no firmware modification.
     since: 2026-11-04
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Rust fixed-whitelist control-IN tests on the physical convex probe: first 2-byte A6 reply
+      preserved as a failed length check; after inspecting the vendor two-byte parser, a full 3-read
+      session and a 9-read session (3 repetitions) succeeded with identical bytes. No PowerON,
+      initialization, reset, start/freeze, interface claim/configuration or firmware transfer.
+      Offline decoder checks recorded hashes/status without promoting the original failure.
+      Reconnect and imaging tests remain pending; no acoustic/electrical safety validation."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -70,4 +87,7 @@ provenance:
     - Rust probe-usb (passive sysfs inspection)
     - Ghidra 12.1.4
     - Android SDK dexdump 36.0.0
+    - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
+    - Rust usb-trace (offline Parquet inspection)
+    - libusb 1.0.30
 updated: 2026-11-04

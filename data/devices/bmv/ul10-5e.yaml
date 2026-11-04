@@ -8,31 +8,29 @@ category: medical
 identifiers:
   usb:
     - 04b4:00f1
-status: in-progress
-summary: Owner-held BMV linear USB ultrasound probe. UL10-5E model is supported by historical
-  vendor-application screenshots, not read from current firmware. Enumerates as Cypress FX3
-  04b4:00f1 at USB High Speed with one vendor-specific interface and six bulk endpoints. Existing
-  pyusbus lookup calls this USB ID CONVEX, but the owner confirmed this physical unit is linear.
-  Commands, sample framing and compatibility remain under investigation.
+status: partial-protocol
+summary: Owner-confirmed linear USB probe 04b4:00f1. UL10-5E remains a historical model candidate,
+  not read from the current unit. The matching B-mode APK branch documents identity reads,
+  command/data/message endpoints and native command framing. Acquisition compatibility and image
+  geometry remain unverified; historical pyusbus calls this USB ID CONVEX, which does not establish
+  physical geometry.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
-    status: unknown
+    status: partial
     confidence: medium
     spec: https://github.com/opendevicedb/opendevicedb/issues/7
-    notes: "Observed endpoints OUT 01/02/03 and IN 81/82/83, all bulk, max packet 512 bytes; 480 Mb/s.
-      Generic Cypress IDs are not unique model identification. No initialization or acquisition
-      attempted. Static aapt2 decoding of android1-animal_PUIS.apk SHA256
-      2317c74a1a1f314bffdc1e5494f87715e153924f40c1c0f7f12883bbdf2bd777 shows 04b4:00f1 in
-      res/xml/device_filter.xml. Package com.animal.www.portableultrasoundimagingsystem version code
-      3204. Native ImageEngineNative entry points and ARM64 USB framing symbols are present. This is
-      a VID/PID lead, not demonstrated acquisition compatibility. The older Citrason_en.apk filter
-      lists 00f0, not 00f1. B-mode AndroidUSB.openDevice explicitly handles PID 00f1: OUT 01
-      commands, IN 81 data, IN 82 messages. Two static identity-read candidates are bmRequestType
-      c0, bRequest b0, value/index 0/0, length 8; and c0/bb, value/index 3/0, length 32; timeout
-      5000 ms. JADX and DEX disassembly agree on these literals. This differs from historical
-      pyusbus c3 requests. Response formats and runtime compatibility remain unverified; no commands
-      replayed."
+    notes: "Descriptors: bulk OUT 01/02/03 and IN 81/82/83, maximum packet 512 bytes, 480 Mb/s. B-mode
+      APK SHA256 2317c74a1a1f314bffdc1e5494f87715e153924f40c1c0f7f12883bbdf2bd777, package
+      com.animal.www.portableultrasoundimagingsystem, code 3204. Explicit PID 00f1 branch routes OUT
+      01 commands, IN 81 data, IN 82 messages. Identity candidates: c0/b0/value 0/index 0/length 8;
+      c0/bb/value 3/index 0/length 32; c0/bb/value 3/index 32/length 32; timeout 5000 ms. Historical
+      pyusbus uses c3 instead of c0. Native command packet: 512 bytes, four 5a bytes, eight zero
+      bytes, up to 124 little-endian u32 words from offset 12, four a5 bytes at offset 508. Start
+      word a0020000 and freeze a0010000 are statically identified, not replayed on this unit. Native
+      framing candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence
+      need an attributed capture. Historical Parquet projection retains command payloads but drops
+      the large image-data column; do not treat it as a validated image capture."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -42,12 +40,18 @@ projects:
 claims:
   - who: smichea
     contact: https://github.com/smichea
-    scope: Document linear probe USB identity reads, endpoint routing and acquisition framing for
-      Linux/Rust interoperability, reusing existing pyusbus evidence; bench/phantom only.
+    scope: Complete linear probe identity/reconnect tests, attributed manufacturer bench captures and
+      Rust offline/acquisition tooling; phantom only, no firmware modification.
     since: 2026-11-04
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static JADX, raw DEX and Ghidra call chains reviewed; passive USB descriptors confirmed. No
+      active identity reads on the current linear unit, no start/freeze replay, no imaging or
+      acoustic/electrical validation.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -79,4 +83,7 @@ provenance:
     - Rust probe-usb (passive sysfs inspection)
     - Ghidra 12.1.4
     - Android SDK dexdump 36.0.0
+    - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
+    - Rust usb-trace (offline Parquet inspection)
+    - libusb 1.0.30
 updated: 2026-11-04
