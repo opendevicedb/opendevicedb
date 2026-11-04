@@ -1,0 +1,85 @@
+id: xiongmai/ipg-x2-wq-bl
+vendor: Xiongmai
+model: IPG-X2-WQ-BL (XM530V200)
+aliases:
+  - XM530V200_IPG-X2-WQ-BL_8M
+category: ip-camera
+identifiers:
+  chips: [XM530V200]
+status: partial-protocol
+vendor_support: unknown
+summary: >-
+  Stock-firmware interoperability findings from one owner-controlled XM530V200
+  IPG-X2-WQ-BL camera. Native RTSP video, DVRIP PTZ/white-light controls, WFS SD
+  recording, and an added authenticated local panel/key-only SSH were tested.
+  Not OpenIPC or a universal flashable release; other board/sensor/Wi-Fi variants
+  have not been established as compatible.
+interfaces:
+  - name: Native RTSP video and microphone audio
+    transport: wifi
+    status: documented
+    confidence: high
+    spec: https://github.com/Vittuu/icsee-localmod/blob/main/docs/FINDINGS.md
+    notes: >-
+      TCP 554. Main HEVC/H.265 2304x1296 at 12 fps, secondary 800x448 at 12 fps;
+      G.711 audio at 8 kHz observed. A native SD recording named .h264 contained
+      HEVC video. Standard RTSP is not a new protocol discovery here.
+  - name: Native DVRIP configuration, PTZ, white-light and SD queries
+    transport: wifi
+    status: partial
+    confidence: high
+    spec: https://github.com/Vittuu/icsee-localmod/blob/main/docs/API.md
+    notes: >-
+      TCP 34567 with the existing device account. Tested configuration read/write
+      IDs 1042/1040, PTZ 1400 OPPTZControl (Preset 65535 start, -1 stop),
+      1450 OPWhiteLightControl (KeepOpen/Close; physical light confirmed), and
+      1440 OPFileQuery. Added local HTTP API sends stop after a 250 ms PTZ pulse.
+      Software stop is best effort, not a hardware safety guarantee. This is a
+      limited tested subset of an existing protocol, not a full DVRIP specification.
+  - name: Local extension boot and native WFS SD recording
+    transport: other
+    status: partial
+    confidence: medium
+    spec: https://github.com/Vittuu/icsee-localmod/blob/main/docs/VALIDATION.md
+    notes: >-
+      Device-specific additions in user/custom partitions left the bootloader,
+      kernel, root filesystem and original drivers in place. Two independent
+      restarts verified internal panel/SSH boot and resumed native WFS recording;
+      an older recording remained byte-identical and new data grew. No public
+      flash installer or proprietary images are distributed. The route-removal
+      guard is not an egress firewall. SD playback/download/delete UI is absent.
+projects:
+  - name: iCSee LocalMod
+    url: https://github.com/Vittuu/icsee-localmod
+    kind: tool
+    license: MIT
+    official: false
+    freedom:
+      nonfree: [device-firmware, vendor-blobs, wifi, camera, bootloader]
+      cloud: unknown
+      notes: >-
+        Stock proprietary firmware/drivers remain. The documented operations were
+        exercised locally with native device credentials; fresh provisioning
+        without the vendor app and complete egress isolation were not established.
+  - name: ICSee PTZ for Home Assistant
+    url: https://github.com/dbuezas/icsee-ptz
+    kind: integration
+    license: MIT
+    official: false
+verification:
+  - method: manual
+    by: Vittuu
+    date: '2026-10-29'
+    firmware: V5.01.R02.A64807D7.10010.346732.0000010
+    notes: >-
+      Owner verified both PTZ axes, white LEDs, speaker beeps and local video on
+      one camera. SD persistence and recording observations are summarized in the
+      linked validation document. Public ARM/QEMU tests use a simulated backend
+      and are not hardware-replay evidence. Additional H.264/Opus WebRTC viewing
+      was tested on HA 2026.10.4 with ICSee PTZ 5.1.12; conversion occurs on the HA
+      server, leaving native SD H.265 unchanged. Exact latency gain was not measured.
+provenance:
+  sources: [curated]
+  ai_assisted: true
+  tools: [Codex]
+updated: '2026-10-29'
