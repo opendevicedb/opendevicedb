@@ -1,0 +1,141 @@
+id: unknown/puis-fx2-convex-usb-probe-04b4-4611
+vendor: Unknown
+model: PUIS FX2 convex USB probe 04b4:4611
+aliases:
+  - UC5-2S (device-reported)
+  - UC5-2S_16 (APK mapping for product ID 1435)
+  - EZ-USB FX2 Slave PUIS v1.32
+  - PUIS convex USB ultrasound probe
+category: medical
+identifiers:
+  usb:
+    - 04b4:4611
+status: partial-protocol
+summary: Owner-confirmed convex USB probe 04b4:4611 reports product text UC5-2S and decimal product
+  ID 1435. Targeted Rust identity reads returned stable bytes over three repetitions on one
+  connection. Firmware bytes 20 01 map to candidate display 1.32 in the vendor parser. PUIS Plus
+  maps ID 1435 to UC5-2S_16; brand, actual acoustic properties, reconnect stability and acquisition
+  compatibility remain unverified.
+interfaces:
+  - name: Vendor-specific USB acquisition interface
+    transport: usb
+    status: partial
+    confidence: medium
+    spec: https://github.com/opendevicedb/opendevicedb/issues/8
+    notes: "Descriptors: bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s;
+      Linux corrects interrupt bInterval 0 to 7. PUIS Plus APK SHA256
+      237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643, package
+      com.itrason.www.PUISColour_32, code 10661. Exact PID 4611 branch: OUT 02 commands, IN 86
+      asynchronous data reads of 16384 bytes, IN 88 messages; source also invokes bulkTransfer on
+      descriptor-interrupt 81, an unresolved mismatch not to copy blindly. Identity: c0/a6/value
+      0/index 0/requested length 8 returned 2 bytes 20 01; explicit observed variant accepts only 2
+      or 8 for this query. Product: c0/a9/value 1f00/index 0/32; storage serial: c0/a9/value
+      1f20/index 0/32; timeout 5000 ms. Product/storage use FF termination; NUL is preserved. Full
+      unique storage serial is omitted publicly. ID 1435 maps to UC5-2S_16, display UC5-2,
+      configured label 3.5 MHz, not a measured frequency. App connection automatically calls
+      PowerON; identity tool never invoked it. Native PowerON 40/b5 and PowerOFF 40/b4 are
+      statically identified, not issued. USB firmware version is not an FPGA logic version; native
+      setProcessLogicVer ignores its argument. Receive path reaches DataO::InsertData, whose initial
+      mode 1 selects header-driven 32C parsing until settings change; actual captured image format
+      is still uncorroborated. Candidate32C extraction supports opaque bytes only; no
+      RF/IQ/envelope/pixel type, checksum, footer, line-counter1..N or frame-ID monotonicity is
+      established. Mode4 remains unsupported; a following header does not prove a complete frame.
+      Constructor99/2 resolves isolated Start/Freeze serialization to wire type2: LE32
+      [5a5aa5a5,2,0,0,00060001,0-or-1,2,a5a55a5a] plus480 zero bytes;0=Start,1=Freeze. Internal
+      kind99 is not a wire field. Static analysis only; no replay, full initialization or acoustic
+      stop validation."
+claims:
+  - who: smichea
+    contact: https://github.com/smichea
+    scope: Complete convex probe identity/reconnect tests, attributed manufacturer bench captures and
+      Rust offline/acquisition tooling; phantom only, no firmware modification.
+    since: 2026-11-04
+    expires: 2026-12-04
+    agent: Codex + OpenDeviceDB MCP + REA
+verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "New static constructor analysis resolves the type99 command buffer: DataProcess constructs
+      HWCmdMsgBuffer(99,2) and routes internal kind99 to that object; field+4 selects wire type2,
+      while GetCmdType returns internal kind99. For an otherwise empty producer queue and map, named
+      Start and Freeze serialize512 bytes: LE32 words [5a5aa5a5,2,0,0,00060001,value,2,a5a55a5a],
+      value0 for Start and1 for Freeze, then480 zero bytes. Output memset establishes zero padding.
+      The map deduplicates by key; a general type2 envelope does not prove internal kind99. Offline
+      Rust encoder/inspector tests use synthetic packets, with no replay of these commands on the
+      owned convex unit. Initial acoustic configuration1435, acknowledgements, stream format,
+      effects and verified stop remain unresolved."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Follow-up to the minimal-permission startup: the owner explicitly authorized external
+      storage for PUIS Plus 1.0.8/code10661 on Samsung SM-A556E Android16/API36. After the storage
+      grants and a cold restart, the main application interface was observed without a probe. No
+      selected fatal signatures in the newest120 process-scoped main-buffer log lines; application
+      then stopped. This supersedes the earlier unresolved startup gate only: probe recognition, USB
+      streaming, acoustic display values and acquisition compatibility remain unverified. No probe
+      activation or human scan."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "PUIS Plus package com.itrason.www.PUISColour_32, 1.0.8/code10661, installed on Samsung
+      SM-A556E Android16/API36 ARM64 without a probe. A minimal-permission startup reaches the
+      application external-storage permission gate; main imaging UI/acquisition remain unverified.
+      Existing native evidence also supports candidate 32C structure: two LE7fff0000 header markers,
+      header1024 bytes, frameIDu32 at0x0c, modeu8 at0x10, Pu16 at0x18, Nu16 at0x1c. Lines retain
+      a32-byte prefix; modes5/6 total length is4*(wordLE32at+4 &0xffff), subtype=(word>>20)&0xf, B<4
+      and M==4. Modes0..3 require external DataO parameters, never assume constructor defaults.
+      Offline Rust structure/extraction tests use synthetic streams only; sample semantics, actual
+      wire applicability, completeness and image decoding are unverified. No device activation,
+      firmware change or human scan."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "Rust fixed-whitelist control-IN tests on the physical convex probe: first 2-byte A6 reply
+      preserved as a failed length check; after inspecting the vendor two-byte parser, a full 3-read
+      session and a 9-read session (3 repetitions) succeeded with identical bytes. No PowerON,
+      initialization, reset, start/freeze, interface claim/configuration or firmware transfer.
+      Offline decoder checks recorded hashes/status without promoting the original failure.
+      Reconnect and imaging tests remain pending; no acoustic/electrical safety validation."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Downloaded APKs analyzed statically only. apksigner verifies their signatures; signing
+      identities differ and vendor identity is not established by signature validity. No APK
+      launched, no proprietary USB command issued, no hardware replay.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Owner-confirmed physical types; one-at-a-time swap on the same port corroborated by Linux
+      enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
+provenance:
+  sources:
+    - https://itrason.cloud/
+    - https://itrason.cloud/PA12Plus.htm
+    - https://github.com/opendevicedb/opendevicedb/issues/8
+    - https://github.com/kelu124/pyusbus/tree/7f68591eaa05b217c67ac444bfa17b81b3f58f1b/probes/CONV
+  ai_assisted: true
+  tools:
+    - Codex
+    - OpenDeviceDB MCP 0.3.0
+    - REA
+    - lsusb
+    - Linux sysfs
+    - Python zipfile
+    - aapt2 36.0.0
+    - apksigner 36.0.0
+    - REA 6.5.0 / JADX 0.7.1
+    - Rust probe-usb (passive sysfs inspection)
+    - Ghidra 12.1.4
+    - Android SDK dexdump 36.0.0
+    - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
+    - Rust usb-trace (offline Parquet inspection)
+    - libusb 1.0.30
+    - REA 6.5.0 / ADB 37.0.1
+    - Android package installer and scoped UI hierarchy observations
+    - Rust probe-frame0.1.0 (offline synthetic structural tests)
+    - Android scoped package permissions and UI hierarchy observation
+    - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
+    - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
+    - Existing pyusbus historical Parquet projection export
+updated: 2026-11-04

@@ -1,0 +1,154 @@
+id: bmv/ul10-5e
+vendor: BMV
+model: UL10-5E
+aliases:
+  - BMV linear USB ultrasound probe
+  - UL10-5E linear
+category: medical
+identifiers:
+  usb:
+    - 04b4:00f1
+status: partial-protocol
+summary: Owner-confirmed BMV linear04b4:00f1 reports UL10-5E/ID7 and version text V1.350 in repeated
+  direct reads. B-mode USB identity/command/data/message paths, native configuration formats and
+  lifecycle producer phases are partially mapped and ported to offline Rust plans. Concurrent
+  bounded Linux IN and cooperative host cancellation were tested without initialization and received
+  no bytes. Current-unit initialization, image acquisition, geometry, calibration and acoustic stop
+  remain unverified.
+interfaces:
+  - name: Vendor-specific USB acquisition interface
+    transport: usb
+    status: partial
+    confidence: medium
+    spec: https://github.com/opendevicedb/opendevicedb/issues/7
+    notes: "Descriptors: bulk OUT 01/02/03 and IN 81/82/83, maximum packet 512 bytes, 480 Mb/s. B-mode
+      APK SHA256 2317c74a1a1f314bffdc1e5494f87715e153924f40c1c0f7f12883bbdf2bd777, package
+      com.animal.www.portableultrasoundimagingsystem, code 3204. Explicit PID 00f1 branch routes OUT
+      01 commands, IN 81 data, IN 82 messages. Identity candidates: c0/b0/value 0/index 0/length 8;
+      c0/bb/value 3/index 0/length 32; c0/bb/value 3/index 32/length 32; timeout 5000 ms. Historical
+      pyusbus uses c3 instead of c0. Native command packet: 512 bytes, four 5a bytes, eight zero
+      bytes, up to 124 little-endian u32 words from offset 12, four a5 bytes at offset 508. Start
+      word a0020000 and freeze a0010000 are statically identified, not replayed on this unit. Native
+      framing candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence
+      need an attributed capture. Historical Parquet projection retains command payloads but drops
+      the large image-data column; do not treat it as a validated image capture. Current control-IN
+      reads confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine
+      exact-length replies identical. Historical packet192(Start)
+      SHA25645acfbaf3668222cb5a84eda6727c98a16d6cc976abc8d9332fbb60b48e6dca5 and3679(Freeze)
+      SHA256defef81e3822ef8c1377cb80647804b72a647c46787c0ed617ba307291b62b34 match isolated512-byte
+      serialization. No current-unit Start/Freeze replay. Static configuration details: Probe
+      header24bytes/count@20; PRF column-major; COE8hex/stride10, padded reader blocks128words
+      versus USB payload124words; TWave1536bytes per depth. Six active depths govern selection
+      despite8PRF rows. StartImageEngine upload phase has13packets for the inspected
+      COE128/DTGC-absent configuration; connected UnFreeze with internal flagBC8==0 repeats it then
+      Start (14packets). Other UnFreeze branch sends Start only. These are static branches, not a
+      measured current-unit trace. XML Vascular-default flag is ignored by Java: remembered exam
+      wins, otherwise first SmallParts. No generic ACK or shutdown guarantee established."
+projects:
+  - name: pyusbus (existing work; exact unit compatibility unverified)
+    url: https://github.com/kelu124/pyusbus
+    kind: library
+    license: GPL-3.0-or-later
+    official: false
+claims:
+  - who: smichea
+    contact: https://github.com/smichea
+    scope: Complete linear probe identity/reconnect tests, attributed manufacturer bench captures and
+      Rust offline/acquisition tooling; phantom only, no firmware modification.
+    since: 2026-11-04
+    expires: 2026-12-04
+    agent: Codex + OpenDeviceDB MCP + REA
+verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: New Linux Rust bounded parallel EP81/82 observations used one interface claim, concurrent
+      reads, zero received bytes before initialization, and successful release. A separate SIGINT
+      test saved both in-flight results, joined readers, released the interface and exited130; this
+      is host receive cancellation, not acoustic stop. Static native/DEX analysis resolves Probe.bin
+      (24-byte header, count at20), column-major PRF.bin, COE fixed10-byte records with8 hex
+      characters and128-word reader padding, and TWave three512-byte blocks per depth. Six UL10-5E
+      presets have6 allowed Probe depths but8 PRF rows; Rust rejects extra rows as selectable
+      depths. Independent APK checks cover36 preset/depth combinations. Native StartImageEngine
+      uploads B-power, AD, ATGC, optional DTGC, depth and TX-line; UnFreeze has reinitializing and
+      non-reinitializing branches, and sends Start separately. Missing dtgc_coe_sheet.coe is
+      explicit, never replaced with PostDTGC.bin. Pure Rust plans preserve repeated uploads and
+      flush boundaries; no configuration or Start/Freeze was sent to the current unit. Java can
+      auto-start on recognized ID and also request Start during polling before readiness; its async
+      exit does not guarantee Freeze/PowerOFF or cleanup completion. No correlated command
+      acknowledgement, image reconstruction, acoustic properties, reconnect stability or validated
+      stop is established. Only technical metadata is shared; no unit-unique identifiers or
+      proprietary assets/code are included.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Direct Linux Rust identity reads now report UL10-5E, decimal product ID7, and eight
+      firmware-version bytes containing ASCII V1.350 followed by two NULs. Three repetitions of the
+      three fixed control-IN reads returned identical bytes; earlier permission failures remain
+      preserved. No PowerON, OUT command, reset or initialization was sent. Separate bounded IN
+      sessions claimed interface0, observed four EP82 and two EP81 timeouts with zero received
+      bytes, then successfully released it; this is not image acquisition. Offline comparison found
+      all39 historical OUT EP01 envelopes structurally consistent, with full512-byte packet192
+      and3679 matching isolated native Start and Freeze serialization respectively. Historical
+      physical-unit attribution, present-unit configuration, reconnect stability, image geometry and
+      acoustic effect remain unverified. Unique storage and USB serials are excluded from this
+      contribution.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Manufacturer B-mode package com.animal.www.portableultrasoundimagingsystem,
+      animal1.0/code3204, installed on Samsung SM-A556E Android16/API36 ARM64 after user approval of
+      the old-target Play Protect prompt. Main application UI observed with no probe attached;
+      targeted newest120 main-buffer lines had no selected fatal signatures. App then force-stopped.
+      This establishes unconnected startup only, not recognition, acquisition, clinical suitability
+      or safety.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Static JADX, raw DEX and Ghidra call chains reviewed; passive USB descriptors confirmed. No
+      active identity reads on the current linear unit, no start/freeze replay, no imaging or
+      acoustic/electrical validation.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Downloaded APKs analyzed statically only. apksigner verifies their signatures; signing
+      identities differ and vendor identity is not established by signature validity. No APK
+      launched, no proprietary USB command issued, no hardware replay.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Owner-confirmed physical types; one-at-a-time swap on the same port corroborated by Linux
+      enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
+provenance:
+  sources:
+    - https://itrason.cloud/
+    - https://itrason.cloud/PA12Plus.htm
+    - https://github.com/opendevicedb/opendevicedb/issues/7
+    - https://github.com/kelu124/pyusbus/blob/7f68591eaa05b217c67ac444bfa17b81b3f58f1b/pyusbus/acq.py
+  ai_assisted: true
+  tools:
+    - Codex
+    - OpenDeviceDB MCP 0.3.0
+    - REA
+    - lsusb
+    - Linux sysfs
+    - Python zipfile
+    - aapt2 36.0.0
+    - apksigner 36.0.0
+    - REA 6.5.0 / JADX 0.7.1
+    - Rust probe-usb (passive sysfs inspection)
+    - Ghidra 12.1.4
+    - Android SDK dexdump 36.0.0
+    - Rust probe-usb 0.2.0 (targeted control-IN and offline evidence decoder)
+    - Rust usb-trace (offline Parquet inspection)
+    - libusb 1.0.30
+    - REA 6.5.0 / ADB 37.0.1
+    - Android package installer and scoped UI hierarchy observations
+    - Rust probe-frame0.1.0 (offline synthetic structural tests)
+    - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
+    - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
+    - Existing pyusbus historical Parquet projection export
+    - REA6.5.0 / Ghidra12.1.4 / JADX0.7.1 / Android SDK dexdump36.0.0
+    - Rust probe-usb0.4.0 concurrent bounded IN and0.5.0 offline configuration plans
+    - Independent exact-APK-member metadata and packet-hash verification
+updated: 2026-11-04
