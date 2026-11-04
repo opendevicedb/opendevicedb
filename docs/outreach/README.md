@@ -75,6 +75,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenEarable / Tobias Röddiger](messages/2026-11-04/openearable-tobias-roeddiger.md) | email | `sent_and_read_back` | [contact source](https://open-earable.teco.edu/) |
 | [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
 | [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
+| [AntiMicroX](messages/2026-11-04/antimicrox.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/AntiMicroX/antimicrox/discussions/1387) |
+| [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/ndeadly/MissionControl/discussions/1174) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 

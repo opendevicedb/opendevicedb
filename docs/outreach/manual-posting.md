@@ -63,6 +63,10 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 - [opentrack](https://github.com/opentrack/opentrack/discussions/2235) : proposition de liens par modèle avec XReal One en TCP comme exemple. Aucun importeur ni test matériel ; utiliser ce fil pour les retours.
 
+- [AntiMicroX](https://github.com/AntiMicroX/antimicrox/discussions/1387) : liens vers l’outil de configuration et les profils, en distinguant détection du périphérique et affectation des boutons. Le statut de maintenance limitée est conservé. Aucun importeur ni test matériel ; attendre les retours dans ce fil.
+
+- [MissionControl](https://github.com/ndeadly/MissionControl/discussions/1174) : liens par modèle et firmware de manette, avec transport Bluetooth et prérequis Atmosphère. La proposition cite l’avertissement DualShock 3 propre à la version 0.16.0 et sépare les essais BLE de la prise en charge officielle. Aucun importeur ni test matériel ; attendre les retours dans ce fil.
+
 ## OpenBikeSensor : pas de promotion automatisée
 
 Les [conditions du forum](https://forum.openbikesensor.org/tos) interdisent les publicités/sollicitations et l’accès automatisé. Aucun message, inscription ou recours à un autre canal pour cette campagne. Une participation personnelle doit respecter ces règles ; cette piste ne figure plus parmi les annonces à publier.

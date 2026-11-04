@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T19:22:17.261687Z",
+  "last_verified_at": "2026-11-04T19:28:06.627131Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -815,6 +815,26 @@
       "membership_status": "unconfirmed_after_web_confirmation_attempt",
       "introduction_status": "prepared_privately_not_sent",
       "next_action": "Await list-owner help or an authoritative membership confirmation. Do not repeat subscription/confirmation/help requests or post the prepared introduction before membership is confirmed. No importer or hardware/firmware/radio test."
+    },
+    {
+      "name": "AntiMicroX",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/AntiMicroX/antimicrox/discussions/1387",
+      "published_at": "2026-11-04T19:26:30Z",
+      "message": "messages/2026-11-04/antimicrox.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread. Proposed downstream source-linked tool/model references only; no dedicated importer, new record or hardware test. No duplicate introduction or parallel contributor solicitation."
+    },
+    {
+      "name": "MissionControl",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/ndeadly/MissionControl/discussions/1174",
+      "published_at": "2026-11-04T19:26:34Z",
+      "message": "messages/2026-11-04/missioncontrol.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread. Proposed downstream source-linked tool/model references only; no dedicated importer, new record or hardware test. No duplicate introduction or parallel contributor solicitation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1278,6 +1298,13 @@
       "status": "manual_community_route_rules_review_needed",
       "relevance": "Controller-to-host support matrix separates BR/EDR and BLE, chip families, firmware and controller features.",
       "next_action": "No GitHub Discussions; official docs route support/community to Discord. Review room rules before any owner introduction. Published email examples are for hardware donations/product trades; no unrelated directory solicitation sent there, no promotional issue. No importer or hardware test."
+    },
+    {
+      "name": "Steklorez / MissionControl BLE observations",
+      "source": "https://github.com/ndeadly/MissionControl/discussions/1167",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public report describes 8BitDo Ultimate 2 Wireless 81HE and Xbox 1914 BLE testing on one Switch; the referenced branch exists at 152dd872986a048cc9fc2c7eb03ca34a897958e6.",
+      "next_action": "Keep as a contributor lead. No invitation alongside the new MissionControl introduction. Reported tests and branch existence do not establish upstream acceptance or our validation; do not convert its Bluetooth identifiers into unique USB model matches."
     }
   ],
   "remaining": [
