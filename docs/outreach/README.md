@@ -82,6 +82,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
 | [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
 | [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
+| [Hardware Index / hwidx](messages/2026-11-04/hardware-index-hwidx.md) | documented GitHub question route | `published_and_read_back` | [public question](https://github.com/ResearchCulture/hwidx/issues/40) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -129,3 +130,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [HackRF One update-method PR 29](https://github.com/opendevicedb/opendevicedb/pull/29): corrects the misleading stock-web-interface label on the existing record. Catalogue/route checks and CI passed; open draft, unmerged and undeployed. No hardware test or repeat contact.
 - [GNU Radio subscription request](messages/2026-11-04/gnuradio-subscription-request.md): one documented email request sent/read back; membership unconfirmed and introduction not sent. No repeat request.
 - WLED: agent-posted discussion replies/issues disallowed; owner participation only after reviewing its rules. OpenBeken/Elektroda: unauthorized advertising and automated access prohibited; no campaign post or bypass.
+
+- Open Know-How: published conduct policy excludes primarily promotional content; no campaign contact or alternate-channel bypass.

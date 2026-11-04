@@ -125,6 +125,12 @@ Une [présentation est publiée chez Linux Hardware](https://github.com/linuxhw/
 
 Un [échange est ouvert](https://github.com/buildcores/buildcores-open-db/discussions/443) sur des liens entre les catalogues et la correspondance exacte des modèles. Aucun import de données ni accord de licence. Attendre un retour dans ce fil, sans dupliquer l’annonce.
 
+## Hardware Index et Open Know-How
+
+Une [question technique est publiée chez Hardware Index](https://github.com/ResearchCulture/hwidx/issues/40) sur les identifiants complets par révision, les références de métadonnées et leurs conditions de réutilisation. Le site indique explicitement GitHub Issues comme canal de contact ; aucun bug ni nouvel identifiant n’est demandé. Continuer dans ce fil si un retour arrive.
+
+Le [code de conduite d’Open Know-How](https://github.com/iop-alliance/OpenKnowHow/blob/9b53cecbbbcf40bf3f8b339e4179d4f2cae2aeb9/CODE_OF_CONDUCT.md) interdit les contenus principalement promotionnels ou destinés à créer des liens entrants. Aucun contact pour cette campagne, y compris par son adresse générale ou un autre canal.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

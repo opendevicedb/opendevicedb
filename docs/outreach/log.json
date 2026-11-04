@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T20:00:41.871656Z",
+  "last_verified_at": "2026-11-04T20:06:26.738216Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -900,6 +900,17 @@
       "message": "messages/2026-11-04/buildcores-opendb.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread; no duplicate contact or promotional issue. Proposed source-linked references only, preserving exact product variants and identifier namespaces. No importer, data merge, relicensing or commercial-license agreement."
+    },
+    {
+      "name": "Hardware Index / hwidx",
+      "channel": "GitHub issue; documented contact/question route",
+      "status": "published_and_read_back",
+      "url": "https://github.com/ResearchCulture/hwidx/issues/40",
+      "published_at": "2026-11-04T20:05:23Z",
+      "contact_source": "https://m.hwidx.org/",
+      "message": "messages/2026-11-04/hardware-index-hwidx.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this issue; no duplicate approach or separate maintainer invitation. Concrete full-ID/revision/reference/licensing question, not a bug or new identifier request. No importer, metadata republication or licensing agreement."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1394,8 +1405,29 @@
     {
       "name": "libratbag / Piper",
       "source": "https://github.com/libratbag/libratbag/blob/8235b5bb6032dea15901ab58a8218956f4494d08/README.md",
-      "status": "mailing_list_currency_and_policy_review_needed",
-      "next_action": "README links input-tools mailing-list archive; verify that this is still a current posting route and inspect rules before sending. Device definition, backend, ratbagd DBus service and Piper UI are distinct; a declaration is not all-feature hardware validation. No contact, importer or hardware test."
+      "status": "list_scope_and_policy_review_needed",
+      "next_action": "Normal public listinfo read succeeded; page currently describes libevdev/evtest/evemu while libratbag README links it. Verify present scope/activity and freedesktop policy before a proposal. Signup has CAPTCHA; no form, bypass, subscription, message, importer or hardware test."
+    },
+    {
+      "name": "Open Know-How / Internet of Production",
+      "source": "https://github.com/iop-alliance/OpenKnowHow/blob/9b53cecbbbcf40bf3f8b339e4179d4f2cae2aeb9/CODE_OF_CONDUCT.md",
+      "status": "excluded_from_promotional_outreach",
+      "next_action": "Published content policy prohibits posts primarily intended for promotion/backlinks. No campaign email, forum post, contributor solicitation or alternate-channel bypass. Open-hardware design metadata is not interchangeable with reverse-engineered retail-device records."
+    },
+    {
+      "name": "Jo Walsh / metazool",
+      "source": "https://github.com/ResearchCulture/hwidx/issues/12",
+      "profile_source": "https://github.com/metazool",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public OSHWA/hwidx identifier-interoperability question; name verified from public profile. No professional role or interest in OpenDeviceDB inferred.",
+      "next_action": "Keep as a contributor lead without a separate personal invitation alongside the new hwidx question."
+    },
+    {
+      "name": "pid.codes",
+      "source": "https://pid.codes/",
+      "status": "scope_policy_and_contact_review_needed",
+      "relevance": "Registry of USB product identifiers for open-source hardware. Device identifier allocation differs from retail-model catalogue records.",
+      "next_action": "Read current eligibility, contributor guidance, data terms and an appropriate general channel before contact; do not request a PID for this catalogue or infer USB-IF endorsement. No contact or importer."
     }
   ],
   "remaining": [
