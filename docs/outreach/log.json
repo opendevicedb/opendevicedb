@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:10:52.371729Z",
+  "last_verified_at": "2026-11-04T18:19:48.919856Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -655,7 +655,51 @@
       "proposal_message": "messages/2026-11-04/bangle-js-2-links-pr.md",
       "proposal_status": "draft_open_unmerged_undeployed",
       "proposal_head": "38d56176d31c221d8fe7220974e2455a5317aa5a",
-      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 link addition is validated locally but draft PR 24 remains unmerged/undeployed; no new flashing route or watch test. Do not duplicate the introduction by email."
+      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 link addition is validated locally and by CI but draft PR 24 remains unmerged/undeployed; no new flashing route or watch test. Do not duplicate the introduction by email.",
+      "proposal_ci_status": "passed_on_exact_head",
+      "proposal_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41882671464"
+    },
+    {
+      "name": "OpenPnP",
+      "channel": "email to official Google Group",
+      "recipient": "openpnp@googlegroups.com",
+      "subject": "OpenDeviceDB: finding OpenPnP from a machine model",
+      "sent_at": "2026-11-04T18:17:29.000Z",
+      "status": "sent_and_read_back",
+      "publication_status": "unconfirmed_first_post_moderation_expected",
+      "message": "messages/2026-11-04/openpnp.md",
+      "outgoing_text_verified": true,
+      "subscription_message": "messages/2026-11-04/openpnp-subscription-request.md",
+      "membership_status": "confirmed_before_introduction",
+      "membership_confirmed_at": "2026-11-04T18:14:23Z",
+      "confirmation_reply_sent_at": "2026-11-04T18:14:20.000Z",
+      "next_action": "Await moderation/publication or substantive reply in this group. Do not duplicate the introduction. Proposed machine/controller index is not implemented or hardware tested."
+    },
+    {
+      "name": "Pothos Users / SoapySDR",
+      "channel": "administrative email",
+      "recipient": "pothos-users+subscribe@googlegroups.com",
+      "sent_at": "2026-11-04T18:15:20.000Z",
+      "status": "subscription_request_rejected",
+      "message": "messages/2026-11-04/pothos-users-subscription-request.md",
+      "outgoing_text_verified": true,
+      "membership_status": "unconfirmed",
+      "introduction_status": "not_sent",
+      "next_action": "Do not repeat the rejected mail-command request. Generic server notice does not identify a precise cause. Owner may inspect the normal web membership route; no group post or owner-address bypass."
+    },
+    {
+      "name": "OpenKinect",
+      "channel": "administrative email",
+      "recipient": "openkinect+subscribe@googlegroups.com",
+      "sent_at": "2026-11-04T18:15:23.000Z",
+      "status": "subscription_awaiting_owner_approval",
+      "message": "messages/2026-11-04/openkinect-subscription-request.md",
+      "outgoing_text_verified": true,
+      "confirmation_reply_sent_at": "2026-11-04T18:16:24.000Z",
+      "moderation_notice_received_at": "2026-11-04T18:16:28.000Z",
+      "membership_status": "awaiting_owner_approval",
+      "introduction_status": "not_sent",
+      "next_action": "Await owner approval, as explicitly confirmed by the server after confirmation. No introduction before membership is confirmed; do not repeat subscription or confirmation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -884,9 +928,9 @@
     {
       "name": "SoapySDR",
       "source": "https://github.com/pothosware/SoapySDR/wiki#feedback",
-      "status": "manual_posting_candidate",
+      "status": "subscription_mail_command_rejected_manual_route_remaining",
       "relevance": "SDR hardware abstraction layer and per-device backend modules.",
-      "next_action": "Owner can join the official Pothos users group, review current rules and introduce a small model/module index in their own words. Group membership is required to post. No message sent and no importer implemented.",
+      "next_action": "One documented Pothos Users subscription request was rejected with a generic group/permission notice; exact cause unknown. No introduction sent. Do not retry or bypass via owner addresses; owner can inspect normal web membership.",
       "community_url": "https://groups.google.com/g/pothos-users"
     },
     {
@@ -992,13 +1036,6 @@
       "next_action": "Find a suitable community/cooperation route; no Discussions and no message sent. PR guidance rejects LLM-written review/question responses in that workflow. Do not treat a sales/support contact as a confirmed community route."
     },
     {
-      "name": "OpenPnP",
-      "source": "https://openpnp.org/",
-      "status": "manual_posting_candidate",
-      "next_action": "Owner can join the official group, inspect current rules and ask about a small machine/controller index. Only members can post and new members are moderated. No message sent; no importer implemented.",
-      "community_url": "https://groups.google.com/g/openpnp"
-    },
-    {
       "name": "ESPHome / Home Assistant",
       "source": "https://contributors.home-assistant.io/start/ai-policy/",
       "status": "no_autonomous_outreach",
@@ -1014,8 +1051,8 @@
     {
       "name": "OpenKinect / libfreenect2",
       "source": "https://github.com/OpenKinect/libfreenect2/blob/master/README.md",
-      "status": "manual_posting_candidate",
-      "next_action": "Owner can request membership and inspect current group rules before a source-linked Kinect v1/v2 driver introduction. Only members can post. No signup or message sent; no importer or hardware test claimed.",
+      "status": "subscription_awaiting_owner_approval",
+      "next_action": "The normal subscription and confirmation reply were sent/read back. Server confirms membership awaits owner approval. No introduction sent; do not repeat either administrative action.",
       "community_url": "https://groups.google.com/g/openkinect"
     },
     {
@@ -1044,6 +1081,18 @@
       "status": "channel_and_data_terms_research_needed",
       "relevance": "Hardware identifiers, driver/kernel information and contextual operability reports.",
       "next_action": "Verify an appropriate cooperation route and database-content reuse terms. Website research timed out; public-profile email query lacked token scope. No escalation, guessed email, machine probe/log upload, importer or contact."
+    },
+    {
+      "name": "OpenEPaperLink",
+      "source": "https://github.com/OpenEPaperLink/OpenEPaperLink",
+      "status": "channel_and_model_scope_review_needed",
+      "next_action": "Review official community route/policies and a concrete tag hardware/revision example. Main repository has no Discussions; no message or promotional issue sent."
+    },
+    {
+      "name": "ZMK",
+      "source": "https://github.com/zmkfirmware/zmk",
+      "status": "channel_and_model_scope_review_needed",
+      "next_action": "Review official community route/policies and keyboard/controller/shield distinctions. Main repository has no Discussions; no message or promotional issue sent."
     }
   ],
   "remaining": [

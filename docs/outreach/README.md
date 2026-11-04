@@ -71,6 +71,10 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 
 | [Espruino / Bangle.js](messages/2026-11-04/espruino.md) | official forum / GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/espruino/discussions/8038) |
 
+| [OpenPnP](messages/2026-11-04/openpnp.md) | member email to official group | `sent_and_read_back`; publication unconfirmed | [official group](https://groups.google.com/g/openpnp) |
+| [Pothos Users / SoapySDR](messages/2026-11-04/pothos-users-subscription-request.md) | administrative email | `subscription_request_rejected`; introduction not sent | [group information](https://groups.google.com/g/pothos-users/about) |
+| [OpenKinect](messages/2026-11-04/openkinect-subscription-request.md) | administrative email | `subscription_awaiting_owner_approval`; introduction not sent | [group information](https://groups.google.com/g/openkinect/about) |
+
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
 ## Updating this journal
@@ -99,4 +103,8 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
 - Draft code and new importer/joint-work suggestions do not establish delivered integrations.
 
-- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): validated curated overlay retains imported Gadgetbridge links/pairing. Draft remains unmerged and undeployed; no watch test or new flashing route.
+- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): locally validated curated overlay retains imported Gadgetbridge links/pairing; CI passed on the exact proposal head. Draft remains unmerged and undeployed; no watch test or new flashing route.
+
+- OpenPnP: membership confirmed and one introduction sent/read back. First-post moderation is expected under the published rules; publication remains unconfirmed.
+- OpenKinect: normal email subscription/confirmation completed; server confirms owner approval is still pending. No introduction sent.
+- Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
