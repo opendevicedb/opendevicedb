@@ -12,10 +12,10 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435, candidate firmware1.32. Rust General
-  CPU preprocessing/DTGC/compound/SRI image stages are ported with explicit native backing and
-  independent original-kernel CPU checks. Native RDH undefined-write inconsistency remains explicit.
-  DSC/display, actual convex capture/frame grouping and full GPU/engine/physical equivalence remain
-  unvalidated.
+  CPU preprocessing/DTGC/compound/SRI/DSC and Plus palette are ported with explicit state and
+  independent selected ARM64/original-kernel CPU checks. Native RDH undefined-write conflict remains
+  explicit. Real convex frame grouping/capture, integrated web, full lifecycle/GPU/Android visual
+  equivalence and physical validation remain open.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -273,7 +273,34 @@ interfaces:
       source/banks/numerical outputs or medical files are published. Actual convex
       framing/acquisition, DSC/palette/display, full engine/GPU and physical calibration remain
       open. Earlier no-image-SRI statements describe older checkpoints. No new USB/Android/GPU
-      execution or native session."
+      execution or native session. Rust probe-frame0.19 adds separate General DSC host planning and
+      SRI-to-RGBA numerical image processing, with Plus palette before scan conversion. Four known
+      General files and two distinct Plus gray/tint banks are external and hash-bound. Explicit
+      depth0..7, dimensions1..2048, gray0..8 and tint0..8; gray8 requires an explicit256byte custom
+      curve. The LUT fourth channel is original intensity index, not synthesized opacity255;
+      interpolation acts on all four already colorized channels. General DSC_pre and DSC_CP fully
+      overwrite their exact interpolation/output allocations, using explicit binary32/noFMA
+      normalized bilinear zero-RGBA border CPU policy, not clamp-to-edge. ARM64 FRINTP is
+      ceil.2592host choices match2923776binary bytes,28512arguments and7776ordered intents
+      against8956872original ARM64 instructions in Unicorn; prepared fields, substituted host cosf
+      and successful API stubs are explicit. Native constructor/Init/Create/allocation/GPU are not
+      executed.737image cases compare859360784complete bytes against original DSC bodies compiledCPU
+      with Clang22.1.8, ASan/UBSan and declared sampler/UNORM8/atan/hypot helpers; two complete
+      different initial backings per case are invariant. CRC/zlib/PNG decoding independently
+      preserves86560272native RGBA bytes. Cases include every8depth/9gray/9tint
+      selection,512square,1280x960,2048square, odd/thin output,16high-range SRI outputs and32extreme
+      aspect ratios. A source-review issue rejecting distant zero-border footprints is fixed and
+      covered. Static exact-library/JNI/Java evidence traces DSC through ShowFrame/cache and memcpy
+      to the same ARGB_8888 Bitmap then Canvas.drawBitmap(Paint=null), without established alpha255
+      replacement or channel exchange. Exact PNG channels do not establish Android
+      premultiplied/composited appearance.66CLI refusal/nonoverwrite checks and329common
+      tests/fmt/Clippy pass; actual linear14images/61030424result bytes remain unchanged. All new
+      image-boundary fixtures are synthetic, not attributed convex acquisitions. New DSC and Bitmap
+      sessions saved and closed. Vendor bodies/resources/LUTs/derived pixels and medical data are
+      not published. Real convex frame grouping/capture, integrated reconstruction/web, native RDH
+      undefined-write effects, full native lifecycle/engine/GPU/Android visual equivalence, acoustic
+      stop and physical calibration remain open. Earlier no-DSC statements describe older
+      checkpoints."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -283,6 +310,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: General DSC/palette:2592host cases match2923776bytes/28512arguments/7776intents
+      to8956872ARM64 instructions with declared stubs;737image cases compare859360784bytes to
+      original bodies on CPU under ASan/UBSan with explicit helpers, plus two-backing invariance and
+      exact PNG channel checks.66CLI refusals,329common tests and unchanged14-image linear
+      regression pass. Static JNI/Java preserves native alpha-index bytes; no Android appearance,
+      real convex acquisition/GPU/calibration claim.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -546,4 +582,12 @@ provenance:
       and atomic votes
     - 216passes/1088225280bytes/217728stage hashes plus16numerical edge cases/80609280bytes;87CLI
       refusals and327common tests
+    - Rust probe-frame0.19 General DSC/palette with strict SRI source boundary and native RGBA PNG
+    - REA Ghidra12.1.4 selected DSC and exact Bitmap-consumer functions, Android static
+      caller/Canvas path; snapshots closed
+    - Unicorn2.1.4 original selected ARM64 Set/Bind/Process with explicit prepared fields/API/cosf
+      substitutions
+    - Clang22.1.8 original DSC_pre/DSC_CP CPU bodies, ASan/UBSan/noFMA;737image cases and
+      two-backing invariance
+    - 2592host cases;66CLI refusals;329common tests;14-image actual linear replay nonregression
 updated: 2026-11-04
