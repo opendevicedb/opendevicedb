@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:29:45.011092Z",
+  "last_verified_at": "2026-11-04T22:36:42.957357Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1252,6 +1252,32 @@
       "contact_source": "https://phyphox.org/contact/",
       "project_source": "https://github.com/phyphox/phyphox-android/tree/45fa55a0727653ccce439b86acb69c00cf435436",
       "next_action": "Await this general-contact email about canonical model/sensor/experiment references. No repeat forum/team/ambassador message, registration, data submission/import, app change or phone test. Preserve Android/iOS, measured/reported and sample/provenance limits; data reuse terms and canonical model links remain to verify."
+    },
+    {
+      "name": "IronOS",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Ralim/IronOS/discussions/2257",
+      "published_at": "2026-11-04T22:34:39Z",
+      "title": "OpenDeviceDB: helping iron owners discover IronOS",
+      "message": "messages/2026-11-04/ironos.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Ralim/IronOS/blob/c7413e0d2adfd43156510d4ccbd109cf352ca335/.github/ISSUE_TEMPLATE/everything-else--questions--notes-etc-.md",
+      "project_source": "https://github.com/Ralim/IronOS/tree/c7413e0d2adfd43156510d4ccbd109cf352ca335",
+      "next_action": "Await this Show and tell thread; no duplicate issue/team/Pinecil chat contact. Keep V1/V2, firmware artifacts, stable/development and BLE prerequisites distinct. PR descriptions/review replies must be human-written under the PR template; no code/PR, new page/importer, firmware flash or physical test."
+    },
+    {
+      "name": "openFPGALoader / Gwenhael Goavec-Merou",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "gwenhael.goavec-merou@trabucayre.com",
+      "subject": "openFPGALoader board references on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:35:09.000Z",
+      "message": "messages/2026-11-04/openfpgaloader-gwenhael.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/trabucayre",
+      "project_source": "https://github.com/trabucayre/openFPGALoader/tree/e3d8d947a3df36b5dedbfe720cd3d242aa7ca232",
+      "next_action": "Await this source-reference email; no duplicate IRC/issue/team invitation. Keep board/FPGA/cable and SRAM/flash capability separate, with pinned version/configuration. No importer, new record, tool run, bitstream download/programming or hardware validation."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -2006,6 +2032,14 @@
       "status": "deferred_to_avoid_same_community_duplicate",
       "relevance": "Public author describes Crazyflie 2.1 plus AI-deck/Crazyradio, Wi-Fi camera images, PC gesture recognition and custom firmware. Relevant to PC/drone/camera interoperability; these are author-reported results, not our code/license/flight validation.",
       "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new Bitcraze introduction. Verify current source, licenses and exact hardware/software requirements before a catalogue claim. Do not infer occupation or collaboration interest."
+    },
+    {
+      "name": "builder555 / Pinecil BLE tools",
+      "source": "https://github.com/Ralim/IronOS/discussions/1562",
+      "project_source": "https://github.com/builder555/PineSAM",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public Show and tell describes a Pinecil V2 BLE settings page; current IronOS README links PineSAM from this account. Separate source/license and current firmware compatibility not reviewed.",
+      "next_action": "Retain as a future protocol/tool contributor lead without a personal invitation alongside the new IronOS post. No assumed full identity, occupation, current collaboration interest or our hardware validation."
     }
   ],
   "remaining": [

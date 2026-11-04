@@ -109,6 +109,8 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md) | email | `sent_and_read_back`; delivery unconfirmed | [published contributor contact](https://github.com/pfps) |
 | [Bitcraze / Crazyflie](messages/2026-11-04/bitcraze-crazyflie.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/orgs/bitcraze/discussions/2258) |
 | [phyphox](messages/2026-11-04/phyphox.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://phyphox.org/contact/) |
+| [IronOS](messages/2026-11-04/ironos.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/Ralim/IronOS/discussions/2257) |
+| [openFPGALoader / Gwenhael Goavec-Merou](messages/2026-11-04/openfpgaloader-gwenhael.md) | email | `sent_and_read_back`; delivery unconfirmed | [published author contact](https://github.com/trabucayre) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -188,3 +190,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - [Bitcraze presentation](https://github.com/orgs/bitcraze/discussions/2258): first Crazyflie page proposed with model/radio/deck requirements. [phyphox email](messages/2026-11-04/phyphox.md): asked about canonical phone/sensor/experiment references. No new page/importer or hardware validation; await those conversations. Red Pitaya remains under forum/model-scope review, without contact.
 
 - [INAV source response](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308): target/PWM wiki suggested, without a known retail cross-reference. [Our reply](messages/2026-11-04/inav-source-followup.md) thanks the contributor and preserves branch/date/release qualifiers. Source research remains preliminary; no importer, new record or hardware validation.
+
+- [IronOS presentation](https://github.com/Ralim/IronOS/discussions/2257) and [openFPGALoader email](messages/2026-11-04/openfpgaloader-gwenhael.md): proposed model-specific links with firmware/BLE and FPGA/board/cable/version requirements. Await the existing conversations; no importer, record or hardware validation implemented.
