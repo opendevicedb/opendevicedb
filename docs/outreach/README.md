@@ -52,6 +52,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [SDRangel](messages/2026-11-04/sdrangel.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/f4exb/sdrangel/discussions/3062) |
 | [Fabien Loison / Rivalcfg](messages/2026-11-04/rivalcfg-fabien-loison.md) | email | `sent_and_read_back` | [contact source](https://blog.flozz.fr/#me-contacter) |
 | [Tuya CloudCutter](messages/2026-11-04/tuya-cloudcutter.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) |
+| [Fujihack](messages/2026-11-04/fujihack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/fujihack/discussions/25) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -72,4 +73,5 @@ fwupd supplied a substantive source suggestion. Our [follow-up](messages/2026-11
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
 - Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.
 - [PkTriggerCord support defect](https://github.com/opendevicedb/opendevicedb/issues/20): do not promote affected records as working routes until source-specific claims are corrected. The issue is recorded; no fix implemented.
+- [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Draft PR remains unmerged; the live site has not been changed by this proposal.
 - New importer and joint-work suggestions in the messages are proposals, not delivered integrations.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:32:34.810975Z",
+  "last_verified_at": "2026-11-04T16:40:56.554935Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -444,6 +444,26 @@
       "message": "messages/2026-11-04/tuya-cloudcutter.md",
       "next_action": "Await a substantive response in the existing discussion; do not repeat the introduction. Imported profiles are not hardware tests.",
       "outgoing_text_verified": true
+    },
+    {
+      "name": "Fujihack",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/fujihack/discussions/25",
+      "published_at": "2026-11-04T16:39:53Z",
+      "message": "messages/2026-11-04/fujihack.md",
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/21",
+      "proposal_message": "messages/2026-11-04/fujihack-scope-pr.md",
+      "proposal_status": "draft_pr_tested_not_merged",
+      "next_action": "Await feedback in the existing discussion. Draft PR 21 passed local tests and CI, but remains unmerged and undeployed.",
+      "outgoing_text_verified": true,
+      "proposal_validation": {
+        "head": "b18b483e4d109a623f499419efed4c9517e55fcd",
+        "local_tests_passed": 211,
+        "schema_errors": 0,
+        "ci": "passed",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41869423242/job/126712101447"
+      }
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -698,6 +718,31 @@
       "status": "manual_posting_candidate",
       "relevance": "Existing watch-model importer with hardware codenames and platform limitations.",
       "next_action": "Owner can review room rules and ask whether an existing-importer introduction is welcome. Official project directs all discussions to Matrix; no message sent."
+    },
+    {
+      "name": "coreboot",
+      "source": "https://doc.coreboot.org/community/forums.html",
+      "community_url": "https://matrix.to/#/#coreboot:matrix.org",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can review room rules and discuss existing importer scope. GitHub is a read-only mirror without Discussions; list information returned 403. No message sent."
+    },
+    {
+      "name": "flashrom",
+      "source": "https://github.com/flashrom/flashrom/blob/main/doc/contact.rst",
+      "status": "research_lead",
+      "next_action": "Inspect supported-hardware sources and prepare a concrete directory use case before mailing the public developer list. Non-subscriber emails are moderated. No message sent."
+    },
+    {
+      "name": "Sony-PMCA-RE / OpenMemories",
+      "source": "https://github.com/ma1co/Sony-PMCA-RE",
+      "status": "channel_research_needed",
+      "next_action": "Find a suitable official community route; main repository has no Discussions. Preserve distinct app/updater/service-mode support limits. No message sent."
+    },
+    {
+      "name": "reroads203-lab",
+      "source": "https://github.com/orgs/fujihack/discussions/24",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "next_action": "Potential future contributor lead for the Android 16 compatibility patch. No direct message alongside the new Fujihack introduction; do not infer collaboration interest."
     }
   ],
   "remaining": [
