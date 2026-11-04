@@ -12,10 +12,11 @@ identifiers:
     - 04b4:4611
 status: partial-protocol
 summary: Owner-confirmed convex04b4:4611 reports UC5-2S/ID1435 with candidate firmware1.32.
-  Identity/configuration/messages and experimental Rust acquisition are partially mapped. Offline32C
-  replay and selected General LPF/MDown/reshape plus DTGC/gain/DR are ported with explicit backing
-  states, targeted original ARM64 instruction and CPU kernel checks. Compound/SRI/DSC, complete
-  image processing and physical convex acquisition remain unvalidated.
+  Configuration/messages, experimental acquisition and offline32C replay are partially mapped. Rust
+  General LPF/MDown/reshape/DTGC and explicit-state compound are ported with original
+  ARM64/CPU-kernel checks. Native RDH allocation/write inconsistency is disclosed with a separate
+  outside-write trace, without GPU equivalence. SRI/DSC and actual convex imaging remain
+  unvalidated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -201,7 +202,36 @@ interfaces:
       full-engine/GPU equivalence, convex stream grouping and physical calibration remain open. No
       new USB/Android execution or convex activation; manufacturer source/banks and derived
       numerical outputs remain private/ignored. Earlier no-DTGC statements describe previous
-      checkpoints."
+      checkpoints. Rust probe-frame0.16 adds the selected General m2 compound stage after DTGC, with
+      five full64x1024backings and an explicit initialized flag. The complete20-byte B_BF file is
+      hash-bound; first16bytes produce coefficient/thresholds/window. All window operations are
+      binary32; General N is63,51,39,33,29,25,19,17. Original APK inventory has no General B_Smooth,
+      so ThreeLine stays disabled and any supplied B_Smooth is rejected. DiffAbs -> SmoothingCoef ->
+      Correlation are quantized at the native UNORM8 boundaries. The rolling recurrence adds
+      row(y+N/2) then subtracts row(y-N/2), without replacing it by a recentered mean. Only after
+      these three kernels, a zero initialized flag copies full current DTGC over the full output;
+      full current DTGC always becomes history. Unwritten columns32..63 of Abs/Coefficient/Output
+      retain caller backing until this explicit first copy. A newly corroborated native
+      inconsistency is retained: CreateOpenCL0x12c5d4..12c5ec passes the same64x1024descriptor to
+      RDH2310 as other images, whereas FillImage and SetParam request256x1024, and the smoothing
+      kernel writes x0..127. OpenCL defines image writes outside the allocation as undefined. The
+      mandatory CPU policy record-outside-native64-v1 keeps native width64 and records every
+      computed/quantized write to columns64..127 separately; it does not silently enlarge the native
+      image, discard computed values or model undefined GPU effects.65536outside write calls are
+      traced per pass. B_mode::Set0x131668 binds SRI input22f0 in m2, otherwise22e0, with RDH2310;
+      new REA Evidence also records ctor0x12bae8 and its optional ThreeLine
+      dispatch64x1024/local4x32. The native session is saved/closed.48passes in16three-frame
+      sequences cover all8windows and both initial flags, compare88080384bytes against the three
+      original OpenCL kernel bodies compiled x86CPU under ASan/UBSan with explicit sampler/UNORM
+      helpers.17825792retained bytes are independently checked;3145728outside writes
+      traced.152selected original AArch64 instructions check window production.31CLI
+      refusals/non-overwrite cases and322common project tests/fmt/Clippy pass. Archived actual
+      linear trial02 still produces14images/61030424result bytes unchanged. Eight input copies and
+      eight result hashes are retained; history snapshots do not attest native setting/acquisition
+      continuity. SRI/DSC/display, native fill errors/full lifecycle, GPU equivalence and real
+      convex acquisition/calibration remain open. All vendor source/banks and numerical outputs stay
+      ignored/private; only independent findings/metadata are published. Earlier no-compound
+      statements describe previous checkpoints."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -211,6 +241,17 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: General m2 compound:48passes/16three-frame explicit-state sequences,88080384bytes match the
+      three original OpenCL bodies compiled CPU with explicit UNORM8/sampler and outside-write trace
+      under ASan/UBSan.17825792retained bytes checked;3145728outside-RDH writes recorded.
+      Original152ARM64 instructions verify8window calculations.31CLI refusals and322common
+      tests/fmt/Clippy pass; actual linear14-image regression unchanged. Native RDH64allocation
+      conflicts with fill256 and writes128; GPU behavior remains undefined, never claimed
+      reproduced. No USB/GPU/Android execution or real convex acquisition; no vendor
+      code/banks/derived output files or medical data published.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -425,4 +466,10 @@ provenance:
     - Clang22.1.8 original OpenCL DTGC CPU body, explicit UNORM8 helper, ASan/UBSan and bubblewrap
     - 192numeric cases/51120384bytes,29CLI refusal cases,318common tests and unchanged actual
       linear-trial regression
+    - Rust probe-frame0.16 selected General compound with five explicit native64 backing images and
+      separate outside-RDH trace
+    - REA6.5.0/Ghidra12.1.4 ctor and B_modeSet Evidence with saved/closed native session
+    - Unicorn152selected AArch64 window instructions; Clang22.1.8 original CPU compound kernels with
+      explicit sampler/UNORM8 helpers and ASan/UBSan
+    - 48passes/88080384bytes,31CLI refusals,322common tests and actual linear14-image regression
 updated: 2026-11-04
