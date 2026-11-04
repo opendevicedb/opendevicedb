@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T14:55:30.327408+00:00",
+  "last_verified_at": "2026-11-04T16:17:51.532603Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -11,7 +11,9 @@
     "published_and_read_back": "Public GitHub author and exact outgoing content read back successfully.",
     "automatic_acknowledgement": "Automatic reply only.",
     "held_for_moderation": "Mailing-list notice confirms a hold; publication is not established.",
-    "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent."
+    "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent.",
+    "declined_do_not_contact": "Community declined this kind of interaction; no further contact.",
+    "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented."
   },
   "contacts": [
     {
@@ -237,12 +239,27 @@
     {
       "name": "fwupd",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/fwupd/fwupd/discussions/11346",
       "published_at": "2026-11-04T11:49:49Z",
       "message": "messages/2026-11-04/fwupd.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Await feedback; issue 19 scopes a proposed downstream importer. No importer has been implemented.",
+      "response": {
+        "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19397020",
+        "by": "hughsie",
+        "summary": "Suggested consuming the VID/PID identifiers in plugin .quirk files."
+      },
+      "followups": [
+        {
+          "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19401663",
+          "published_at": "2026-11-04T16:11:13Z",
+          "message": "messages/2026-11-04/fwupd-quirks-followup.md",
+          "outgoing_text_verified": true
+        }
+      ],
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/issues/19",
+      "proposal_message": "messages/2026-11-04/fwupd-identifier-proposal.md"
     },
     {
       "name": "usb-rea",
@@ -257,13 +274,18 @@
     {
       "name": "Glasgow Interface Explorer",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "declined_do_not_contact",
       "url": "https://github.com/GlasgowEmbedded/glasgow/discussions/1347",
       "published_at": "2026-11-04T13:55:57Z",
       "message": "messages/2026-11-04/glasgow-interface-explorer.md",
       "batch": "additional_communities_20261104",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Do not send further AI-assisted messages or promotional follow-ups to this community.",
+      "response": {
+        "url": "https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977",
+        "by": "whitequark",
+        "summary": "Maintainer said this kind of AI-assisted interaction is not welcome."
+      }
     },
     {
       "name": "Meshtastic",
@@ -334,6 +356,38 @@
       "message": "messages/2026-11-04/brainflow-andrey-parfenov.md",
       "batch": "additional_communities_20261104",
       "contact_source": "https://brainflow.org/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Tympan",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@tympan.org",
+      "sent_at": "2026-11-04T16:12:09Z",
+      "subject": "OpenDeviceDB: helping people discover open hearing-research hardware",
+      "message": "messages/2026-11-04/tympan.md",
+      "contact_source": "https://shop.tympan.org/pages/contact-us",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "liquidctl",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/liquidctl/liquidctl/discussions/942",
+      "published_at": "2026-11-04T16:12:31Z",
+      "message": "messages/2026-11-04/liquidctl.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenTabletDriver",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238",
+      "published_at": "2026-11-04T16:12:33Z",
+      "message": "messages/2026-11-04/opentabletdriver.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction."
     }
@@ -526,22 +580,18 @@
   ],
   "next_research": [
     {
-      "name": "Tympan",
-      "source": "https://github.com/Tympan/Tympan_Library",
-      "relevance": "Open-source hearing-aid hardware and DSP library",
-      "next_action": "Verify current community contact channel and check sent history before contacting"
-    },
-    {
       "name": "Gadgetbridge",
       "source": "https://gadgetbridge.org/",
       "relevance": "Device protocols and existing importer",
-      "next_action": "Review current community channels and policy; check history before contacting"
+      "next_action": "Owner may ask in the official Matrix room whether an existing-importer discussion is welcome; review room rules first. No message sent.",
+      "community_url": "https://matrix.to/#/#gadgetbridge:matrix.org"
     },
     {
       "name": "Klipper",
       "source": "https://www.klipper3d.org/Contact.html",
       "relevance": "Existing printer configuration importer",
-      "next_action": "Check forum access and posting guidelines; check history before contacting"
+      "next_action": "Owner should inspect forum rules and choose a suitable category; anonymous access returned 403 during research. No message sent.",
+      "community_url": "https://community.klipper3d.org/"
     },
     {
       "name": "Hacker News / DJI Neo 2",
@@ -557,6 +607,13 @@
       "support_recipient": "hn@ycombinator.com",
       "support_sent_at": "2026-11-04T15:22:19Z",
       "support_reply_status": "no_reply_observed"
+    },
+    {
+      "name": "OpenRGB",
+      "source": "https://openrgb.org/",
+      "community_url": "https://lemmy.today/c/OpenRGB",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect current Lemmy rules and publish one concrete existing-importer discussion from their own account; no post sent."
     }
   ],
   "remaining": [
@@ -565,5 +622,6 @@
     "Await gPhoto moderation; do not resend",
     "Handle substantive replies when received; proposed new importers are not yet implemented",
     "Continue with the research queue if further outreach is pursued; verify channel and duplicates first"
-  ]
+  ],
+  "manual_posting_guide": "manual-posting.md"
 }

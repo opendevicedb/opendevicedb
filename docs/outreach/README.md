@@ -3,6 +3,7 @@
 This is the persistent journal for OpenDeviceDB adoption work. Start here before researching or contacting a community, so earlier conversations are not lost or duplicated.
 
 - [Research notes and candidate communities](research.md): sources, relevance, channel choices, feedback and next leads.
+- [Where the owner can post personally](manual-posting.md): direct community links, useful topics and restrictions.
 - [Structured contact log](log.json): individual actions, dates, evidence, statuses and next steps.
 - [Outgoing messages](messages/): our actual public posts, comments and professional emails, preserved by date.
 
@@ -34,15 +35,18 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [zwave](messages/2026-11-04/zwave.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467) |
 | [tasmota](messages/2026-11-04/tasmota.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470) |
 | [gp2040](messages/2026-11-04/gp2040.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenStickCommunity/GP2040-CE/discussions/1818) |
-| [fwupd](messages/2026-11-04/fwupd.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/fwupd/fwupd/discussions/11346) |
+| [fwupd](messages/2026-11-04/fwupd.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/fwupd/fwupd/discussions/11346) |
 | [usb-rea](messages/2026-11-04/usb-rea.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/emirmrkaljevic/usb-rea/discussions/3) |
-| [Glasgow Interface Explorer](messages/2026-11-04/glasgow-interface-explorer.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/GlasgowEmbedded/glasgow/discussions/1347) |
+| [Glasgow Interface Explorer](messages/2026-11-04/glasgow-interface-explorer.md) | GitHub discussion | `declined_do_not_contact` | [public post](https://github.com/GlasgowEmbedded/glasgow/discussions/1347) |
 | [Meshtastic](messages/2026-11-04/meshtastic.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/meshtastic/firmware/discussions/12301) |
 | [Open-Source Leg](messages/2026-11-04/open-source-leg.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/neurobionics/opensourceleg/discussions/538) |
 | [EmotiBit](messages/2026-11-04/emotibit.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/EmotiBit/EmotiBit_Docs/discussions/156) |
 | [OpenFlexure](messages/2026-11-04/openflexure.md) | email | `sent_and_read_back` | [contact source](https://openflexure.org/contact/) |
 | [OpenIPC](messages/2026-11-04/openipc.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenIPC/firmware#support) |
 | [BrainFlow / Andrey Parfenov](messages/2026-11-04/brainflow-andrey-parfenov.md) | email | `sent_and_read_back` | [contact source](https://brainflow.org/) |
+| [Tympan](messages/2026-11-04/tympan.md) | email | `sent_and_read_back` | [contact source](https://shop.tympan.org/pages/contact-us) |
+| [liquidctl](messages/2026-11-04/liquidctl.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/liquidctl/liquidctl/discussions/942) |
+| [OpenTabletDriver](messages/2026-11-04/opentabletdriver.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -53,6 +57,8 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 3. After sending or publishing, archive the exact outgoing text and update `log.json` with the date, channel, public evidence and actual status. If a send fails, record the failure and check for delivery before retrying.
 4. Record substantive responses as a brief attributed summary with a public permalink where available. Keep proposed work separate from implemented changes and verified hardware behavior.
 5. Retain personal correspondence and private account evidence outside this public repository. Never commit mail headers, mailbox IDs, phone numbers, residence details or subscription tokens.
+
+fwupd supplied a substantive source suggestion. Our [follow-up](messages/2026-11-04/fwupd-quirks-followup.md) links [proposal issue 19](https://github.com/opendevicedb/opendevicedb/issues/19); no importer is implemented. Glasgow declined AI-assisted outreach; no further contact is queued.
 
 ## Pending external steps
 
