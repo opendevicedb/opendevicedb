@@ -60,6 +60,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
 | [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
 | [QMK](messages/2026-11-04/qmk.md) | email | `sent_and_read_back` | [contact source](https://qmk.fm/support) |
+| [OpenWrt](messages/2026-11-04/openwrt.md) | email | `sent_and_read_back` | [contact source](https://openwrt.org/contact) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
@@ -78,11 +79,13 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 ## Pending external steps
 
 - Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.
-- Rockbox: subscription form accepted the request and the confirmation email was replied to; membership unconfirmed, introduction not sent. Do not repeat either administrative action.
+- Rockbox: the server confirms the membership request awaits moderator approval; introduction not sent. Do not repeat registration or confirmation.
 - SANE: documented email subscription requested and read back; membership unconfirmed. No introduction sent yet; do not repeat the request.
 - gPhoto and NUT: original messages are held for moderation; do not resend.
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
 - Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.
 - [PkTriggerCord support defect](https://github.com/opendevicedb/opendevicedb/issues/20): do not promote affected records as working routes until source-specific claims are corrected. The issue is recorded; no fix implemented.
 - [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Draft PR remains unmerged; the live site has not been changed by this proposal.
+- [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Reported against current main; no correction or deployment claimed.
+- Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
 - New importer and joint-work suggestions in the messages are proposals, not delivered integrations.

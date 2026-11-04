@@ -43,6 +43,10 @@ Ces liens permettent de lire les échanges ou d'apporter personnellement un él�
 
 Le [mainteneur a refusé ce type d'interaction assistée par IA](https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977). Le suivi est marqué `declined_do_not_contact`. Aucun nouveau contact, relance ou texte de réponse assisté par IA n'est prévu. Ce lien est conservé pour le contexte ; Glasgow ne fait pas partie des lieux recommandés pour une nouvelle publication.
 
+## Nura/postmarketOS : pas de publication assistée par IA
+
+Le [code de conduite](https://docs.nura.eco/policies-and-processes/community/code-of-conduct.html) et la [politique IA](https://docs.nura.eco/policies-and-processes/development/ai-policy.html) interdisent les contributions créées entièrement ou partiellement avec une IA générative et la promotion de ces outils. Aucune présentation, contribution ou approche directe d’un mainteneur ne sera envoyée par cette campagne ; aucun texte généré à copier n’est proposé.
+
 ## Hacker News : attendre la réponse du support
 
 L'inscription du compte `smichea` n'a pas permis la soumission : « Sorry, your account isn't able to submit this site. » Le propriétaire a envoyé le message au support ; aucune résolution n'est confirmée.

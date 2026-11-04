@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T17:24:04.647849Z",
+  "last_verified_at": "2026-11-04T17:30:13.558675Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -576,6 +576,20 @@
       "message": "messages/2026-11-04/qmk.md",
       "outgoing_text_verified": true,
       "next_action": "Await a substantive response; do not repeat the introduction. Offer downstream corrections to build-target/layout/revision presentation; no keyboard test is claimed."
+    },
+    {
+      "name": "OpenWrt",
+      "channel": "email",
+      "recipient": "contact@openwrt.org",
+      "subject": "OpenDeviceDB: cooperation around source-linked OpenWrt device discovery",
+      "sent_at": "2026-11-04T17:29:08.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://openwrt.org/contact",
+      "message": "messages/2026-11-04/openwrt.md",
+      "outgoing_text_verified": true,
+      "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/23",
+      "issue_message": "messages/2026-11-04/openwrt-installation-issue.md",
+      "next_action": "Await a substantive response; do not duplicate the introduction on a list or forum. Correct the downstream image-wording defect separately; no correction or hardware test is claimed."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -875,11 +889,20 @@
       "name": "Rockbox",
       "source": "https://github.com/Rockbox/www/blob/fad60e84fe19aac38941774b39d9642ec042e24d/mail/index.cgi",
       "community_url": "https://lists.haxx.se/mailman/listinfo/rockbox-dev",
-      "status": "subscription_confirmation_replied_membership_unconfirmed",
+      "status": "subscription_awaiting_moderator_approval",
       "subscription_requested_at": "2026-11-04T17:20:44.102557Z",
       "confirmation_reply_sent_at": "2026-11-04T17:21:59.000Z",
       "introduction_status": "not_sent",
-      "next_action": "Await explicit membership confirmation before a single targeted existing-importer message. The normal web form accepted the request and the confirmation email was replied to and read back. Do not repeat registration or confirmation; tokens and account evidence remain private."
+      "next_action": "Await moderator approval of membership before sending a targeted existing-importer introduction. Server notice confirms the request was forwarded to a moderator. Do not repeat registration or confirmation; no introduction sent.",
+      "membership_status": "awaiting_moderator_approval",
+      "moderation_notice_received_at": "2026-11-04T17:22:03.000Z"
+    },
+    {
+      "name": "Nura / postmarketOS",
+      "source": "https://docs.nura.eco/policies-and-processes/development/ai-policy.html",
+      "status": "excluded_from_ai_assisted_outreach",
+      "relevance": "Existing pmaports importer; former postmarketOS is now Nura.",
+      "next_action": "Do not send AI-assisted outreach or contributions, contact maintainers to bypass the community rule, or prepare generated owner-post text. Current policy explicitly prohibits generative-AI-created contributions. No contact sent."
     }
   ],
   "remaining": [
