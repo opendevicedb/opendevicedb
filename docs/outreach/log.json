@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T16:54:19.477502Z",
+  "last_verified_at": "2026-11-04T16:57:23.891514Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -491,6 +491,19 @@
         "ci": "passed",
         "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41869423242/job/126712101447"
       }
+    },
+    {
+      "name": "flashrom developers",
+      "channel": "email",
+      "recipient": "flashrom@flashrom.org",
+      "subject": "OpenDeviceDB: linking programmers and boards to existing flashrom support",
+      "sent_at": "2026-11-04T16:56:11.000Z",
+      "status": "sent_and_read_back",
+      "publication_status": "unconfirmed",
+      "contact_source": "https://github.com/flashrom/flashrom/blob/0172149da9479da7bad0f939e2cdd6b23e13c69d/doc/contact.rst",
+      "message": "messages/2026-11-04/flashrom-developers.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await moderation notice, publication evidence or a substantive reply. Do not resend. Proposed programmer entry is not implemented or hardware tested."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -752,12 +765,6 @@
       "community_url": "https://matrix.to/#/#coreboot:matrix.org",
       "status": "manual_posting_candidate",
       "next_action": "Owner can review room rules and discuss existing importer scope. GitHub is a read-only mirror without Discussions; list information returned 403. No message sent."
-    },
-    {
-      "name": "flashrom",
-      "source": "https://github.com/flashrom/flashrom/blob/main/doc/contact.rst",
-      "status": "research_lead",
-      "next_action": "Inspect supported-hardware sources and prepare a concrete directory use case before mailing the public developer list. Non-subscriber emails are moderated. No message sent."
     },
     {
       "name": "Sony-PMCA-RE / OpenMemories",

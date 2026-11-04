@@ -53,6 +53,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Fabien Loison / Rivalcfg](messages/2026-11-04/rivalcfg-fabien-loison.md) | email | `sent_and_read_back` | [contact source](https://blog.flozz.fr/#me-contacter) |
 | [Tuya CloudCutter](messages/2026-11-04/tuya-cloudcutter.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) |
 | [Fujihack](messages/2026-11-04/fujihack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/fujihack/discussions/25) |
+| [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
