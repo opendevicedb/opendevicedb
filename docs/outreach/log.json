@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T18:48:18.798255Z",
+  "last_verified_at": "2026-11-04T18:59:51.119950Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -391,7 +391,7 @@
       "published_at": "2026-11-04T16:12:31Z",
       "message": "messages/2026-11-04/liquidctl.md",
       "outgoing_text_verified": true,
-      "next_action": "Await maintainer review of draft PR 943, particularly the representation of explicit README-family-to-match associations. No OpenDeviceDB importer is implemented.",
+      "next_action": "Await review of upstream shared-index draft PR 943 and downstream Aquacomputer catalogue draft PR 28. A substantive additional source suggestion was handled in the existing thread; do not send another introduction or ask the busy contributor for work. No dedicated importer, merge, deployment or hardware test claimed.",
       "response": {
         "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402109",
         "by": "jonasmalacofilho",
@@ -403,6 +403,12 @@
           "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402348",
           "published_at": "2026-11-04T16:53:43Z",
           "message": "messages/2026-11-04/liquidctl-shared-index-followup.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19404382",
+          "published_at": "2026-11-04T18:57:39Z",
+          "message": "messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md",
           "outgoing_text_verified": true
         }
       ],
@@ -418,6 +424,28 @@
         "style": "Black passed",
         "ci": "no checks reported at creation",
         "initial_full_run": "Existing keyval timing test failed once; passed in isolation and on full rerun."
+      },
+      "additional_source_responses": [
+        {
+          "by": "aleksamagicka",
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517",
+          "received_at": "2026-11-04T18:06:55Z",
+          "summary": "Invited examination of the Aquacomputer hwmon driver and other public Linux driver repositories for device data not yet in liquidctl."
+        }
+      ],
+      "additional_catalogue_proposal": {
+        "url": "https://github.com/opendevicedb/opendevicedb/pull/28",
+        "initial_message": "messages/2026-11-04/aquacomputer-hwmon-pr.md",
+        "message": "messages/2026-11-04/aquacomputer-hwmon-pr-update.md",
+        "head": "3182905c1d7421423029275810bb486877cfbd9c",
+        "status": "draft_open_unmerged_undeployed",
+        "records": 12,
+        "overview_rows_covered": 13,
+        "source_usb_matches_preserved": 12,
+        "validation": "42 curated / 31207 imported; 0 errors; serialized-YAML source audit and production model/USB lookup passed",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41891930072",
+        "ci_status": "passed_on_exact_head",
+        "hardware_test": false
       }
     },
     {
@@ -1160,6 +1188,26 @@
       "source": "https://github.com/pvvx/ATC_MiThermometer/discussions/838",
       "status": "deferred_contact_route_is_for_beta_testers",
       "next_action": "No verified public app source/license and no own app or hardware test. Do not use the tester-only published address for a generic directory solicitation; no contact sent."
+    },
+    {
+      "name": "aleksamagicka / Gigabyte Waterforce and ASUS Ryujin drivers",
+      "source": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517",
+      "status": "source_scope_reviewed_additional_catalogue_work_pending",
+      "next_action": "Source suggestion acknowledged in the existing liquidctl thread with Aquacomputer draft PR 28. Gigabyte grouped X240/X280/X360 identity and ASUS newer source variants need their own kernel/feature mapping before a proposal. Do not send a separate solicitation to the same contributor."
+    },
+    {
+      "name": "OpenEarable / OpenWearables",
+      "source": "https://open-earable.teco.edu/",
+      "status": "contact_route_and_policy_review_pending",
+      "relevance": "Open hardware/firmware and tooling for ear-based research sensors; versioned device and streaming interfaces.",
+      "next_action": "Official site publishes a contact and links the firmware/app sources. Main firmware repository has no Discussions. Complete channel/policy review before any introduction; avoid duplicating through the related commercial custom-development inbox. No contact, record, clinical claim or hardware test."
+    },
+    {
+      "name": "OpenBikeSensor",
+      "source": "https://www.openbikesensor.org/community/",
+      "community_url": "https://forum.openbikesensor.org/",
+      "status": "forum_rules_and_access_review_pending",
+      "next_action": "Official contact page prefers public community discussion. Review forum rules/access before one model/revision discovery proposal. Keep Classic/Pro and separate Lite firmware distinct; Lite is alpha and Pro prototype-stage in the inspected device page. No contact, record or hardware test."
     }
   ],
   "remaining": [

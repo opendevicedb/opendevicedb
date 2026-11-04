@@ -85,7 +85,7 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 
 fwupd supplied a substantive source suggestion. Our [latest follow-up](messages/2026-11-04/fwupd-index-followup.md) links [draft PR 25](https://github.com/opendevicedb/opendevicedb/pull/25): a tested research index of 104 declarations from three plugins. Local importer tests and CI passed; full plugin coverage, physical-model mapping and user-facing lookup remain further work under [issue 19](https://github.com/opendevicedb/opendevicedb/issues/19). The draft is unmerged and undeployed. Glasgow declined AI-assisted outreach; no further contact is queued.
 
-liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending.
+liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending. A further [source suggestion from aleksamagicka](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517) led to [draft PR 28](https://github.com/opendevicedb/opendevicedb/pull/28), adding 12 source-qualified Aquacomputer hwmon records. Source/lookup checks and CI passed; the draft remains unmerged and undeployed. Our [reply](messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md) thanks him and links the proposal.
 
 ## Pending external steps
 
@@ -108,3 +108,5 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
 
 - [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Unmerged and undeployed; no hardware test.
+
+- [Aquacomputer hwmon catalogue PR 28](https://github.com/opendevicedb/opendevicedb/pull/28): 12 curated records cover the source overview and its 12 USB match entries, with grouped identities and per-feature kernel baselines. Catalogue/source/lookup checks and CI passed; draft remains unmerged/undeployed, with no hardware test.
