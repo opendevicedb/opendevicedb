@@ -9,11 +9,13 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: Owner-confirmed linear USB probe 04b4:00f1. UL10-5E remains a historical model candidate,
-  not read from the current unit. The matching B-mode APK branch documents identity reads,
-  command/data/message endpoints and native command framing. Acquisition compatibility and image
-  geometry remain unverified; historical pyusbus calls this USB ID CONVEX, which does not establish
-  physical geometry.
+summary: Owner-confirmed BMV linear USB probe04b4:00f1. Direct reads from the current unit now
+  report UL10-5E, product ID7 and version text V1.350, stable over three repetitions on one
+  connection. B-mode APK analysis identifies identity controls, command/data/message endpoints and
+  command framing, with historical isolated Start/Freeze packets matching512-byte Rust
+  serialization. Current acoustic initialization, reconnect stability, image acquisition, geometry
+  and performance remain unverified; the historical pyusbus label CONVEX does not establish physical
+  geometry.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -30,7 +32,12 @@ interfaces:
       word a0020000 and freeze a0010000 are statically identified, not replayed on this unit. Native
       framing candidate uses marker 7fff0000 and line counters; actual geometry and wire sequence
       need an attributed capture. Historical Parquet projection retains command payloads but drops
-      the large image-data column; do not treat it as a validated image capture."
+      the large image-data column; do not treat it as a validated image capture. Current control-IN
+      reads confirm reported text UL10-5E/ID7 and version ASCII V1.350 with two NULs; nine
+      exact-length replies identical. Historical packet192(Start)
+      SHA25645acfbaf3668222cb5a84eda6727c98a16d6cc976abc8d9332fbb60b48e6dca5 and3679(Freeze)
+      SHA256defef81e3822ef8c1377cb80647804b72a647c46787c0ed617ba307291b62b34 match isolated512-byte
+      serialization. No current-unit Start/Freeze replay."
 projects:
   - name: pyusbus (existing work; exact unit compatibility unverified)
     url: https://github.com/kelu124/pyusbus
@@ -46,6 +53,20 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: Direct Linux Rust identity reads now report UL10-5E, decimal product ID7, and eight
+      firmware-version bytes containing ASCII V1.350 followed by two NULs. Three repetitions of the
+      three fixed control-IN reads returned identical bytes; earlier permission failures remain
+      preserved. No PowerON, OUT command, reset or initialization was sent. Separate bounded IN
+      sessions claimed interface0, observed four EP82 and two EP81 timeouts with zero received
+      bytes, then successfully released it; this is not image acquisition. Offline comparison found
+      all39 historical OUT EP01 envelopes structurally consistent, with full512-byte packet192
+      and3679 matching isolated native Start and Freeze serialization respectively. Historical
+      physical-unit attribution, present-unit configuration, reconnect stability, image geometry and
+      acoustic effect remain unverified. Unique storage and USB serials are excluded from this
+      contribution.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -98,4 +119,7 @@ provenance:
     - REA 6.5.0 / ADB 37.0.1
     - Android package installer and scoped UI hierarchy observations
     - Rust probe-frame0.1.0 (offline synthetic structural tests)
+    - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
+    - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
+    - Existing pyusbus historical Parquet projection export
 updated: 2026-11-04

@@ -39,7 +39,11 @@ interfaces:
       mode 1 selects header-driven 32C parsing until settings change; actual captured image format
       is still uncorroborated. Candidate32C extraction supports opaque bytes only; no
       RF/IQ/envelope/pixel type, checksum, footer, line-counter1..N or frame-ID monotonicity is
-      established. Mode4 remains unsupported; a following header does not prove a complete frame."
+      established. Mode4 remains unsupported; a following header does not prove a complete frame.
+      Constructor99/2 resolves isolated Start/Freeze serialization to wire type2: LE32
+      [5a5aa5a5,2,0,0,00060001,0-or-1,2,a5a55a5a] plus480 zero bytes;0=Start,1=Freeze. Internal
+      kind99 is not a wire field. Static analysis only; no replay, full initialization or acoustic
+      stop validation."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -49,6 +53,18 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-04
+    notes: "New static constructor analysis resolves the type99 command buffer: DataProcess constructs
+      HWCmdMsgBuffer(99,2) and routes internal kind99 to that object; field+4 selects wire type2,
+      while GetCmdType returns internal kind99. For an otherwise empty producer queue and map, named
+      Start and Freeze serialize512 bytes: LE32 words [5a5aa5a5,2,0,0,00060001,value,2,a5a55a5a],
+      value0 for Start and1 for Freeze, then480 zero bytes. Output memset establishes zero padding.
+      The map deduplicates by key; a general type2 envelope does not prove internal kind99. Offline
+      Rust encoder/inspector tests use synthetic packets, with no replay of these commands on the
+      owned convex unit. Initial acoustic configuration1435, acknowledgements, stream format,
+      effects and verified stop remain unresolved."
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -119,4 +135,7 @@ provenance:
     - Android package installer and scoped UI hierarchy observations
     - Rust probe-frame0.1.0 (offline synthetic structural tests)
     - Android scoped package permissions and UI hierarchy observation
+    - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
+    - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
+    - Existing pyusbus historical Parquet projection export
 updated: 2026-11-04
