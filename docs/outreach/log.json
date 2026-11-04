@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T19:56:05.341318Z",
+  "last_verified_at": "2026-11-04T20:00:41.871656Z",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -890,6 +890,16 @@
       "message": "messages/2026-11-04/linux-hardware-hwinfo.md",
       "outgoing_text_verified": true,
       "next_action": "Await feedback in this thread. No duplicate approach to hw-probe or personal email. Preserve observation date, bus/subsystem IDs, OS/kernel/architecture, attribution and limited status semantics. No importer, probe/log upload or hardware test."
+    },
+    {
+      "name": "BuildCores OpenDB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/buildcores/buildcores-open-db/discussions/443",
+      "published_at": "2026-11-04T19:58:40Z",
+      "message": "messages/2026-11-04/buildcores-opendb.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate contact or promotional issue. Proposed source-linked references only, preserving exact product variants and identifier namespaces. No importer, data merge, relicensing or commercial-license agreement."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -1125,10 +1135,10 @@
     },
     {
       "name": "tuya-local",
-      "source": "https://github.com/make-all/tuya-local",
-      "status": "channel_research_needed",
+      "source": "https://github.com/make-all/tuya-local/blob/633c008f982f8e39c03d9a8f3fa34aa4d0c8d88f/README.md",
+      "status": "community_channel_and_policy_review_needed",
       "relevance": "Existing importer of product configurations.",
-      "next_action": "Find an appropriate community channel; no GitHub Discussions. Preserve upstream caveat that local control does not prevent stock firmware cloud traffic. No message sent."
+      "next_action": "No GitHub Discussions; README supports device configs/new-device issue workflows, not a verified generic promotion route. Review applicable policy/channel before contact. Existing importer is present; config availability does not establish unrestricted local access, hub support or firmware replacement. Local control does not prevent stock firmware cloud traffic. No contact or promotional issue."
     },
     {
       "name": "PkTriggerCord",
@@ -1367,6 +1377,25 @@
       "policy_source": "https://www.elektroda.com/rtvforum/faq.php",
       "status": "excluded_from_automated_forum_promotion",
       "next_action": "Forum prohibits unauthorized advertising and automated access. No signup, promotion, moderator solicitation or alternate-channel bypass. Device-template reuse terms and model/revision scope remain unverified; do not import from the forum."
+    },
+    {
+      "name": "OpenRazer",
+      "source": "https://github.com/openrazer/openrazer/blob/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d/README.md",
+      "community_url": "https://openrazer.github.io/",
+      "status": "channel_and_policy_review_needed",
+      "next_action": "No GitHub Discussions; verify a current general community/cooperation route and full policy guidance. Master lists may include unreleased devices; use stable/release scope and exact USB variants, kernel/daemon/app roles. No contact, promotional issue, importer or hardware test."
+    },
+    {
+      "name": "Solaar",
+      "source": "https://github.com/pwr-Solaar/Solaar/blob/e7304c4c451cc9bb4f206a914844525e67856a28/README.md",
+      "status": "channel_and_policy_review_needed",
+      "next_action": "No GitHub Discussions; review official documentation channels/policy before contacting. Solaar is a manager for supported Logitech-specific messages, not a replacement device driver. Preserve connection/receiver/device feature scope. No contact, importer or hardware test."
+    },
+    {
+      "name": "libratbag / Piper",
+      "source": "https://github.com/libratbag/libratbag/blob/8235b5bb6032dea15901ab58a8218956f4494d08/README.md",
+      "status": "mailing_list_currency_and_policy_review_needed",
+      "next_action": "README links input-tools mailing-list archive; verify that this is still a current posting route and inspect rules before sending. Device definition, backend, ratbagd DBus service and Piper UI are distinct; a declaration is not all-feature hardware validation. No contact, importer or hardware test."
     }
   ],
   "remaining": [

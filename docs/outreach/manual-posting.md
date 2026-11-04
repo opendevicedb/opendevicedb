@@ -121,6 +121,10 @@ OpenHD a reçu un courriel à son [adresse documentée de coopération](https://
 
 Une [présentation est publiée chez Linux Hardware](https://github.com/linuxhw/HWInfo/discussions/7). Continuer dans ce fil si un retour arrive. Le dépôt HWInfo consulté date de 2023 ; il ne constitue pas une garantie de compatibilité actuelle.
 
+## BuildCores OpenDB : proposition publiée
+
+Un [échange est ouvert](https://github.com/buildcores/buildcores-open-db/discussions/443) sur des liens entre les catalogues et la correspondance exacte des modèles. Aucun import de données ni accord de licence. Attendre un retour dans ce fil, sans dupliquer l’annonce.
+
 ## Suivi après publication
 
 Ajouter le lien et la date dans [le journal](log.json), puis archiver le message public dans [messages/](messages/). Une publication ou un envoi ne prouve ni une réponse humaine ni l'adoption du projet.

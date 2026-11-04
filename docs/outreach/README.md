@@ -81,6 +81,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/iNavFlight/inav/discussions/12203) |
 | [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
 | [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
+| [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
 
 Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
 
