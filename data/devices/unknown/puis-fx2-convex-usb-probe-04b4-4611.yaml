@@ -437,7 +437,19 @@ interfaces:
       disk I/O loses framing is still unproven and requires a fresh one-second phantom comparison.
       Sustained reception, real convex image, acoustic stop, GPU equivalence and calibration remain
       unvalidated. No firmware/skipGolden/reset/retry added; vendor code/banks, private raw/unique
-      fields and pixels remain private."
+      fields and pixels remain private. Rust frame0.23 adds a readonly General reader-configuration
+      planner with explicit depth0..7 and harmonic0/1 choices. It requires matching A_Probe68,
+      A_BF44 and B_PRF388 file hashes; it exports input-file identities, selections and the five
+      parser scalars. All16known General selections give A/B/C/D/E=2/0/4/4/4. A comes from B_PRF
+      byte0x104+4*depth (fundamental) or0x124+4*depth (harmonic); B,C,D,E come from A_BF
+      byte0x24,0x04,0x14,0x20. These are static configuration values, not an observation of current
+      device/application state. General is explicitly selected and is not the declared default
+      examination.48controlled offline cases,16actual CLI comparisons,12refusal cases and356common
+      tests pass. With these parameters the archived trial03 replay still preserves770048bytes/exact
+      source hash,0global headers and no image. Missing headers, P/N, grouping state, acoustic stop
+      and physical calibration are not supplied or validated by this planner. No new hardware
+      acquisition or command change. Detailed internal analysis references are omitted from the
+      user-facing report; source files, hashes and selected settings remain reproducible."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -447,6 +459,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "Frame0.23 config-file reader planner: explicit General depth/harmonic, three exact file
+      hashes, five parser scalars2/0/4/4/4.48controlled offline cases,16CLI
+      comparisons,12refusals,356common tests. Archived trial03 remains770048bytes/0global
+      headers/images. Static configuration only; no new physical capture or device-state
+      attestation. User-facing report contains configuration-file identities/selections only;
+      detailed internal analysis stays private."
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
@@ -797,4 +818,4 @@ provenance:
       policies;2recurrent integration chains/8passes
     - Isolated7CLI journal-to-PNG cases/30refusals,341common tests and local Chromium gallery
     - Independent own Rust backing/resume/Freeze/API invariant review; no new native provider session
-updated: 2026-11-04
+updated: 2026-11-05
