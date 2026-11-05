@@ -459,7 +459,27 @@ interfaces:
       not establish every possible firmware format and does not supply a legacy decoder fallback,
       P/N, a missing global header or an image. The saved770048-byte source is unchanged. Header
       absence still requires independent reception/configuration/state investigation and the pending
-      memory-mode phantom comparison. No new active command or user-facing analysis metadata."
+      memory-mode phantom comparison. No new active command or user-facing analysis metadata. Fourth
+      attributed phantom trial on2026-11-05 uses Rust probe-usb0.17 memory DATA receive, unchanged
+      General depth0/frequency0/focus0 and exactly the same19OUT payloads as trial03. Automatic udev
+      access works on reconnect without manual ACL/password. Initial and post-PID0 same-handle
+      control identity again report UC5-2S/1435; raw PID0 remains ID0/connection0/logic0x4c02.
+      One-second dwell completes with final Freeze host write;171sealed DATA reads
+      retain2776576bytes (169full16384-byte returns, one zero timeout and one7680-byte timeout
+      prefix), SHA2567ea71dc06df73d059ab1cd391c5bce351ebf97c7730272d651da34d15fc575f8. Strict replay
+      verifies all bytes in one observed epoch with no journal gap. Eleven received
+      double-marker1024-byte headers have IDs2..12, mode0/P896/N32 and231424-byte spacing; ten
+      groups contain32exact7200-byte lines. The existing CPU General pipeline with explicit zeroed
+      backing and software-only history recovery computes ten512x512candidates, nine after warmup
+      eligible for review. These are the first real convex phantom image candidates, not calibrated
+      or clinically validated images. Preview hashes and raw/group source ranges are independently
+      checked by an offline Rust audit. A nine-frame MP4 uses an explicitly chosen10fps playback
+      rate, not measured exposure timing. Compared with trial03 (770048bytes/no global header), this
+      run associates RAM reception with improved retained stream structure; separate runs do not
+      isolate causality or prove no device-side loss. No new firmware/reset/60003/skipGolden or
+      retry; no manufacturer full-engine comparison, acoustic stop measurement, complete spatial
+      validation or human use. Owner confirms unplug afterward; USB absence verified. Raw bytes,
+      coefficients and derived images remain private; no vendor payloads published."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -469,6 +489,13 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "Attributed physical convex trial04: identical19OUT, memory receive2776576bytes,11received
+      global headers,10source-bound32-line groups,9published CPU image candidates. Raw/OUT/group/PNG
+      SHA checked independently offline in Rust; no geometric, acoustic or clinical validation. No
+      product code changed; prior370software tests were not rerun for this capture."
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
