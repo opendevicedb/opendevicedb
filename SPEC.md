@@ -145,6 +145,26 @@ Accounts, comments, a write API, hosting of binaries, automatic verification.
   upstream at capture time, plus the magnet link. Existing archives come first (Internet
   Archive for binaries, Software Heritage for source). Needs a legal review before
   anything is seeded. (Owner, 2026-10-17.)
+- **R3 — Composable device applications.** Draft specification dated 2026-11-05:
+  [English specification (OKF)](knowledge/specifications/composable-applications.md)
+  and [French discussion](docs/specs/composable-applications.fr.md). Independent
+  free WASM modules, device adapters and web UI components are assembled visually
+  into reusable applications, with community-contributed WASM ports and hardware
+  testing. Components, contracts, compositions and tests initially stay in this
+  repository, independently of device records. Processing and UI components can
+  also be discovered and used without a connected device or an associated record.
+  Both device pages and connected USB device analysis expose compatible
+  functions, applications and components directly. Ready-to-use applications are
+  the default entry point; visual composition is a customization mode. The proposal
+  includes desktop app export and MCP-based component discovery/integration for
+  apps built by AI agents. Formats, runtime,
+  isolation and delivery choices are proposed, not implemented or finalized.
+  Components expose inspectable contracts, behavior, matching sources and tests;
+  direct WASM/WAT authoring is supported as a proposed path alongside compiled ports.
+  The [first implementation pilot](knowledge/implementation/component-pilot.md)
+  supplies a registry, locked scalar compositions, a browser host and read-only
+  MCP integration. Desktop package generation, full visual composition and spatial
+  capture remain outstanding requirements.
 
 ## Freedom: what stays non-free or cloud-bound (2026-10-25)
 

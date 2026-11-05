@@ -52,6 +52,7 @@
     "yaml": "^2.6.0"
   },
   "devDependencies": {
+    "@opendevicedb/components": "0.1.0",
     "esbuild": "^0.28.2",
     "@opendevicedb/core": "0.1.0"
   },

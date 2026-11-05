@@ -1,0 +1,58 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "id": "ultrasound/preview-source",
+  "title": "Ultrasound preview source",
+  "description": "Reads cached PNG frames from a locally configured, read-only probe preview bridge. Acquisition remains controlled by the native driver.",
+  "roles": [
+    "source",
+    "adapter"
+  ],
+  "source": {
+    "path": "components/ultrasound/preview-source/1.0.0/source.ts",
+    "sha256": "1cda72d841ad4aa767b365712a236accf323823719c312636954dc1fd42964f1",
+    "build": "Built into @opendevicedb/components/video; host service is explicitly implemented, never dynamically evaluated."
+  },
+  "runtime": {
+    "kind": "host",
+    "entry": "ultrasound-preview",
+    "abi": "odb.video-source/1"
+  },
+  "ports": {
+    "frames": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.video.frame/1"
+    }
+  },
+  "parameters": {
+    "profile": {
+      "type": "string",
+      "default": "convex-01"
+    },
+    "interval": {
+      "type": "integer",
+      "default": 250,
+      "minimum": 100,
+      "maximum": 10000
+    }
+  },
+  "permissions": [
+    "ultrasound.preview"
+  ],
+  "devices": [
+    "unknown/puis-fx2-convex-usb-probe-04b4-4611",
+    "bmv/ul10-5e"
+  ],
+  "behavior": "GET-only polling of /status and /image/<session>/<frame> on an explicitly selected loopback bridge. One frame in flight, bounded PNG dimensions and bytes. Known profiles must match. Unidentified recordings are labelled replay and never establish device compatibility. No acquisition, settings, USB transfers or calibrated measurement. Bridge address is runtime-only and excluded from compositions."
+}

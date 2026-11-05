@@ -4,6 +4,7 @@ import Base from "../../../layouts/Base.astro";
 import StatusBadge from "../../../components/StatusBadge.astro";
 import Icon from "../../../components/Icon.astro";
 import GetStarted from "../../../components/GetStarted.astro";
+import DeviceApplications from "../../../components/DeviceApplications.astro";
 import { db, effectiveStatus, liveClaims, editUrl, jsonUrl } from "../../../lib/data.ts";
 import { STATUS_HELP, NONFREE_LABEL, NONFREE_HELP, CLOUD_LABEL, CLOUD_HELP, displayName } from "../../../lib/config.ts";
 import { wantedById } from "../../../lib/wanted.ts";
@@ -75,6 +76,8 @@ const desc = r.summary ?? `${displayName(r.vendor, r.model)} (${r.category}): ${
   {r.summary && <p class="prose" style="font-size:1.05rem">{r.summary}</p>}
 
   {r.install && r.install.length > 0 && <GetStarted record={r} reports={installReports} />}
+
+  <DeviceApplications record={r} />
 
   <dl class="facts card" style="margin-top:18px">
     <dt>ID</dt><dd class="mono">{r.id}</dd>

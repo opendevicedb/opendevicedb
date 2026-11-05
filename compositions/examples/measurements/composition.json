@@ -1,0 +1,68 @@
+{
+  "format": "odb-composition/1",
+  "id": "examples/measurements",
+  "title": "Simulated numbers — technical example",
+  "description": "Demonstrates how components connect: fictional numbers → multiplication → number display. No device or sensor is used. Change the multiplier under Customize to explore the example.",
+  "nodes": [
+    {
+      "id": "source",
+      "component": "examples/recorded-scalars",
+      "version": "1.0.0",
+      "parameters": {}
+    },
+    {
+      "id": "scale",
+      "component": "examples/scale",
+      "version": "1.0.0",
+      "parameters": {
+        "factor": 2
+      }
+    },
+    {
+      "id": "display",
+      "component": "examples/number-display",
+      "version": "1.0.0",
+      "parameters": {}
+    }
+  ],
+  "connections": [
+    {
+      "from": "source.samples",
+      "to": "scale.samples"
+    },
+    {
+      "from": "scale.scaled",
+      "to": "display.samples"
+    }
+  ],
+  "layout": {
+    "application": {
+      "display": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 4
+      }
+    }
+  },
+  "purpose": "example",
+  "lock": [
+    {
+      "component": "examples/recorded-scalars",
+      "version": "1.0.0",
+      "manifest_sha256": "62a3f191b9188e0a3ac52ea420a5fc91f21c835400ed742d91615134f2355741"
+    },
+    {
+      "component": "examples/scale",
+      "version": "1.0.0",
+      "manifest_sha256": "01e43229434f2e27fb3ce8647fbb7594667d8e6542d7d113ee6159eab211a1be",
+      "artifact_sha256": "67e9a6c20a97905b79823c82e913e981464dc26d38b96673952617f57fc7fb44"
+    },
+    {
+      "component": "examples/number-display",
+      "version": "1.0.0",
+      "manifest_sha256": "92db88b4850ded393807586b56bfb83477cabf5dd0e349c05b423faf9ad1055d",
+      "artifact_sha256": "df9575a3932a2f8fd966b8cf8724b63db60584b40aa9ce2bd2acaf21bad8a62c"
+    }
+  ]
+}

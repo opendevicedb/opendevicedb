@@ -11,6 +11,7 @@
     "check:ui": "playwright test"
   },
   "dependencies": {
+    "@opendevicedb/components": "*",
     "@astrojs/rss": "^4.0.19",
     "@opendevicedb/core": "*",
     "astro": "^7.4.0",

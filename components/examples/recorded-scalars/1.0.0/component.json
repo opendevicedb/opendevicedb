@@ -1,0 +1,53 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "ports": {
+    "samples": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.scalar/1"
+    }
+  },
+  "parameters": {
+    "interval": {
+      "type": "integer",
+      "default": 500,
+      "minimum": 50,
+      "maximum": 10000
+    },
+    "unit": {
+      "type": "string",
+      "default": "count"
+    }
+  },
+  "permissions": [
+    "file.scalar-values"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "id": "examples/recorded-scalars",
+  "title": "Recorded measurements",
+  "description": "Replay fixture measurements or a selected JSON array of numbers. No device required.",
+  "roles": [
+    "source"
+  ],
+  "source": {
+    "path": "packages/components/src/host.ts",
+    "sha256": "b19197f22f2765b9fce38a3fd10a601ab1ec02313536c03f2918bf055f2fb8aa",
+    "build": "Provided by @opendevicedb/components/host; no contributor JavaScript is evaluated as a host service."
+  },
+  "runtime": {
+    "kind": "host",
+    "entry": "recorded-scalars",
+    "abi": "odb.scalar-source/1"
+  },
+  "behavior": "Replays 10, 20, 30, 20, 10, or a user-selected array of 1–4096 finite numbers. Backpressure pauses production. Source timestamps and session IDs are assigned by the host; no data is uploaded."
+}
