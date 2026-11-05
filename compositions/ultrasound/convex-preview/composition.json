@@ -1,0 +1,55 @@
+{
+  "format": "odb-composition/1",
+  "purpose": "example",
+  "id": "ultrasound/convex-preview",
+  "title": "Read existing driver images — utility",
+  "description": "Display the images supplied by your local probe driver. Requires a read-only preview bridge; connecting this viewer does not start the probe. Live acquisition and recorded replay are labelled separately.",
+  "devices": [
+    "unknown/puis-fx2-convex-usb-probe-04b4-4611"
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "component": "ultrasound/preview-source",
+      "version": "1.0.0",
+      "parameters": {
+        "profile": "convex-01"
+      }
+    },
+    {
+      "id": "display",
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "parameters": {}
+    }
+  ],
+  "connections": [
+    {
+      "from": "source.frames",
+      "to": "display.frames"
+    }
+  ],
+  "layout": {
+    "application": {
+      "display": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 8
+      }
+    }
+  },
+  "lock": [
+    {
+      "component": "ultrasound/preview-source",
+      "version": "1.0.0",
+      "manifest_sha256": "463944aa885b579763a41cafe212e9a4e8713597a3a37af591cef62809c51401"
+    },
+    {
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "manifest_sha256": "f8c01f5270517161d662fee400cf7ad37ea6ef939cf1ab590dffb3250b4aaa9b",
+      "artifact_sha256": "78a13574f0771a01d12d4d2bc8ca109f0f446a2f63f81e32c23b29277e78abbf"
+    }
+  ]
+}

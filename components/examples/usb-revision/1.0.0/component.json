@@ -1,0 +1,50 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "ports": {
+    "samples": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.scalar/1"
+    }
+  },
+  "parameters": {
+    "interval": {
+      "type": "integer",
+      "default": 1000,
+      "minimum": 50,
+      "maximum": 10000
+    }
+  },
+  "permissions": [
+    "usb.descriptors"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "id": "examples/usb-revision",
+  "title": "USB device revision",
+  "description": "Read the major device revision exposed for an explicitly selected USB device. No protocol transfers.",
+  "roles": [
+    "source",
+    "adapter"
+  ],
+  "source": {
+    "path": "packages/components/src/host.ts",
+    "sha256": "b19197f22f2765b9fce38a3fd10a601ab1ec02313536c03f2918bf055f2fb8aa",
+    "build": "Provided by @opendevicedb/components/host; no contributor JavaScript is evaluated as a host service."
+  },
+  "runtime": {
+    "kind": "host",
+    "entry": "usb-descriptors",
+    "abi": "odb.scalar-source/1"
+  },
+  "behavior": "Reads deviceVersionMajor from the selected WebUSB device object. Does not open interfaces or issue transfers. Generic descriptor compatibility is not proof of product protocol support. Device selection remains explicit; no identifiers enter shared compositions or reports."
+}

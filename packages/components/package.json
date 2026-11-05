@@ -1,0 +1,27 @@
+{
+  "name": "@opendevicedb/components",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./browser": "./src/browser.ts",
+    "./host": "./src/host.ts",
+    "./video": "./src/video.ts",
+    "./probe-decoder": "./src/probe/decoder.ts",
+    "./probe-session": "./src/probe-session.ts",
+    "./probe-replay": "./src/probe-replay.ts"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.ts",
+    "validate": "node src/cli.ts"
+  },
+  "dependencies": {
+    "@bjorn3/browser_wasi_shim": "0.4.2",
+    "ajv": "^8.17.1"
+  },
+  "devDependencies": {
+    "wabt": "1.0.39"
+  }
+}

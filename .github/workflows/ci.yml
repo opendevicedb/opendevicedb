@@ -12,7 +12,25 @@ jobs:
         with: { node-version: 26, cache: npm }
       - run: npm ci
       - run: npm run validate
+      - run: npm run knowledge:check
+      - run: npm run components:check
+      - run: npm run components:test
       - run: npm test -w @opendevicedb/core
       - run: npm test -w @opendevicedb/importers
       - run: npm test -w @opendevicedb/mcp
       - run: node --test scripts/*.test.ts
+
+  probe-wasm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with: { node-version: 26, cache: npm }
+      - run: npm ci
+      - run: rustup toolchain install 1.99.0 --profile minimal
+      - run: rustup default 1.99.0
+      - run: rustup target add wasm32-wasip1
+      - run: cargo test --manifest-path components/ultrasound/convex-decoder/1.0.0/Cargo.toml --lib --locked
+      - run: npm run probe:check
+      - run: cargo test --manifest-path components/ultrasound/convex-open-image/0.1.0/Cargo.toml --locked
+      - run: npm run probe:open:check

@@ -1,0 +1,69 @@
+{
+  "format": "odb-composition/1",
+  "purpose": "application",
+  "id": "ultrasound/convex-capture",
+  "title": "Ultrasound live capture",
+  "description": "Capture the convex probe directly over USB and decode its images in this browser. No local server is required. Load your probe resources, select the probe and start capture.",
+  "devices": [
+    "unknown/puis-fx2-convex-usb-probe-04b4-4611"
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "component": "ultrasound/usb-capture",
+      "version": "1.0.0",
+      "parameters": {}
+    },
+    {
+      "id": "decoder",
+      "component": "ultrasound/convex-decoder",
+      "version": "1.0.0",
+      "parameters": {}
+    },
+    {
+      "id": "display",
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "parameters": {}
+    }
+  ],
+  "connections": [
+    {
+      "from": "source.bytes",
+      "to": "decoder.bytes"
+    },
+    {
+      "from": "decoder.frames",
+      "to": "display.frames"
+    }
+  ],
+  "layout": {
+    "application": {
+      "display": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 8
+      }
+    }
+  },
+  "lock": [
+    {
+      "component": "ultrasound/usb-capture",
+      "version": "1.0.0",
+      "manifest_sha256": "a9418b859cd152010f40fb2fefcfb404de7d86768de6e7943a40513b4c5337e6"
+    },
+    {
+      "component": "ultrasound/convex-decoder",
+      "version": "1.0.0",
+      "manifest_sha256": "d49320a555ee4aa1a5e75f3020887bd72189f6071b2beac24bcf97e0cf72e1c8",
+      "artifact_sha256": "e1391e32ed00dd1da46516f4ed5fee00d88ba255dd34174ec31d19756a0f590f"
+    },
+    {
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "manifest_sha256": "f8c01f5270517161d662fee400cf7ad37ea6ef939cf1ab590dffb3250b4aaa9b",
+      "artifact_sha256": "78a13574f0771a01d12d4d2bc8ca109f0f446a2f63f81e32c23b29277e78abbf"
+    }
+  ]
+}

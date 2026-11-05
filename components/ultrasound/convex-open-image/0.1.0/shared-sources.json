@@ -1,0 +1,130 @@
+{
+  "format": "odb-source-lock/1",
+  "component": "ultrasound/convex-decoder@1.0.0",
+  "files": [
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/lib.rs",
+      "sha256": "93a7d80de814a9fdde3bdc131a8deb3980b3ff7fe399e2e5143bf8064228cfda"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/Cargo.lock",
+      "sha256": "a89f9d40168858def7e4ee35a1bba63208b8322e3a7ce64270157c2730f44165"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/Cargo.toml",
+      "sha256": "7f927acd5159c79e9e5cd6e86da164fb52b8ecc0ff9f3676186c7e99899ce91c"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/source-origin.json",
+      "sha256": "2105fe63c1c9ad1f565f0343e16abc23636a0e5a47b621979de8f140ff78d516"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/admission.rs",
+      "sha256": "5aba1902cdaa2a8aeed10737896ee186ca8dcbc69d57b4cff92977c093557269"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/archive.rs",
+      "sha256": "098ebf2b90a99e35d507fc8765184fc1f68631afb96382a2a2138f5104b409f6"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_bfsp.rs",
+      "sha256": "9c078685c2ba936c640ca1f62d1cf45107e78e7d3040a284f2f60a20ae8d4c4f"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_command.rs",
+      "sha256": "480fbc33846874ae68b0396cb2913f69f7ec199b90b873060af4946a09cb01bd"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_compound.rs",
+      "sha256": "a87d04c92d51de21aec911267eb73c4ecccdcac75bef13c362b3b3e4f7967359"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_configuration.rs",
+      "sha256": "dbdc8df42ad13c65de76e15ca08f767bdce12b79e4667845f94f58902cd61ef8"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_dsc.rs",
+      "sha256": "1cfa44b12ba6b8b7d8b8f768460ca6e04a475444e0d58c14cae797aa49461e0d"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_dtgc.rs",
+      "sha256": "dcd7fc2a0aaecdbf6c724689343b99fa00ad32f7d1eb7346023133ff32310e18"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_group.rs",
+      "sha256": "d88d35ce2c5d7b1821f9f305379c11805c0dfb7c3dbdda64da80a07f5c75a7d3"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_lifecycle.rs",
+      "sha256": "3e0b28199d0e95074fd454d06dbd9f83f309bab0f1a3fab38d7fe703b069175e"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_messages.rs",
+      "sha256": "aa00a808c67b7daec150fb1fddf6121e9e38a3bf69f9d407b265d2b892bc4db2"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_parameters.rs",
+      "sha256": "27dcc979d239197a2767d16783450c6c78aef4e89744e14167b965a8c74ea961"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_pipeline.rs",
+      "sha256": "4fb4925ede9fc66f4fb0292fae144b25822a515b17c60f8567dcb339f33fb11e"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_producers.rs",
+      "sha256": "41a50d9b9d549088c2caf6e1eff19531ae443df986427bee824190522a08e9f8"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_sri.rs",
+      "sha256": "74057b9a8cdc0c1012ae40390bb832f05866a07fff2f90234e8ac5c73e9a6d4d"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/convex_sri_plan.rs",
+      "sha256": "fabc74491f2b537dcfb50bc9c66045e4d962b2ca0d1391d596e32b9e1bdea57d"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/framing.rs",
+      "sha256": "74c4e02ba50a5035517f7b1a7f4023a8ea259af7b92cb0b139e5853d707d653a"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/known_convex_assets.json",
+      "sha256": "700e1c948dfb673980c38fba239bed9a3b01bff558f0d56ee17f1e10343fbd0f"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/known_convex_producer_assets.json",
+      "sha256": "207ec2321a7c01de1b5462a3e61c0b46f09c9dc9e2d9dbcb3db748186fbdbd0a"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/known_convex_sri_layout.json",
+      "sha256": "4cafbc69a11b93c19d04d390aa1989d5a241df0d928d027ebe7632bf1921f396"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/linear_dsp.rs",
+      "sha256": "d711bf2d2221c23f4213a260e2429d2fac3a086d8fc3078d1acad0f8982cca38"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/linear_palette.rs",
+      "sha256": "0b05f3f2d247222a0f730ee3f361646231c3cb351606bf62adf864788fdf4bc2"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/linear_post.rs",
+      "sha256": "55bc8d05a021a34ff7da6d9f0aaab3e658a0018e875c78f914d0c8bcbaa069e6"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/rgba_png.rs",
+      "sha256": "4d91a880687db02ebdaad20b63e28e653af8b15f943a577c34961ef70d3ff8ad"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/resources.rs",
+      "sha256": "c8dcb773217ae1a6391a6092b902ebedb94bb19691202f24b07e307804aef3e4"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/examples/replay_memory.rs",
+      "sha256": "2409ba64d2a8470976030b020075799aea4782834104567bd6cdf12c1b17edb3"
+    },
+    {
+      "path": "components/ultrasound/convex-decoder/1.0.0/src/selected_profile.rs",
+      "sha256": "4c0c5b3e451a42a0ce930bdf51d31f031c318f39b66ffd19d8c194b28cb9bf3b"
+    }
+  ]
+}

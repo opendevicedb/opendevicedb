@@ -1,0 +1,20 @@
+[package]
+name = "odb-convex-decoder"
+version = "1.0.0"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+publish = false
+[lib]
+crate-type = ["cdylib", "rlib"]
+[features]
+default = ["ffi"]
+ffi = []
+
+[dependencies]
+serde_json = "1"
+sha2 = "0.10"
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"
