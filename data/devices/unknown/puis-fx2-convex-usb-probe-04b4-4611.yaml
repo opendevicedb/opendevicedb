@@ -479,7 +479,26 @@ interfaces:
       isolate causality or prove no device-side loss. No new firmware/reset/60003/skipGolden or
       retry; no manufacturer full-engine comparison, acoustic stop measurement, complete spatial
       validation or human use. Owner confirms unplug afterward; USB absence verified. Raw bytes,
-      coefficients and derived images remain private; no vendor payloads published."
+      coefficients and derived images remain private; no vendor payloads published. Three further
+      physical attempts are retained from the local Rust web0.5 controller (USB0.17/frame0.23), with
+      automatic access on USB003/042. Trial05 receives one complete PID0 message with raw
+      ID0/connection0 and logic0x0c00 (series6/type0/revision0),
+      SHA2566dfd97b543de5758d8cee9975e177d76e3b15ed2ec68dca228767a0185efba83, followed by nine empty
+      timeouts. Initial control identity remains UC5-2S/1435. The type1-bounded legacy guard refuses
+      binding: four bootstrap/final-Freeze host writes, no configuration or Start, no post-PID0
+      control override, DATA0. Subsequent manually requested web trials06/07 receive logic0x4c02 and
+      succeed without changing driver code or adding firmware/reset/60003/automatic retries. Trial06
+      lasts1s and preserves2776576sealed DATA bytes,4preview images and9final CPU candidates.
+      Trial07 lasts5s and preserves13483008sealed DATA bytes,0preview images and36final CPU
+      candidates. Both complete19OUT payloads identical to trial04. All DATA files and command
+      payloads are independently checked by size/hash; final replay audits the retained source. The
+      type transition cause is not isolated by these separate host sessions; neither a firmware-bank
+      identity nor a necessary active transition is established. The preview-copy queue is
+      explicitly lossy and can omit all displayed candidates even when independent final
+      reconstruction succeeds. The owner confirms unplug afterward and USB absence is checked. These
+      are qualitative phantom results, not lossless acquisition, calibrated spatial completeness,
+      acoustic-stop measurement or clinical validation. Raw acquisitions, derived pixels,
+      coefficients and packet bodies remain private."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -489,6 +508,14 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "Further attributed web phantom attempts: type0 bootstrap refusal preserves message0x0c00
+      without configuration/Start; unchanged driver later receives0x4c02 and reconstructs9candidates
+      from1s and36from5s. Raw hashes,19OUT identities, sealed reception and independent replay
+      checked. Preview4/0 respectively versus final9/36 documents a lossy-preview limitation; no
+      causal firmware transition or calibration inferred."
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
