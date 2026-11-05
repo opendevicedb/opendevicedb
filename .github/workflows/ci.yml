@@ -30,6 +30,10 @@ jobs:
       - run: rustup toolchain install 1.99.0 --profile minimal
       - run: rustup default 1.99.0
       - run: rustup target add wasm32-wasip1
+      - name: Test local-crate build identity normalization
+        run: |
+          rustc +1.99.0 --test components/ultrasound/convex-decoder/1.0.0/build/reproducible-rustc.rs -o "$RUNNER_TEMP/odb-rustc-tests"
+          "$RUNNER_TEMP/odb-rustc-tests"
       - run: cargo test --manifest-path components/ultrasound/convex-decoder/1.0.0/Cargo.toml --lib --locked
       - run: npm run probe:check
       - run: cargo test --manifest-path components/ultrasound/convex-open-image/0.1.0/Cargo.toml --locked
@@ -40,6 +44,6 @@ jobs:
         if: failure()
         with:
           name: wasm-rebuild-diagnostic
-          path: components/ultrasound/convex-open-image/0.1.0/target/wasm32-wasip1/release/probe_open_image.wasm
+          path: components/ultrasound/convex-open-image/0.1.0/target/wasm-repro-v1-*/wasm32-wasip1/release/probe_open_image.wasm
           retention-days: 3
           if-no-files-found: ignore

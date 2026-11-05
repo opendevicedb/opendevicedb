@@ -40,6 +40,11 @@ and a new output directory. It reads `receive/data/manifest.json` and the
 referenced raw reads, then writes PNGs and their hashes. No configuration,
 bootstrap responses or device access are needed for reconstruction.
 Both WASM builds pin Rust 1.99.0 and normalize repository and Cargo-cache paths.
+The locked Rust compiler adapter also normalizes Cargo's metadata for the two
+local crates, retaining their names, versions, targets and enabled features.
+Other dependency identities and all numerical compiler options are preserved.
+Its source hash selects a separate build cache so an adapter change cannot reuse
+an older compilation. This avoids host-dependent function ordering in the WASM.
 CI tests the shared library and original profile and rebuilds both artifacts.
 Binary identity is
 checked with the same locked dependencies and Rust toolchain; it is not a claim

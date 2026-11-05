@@ -141,12 +141,16 @@
       {
         "path": "components/ultrasound/convex-decoder/1.0.0/src/selected_profile.rs",
         "sha256": "4c0c5b3e451a42a0ce930bdf51d31f031c318f39b66ffd19d8c194b28cb9bf3b"
+      },
+      {
+        "path": "components/ultrasound/convex-decoder/1.0.0/build/reproducible-rustc.rs",
+        "sha256": "35ad737748a656197b08b1033df4432bd9a0c444955275e4f9ec68d3c09344c1"
       }
     ]
   },
   "artifact": {
     "path": "components/ultrasound/convex-decoder/1.0.0/decoder.wasm",
-    "sha256": "e1391e32ed00dd1da46516f4ed5fee00d88ba255dd34174ec31d19756a0f590f"
+    "sha256": "ef379cfbea1b30d915292dadb3a8a24acb06d11d24277fadd8e9fe69ad6c0769"
   },
   "runtime": {
     "kind": "wasm",

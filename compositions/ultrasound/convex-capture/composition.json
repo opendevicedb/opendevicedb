@@ -56,8 +56,8 @@
     {
       "component": "ultrasound/convex-decoder",
       "version": "1.0.0",
-      "manifest_sha256": "d49320a555ee4aa1a5e75f3020887bd72189f6071b2beac24bcf97e0cf72e1c8",
-      "artifact_sha256": "e1391e32ed00dd1da46516f4ed5fee00d88ba255dd34174ec31d19756a0f590f"
+      "manifest_sha256": "74718a2f1e8351df057a1e1aab86cc51e5fadcad8dbe7b742ca5f82e095ee5ea",
+      "artifact_sha256": "ef379cfbea1b30d915292dadb3a8a24acb06d11d24277fadd8e9fe69ad6c0769"
     },
     {
       "component": "video/frame-viewer",

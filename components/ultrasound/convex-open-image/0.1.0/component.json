@@ -30,7 +30,7 @@
       },
       {
         "path": "components/ultrasound/convex-open-image/0.1.0/README.md",
-        "sha256": "b5a0fe307e2aaa7ff2eee13d23a79c76e5b888bb7bd55848b9484c89f13e65ac"
+        "sha256": "a9d336cd9e773549c816c1c293930498d74286cb21d93f16344e867bb31b581b"
       },
       {
         "path": "components/ultrasound/convex-open-image/0.1.0/src/bin/replay_open.rs",
@@ -38,7 +38,7 @@
       },
       {
         "path": "components/ultrasound/convex-open-image/0.1.0/shared-sources.json",
-        "sha256": "f034dfe360540ffa139f16be38479be90b325e92e1a259ab43f0c39568bdeadc"
+        "sha256": "5d3b280d009c7cb2ddea2f923a36877636a69b03c93b50e2a84d6c2f54212fca"
       }
     ]
   },
