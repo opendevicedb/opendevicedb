@@ -1,0 +1,59 @@
+id: aquacomputer/d5-next
+vendor: Aquacomputer
+model: D5 Next
+category: peripheral
+status: controllable
+summary: Pump and fan telemetry plus coolant temperature; direct fan PWM control is available in
+  mainline since Linux 6.0. This does not imply pump-speed control or RGB support. Source-qualified
+  Linux driver support; not an OpenDeviceDB hardware test.
+identifiers:
+  usb:
+    - 0c70:f00e
+interfaces:
+  - name: Aquacomputer USB HID / Linux hwmon
+    transport: usb
+    status: partial
+    spec: https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/docs/aquacomputer_d5next.rst
+    notes: Per-device sensor/control coverage is documented upstream. The driver communicates with the
+      installed device firmware through HID reports.
+projects:
+  - name: aquacomputer_d5next Linux hwmon driver
+    url: https://github.com/aleksamagicka/aquacomputer_d5next-hwmon
+    kind: driver
+    license: GPL-2.0-or-later
+    freedom:
+      cloud: none
+      notes: Local host driver using USB HID. The installed device firmware remains in use; the driver
+        license does not establish the device firmware license.
+  - name: Aquacomputer hwmon device documentation
+    url: https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/docs/aquacomputer_d5next.rst
+    kind: protocol-doc
+install:
+  - project: aquacomputer_d5next Linux hwmon driver
+    method: host-software
+    guide: https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/README.md#compiling-and-installation
+    difficulty: medium
+    tools:
+      - Linux with aquacomputer_d5next driver enabled
+      - lm-sensors (optional)
+    notes: "Core telemetry: Linux 5.15 or later; direct fan PWM: Linux 6.0 or later. These are upstream
+      mainline baselines from the source overview; distribution configuration/backports and
+      standalone-driver features can differ. Prefer the driver supplied by the distribution where
+      available; consult the linked guide for the optional out-of-tree module. This route installs
+      host software, not replacement device firmware."
+verification:
+  - method: none
+    by: OpenDeviceDB source review (AI-assisted)
+    date: 2026-11-04
+    notes: USB ID checked against the pinned driver match table and model/function scope against its
+      README and device documentation. No hardware, kernel-module, cooling or firmware test
+      performed.
+provenance:
+  sources:
+    - curated
+    - https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517
+    - https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/README.md
+    - https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/aquacomputer_d5next.c
+    - https://github.com/aleksamagicka/aquacomputer_d5next-hwmon/blob/9ae7fd514d635f2d8bc5cdfefbbeecd4198641e9/docs/aquacomputer_d5next.rst
+  ai_assisted: true
+updated: 2026-11-04
