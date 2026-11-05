@@ -11,6 +11,7 @@ import {
 } from "@opendevicedb/core";
 import type { Backend } from "./backend.ts";
 import { policyScan, POLICY_POINTER, type PolicyHit } from "./policy.ts";
+import { COMPONENT_TOOLS } from "./components-tools.ts";
 
 // ---------- schema-derived enums (the JSON Schema stays normative) ----------
 
@@ -591,6 +592,7 @@ export interface ToolDef {
 }
 
 export const TOOLS: ToolDef[] = [
+  ...COMPONENT_TOOLS,
   {
     name: "lookup_device",
     title: "Look up a device before reverse engineering it",

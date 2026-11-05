@@ -1,0 +1,1933 @@
+{
+  "schema_version": "convex-sri-static-layout-v1",
+  "images": [
+    {
+      "slot": "0x308",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x310",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x318",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x320",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x328",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x330",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x338",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x340",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x348",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x350",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x358",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x360",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x368",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x370",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x378",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x380",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x388",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x390",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x398",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3a0",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3a8",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SIGNED_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3b0",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3b8",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3c8",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3d0",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3d8",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3e0",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3e8",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3f0",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x3f8",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x400",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x408",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x410",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SIGNED_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x418",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x420",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x430",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x438",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_SNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x538",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x540",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x528",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x530",
+      "width_expression": "P",
+      "height": 160,
+      "General_width": 64,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 40960,
+      "fill_region_equals_allocation": true
+    },
+    {
+      "slot": "0x548",
+      "width_expression": "2*P",
+      "height": 320,
+      "General_width": 128,
+      "channel_order": "CL_RGBA",
+      "channel_type": "CL_UNORM_INT8",
+      "components": 4,
+      "component_bytes": 1,
+      "General_bytes": 163840,
+      "fill_region_equals_allocation": true
+    }
+  ],
+  "kernels": [
+    {
+      "slot": "0x220",
+      "name": "LOG_Reshape",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x220",
+          "kernel": "LOG_Reshape",
+          "argument": 0,
+          "bytes": 8,
+          "source": "external_BFSP_image_pointer_reference",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x220",
+          "kernel": "LOG_Reshape",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x308",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "always",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x228",
+      "name": "ReduceDarkHole_V",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x228",
+          "kernel": "ReduceDarkHole_V",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x308",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x228",
+          "kernel": "ReduceDarkHole_V",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x310",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x230",
+      "name": "ReduceDarkHole_H",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x230",
+          "kernel": "ReduceDarkHole_H",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x310",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x230",
+          "kernel": "ReduceDarkHole_H",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x318",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x230",
+          "kernel": "ReduceDarkHole_H",
+          "argument": 2,
+          "bytes": 8,
+          "source": "external_BFSP_RDH_pointer_reference",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x238",
+      "name": "SRI_DownSamplingN_smoothing",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x238",
+          "kernel": "SRI_DownSamplingN_smoothing",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x318",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x238",
+          "kernel": "SRI_DownSamplingN_smoothing",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x320",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and N!=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x240",
+      "name": "SRI_DownSamplingN",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x240",
+          "kernel": "SRI_DownSamplingN",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x320",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x240",
+          "kernel": "SRI_DownSamplingN",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x328",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x240",
+          "kernel": "SRI_DownSamplingN",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x330",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x240",
+          "kernel": "SRI_DownSamplingN",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x338",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x240",
+          "kernel": "SRI_DownSamplingN",
+          "argument": 4,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x450",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "level>0 and N!=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x248",
+      "name": "SRI_DownSamplingN_Reshape",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x248",
+          "kernel": "SRI_DownSamplingN_Reshape",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x330",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x248",
+          "kernel": "SRI_DownSamplingN_Reshape",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x328",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x248",
+          "kernel": "SRI_DownSamplingN_Reshape",
+          "argument": 2,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x4b0",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and N!=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x250",
+      "name": "SRI_UpSamplingN",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x250",
+          "kernel": "SRI_UpSamplingN",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x318",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x250",
+          "kernel": "SRI_UpSamplingN",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x338",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x250",
+          "kernel": "SRI_UpSamplingN",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x340",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x250",
+          "kernel": "SRI_UpSamplingN",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and N!=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x258",
+      "name": "SRI_HF_N_Smoothing",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x258",
+          "kernel": "SRI_HF_N_Smoothing",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x340",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x258",
+          "kernel": "SRI_HF_N_Smoothing",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x348",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": false
+    },
+    {
+      "slot": "0x260",
+      "name": "SRI_UpSamplingN_final",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x420",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x438",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x350",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3d0",
+          "condition": "fine_iterations==0"
+        },
+        {
+          "kernel_slot": "0x260",
+          "kernel": "SRI_UpSamplingN_final",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x340",
+          "condition": "fine_iterations==0"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "runtime-final",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x268",
+      "name": "SRI_DownSampling",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x268",
+          "kernel": "SRI_DownSampling",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x328",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x268",
+          "kernel": "SRI_DownSampling",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x358",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x268",
+          "kernel": "SRI_DownSampling",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3b0",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x270",
+      "name": "SRI_UpSampling",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x270",
+          "kernel": "SRI_UpSampling",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x328",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x270",
+          "kernel": "SRI_UpSampling",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x358",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x270",
+          "kernel": "SRI_UpSampling",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x360",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x278",
+      "name": "SRI_HF_Smoothing",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x278",
+          "kernel": "SRI_HF_Smoothing",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x360",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x278",
+          "kernel": "SRI_HF_Smoothing",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x368",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": false
+    },
+    {
+      "slot": "0x280",
+      "name": "SRI_Gradient",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x280",
+          "kernel": "SRI_Gradient",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x358",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x280",
+          "kernel": "SRI_Gradient",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x370",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x280",
+          "kernel": "SRI_Gradient",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x378",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x288",
+      "name": "SRI_Gradient_Size_Direction",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x288",
+          "kernel": "SRI_Gradient_Size_Direction",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x370",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x288",
+          "kernel": "SRI_Gradient_Size_Direction",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x378",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x288",
+          "kernel": "SRI_Gradient_Size_Direction",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x380",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x288",
+          "kernel": "SRI_Gradient_Size_Direction",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x388",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x290",
+      "name": "SRI_HistogramStatistic",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x290",
+          "kernel": "SRI_HistogramStatistic",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x380",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x290",
+          "kernel": "SRI_HistogramStatistic",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x390",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x290",
+          "kernel": "SRI_HistogramStatistic",
+          "argument": 2,
+          "bytes": 4,
+          "source": "this+0x168",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x290",
+          "kernel": "SRI_HistogramStatistic",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x490",
+      "local_dimensions_slot": "0x4f0",
+      "condition": "level>0",
+      "dimensions": 1
+    },
+    {
+      "slot": "0x298",
+      "name": "SRI_Expand",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x298",
+          "kernel": "SRI_Expand",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x390",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x298",
+          "kernel": "SRI_Expand",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3a0",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2a0",
+      "name": "SRI_Corrode",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2a0",
+          "kernel": "SRI_Corrode",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3a0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2a0",
+          "kernel": "SRI_Corrode",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x380",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2a0",
+          "kernel": "SRI_Corrode",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x390",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2a0",
+          "kernel": "SRI_Corrode",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x398",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2a8",
+      "name": "SRI_Direction",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2a8",
+          "kernel": "SRI_Direction",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x390",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2a8",
+          "kernel": "SRI_Direction",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x388",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2a8",
+          "kernel": "SRI_Direction",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3a8",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2b0",
+      "name": "SRI_DirectionalSmoothing",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2b0",
+          "kernel": "SRI_DirectionalSmoothing",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3b0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b0",
+          "kernel": "SRI_DirectionalSmoothing",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3a8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b0",
+          "kernel": "SRI_DirectionalSmoothing",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3c0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b0",
+          "kernel": "SRI_DirectionalSmoothing",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x3b8",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2b8",
+      "name": "SRI_Sharpen",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3b8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x358",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3a8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x398",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 4,
+          "bytes": 8,
+          "source": "this+0x3c8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 5,
+          "bytes": 4,
+          "source": "this+0x164",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 6,
+          "bytes": 4,
+          "source": "this+0x178",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 7,
+          "bytes": 4,
+          "source": "address_of_local_zero_i32",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2b8",
+          "kernel": "SRI_Sharpen",
+          "argument": 8,
+          "bytes": 4,
+          "source": "this+0x18c",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2c0",
+      "name": "SRI_UpSampling2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2c0",
+          "kernel": "SRI_UpSampling2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3c8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2c0",
+          "kernel": "SRI_UpSampling2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x360",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2c0",
+          "kernel": "SRI_UpSampling2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3d0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2c0",
+          "kernel": "SRI_UpSampling2",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x418",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2c8",
+      "name": "SRI_Gradient2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2c8",
+          "kernel": "SRI_Gradient2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3d0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2c8",
+          "kernel": "SRI_Gradient2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3d8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2c8",
+          "kernel": "SRI_Gradient2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3e0",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2d0",
+      "name": "SRI_Gradient_Size_Direction2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2d0",
+          "kernel": "SRI_Gradient_Size_Direction2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3d8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d0",
+          "kernel": "SRI_Gradient_Size_Direction2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3e0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d0",
+          "kernel": "SRI_Gradient_Size_Direction2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3e8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d0",
+          "kernel": "SRI_Gradient_Size_Direction2",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x3f0",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2d8",
+      "name": "SRI_HistogramStatistic2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2d8",
+          "kernel": "SRI_HistogramStatistic2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3e8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d8",
+          "kernel": "SRI_HistogramStatistic2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3f8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d8",
+          "kernel": "SRI_HistogramStatistic2",
+          "argument": 2,
+          "bytes": 4,
+          "source": "this+0x17c",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d8",
+          "kernel": "SRI_HistogramStatistic2",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2d8",
+          "kernel": "SRI_HistogramStatistic2",
+          "argument": 4,
+          "bytes": 8,
+          "source": "this+0x430",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x4a0",
+      "local_dimensions_slot": "0x500",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 1
+    },
+    {
+      "slot": "0x2e0",
+      "name": "SRI_Expand2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2e0",
+          "kernel": "SRI_Expand2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3f8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2e0",
+          "kernel": "SRI_Expand2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x408",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2e8",
+      "name": "SRI_Corrode2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2e8",
+          "kernel": "SRI_Corrode2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x408",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2e8",
+          "kernel": "SRI_Corrode2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3e8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2e8",
+          "kernel": "SRI_Corrode2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x3f8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2e8",
+          "kernel": "SRI_Corrode2",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x400",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2f0",
+      "name": "SRI_Direction2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2f0",
+          "kernel": "SRI_Direction2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3f8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2f0",
+          "kernel": "SRI_Direction2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x3f0",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2f0",
+          "kernel": "SRI_Direction2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x410",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x2f8",
+      "name": "SRI_DirectionalSmoothing2",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x2f8",
+          "kernel": "SRI_DirectionalSmoothing2",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x418",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2f8",
+          "kernel": "SRI_DirectionalSmoothing2",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x410",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2f8",
+          "kernel": "SRI_DirectionalSmoothing2",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x428",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x2f8",
+          "kernel": "SRI_DirectionalSmoothing2",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x420",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x480",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x300",
+      "name": "SRI_DetailSmoothN",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x300",
+          "kernel": "SRI_DetailSmoothN",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x340",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x300",
+          "kernel": "SRI_DetailSmoothN",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x430",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x300",
+          "kernel": "SRI_DetailSmoothN",
+          "argument": 2,
+          "bytes": 4,
+          "source": "this+0x188",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x300",
+          "kernel": "SRI_DetailSmoothN",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x300",
+          "kernel": "SRI_DetailSmoothN",
+          "argument": 4,
+          "bytes": 8,
+          "source": "this+0x438",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "runtime-final",
+      "local_dimensions_slot": "0x4d0",
+      "condition": "level>0 and fine_iterations>=1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x510",
+      "name": "FrameCorrelation",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x510",
+          "kernel": "FrameCorrelation",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x350",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x510",
+          "kernel": "FrameCorrelation",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x538",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x510",
+          "kernel": "FrameCorrelation",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x530",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x510",
+          "kernel": "FrameCorrelation",
+          "argument": 3,
+          "bytes": 8,
+          "source": "this+0x548",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x510",
+          "kernel": "FrameCorrelation",
+          "argument": 4,
+          "bytes": 4,
+          "source": "this+0x190",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x440",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "always",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x518",
+      "name": "FrameCorrelation_Mask",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x518",
+          "kernel": "FrameCorrelation_Mask",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x3b8",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x518",
+          "kernel": "FrameCorrelation_Mask",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x540",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x518",
+          "kernel": "FrameCorrelation_Mask",
+          "argument": 2,
+          "bytes": 8,
+          "source": "this+0x528",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x518",
+          "kernel": "FrameCorrelation_Mask",
+          "argument": 3,
+          "bytes": 4,
+          "source": "this+0x19c",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>=-0.1",
+      "dimensions": 2
+    },
+    {
+      "slot": "0x520",
+      "name": "FrameCorrelation_Coef",
+      "bound_arguments": [
+        {
+          "kernel_slot": "0x520",
+          "kernel": "FrameCorrelation_Coef",
+          "argument": 0,
+          "bytes": 8,
+          "source": "this+0x528",
+          "condition": "always"
+        },
+        {
+          "kernel_slot": "0x520",
+          "kernel": "FrameCorrelation_Coef",
+          "argument": 1,
+          "bytes": 8,
+          "source": "this+0x530",
+          "condition": "always"
+        }
+      ],
+      "dispatched_by_Process": true,
+      "global_dimensions_slot": "0x470",
+      "local_dimensions_slot": "0x4e0",
+      "condition": "level>=-0.1",
+      "dimensions": 2
+    }
+  ],
+  "dimensions_after_SetKernelArg": {
+    "0x440": [
+      128,
+      320
+    ],
+    "0x450": [
+      [
+        128,
+        320
+      ],
+      [
+        128,
+        160
+      ],
+      [
+        128,
+        106
+      ],
+      [
+        128,
+        80
+      ]
+    ],
+    "0x460": [
+      64,
+      160
+    ],
+    "0x470": [
+      [
+        64,
+        160
+      ],
+      [
+        64,
+        96
+      ],
+      [
+        64,
+        80
+      ],
+      [
+        64,
+        64
+      ]
+    ],
+    "0x480": [
+      [
+        128,
+        320
+      ],
+      [
+        128,
+        192
+      ],
+      [
+        128,
+        160
+      ],
+      [
+        128,
+        128
+      ]
+    ],
+    "0x490": [
+      64,
+      1
+    ],
+    "0x4a0": [
+      128,
+      1
+    ],
+    "0x4b0": [
+      128,
+      32
+    ],
+    "0x4c0": [
+      64,
+      80
+    ],
+    "0x4d0": [
+      32,
+      1
+    ],
+    "0x4e0": [
+      16,
+      16
+    ],
+    "0x4f0": [
+      64,
+      1
+    ],
+    "0x500": [
+      128,
+      1
+    ]
+  },
+  "copies_Process": [
+    {
+      "source": "0x308",
+      "destination": "0x350",
+      "region": [
+        128,
+        320,
+        1
+      ],
+      "condition": "level<=0"
+    },
+    {
+      "source": "0x318",
+      "destination": "0x328",
+      "region": [
+        128,
+        320,
+        1
+      ],
+      "condition": "level>0 and N==1"
+    },
+    {
+      "source": "0x3b8",
+      "destination": "0x3b0",
+      "region": [
+        64,
+        160,
+        1
+      ],
+      "condition": "between coarse directional iterations"
+    },
+    {
+      "source": "0x420",
+      "destination": "0x418",
+      "region": [
+        128,
+        320,
+        1
+      ],
+      "condition": "between fine directional iterations"
+    },
+    {
+      "source": "0x548",
+      "destination": "0x538",
+      "region": [
+        128,
+        320,
+        1
+      ],
+      "condition": "always after FrameCorrelation"
+    },
+    {
+      "source": "0x3b8",
+      "destination": "0x540",
+      "region": [
+        64,
+        160,
+        1
+      ],
+      "condition": "always after full temporal copy"
+    }
+  ]
+}

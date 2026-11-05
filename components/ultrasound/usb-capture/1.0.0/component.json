@@ -1,0 +1,53 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "id": "ultrasound/usb-capture",
+  "title": "Ultrasound USB acquisition",
+  "description": "Configure, start and stop UC5-2S acquisition directly with WebUSB. Emits raw USB bytes without a native server.",
+  "roles": [
+    "source",
+    "adapter"
+  ],
+  "source": {
+    "path": "components/ultrasound/usb-capture/1.0.0/source.ts",
+    "sha256": "7439bec1faf4da969a819f26e222b8b5db4f7943256d7dc7fa8bf909c9024629",
+    "build": "TypeScript host service compiled with the site; WebUSB is owned by the host."
+  },
+  "runtime": {
+    "kind": "host",
+    "entry": "probe-usb",
+    "abi": "odb.usb-source/1"
+  },
+  "ports": {
+    "bytes": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.usb.bytes/1"
+    }
+  },
+  "parameters": {
+    "seconds": {
+      "type": "integer",
+      "default": 1,
+      "minimum": 1,
+      "maximum": 30
+    }
+  },
+  "permissions": [
+    "usb.capture"
+  ],
+  "devices": [
+    "unknown/puis-fx2-convex-usb-probe-04b4-4611"
+  ],
+  "behavior": "Requires explicit device selection and current phantom setup confirmation. Validates the connected UC5-2S identity, binds the configuration to the current complete PID0, queues IN readers on endpoints6/8/1 and sends the same fixed bootstrap/configuration/Start/Freeze packets as the Rust driver. No retry or further OUT after an uncertain write. WebUSB deadlines close the device; they do not attest acoustic stop. Bounded sessions use duration1–30s and64MiB raw byte limit. An explicit host seconds:null selects continuous reception until Stop/disconnect, with the same bounded IN queues; storage and decoding backpressure belong to the host. No further OUT after an explicit device disconnect. Raw data and configuration remain local."
+}

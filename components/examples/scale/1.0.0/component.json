@@ -1,0 +1,77 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "ports": {
+    "samples": {
+      "direction": "in",
+      "kind": "stream",
+      "contract": "odb.scalar/1"
+    },
+    "scaled": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.scalar/1"
+    }
+  },
+  "parameters": {
+    "factor": {
+      "type": "number",
+      "default": 2,
+      "minimum": -1000000,
+      "maximum": 1000000
+    }
+  },
+  "permissions": [],
+  "fixtures": [
+    {
+      "input": 0,
+      "factor": 2,
+      "expected": 0
+    },
+    {
+      "input": 3,
+      "factor": 2,
+      "expected": 6
+    },
+    {
+      "input": -2.5,
+      "factor": 4,
+      "expected": -10
+    }
+  ],
+  "evidence": [
+    {
+      "kind": "fixture",
+      "reference": "packages/components/test/registry.test.ts"
+    }
+  ],
+  "id": "examples/scale",
+  "title": "Scale a measurement",
+  "description": "Multiply a finite scalar by a configurable factor using a pure WASM module.",
+  "roles": [
+    "processing"
+  ],
+  "source": {
+    "path": "components/examples/scale/1.0.0/scale.wat",
+    "sha256": "1713c90b77c854ced2b39aaf7b2a4a9ebb8f152308ed327325cb8ace19837801",
+    "build": "npm run components:build"
+  },
+  "artifact": {
+    "path": "components/examples/scale/1.0.0/scale.wasm",
+    "sha256": "67e9a6c20a97905b79823c82e913e981464dc26d38b96673952617f57fc7fb44"
+  },
+  "runtime": {
+    "kind": "wasm",
+    "entry": "process",
+    "abi": "odb.scalar-transform/1"
+  },
+  "behavior": "process(value, factor) returns value * factor. The module imports nothing and has no memory or start function. Host envelopes preserve units, timestamp, source and session. Non-finite results stop the session."
+}

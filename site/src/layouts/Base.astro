@@ -13,7 +13,7 @@ const isHome = section === "home";
 const isDevice = section === "devices" && path.split("/").filter(Boolean).length > 1;
 const narrow = !wide && (isDevice || ["agents", "contribute", "policy", "news", "wanted"].includes(section));
 const nav = [["/devices/", "Devices"], ["/contribute/", "Contribute"], ["/wanted/", "Wanted"], ["/news/", "News"]];
-const more = [["/agents/", "For agents"], ["/sources/", "Sources"], ["/about/", "About"]];
+const more = [["/components/", "Components & apps"], ["/agents/", "For agents"], ["/sources/", "Sources"], ["/about/", "About"]];
 const current = (href: string) => path.startsWith(href) ? "page" as const : undefined;
 const canonical = new URL(path, Astro.site);
 ---
@@ -31,6 +31,7 @@ const canonical = new URL(path, Astro.site);
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} news`} href="/rss.xml" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#380073" />
+    <meta http-equiv="Content-Security-Policy" content="frame-src blob:; object-src 'none'" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <script is:inline>document.documentElement.classList.add("js");</script>

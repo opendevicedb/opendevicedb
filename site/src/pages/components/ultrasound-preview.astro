@@ -1,0 +1,22 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+<Base title="Ultrasound preview setup">
+  <h1>Ultrasound image preview</h1>
+  <p class="prose">This application displays PNG frames supplied by your local probe driver. Connecting the viewer does not start acquisition. It labels recorded replays separately from live images.</p>
+  <h2>Connect your local driver</h2>
+  <ol class="prose">
+    <li>Keep your native probe preview server running. Note its loopback address.</li>
+    <li>In an OpenDeviceDB checkout, start the read-only bridge. Replace <code>DRIVER_PORT</code> and the page origin with your actual values:</li>
+  </ol>
+  <pre><code>npm run ultrasound:bridge -- --upstream http://127.0.0.1:DRIVER_PORT --allow-origin https://opendevicedb.org</code></pre>
+  <ol class="prose" start="3">
+    <li>Open the preview, keep <code>http://127.0.0.1:4337</code> as the bridge URL, and choose <strong>Connect preview</strong>. Allow local network access if your browser requests it.</li>
+    <li>Start or manage acquisition in the native driver. Choose <strong>Disconnect preview</strong> to stop reading images in this page.</li>
+  </ol>
+  <p class="prose">For local development use the exact page origin, such as <code>http://127.0.0.1:4335</code>, with <code>--allow-origin</code>. The bridge only accepts that origin and only forwards status and cached image requests. Unsupported driver responses are rejected.</p>
+  <h2>What the image means</h2>
+  <p class="prose">The preview is uncalibrated. It supplies no distance measurement or diagnostic interpretation. A replay without a known probe profile is labelled “Probe not identified”; displaying it does not validate compatibility with the connected probe. Real-time availability depends on the driver producing new complete frames. A finished acquisition can continue to show its last image.</p>
+  <p><a href="/components/">Back to components and applications</a></p>
+</Base>
+<style>pre{overflow:auto;max-width:100%;padding:20px;background:var(--panel);border-radius:12px}code{overflow-wrap:anywhere}li{margin:12px 0}</style>

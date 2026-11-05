@@ -34,6 +34,12 @@ characteristic, a checksum, UART pins) helps the next person or agent go faster.
 
 See [SPEC.md](SPEC.md) for the design and [POLICY.md](POLICY.md) for what we accept.
 
+The first [composable application pilot](knowledge/implementation/component-pilot.md)
+adds a component/application catalogue at `/components/`, a real WASM processing
+example, isolated web components and composition customization. Components are
+independent of device records. The [English OKF specification](knowledge/specifications/composable-applications.md)
+describes the broader roadmap, including desktop export and spatial capture ports.
+
 ```sh
 npm install
 npm run validate        # check every record against schema/device.schema.json

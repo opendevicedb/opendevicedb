@@ -1,0 +1,58 @@
+---
+import Base from "../../layouts/Base.astro";
+import { componentRegistry } from "../../lib/components.ts";
+const registry = componentRegistry();
+---
+<Base title="Components and applications">
+  <p class="eyebrow">Build with free components</p>
+  <h1>Components and applications</h1>
+  <p class="prose">Use an application, then customize its components to make it yours. Processing and displays work with compatible sources, with or without a connected device.</p>
+  <h2>Ready to use</h2>
+  <div class="component-catalogue">
+    {registry.compositions.filter(app => app.purpose !== "example").map(app => <article class="card">
+      <h3>{app.title}</h3><p>{app.description}</p>
+      <button class="btn primary" data-open-application={app.id}>Open application</button>
+    </article>)}
+  </div>
+  <details class="technical-examples"><summary>Technical examples — learn how components connect</summary>
+    <p>These examples demonstrate customization. They do not operate the connected device.</p>
+    <div class="component-catalogue">{registry.compositions.filter(app => app.purpose === "example").map(app => <article class="card">
+      <h3>{app.title}</h3><p>{app.description}</p><button class="btn" data-open-application={app.id}>Open example</button>
+    </article>)}</div>
+  </details>
+  <h2>Reusable components</h2>
+  <label for="component-query">Find a component</label>
+  <input id="component-query" type="search" placeholder="Search by function, role or contract" />
+  <div class="component-catalogue" id="component-catalogue">
+    {registry.components.map(c => <article class="card" data-component-search={`${c.id} ${c.title} ${c.description} ${c.roles.join(" ")} ${Object.values(c.ports).map(p => p.contract).join(" ")}`.toLowerCase()}>
+      <h3>{c.title}</h3>{c.id.startsWith("examples/") && <p class="badge">Technical example</p>}<p>{c.description}</p>
+      <p class="small muted">{c.roles.join(" · ")} · {c.version} · {c.license}</p>
+      <p class="small">{c.status} · {c.evidence.some(e => e.kind === "fixture") ? "Fixture tests available" : "No hardware validation reported"}</p>
+      <details><summary>Contracts and behavior</summary><p>{c.behavior}</p>
+        <ul>{Object.entries(c.ports).map(([name, port]) => <li><code>{name}</code>: {port.direction} · {port.contract}</li>)}</ul>
+        <a href={`/api/components/${c.id}/${c.version}/inspection.json`}>Inspect sources and tests</a>
+      </details>
+    </article>)}
+  </div>
+  <p id="component-empty" hidden>No components match. Try another function or contract.</p>
+  <p class="prose">Contribute a processing module, interface, port or test independently of device protocol work. <a href="https://github.com/opendevicedb/opendevicedb/tree/main/components">Component sources and contribution guide</a>.</p>
+  <p><a href="/api/components.json">Component registry JSON</a> · <a href="/agents/">Use components with an agent</a></p>
+  <script>
+    import { installApplicationButtons } from "../../scripts/applications.ts";
+    installApplicationButtons();
+    const query = document.getElementById("component-query") as HTMLInputElement;
+    query.addEventListener("input", () => {
+      let visible = 0;
+      for (const element of document.querySelectorAll<HTMLElement>("[data-component-search]")) {
+        element.hidden = !query.value.toLowerCase().split(/\s+/).every(t => element.dataset.componentSearch!.includes(t));
+        if (!element.hidden) visible++;
+      }
+      document.getElementById("component-empty")!.hidden = visible > 0;
+    });
+  </script>
+</Base>
+<style>
+  .component-catalogue{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin:24px 0}
+  .component-catalogue article{min-width:0}.component-catalogue article[hidden]{display:none}
+  input{max-width:560px;width:100%}details{margin-top:16px}code{overflow-wrap:anywhere}
+</style>

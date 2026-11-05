@@ -6,11 +6,14 @@ import {
   type IndexEntry, type UsbDetection, type BleMatch,
 } from "@opendevicedb/core/browser";
 import { STATUS_LABEL, displayName } from "../lib/config.ts";
+import { compatibleApplications } from "@opendevicedb/components/browser";
+import { loadComponentRegistry, openApplication } from "./applications.ts";
 
 const nav = navigator as any;
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const out = $("out"), title = $("out-title"), readEl = $("out-read"), notes = $("out-notes");
 const list = $("out-list"), next = $("out-next");
+let currentUsbDevice: any;
 
 // ---------- feature detection ----------
 
@@ -64,6 +67,7 @@ function row(e: IndexEntry, why?: string): string {
 }
 
 function show(o: { title: string; read?: string; notes?: string[]; rows?: string[]; next?: string }) {
+  out.querySelector(".detect-applications")?.remove();
   out.hidden = false;
   title.textContent = o.title;
   readEl.innerHTML = o.read ?? "";
@@ -164,6 +168,7 @@ async function indexOrNull(p: Promise<IndexEntry[]>): Promise<IndexEntry[] | nul
 }
 
 async function run(way: keyof typeof support) {
+  currentUsbDevice = undefined;
   // Open the chooser inside the click (user activation); load the index meanwhile.
   const index = loadIndex();
   index.catch(() => {});
@@ -178,7 +183,12 @@ async function run(way: keyof typeof support) {
 
   if (way === "usb") {
     const idx = await indexOrNull(index);
-    if (idx) usbResult(matchUsb(idx, usbId(dev.vendorId, dev.productId)), { product: dev.productName, manufacturer: dev.manufacturerName }, "USB");
+    if (idx) {
+      currentUsbDevice = dev;
+      const matched = matchUsb(idx, usbId(dev.vendorId, dev.productId));
+      usbResult(matched, { product: dev.productName, manufacturer: dev.manufacturerName }, "USB");
+      void showUsbApplications(dev, !matched.known && matched.matches.length === 1 ? matched.matches[0].id : undefined);
+    }
   } else if (way === "serial") {
     const info = dev.getInfo?.() ?? {};
     if (info.usbVendorId === undefined) {
@@ -196,4 +206,26 @@ async function run(way: keyof typeof support) {
     const idx = await indexOrNull(index);
     if (idx) bleResult(name, matchBleName(idx, name), idx);
   }
+}
+
+async function showUsbApplications(device: any, deviceId?: string) {
+  try {
+    const registry = await loadComponentRegistry();
+    if (currentUsbDevice !== device) return;
+    const applications = compatibleApplications(registry, { usb: true, deviceId });
+    if (!applications.length) return;
+    const section = document.createElement("section"); section.className = "detect-applications card";
+    const heading = document.createElement("h3"); heading.textContent = "Use the selected USB device"; section.append(heading);
+    const actions = document.createElement("div"); actions.className = "device-app-actions"; section.append(actions);
+    const examples = document.createElement("details"); const summary = document.createElement("summary"); summary.textContent = "USB technical examples"; examples.append(summary);
+    const note = document.createElement("p"); note.textContent = "These examples and utilities demonstrate components or read an existing driver. Check each tool’s requirements."; examples.append(note);
+    for (const app of applications) {
+      const button = document.createElement("button"); button.type = "button"; button.className = "btn";
+      button.textContent = app.title; button.dataset.usbApplication = app.id;
+      button.addEventListener("click", () => void openApplication(app.id, { usbDevice: device })); (app.purpose === "example" ? examples : actions).append(button);
+    }
+    if (applications.some(app => app.purpose === "example")) section.append(examples);
+    const catalogue = document.createElement("a"); catalogue.href = "/components/"; catalogue.textContent = "Browse components and applications"; const browse = document.createElement("p"); browse.append(catalogue); section.append(browse);
+    out.append(section);
+  } catch { /* Existing identification remains usable when the component registry is unavailable. */ }
 }

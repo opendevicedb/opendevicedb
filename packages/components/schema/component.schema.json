@@ -1,0 +1,380 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "odb-component/1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+/[a-z0-9-]+$",
+      "maxLength": 160
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "status": {
+      "enum": [
+        "source-referenced",
+        "port-in-progress",
+        "available",
+        "deprecated"
+      ]
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "source",
+          "adapter",
+          "processing",
+          "interface"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 160
+      },
+      "minItems": 1
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "browser",
+          "desktop-linux-x64",
+          "server"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[a-zA-Z0-9_./-]+$",
+          "maxLength": 512
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "build": {
+          "type": "string",
+          "minLength": 1
+        },
+        "files": {
+          "type": "array",
+          "maxItems": 64,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "path": {
+                "type": "string",
+                "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[a-zA-Z0-9_./-]+$",
+                "maxLength": 512
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "required": [
+              "path",
+              "sha256"
+            ]
+          }
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "build"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[a-zA-Z0-9_./-]+$",
+          "maxLength": 512
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "path",
+        "sha256"
+      ]
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "host",
+            "wasm",
+            "web-component"
+          ]
+        },
+        "entry": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "abi": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        }
+      },
+      "required": [
+        "kind",
+        "entry",
+        "abi"
+      ]
+    },
+    "ports": {
+      "type": "object",
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "direction": {
+            "enum": [
+              "in",
+              "out"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "stream",
+              "value",
+              "action"
+            ]
+          },
+          "contract": {
+            "type": "string",
+            "pattern": "^[a-z0-9.-]+/[1-9][0-9]*$"
+          },
+          "required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "direction",
+          "kind",
+          "contract"
+        ]
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "number",
+              "integer",
+              "boolean",
+              "string"
+            ]
+          },
+          "default": {
+            "type": [
+              "number",
+              "boolean",
+              "string"
+            ]
+          },
+          "minimum": {
+            "type": "number"
+          },
+          "maximum": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "type",
+          "default"
+        ]
+      }
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "usb.descriptors",
+          "file.scalar-values",
+          "ultrasound.preview",
+          "usb.capture",
+          "file.probe-recording"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+/[a-z0-9-]+$",
+        "maxLength": 160
+      },
+      "uniqueItems": true
+    },
+    "behavior": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 8000
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "input": {
+            "type": "number"
+          },
+          "factor": {
+            "type": "number"
+          },
+          "expected": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "input",
+          "factor",
+          "expected"
+        ]
+      },
+      "maxItems": 1000
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "fixture",
+              "hardware-report",
+              "hardware-reproduction"
+            ]
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "kind",
+          "reference"
+        ]
+      },
+      "maxItems": 1000
+    }
+  },
+  "required": [
+    "format",
+    "id",
+    "version",
+    "title",
+    "description",
+    "status",
+    "roles",
+    "license",
+    "authors",
+    "targets",
+    "source",
+    "ports",
+    "parameters",
+    "permissions",
+    "behavior",
+    "fixtures",
+    "evidence"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "available"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "runtime"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "runtime": {
+                  "properties": {
+                    "kind": {
+                      "enum": [
+                        "wasm",
+                        "web-component"
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "artifact"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

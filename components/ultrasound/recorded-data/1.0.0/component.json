@@ -1,0 +1,42 @@
+{
+  "format": "odb-component/1",
+  "id": "ultrasound/recorded-data",
+  "version": "1.0.0",
+  "status": "available",
+  "title": "Recorded probe DATA",
+  "description": "Read a chosen local raw DATA or capture archive for reconstruction. No upload or device access.",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "roles": [
+    "source"
+  ],
+  "source": {
+    "path": "components/ultrasound/recorded-data/1.0.0/source.ts",
+    "sha256": "b1526b60b146665ea4035386016a5f1d92679aad147d0ed2a9e37c2b9e0d6d38",
+    "build": "Built into the explicit recording host; no dynamic source evaluation."
+  },
+  "runtime": {
+    "kind": "host",
+    "entry": "probe-recording",
+    "abi": "odb.usb-source/1"
+  },
+  "ports": {
+    "bytes": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.usb.bytes/1"
+    }
+  },
+  "parameters": {},
+  "permissions": [
+    "file.probe-recording"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "behavior": "Reads .bin in 64KiB chunks, legacy .odb-capture containers bounded to96MiB, or unbounded-length .odb-stream JSONL with bounded lines. Validates encoding, ordinals and totals. Rejects declared storage losses. Journal/display records never become device commands. File selection is runtime-only, excluded from compositions. The stream provides format candidates, not device identification or acoustic calibration."
+}

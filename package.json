@@ -12,7 +12,17 @@
     "import": "npm run import -w @opendevicedb/importers --",
     "build": "npm run build -w @opendevicedb/core && npm run build -w site",
     "dev": "npm run dev -w site",
-    "mcp": "npm run start -w @opendevicedb/mcp"
+    "mcp": "npm run start -w @opendevicedb/mcp",
+    "components:build": "node scripts/build-components.ts --write",
+    "components:check": "node scripts/build-components.ts",
+    "components:test": "npm test -w @opendevicedb/components",
+    "knowledge:check": "node scripts/validate-knowledge.ts",
+    "ultrasound:bridge": "node scripts/ultrasound-bridge.ts",
+    "probe:pack": "node scripts/pack-probe-resources.ts",
+    "probe:build": "node scripts/build-probe-wasm.ts",
+    "probe:check": "node scripts/build-probe-wasm.ts --check",
+    "probe:open:build": "node scripts/build-open-image-wasm.ts",
+    "probe:open:check": "node scripts/build-open-image-wasm.ts --check"
   },
   "engines": {
     "node": ">=22"
