@@ -24,17 +24,21 @@ install:
     difficulty: easy
     notes: Install the host tools using the upstream package-manager instructions.
   - project: HackRF firmware
-    method: vendor-upload
+    method: other
     guide: https://hackrf.readthedocs.io/en/latest/updating_firmware.html
     difficulty: medium
+    tools:
+      - Computer with hackrf_spiflash from hackrf-tools
+      - USB cable
     firmware_constraints: >-
       Use hackrf_one_usb.bin for SPI flash updates on HackRF One. Match the
       host software and firmware versions. The DFU recovery image is a distinct
       .dfu file; the normal update .bin must not be used as a DFU image.
     notes: >-
-      The official guide describes updates using hackrf_spiflash and separate
-      DFU recovery instructions. Read the steps for HackRF One specifically.
+      Use hackrf_spiflash over USB for the normal SPI-flash firmware update.
+      The official guide documents DFU recovery separately; read the steps
+      and image names for HackRF One specifically.
 provenance:
   sources: [curated]
   ai_assisted: true
-updated: 2026-11-01
+updated: 2026-11-04
