@@ -449,7 +449,17 @@ interfaces:
       source hash,0global headers and no image. Missing headers, P/N, grouping state, acoustic stop
       and physical calibration are not supplied or validated by this planner. No new hardware
       acquisition or command change. Detailed internal analysis references are omitted from the
-      user-facing report; source files, hashes and selected settings remain reproducible."
+      user-facing report; source files, hashes and selected settings remain reproducible. A bounded
+      offline comparison rejects the specific older16-byte line-header interpretation for
+      all117observed trial03 prefixes. Its two retained length helpers give18..104bytes in mode1
+      and20..192bytes in mode2; neither exact nor word-truncated lengths land on a following
+      observed marker. All117prefixes would map to legacy family0/flags8, outside that older thread
+      B/C/D dispatch.468controlled helper calls/7956instructions and independent scalar calculations
+      agree; this is not a full reader/thread execution or a new hardware trial. This result does
+      not establish every possible firmware format and does not supply a legacy decoder fallback,
+      P/N, a missing global header or an image. The saved770048-byte source is unchanged. Header
+      absence still requires independent reception/configuration/state investigation and the pending
+      memory-mode phantom comparison. No new active command or user-facing analysis metadata."
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -459,6 +469,13 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: Bounded older-header compatibility check on117saved trial03 prefixes:468controlled helper
+      calls/7956instructions plus scalar agreement, zero expected-end marker matches, zero legacy
+      B/C/D dispatch. Source770048bytes unchanged; no new capture or inferred header/image. Product
+      remains0.23 and prior356tests remain the existing software verification, not a new test run.
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
