@@ -13,7 +13,7 @@ const app = () => structuredClone(registry.compositions.find(c => c.id === "exam
 const wasm = registry.components.find(c => c.id === "examples/scale")!;
 
 test("registry pins real sources, exact versions and executable WAT fixture behavior", async () => {
-  assert.equal(registry.components.length, 10); assert.equal(registry.compositions.length, 5);
+  assert.equal(registry.components.length, 11); assert.equal(registry.compositions.length, 5);
   for (const c of registry.components) assert.equal(sha256(readFileSync(repositoryFile(COMPONENT_REPO_ROOT, c.source.path))), c.source.sha256);
   const bytes = readFileSync(repositoryFile(COMPONENT_REPO_ROOT, wasm.artifact!.path));
   const { instance } = await WebAssembly.instantiate(bytes);

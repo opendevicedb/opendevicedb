@@ -6,7 +6,14 @@ import { join, resolve } from "node:path";
 import { homedir } from "node:os";
 import { createHash } from "node:crypto";
 const repository = resolve(import.meta.dirname, "..");
-const root = join(repository, "components/ultrasound/convex-open-image/0.1.0");
+const args = process.argv.slice(2);
+let version = "0.1.0", check = false;
+for (let n = 0; n < args.length; n++) {
+  if (args[n] === "--check" && !check) check = true;
+  else if (args[n] === "--version" && n + 1 < args.length && /^\d+\.\d+\.\d+$/.test(args[n + 1])) version = args[++n];
+  else throw Error("Usage: build-open-image-wasm.ts [--version X.Y.Z] [--check]");
+}
+const root = join(repository, `components/ultrasound/convex-open-image/${version}`);
 const shared = JSON.parse(readFileSync(join(root, "shared-sources.json"), "utf8"));
 if (shared.format !== "odb-source-lock/1" || !Array.isArray(shared.files) || !shared.files.length) throw Error("Missing shared processing source lock");
 for (const file of shared.files) {
@@ -35,7 +42,7 @@ execFileSync("cargo", ["+1.99.0", "build", "--manifest-path", join(root, "Cargo.
 });
 const built = join(target, "wasm32-wasip1/release/probe_open_image.wasm");
 const artifact = join(root, "decoder.wasm");
-if (process.argv.includes("--check")) {
+if (check) {
   if (!readFileSync(built).equals(readFileSync(artifact))) throw Error("Original image WASM differs; rebuild and regenerate component locks");
   console.log("Original image WASM reproducibly matches its sources");
 } else copyFileSync(built, artifact);

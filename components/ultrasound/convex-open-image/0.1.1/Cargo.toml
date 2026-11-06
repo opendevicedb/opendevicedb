@@ -1,0 +1,20 @@
+[package]
+name = "probe-open-image"
+version = "0.1.1"
+edition = "2024"
+license = "AGPL-3.0-or-later"
+publish = false
+[lib]
+crate-type = ["rlib", "cdylib"]
+[dependencies]
+odb-convex-decoder = { path = "../../convex-decoder/1.0.0", default-features = false }
+serde_json = "1"
+sha2 = "0.10"
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
+panic = "abort"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"

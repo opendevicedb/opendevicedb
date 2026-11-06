@@ -21,6 +21,9 @@ export default defineConfig({
     define: { __ODB_ROOT__: JSON.stringify(repoRoot) },
     // core exports TypeScript source; let Vite transpile and bundle it.
     ssr: { noExternal: ["@opendevicedb/core", "@opendevicedb/components"] },
+    // Astro's separate prerender environment must retain its nested cookie API;
+    // a bare external import resolves the workspace's older CJS package instead.
+    environments: { prerender: { resolve: { noExternal: ["cookie"] } } },
     server: { fs: { allow: [repoRoot] } },
   },
 });

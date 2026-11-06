@@ -39,7 +39,7 @@ export class ProbeReplaySession {
     const decoders = nodes.filter(n => n.c.runtime?.abi === "odb.ultrasound.decode/1");
     const displays = nodes.filter(n => n.c.runtime?.abi === "odb.video-ui/1");
     if (sources.length !== 1 || decoders.length !== 1 || !displays.length || displays.length > 4 || nodes.length !== displays.length + 2 ||
-        decoders[0].c.id !== "ultrasound/convex-open-image" || decoders[0].c.version !== "0.1.0" ||
+        decoders[0].c.id !== "ultrasound/convex-open-image" || !["0.1.0", "0.1.1"].includes(decoders[0].c.version) ||
         !this.composition.connections.some(e => e.from === `${sources[0].id}.bytes` && e.to === `${decoders[0].id}.bytes`) ||
         displays.some(n => !this.composition.connections.some(e => e.from === `${decoders[0].id}.frames` && e.to === `${n.id}.frames`))) throw Error("Replay requires a recording, the original image profile and connected frame displays");
     try {
