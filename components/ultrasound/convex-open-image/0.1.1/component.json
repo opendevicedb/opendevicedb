@@ -1,0 +1,75 @@
+{
+  "format": "odb-component/1",
+  "id": "ultrasound/convex-open-image",
+  "version": "0.1.1",
+  "status": "available",
+  "title": "UC5-2S original reconstruction profile and verified native replay",
+  "description": "Resource-free mathematical image profile for recorded DATA; no acquisition configuration.",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "roles": [
+    "processing"
+  ],
+  "source": {
+    "path": "components/ultrasound/convex-open-image/0.1.1/src/lib.rs",
+    "sha256": "499ac1bc5020b389c0185711335204949dceb09726656ee9e8eecda853565aa9",
+    "build": "node scripts/build-open-image-wasm.ts --version 0.1.1; npm run components:build",
+    "files": [
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/Cargo.toml",
+        "sha256": "42db07af0a9058eb117124a0b32de0c013885ce5d349795ac078badb0e0dab2c"
+      },
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/Cargo.lock",
+        "sha256": "bb7e510b6c3697bb53ca6d5db2bf1fbce30f4f064c1d9ed1e5d5e4d59d13dc7b"
+      },
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/README.md",
+        "sha256": "a93fc3de29df0c4a7d128ea40c582148e7617f9fb6b3e7bab1d55b14186fdbe4"
+      },
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/src/bin/replay_open.rs",
+        "sha256": "062154485111286a755e62913f25b469f84bbdd7248f7f7f4026b3d420830aa4"
+      },
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/shared-sources.json",
+        "sha256": "5d3b280d009c7cb2ddea2f923a36877636a69b03c93b50e2a84d6c2f54212fca"
+      },
+      {
+        "path": "components/ultrasound/convex-open-image/0.1.1/src/bin/capture/mod.rs",
+        "sha256": "5a3a66f5aaf1ba09f1a9d79e8f1e3a49b8037aa2d904fa0ff83d58001239128b"
+      }
+    ]
+  },
+  "artifact": {
+    "path": "components/ultrasound/convex-open-image/0.1.1/decoder.wasm",
+    "sha256": "c466a55c5cb5d7ea1cdb5e99039ac4d1707d49929a571ae38ae79e5f2a3e93fb"
+  },
+  "runtime": {
+    "kind": "wasm",
+    "entry": "odb_call",
+    "abi": "odb.ultrasound.decode/1"
+  },
+  "ports": {
+    "bytes": {
+      "direction": "in",
+      "kind": "stream",
+      "contract": "odb.usb.bytes/1"
+    },
+    "frames": {
+      "direction": "out",
+      "kind": "stream",
+      "contract": "odb.video.frame/1"
+    }
+  },
+  "parameters": {},
+  "permissions": [],
+  "behavior": "Explicit reconstruction-only initialization; binomial FIR, adjustable native display settings, generated grayscale and normalized sector. No external resource files, hardware configuration, USB or network access. Shared Rust processing library for native/WASM. Recording host requires explicit reconstruction purpose. Shared processing sources are pinned by shared-sources.json. No metric calibration or clinical equivalence claim.",
+  "fixtures": [],
+  "evidence": []
+}

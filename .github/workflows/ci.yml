@@ -40,6 +40,8 @@ jobs:
       - run: npm run probe:open:check
         env:
           CARGO_TERM_VERBOSE: "true"
+      - run: cargo test --manifest-path components/ultrasound/convex-open-image/0.1.1/Cargo.toml --locked
+      - run: node scripts/build-open-image-wasm.ts --version 0.1.1 --check
       - uses: actions/upload-artifact@v4
         if: failure()
         with:

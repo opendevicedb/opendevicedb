@@ -53,3 +53,11 @@ replay** or **Close** releases the decoder and displays; completion retains the
 last image until then. Build/check this profile using
 `node scripts/build-open-image-wasm.ts` / `node scripts/build-open-image-wasm.ts --check`.
 The script also checks its pinned shared Rust processing sources.
+
+Native Linux replay of receive journals uses the verified
+[original-profile0.1.1 host](ultrasound/convex-open-image/0.1.1/README.md).
+It checks per-read hashes/status/counts and snapshots accepted DATA before
+processing; unknown continuity is refused. This release shares the0.1.0 image
+profile and does not add device configuration or acquisition capabilities.
+Build/check its WASM with `node scripts/build-open-image-wasm.ts --version 0.1.1`
+and the same command with `--check`. Omitting the version retains the0.1.0 build.

@@ -35,6 +35,16 @@ interfaces:
       reconstructs retained DATA, but does not supply hardware configuration. Protocol document
       distinguishes historical negative attempts, observed fields and remaining dependencies."
 projects:
+  - name: Original UC5-2S image replay0.1.1 with verified native host
+    url: https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.1
+    kind: library
+    license: AGPL-3.0-or-later
+    freedom:
+      nonfree: []
+      cloud: none
+      notes: Reconstruction of recorded DATA only. Native host snapshots and validates declared receive
+        journals before producing images. The generated image profile/WASM are unchanged; no
+        acquisition configuration or device-firmware freedom is supplied.
   - name: Original UC5-2S Rust/WASM image replay
     url: https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.0
     kind: library
@@ -66,6 +76,16 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-06
+    notes: Native original-profile0.1.1 host verifies journal/profile/terminal seal, per-read
+      ordinals/status/code/length/hash and total, then evaluates an owned DATA snapshot. Unknown
+      outcomes are refused; explicit no-I/O cancellation is kept separate. Synthetic negative CLI
+      cases reproduce prior unchecked native-example acceptance, then fail before output. Retained
+      trial04/07 reproduce45native PNGs exactly, with negative trial02/03 at0images; new WASM
+      reproduces45PNG/RGBA references exactly and is byte-identical to0.1.0. This is
+      archived/software verification only, without new USB/acoustic/calibration evidence.
   - method: manual
     by: smichea with Codex
     date: 2026-11-05
@@ -140,6 +160,7 @@ verification:
       enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
 provenance:
   sources:
+    - https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.1/README.md
     - https://github.com/opendevicedb/opendevicedb/blob/main/docs/specs/uc5-2s-usb.md
     - https://github.com/opendevicedb/opendevicedb/pull/30
     - https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.0/README.md
@@ -174,4 +195,6 @@ provenance:
     - Rust probe-usb0.17 / probe-frame0.23 / probe-web0.5-0.6 phantom journals and offline replay
     - Original Rust image profile0.1.0, native Linux and WASM
     - Chromium archived-DATA replay and pinned-toolchain rebuilds
-updated: 2026-11-05
+    - Rust native receive-journal validator and owned DATA snapshot
+    - Synthetic corrupted-journal CLI checks and preserved phantom replay; no new USB acquisition
+updated: 2026-11-06

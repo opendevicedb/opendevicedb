@@ -17,7 +17,7 @@
     {
       "id": "decoder",
       "component": "ultrasound/convex-open-image",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "parameters": {}
     },
     {
@@ -55,8 +55,8 @@
     },
     {
       "component": "ultrasound/convex-open-image",
-      "version": "0.1.0",
-      "manifest_sha256": "378bc698210ae80163ca058a9667285ad90de47c29997e091d1e01307dd9540d",
+      "version": "0.1.1",
+      "manifest_sha256": "d72be1caa3d89168dbbee80e9cde474b0cf0e8ca5c7ae9bb0621cbe44ba18138",
       "artifact_sha256": "c466a55c5cb5d7ea1cdb5e99039ac4d1707d49929a571ae38ae79e5f2a3e93fb"
     },
     {

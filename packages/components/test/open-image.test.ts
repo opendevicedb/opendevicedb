@@ -6,10 +6,12 @@ import { inflateSync } from "node:zlib";
 import { loadRegistry, repositoryFile, COMPONENT_REPO_ROOT, inspectComponent } from "../src/index.ts";
 import { createProbeDecoder } from "../src/probe/decoder.ts";
 
-const component = loadRegistry().components.find(c => c.id === "ultrasound/convex-open-image")!;
+const releases = loadRegistry().components.filter(c => c.id === "ultrasound/convex-open-image");
+assert.deepEqual(releases.map(c => c.version).sort(), ["0.1.0", "0.1.1"]);
+for (const component of releases) {
 const bytes = readFileSync(repositoryFile(COMPONENT_REPO_ROOT, component.artifact!.path));
 
-test("original image artifact has bounded memory and no file, USB or network imports", () => {
+test(`original image ${component.version} has bounded memory and no file, USB or network imports`, () => {
   const inspected = inspectComponent(component);
   assert.equal(inspected.executed, false);
   assert.equal(inspected.wasm!.maximum_memory_bytes, 268435456);
@@ -18,7 +20,7 @@ test("original image artifact has bounded memory and no file, USB or network imp
     ["environ_get", "environ_sizes_get", "fd_write", "proc_exit"].includes(i.name)));
 });
 
-test("resource-free image runtime rejects acquisition and preserves exact RGBA snapshots", async () => {
+test(`resource-free image ${component.version} rejects acquisition and preserves exact RGBA snapshots`, async () => {
   await assert.rejects(() => createProbeDecoder(bytes), /reconstruction only/);
   await assert.rejects(() => createProbeDecoder(bytes, undefined, { purpose: "acquisition" }), /reconstruction only/);
   const decoder = await createProbeDecoder(bytes, undefined, { purpose: "reconstruction", continuous: true });
@@ -43,3 +45,5 @@ test("resource-free image runtime rejects acquisition and preserves exact RGBA s
   }
   assert.throws(() => decoder.encodePng(new Uint8Array(8)), /RGBA/);
 });
+
+}
