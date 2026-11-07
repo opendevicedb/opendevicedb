@@ -87,13 +87,31 @@ test("pktriggercord: table parsing, Samsung GX bodies, Pentax names", () => {
   assert.deepEqual(validate(k3), []);
 });
 
-test("fujihack: headers, one record per camera, high brick risk", () => {
+test("fujihack: model headers remain research evidence without a documented debugger port", () => {
   assert.deepEqual(parseHeader("xt2_440.h", '#define MODEL_NAME "Fujifilm X-T2"\n'), { file: "xt2_440.h", name: "Fujifilm X-T2", firmware: "4.40" });
   assert.equal(parseHeader("stub.h", "#define X 1"), null);
   const rs = fujiRecords([{ file: "xt2_440.h", name: "Fujifilm X-T2", firmware: "4.40" }, { file: "xt2_410.h", name: "Fujifilm X-T2", firmware: "4.10" }], known, D);
   assert.equal(rs.length, 1);
   assert.equal(rs[0].id, "fujifilm/x-t2");
-  assert.equal(rs[0].install![0].brick_risk, "high");
-  assert.match(rs[0].install![0].firmware_constraints!, /4\.40 or 4\.10/);
+  assert.equal(rs[0].status, "partial-protocol");
+  assert.deepEqual(rs[0].install, []);
+  assert.match(rs[0].summary!, /research definitions for firmware 4\.40, 4\.10/);
   assert.deepEqual(validate(rs[0]), []);
+});
+
+test("fujihack: documented debugger routes apply only to the documented firmware", () => {
+  const rs = fujiRecords([
+    { file: "xa2_130.h", name: "Fujifilm X-A2", firmware: "1.30" },
+    { file: "xa2_131.h", name: "Fujifilm X-A2", firmware: "1.31" },
+    { file: "xf1_101.h", name: "Fujifilm XF-1", firmware: "1.01" },
+    { file: "xf1_102.h", name: "Fujifilm XF-1", firmware: "1.02" },
+  ], known, D);
+  assert.equal(rs.length, 2);
+  for (const [r, fw] of [[rs[0], "1.30"], [rs[1], "1.01"]] as const) {
+    assert.equal(r.install![0].brick_risk, "high");
+    assert.equal(r.install![0].firmware_constraints, `Built against Fujifilm firmware ${fw}.`);
+    assert.deepEqual(validate(r), [], r.id);
+  }
+  const [unknown] = fujiRecords([{ file: "xa2_131.h", name: "Fujifilm X-A2", firmware: "1.31" }], known, D);
+  assert.deepEqual(unknown.install, []);
 });

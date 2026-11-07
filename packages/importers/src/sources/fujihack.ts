@@ -4,6 +4,7 @@
 // (`#define MODEL_NAME "Fujifilm X-T2"`, file xt2_440.h = firmware 4.40); stub.h and template.h are
 // not cameras. Read with one shallow, sparse git clone (a dozen small files). GPL-3.0.
 //
+// A model header is research evidence, not proof that the USB debugger has been ported.
 // Experimental: the project warns that a patched firmware can brick the camera and that no
 // recovery path is reverse engineered yet. Status partial-protocol.
 import { execFileSync } from "node:child_process";
@@ -16,6 +17,15 @@ import { cameraIdentity, knownCameras } from "../camera-ids.ts";
 
 const REPO = "https://github.com/fujihack/fujihack";
 const LICENSE = "GPL-3.0-only";
+
+// The upstream README documents debugger ports for X-A2 and XF1; the official site gives
+// their firmware versions (https://fujihack.org/#hacked-models, checked 2026-11-04).
+// README snapshot: https://github.com/fujihack/fujihack/blob/754acff9aa0322df19446cf7eca699b221c3330d/README.md
+// Other model headers and firmware versions must remain research-only until documented.
+const DEBUGGER_PORTS: Record<string, readonly string[]> = {
+  "Fujifilm X-A2": ["1.30"],
+  "Fujifilm XF-1": ["1.01"],
+};
 
 export interface FujiPort { file: string; name: string; firmware: string }
 
@@ -46,6 +56,7 @@ export function fromPorts(ports: FujiPort[], known = knownCameras(), date = toda
     const model = name.replace(/^Fuji(film)?\s+/i, "");
     const who = cameraIdentity("Fujifilm", model, known);
     const firmwares = list.map((p) => p.firmware);
+    const debuggerFirmwares = firmwares.filter((fw) => DEBUGGER_PORTS[name]?.includes(fw));
     return {
       id: who.id,
       vendor: who.vendor,
@@ -53,9 +64,9 @@ export function fromPorts(ports: FujiPort[], known = knownCameras(), date = toda
       aliases: who.aliases,
       category: "camera",
       status: "partial-protocol",
-      summary: `Fujihack documents its RTOS API and patches its firmware ${firmwares.join(", ")} with a USB debugger (experimental).`,
-      projects: [{ name: "Fujihack", url: `${REPO}/tree/master/model`, kind: "firmware" as const, license: LICENSE, freedom: deviceFirmwareFreedom("A patch on top of Fujifilm's firmware, which stays.") }],
-      install: [fujiInstall(firmwares)],
+      summary: `Fujihack research definitions for firmware ${firmwares.join(", ")}. ${debuggerFirmwares.length ? `Upstream documents an experimental USB debugger for firmware ${debuggerFirmwares.join(", ")}.` : "A model header does not establish a working USB-debugger port or an installation route."}`,
+      projects: [{ name: "Fujihack", url: `${REPO}/tree/master/model`, kind: "firmware" as const, license: LICENSE, freedom: deviceFirmwareFreedom("Where available, the patch uses Fujifilm's firmware, which stays.") }],
+      install: debuggerFirmwares.length ? [fujiInstall(debuggerFirmwares)] : [],
       provenance: { sources: ["fujihack"] },
       updated: date,
     };
