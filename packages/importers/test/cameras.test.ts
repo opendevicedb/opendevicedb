@@ -4,7 +4,7 @@ import { validate, type DeviceRecord } from "@opendevicedb/core";
 import { cameraKey, cameraIdentity, existingCameras } from "../src/camera-ids.ts";
 import { parsePorts, fromPorts as mlRecords } from "../src/sources/magiclantern.ts";
 import { parseDevices, fromDevice } from "../src/sources/openmemories.ts";
-import { parseModels, pentaxName, fromModel } from "../src/sources/pktriggercord.ts";
+import { parseModels, pentaxName, fromModel, parseReadme, supportKey } from "../src/sources/pktriggercord.ts";
 import { parseHeader, fromPorts as fujiRecords } from "../src/sources/fujihack.ts";
 
 const D = "2026-11-01";
@@ -74,17 +74,72 @@ test("openmemories: apps make it controllable, signed firmware is left out", () 
   for (const r of rs) if (r) assert.deepEqual(validate(r), [], r.id);
 });
 
+const PK_README = `## Cameras
+
+- Pentax K10D (Samsung GX-10) _<sub>requires firmware 1.20 or later</sub>_
+- Pentax K-01 (bugs)
+- Pentax K-3 / K-3 II
+
+### Limited support
+
+- Pentax istDL
+
+### Not working
+
+- Pentax istDS
+
+### Testing
+
+*The following cameras are not yet tested, please contact us if you can help.*
+
+- Pentax K-S1
+
+## More info
+
+- not a camera
+`;
+
 test("pktriggercord: table parsing, Samsung GX bodies, Pentax names", () => {
   const c = `static ipslr_model_info_t camera_models[] = {\n  { 0x12aa2, "*ist DS",     true,  true, 0 },\n  { 0x12b9c, "K-3II", false, true },\n  { 0x12b80, "GX20", true },\n  { 0x12b80, "GX20", true },\n};`;
   assert.deepEqual(parseModels(c), ["*ist DS", "K-3II", "GX20"]);
   assert.deepEqual(pentaxName("GX20"), { vendor: "Samsung", model: "GX-20" });
   assert.deepEqual(pentaxName("K-5IIs"), { vendor: "Pentax", model: "K-5 IIs" });
-  const k3 = fromModel("K-3II", known, D);
+});
+
+test("pktriggercord: README tiers, not the model table, decide what is claimed", () => {
+  const sup = parseReadme(PK_README);
+  assert.deepEqual(sup.get(supportKey("K10D")), { tier: "supported", notes: ["requires firmware 1.20 or later"] });
+  assert.equal(sup.get(supportKey("GX10"))!.tier, "supported"); // the Samsung name in parentheses
+  assert.equal(sup.get(supportKey("K-3II"))!.tier, "supported"); // "K-3 / K-3 II"
+  assert.equal(sup.get(supportKey("*ist DL"))!.tier, "limited");
+  assert.equal(sup.get(supportKey("*ist DS"))!.tier, "not-working");
+  assert.equal(sup.get(supportKey("K-S1"))!.tier, "testing");
+  assert.equal(sup.has("notacamera"), false);
+  const rec = (m: string) => fromModel(m, sup.get(supportKey(m)), "abc123", known, D);
+
+  const k3 = rec("K-3II")!; // supported
   assert.equal(k3.id, "pentax/k3-ii");
   assert.equal(k3.status, "controllable");
   assert.ok(k3.aliases!.includes("K-3II"));
-  assert.equal(fromModel("*ist DS", known, D).id, "pentax/ist-ds");
-  assert.deepEqual(validate(k3), []);
+  assert.match(k3.install![0].guide, /blob\/abc123\/README\.md/);
+  const k10 = rec("K10D")!;
+  assert.equal(k10.install![0].firmware_constraints, "requires firmware 1.20 or later");
+  assert.match(rec("K-01")!.install![0].notes!, /known bugs/);
+
+  const dl = rec("*ist DL")!; // limited
+  assert.equal(dl.status, "partial-protocol");
+  assert.match(dl.install![0].notes!, /^Limited support/);
+  assert.equal(dl.interfaces![0].status, "partial");
+
+  assert.equal(rec("*ist DS"), null); // not working: no pktriggercord claim at all
+
+  for (const m of ["K-S1", "KP"]) { // testing, and in the table but in no README list
+    const r = rec(m)!;
+    assert.equal(r.status, "unknown");
+    assert.deepEqual(r.install, []);
+    assert.deepEqual(r.interfaces, []);
+  }
+  for (const r of [k3, k10, dl, rec("KP")!]) assert.deepEqual(validate(r), [], r.id);
 });
 
 test("fujihack: model headers remain research evidence without a documented debugger port", () => {
