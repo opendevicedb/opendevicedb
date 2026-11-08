@@ -10,6 +10,7 @@
   "scripts": {
     "validate": "npm run validate -w @opendevicedb/core",
     "import": "npm run import -w @opendevicedb/importers --",
+    "fwupd:index": "npm run fwupd:index -w @opendevicedb/importers --",
     "build": "npm run build -w @opendevicedb/core && npm run build -w site",
     "dev": "npm run dev -w site",
     "mcp": "npm run start -w @opendevicedb/mcp",
