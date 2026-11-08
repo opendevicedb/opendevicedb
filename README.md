@@ -40,6 +40,10 @@ example, isolated web components and composition customization. Components are
 independent of device records. The [English OKF specification](knowledge/specifications/composable-applications.md)
 describes the broader roadmap, including desktop export and spatial capture ports.
 
+An [experimental fwupd declaration index](docs/fwupd-index.md) preserves plugin
+identifiers and their source context for future device mapping. It is separate
+from the device catalogue.
+
 ```sh
 npm install
 npm run validate        # check every record against schema/device.schema.json
