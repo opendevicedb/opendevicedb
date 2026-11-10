@@ -33,6 +33,7 @@ import asteroidos from "./sources/asteroidos.ts";
 import nut from "./sources/nut.ts";
 import sigrok from "./sources/sigrok.ts";
 import gp2040ce from "./sources/gp2040-ce.ts";
+import libratbag from "./sources/libratbag.ts";
 import opentabletdriver from "./sources/opentabletdriver.ts";
 import type { Source } from "./lib.ts";
 
@@ -45,5 +46,5 @@ export const SOURCES: Source[] = [
   gadgetbridge, valetudo, cloudcutter, qmk, sane, openprinting, libwacom, betaflight, edgetx,
   // Cameras: these map onto libgphoto2's records (camera-ids.ts), so they come after it.
   magiclantern, openmemories, pktriggercord, fujihack, chdk,
-  asteroidos, nut, sigrok, gp2040ce, opentabletdriver,
+  asteroidos, nut, sigrok, gp2040ce, libratbag, opentabletdriver,
 ];
