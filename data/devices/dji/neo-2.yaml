@@ -5,23 +5,25 @@ category: drone
 status: partial-protocol
 summary: >-
   Experimental MIT-licensed Linux/Python client for local BLE setup,
-  SWUDP/DUML communication, video reception and selected telemetry on stock
-  firmware. Development reports describe a short takeoff/landing cycle and
-  yaw rotations. Full flight control, link-loss behavior and physical
-  calibration remain incomplete; original hardware captures are private.
+  SWUDP/DUML communication, video reception, selected telemetry, live
+  proximity values and bounded virtual-stick control on stock firmware.
+  Development reports describe takeoff/landing, yaw rotations and short
+  indoor horizontal translations. Full flight control, failsafe behavior
+  and physical calibration remain incomplete; original hardware captures
+  are private.
 interfaces:
   - name: BLE setup over GATT/DUML
     transport: ble
     status: partial
     confidence: medium
-    spec: https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
+    spec: https://github.com/smichea/dji-neo2-lan-client/blob/a80e3e14b96aaa32b9e625c0229c53c45187f930/docs/PROTOCOL.md
     notes: Selected setup messages implemented; device-specific identities and credentials remain local.
   - name: Wi-Fi SWUDP/DUML
     transport: wifi
     status: partial
     confidence: medium
-    spec: https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
-    notes: Video reception and selected telemetry/control implemented; complete flight control remains unvalidated.
+    spec: https://github.com/smichea/dji-neo2-lan-client/blob/a80e3e14b96aaa32b9e625c0229c53c45187f930/docs/PROTOCOL.md
+    notes: Video reception, selected telemetry, proximity values and bounded virtual-stick/landing control implemented; complete flight control remains unvalidated.
 projects:
   - name: DJI Neo 2 LAN client
     url: https://github.com/smichea/dji-neo2-lan-client
@@ -34,8 +36,8 @@ projects:
       notes: Sessions use the local BLE/Wi-Fi link; initial vendor activation/account requirements on a new device have not been established.
 provenance:
   sources:
-    - https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/PROTOCOL.md
-    - https://github.com/smichea/dji-neo2-lan-client/blob/014e3ad0d3ee98fecba94dfa48fe512a217a155f/docs/VALIDATION.md
+    - https://github.com/smichea/dji-neo2-lan-client/blob/a80e3e14b96aaa32b9e625c0229c53c45187f930/docs/PROTOCOL.md
+    - https://github.com/smichea/dji-neo2-lan-client/blob/a80e3e14b96aaa32b9e625c0229c53c45187f930/docs/VALIDATION.md
   ai_assisted: true
-  tools: [Codex]
-updated: '2026-11-04'
+  tools: [Codex, Claude Code]
+updated: '2026-11-10'
