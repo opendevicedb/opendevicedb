@@ -22,7 +22,7 @@ so that nobody — human or AI agent — redoes work that already exists.
   tuya-local, OpenRGB, libgphoto2, LineageOS, postmarketOS/Nura, coreboot, rtl_433,
   Gadgetbridge, Klipper, Marlin, Rockbox, Valetudo, thingino, tuya-cloudcutter, QMK, SANE,
   OpenPrinting, libwacom, Betaflight, EdgeTX, and for cameras CHDK, Magic Lantern, OpenMemories,
-  pktriggercord, Fujihack, plus AsteroidOS watches, Network UPS Tools, sigrok measurement
+  pktriggercord, Fujihack, plus AsteroidOS watches, Network UPS Tools, sigrok and QCoDeS measurement
   instruments and GP2040-CE controllers…) are aggregated by importers
   (`packages/importers`), with a link back to each source.
 
