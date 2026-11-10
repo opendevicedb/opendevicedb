@@ -809,3 +809,13 @@ The large Spatial Capture README sections already reviewed explicitly leave cont
 
 
 **Scoped response check, approximately 22:49 UTC:** searched public discussions authored by smichea containing OpenDeviceDB, first 100 ordered by update. Returned 54 threads, no search continuation and complete returned last-five comment/reply windows. No third-party comment/reply created or updated after 22:27:40 UTC appeared in this scope. This excludes email, PR reviews, other authors' root threads and other channels; it is not a global no-response claim. A separate targeted personal-mail campaign/administrative search after that time, including spam and excluding sent/drafts and the private collaborator, returned zero matches. No subscription retry, held-post resend or excluded-community contact.
+
+## Python lab automation landscape (2026-11-10)
+
+[Catalogue](https://pymeasure.github.io/python-lab-automation-landscape/catalog/) of 53 Python lab-automation packages, maintained by PyMeasure maintainers (CC BY 4.0, `pymeasure/python-lab-automation-landscape`). It describes packages, not instruments, so it is a source of leads rather than an import. Instrument lists checked:
+
+- QCoDeS (MIT): one class per model, 178 driver files in v0.62.0. Importer in draft [PR 41](https://github.com/opendevicedb/opendevicedb/pull/41); sample posted in [discussion 8750](https://github.com/microsoft/Qcodes/discussions/8750).
+- QCoDeS-contrib (MIT): 164 driver files, irregular class names (e.g. `HMP2030.py` defines `RohdeSchwarzHMP4040`); needs a separately reviewed table.
+- tm_devices (Tektronix, Apache-2.0): `SupportedModels` enum, 110 models mapped to drivers; some values are families (`AFG3K`, `MSO5`).
+- pyLabLib (GPL-3.0): hand-written device list naming tested models ("Tested with TDS2002B…"); mostly prose.
+- InstrumentKit (AGPL-3.0): 91 modules; last release v1.0.0b2 (2025-02); lowest priority.

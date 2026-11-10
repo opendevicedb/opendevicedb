@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-10T12:45:00+00:00",
+  "last_verified_at": "2026-11-10T20:05:00+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -1456,6 +1456,19 @@
       "project_source": "https://github.com/cdcseacave/openMVS/tree/efa0b619366c5e343ef9c4279fc943cf53c082f6",
       "implementation_source": "https://github.com/smichea/spatial-capture-3d/blob/e14ec1702e934d473c3327bcaaeeafba061bc127/src/spatial_capture/room_mvs.py",
       "next_action": "Await this pipeline/provenance presentation. No duplicate Google Group message or private author invitation. Preserve external-tool licensing, calibration/scale and current display-age limitations. No implementation change, pipeline run, upload or hardware test."
+    },
+    {
+      "name": "QCoDeS",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/microsoft/Qcodes/discussions/8750",
+      "published_at": "2026-11-10T20:03:11Z",
+      "message": "messages/2026-11-10/qcodes.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/microsoft/Qcodes/blob/main/CONTRIBUTING.rst",
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/41",
+      "proposal_status": "draft_open_unmerged",
+      "next_action": "Await corrections on the sample (Agilent/Keysight duplicate classes, series driver model lists, DP8xx(A) models) before merging draft PR 41. QCoDeS-contrib not imported. No hardware test; no duplicate introduction."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [
@@ -2248,6 +2261,7 @@
   ],
   "remaining": [
     "Await answers to the 2026-11-10 replies and samples (hwidx, usb-rea, PyMeasure, Theengs Decoder, REA tutorial draft)",
+    "Await QCoDeS feedback on discussion 8750 before merging the QCoDeS importer (PR 41)",
     "Owner to review the private un0rick reply; MissionControl reply is owner-only, without AI assistance",
     "Await sigrok list-owner help with subscription; original outreach has not been reposted",
     "Await NUT moderation; do not resend",
