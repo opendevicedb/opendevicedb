@@ -1,0 +1,44 @@
+{
+  "format": "odb-component/1",
+  "version": "1.0.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "ports": {
+    "samples": {
+      "direction": "in",
+      "kind": "stream",
+      "contract": "odb.scalar/1"
+    }
+  },
+  "parameters": {},
+  "permissions": [],
+  "fixtures": [],
+  "evidence": [],
+  "id": "examples/number-display",
+  "title": "Measurement display",
+  "description": "Display scalar measurements inside an isolated web component.",
+  "roles": [
+    "interface"
+  ],
+  "source": {
+    "path": "components/examples/number-display/1.0.0/display.js",
+    "sha256": "df9575a3932a2f8fd966b8cf8724b63db60584b40aa9ce2bd2acaf21bad8a62c",
+    "build": "No build step; artifact and source are the same JavaScript file."
+  },
+  "artifact": {
+    "path": "components/examples/number-display/1.0.0/display.js",
+    "sha256": "df9575a3932a2f8fd966b8cf8724b63db60584b40aa9ce2bd2acaf21bad8a62c"
+  },
+  "runtime": {
+    "kind": "web-component",
+    "entry": "odb-scalar-display",
+    "abi": "odb.scalar-ui/1"
+  },
+  "behavior": "Displays only validated scalar data received over its private MessageChannel. The host creates an opaque-origin iframe with network access blocked by CSP. Stop removes the frame and releases the channel. No browser permissions, filesystem or parent DOM are exposed."
+}

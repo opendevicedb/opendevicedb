@@ -2,6 +2,7 @@
 // static API published by the site (read-only). See SPEC.md "Static API".
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
+import { loadRegistry, inspectComponent as inspectRegisteredComponent, findComponent, type Registry } from "@opendevicedb/components";
 import {
   loadAll, loadCurated, loadSnapshots, toIndexEntry, today, REPO_ROOT,
   type DeviceRecord, type IndexEntry, type Status, type WantedEntry,
@@ -37,6 +38,8 @@ export interface Backend {
   sources(): Promise<SourcesInfo>;
   /** Open device requests (SPEC.md "Requests"); [] when unavailable. */
   wanted(): Promise<WantedEntry[]>;
+  registry(): Promise<Registry>;
+  inspectComponent(id: string, version: string): Promise<unknown | null>;
 }
 
 // ---------- local repository ----------
@@ -53,6 +56,11 @@ export class LocalBackend implements Backend {
     this.requests = opts.requestsFrom;
   }
   async wanted() { return this.requests ? this.requests.wanted().catch(() => []) : []; }
+  async registry() { return loadRegistry(this.root); }
+  async inspectComponent(id: string, version: string) {
+    const component = findComponent(await this.registry(), id, version);
+    return component ? inspectRegisteredComponent(component, this.root) : null;
+  }
   // Re-read on every call: the repository is small and may change under us (git pull, edits).
   async records() { return loadAll(this.root); }
   async index(on = today()) { return loadAll(this.root).map((r) => toIndexEntry(r, on)); }
@@ -93,6 +101,18 @@ export class RemoteBackend implements Backend {
   private cache = new Map<string, { at: number; value: any }>();
   private fetchImpl: FetchLike;
   private now: () => number;
+
+  async registry(): Promise<Registry> {
+    const registry = await this.getJson("/api/components.json");
+    if (registry === null) return { format: "odb-registry/1", components: [], compositions: [] };
+    if (registry?.format !== "odb-registry/1" || !Array.isArray(registry.components) || !Array.isArray(registry.compositions)) throw Error("Invalid component registry response");
+    return registry;
+  }
+  async inspectComponent(id: string, version: string) {
+    // Resolve identity through the registry; user input never becomes an unchecked remote path.
+    const component = findComponent(await this.registry(), id, version);
+    return component ? this.getJson(`/api/components/${component.id}/${component.version}/inspection.json`) : null;
+  }
 
   constructor(baseUrl: string, opts: { fetch?: FetchLike; now?: () => number } = {}) {
     this.location = baseUrl.replace(/\/+$/, "");

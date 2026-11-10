@@ -20,7 +20,7 @@ test("release image urls and profiles.json", () => {
     "https://firmware-selector.openwrt.org/?version=25.12.1&target=ath79%2Fgeneric&id=tplink_archer-c7-v2");
 });
 
-test("stock web UI accepts the factory image: vendor-upload, easy, with the Firmware Selector", () => {
+test("stock web UI: vendor-upload, easy, with the Firmware Selector", () => {
   const routes = tohInstall({
     devicepage: "toh:tp-link:archer_c7", installationmethods: ["GUI OEM", "U-Boot TFTP recovery", "U-Boot TFTP + serial recovery", "TFTP generic"],
     firmwareopenwrtinstallurl: [FACTORY], firmwareopenwrtupgradeurl: [SYSUPGRADE],
@@ -39,6 +39,25 @@ test("stock web UI accepts the factory image: vendor-upload, easy, with the Firm
   assert.match(routes[1].notes!, /U-Boot TFTP recovery, TFTP generic/);
   assert.deepEqual(routes[2].tools, ["USB-serial adapter (3.3 V)", "Computer with a TFTP server", "Ethernet cable"]);
   assert.equal(routes[2].opens_device, true);
+});
+
+test("stock web UI routes name no image type unless the source does (GL.iNet sysupgrade-only)", () => {
+  // An ordinary GUI row: neutral wording, the device page decides which image.
+  const plain = tohInstall({ devicepage: "toh:tp-link:archer_c7", installationmethods: ["GUI OEM"], firmwareopenwrtinstallurl: [FACTORY] });
+  assert.match(plain[0].notes!, /upload the OpenWrt image the device page names through the stock firmware's upgrade page/);
+  assert.doesNotMatch(plain[0].notes!, /factory image through/);
+  // GL-MT3000: the ToH note requires the sysupgrade image and forbids the factory one.
+  const gl = tohInstall({
+    devicepage: "toh:gl.inet:gl-mt3000", installationmethods: ["GUI OEM", "GL.Inet installation"],
+    commentinstallation: "Flash OpenWrt 'sysupgrade' image from GL.iNet web UI, select do not keep settings Do not use 'factory' image to preserve GL U-boot.",
+  });
+  assert.equal(gl.length, 1);
+  assert.match(gl[0].notes!, /upload the sysupgrade image \(not the factory image, as the note below says\)/);
+  assert.doesNotMatch(gl[0].notes!, /upload the factory image/);
+  assert.match(gl[0].notes!, /Table of Hardware note: Flash OpenWrt 'sysupgrade' image/);
+  // A note that only mentions sysupgrade for a later step does not change the wording.
+  const later = tohInstall({ installationmethods: ["GUI OEM"], commentinstallation: "flash factory.img, then flash sysupgrade.bin to reclaim full flash memory" });
+  assert.match(later[0].notes!, /the OpenWrt image the device page names/);
 });
 
 test("sd card, unknown method, missing device page", () => {

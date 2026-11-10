@@ -79,7 +79,7 @@ const SERIAL_TOOLS = ["USB-serial adapter (3.3 V)", "Computer with a TFTP server
  * wins). "see git-commit", "see devicepage", "see forum" and "unknown" match nothing.
  */
 export const INSTALL_WAYS: [RegExp, Way][] = [
-  [/^(GUI OEM|GUI generic|GL\.?inet installation)$/i, { method: "vendor-upload", difficulty: "easy", tools: ["Computer with a web browser"], opens_device: false, brick_risk: "low", how: "upload the factory image through the stock firmware's upgrade page" }],
+  [/^(GUI OEM|GUI generic|GL\.?inet installation)$/i, { method: "vendor-upload", difficulty: "easy", tools: ["Computer with a web browser"], opens_device: false, brick_risk: "low", how: "upload {image} through the stock firmware's upgrade page" }],
   [/^(SD card|Sunxi installation)$/i, { method: "sd-card", difficulty: "medium", tools: ["microSD card and a card reader"], opens_device: false, how: "write the image to an SD card" }],
   [/^CF card$/i, { method: "sd-card", difficulty: "medium", tools: ["CompactFlash card and a card reader"], how: "write the image to a CompactFlash card" }],
   [/web recovery|recovery gui/i, { method: "other", difficulty: "medium", tools: ["Computer with a web browser", "Ethernet cable"], opens_device: false, how: "upload the image to the bootloader's recovery web page" }],
@@ -117,6 +117,12 @@ export function tohInstall(e: Record<string, any>, profiles?: Map<string, string
     if (img && id) { installer = selectorUrl(img.version, img.target, id); break; }
   }
   const comment = clean(e.commentinstallation);
+  // Which image the stock upgrade page takes differs by device (factory, sysupgrade, initramfs):
+  // the generic wording stays neutral and the Table of Hardware note decides. Only an explicit
+  // "do not use the factory image" names the image here.
+  const image = /do\s*(?:n['o]?t|not)\s+use\s+(?:the\s+)?['"]?factory/i.test(comment)
+    ? "the sysupgrade image (not the factory image, as the note below says)"
+    : "the OpenWrt image the device page names";
   const tail = (s: string) => [s, comment ? `Table of Hardware note: ${comment.length > 300 ? comment.slice(0, 297) + "..." : comment}` : ""].filter(Boolean).join(" ");
   const byMethod = new Map<string, { way: Way; names: string[] }>();
   for (const m of methods) {
@@ -141,7 +147,7 @@ export function tohInstall(e: Record<string, any>, profiles?: Map<string, string
   }
   return [...byMethod.values()].map(({ way, names }) => {
     const { how, method, ...w } = way;
-    return { project: "OpenWrt", method, ...link, ...w, notes: tail(`Table of Hardware method: ${names.join(", ")} (${how}).`) };
+    return { project: "OpenWrt", method, ...link, ...w, notes: tail(`Table of Hardware method: ${names.join(", ")} (${how.replace("{image}", image)}).`) };
   });
 }
 

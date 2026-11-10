@@ -21,7 +21,9 @@ test("stdio server lists the tools and answers lookup_device, claim_device", asy
       stderr: "ignore",
     }));
     const { tools } = await client.listTools();
-    assert.deepEqual(tools.map((t) => t.name).sort(), ["claim_device", "list_sources", "lookup_device", "publish_findings", "request_device", "search_devices"]);
+    assert.deepEqual(tools.map((t) => t.name).sort(), ["claim_device", "list_sources", "lookup_device", "publish_findings", "request_device", "search_devices",
+      "search_components", "get_component", "inspect_component", "resolve_composition", "validate_composition", "get_integration_guide", "prepare_app_export"].sort());
+    assert.ok(tools.filter(t => t.name.includes("component") || t.name.includes("composition") || t.name === "get_integration_guide" || t.name === "prepare_app_export").every(t => t.annotations?.readOnlyHint === true));
     assert.ok(tools.find((t) => t.name === "lookup_device")!.inputSchema.properties!.fcc_id);
 
     const found: any = await client.callTool({ name: "lookup_device", arguments: { vendor: "Acme", model: "Sky 1" } });

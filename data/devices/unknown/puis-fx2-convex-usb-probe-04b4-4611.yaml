@@ -11,39 +11,62 @@ identifiers:
   usb:
     - 04b4:4611
 status: partial-protocol
-summary: Owner-confirmed convex USB probe 04b4:4611 reports product text UC5-2S and decimal product
-  ID 1435. Targeted Rust identity reads returned stable bytes over three repetitions on one
-  connection. Firmware bytes 20 01 map to candidate display 1.32 in the vendor parser. PUIS Plus
-  maps ID 1435 to UC5-2S_16; brand, actual acoustic properties, reconnect stability and acquisition
-  compatibility remain unverified.
+summary: Owner-confirmed convex USB probe 04b4:4611 reports UC5-2S/ID1435. Experimental Rust phantom
+  sessions retained 2776576 bytes with 9 final image candidates and 13483008 bytes with 36. A
+  published original Rust/Linux/WASM image profile now replays recorded DATA without external
+  resources or vendor software. Autonomous acquisition still lacks a freely distributable hardware
+  configuration; acoustic stop, sampling clock, HV meaning, calibration and diagnostic suitability
+  remain unverified.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
     status: partial
     confidence: medium
-    spec: https://github.com/opendevicedb/opendevicedb/issues/8
-    notes: "Descriptors: bulk OUT 02, interrupt IN 81 (64 bytes), bulk IN 86/88 (512 bytes), 480 Mb/s;
-      Linux corrects interrupt bInterval 0 to 7. PUIS Plus APK SHA256
-      237d55266cc6cf84fcda8fbd114bf6f8f97af18007826f0e5c433c877f5e7643, package
-      com.itrason.www.PUISColour_32, code 10661. Exact PID 4611 branch: OUT 02 commands, IN 86
-      asynchronous data reads of 16384 bytes, IN 88 messages; source also invokes bulkTransfer on
-      descriptor-interrupt 81, an unresolved mismatch not to copy blindly. Identity: c0/a6/value
-      0/index 0/requested length 8 returned 2 bytes 20 01; explicit observed variant accepts only 2
-      or 8 for this query. Product: c0/a9/value 1f00/index 0/32; storage serial: c0/a9/value
-      1f20/index 0/32; timeout 5000 ms. Product/storage use FF termination; NUL is preserved. Full
-      unique storage serial is omitted publicly. ID 1435 maps to UC5-2S_16, display UC5-2,
-      configured label 3.5 MHz, not a measured frequency. App connection automatically calls
-      PowerON; identity tool never invoked it. Native PowerON 40/b5 and PowerOFF 40/b4 are
-      statically identified, not issued. USB firmware version is not an FPGA logic version; native
-      setProcessLogicVer ignores its argument. Receive path reaches DataO::InsertData, whose initial
-      mode 1 selects header-driven 32C parsing until settings change; actual captured image format
-      is still uncorroborated. Candidate32C extraction supports opaque bytes only; no
-      RF/IQ/envelope/pixel type, checksum, footer, line-counter1..N or frame-ID monotonicity is
-      established. Mode4 remains unsupported; a following header does not prove a complete frame.
-      Constructor99/2 resolves isolated Start/Freeze serialization to wire type2: LE32
-      [5a5aa5a5,2,0,0,00060001,0-or-1,2,a5a55a5a] plus480 zero bytes;0=Start,1=Freeze. Internal
-      kind99 is not a wire field. Static analysis only; no replay, full initialization or acoustic
-      stop validation."
+    spec: https://github.com/opendevicedb/opendevicedb/blob/main/docs/specs/uc5-2s-usb.md
+    notes: "Observed endpoints: OUT02 commands, IN86 DATA with 16384-byte host requests, IN88 messages
+      with 512-byte host requests, interrupt IN81. Targeted control-IN reports UC5-2S/1435 while
+      message PID0 retains raw ID0/connection0; the tested controller rechecks identity on the same
+      handle without rewriting raw message fields. Successful sessions report logic0x4c02; a
+      separate0x0c00 session is refused before configuration/Start. Successful sessions use
+      identical19OUT payloads and bounded RAM receive. Observed global headers are1024bytes,
+      mode0/P896/N32; selected groups retain32lines of7200bytes. Final9/36image counts differ from
+      lossy-preview4/0. Host writes/sealed journals do not establish hardware acknowledgement,
+      lossless reception, acoustic stop or spatial calibration. The original published image profile
+      reconstructs retained DATA, but does not supply hardware configuration. Protocol document
+      distinguishes historical negative attempts, observed fields and remaining dependencies."
+projects:
+  - name: Original UC5-2S image replay0.1.1 with verified native host
+    url: https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.1
+    kind: library
+    license: AGPL-3.0-or-later
+    freedom:
+      nonfree: []
+      cloud: none
+      notes: Reconstruction of recorded DATA only. Native host snapshots and validates declared receive
+        journals before producing images. The generated image profile/WASM are unchanged; no
+        acquisition configuration or device-firmware freedom is supplied.
+  - name: Original UC5-2S Rust/WASM image replay
+    url: https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.0
+    kind: library
+    license: AGPL-3.0-or-later
+    freedom:
+      nonfree: []
+      cloud: none
+      notes: Host-side reconstruction of previously recorded DATA only. Generated filter/palette and
+        original display defaults; no resource file or vendor application. Does not initialize or
+        activate a probe; device firmware freedom is not assessed by replay.
+  - name: UC5-2S shared Rust memory core and acquisition host
+    url: https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-decoder/1.0.0
+    kind: library
+    license: AGPL-3.0-or-later
+    freedom:
+      nonfree:
+        - vendor-blobs
+        - device-firmware
+      cloud: none
+      notes: Generic acquisition remains dependent on externally supplied configuration and the existing
+        device firmware. An autonomous freely distributable acquisition profile is not supplied.
+        USB/display remain host responsibilities.
 claims:
   - who: smichea
     contact: https://github.com/smichea
@@ -53,6 +76,33 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-06
+    notes: Native original-profile0.1.1 host verifies journal/profile/terminal seal, per-read
+      ordinals/status/code/length/hash and total, then evaluates an owned DATA snapshot. Unknown
+      outcomes are refused; explicit no-I/O cancellation is kept separate. Synthetic negative CLI
+      cases reproduce prior unchecked native-example acceptance, then fail before output. Retained
+      trial04/07 reproduce45native PNGs exactly, with negative trial02/03 at0images; new WASM
+      reproduces45PNG/RGBA references exactly and is byte-identical to0.1.0. This is
+      archived/software verification only, without new USB/acoustic/calibration evidence.
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: "Retained owner-confirmed phantom trials04/06/07: unchanged19OUT;04 and06 retain2776576DATA
+      bytes and9final candidates each,07 retains13483008bytes and36. Raw/OUT/source ranges and final
+      replay were independently audited. Prior negative attempts remain documented, including
+      counter-only DATA, missing global headers and type0 admission refusal. Preview4/0 for06/07 is
+      explicitly lossy. No new physical acquisition, firmware/reset/retry, measured acoustic stop or
+      calibration in this publication."
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-05
+    notes: Resource-free image replay published in PR30 with successful CI/deployment. Browser replay on
+      retained acquisitions reproduces45original-profile reference frames, with native/WASM
+      differences bounded by2/255. Both public WASM artifacts rebuilt byte-for-byte with pinned
+      toolchain/dependencies during the later isolated restoration. This is archived-DATA/software
+      verification, not new hardware-replay or equivalence to a manufacturer image engine.
   - method: manual
     by: smichea with Codex
     date: 2026-11-04
@@ -110,6 +160,10 @@ verification:
       enumeration. Descriptor inspection only, no acquisition/control replay or acoustic validation.
 provenance:
   sources:
+    - https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.1/README.md
+    - https://github.com/opendevicedb/opendevicedb/blob/main/docs/specs/uc5-2s-usb.md
+    - https://github.com/opendevicedb/opendevicedb/pull/30
+    - https://github.com/opendevicedb/opendevicedb/blob/main/components/ultrasound/convex-open-image/0.1.0/README.md
     - https://itrason.cloud/
     - https://itrason.cloud/PA12Plus.htm
     - https://github.com/opendevicedb/opendevicedb/issues/8
@@ -138,4 +192,9 @@ provenance:
     - REA 6.5.0 / JADX0.7.1 / Ghidra12.1.4
     - Rust probe-usb0.3.0 (Linux identity/IN recorder and offline per-profile command codecs)
     - Existing pyusbus historical Parquet projection export
-updated: 2026-11-04
+    - Rust probe-usb0.17 / probe-frame0.23 / probe-web0.5-0.6 phantom journals and offline replay
+    - Original Rust image profile0.1.0, native Linux and WASM
+    - Chromium archived-DATA replay and pinned-toolchain rebuilds
+    - Rust native receive-journal validator and owned DATA snapshot
+    - Synthetic corrupted-journal CLI checks and preserved phantom replay; no new USB acquisition
+updated: 2026-11-06

@@ -34,6 +34,16 @@ characteristic, a checksum, UART pins) helps the next person or agent go faster.
 
 See [SPEC.md](SPEC.md) for the design and [POLICY.md](POLICY.md) for what we accept.
 
+The first [composable application pilot](knowledge/implementation/component-pilot.md)
+adds a component/application catalogue at `/components/`, a real WASM processing
+example, isolated web components and composition customization. Components are
+independent of device records. The [English OKF specification](knowledge/specifications/composable-applications.md)
+describes the broader roadmap, including desktop export and spatial capture ports.
+
+An [experimental fwupd declaration index](docs/fwupd-index.md) preserves plugin
+identifiers and their source context for future device mapping. It is separate
+from the device catalogue.
+
 Community research, outreach history and outgoing messages are tracked in the
 [outreach journal](docs/outreach/README.md).
 

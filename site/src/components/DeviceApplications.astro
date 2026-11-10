@@ -1,0 +1,20 @@
+---
+import { compatibleApplications } from "@opendevicedb/components";
+import { componentRegistry } from "../lib/components.ts";
+import type { DeviceRecord } from "@opendevicedb/core";
+const { record } = Astro.props as { record: DeviceRecord };
+const apps = compatibleApplications(componentRegistry(), { deviceId: record.id, usb: !!record.identifiers?.usb?.length });
+const useful = apps.filter(app => app.purpose !== "example");
+const examples = apps.filter(app => app.purpose === "example");
+---
+{apps.length > 0 && <section class="card" style="margin:24px 0" aria-labelledby="device-applications-title">
+  <h2 id="device-applications-title">Use this device</h2>
+  <p>Discover the available functions and their setup requirements.</p>
+  {useful.map(app => <p><button class="btn" data-open-application={app.id}>{app.title}</button></p>)}
+  {examples.length > 0 && <details><summary>USB technical examples</summary><p>These examples and utilities demonstrate components or read an existing driver. Check each tool’s requirements.</p>{examples.map(app => <p><button class="btn" data-open-application={app.id}>{app.title}</button></p>)}</details>}
+  <p><a href="/components/">Browse all components and applications</a></p>
+</section>}
+<script>
+  import { installApplicationButtons } from "../scripts/applications.ts";
+  installApplicationButtons();
+</script>

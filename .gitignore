@@ -8,3 +8,7 @@ dist/
 packages/mcp/LICENSE
 outreach/
 !/docs/outreach/
+
+# Rust component build output and private probe resources
+components/**/target/
+*.odb-probe

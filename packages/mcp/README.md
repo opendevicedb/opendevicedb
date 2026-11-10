@@ -9,6 +9,14 @@ this repository with `npm install` done at its root.
 
 ## Tools
 
+Component discovery and integration also expose `search_components`, `get_component`,
+`inspect_component`, `validate_composition`, `resolve_composition`,
+`get_integration_guide` and `prepare_app_export`. These tools are read-only and
+never run contributor code or access hardware. See the
+[pilot contracts and integration guide](../../knowledge/implementation/component-pilot.md).
+Desktop export currently reports preparation blockers; it does not return an
+installable application.
+
 | tool | use it to |
 |---|---|
 | `lookup_device(id?, vendor?, model?, fcc_id?, usb?, ble_name?, zigbee_model?)` | check one device: full record, effective status, live claims and a one-line recommendation; says explicitly when nothing is known |

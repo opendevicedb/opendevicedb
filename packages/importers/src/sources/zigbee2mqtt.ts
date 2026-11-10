@@ -52,28 +52,37 @@ export const z2mPageName = (model: string) => model.replace(/[/| :]/g, "_");
 const PAIRING_GUIDE = "https://www.zigbee2mqtt.io/guide/usage/pairing_devices.html";
 
 /**
- * Install route (SPEC R1): nothing is flashed, the device joins the Zigbee network of a
- * Zigbee2MQTT install. Its docs page has the pairing steps for that model.
+ * Pairing route, after any device-specific firmware preparation. An upstream
+ * custom-firmware listing is not evidence that an original retail unit can pair.
  */
-export const z2mInstall = (page: string, pages?: Set<string>): InstallRoute => ({
-  project: "Zigbee2MQTT",
-  method: "pairing",
-  // the docs site is built from an older converters release: a device it has no page for yet
-  // gets the general pairing guide
-  guide: !pages || pages.has(z2mPageName(page)) ? z2mPage(page) : PAIRING_GUIDE,
-  difficulty: "medium",
-  tools: ["Zigbee USB coordinator", "Computer or Raspberry Pi running Zigbee2MQTT"],
-  brick_risk: "none",
-  reversible: "yes",
-  notes: "No flashing: the device keeps its firmware and is paired to your own Zigbee network; remove it from Zigbee2MQTT to undo.",
-});
+export function z2mInstall(page: string, pages?: Set<string>, customFirmware = false): InstallRoute {
+  const route: InstallRoute = {
+    project: "Zigbee2MQTT",
+    method: "pairing",
+    // The docs site can lag the converter release; use a general pairing guide
+    // when the device page has not been published yet.
+    guide: !pages || pages.has(z2mPageName(page)) ? z2mPage(page) : PAIRING_GUIDE,
+    difficulty: "medium",
+    tools: ["Zigbee USB coordinator", "Computer or Raspberry Pi running Zigbee2MQTT"],
+    ...(!customFirmware ? { brick_risk: "none", reversible: "yes" } as const : {}),
+    notes: customFirmware
+      ? "This route pairs a device already running the required custom Zigbee firmware. Unpairing removes it from the network; it does not restore the original firmware. Firmware preparation is separate."
+      : "Pair the device with your Zigbee network after any preparation required by its device guide. This route covers pairing; remove the device from Zigbee2MQTT to undo the pairing.",
+    ...(customFirmware ? { firmware_constraints: page === "LYWSD03MMC"
+      ? "The original LYWSD03MMC is Bluetooth-only. Install compatible custom Zigbee firmware before pairing, following the upstream device guide and its hardware/firmware requirements."
+      : "This upstream listing requires compatible custom Zigbee firmware before pairing. Consult the project documentation for device/board-specific preparation; this pairing route does not install firmware." } : {}),
+  };
+  return route;
+}
+
+const customFirmwareListing = (description = "") => /\b(?:with|and)\s+custom[\s-]+firmware\b/i.test(description);
 
 const modelIds = (fp: Z2mDefinition["fingerprint"] = []) => fp.map((f) => f.modelID).filter((x): x is string => !!x);
 
 /** `pages`: names of the device pages the docs site has (z2mPageName), when known. */
 export function fromDefinitions(defs: Z2mDefinition[], date = today(), pages?: Set<string>): DeviceRecord[] {
   const out: DeviceRecord[] = [];
-  const record = (vendor: string, model: string, description: string, exposes: string[], zigbee: string[], page: string): DeviceRecord => ({
+  const record = (vendor: string, model: string, description: string, exposes: string[], zigbee: string[], page: string, customFirmware: boolean): DeviceRecord => ({
     id: makeId(vendor, model),
     vendor: clean(vendor),
     model: clean(model),
@@ -81,14 +90,17 @@ export function fromDefinitions(defs: Z2mDefinition[], date = today(), pages?: S
     // some model IDs are NUL-padded as the device reports them
     identifiers: { zigbee_model: [...new Set(zigbee.map((z) => clean(z.replace(/\0/g, ""))).filter(Boolean))] },
     status: "controllable",
-    projects: [{ name: "Zigbee2MQTT", url: z2mPage(page), kind: "integration", license: "GPL-3.0", freedom: deviceFirmwareFreedom() }],
-    install: [z2mInstall(page, pages)],
+    ...(customFirmware ? { summary: "Zigbee2MQTT listing for a device running compatible custom Zigbee firmware. Firmware preparation and hardware compatibility must be checked before pairing." } : {}),
+    projects: [{ name: "Zigbee2MQTT", url: z2mPage(page), kind: "integration", license: "GPL-3.0",
+      freedom: customFirmware ? { cloud: "none", notes: "Custom device firmware is required. Its licensing and remaining vendor components depend on the chosen firmware." } : deviceFirmwareFreedom() }],
+    install: [z2mInstall(page, pages, customFirmware)],
     provenance: { sources: ["zigbee2mqtt"] },
     updated: date,
   });
   for (const d of defs) {
     const base = [...(d.zigbeeModel ?? []), ...modelIds(d.fingerprint)];
-    out.push(record(d.vendor, d.model, d.description ?? "", d.exposes, base, d.model));
+    const customFirmware = customFirmwareListing(d.description);
+    out.push(record(d.vendor, d.model, d.description ?? "", d.exposes, base, d.model, customFirmware));
     for (const w of d.whiteLabel ?? []) {
       // A white label with its own fingerprint has its own docs page and its own model IDs
       // (inherited from the base fingerprint with the same manufacturerName when omitted).
@@ -98,7 +110,8 @@ export function fromDefinitions(defs: Z2mDefinition[], date = today(), pages?: S
         zigbee = w.fingerprint.flatMap((f) => f.modelID ? [f.modelID]
           : modelIds((d.fingerprint ?? []).filter((b) => b.manufacturerName && b.manufacturerName === f.manufacturerName)));
       }
-      out.push(record(w.vendor ?? d.vendor, w.model, w.description ?? d.description ?? "", d.exposes, zigbee, page));
+      out.push(record(w.vendor ?? d.vendor, w.model, w.description ?? d.description ?? "", d.exposes, zigbee, page,
+        customFirmware || customFirmwareListing(w.description)));
     }
   }
   return out;

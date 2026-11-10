@@ -1,0 +1,69 @@
+{
+  "format": "odb-composition/1",
+  "purpose": "application",
+  "id": "ultrasound/convex-replay",
+  "title": "Replay a convex probe recording",
+  "description": "Open a local .bin, .odb-capture or .odb-stream acquisition and reconstruct its images with an original built-in profile. No probe, configuration file, upload or local server is needed. Rendering is uncalibrated.",
+  "devices": [
+    "unknown/puis-fx2-convex-usb-probe-04b4-4611"
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "component": "ultrasound/recorded-data",
+      "version": "1.0.0",
+      "parameters": {}
+    },
+    {
+      "id": "decoder",
+      "component": "ultrasound/convex-open-image",
+      "version": "0.1.1",
+      "parameters": {}
+    },
+    {
+      "id": "display",
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "parameters": {}
+    }
+  ],
+  "connections": [
+    {
+      "from": "source.bytes",
+      "to": "decoder.bytes"
+    },
+    {
+      "from": "decoder.frames",
+      "to": "display.frames"
+    }
+  ],
+  "layout": {
+    "application": {
+      "display": {
+        "x": 0,
+        "y": 0,
+        "width": 12,
+        "height": 8
+      }
+    }
+  },
+  "lock": [
+    {
+      "component": "ultrasound/recorded-data",
+      "version": "1.0.0",
+      "manifest_sha256": "f2607f202a25c453ebfc6eada677bea568825ed8dd41ac8d8a52dc7f37847e4a"
+    },
+    {
+      "component": "ultrasound/convex-open-image",
+      "version": "0.1.1",
+      "manifest_sha256": "d72be1caa3d89168dbbee80e9cde474b0cf0e8ca5c7ae9bb0621cbe44ba18138",
+      "artifact_sha256": "c466a55c5cb5d7ea1cdb5e99039ac4d1707d49929a571ae38ae79e5f2a3e93fb"
+    },
+    {
+      "component": "video/frame-viewer",
+      "version": "1.0.0",
+      "manifest_sha256": "f8c01f5270517161d662fee400cf7ad37ea6ef939cf1ab590dffb3250b4aaa9b",
+      "artifact_sha256": "78a13574f0771a01d12d4d2bc8ca109f0f446a2f63f81e32c23b29277e78abbf"
+    }
+  ]
+}
