@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-10T12:25:00+00:00",
+  "last_verified_at": "2026-11-10T12:45:00+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -197,7 +197,7 @@
       "published_at": "2026-11-04T07:34:43Z",
       "message": "messages/2026-11-04/zenanythin.md",
       "outgoing_text_verified": true,
-      "next_action": "Await XinwangTao's feedback on the outline. Offered to draft steps 1 to 3 as a document if the structure works. No tutorial written yet.",
+      "next_action": "Await XinwangTao's feedback on the draft tutorial (docs/tutorials/rea-device-investigation.md); steps 4 and 5 remain outlines.",
       "responses": [
         {
           "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380",
@@ -211,6 +211,12 @@
           "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19518373",
           "published_at": "2026-11-10T12:21:02Z",
           "message": "messages/2026-11-10/rea-tutorial-outline.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19518746",
+          "published_at": "2026-11-10T12:42:39Z",
+          "message": "messages/2026-11-10/rea-tutorial-draft.md",
           "outgoing_text_verified": true
         }
       ]
@@ -306,7 +312,7 @@
       "published_at": "2026-11-04T11:49:51Z",
       "message": "messages/2026-11-04/usb-rea.md",
       "outgoing_text_verified": true,
-      "next_action": "Await the maintainer's release. Offered to list usb-rea in OpenDeviceDB documentation as a static-API client once released; not done yet.",
+      "next_action": "usb-rea v0.7.12 (released 2026-11-10) includes the lookup command; it is listed as a static-API client on the agents page. Await any further question in the thread.",
       "responses": [
         {
           "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19497977",
@@ -630,7 +636,7 @@
       "published_at": "2026-11-04T17:04:55Z",
       "message": "messages/2026-11-04/pymeasure.md",
       "outgoing_text_verified": true,
-      "next_action": "Await the answer on where driver classes and covered models are listed. Committed to bringing a small sample back to the thread for corrections before any full import. No importer implemented.",
+      "next_action": "Await corrections on the sample and the earlier question on where covered models are listed. No importer implemented.",
       "responses": [
         {
           "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411",
@@ -644,6 +650,12 @@
           "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19518370",
           "published_at": "2026-11-10T12:20:59Z",
           "message": "messages/2026-11-10/pymeasure-reply.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19518744",
+          "published_at": "2026-11-10T12:42:36Z",
+          "message": "messages/2026-11-10/pymeasure-sample.md",
           "outgoing_text_verified": true
         }
       ]
@@ -886,7 +898,7 @@
       "published_at": "2026-11-04T18:47:10Z",
       "message": "messages/2026-11-04/theengs-decoder.md",
       "outgoing_text_verified": true,
-      "next_action": "Committed to posting a small sample of records in the thread for corrections. No importer implemented.",
+      "next_action": "Await corrections on the sample. No importer implemented.",
       "responses": [
         {
           "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668",
@@ -900,6 +912,12 @@
           "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19518371",
           "published_at": "2026-11-10T12:21:01Z",
           "message": "messages/2026-11-10/theengs-decoder-reply.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19518745",
+          "published_at": "2026-11-10T12:42:37Z",
+          "message": "messages/2026-11-10/theengs-decoder-sample.md",
           "outgoing_text_verified": true
         }
       ]
@@ -2229,7 +2247,7 @@
     }
   ],
   "remaining": [
-    "Follow up on the 2026-11-10 replies (hwidx, usb-rea, PyMeasure, Theengs Decoder, REA tutorial); PyMeasure and Theengs samples and the REA outline draft were offered",
+    "Await answers to the 2026-11-10 replies and samples (hwidx, usb-rea, PyMeasure, Theengs Decoder, REA tutorial draft)",
     "Owner to review the private un0rick reply; MissionControl reply is owner-only, without AI assistance",
     "Await sigrok list-owner help with subscription; original outreach has not been reposted",
     "Await NUT moderation; do not resend",
