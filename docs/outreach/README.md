@@ -132,7 +132,7 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 
 All public GitHub threads in `log.json` were re-read for activity after 2026-11-04 22:50 UTC. Email threads were not re-checked in this pass.
 
-Substantive responses awaiting an owner reply:
+Substantive responses (all five answered on 2026-11-10, see `messages/2026-11-10/`):
 
 - [hwidx](https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906): John Vidler confirms that hwidx identifiers should stay distinct even when they share a documentation URL, says the data licence is not settled, and asks downstream catalogues to link through hwidx router URLs so link checks keep working. The reply asks how to integrate cleanly.
 - [usb-rea](https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19498854): the maintainer added an optional, read-only `usb-rea lookup` command and `lookup_device` MCP tool (main `3bc5f84`, unreleased) that can query the OpenDeviceDB static API with only a VID:PID, and asks whether to use a different endpoint or show more record fields.
