@@ -30,13 +30,13 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Zfinix](messages/2026-11-04/zfinix.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/7989#discussioncomment-19392280) |
 | [awesomerea](messages/2026-11-04/awesomerea.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/4470#discussioncomment-19392277) |
 | [bigtower17](messages/2026-11-04/bigtower17.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/4152#discussioncomment-19392273) |
-| [zenanythin](messages/2026-11-04/zenanythin.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278) |
+| [zenanythin](messages/2026-11-04/zenanythin.md) | GitHub discussion comment | `substantive_response_received` | [public post](https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278) |
 | [betaflight](messages/2026-11-04/betaflight.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466) |
 | [zwave](messages/2026-11-04/zwave.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467) |
 | [tasmota](messages/2026-11-04/tasmota.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470) |
 | [gp2040](messages/2026-11-04/gp2040.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenStickCommunity/GP2040-CE/discussions/1818) |
 | [fwupd](messages/2026-11-04/fwupd.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/fwupd/fwupd/discussions/11346) |
-| [usb-rea](messages/2026-11-04/usb-rea.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/emirmrkaljevic/usb-rea/discussions/3) |
+| [usb-rea](messages/2026-11-04/usb-rea.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/emirmrkaljevic/usb-rea/discussions/3) |
 | [Glasgow Interface Explorer](messages/2026-11-04/glasgow-interface-explorer.md) | GitHub discussion | `declined_do_not_contact` | [public post](https://github.com/GlasgowEmbedded/glasgow/discussions/1347) |
 | [Meshtastic](messages/2026-11-04/meshtastic.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/meshtastic/firmware/discussions/12301) |
 | [Open-Source Leg](messages/2026-11-04/open-source-leg.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/neurobionics/opensourceleg/discussions/538) |
@@ -55,7 +55,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Fujihack](messages/2026-11-04/fujihack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/fujihack/discussions/25) |
 | [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
 | [SANE developers](messages/2026-11-04/sane-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [subscription procedure](https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html) |
-| [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
+| [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
 | [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
 | [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
 | [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
@@ -71,7 +71,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenKinect](messages/2026-11-04/openkinect-subscription-request.md) | administrative email | `subscription_awaiting_owner_approval`; introduction not sent | [group information](https://groups.google.com/g/openkinect/about) |
 | [pvvx / ATC_MiThermometer](messages/2026-11-04/atc-mithermometer.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pvvx/ATC_MiThermometer/discussions/839) |
 | [probe-rs](messages/2026-11-04/probe-rs.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/probe-rs/probe-rs/discussions/4629) |
-| [Theengs Decoder](messages/2026-11-04/theengs-decoder.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/theengs/decoder/discussions/723) |
+| [Theengs Decoder](messages/2026-11-04/theengs-decoder.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/theengs/decoder/discussions/723) |
 | [OpenEarable / Tobias Röddiger](messages/2026-11-04/openearable-tobias-roeddiger.md) | email | `sent_and_read_back` | [contact source](https://open-earable.teco.edu/) |
 | [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
 | [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
@@ -82,7 +82,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
 | [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
 | [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
-| [Hardware Index / hwidx](messages/2026-11-04/hardware-index-hwidx.md) | documented GitHub question route | `published_and_read_back` | [public question](https://github.com/ResearchCulture/hwidx/issues/40) |
+| [Hardware Index / hwidx](messages/2026-11-04/hardware-index-hwidx.md) | documented GitHub question route | `substantive_response_received` | [public question](https://github.com/ResearchCulture/hwidx/issues/40) |
 | [MicroPython](messages/2026-11-04/micropython.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/micropython/discussions/19886) |
 | [Armbian](messages/2026-11-04/armbian.md) | email | `sent_and_read_back`; delivery unconfirmed | [official contact](https://armbian.com/contact) |
 | [TinyGo](messages/2026-11-04/tinygo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/tinygo-org/discussions/6164) |
@@ -124,9 +124,23 @@ Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, l
 4. Record substantive responses as a brief attributed summary with a public permalink where available. Keep proposed work separate from implemented changes and verified hardware behavior.
 5. Retain personal correspondence and private account evidence outside this public repository. Never commit mail headers, mailbox IDs, phone numbers, residence details or subscription tokens.
 
-fwupd supplied a substantive source suggestion. Our [latest follow-up](messages/2026-11-04/fwupd-index-followup.md) links [draft PR 25](https://github.com/opendevicedb/opendevicedb/pull/25): a tested research index of 104 declarations from three plugins. Local importer tests and CI passed; full plugin coverage, physical-model mapping and user-facing lookup remain further work under [issue 19](https://github.com/opendevicedb/opendevicedb/issues/19). The draft is unmerged and undeployed. Glasgow declined AI-assisted outreach; no further contact is queued.
+fwupd supplied a substantive source suggestion. Our [latest follow-up](messages/2026-11-04/fwupd-index-followup.md) links [PR 25](https://github.com/opendevicedb/opendevicedb/pull/25): a research index of 104 declarations from three plugins, merged on 2026-11-08 as an experimental dataset kept separate from the catalogue and detection. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under [issue 19](https://github.com/opendevicedb/opendevicedb/issues/19). Glasgow declined AI-assisted outreach; no further contact is queued.
 
-liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending. A further [source suggestion from aleksamagicka](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517) led to [draft PR 28](https://github.com/opendevicedb/opendevicedb/pull/28), adding 12 source-qualified Aquacomputer hwmon records. Source/lookup checks and CI passed; the draft remains unmerged and undeployed. Our [reply](messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md) thanks him and links the proposal.
+liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending. A further [source suggestion from aleksamagicka](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517) led to [draft PR 28](https://github.com/opendevicedb/opendevicedb/pull/28), adding 12 source-qualified Aquacomputer hwmon records. It was merged on 2026-11-07 and is live. Upstream PR 943 was still a draft without review at the 2026-11-10 check. Our [reply](messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md) thanks him and links the proposal.
+
+## Update 2026-11-10
+
+All public GitHub threads in `log.json` were re-read for activity after 2026-11-04 22:50 UTC. Email threads were not re-checked in this pass.
+
+Substantive responses awaiting an owner reply:
+
+- [hwidx](https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906): John Vidler confirms that hwidx identifiers should stay distinct even when they share a documentation URL, says the data licence is not settled, and asks downstream catalogues to link through hwidx router URLs so link checks keep working. The reply asks how to integrate cleanly.
+- [usb-rea](https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19498854): the maintainer added an optional, read-only `usb-rea lookup` command and `lookup_device` MCP tool (main `3bc5f84`, unreleased) that can query the OpenDeviceDB static API with only a VID:PID, and asks whether to use a different endpoint or show more record fields.
+- [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411): a maintainer welcomes an importer and asks what it would need; most instruments are serial or GPIB.
+- [Theengs Decoder](https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668): positive reply with the device list and decryption/gateway caveats.
+- [REA joint tutorial](https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380): XinwangTao suggests a first outline built on one public device case.
+
+Catalogue corrections from this campaign are now merged and live: PRs 21, 24, 25, 27, 28 and 29, and PR 32 for issues 20 and 23. [Awesome IoT and Hardware Security](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) merged the listing on 2026-11-05. The Awesome MCP Servers, Awesome Connected Things Security and FKIE listing PRs and liquidctl draft PR 943 remain open without review.
 
 ## Pending external steps
 
@@ -136,28 +150,28 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 - gPhoto and NUT: original messages are held for moderation; do not resend.
 - sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
 - Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.
-- [PkTriggerCord support defect](https://github.com/opendevicedb/opendevicedb/issues/20): do not promote affected records as working routes until source-specific claims are corrected. The issue is recorded; no fix implemented.
-- [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Draft PR remains unmerged; the live site has not been changed by this proposal.
-- [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Reported against current main; no correction or deployment claimed.
+- [PkTriggerCord support defect](https://github.com/opendevicedb/opendevicedb/issues/20): fixed by [PR 32](https://github.com/opendevicedb/opendevicedb/pull/32), merged and deployed on 2026-11-08; support now follows the README tiers.
+- [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Merged on 2026-11-07 and live.
+- [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Fixed by [PR 32](https://github.com/opendevicedb/opendevicedb/pull/32), merged and deployed on 2026-11-08.
 - Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
 - Draft code and new importer/joint-work suggestions do not establish delivered integrations.
 
-- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): locally validated curated overlay retains imported Gadgetbridge links/pairing; CI passed on the exact proposal head. Draft remains unmerged and undeployed; no watch test or new flashing route.
+- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): locally validated curated overlay retains imported Gadgetbridge links/pairing; CI passed on the exact proposal head. Merged on 2026-11-07 and live; no watch test or new flashing route.
 
 - OpenPnP: membership confirmed and one introduction sent/read back. First-post moderation is expected under the published rules; publication remains unconfirmed.
 - OpenKinect: normal email subscription/confirmation completed; server confirms owner approval is still pending. No introduction sent.
 - Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
 
-- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Unmerged and undeployed; no hardware test.
+- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Merged on 2026-11-07 and live; issue 26 closed. No hardware test.
 
-- [Aquacomputer hwmon catalogue PR 28](https://github.com/opendevicedb/opendevicedb/pull/28): 12 curated records cover the source overview and its 12 USB match entries, with grouped identities and per-feature kernel baselines. Catalogue/source/lookup checks and CI passed; draft remains unmerged/undeployed, with no hardware test.
+- [Aquacomputer hwmon catalogue PR 28](https://github.com/opendevicedb/opendevicedb/pull/28): 12 curated records cover the source overview and its 12 USB match entries, with grouped identities and per-feature kernel baselines. Merged on 2026-11-07 and live, with no hardware test.
 
 - OpenBikeSensor: forum terms prohibit solicitation and automated access; excluded from this automated promotional campaign. No contact or alternative-channel bypass.
 - SlimeVR: organization guidance forbids content submitted directly from AI across its repositories; no generated outreach or contribution sent.
 
 - OpenRTX: documented Sympa subscription sent/read back. Normal web confirmation returns to the same prompt, with no membership receipt observed; one documented owner-help request sent/read back. No list introduction, retry or alternate personal contact.
 
-- [HackRF One update-method PR 29](https://github.com/opendevicedb/opendevicedb/pull/29): corrects the misleading stock-web-interface label on the existing record. Catalogue/route checks and CI passed; open draft, unmerged and undeployed. No hardware test or repeat contact.
+- [HackRF One update-method PR 29](https://github.com/opendevicedb/opendevicedb/pull/29): corrects the misleading stock-web-interface label on the existing record. Merged on 2026-11-07 and live. No hardware test or repeat contact.
 - [GNU Radio introduction](messages/2026-11-04/gnuradio.md): normal subscription confirmation completed and membership verified by the welcome notice. One introduction sent/read back; public distribution and human response unconfirmed. Do not repeat registration or the post.
 - WLED: agent-posted discussion replies/issues disallowed; owner participation only after reviewing its rules. OpenBeken/Elektroda: unauthorized advertising and automated access prohibited; no campaign post or bypass.
 
@@ -165,7 +179,7 @@ liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidc
 
 - [Awesome Connected Things Security PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54): one README entry proposed under Search Engines. Link/placement/duplicate/byte-preservation/whitespace checks passed. Open non-draft, unmerged; no check runs reported and no acceptance/adoption claim.
 
-- [Awesome IoT and Hardware Security PR 2](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2): one README entry proposed at the bottom of Useful Websites. Contributor-guide, duplicate, canonical-link, placement, byte-preservation and whitespace checks passed. Open non-draft, unmerged; no check runs reported. Await maintainer review.
+- [Awesome IoT and Hardware Security PR 2](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2): one README entry proposed at the bottom of Useful Websites. Merged by the maintainer on 2026-11-05.
 
 - [pyOCD introduction](https://github.com/pyocd/pyOCD/discussions/2070): source-selection question published and read back. No importer, target definition or hardware test. Black Magic Debug excluded from this automated campaign based on its maintainers’ published position on AI; no contact sent.
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-04T22:50:28.268546+00:00",
+  "last_verified_at": "2026-11-10T08:30:00+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -192,12 +192,20 @@
     {
       "name": "zenanythin",
       "channel": "GitHub discussion comment",
-      "status": "published",
+      "status": "substantive_response_received",
       "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278",
       "published_at": "2026-11-04T07:34:43Z",
       "message": "messages/2026-11-04/zenanythin.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Owner decision pending on drafting a tutorial outline with one public device case. No tutorial written yet.",
+      "responses": [
+        {
+          "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380",
+          "by": "XinwangTao",
+          "received_at": "2026-11-05T04:13:46Z",
+          "summary": "Supports the joint REA/OpenDeviceDB tutorial idea (pick a device, look up its status, resolve one open question, contribute a scoped finding) and suggests a first outline built on one public device case."
+        }
+      ]
     },
     {
       "name": "betaflight",
@@ -247,7 +255,7 @@
       "published_at": "2026-11-04T11:49:49Z",
       "message": "messages/2026-11-04/fwupd.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback in the existing discussion. Draft PR 25 implements a 104-declaration, three-plugin research index; local tests and CI passed. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under issue 19. No hardware test or merge/deployment.",
+      "next_action": "Await feedback in the existing discussion. PR 25 (104 declarations from three plugins) was merged on 2026-11-08 as an experimental index separate from the catalogue and detection. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under issue 19. No hardware test.",
       "response": {
         "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19397020",
         "by": "hughsie",
@@ -272,17 +280,39 @@
       "implementation_proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/25",
       "implementation_proposal_message": "messages/2026-11-04/fwupd-index-pr.md",
       "implementation_proposal_head": "3b0dcc5419c903122f218560248a5fbb5470d56d",
-      "implementation_status": "three_plugin_research_index_draft_unmerged_undeployed"
+      "implementation_status": "three_plugin_research_index_draft_unmerged_undeployed",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/25",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-08T06:19:12Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "usb-rea",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3",
       "published_at": "2026-11-04T11:49:51Z",
       "message": "messages/2026-11-04/usb-rea.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Owner reply pending: answer the endpoint and record-field question in the existing thread. The integration is upstream work by the usb-rea maintainer, unreleased at last check; not tested by OpenDeviceDB.",
+      "responses": [
+        {
+          "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19497977",
+          "by": "emirmrkaljevic",
+          "received_at": "2026-11-09T17:31:40Z",
+          "summary": "Agrees that a read-only VID:PID lookup before capture fits usb-rea, keeping captures local and new findings as separate user-reviewed contributions."
+        },
+        {
+          "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19498854",
+          "by": "emirmrkaljevic",
+          "received_at": "2026-11-09T18:09:16Z",
+          "summary": "Reports a first lookup command and lookup_device MCP tool in usb-rea main at 3bc5f84 (unreleased). Offline by default; --online queries the OpenDeviceDB static API (/api/index.json and the device record), sends only the VID:PID and labels matches as hints. Asks whether to use a different endpoint or show more of the record (status, install routes)."
+        }
+      ]
     },
     {
       "name": "Glasgow Interface Explorer",
@@ -392,7 +422,7 @@
       "published_at": "2026-11-04T16:12:31Z",
       "message": "messages/2026-11-04/liquidctl.md",
       "outgoing_text_verified": true,
-      "next_action": "Await review of upstream shared-index draft PR 943 and downstream Aquacomputer catalogue draft PR 28. A substantive additional source suggestion was handled in the existing thread; do not send another introduction or ask the busy contributor for work. No dedicated importer, merge, deployment or hardware test claimed.",
+      "next_action": "Await review of upstream draft PR 943 (still draft, no review at last check). Aquacomputer catalogue PR 28 was merged on 2026-11-07 and is live. Do not send another introduction or ask the busy contributor for work. No hardware test.",
       "response": {
         "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402109",
         "by": "jonasmalacofilho",
@@ -447,7 +477,15 @@
         "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41891930072",
         "ci_status": "passed_on_exact_head",
         "hardware_test": false
-      }
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/28",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:32Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "OpenTabletDriver",
@@ -522,8 +560,8 @@
       "message": "messages/2026-11-04/fujihack.md",
       "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/21",
       "proposal_message": "messages/2026-11-04/fujihack-scope-pr.md",
-      "proposal_status": "draft_pr_tested_not_merged",
-      "next_action": "Await feedback in the existing discussion. Draft PR 21 passed local tests and CI, but remains unmerged and undeployed.",
+      "proposal_status": "merged_and_deployed",
+      "next_action": "Await feedback in the existing discussion. Scope correction PR 21 was merged on 2026-11-07 and is live.",
       "outgoing_text_verified": true,
       "proposal_validation": {
         "head": "b18b483e4d109a623f499419efed4c9517e55fcd",
@@ -531,7 +569,15 @@
         "schema_errors": 0,
         "ci": "passed",
         "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41869423242/job/126712101447"
-      }
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/21",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T20:03:58Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "flashrom developers",
@@ -563,12 +609,20 @@
     {
       "name": "PyMeasure",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/pymeasure/pymeasure/discussions/1587",
       "published_at": "2026-11-04T17:04:55Z",
       "message": "messages/2026-11-04/pymeasure.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. No PyMeasure importer or hardware test is implemented."
+      "next_action": "Reply pending to the question of what an importer would need, noting that serial/GPIB instruments cannot be matched by USB identifiers. No importer implemented.",
+      "responses": [
+        {
+          "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411",
+          "by": "BenediktBurger",
+          "received_at": "2026-11-05T09:25:42Z",
+          "summary": "Welcomes a PyMeasure importer and asks what it would need. Most instruments use serial or GPIB, so USB identifiers do not apply; drivers come from users testing them in their labs. Points to the curated python-lab-automation-landscape catalogue."
+        }
+      ]
     },
     {
       "name": "pyLabLib",
@@ -650,16 +704,24 @@
       "contact_source": "https://greatscottgadgets.com/contact/",
       "message": "messages/2026-11-04/hackrf.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response without a duplicate introduction. A HackRF One record already exists; draft PR 29 corrects its misleading firmware-method label. Validation and CI passed; unmerged, undeployed and not hardware tested.",
+      "next_action": "Await a substantive response without a duplicate introduction. Update-method correction PR 29 was merged on 2026-11-07 and is live. No hardware test.",
       "correction_proposal": {
         "url": "https://github.com/opendevicedb/opendevicedb/pull/29",
         "head": "6dfb132f828ab97f2ea3d62d482a9d7b78979e7b",
-        "status": "open_draft_unmerged_undeployed",
+        "status": "merged_and_deployed",
         "message": "messages/2026-11-04/hackrf-one-update-method-pr.md",
         "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41898533635",
         "ci_conclusion": "success",
         "hardware_tested": false
-      }
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/29",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:25Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "RealSense / librealsense",
@@ -691,11 +753,19 @@
       "outgoing_text_verified": true,
       "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/24",
       "proposal_message": "messages/2026-11-04/bangle-js-2-links-pr.md",
-      "proposal_status": "draft_open_unmerged_undeployed",
+      "proposal_status": "merged_and_deployed",
       "proposal_head": "38d56176d31c221d8fe7220974e2455a5317aa5a",
-      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 link addition is validated locally and by CI but draft PR 24 remains unmerged/undeployed; no new flashing route or watch test. Do not duplicate the introduction by email.",
+      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 links PR 24 was merged on 2026-11-07 and is live; no new flashing route or watch test. Do not duplicate the introduction by email.",
       "proposal_ci_status": "passed_on_exact_head",
-      "proposal_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41882671464"
+      "proposal_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41882671464",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/24",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:28Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "OpenPnP",
@@ -749,7 +819,7 @@
       "outgoing_text_verified": true,
       "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/26",
       "issue_message": "messages/2026-11-04/lywsd03mmc-firmware-issue.md",
-      "next_action": "Await community feedback and review of correction draft PR 27. Source-qualified custom-firmware prerequisites are implemented and tested, snapshot regenerated; live site remains unchanged until merge/deployment. No dedicated pvvx importer or hardware test; no duplicate solicitation.",
+      "next_action": "Await community feedback. Correction PR 27 was merged on 2026-11-07 and is live; issue 26 closed. No dedicated pvvx importer or hardware test; no duplicate solicitation.",
       "updates": [
         {
           "url": "https://github.com/pvvx/ATC_MiThermometer/discussions/839",
@@ -764,7 +834,15 @@
       "correction_proposal_head": "cd063c90ec641e20008bed9e4cf9edaf203813d5",
       "correction_proposal_status": "draft_open_unmerged_undeployed",
       "correction_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41888620876",
-      "correction_ci_status": "passed_on_exact_head"
+      "correction_ci_status": "passed_on_exact_head",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/27",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:35Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
     },
     {
       "name": "probe-rs",
@@ -779,12 +857,20 @@
     {
       "name": "Theengs Decoder",
       "channel": "GitHub discussion",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/theengs/decoder/discussions/723",
       "published_at": "2026-11-04T18:47:10Z",
       "message": "messages/2026-11-04/theengs-decoder.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback in this thread; no duplicate introduction or parallel solicitation. No dedicated importer or hardware test is implemented by this introduction."
+      "next_action": "Reply pending; assess a device-list importer that keeps decoder-only versus gateway-required properties and decryption requirements distinct. No importer implemented.",
+      "responses": [
+        {
+          "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668",
+          "by": "DigiH",
+          "received_at": "2026-11-05T12:01:14Z",
+          "summary": "Positive. Points to the decoder device list (decoder.theengs.io/devices/devices.html); some properties and SwitchBot control need OpenMQTTGateway, and encrypted broadcasts (LYWSD03MMC PVVX, BTHome v2, Victron) are decrypted by client apps such as Theengs Gateway."
+        }
+      ]
     },
     {
       "name": "OpenEarable / Tobias Röddiger",
@@ -926,13 +1012,21 @@
     {
       "name": "Hardware Index / hwidx",
       "channel": "GitHub issue; documented contact/question route",
-      "status": "published_and_read_back",
+      "status": "substantive_response_received",
       "url": "https://github.com/ResearchCulture/hwidx/issues/40",
       "published_at": "2026-11-04T20:05:23Z",
       "contact_source": "https://m.hwidx.org/",
       "message": "messages/2026-11-04/hardware-index-hwidx.md",
       "outgoing_text_verified": true,
-      "next_action": "Await feedback in this issue; no duplicate approach or separate maintainer invitation. Concrete full-ID/revision/reference/licensing question, not a bug or new identifier request. No importer, metadata republication or licensing agreement."
+      "next_action": "Owner reply pending in the existing issue: propose linking through hwidx router URLs and keeping hwidx identifiers distinct, and wait for a settled data licence before any import or metadata republication. No importer, data reuse or licence agreement yet.",
+      "responses": [
+        {
+          "url": "https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906",
+          "by": "JohnVidler",
+          "received_at": "2026-11-10T00:07:33Z",
+          "summary": "Confirms that several hwidx identifiers may share one canonical documentation URL: identifiers are stable printed revision strings, and only their targets may change, so OpenDeviceDB should keep them distinct. The data licence is not settled yet. Open to downstream use, but asks downstream catalogues to link through hwidx router URLs rather than direct documentation URLs, so its periodic link checks and fallback meta pages keep working. Asks how to integrate cleanly."
+        }
+      ]
     },
     {
       "name": "MicroPython",
@@ -1476,7 +1570,8 @@
       "head": "6e3027b26c17fb0b44c3b6151fcbe201106f38db",
       "status": "open",
       "ci": "check-submission passed",
-      "last_followup": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040"
+      "last_followup": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
     },
     {
       "name": "Official MCP Registry",
@@ -1501,19 +1596,21 @@
       "message": "messages/2026-11-04/awesome-connected-things-pr.md",
       "validation": "Official canonical site HTTP 200; one entry in Search Engines, original README bytes preserved outside added line, git diff --check passed. No runtime change.",
       "checks": "No check runs reported at readback; no CI success claimed.",
-      "next_action": "Await maintainer review; do not claim listing acceptance or adoption."
+      "next_action": "Await maintainer review; do not claim listing acceptance or adoption.",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
     },
     {
       "name": "Awesome IoT and Hardware Security",
       "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2",
       "head": "8cb460c3e5c24f959e9ee835962ad45594866e05",
       "base": "4dfa9818769afc8372eb2c5df730c178781e8bef",
-      "status": "open_unmerged_proposal",
+      "status": "merged",
       "draft": false,
       "message": "messages/2026-11-04/awesome-iot-hardware-security-pr.md",
       "validation": "Canonical official page HTTP 200 without redirect; one entry at bottom of Useful Websites, original README bytes preserved outside added line, git diff --check passed. Documentation only.",
       "checks": "No check runs reported at readback; no CI success claimed.",
-      "next_action": "Await maintainer review; do not claim acceptance or adoption."
+      "next_action": "Listed. No further action.",
+      "merged_at": "2026-11-05T10:50:02Z"
     },
     {
       "name": "Awesome Embedded and IoT Security / FKIE",
@@ -1526,7 +1623,8 @@
       "validation": "Local awesome-lint 2.3.0 passed; canonical site HTTP 200 without redirect; unique Websites entry; entry commit preserves parent bytes; license text unchanged; git diff --check passed. Separate minimal cleanup commit fixes three pre-existing content lint findings.",
       "checks": "Upstream workflow 41920034405 completed with action_required on exact head; jobs and check runs empty. No upstream CI success claimed.",
       "workflow_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/actions/runs/41920034405",
-      "next_action": "Await maintainer review and upstream workflow action; do not claim acceptance or merge."
+      "next_action": "Await maintainer review and upstream workflow action; do not claim acceptance or merge.",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
     }
   ],
   "next_research": [
@@ -2091,10 +2189,13 @@
     }
   ],
   "remaining": [
+    "Reply in the existing threads to hwidx, usb-rea, PyMeasure and Theengs Decoder (substantive responses received 2026-11-05 to 2026-11-10)",
+    "Decide on the REA joint tutorial outline suggested by XinwangTao",
+    "Owner to review the private un0rick reply; MissionControl reply is owner-only, without AI assistance",
     "Await sigrok list-owner help with subscription; original outreach has not been reposted",
     "Await NUT moderation; do not resend",
     "Await gPhoto moderation; do not resend",
-    "Handle substantive replies when received; proposed new importers are not yet implemented",
+    "Await review of liquidctl PR 943 and the open awesome-list PRs (MCP servers, connected-things, FKIE)",
     "Continue with the research queue if further outreach is pursued; verify channel and duplicates first"
   ],
   "manual_posting_guide": "manual-posting.md"
