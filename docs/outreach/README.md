@@ -1,0 +1,210 @@
+# Community research and outreach
+
+This is the persistent journal for OpenDeviceDB adoption work. Start here before researching or contacting a community, so earlier conversations are not lost or duplicated.
+
+- [Research notes and candidate communities](research.md): sources, relevance, channel choices, feedback and next leads.
+- [Where the owner can post personally](manual-posting.md): direct community links, useful topics and restrictions.
+- [Structured contact log](log.json): individual actions, dates, evidence, statuses and next steps.
+- [Outgoing messages](messages/): our actual public posts, comments and professional emails, preserved by date.
+
+This baseline was reconstructed on 2026-11-04 from local campaign artifacts, sent mail and public GitHub records. It covers the recoverable work from this session, including earlier public introductions. Historical messages preserve the wording used at the time; record counts and version statements in them must not be reused as current facts.
+
+## Current contact register
+
+An email marked sent is not proof of delivery or adoption. A moderation hold is not a published post. An automatic acknowledgement is not a human response. Public reactions alone do not establish organic adoption.
+
+| Community or person / outgoing message | Channel | Last recorded status | Evidence |
+| --- | --- | --- | --- |
+| [Open Healthware / OSHWA](messages/2026-11-04/open-healthware-oshwa.md) | email | `sent` | [contact source](https://oshwa.org/resources/open-healthware-education-guide/) |
+| [Openwater](messages/2026-11-04/openwater.md) | email | `sent` | [contact source](https://openwaterhealth.github.io/openwater-community/) |
+| [OpenBCI](messages/2026-11-04/openbci.md) | email | `sent` | [contact source](https://docs.openbci.com/FAQ/GenFAQ/) |
+| [Open Source Imaging Initiative](messages/2026-11-04/open-source-imaging-initiative.md) | email | `sent` | [contact source](https://www.opensourceimaging.org/2016/05/01/about/) |
+| [Glia](messages/2026-11-04/glia.md) | email | `automatic_acknowledgement` | [contact source](https://glia.org/pages/contact) |
+| [Open Source Medical Supplies](messages/2026-11-04/open-source-medical-supplies.md) | email | `sent` | [contact source](https://opensourcemedicalsupplies.org/about/contact/) |
+| Luc Jonveaux / un0rick | private email | `private_response_received` | Private correspondence |
+| [NUT developers](messages/2026-11-04/nut-developers.md) | email | `held_for_moderation` | [contact source](https://networkupstools.org/support.html) |
+| [gPhoto developers](messages/2026-11-04/gphoto-developers.md) | email | `held_for_moderation` | [contact source](https://gphoto.sourceforge.io/mailinglists/) |
+| [sigrok developers](messages/2026-11-04/sigrok-developers.md) | email | `subscription_help_requested` | [contact source](https://github.com/sigrokproject/libsigrok) |
+| [CassieFox23](messages/2026-11-04/cassiefox23.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/7872#discussioncomment-19392275) |
+| [Eliot5566](messages/2026-11-04/eliot5566.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/7974#discussioncomment-19392281) |
+| [Zfinix](messages/2026-11-04/zfinix.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/7989#discussioncomment-19392280) |
+| [awesomerea](messages/2026-11-04/awesomerea.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/4470#discussioncomment-19392277) |
+| [bigtower17](messages/2026-11-04/bigtower17.md) | GitHub discussion comment | `published` | [public post](https://github.com/morluto/rea/discussions/4152#discussioncomment-19392273) |
+| [zenanythin](messages/2026-11-04/zenanythin.md) | GitHub discussion comment | `substantive_response_received` | [public post](https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278) |
+| [betaflight](messages/2026-11-04/betaflight.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466) |
+| [zwave](messages/2026-11-04/zwave.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467) |
+| [tasmota](messages/2026-11-04/tasmota.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470) |
+| [gp2040](messages/2026-11-04/gp2040.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenStickCommunity/GP2040-CE/discussions/1818) |
+| [fwupd](messages/2026-11-04/fwupd.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/fwupd/fwupd/discussions/11346) |
+| [usb-rea](messages/2026-11-04/usb-rea.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/emirmrkaljevic/usb-rea/discussions/3) |
+| [Glasgow Interface Explorer](messages/2026-11-04/glasgow-interface-explorer.md) | GitHub discussion | `declined_do_not_contact` | [public post](https://github.com/GlasgowEmbedded/glasgow/discussions/1347) |
+| [Meshtastic](messages/2026-11-04/meshtastic.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/meshtastic/firmware/discussions/12301) |
+| [Open-Source Leg](messages/2026-11-04/open-source-leg.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/neurobionics/opensourceleg/discussions/538) |
+| [EmotiBit](messages/2026-11-04/emotibit.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/EmotiBit/EmotiBit_Docs/discussions/156) |
+| [OpenFlexure](messages/2026-11-04/openflexure.md) | email | `sent_and_read_back` | [contact source](https://openflexure.org/contact/) |
+| [OpenIPC](messages/2026-11-04/openipc.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenIPC/firmware#support) |
+| [BrainFlow / Andrey Parfenov](messages/2026-11-04/brainflow-andrey-parfenov.md) | email | `sent_and_read_back` | [contact source](https://brainflow.org/) |
+| [Tympan](messages/2026-11-04/tympan.md) | email | `sent_and_read_back` | [contact source](https://shop.tympan.org/pages/contact-us) |
+| [liquidctl](messages/2026-11-04/liquidctl.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/liquidctl/liquidctl/discussions/942) |
+| [OpenTabletDriver](messages/2026-11-04/opentabletdriver.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) |
+| [OpenHantek6022](messages/2026-11-04/openhantek6022.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/OpenHantek/OpenHantek6022/discussions/481) |
+| [Open Ephys](messages/2026-11-04/open-ephys.md) | email | `sent_and_read_back` | [contact source](https://github.com/open-ephys/plugin-GUI/blob/main/CONTRIBUTING.md) |
+| [SDRangel](messages/2026-11-04/sdrangel.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/f4exb/sdrangel/discussions/3062) |
+| [Fabien Loison / Rivalcfg](messages/2026-11-04/rivalcfg-fabien-loison.md) | email | `sent_and_read_back` | [contact source](https://blog.flozz.fr/#me-contacter) |
+| [Tuya CloudCutter](messages/2026-11-04/tuya-cloudcutter.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931) |
+| [Fujihack](messages/2026-11-04/fujihack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/fujihack/discussions/25) |
+| [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
+| [SANE developers](messages/2026-11-04/sane-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [subscription procedure](https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html) |
+| [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
+| [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
+| [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
+| [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
+| [QMK](messages/2026-11-04/qmk.md) | email | `sent_and_read_back` | [contact source](https://qmk.fm/support) |
+| [OpenWrt](messages/2026-11-04/openwrt.md) | email | `sent_and_read_back` | [contact source](https://openwrt.org/contact) |
+| [Open GoPro](messages/2026-11-04/open-gopro.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/gopro/OpenGoPro/discussions/933) |
+| [HackRF / Great Scott Gadgets](messages/2026-11-04/hackrf.md) | email | `sent_and_read_back` | [contact source](https://greatscottgadgets.com/contact/) |
+| [RealSense / librealsense](messages/2026-11-04/realsense.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/realsenseai/librealsense/discussions/15937) |
+| [DepthAI / Luxonis](messages/2026-11-04/depthai.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/luxonis/depthai/discussions/1255) |
+| [Espruino / Bangle.js](messages/2026-11-04/espruino.md) | official forum / GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/espruino/discussions/8038) |
+| [OpenPnP](messages/2026-11-04/openpnp.md) | member email to official group | `sent_and_read_back`; publication unconfirmed | [official group](https://groups.google.com/g/openpnp) |
+| [Pothos Users / SoapySDR](messages/2026-11-04/pothos-users-subscription-request.md) | administrative email | `subscription_request_rejected`; introduction not sent | [group information](https://groups.google.com/g/pothos-users/about) |
+| [OpenKinect](messages/2026-11-04/openkinect-subscription-request.md) | administrative email | `subscription_awaiting_owner_approval`; introduction not sent | [group information](https://groups.google.com/g/openkinect/about) |
+| [pvvx / ATC_MiThermometer](messages/2026-11-04/atc-mithermometer.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pvvx/ATC_MiThermometer/discussions/839) |
+| [probe-rs](messages/2026-11-04/probe-rs.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/probe-rs/probe-rs/discussions/4629) |
+| [Theengs Decoder](messages/2026-11-04/theengs-decoder.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/theengs/decoder/discussions/723) |
+| [OpenEarable / Tobias Röddiger](messages/2026-11-04/openearable-tobias-roeddiger.md) | email | `sent_and_read_back` | [contact source](https://open-earable.teco.edu/) |
+| [opentrack](messages/2026-11-04/opentrack.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/opentrack/opentrack/discussions/2235) |
+| [OpenRTX](messages/2026-11-04/openrtx-subscription-help.md) | administrative email | `subscription_help_requested`; membership unconfirmed, introduction not sent | [official users list](https://lists.openrtx.org/sympa/info/users) |
+| [AntiMicroX](messages/2026-11-04/antimicrox.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/AntiMicroX/antimicrox/discussions/1387) |
+| [MissionControl](messages/2026-11-04/missioncontrol.md) | GitHub discussion | `human_response_received_owner_only`; automated replies stopped | [maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844) |
+| [GNU Radio](messages/2026-11-04/gnuradio.md) | member email to official list | `sent_and_read_back`; publication unconfirmed | [official list](https://lists.gnu.org/mailman/listinfo/discuss-gnuradio) |
+| [INAV](messages/2026-11-04/inav.md) | GitHub discussion | `substantive_response_received`; source acknowledged | [contributor response](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308) |
+| [OpenHD](messages/2026-11-04/openhd.md) | email | `sent_and_read_back`; delivery unconfirmed | [documented cooperation route](https://openhdfpv.org/general/contributing/) |
+| [Linux Hardware / HWInfo](messages/2026-11-04/linux-hardware-hwinfo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/linuxhw/HWInfo/discussions/7) |
+| [BuildCores OpenDB](messages/2026-11-04/buildcores-opendb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/buildcores/buildcores-open-db/discussions/443) |
+| [Hardware Index / hwidx](messages/2026-11-04/hardware-index-hwidx.md) | documented GitHub question route | `substantive_response_received` | [public question](https://github.com/ResearchCulture/hwidx/issues/40) |
+| [MicroPython](messages/2026-11-04/micropython.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/micropython/discussions/19886) |
+| [Armbian](messages/2026-11-04/armbian.md) | email | `sent_and_read_back`; delivery unconfirmed | [official contact](https://armbian.com/contact) |
+| [TinyGo](messages/2026-11-04/tinygo.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/orgs/tinygo-org/discussions/6164) |
+| [Zephyr](messages/2026-11-04/zephyr.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/zephyrproject-rtos/zephyr/discussions/124669) |
+| [grblHAL](messages/2026-11-04/grblhal.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/grblHAL/core/discussions/1046) |
+| [Awesome Connected Things Security](messages/2026-11-04/awesome-connected-things-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/V33RU/awesome-connected-things-sec/pull/54) |
+| [Awesome IoT and Hardware Security](messages/2026-11-04/awesome-iot-hardware-security-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) |
+| [pyOCD](messages/2026-11-04/pyocd.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/pyocd/pyOCD/discussions/2070) |
+| [EyeTrackVR](messages/2026-11-04/eyetrackvr.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164) |
+| [OpenFFBoard](messages/2026-11-04/openffboard.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) |
+| [FreeJoy](messages/2026-11-04/freejoy.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/FreeJoy-Team/FreeJoy/discussions/276) |
+| [TinyUSB](messages/2026-11-04/tinyusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/hathach/tinyusb/discussions/4431) |
+| [CherryUSB](messages/2026-11-04/cherryusb.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/cherry-embedded/CherryUSB/discussions/470) |
+| [Printalyzer / Derek Konigsberg](messages/2026-11-04/printalyzer-derek-konigsberg.md) | email | `sent_and_read_back`; delivery unconfirmed | [public author contact](https://github.com/dkonigsberg) |
+| [Sensor Watch](messages/2026-11-04/sensor-watch.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/joeycastillo/Sensor-Watch/discussions/550) |
+| [HydraBus](messages/2026-11-04/hydrabus.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://hydrabus.com/contact/) |
+| [Pocket Science Lab / FOSSASIA](messages/2026-11-04/pslab-fossasia.md) | email | `sent_and_read_back`; delivery unconfirmed | [published project-partnership contact](https://blog.fossasia.org/contact/) |
+| [Awesome Embedded and IoT Security / FKIE](messages/2026-11-04/awesome-embedded-iot-security-fkie-pr.md) | GitHub pull request | `pull_request_submitted`; open and unmerged | [listing proposal](https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41) |
+| [OpenMV](messages/2026-11-04/openmv.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://openmv.io/pages/contact) |
+| [INDI astronomy instrumentation](messages/2026-11-04/indi.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/indilib/indi/discussions/2522) |
+| [Hamlib](messages/2026-11-04/hamlib.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/Hamlib/Hamlib/discussions/2310) |
+| [Petoi / OpenCat](messages/2026-11-04/petoi-opencat.md) | email | `sent_and_read_back`; delivery unconfirmed | [official partnership route](https://www.petoi.com/pages/partnership) |
+| [OpenRazer / Luca Weiss](messages/2026-11-04/openrazer-luca.md) | email | `sent_and_read_back`; delivery unconfirmed | [published contributor contact](https://github.com/z3ntu) |
+| [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md) | email | `sent_and_read_back`; delivery unconfirmed | [published contributor contact](https://github.com/pfps) |
+| [Bitcraze / Crazyflie](messages/2026-11-04/bitcraze-crazyflie.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/orgs/bitcraze/discussions/2258) |
+| [phyphox](messages/2026-11-04/phyphox.md) | email | `sent_and_read_back`; delivery unconfirmed | [official general contact](https://phyphox.org/contact/) |
+| [IronOS](messages/2026-11-04/ironos.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/Ralim/IronOS/discussions/2257) |
+| [openFPGALoader / Gwenhael Goavec-Merou](messages/2026-11-04/openfpgaloader-gwenhael.md) | email | `sent_and_read_back`; delivery unconfirmed | [published author contact](https://github.com/trabucayre) |
+| [COLMAP](messages/2026-11-04/colmap.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/colmap/colmap/discussions/4964) |
+| [OpenMVS](messages/2026-11-04/openmvs.md) | GitHub Show and tell | `published_and_read_back` | [public presentation](https://github.com/cdcseacave/openMVS/discussions/1325) |
+
+Earlier introductions to EdgeTX, OpenPrinting, thingino, rtl_433, Zigbee2MQTT, libwacom and REA, along with our subsequent replies, are also archived in `log.json`. Original Betaflight, Tasmota and Z-Wave JS posts and the Vittuu contributor follow-ups are included there as well.
+
+## Updating this journal
+
+1. Record each researched lead and its public sources in `research.md`, including unsuitable channels and reasons for deferring contact.
+2. Search the contact log, the relevant public threads and sent history before contacting anyone. Continue existing conversations when appropriate.
+3. After sending or publishing, archive the exact outgoing text and update `log.json` with the date, channel, public evidence and actual status. If a send fails, record the failure and check for delivery before retrying.
+4. Record substantive responses as a brief attributed summary with a public permalink where available. Keep proposed work separate from implemented changes and verified hardware behavior.
+5. Retain personal correspondence and private account evidence outside this public repository. Never commit mail headers, mailbox IDs, phone numbers, residence details or subscription tokens.
+
+fwupd supplied a substantive source suggestion. Our [latest follow-up](messages/2026-11-04/fwupd-index-followup.md) links [PR 25](https://github.com/opendevicedb/opendevicedb/pull/25): a research index of 104 declarations from three plugins, merged on 2026-11-08 as an experimental dataset kept separate from the catalogue and detection. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under [issue 19](https://github.com/opendevicedb/opendevicedb/issues/19). Glasgow declined AI-assisted outreach; no further contact is queued.
+
+liquidctl requested a shared-index PR. [Draft PR 943](https://github.com/liquidctl/liquidctl/pull/943) is open upstream, with 543 local tests passed and identical generated udev output. Our [reply](messages/2026-11-04/liquidctl-shared-index-followup.md) links the proposal; maintainer review is pending. A further [source suggestion from aleksamagicka](https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517) led to [draft PR 28](https://github.com/opendevicedb/opendevicedb/pull/28), adding 12 source-qualified Aquacomputer hwmon records. It was merged on 2026-11-07 and is live. Upstream PR 943 was still a draft without review at the 2026-11-10 check. Our [reply](messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md) thanks him and links the proposal.
+
+## Update 2026-11-10
+
+All public GitHub threads in `log.json` were re-read for activity after 2026-11-04 22:50 UTC. Email threads were not re-checked in this pass.
+
+Substantive responses awaiting an owner reply:
+
+- [hwidx](https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906): John Vidler confirms that hwidx identifiers should stay distinct even when they share a documentation URL, says the data licence is not settled, and asks downstream catalogues to link through hwidx router URLs so link checks keep working. The reply asks how to integrate cleanly.
+- [usb-rea](https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19498854): the maintainer added an optional, read-only `usb-rea lookup` command and `lookup_device` MCP tool (main `3bc5f84`, unreleased) that can query the OpenDeviceDB static API with only a VID:PID, and asks whether to use a different endpoint or show more record fields.
+- [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411): a maintainer welcomes an importer and asks what it would need; most instruments are serial or GPIB.
+- [Theengs Decoder](https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668): positive reply with the device list and decryption/gateway caveats.
+- [REA joint tutorial](https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380): XinwangTao suggests a first outline built on one public device case.
+
+Catalogue corrections from this campaign are now merged and live: PRs 21, 24, 25, 27, 28 and 29, and PR 32 for issues 20 and 23. [Awesome IoT and Hardware Security](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) merged the listing on 2026-11-05. The Awesome MCP Servers, Awesome Connected Things Security and FKIE listing PRs and liquidctl draft PR 943 remain open without review.
+
+## Pending external steps
+
+- Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.
+- Rockbox: the server confirms the membership request awaits moderator approval; introduction not sent. Do not repeat registration or confirmation.
+- SANE: documented email subscription requested and read back; membership unconfirmed. No introduction sent yet; do not repeat the request.
+- gPhoto and NUT: original messages are held for moderation; do not resend.
+- sigrok: required signup information was supplied, but the web form did not submit. List-owner help requested; membership and publication remain unconfirmed.
+- Awesome MCP Servers: existing PR remains open with its submission check passed at the last check. Awesome Reverse Engineering was already merged before this campaign.
+- [PkTriggerCord support defect](https://github.com/opendevicedb/opendevicedb/issues/20): fixed by [PR 32](https://github.com/opendevicedb/opendevicedb/pull/32), merged and deployed on 2026-11-08; support now follows the README tiers.
+- [Fujihack scope correction PR 21](https://github.com/opendevicedb/opendevicedb/pull/21): prepared in a separate branch with a regenerated snapshot, 211 local tests and CI passed. Merged on 2026-11-07 and live.
+- [OpenWrt installation wording issue 23](https://github.com/opendevicedb/opendevicedb/issues/23): the GL-MT3000 route contradicts its retained sysupgrade-only source note. Fixed by [PR 32](https://github.com/opendevicedb/opendevicedb/pull/32), merged and deployed on 2026-11-08.
+- Nura/postmarketOS: excluded from AI-assisted outreach under its published policy; no message sent.
+- Draft code and new importer/joint-work suggestions do not establish delivered integrations.
+
+- [Bangle.js 2 firmware/tool links PR 24](https://github.com/opendevicedb/opendevicedb/pull/24): locally validated curated overlay retains imported Gadgetbridge links/pairing; CI passed on the exact proposal head. Merged on 2026-11-07 and live; no watch test or new flashing route.
+
+- OpenPnP: membership confirmed and one introduction sent/read back. First-post moderation is expected under the published rules; publication remains unconfirmed.
+- OpenKinect: normal email subscription/confirmation completed; server confirms owner approval is still pending. No introduction sent.
+- Pothos Users / SoapySDR: normal email subscription request rejected with a generic group/permission notice. Cause remains unknown; no introduction or retry.
+
+- [LYWSD03MMC firmware-prerequisite issue 26](https://github.com/opendevicedb/opendevicedb/issues/26): the imported Zigbee2MQTT pairing text omits the Bluetooth-to-Zigbee firmware conversion requirement. [Correction draft PR 27](https://github.com/opendevicedb/opendevicedb/pull/27) preserves this prerequisite for 36 explicit custom-firmware records; local tests, snapshot audit and CI passed. Merged on 2026-11-07 and live; issue 26 closed. No hardware test.
+
+- [Aquacomputer hwmon catalogue PR 28](https://github.com/opendevicedb/opendevicedb/pull/28): 12 curated records cover the source overview and its 12 USB match entries, with grouped identities and per-feature kernel baselines. Merged on 2026-11-07 and live, with no hardware test.
+
+- OpenBikeSensor: forum terms prohibit solicitation and automated access; excluded from this automated promotional campaign. No contact or alternative-channel bypass.
+- SlimeVR: organization guidance forbids content submitted directly from AI across its repositories; no generated outreach or contribution sent.
+
+- OpenRTX: documented Sympa subscription sent/read back. Normal web confirmation returns to the same prompt, with no membership receipt observed; one documented owner-help request sent/read back. No list introduction, retry or alternate personal contact.
+
+- [HackRF One update-method PR 29](https://github.com/opendevicedb/opendevicedb/pull/29): corrects the misleading stock-web-interface label on the existing record. Merged on 2026-11-07 and live. No hardware test or repeat contact.
+- [GNU Radio introduction](messages/2026-11-04/gnuradio.md): normal subscription confirmation completed and membership verified by the welcome notice. One introduction sent/read back; public distribution and human response unconfirmed. Do not repeat registration or the post.
+- WLED: agent-posted discussion replies/issues disallowed; owner participation only after reviewing its rules. OpenBeken/Elektroda: unauthorized advertising and automated access prohibited; no campaign post or bypass.
+
+- Open Know-How: published conduct policy excludes primarily promotional content; no campaign contact or alternate-channel bypass.
+
+- [Awesome Connected Things Security PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54): one README entry proposed under Search Engines. Link/placement/duplicate/byte-preservation/whitespace checks passed. Open non-draft, unmerged; no check runs reported and no acceptance/adoption claim.
+
+- [Awesome IoT and Hardware Security PR 2](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2): one README entry proposed at the bottom of Useful Websites. Merged by the maintainer on 2026-11-05.
+
+- [pyOCD introduction](https://github.com/pyocd/pyOCD/discussions/2070): source-selection question published and read back. No importer, target definition or hardware test. Black Magic Debug excluded from this automated campaign based on its maintainers’ published position on AI; no contact sent.
+
+- [EyeTrackVR introduction](https://github.com/EyeTrackVR/EyeTrackVR/discussions/164): source-linked camera-board discovery proposed and read back. No new record, importer or hardware test. Other VR leads and their unverified community/policy steps are recorded in the research queue; no duplicate-channel introduction.
+
+- [OpenFFBoard introduction](https://github.com/Ultrawipf/OpenFFBoard/discussions/200) and [FreeJoy introduction](https://github.com/FreeJoy-Team/FreeJoy/discussions/276): distinct board-target/version and initial-install/update proposals published and read back. Neither proposal implements an importer, record or hardware-tested route. HID Remapper research remains queued pending full policy/terms and forum review.
+
+- [TinyUSB source question](https://github.com/hathach/tinyusb/discussions/4431) and [CherryUSB source question](https://github.com/cherry-embedded/CherryUSB/discussions/470): General discussions published and read back. Preserve example/BSP scope and SDK/stack/controller distinctions; no importer or hardware test. RIOT excluded from generated outreach under its explicit communication policy.
+
+- [Printalyzer author email](messages/2026-11-04/printalyzer-derek-konigsberg.md): one specific page/link proposal sent and read back; delivery and interest unconfirmed. [MissionControl maintainer response](https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844): prefers communication without AI assistance; automated replies and related contributor approaches stopped.
+
+- [Sensor Watch presentation](https://github.com/joeycastillo/Sensor-Watch/discussions/550) and [HydraBus email](messages/2026-11-04/hydrabus.md): proposed pages would point readers to the original firmware/design/setup guides. Sensor Watch requires a replacement PCB; hardware/LCD variants and HydraNFC v2 firmware remain distinct. No page/importer or hardware validation implemented.
+
+- [PSLab/FOSSASIA email](messages/2026-11-04/pslab-fossasia.md): one page/link proposal sent to the published project-partnership contact and read back. No partnership or page implemented. LibreVNA’s recommended Groups.io channel was researched but not contacted because its terms exclude unsolicited promotion; no signup or alternate-channel campaign.
+
+- [FKIE resource-list PR 41](https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41): one Websites entry plus a separate minimal cleanup of three pre-existing lint findings. Local awesome-lint passed; upstream workflow reports `action_required` with no jobs/check runs. Open, unmerged; await maintainer review.
+
+- [INDI presentation](https://github.com/indilib/indi/discussions/2522): two existing curated mount pages shared with a source-selection question. [OpenMV email](messages/2026-11-04/openmv.md): proposed a first camera page and asked which board/setup documentation to use. No new importer/page or hardware test; await feedback in the existing threads.
+
+- [Hamlib presentation](https://github.com/Hamlib/Hamlib/discussions/2310): proposed release-specific radio-model links; no importer or radio test. [Petoi email](messages/2026-11-04/petoi-opencat.md): first Bittle X page proposed through the official partnership route, keeping board/release requirements explicit. Await the existing conversations; no duplicate posts.
+
+- [OpenRazer / Luca Weiss](messages/2026-11-04/openrazer-luca.md) and [Solaar / Peter F. Patel-Schneider](messages/2026-11-04/solaar-peter.md): one proposal each sent/read back to their published professional contacts. Proposed model links would retain version/connection/feature requirements. No page/importer, upstream change or hardware validation implemented; await those email threads.
+
+- [Bitcraze presentation](https://github.com/orgs/bitcraze/discussions/2258): first Crazyflie page proposed with model/radio/deck requirements. [phyphox email](messages/2026-11-04/phyphox.md): asked about canonical phone/sensor/experiment references. No new page/importer or hardware validation; await those conversations. Red Pitaya remains under forum/model-scope review, without contact.
+
+- [INAV source response](https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308): target/PWM wiki suggested, without a known retail cross-reference. [Our reply](messages/2026-11-04/inav-source-followup.md) thanks the contributor and preserves branch/date/release qualifiers. Source research remains preliminary; no importer, new record or hardware validation.
+
+- [IronOS presentation](https://github.com/Ralim/IronOS/discussions/2257) and [openFPGALoader email](messages/2026-11-04/openfpgaloader-gwenhael.md): proposed model-specific links with firmware/BLE and FPGA/board/cable/version requirements. Await the existing conversations; no importer, record or hardware validation implemented.

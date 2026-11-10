@@ -1,0 +1,2202 @@
+{
+  "schema_version": 1,
+  "project": "OpenDeviceDB",
+  "last_verified_at": "2026-11-10T08:30:00+00:00",
+  "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
+  "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
+  "status_semantics": {
+    "sent": "Outgoing email observed; delivery, public distribution and human interest are not established.",
+    "sent_and_read_back": "Stored outgoing email, recipient and content read back successfully; no delivery or engagement claim.",
+    "published": "Public GitHub permalink observed.",
+    "published_and_read_back": "Public GitHub author and exact outgoing content read back successfully.",
+    "automatic_acknowledgement": "Automatic reply only.",
+    "held_for_moderation": "Mailing-list notice confirms a hold; publication is not established.",
+    "subscription_help_requested": "Subscription remains unconfirmed; list-owner assistance requested. Original post not resent.",
+    "declined_do_not_contact": "Community declined this kind of interaction; no further contact.",
+    "substantive_response_received": "A concrete human response was observed; it is not evidence that an integration is implemented.",
+    "subscription_requested": "Administrative subscription request sent and read back; membership and any community introduction remain unconfirmed.",
+    "private_response_received": "A reply to private correspondence was observed. Its contents and personal arrangements remain outside this public repository.",
+    "human_response_received_owner_only": "A human reply asks for communication without AI assistance. Automated replies/drafts are stopped; any continuation belongs to the owner in their own words."
+  },
+  "contacts": [
+    {
+      "name": "Open Healthware / OSHWA",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "OpenHealthware@oshwa.org",
+      "sent_at": "2026-11-04T08:29:02.000Z",
+      "subject": "OpenDeviceDB — connecting device knowledge with Open Healthware",
+      "message": "messages/2026-11-04/open-healthware-oshwa.md",
+      "contact_source": "https://oshwa.org/resources/open-healthware-education-guide/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Openwater",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "community@openwater.health",
+      "sent_at": "2026-11-04T08:29:05.000Z",
+      "subject": "OpenDeviceDB — a possible collaboration around open imaging device documentation",
+      "message": "messages/2026-11-04/openwater.md",
+      "contact_source": "https://openwaterhealth.github.io/openwater-community/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenBCI",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "contact@openbci.com",
+      "sent_at": "2026-11-04T08:29:07.000Z",
+      "subject": "OpenDeviceDB — sharing reusable knowledge about biosensing hardware",
+      "message": "messages/2026-11-04/openbci.md",
+      "contact_source": "https://docs.openbci.com/FAQ/GenFAQ/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open Source Imaging Initiative",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "info@opensourceimaging.org",
+      "sent_at": "2026-11-04T08:29:10.000Z",
+      "subject": "OpenDeviceDB — exploring links with the Open Source Imaging Initiative",
+      "message": "messages/2026-11-04/open-source-imaging-initiative.md",
+      "contact_source": "https://www.opensourceimaging.org/2016/05/01/about/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Glia",
+      "channel": "email",
+      "status": "automatic_acknowledgement",
+      "recipient": "info@glia.org",
+      "sent_at": "2026-11-04T08:29:12.000Z",
+      "subject": "OpenDeviceDB — helping people discover and reuse open medical hardware",
+      "message": "messages/2026-11-04/glia.md",
+      "note": "Automatic acknowledgement only; it is not a substantive response or evidence of interest.",
+      "contact_source": "https://glia.org/pages/contact",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open Source Medical Supplies",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "info@opensourcemedicalsupplies.org",
+      "sent_at": "2026-11-04T08:29:14.000Z",
+      "subject": "OpenDeviceDB — connecting reusable device documentation with OSMS",
+      "message": "messages/2026-11-04/open-source-medical-supplies.md",
+      "contact_source": "https://opensourcemedicalsupplies.org/about/contact/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Luc Jonveaux / un0rick",
+      "channel": "private email",
+      "status": "private_response_received",
+      "privacy": "Personal correspondence retained privately; recipient address, private message text and contact details are not published.",
+      "sent_date": "2026-11-04",
+      "next_action": "Reply requires owner discussion and review before any send. Technical draft remains unsent and private; do not send autonomously."
+    },
+    {
+      "name": "NUT developers",
+      "channel": "email",
+      "status": "held_for_moderation",
+      "recipient": "nut-upsdev@alioth-lists.debian.net",
+      "sent_at": "2026-11-04T11:41:31.000Z",
+      "subject": "OpenDeviceDB: indexing the NUT HCL with its driver and connection constraints",
+      "message": "messages/2026-11-04/nut-developers.md",
+      "next_action": "Await moderator decision; do not send duplicate",
+      "note": "A Mailman notice confirms that the original post is held for moderation. Do not resend it.",
+      "contact_source": "https://networkupstools.org/support.html",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "gPhoto developers",
+      "channel": "email",
+      "status": "held_for_moderation",
+      "recipient": "gphoto-devel@lists.sourceforge.net",
+      "sent_at": "2026-11-04T11:47:54.000Z",
+      "subject": "OpenDeviceDB: linking camera model aliases to libgphoto2 support",
+      "message": "messages/2026-11-04/gphoto-developers.md",
+      "next_action": "Wait for moderator decision; do not send a duplicate",
+      "note": "A Mailman notice confirms that the original post is held for moderation. Do not resend it.",
+      "contact_source": "https://gphoto.sourceforge.io/mailinglists/",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "sigrok developers",
+      "channel": "email",
+      "status": "subscription_help_requested",
+      "recipient": "sigrok-devel@lists.sourceforge.net",
+      "sent_at": "2026-11-04T11:47:56.000Z",
+      "subject": "OpenDeviceDB: making libsigrok instrument support easier to discover",
+      "message": "messages/2026-11-04/sigrok-developers.md",
+      "next_action": "Await list-owner help with subscription; do not resend original outreach until membership and original post status are established.",
+      "note": "Required country field was supplied privately. The normal web form did not submit; the email subscription command redirected to it. Subscription help was requested from the list owners. Membership and original-post publication remain unconfirmed.",
+      "contact_source": "https://github.com/sigrokproject/libsigrok",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "CassieFox23",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7872#discussioncomment-19392275",
+      "published_at": "2026-11-04T07:34:38Z",
+      "message": "messages/2026-11-04/cassiefox23.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Eliot5566",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7974#discussioncomment-19392281",
+      "published_at": "2026-11-04T07:34:47Z",
+      "message": "messages/2026-11-04/eliot5566.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Zfinix",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/7989#discussioncomment-19392280",
+      "published_at": "2026-11-04T07:34:45Z",
+      "message": "messages/2026-11-04/zfinix.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "awesomerea",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/4470#discussioncomment-19392277",
+      "published_at": "2026-11-04T07:34:41Z",
+      "message": "messages/2026-11-04/awesomerea.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "bigtower17",
+      "channel": "GitHub discussion comment",
+      "status": "published",
+      "url": "https://github.com/morluto/rea/discussions/4152#discussioncomment-19392273",
+      "published_at": "2026-11-04T07:34:32Z",
+      "message": "messages/2026-11-04/bigtower17.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "zenanythin",
+      "channel": "GitHub discussion comment",
+      "status": "substantive_response_received",
+      "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19392278",
+      "published_at": "2026-11-04T07:34:43Z",
+      "message": "messages/2026-11-04/zenanythin.md",
+      "outgoing_text_verified": true,
+      "next_action": "Owner decision pending on drafting a tutorial outline with one public device case. No tutorial written yet.",
+      "responses": [
+        {
+          "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380",
+          "by": "XinwangTao",
+          "received_at": "2026-11-05T04:13:46Z",
+          "summary": "Supports the joint REA/OpenDeviceDB tutorial idea (pick a device, look up its status, resolve one open question, contribute a scoped finding) and suggests a first outline built on one public device case."
+        }
+      ]
+    },
+    {
+      "name": "betaflight",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466",
+      "published_at": "2026-11-04T11:41:07Z",
+      "message": "messages/2026-11-04/betaflight.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "zwave",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467",
+      "published_at": "2026-11-04T11:41:09Z",
+      "message": "messages/2026-11-04/zwave.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "tasmota",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470",
+      "published_at": "2026-11-04T11:41:10Z",
+      "message": "messages/2026-11-04/tasmota.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "gp2040",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenStickCommunity/GP2040-CE/discussions/1818",
+      "published_at": "2026-11-04T11:41:12Z",
+      "message": "messages/2026-11-04/gp2040.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "fwupd",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/fwupd/fwupd/discussions/11346",
+      "published_at": "2026-11-04T11:49:49Z",
+      "message": "messages/2026-11-04/fwupd.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in the existing discussion. PR 25 (104 declarations from three plugins) was merged on 2026-11-08 as an experimental index separate from the catalogue and detection. Full plugin coverage, physical-model mapping and user-facing lookup remain further work under issue 19. No hardware test.",
+      "response": {
+        "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19397020",
+        "by": "hughsie",
+        "summary": "Suggested consuming the VID/PID identifiers in plugin .quirk files."
+      },
+      "followups": [
+        {
+          "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19401663",
+          "published_at": "2026-11-04T16:11:13Z",
+          "message": "messages/2026-11-04/fwupd-quirks-followup.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/fwupd/fwupd/discussions/11346#discussioncomment-19403540",
+          "published_at": "2026-11-04T18:08:31Z",
+          "message": "messages/2026-11-04/fwupd-index-followup.md",
+          "outgoing_text_verified": true
+        }
+      ],
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/issues/19",
+      "proposal_message": "messages/2026-11-04/fwupd-identifier-proposal.md",
+      "implementation_proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/25",
+      "implementation_proposal_message": "messages/2026-11-04/fwupd-index-pr.md",
+      "implementation_proposal_head": "3b0dcc5419c903122f218560248a5fbb5470d56d",
+      "implementation_status": "three_plugin_research_index_draft_unmerged_undeployed",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/25",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-08T06:19:12Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "usb-rea",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3",
+      "published_at": "2026-11-04T11:49:51Z",
+      "message": "messages/2026-11-04/usb-rea.md",
+      "outgoing_text_verified": true,
+      "next_action": "Owner reply pending: answer the endpoint and record-field question in the existing thread. The integration is upstream work by the usb-rea maintainer, unreleased at last check; not tested by OpenDeviceDB.",
+      "responses": [
+        {
+          "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19497977",
+          "by": "emirmrkaljevic",
+          "received_at": "2026-11-09T17:31:40Z",
+          "summary": "Agrees that a read-only VID:PID lookup before capture fits usb-rea, keeping captures local and new findings as separate user-reviewed contributions."
+        },
+        {
+          "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19498854",
+          "by": "emirmrkaljevic",
+          "received_at": "2026-11-09T18:09:16Z",
+          "summary": "Reports a first lookup command and lookup_device MCP tool in usb-rea main at 3bc5f84 (unreleased). Offline by default; --online queries the OpenDeviceDB static API (/api/index.json and the device record), sends only the VID:PID and labels matches as hints. Asks whether to use a different endpoint or show more of the record (status, install routes)."
+        }
+      ]
+    },
+    {
+      "name": "Glasgow Interface Explorer",
+      "channel": "GitHub discussion",
+      "status": "declined_do_not_contact",
+      "url": "https://github.com/GlasgowEmbedded/glasgow/discussions/1347",
+      "published_at": "2026-11-04T13:55:57Z",
+      "message": "messages/2026-11-04/glasgow-interface-explorer.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Do not send further AI-assisted messages or promotional follow-ups to this community.",
+      "response": {
+        "url": "https://github.com/GlasgowEmbedded/glasgow/discussions/1347#discussioncomment-19398977",
+        "by": "whitequark",
+        "summary": "Maintainer said this kind of AI-assisted interaction is not welcome."
+      }
+    },
+    {
+      "name": "Meshtastic",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/meshtastic/firmware/discussions/12301",
+      "published_at": "2026-11-04T13:55:59Z",
+      "message": "messages/2026-11-04/meshtastic.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Open-Source Leg",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/neurobionics/opensourceleg/discussions/538",
+      "published_at": "2026-11-04T13:59:09Z",
+      "message": "messages/2026-11-04/open-source-leg.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "EmotiBit",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/EmotiBit/EmotiBit_Docs/discussions/156",
+      "published_at": "2026-11-04T14:02:07Z",
+      "message": "messages/2026-11-04/emotibit.md",
+      "batch": "additional_communities_20261104",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenFlexure",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@openflexure.org",
+      "sent_at": "2026-11-04T13:56:30.000Z",
+      "subject": "OpenDeviceDB and discoverability of open scientific hardware",
+      "message": "messages/2026-11-04/openflexure.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://openflexure.org/contact/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenIPC",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "dev@openipc.org",
+      "sent_at": "2026-11-04T14:01:13.000Z",
+      "subject": "OpenDeviceDB: helping camera owners find existing firmware and protocol work",
+      "message": "messages/2026-11-04/openipc.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://github.com/OpenIPC/firmware#support",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "BrainFlow / Andrey Parfenov",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "andrey@brainflow.org",
+      "sent_at": "2026-11-04T14:02:36.000Z",
+      "subject": "OpenDeviceDB: making BrainFlow device interfaces easier to discover",
+      "message": "messages/2026-11-04/brainflow-andrey-parfenov.md",
+      "batch": "additional_communities_20261104",
+      "contact_source": "https://brainflow.org/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "Tympan",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@tympan.org",
+      "sent_at": "2026-11-04T16:12:09Z",
+      "subject": "OpenDeviceDB: helping people discover open hearing-research hardware",
+      "message": "messages/2026-11-04/tympan.md",
+      "contact_source": "https://shop.tympan.org/pages/contact-us",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "liquidctl",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/liquidctl/liquidctl/discussions/942",
+      "published_at": "2026-11-04T16:12:31Z",
+      "message": "messages/2026-11-04/liquidctl.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await review of upstream draft PR 943 (still draft, no review at last check). Aquacomputer catalogue PR 28 was merged on 2026-11-07 and is live. Do not send another introduction or ask the busy contributor for work. No hardware test.",
+      "response": {
+        "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402109",
+        "by": "jonasmalacofilho",
+        "received_at": "2026-11-04T16:38:37Z",
+        "summary": "Suggested sharing a cleaner driver/model index between the udev rule generator and OpenDeviceDB, with README information, and requested a PR."
+      },
+      "followups": [
+        {
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19402348",
+          "published_at": "2026-11-04T16:53:43Z",
+          "message": "messages/2026-11-04/liquidctl-shared-index-followup.md",
+          "outgoing_text_verified": true
+        },
+        {
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19404382",
+          "published_at": "2026-11-04T18:57:39Z",
+          "message": "messages/2026-11-04/liquidctl-aleksa-hwmon-followup.md",
+          "outgoing_text_verified": true
+        }
+      ],
+      "proposal_url": "https://github.com/liquidctl/liquidctl/pull/943",
+      "proposal_message": "messages/2026-11-04/liquidctl-shared-index-pr.md",
+      "proposal_status": "upstream_draft_pr_open",
+      "proposal_validation": {
+        "head": "312f134",
+        "python": "3.14.7",
+        "tests_passed": 543,
+        "tests_skipped": 2,
+        "udev_output": "byte-identical to pre-change generator",
+        "style": "Black passed",
+        "ci": "no checks reported at creation",
+        "initial_full_run": "Existing keyval timing test failed once; passed in isolation and on full rerun."
+      },
+      "additional_source_responses": [
+        {
+          "by": "aleksamagicka",
+          "url": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517",
+          "received_at": "2026-11-04T18:06:55Z",
+          "summary": "Invited examination of the Aquacomputer hwmon driver and other public Linux driver repositories for device data not yet in liquidctl."
+        }
+      ],
+      "additional_catalogue_proposal": {
+        "url": "https://github.com/opendevicedb/opendevicedb/pull/28",
+        "initial_message": "messages/2026-11-04/aquacomputer-hwmon-pr.md",
+        "message": "messages/2026-11-04/aquacomputer-hwmon-pr-update.md",
+        "head": "3182905c1d7421423029275810bb486877cfbd9c",
+        "status": "draft_open_unmerged_undeployed",
+        "records": 12,
+        "overview_rows_covered": 13,
+        "source_usb_matches_preserved": 12,
+        "validation": "42 curated / 31207 imported; 0 errors; serialized-YAML source audit and production model/USB lookup passed",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41891930072",
+        "ci_status": "passed_on_exact_head",
+        "hardware_test": false
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/28",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:32Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "OpenTabletDriver",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238",
+      "published_at": "2026-11-04T16:12:33Z",
+      "message": "messages/2026-11-04/opentabletdriver.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction."
+    },
+    {
+      "name": "OpenHantek6022",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/OpenHantek/OpenHantek6022/discussions/481",
+      "published_at": "2026-11-04T16:21:52Z",
+      "message": "messages/2026-11-04/openhantek6022.md",
+      "next_action": "Await a substantive response in the existing discussion; no duplicate introduction. No OpenHantek6022 directory change is implemented.",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "Open Ephys",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@open-ephys.org",
+      "sent_at": "2026-11-04T16:22:14.000Z",
+      "subject": "OpenDeviceDB: helping people find Open Ephys hardware interfaces",
+      "contact_source": "https://github.com/open-ephys/plugin-GUI/blob/main/CONTRIBUTING.md",
+      "message": "messages/2026-11-04/open-ephys.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. Acquisition Board directory entry is proposed only."
+    },
+    {
+      "name": "SDRangel",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/f4exb/sdrangel/discussions/3062",
+      "published_at": "2026-11-04T16:26:16Z",
+      "message": "messages/2026-11-04/sdrangel.md",
+      "next_action": "Await a substantive response in the existing thread; no duplicate introduction. No SDRangel importer is implemented.",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "Fabien Loison / Rivalcfg",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "flozz@flozz.fr",
+      "sent_at": "2026-11-04T16:27:07.000Z",
+      "subject": "OpenDeviceDB : rendre les travaux comme Rivalcfg plus faciles à retrouver",
+      "contact_source": "https://blog.flozz.fr/#me-contacter",
+      "message": "messages/2026-11-04/rivalcfg-fabien-loison.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. A small attributed directory sample is proposed; no importer is implemented."
+    },
+    {
+      "name": "Tuya CloudCutter",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/tuya-cloudcutter/tuya-cloudcutter/discussions/931",
+      "published_at": "2026-11-04T16:31:28Z",
+      "message": "messages/2026-11-04/tuya-cloudcutter.md",
+      "next_action": "Await a substantive response in the existing discussion; do not repeat the introduction. Imported profiles are not hardware tests.",
+      "outgoing_text_verified": true
+    },
+    {
+      "name": "Fujihack",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/fujihack/discussions/25",
+      "published_at": "2026-11-04T16:39:53Z",
+      "message": "messages/2026-11-04/fujihack.md",
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/21",
+      "proposal_message": "messages/2026-11-04/fujihack-scope-pr.md",
+      "proposal_status": "merged_and_deployed",
+      "next_action": "Await feedback in the existing discussion. Scope correction PR 21 was merged on 2026-11-07 and is live.",
+      "outgoing_text_verified": true,
+      "proposal_validation": {
+        "head": "b18b483e4d109a623f499419efed4c9517e55fcd",
+        "local_tests_passed": 211,
+        "schema_errors": 0,
+        "ci": "passed",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41869423242/job/126712101447"
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/21",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T20:03:58Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "flashrom developers",
+      "channel": "email",
+      "recipient": "flashrom@flashrom.org",
+      "subject": "OpenDeviceDB: linking programmers and boards to existing flashrom support",
+      "sent_at": "2026-11-04T16:56:11.000Z",
+      "status": "sent_and_read_back",
+      "publication_status": "unconfirmed",
+      "contact_source": "https://github.com/flashrom/flashrom/blob/0172149da9479da7bad0f939e2cdd6b23e13c69d/doc/contact.rst",
+      "message": "messages/2026-11-04/flashrom-developers.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await moderation notice, publication evidence or a substantive reply. Do not resend. Proposed programmer entry is not implemented or hardware tested."
+    },
+    {
+      "name": "SANE developers",
+      "channel": "administrative email",
+      "recipient": "sane-devel-request@alioth-lists.debian.net",
+      "subject": "subscribe",
+      "sent_at": "2026-11-04T17:02:30.000Z",
+      "status": "subscription_requested",
+      "membership_status": "unconfirmed",
+      "introduction_status": "not_sent",
+      "contact_source": "https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html",
+      "message": "messages/2026-11-04/sane-subscription-request.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await the documented subscription response and confirm membership before sending one tailored existing-importer introduction. Do not repeat the signup request."
+    },
+    {
+      "name": "PyMeasure",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/pymeasure/pymeasure/discussions/1587",
+      "published_at": "2026-11-04T17:04:55Z",
+      "message": "messages/2026-11-04/pymeasure.md",
+      "outgoing_text_verified": true,
+      "next_action": "Reply pending to the question of what an importer would need, noting that serial/GPIB instruments cannot be matched by USB identifiers. No importer implemented.",
+      "responses": [
+        {
+          "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411",
+          "by": "BenediktBurger",
+          "received_at": "2026-11-05T09:25:42Z",
+          "summary": "Welcomes a PyMeasure importer and asks what it would need. Most instruments use serial or GPIB, so USB identifiers do not apply; drivers come from users testing them in their labs. Points to the curated python-lab-automation-landscape catalogue."
+        }
+      ]
+    },
+    {
+      "name": "pyLabLib",
+      "channel": "email",
+      "recipient": "pylablib@gmail.com",
+      "subject": "OpenDeviceDB: helping people find existing pyLabLib device interfaces",
+      "sent_at": "2026-11-04T17:09:17.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback",
+      "message": "messages/2026-11-04/pylablib.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. The directory sample is proposed only, with no importer or new hardware test."
+    },
+    {
+      "name": "OpenScan",
+      "channel": "email",
+      "recipient": "info@openscan.eu",
+      "subject": "OpenDeviceDB: helping people discover OpenScan hardware and software",
+      "sent_at": "2026-11-04T17:09:20.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://github.com/OpenScan-org/OpenScan3/blob/f719eebdd9faa1ddabe1042bec1512b45c392944/README.md#contact",
+      "message": "messages/2026-11-04/openscan.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. The directory sample is proposed only, with no importer or new hardware test."
+    },
+    {
+      "name": "dji-firmware-tools",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/o-gs/dji-firmware-tools/discussions/498",
+      "published_at": "2026-11-04T17:15:46Z",
+      "message": "messages/2026-11-04/dji-firmware-tools-neo2.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await protocol/directory feedback in the existing Show and tell thread; no duplicate introduction or parallel direct contributor approach. No new flight or upstream integration is claimed."
+    },
+    {
+      "name": "QMK",
+      "channel": "email",
+      "recipient": "hello@qmk.fm",
+      "subject": "OpenDeviceDB: helping people find QMK from their keyboard model",
+      "sent_at": "2026-11-04T17:21:01.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://qmk.fm/support",
+      "message": "messages/2026-11-04/qmk.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not repeat the introduction. Offer downstream corrections to build-target/layout/revision presentation; no keyboard test is claimed."
+    },
+    {
+      "name": "OpenWrt",
+      "channel": "email",
+      "recipient": "contact@openwrt.org",
+      "subject": "OpenDeviceDB: cooperation around source-linked OpenWrt device discovery",
+      "sent_at": "2026-11-04T17:29:08.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://openwrt.org/contact",
+      "message": "messages/2026-11-04/openwrt.md",
+      "outgoing_text_verified": true,
+      "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/23",
+      "issue_message": "messages/2026-11-04/openwrt-installation-issue.md",
+      "next_action": "Await a substantive response; do not duplicate the introduction on a list or forum. Correct the downstream image-wording defect separately; no correction or hardware test is claimed."
+    },
+    {
+      "name": "Open GoPro",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/gopro/OpenGoPro/discussions/933",
+      "published_at": "2026-11-04T17:35:53Z",
+      "message": "messages/2026-11-04/open-gopro.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response in the existing Show and tell thread; no duplicate introduction. Proposed model/firmware/interface index is not implemented or hardware tested."
+    },
+    {
+      "name": "HackRF / Great Scott Gadgets",
+      "channel": "email",
+      "recipient": "info@greatscottgadgets.com",
+      "subject": "OpenDeviceDB: a source-linked HackRF discovery entry",
+      "sent_at": "2026-11-04T17:43:00.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://greatscottgadgets.com/contact/",
+      "message": "messages/2026-11-04/hackrf.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response without a duplicate introduction. Update-method correction PR 29 was merged on 2026-11-07 and is live. No hardware test.",
+      "correction_proposal": {
+        "url": "https://github.com/opendevicedb/opendevicedb/pull/29",
+        "head": "6dfb132f828ab97f2ea3d62d482a9d7b78979e7b",
+        "status": "merged_and_deployed",
+        "message": "messages/2026-11-04/hackrf-one-update-method-pr.md",
+        "ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41898533635",
+        "ci_conclusion": "success",
+        "hardware_tested": false
+      },
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/29",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:25Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "RealSense / librealsense",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/realsenseai/librealsense/discussions/15937",
+      "published_at": "2026-11-04T17:47:04Z",
+      "message": "messages/2026-11-04/realsense.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed model/SDK/firmware index is not implemented or hardware tested."
+    },
+    {
+      "name": "DepthAI / Luxonis",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/luxonis/depthai/discussions/1255",
+      "published_at": "2026-11-04T17:52:07Z",
+      "message": "messages/2026-11-04/depthai.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await substantive feedback in the existing Show and tell thread; no duplicate introduction. Proposed OAK product/board/revision index is not implemented or hardware tested."
+    },
+    {
+      "name": "Espruino / Bangle.js",
+      "channel": "official forum / GitHub organization discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/espruino/discussions/8038",
+      "published_at": "2026-11-04T17:59:02Z",
+      "message": "messages/2026-11-04/espruino.md",
+      "outgoing_text_verified": true,
+      "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/24",
+      "proposal_message": "messages/2026-11-04/bangle-js-2-links-pr.md",
+      "proposal_status": "merged_and_deployed",
+      "proposal_head": "38d56176d31c221d8fe7220974e2455a5317aa5a",
+      "next_action": "Await feedback in the existing Projects thread. Bangle.js 2 links PR 24 was merged on 2026-11-07 and is live; no new flashing route or watch test. Do not duplicate the introduction by email.",
+      "proposal_ci_status": "passed_on_exact_head",
+      "proposal_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41882671464",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/24",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:28Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "OpenPnP",
+      "channel": "email to official Google Group",
+      "recipient": "openpnp@googlegroups.com",
+      "subject": "OpenDeviceDB: finding OpenPnP from a machine model",
+      "sent_at": "2026-11-04T18:17:29.000Z",
+      "status": "sent_and_read_back",
+      "publication_status": "unconfirmed_first_post_moderation_expected",
+      "message": "messages/2026-11-04/openpnp.md",
+      "outgoing_text_verified": true,
+      "subscription_message": "messages/2026-11-04/openpnp-subscription-request.md",
+      "membership_status": "confirmed_before_introduction",
+      "membership_confirmed_at": "2026-11-04T18:14:23Z",
+      "confirmation_reply_sent_at": "2026-11-04T18:14:20.000Z",
+      "next_action": "Await moderation/publication or substantive reply in this group. Do not duplicate the introduction. Proposed machine/controller index is not implemented or hardware tested."
+    },
+    {
+      "name": "Pothos Users / SoapySDR",
+      "channel": "administrative email",
+      "recipient": "pothos-users+subscribe@googlegroups.com",
+      "sent_at": "2026-11-04T18:15:20.000Z",
+      "status": "subscription_request_rejected",
+      "message": "messages/2026-11-04/pothos-users-subscription-request.md",
+      "outgoing_text_verified": true,
+      "membership_status": "unconfirmed",
+      "introduction_status": "not_sent",
+      "next_action": "Do not repeat the rejected mail-command request. Generic server notice does not identify a precise cause. Owner may inspect the normal web membership route; no group post or owner-address bypass."
+    },
+    {
+      "name": "OpenKinect",
+      "channel": "administrative email",
+      "recipient": "openkinect+subscribe@googlegroups.com",
+      "sent_at": "2026-11-04T18:15:23.000Z",
+      "status": "subscription_awaiting_owner_approval",
+      "message": "messages/2026-11-04/openkinect-subscription-request.md",
+      "outgoing_text_verified": true,
+      "confirmation_reply_sent_at": "2026-11-04T18:16:24.000Z",
+      "moderation_notice_received_at": "2026-11-04T18:16:28.000Z",
+      "membership_status": "awaiting_owner_approval",
+      "introduction_status": "not_sent",
+      "next_action": "Await owner approval, as explicitly confirmed by the server after confirmation. No introduction before membership is confirmed; do not repeat subscription or confirmation."
+    },
+    {
+      "name": "pvvx / ATC_MiThermometer",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/pvvx/ATC_MiThermometer/discussions/839",
+      "published_at": "2026-11-04T18:26:05Z",
+      "message": "messages/2026-11-04/atc-mithermometer.md",
+      "outgoing_text_verified": true,
+      "catalogue_issue": "https://github.com/opendevicedb/opendevicedb/issues/26",
+      "issue_message": "messages/2026-11-04/lywsd03mmc-firmware-issue.md",
+      "next_action": "Await community feedback. Correction PR 27 was merged on 2026-11-07 and is live; issue 26 closed. No dedicated pvvx importer or hardware test; no duplicate solicitation.",
+      "updates": [
+        {
+          "url": "https://github.com/pvvx/ATC_MiThermometer/discussions/839",
+          "updated_at": "2026-11-04T18:35:56Z",
+          "message": "messages/2026-11-04/atc-mithermometer-update.md",
+          "outgoing_text_verified": true,
+          "action": "edit_existing_introduction_no_new_comment"
+        }
+      ],
+      "correction_proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/27",
+      "correction_proposal_message": "messages/2026-11-04/z2m-firmware-prerequisite-pr.md",
+      "correction_proposal_head": "cd063c90ec641e20008bed9e4cf9edaf203813d5",
+      "correction_proposal_status": "draft_open_unmerged_undeployed",
+      "correction_ci_url": "https://github.com/opendevicedb/opendevicedb/actions/runs/41888620876",
+      "correction_ci_status": "passed_on_exact_head",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/27",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-07T22:35:35Z",
+          "verified_at": "2026-11-10T08:30:00+00:00"
+        }
+      ]
+    },
+    {
+      "name": "probe-rs",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/probe-rs/probe-rs/discussions/4629",
+      "published_at": "2026-11-04T18:47:06Z",
+      "message": "messages/2026-11-04/probe-rs.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate introduction or parallel solicitation. No dedicated importer or hardware test is implemented by this introduction."
+    },
+    {
+      "name": "Theengs Decoder",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/theengs/decoder/discussions/723",
+      "published_at": "2026-11-04T18:47:10Z",
+      "message": "messages/2026-11-04/theengs-decoder.md",
+      "outgoing_text_verified": true,
+      "next_action": "Reply pending; assess a device-list importer that keeps decoder-only versus gateway-required properties and decryption requirements distinct. No importer implemented.",
+      "responses": [
+        {
+          "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668",
+          "by": "DigiH",
+          "received_at": "2026-11-05T12:01:14Z",
+          "summary": "Positive. Points to the decoder device list (decoder.theengs.io/devices/devices.html); some properties and SwitchBot control need OpenMQTTGateway, and encrypted broadcasts (LYWSD03MMC PVVX, BTHome v2, Victron) are decrypted by client apps such as Theengs Gateway."
+        }
+      ]
+    },
+    {
+      "name": "OpenEarable / Tobias Röddiger",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "sent_at": "2026-11-04T19:02:57.000Z",
+      "recipient": "tobias.roeddiger@kit.edu",
+      "contact_source": "https://open-earable.teco.edu/",
+      "subject": "OpenDeviceDB: helping people discover OpenEarable's open tools",
+      "message": "messages/2026-11-04/openearable-tobias-roeddiger.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response. Proposed downstream model/version links only; no dedicated importer, new record or hardware test. No parallel message to the related commercial inbox."
+    },
+    {
+      "name": "opentrack",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/opentrack/opentrack/discussions/2235",
+      "published_at": "2026-11-04T19:06:01Z",
+      "message": "messages/2026-11-04/opentrack.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate introduction or parallel contributor solicitation. Proposed model links only; no dedicated importer or hardware test."
+    },
+    {
+      "name": "OpenRTX",
+      "channel": "administrative email",
+      "status": "subscription_help_requested",
+      "contact_kind": "subscription_request_and_owner_help_only",
+      "sent_at": "2026-11-04T19:20:04.000Z",
+      "recipient": "users-request@lists.openrtx.org",
+      "message": "messages/2026-11-04/openrtx-subscription-help.md",
+      "subscription_message": "messages/2026-11-04/openrtx-subscription-request.md",
+      "subscription_requested_at": "2026-11-04T19:15:02.000Z",
+      "contact_source": "https://github.com/OpenRTX/openrtx.github.io/blob/a939a79474fb2e8772820dedcd4a1aa4b931991b/get_in_touch.md",
+      "subscription_procedure": "https://lists.openrtx.org/sympa/help/user-subscribe.html",
+      "community_url": "https://lists.openrtx.org/sympa/info/users",
+      "outgoing_text_verified": true,
+      "membership_status": "unconfirmed_after_web_confirmation_attempt",
+      "introduction_status": "prepared_privately_not_sent",
+      "next_action": "Await list-owner help or an authoritative membership confirmation. Do not repeat subscription/confirmation/help requests or post the prepared introduction before membership is confirmed. No importer or hardware/firmware/radio test."
+    },
+    {
+      "name": "AntiMicroX",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/AntiMicroX/antimicrox/discussions/1387",
+      "published_at": "2026-11-04T19:26:30Z",
+      "message": "messages/2026-11-04/antimicrox.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread. Proposed downstream source-linked tool/model references only; no dedicated importer, new record or hardware test. No duplicate introduction or parallel contributor solicitation."
+    },
+    {
+      "name": "MissionControl",
+      "channel": "GitHub discussion",
+      "status": "human_response_received_owner_only",
+      "url": "https://github.com/ndeadly/MissionControl/discussions/1174",
+      "published_at": "2026-11-04T19:26:34Z",
+      "message": "messages/2026-11-04/missioncontrol.md",
+      "outgoing_text_verified": true,
+      "next_action": "No AI-assisted reply, rewritten draft, alternate-channel approach or related contributor solicitation. Owner may choose to respond personally in their own words. Do not describe this as a ban on all human contact or all AI code use.",
+      "feedback_url": "https://github.com/ndeadly/MissionControl/discussions/1174#discussioncomment-19404844",
+      "feedback_received_at": "2026-11-04T19:32:46Z",
+      "feedback_summary": "Maintainer prefers communication without AI assistance, finds the introduction unclear and asks what a source-linked controller entry means.",
+      "automated_followup_allowed": false
+    },
+    {
+      "name": "GNU Radio",
+      "channel": "member email to the official discussion list",
+      "recipient": "discuss-gnuradio@gnu.org",
+      "subject": "OpenDeviceDB: finding GNU Radio hardware support by device model",
+      "sent_at": "2026-11-04T20:43:43.000Z",
+      "status": "sent_and_read_back",
+      "contact_source": "https://lists.gnu.org/mailman/listinfo/discuss-gnuradio",
+      "message": "messages/2026-11-04/gnuradio.md",
+      "outgoing_text_verified": true,
+      "membership_status": "confirmed",
+      "introduction_sent": true,
+      "next_action": "Await public distribution or a substantive response in the existing list thread. Do not repeat the subscription or introduction; sent state is not proof of publication or adoption.",
+      "membership_verified_at": "2026-11-04T20:38:46.000Z",
+      "administrative_messages": [
+        "messages/2026-11-04/gnuradio-subscription-request.md",
+        "messages/2026-11-04/gnuradio-subscription-confirmation.md"
+      ]
+    },
+    {
+      "name": "INAV",
+      "channel": "GitHub discussion",
+      "status": "substantive_response_received",
+      "url": "https://github.com/iNavFlight/inav/discussions/12203",
+      "published_at": "2026-11-04T19:48:39Z",
+      "message": "messages/2026-11-04/inav.md",
+      "outgoing_text_verified": true,
+      "next_action": "Source acknowledged in the existing reply. Research a version-qualified target index and separately evidenced retail-model/revision links before implementation. Wiki identifies maintenance-9.x/2026-01-17 generation and caveats official build availability; current repository default is maintenance-10.x. No importer, new record, PR request or hardware validation. No duplicate introduction.",
+      "response_url": "https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19406308",
+      "response_received_at": "2026-11-04T21:17:23Z",
+      "response_summary": "sensei-hacker points to the generated board/target/PWM wiki and reports no known retail-brand cross-reference outside target names. This is a source suggestion, not a PR request or integration acceptance.",
+      "source_suggestion": "https://github.com/iNavFlight/inav/wiki/Boards,-Targets-and-PWM-allocations",
+      "followups": [
+        {
+          "url": "https://github.com/iNavFlight/inav/discussions/12203#discussioncomment-19407208",
+          "published_at": "2026-11-04T22:27:35Z",
+          "message": "messages/2026-11-04/inav-source-followup.md",
+          "outgoing_text_verified": true
+        }
+      ]
+    },
+    {
+      "name": "OpenHD",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "development@openhdfpv.org",
+      "subject": "OpenDeviceDB: helping people discover OpenHD hardware support",
+      "sent_at": "2026-11-04T19:52:24.000Z",
+      "message": "messages/2026-11-04/openhd.md",
+      "contact_source": "https://openhdfpv.org/general/contributing/",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive response; do not duplicate on GitHub, Telegram, Discord or another team address. Proposed source-linked model/adapter/SBC discovery only; no importer, new record or hardware/radio test."
+    },
+    {
+      "name": "Linux Hardware / HWInfo",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/linuxhw/HWInfo/discussions/7",
+      "published_at": "2026-11-04T19:54:44Z",
+      "message": "messages/2026-11-04/linux-hardware-hwinfo.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread. No duplicate approach to hw-probe or personal email. Preserve observation date, bus/subsystem IDs, OS/kernel/architecture, attribution and limited status semantics. No importer, probe/log upload or hardware test."
+    },
+    {
+      "name": "BuildCores OpenDB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/buildcores/buildcores-open-db/discussions/443",
+      "published_at": "2026-11-04T19:58:40Z",
+      "message": "messages/2026-11-04/buildcores-opendb.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread; no duplicate contact or promotional issue. Proposed source-linked references only, preserving exact product variants and identifier namespaces. No importer, data merge, relicensing or commercial-license agreement."
+    },
+    {
+      "name": "Hardware Index / hwidx",
+      "channel": "GitHub issue; documented contact/question route",
+      "status": "substantive_response_received",
+      "url": "https://github.com/ResearchCulture/hwidx/issues/40",
+      "published_at": "2026-11-04T20:05:23Z",
+      "contact_source": "https://m.hwidx.org/",
+      "message": "messages/2026-11-04/hardware-index-hwidx.md",
+      "outgoing_text_verified": true,
+      "next_action": "Owner reply pending in the existing issue: propose linking through hwidx router URLs and keeping hwidx identifiers distinct, and wait for a settled data licence before any import or metadata republication. No importer, data reuse or licence agreement yet.",
+      "responses": [
+        {
+          "url": "https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906",
+          "by": "JohnVidler",
+          "received_at": "2026-11-10T00:07:33Z",
+          "summary": "Confirms that several hwidx identifiers may share one canonical documentation URL: identifiers are stable printed revision strings, and only their targets may change, so OpenDeviceDB should keep them distinct. The data licence is not settled yet. Open to downstream use, but asks downstream catalogues to link through hwidx router URLs rather than direct documentation URLs, so its periodic link checks and fallback meta pages keep working. Asks how to integrate cleanly."
+        }
+      ]
+    },
+    {
+      "name": "MicroPython",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/micropython/discussions/19886",
+      "published_at": "2026-11-04T20:10:13Z",
+      "message": "messages/2026-11-04/micropython.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this Show and tell thread without a duplicate introduction. Keep board/port/release/peripheral scope distinct. No importer, new record, firmware build/flash or hardware test. Upstream policy forbids agents submitting PRs alone and requires human PR review communication; no upstream PR/review reply."
+    },
+    {
+      "name": "Armbian",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@armbian.com",
+      "subject": "OpenDeviceDB: source-linked Armbian board discovery",
+      "sent_at": "2026-11-04T20:11:30.000Z",
+      "message": "messages/2026-11-04/armbian.md",
+      "contact_source": "https://armbian.com/contact",
+      "outgoing_text_verified": true,
+      "next_action": "Await a substantive cooperation response; do not duplicate in forum/chat or a bug report. No importer, image build, hardware test, meeting booking, paid consultation or commercial agreement."
+    },
+    {
+      "name": "TinyGo",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/tinygo-org/discussions/6164",
+      "published_at": "2026-11-04T20:17:28Z",
+      "message": "messages/2026-11-04/tinygo.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction. Preserve exact board/target/release and feature scope. No dedicated importer, new record, compiler/firmware build, hardware test or upstream code contribution. Respect human code-review/sign-off and communication rules when applicable."
+    },
+    {
+      "name": "Zephyr",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/zephyrproject-rtos/zephyr/discussions/124669",
+      "published_at": "2026-11-04T20:20:04Z",
+      "message": "messages/2026-11-04/zephyr.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction. Preserve exact board/target/release and feature scope. No dedicated importer, new record, compiler/firmware build, hardware test or upstream code contribution. Respect human code-review/sign-off and communication rules when applicable."
+    },
+    {
+      "name": "grblHAL",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/grblHAL/core/discussions/1046",
+      "published_at": "2026-11-04T20:25:44Z",
+      "message": "messages/2026-11-04/grblhal.md",
+      "outgoing_text_verified": true,
+      "next_action": "Await feedback in this thread without a duplicate introduction or personal invitation. Preserve controller revision, shield, driver, build and plugin scope. No importer, new record, firmware build, machine test or upstream code/PR change."
+    },
+    {
+      "name": "Awesome Connected Things Security / V33RU",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/V33RU/awesome-connected-things-sec/pull/54",
+      "published_at": "2026-11-04T20:33:39Z",
+      "title": "docs: add OpenDeviceDB device research directory",
+      "head": "0bc1000317f8538cdf6e7c547917163d2790aad6",
+      "message": "messages/2026-11-04/awesome-connected-things-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/V33RU/awesome-connected-things-sec/blob/0015dcee55cc0cd6eff3b4afbada2f22c245a9cc/contributing.md",
+      "next_action": "Await maintainer review of the one-entry proposal. Open, unmerged and not an accepted upstream listing; no duplicate issue, comment or direct maintainer message."
+    },
+    {
+      "name": "Awesome IoT and Hardware Security / kayranfatih",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2",
+      "published_at": "2026-11-04T20:46:12Z",
+      "title": "docs: add OpenDeviceDB to useful websites",
+      "head": "8cb460c3e5c24f959e9ee835962ad45594866e05",
+      "message": "messages/2026-11-04/awesome-iot-hardware-security-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
+      "next_action": "Await maintainer review of the one-entry proposal. Open and unmerged; no accepted upstream listing or measured adoption. No duplicate issue, message or direct invitation."
+    },
+    {
+      "name": "pyOCD",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/pyocd/pyOCD/discussions/2070",
+      "published_at": "2026-11-04T20:50:58Z",
+      "title": "OpenDeviceDB: linking board models to pyOCD target documentation",
+      "message": "messages/2026-11-04/pyocd.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/pyocd/pyOCD/blob/0ce0fbd201010d617d7a4e3582c39b8e8561e33d/README.md#community-resources",
+      "next_action": "Await feedback on source selection in this thread. Proposal only; no dedicated importer or hardware validation. No duplicate mailing-list, Slack, issue or contributor solicitation."
+    },
+    {
+      "name": "EyeTrackVR",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/EyeTrackVR/EyeTrackVR/discussions/164",
+      "published_at": "2026-11-04T20:56:49Z",
+      "title": "OpenDeviceDB: helping camera-board owners discover EyeTrackVR",
+      "message": "messages/2026-11-04/eyetrackvr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/EyeTrackVR/EyeTrackVR/blob/5f30f86a2bee466b18c81ba87415d8a4ec6a33f1/.github/CONTRIBUTING.md",
+      "next_action": "Await source/combination feedback in this thread. No parallel Discord/email/issue or personal solicitation. Proposal only; no importer, new record, physical build or hardware validation. Keep the Babble software license separate from component/documentation terms."
+    },
+    {
+      "name": "OpenFFBoard",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Ultrawipf/OpenFFBoard/discussions/200",
+      "published_at": "2026-11-04T21:02:38Z",
+      "title": "OpenDeviceDB: finding the right OpenFFBoard firmware from a board model",
+      "message": "messages/2026-11-04/openffboard.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Ultrawipf/OpenFFBoard/blob/160af9107db2606150f01586d6c092b6be065d7c/README.md",
+      "next_action": "Await source/board-revision feedback in this thread. No duplicate Discord/issue/email or personal invitation. Proposed catalogue links only; no importer, record, firmware build or controller test."
+    },
+    {
+      "name": "FreeJoy",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/FreeJoy-Team/FreeJoy/discussions/276",
+      "published_at": "2026-11-04T21:03:55Z",
+      "title": "OpenDeviceDB: helping BluePill owners find FreeJoy and its setup guides",
+      "message": "messages/2026-11-04/freejoy.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/FreeJoy-Team/FreeJoy/blob/fc697108124f9ffc4ca3f3b1c6bdb2f21f94d52d/README.md",
+      "next_action": "Await feedback on physical variants and setup prerequisites in this thread. No duplicate issue, channel or personal invitation. Proposal only; initial programming versus subsequent USB update and configurable USB identity must remain distinct. No importer, record, build or hardware test."
+    },
+    {
+      "name": "TinyUSB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/hathach/tinyusb/discussions/4431",
+      "published_at": "2026-11-04T21:10:10Z",
+      "title": "OpenDeviceDB: source links from board models to TinyUSB examples",
+      "message": "messages/2026-11-04/tinyusb.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/hathach/tinyusb/blob/91cdc7bbb4d85a3ecb4c8c640297d9c401ff4390/README.rst#getting-started",
+      "next_action": "Await source-selection feedback in this General thread. No duplicate issue, channel or individual approach. No TinyUSB code/PR, importer, board record, example build or hardware test. Development instructions apply before any future checkout/code work."
+    },
+    {
+      "name": "CherryUSB",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/cherry-embedded/CherryUSB/discussions/470",
+      "published_at": "2026-11-04T21:11:05Z",
+      "title": "OpenDeviceDB: linking board models to the appropriate CherryUSB demos",
+      "message": "messages/2026-11-04/cherryusb.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/cherry-embedded/CherryUSB/blob/1cf7193676584a0c2bbfa53bf88b13b65a063130/README.md",
+      "next_action": "Await demo/source-metadata feedback in this General thread. No duplicate QQ/Discord/issue/email or personal approach. No importer, record, SDK/example build, paid support or hardware test. Preserve board, SDK/stack version, host/device role and controller instance."
+    },
+    {
+      "name": "Printalyzer / Derek Konigsberg",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "dkonigsberg@logicprobe.org",
+      "subject": "Printalyzer on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:19:07.000Z",
+      "message": "messages/2026-11-04/printalyzer-derek-konigsberg.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/dkonigsberg",
+      "project_source": "https://github.com/dektronics/printalyzer-timer/tree/16b11608119cb3da09eca94394503bae0d40d021",
+      "next_action": "Await the author’s recommendation for the timer board revision/firmware reference and feedback on a proposed page. No repeated email or alternate-channel approach; no delivery/adoption claim, new page/importer or hardware test. Keep the timer separate from densitometers and distinguish in-development from released hardware."
+    },
+    {
+      "name": "Sensor Watch",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/joeycastillo/Sensor-Watch/discussions/550",
+      "published_at": "2026-11-04T21:26:44Z",
+      "title": "OpenDeviceDB: helping Casio F-91W owners discover Sensor Watch",
+      "message": "messages/2026-11-04/sensor-watch.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://www.sensorwatch.net/docs/contribution-guidelines/",
+      "next_action": "Await feedback in this General thread; no parallel Discord/email or direct creator solicitation. Proposed page only, with a required replacement PCB and separate hardware/LCD choices. No stock-Casio firmware support, new page/importer, build or hardware test."
+    },
+    {
+      "name": "HydraBus",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "info@hydrabus.com",
+      "subject": "HydraBus on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:27:32.000Z",
+      "message": "messages/2026-11-04/hydrabus.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://hydrabus.com/contact/",
+      "project_source": "https://github.com/hydrabus/hydrafw/tree/823df8560b16b8b2872169e128e0144b72c0d604",
+      "next_action": "Await feedback on the proposed HydraBus v1 page. No duplicate discussion, second email or direct maintainer approach. Distinguish HydraNFC Shield v2 and its firmware; no catalogue page/importer, build/flash, physical test, purchase or delivery/adoption claim."
+    },
+    {
+      "name": "Pocket Science Lab / FOSSASIA",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "hp@fossasia.org",
+      "subject": "Pocket Science Lab on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:36:41.000Z",
+      "message": "messages/2026-11-04/pslab-fossasia.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://blog.fossasia.org/contact/",
+      "project_source": "https://github.com/fossasia/pslab-python/tree/08de0d090599b2555f357d378f95ad7da625f08e",
+      "next_action": "Await feedback on a proposed PSLab page from the official project-partnership contact. No duplicate team/developer email, vendor form, mailing-list intro or issue. Page/importer and hardware validation are not implemented; delivery and partnership interest unconfirmed."
+    },
+    {
+      "name": "Awesome Embedded and IoT Security / FKIE",
+      "channel": "GitHub pull request",
+      "status": "pull_request_submitted",
+      "url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41",
+      "published_at": "2026-11-04T21:51:53Z",
+      "title": "docs: add OpenDeviceDB to websites",
+      "head": "31e8343e72aa4a654d54d38d2fa31872e56b04fe",
+      "message": "messages/2026-11-04/awesome-embedded-iot-security-fkie-pr.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/blob/fbd0301e6690a21d98ca8d565c0657aae0fba339/contributing.md",
+      "next_action": "Await maintainer review and the upstream workflow action. Open and unmerged; no accepted listing or adoption claim. No duplicate issue, comment or direct maintainer solicitation."
+    },
+    {
+      "name": "OpenMV",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "openmv@openmv.io",
+      "subject": "OpenMV cameras on OpenDeviceDB",
+      "sent_at": "2026-11-04T21:58:35.000Z",
+      "message": "messages/2026-11-04/openmv.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://openmv.io/pages/contact",
+      "project_source": "https://github.com/openmv/openmv/tree/f128b091d3edf48014a0cbe8c01dbe286ed1e320",
+      "next_action": "Await feedback on the first camera-page proposal in this email. No duplicate forum/issue/team solicitation. Exact board firmware, IDE, RPC and sensor/shield requirements remain to select; no page/importer or physical validation implemented."
+    },
+    {
+      "name": "INDI astronomy instrumentation",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/indilib/indi/discussions/2522",
+      "published_at": "2026-11-04T21:59:15Z",
+      "title": "OpenDeviceDB: helping mount owners find INDI drivers",
+      "message": "messages/2026-11-04/indi.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/indilib/indi/discussions/1561",
+      "project_source": "https://github.com/indilib/indi/tree/2bedd4aeafbcfc2162f2b88a1bf09f776fec4fbd",
+      "next_action": "Await feedback in the existing Show and tell thread on the two already-curated mount pages and a recommended model-to-driver source. No duplicate forum/email, importer, driver change, new mount record or hardware test."
+    },
+    {
+      "name": "Hamlib",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Hamlib/Hamlib/discussions/2310",
+      "published_at": "2026-11-04T22:05:11Z",
+      "title": "OpenDeviceDB: helping radio owners discover Hamlib support",
+      "message": "messages/2026-11-04/hamlib.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Hamlib/Hamlib/discussions/1546",
+      "project_source": "https://github.com/Hamlib/Hamlib/tree/9199f8a239aed26b5eb0ee9c1a73bf51580483ce",
+      "next_action": "Await feedback in this Show and tell thread on a release-specific radio-model index. No duplicate list/email/issue, new importer or tested radio claim. Preserve development/release API context and backend status; do not treat a model identifier as a USB ID or full feature validation."
+    },
+    {
+      "name": "Petoi / OpenCat",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "support@petoi.com",
+      "subject": "Bittle X and OpenCat on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:05:59.000Z",
+      "message": "messages/2026-11-04/petoi-opencat.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://www.petoi.com/pages/partnership",
+      "recipient_source": "https://www.petoi.com/pages/contact-us",
+      "project_source": "https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot/tree/f5aba6b9cb7e4f2062f77365fbcd0c388acf32ef",
+      "next_action": "Await this email conversation on a proposed first Bittle X page. No duplicate Reddit/forum/issue, affiliate registration, purchase or individual solicitation. NyBoard/BiBoard and exact revision/firmware/calibration remain distinct; page, partnership and physical validation not implemented."
+    },
+    {
+      "name": "OpenRazer / Luca Weiss",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "github@lucaweiss.eu",
+      "subject": "OpenRazer device pages on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:13:23.000Z",
+      "message": "messages/2026-11-04/openrazer-luca.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/z3ntu",
+      "project_source": "https://github.com/openrazer/openrazer/tree/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d",
+      "next_action": "Await this email about a proposed OpenRazer device index. Keep released/versioned scope, exact USB wired/wireless variants, kernel/daemon/app and distribution requirements. No duplicate Matrix/issue/maintainer contact, page/importer, module load or hardware test."
+    },
+    {
+      "name": "Solaar / Peter F. Patel-Schneider",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "pfpschneider@gmail.com",
+      "subject": "Solaar device information on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:13:48.000Z",
+      "message": "messages/2026-11-04/solaar-peter.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/pfps",
+      "project_source": "https://github.com/pwr-Solaar/Solaar/tree/e7304c4c451cc9bb4f206a914844525e67856a28",
+      "next_action": "Await this email about proposed Solaar model/settings references. Keep receiver and paired-device identities, connection, protocol and feature scope distinct. No duplicate issue/team solicitation, copied device serial logs, page/importer or hardware test."
+    },
+    {
+      "name": "Bitcraze / Crazyflie",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/orgs/bitcraze/discussions/2258",
+      "published_at": "2026-11-04T22:20:31Z",
+      "title": "OpenDeviceDB: helping Crazyflie owners find firmware and control tools",
+      "message": "messages/2026-11-04/bitcraze-crazyflie.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/orgs/bitcraze/discussions/55",
+      "project_source": "https://github.com/bitcraze/crazyflie-firmware/tree/e828ed29b008675f4e7aedeb23754dbc6c2531f5",
+      "next_action": "Await feedback in this Show and tell thread on a proposed first model page. No duplicate email/forum/individual invitation, new record/importer, firmware/client/flight command or physical validation. Keep exact model, firmware/client/radio/deck requirements; preserve discussion history under its rules."
+    },
+    {
+      "name": "phyphox",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "contact@phyphox.org",
+      "subject": "phyphox sensor references on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:21:21.000Z",
+      "message": "messages/2026-11-04/phyphox.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://phyphox.org/contact/",
+      "project_source": "https://github.com/phyphox/phyphox-android/tree/45fa55a0727653ccce439b86acb69c00cf435436",
+      "next_action": "Await this general-contact email about canonical model/sensor/experiment references. No repeat forum/team/ambassador message, registration, data submission/import, app change or phone test. Preserve Android/iOS, measured/reported and sample/provenance limits; data reuse terms and canonical model links remain to verify."
+    },
+    {
+      "name": "IronOS",
+      "channel": "GitHub discussion",
+      "status": "published_and_read_back",
+      "url": "https://github.com/Ralim/IronOS/discussions/2257",
+      "published_at": "2026-11-04T22:34:39Z",
+      "title": "OpenDeviceDB: helping iron owners discover IronOS",
+      "message": "messages/2026-11-04/ironos.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/Ralim/IronOS/blob/c7413e0d2adfd43156510d4ccbd109cf352ca335/.github/ISSUE_TEMPLATE/everything-else--questions--notes-etc-.md",
+      "project_source": "https://github.com/Ralim/IronOS/tree/c7413e0d2adfd43156510d4ccbd109cf352ca335",
+      "next_action": "Await this Show and tell thread; no duplicate issue/team/Pinecil chat contact. Keep V1/V2, firmware artifacts, stable/development and BLE prerequisites distinct. PR descriptions/review replies must be human-written under the PR template; no code/PR, new page/importer, firmware flash or physical test."
+    },
+    {
+      "name": "openFPGALoader / Gwenhael Goavec-Merou",
+      "channel": "email",
+      "status": "sent_and_read_back",
+      "recipient": "gwenhael.goavec-merou@trabucayre.com",
+      "subject": "openFPGALoader board references on OpenDeviceDB",
+      "sent_at": "2026-11-04T22:35:09.000Z",
+      "message": "messages/2026-11-04/openfpgaloader-gwenhael.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://github.com/trabucayre",
+      "project_source": "https://github.com/trabucayre/openFPGALoader/tree/e3d8d947a3df36b5dedbfe720cd3d242aa7ca232",
+      "next_action": "Await this source-reference email; no duplicate IRC/issue/team invitation. Keep board/FPGA/cable and SRAM/flash capability separate, with pinned version/configuration. No importer, new record, tool run, bitstream download/programming or hardware validation."
+    },
+    {
+      "name": "COLMAP",
+      "channel": "GitHub Show and tell",
+      "status": "published_and_read_back",
+      "url": "https://github.com/colmap/colmap/discussions/4964",
+      "title": "Spatial Capture 3D: an experimental COLMAP-based pipeline and OpenDeviceDB",
+      "published_at": "2026-11-04T22:45:20Z",
+      "message": "messages/2026-11-04/colmap.md",
+      "outgoing_text_verified": true,
+      "project_source": "https://github.com/colmap/colmap/tree/e6644e744488a13f3aba82958500db9066341205",
+      "implementation_source": "https://github.com/smichea/spatial-capture-3d/tree/e14ec1702e934d473c3327bcaaeeafba061bc127",
+      "next_action": "Await this existing-tool presentation. Retain fixed rectified-pinhole calibration and pycolmap version requirements; continuous five-second displayed-age qualification is not met. No new integration, code change, run, hardware/flight test or parallel personal invitation."
+    },
+    {
+      "name": "OpenMVS",
+      "channel": "GitHub Show and tell",
+      "status": "published_and_read_back",
+      "url": "https://github.com/cdcseacave/openMVS/discussions/1325",
+      "title": "Spatial Capture 3D: OpenMVS orchestration and camera protocol notes on OpenDeviceDB",
+      "published_at": "2026-11-04T22:48:18Z",
+      "message": "messages/2026-11-04/openmvs.md",
+      "outgoing_text_verified": true,
+      "project_source": "https://github.com/cdcseacave/openMVS/tree/efa0b619366c5e343ef9c4279fc943cf53c082f6",
+      "implementation_source": "https://github.com/smichea/spatial-capture-3d/blob/e14ec1702e934d473c3327bcaaeeafba061bc127/src/spatial_capture/room_mvs.py",
+      "next_action": "Await this pipeline/provenance presentation. No duplicate Google Group message or private author invitation. Preserve external-tool licensing, calibration/scale and current display-age limitations. No implementation change, pipeline run, upload or hardware test."
+    }
+  ],
+  "earlier_public_threads_and_contributor_followups": [
+    {
+      "url": "https://github.com/EdgeTX/edgetx/discussions/7945",
+      "title": "OpenDeviceDB lists the radios EdgeTX supports, including older ones that stay on 2.11",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/EdgeTX/edgetx/discussions/7945",
+          "published_at": "2026-10-25T07:52:49Z",
+          "message": "messages/2026-10-25/edgetx-edgetx-7945.md"
+        },
+        {
+          "url": "https://github.com/EdgeTX/edgetx/discussions/7945#discussioncomment-19330866",
+          "published_at": "2026-11-01T10:05:36Z",
+          "message": "messages/2026-11-01/edgetx-edgetx-7945-discussioncomment-19330866.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/OpenPrinting/openprinting.github.io/discussions/253",
+      "title": "OpenDeviceDB lists the printers that need a specific free driver from foomatic-db, with links to OpenPrinting",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/OpenPrinting/openprinting.github.io/discussions/253",
+          "published_at": "2026-10-25T07:52:30Z",
+          "message": "messages/2026-10-25/openprinting-openprinting-github-io-253.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/themactep/thingino-firmware/discussions/1865",
+      "title": "OpenDeviceDB lists the cameras thingino supports, with links to their build profiles",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/themactep/thingino-firmware/discussions/1865",
+          "published_at": "2026-10-25T07:53:08Z",
+          "message": "messages/2026-10-25/themactep-thingino-firmware-1865.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/merbanan/rtl_433/discussions/3738",
+      "title": "OpenDeviceDB: the sensors rtl_433 decodes, searchable by model, each linking to its decoder",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/merbanan/rtl_433/discussions/3738",
+          "published_at": "2026-10-25T07:52:20Z",
+          "message": "messages/2026-10-25/merbanan-rtl-433-3738.md"
+        },
+        {
+          "url": "https://github.com/merbanan/rtl_433/discussions/3738#discussioncomment-19330862",
+          "published_at": "2026-11-01T10:05:32Z",
+          "message": "messages/2026-11-01/merbanan-rtl-433-3738-discussioncomment-19330862.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/Koenkk/zigbee2mqtt/discussions/33492",
+      "title": "OpenDeviceDB: all Zigbee2MQTT devices searchable next to 24 other open projects, with links back here",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/Koenkk/zigbee2mqtt/discussions/33492",
+          "published_at": "2026-10-25T07:52:02Z",
+          "message": "messages/2026-10-25/koenkk-zigbee2mqtt-33492.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/linuxwacom/libwacom/issues/1018",
+      "title": "FYI: libwacom's tablets are listed (with links back) on OpenDeviceDB",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/linuxwacom/libwacom/issues/1018",
+          "published_at": "2026-10-25T08:03:25Z",
+          "message": "messages/2026-10-25/linuxwacom-libwacom-1018.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/morluto/rea/discussions/4722",
+      "title": "Avoiding duplicate device reverse engineering: an opt-in lookup before analysis (OpenDeviceDB)",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/morluto/rea/discussions/4722",
+          "published_at": "2026-10-17T08:06:38Z",
+          "message": "messages/2026-10-17/morluto-rea-4722.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/betaflight/betaflight/discussions/15899",
+      "title": "OpenDeviceDB lists every Betaflight board target, with its MCU and a link to its config",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899",
+          "published_at": "2026-10-25T07:52:39Z",
+          "message": "messages/2026-10-25/betaflight-betaflight-15899.md"
+        },
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19330863",
+          "published_at": "2026-11-01T10:05:34Z",
+          "message": "messages/2026-11-01/betaflight-betaflight-15899-discussioncomment-19330863.md"
+        },
+        {
+          "url": "https://github.com/betaflight/betaflight/discussions/15899#discussioncomment-19396466",
+          "published_at": "2026-11-04T11:41:07Z",
+          "message": "messages/2026-11-04/betaflight.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/zwave-js/zwave-js/discussions/9405",
+      "title": "OpenDeviceDB: the Z-Wave JS device database, searchable by product id next to 24 other open projects",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405",
+          "published_at": "2026-10-25T07:52:59Z",
+          "message": "messages/2026-10-25/zwave-js-zwave-js-9405.md"
+        },
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19330864",
+          "published_at": "2026-11-01T10:05:35Z",
+          "message": "messages/2026-11-01/zwave-js-zwave-js-9405-discussioncomment-19330864.md"
+        },
+        {
+          "url": "https://github.com/zwave-js/zwave-js/discussions/9405#discussioncomment-19396467",
+          "published_at": "2026-11-04T11:41:09Z",
+          "message": "messages/2026-11-04/zwave.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/arendst/Tasmota/discussions/25192",
+      "title": "OpenDeviceDB lists the 2,824 devices from the Tasmota templates repository, each linking back to its template",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/arendst/Tasmota/discussions/25192",
+          "published_at": "2026-10-25T07:52:11Z",
+          "message": "messages/2026-10-25/arendst-tasmota-25192.md"
+        },
+        {
+          "url": "https://github.com/arendst/Tasmota/discussions/25192#discussioncomment-19396470",
+          "published_at": "2026-11-04T11:41:10Z",
+          "message": "messages/2026-11-04/tasmota.md"
+        }
+      ]
+    },
+    {
+      "url": "https://github.com/opendevicedb/opendevicedb/pull/4",
+      "title": "Contributor thank-you and collaboration invitation",
+      "outgoing_messages": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/4#issuecomment-6625173661",
+          "published_at": "2026-11-04T07:25:23Z",
+          "message": "messages/2026-11-04/opendevicedb-opendevicedb-4-issuecomment-6625173661.md"
+        },
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/4#issuecomment-6625243071",
+          "published_at": "2026-11-04T07:29:02Z",
+          "message": "messages/2026-11-04/opendevicedb-opendevicedb-4-issuecomment-6625243071.md"
+        }
+      ]
+    }
+  ],
+  "listings": [
+    {
+      "name": "Awesome MCP Servers",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737",
+      "head": "6e3027b26c17fb0b44c3b6151fcbe201106f38db",
+      "status": "open",
+      "ci": "check-submission passed",
+      "last_followup": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
+    },
+    {
+      "name": "Official MCP Registry",
+      "server": "org.opendevicedb/opendevicedb",
+      "version": "0.3.0",
+      "status": "already_active_before_this_campaign"
+    },
+    {
+      "name": "Awesome Reverse Engineering",
+      "url": "https://github.com/morluto/awesome-reverse-engineering/pull/14",
+      "status": "merged_before_this_campaign",
+      "merged_date": "2026-10-18",
+      "note": "Previously completed listing rediscovered and verified; not counted as new outreach."
+    },
+    {
+      "name": "Awesome Connected Things Security",
+      "url": "https://github.com/V33RU/awesome-connected-things-sec/pull/54",
+      "head": "0bc1000317f8538cdf6e7c547917163d2790aad6",
+      "base": "0015dcee55cc0cd6eff3b4afbada2f22c245a9cc",
+      "status": "open_unmerged_proposal",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-connected-things-pr.md",
+      "validation": "Official canonical site HTTP 200; one entry in Search Engines, original README bytes preserved outside added line, git diff --check passed. No runtime change.",
+      "checks": "No check runs reported at readback; no CI success claimed.",
+      "next_action": "Await maintainer review; do not claim listing acceptance or adoption.",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
+    },
+    {
+      "name": "Awesome IoT and Hardware Security",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2",
+      "head": "8cb460c3e5c24f959e9ee835962ad45594866e05",
+      "base": "4dfa9818769afc8372eb2c5df730c178781e8bef",
+      "status": "merged",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-iot-hardware-security-pr.md",
+      "validation": "Canonical official page HTTP 200 without redirect; one entry at bottom of Useful Websites, original README bytes preserved outside added line, git diff --check passed. Documentation only.",
+      "checks": "No check runs reported at readback; no CI success claimed.",
+      "next_action": "Listed. No further action.",
+      "merged_at": "2026-11-05T10:50:02Z"
+    },
+    {
+      "name": "Awesome Embedded and IoT Security / FKIE",
+      "url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41",
+      "head": "31e8343e72aa4a654d54d38d2fa31872e56b04fe",
+      "base": "fbd0301e6690a21d98ca8d565c0657aae0fba339",
+      "status": "open_unmerged_proposal",
+      "draft": false,
+      "message": "messages/2026-11-04/awesome-embedded-iot-security-fkie-pr.md",
+      "validation": "Local awesome-lint 2.3.0 passed; canonical site HTTP 200 without redirect; unique Websites entry; entry commit preserves parent bytes; license text unchanged; git diff --check passed. Separate minimal cleanup commit fixes three pre-existing content lint findings.",
+      "checks": "Upstream workflow 41920034405 completed with action_required on exact head; jobs and check runs empty. No upstream CI success claimed.",
+      "workflow_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/actions/runs/41920034405",
+      "next_action": "Await maintainer review and upstream workflow action; do not claim acceptance or merge.",
+      "last_checked_at": "2026-11-10T08:30:00+00:00"
+    }
+  ],
+  "next_research": [
+    {
+      "name": "Gadgetbridge",
+      "source": "https://gadgetbridge.org/",
+      "relevance": "Device protocols and existing importer",
+      "next_action": "Owner may ask in the official Matrix room whether an existing-importer discussion is welcome; review room rules first. No message sent.",
+      "community_url": "https://matrix.to/#/#gadgetbridge:matrix.org"
+    },
+    {
+      "name": "Klipper",
+      "source": "https://www.klipper3d.org/Contact.html",
+      "relevance": "Existing printer configuration importer",
+      "next_action": "Owner should inspect forum rules and choose a suitable category; anonymous access returned 403 during research. No message sent.",
+      "community_url": "https://community.klipper3d.org/"
+    },
+    {
+      "name": "Hacker News / DJI Neo 2",
+      "source": "https://news.ycombinator.com/newsguidelines.html",
+      "status": "owner_reports_submission_blocked",
+      "research_note": "research.md#hacker-news-dji-neo-2-assessment",
+      "next_action": "Await HN support response. Do not resend the support request or claim the submission restriction is resolved; HN publication remains unconfirmed.",
+      "reported_error": "Sorry, your account isn't able to submit this site.",
+      "attempted_url": "https://opendevicedb.org/devices/dji/neo-2/",
+      "attempted_title": "DJI Neo 2 client",
+      "hn_username": "smichea",
+      "support_status": "sent_by_owner_verified",
+      "support_recipient": "hn@ycombinator.com",
+      "support_sent_at": "2026-11-04T15:22:19Z",
+      "support_reply_status": "no_reply_observed"
+    },
+    {
+      "name": "OpenRGB",
+      "source": "https://openrgb.org/",
+      "community_url": "https://lemmy.today/c/OpenRGB",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect current Lemmy rules and publish one concrete existing-importer discussion from their own account; no post sent."
+    },
+    {
+      "name": "SoapySDR",
+      "source": "https://github.com/pothosware/SoapySDR/wiki#feedback",
+      "status": "subscription_mail_command_rejected_manual_route_remaining",
+      "relevance": "SDR hardware abstraction layer and per-device backend modules.",
+      "next_action": "One documented Pothos Users subscription request was rejected with a generic group/permission notice; exact cause unknown. No introduction sent. Do not retry or bypass via owner addresses; owner can inspect normal web membership.",
+      "community_url": "https://groups.google.com/g/pothos-users"
+    },
+    {
+      "name": "tuya-local",
+      "source": "https://github.com/make-all/tuya-local/blob/633c008f982f8e39c03d9a8f3fa34aa4d0c8d88f/README.md",
+      "status": "community_channel_and_policy_review_needed",
+      "relevance": "Existing importer of product configurations.",
+      "next_action": "No GitHub Discussions; README supports device configs/new-device issue workflows, not a verified generic promotion route. Review applicable policy/channel before contact. Existing importer is present; config availability does not establish unrestricted local access, hub support or firmware replacement. Local control does not prevent stock firmware cloud traffic. No contact or promotional issue."
+    },
+    {
+      "name": "PkTriggerCord",
+      "source": "https://pktriggercord.melda.info/",
+      "status": "deferred_pending_catalogue_correction",
+      "issue_url": "https://github.com/opendevicedb/opendevicedb/issues/20",
+      "issue_message": "messages/2026-11-04/pktriggercord-support-issue.md",
+      "next_action": "Correct source-specific support assertions before promoting these records; the repository has no Discussions and no upstream message has been sent."
+    },
+    {
+      "name": "AsteroidOS",
+      "source": "https://asteroidos.org/contact/",
+      "community_url": "https://matrix.to/#/#Asteroid:matrix.org",
+      "status": "manual_posting_candidate",
+      "relevance": "Existing watch-model importer with hardware codenames and platform limitations.",
+      "next_action": "Owner can review room rules and ask whether an existing-importer introduction is welcome. Official project directs all discussions to Matrix; no message sent."
+    },
+    {
+      "name": "coreboot",
+      "source": "https://doc.coreboot.org/community/forums.html",
+      "community_url": "https://matrix.to/#/#coreboot:matrix.org",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can review room rules and discuss existing importer scope. GitHub is a read-only mirror without Discussions; list information returned 403. No message sent."
+    },
+    {
+      "name": "Sony-PMCA-RE / OpenMemories",
+      "source": "https://github.com/ma1co/Sony-PMCA-RE",
+      "status": "channel_research_needed",
+      "next_action": "Find a suitable official community route; main repository has no Discussions. Preserve distinct app/updater/service-mode support limits. No message sent."
+    },
+    {
+      "name": "reroads203-lab",
+      "source": "https://github.com/orgs/fujihack/discussions/24",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "next_action": "Potential future contributor lead for the Android 16 compatibility patch. No direct message alongside the new Fujihack introduction; do not infer collaboration interest."
+    },
+    {
+      "name": "Leonardo da Silva / lslv1243",
+      "source": "https://github.com/lslv1243/neo-control",
+      "status": "channel_research_needed",
+      "relevance": "His published first-generation Neo protocol work is already credited by our Neo 2 client.",
+      "next_action": "Find a suitable author-published contact route before a collaboration invitation. No GitHub Discussions or published general contact was found in the inspected README/profile. No message sent; no guessed email or promotional issue."
+    },
+    {
+      "name": "mobius2016",
+      "source": "https://github.com/o-gs/dji-firmware-tools/commit/3ca154490133e06e7e7aa7c70ebacc92bcff7815",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Concrete Air 3 communications, model-scoped calibration, replay and test-isolation contributions.",
+      "next_action": "Potential future contributor lead. No direct solicitation alongside the new dji-firmware-tools introduction; interest remains unknown."
+    },
+    {
+      "name": "DJITelloPy",
+      "source": "https://github.com/damiafuentes/DJITelloPy",
+      "status": "deferred_pending_channel_and_use_case_review",
+      "next_action": "No GitHub Discussions and no message sent. Verify a suitable official route and a concrete use case; Tello support does not establish Neo 2 compatibility."
+    },
+    {
+      "name": "Rockbox",
+      "source": "https://github.com/Rockbox/www/blob/fad60e84fe19aac38941774b39d9642ec042e24d/mail/index.cgi",
+      "community_url": "https://lists.haxx.se/mailman/listinfo/rockbox-dev",
+      "status": "subscription_awaiting_moderator_approval",
+      "subscription_requested_at": "2026-11-04T17:20:44.102557Z",
+      "confirmation_reply_sent_at": "2026-11-04T17:21:59.000Z",
+      "introduction_status": "not_sent",
+      "next_action": "Await moderator approval of membership before sending a targeted existing-importer introduction. Server notice confirms the request was forwarded to a moderator. Do not repeat registration or confirmation; no introduction sent.",
+      "membership_status": "awaiting_moderator_approval",
+      "moderation_notice_received_at": "2026-11-04T17:22:03.000Z"
+    },
+    {
+      "name": "Nura / postmarketOS",
+      "source": "https://docs.nura.eco/policies-and-processes/development/ai-policy.html",
+      "status": "excluded_from_ai_assisted_outreach",
+      "relevance": "Existing pmaports importer; former postmarketOS is now Nura.",
+      "next_action": "Do not send AI-assisted outreach or contributions, contact maintainers to bypass the community rule, or prepare generated owner-post text. Current policy explicitly prohibits generative-AI-created contributions. No contact sent."
+    },
+    {
+      "name": "LineageOS",
+      "source": "https://github.com/LineageOS/www/blob/ca73ca067d4277d1b2cf36f4af387bb7d795b70c/_data/community.yml",
+      "community_url": "https://reddit.com/r/lineageos",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect current community rules and ask whether a discussion of the existing importer is welcome. Do not use port-submission/legal addresses or a promotional issue. Bug-report rules reject AI output in that workflow; no contact sent."
+    },
+    {
+      "name": "Marlin",
+      "source": "https://github.com/MarlinFirmware/Marlin/blob/9605b4308c9b9941471fac89404e5d17d005e8eb/README.md",
+      "community_url": "https://discord.gg/marlin-firmware-461605380783472640",
+      "status": "manual_posting_candidate",
+      "next_action": "Owner can inspect Discord/forum rules and discuss example-configuration indexing. The homepage Discussions link returns 404; no promotional issue or message sent."
+    },
+    {
+      "name": "Opentrons",
+      "source": "https://github.com/Opentrons/opentrons/blob/631207155300fe9e96e08e4cfca48d11837fbd0c/CONTRIBUTING.md",
+      "status": "channel_and_policy_review_needed",
+      "relevance": "Open laboratory-robot API and source, distinct OT-2/Flex hardware/software requirements.",
+      "next_action": "Find a suitable community/cooperation route; no Discussions and no message sent. PR guidance rejects LLM-written review/question responses in that workflow. Do not treat a sales/support contact as a confirmed community route."
+    },
+    {
+      "name": "ESPHome / Home Assistant",
+      "source": "https://contributors.home-assistant.io/start/ai-policy/",
+      "status": "no_autonomous_outreach",
+      "community_url": "https://community.home-assistant.io/",
+      "next_action": "Do not post autonomously: the Open Home Foundation policy rejects autonomous agents and unreviewed generated contributions. Owner may participate personally after reviewing the work and current forum/category rules; maintainer answers must be their own. No message sent."
+    },
+    {
+      "name": "Valetudo",
+      "source": "https://valetudo.cloud/pages/general/media/",
+      "status": "excluded_from_promotional_outreach",
+      "next_action": "Do not send a promotion or collaboration solicitation. The maintainer explicitly does not seek promotion, additional users or collaborators. No message sent; existing imported data unchanged."
+    },
+    {
+      "name": "OpenKinect / libfreenect2",
+      "source": "https://github.com/OpenKinect/libfreenect2/blob/master/README.md",
+      "status": "subscription_awaiting_owner_approval",
+      "next_action": "The normal subscription and confirmation reply were sent/read back. Server confirms membership awaits owner approval. No introduction sent; do not repeat either administrative action.",
+      "community_url": "https://groups.google.com/g/openkinect"
+    },
+    {
+      "name": "ntsarb / T265 SDK port",
+      "source": "https://github.com/realsenseai/librealsense/discussions/15882",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Author publicly describes restoring T265 support in an SDK fork and asks how to share it. Firmware distribution remains an unresolved upstream discussion.",
+      "next_action": "Potential future contributor lead. No personal invitation alongside the new RealSense introduction. Do not infer collaboration interest or present the port as official support; no new support route or firmware redistribution."
+    },
+    {
+      "name": "InfiniTime organization",
+      "source": "https://github.com/InfiniTimeOrg/InfiniTime/blob/9ad16304f5fd526b781a760cf1313813d232645e/AI_USAGE.md",
+      "status": "excluded_from_ai_generated_outreach",
+      "next_action": "No generated human-facing communication or autonomous contributions under the published AI agreement. Do not approach maintainers through other channels or prepare generated owner-post copy. No contact sent."
+    },
+    {
+      "name": "OpenEPaperLink",
+      "source": "https://github.com/OpenEPaperLink/OpenEPaperLink",
+      "status": "channel_and_model_scope_review_needed",
+      "next_action": "Review official community route/policies and a concrete tag hardware/revision example. Main repository has no Discussions; no message or promotional issue sent."
+    },
+    {
+      "name": "ZMK",
+      "source": "https://github.com/zmkfirmware/zmk",
+      "status": "channel_and_model_scope_review_needed",
+      "next_action": "Review official community route/policies and keyboard/controller/shield distinctions. Main repository has no Discussions; no message or promotional issue sent."
+    },
+    {
+      "name": "NOOP / ryanbr",
+      "source": "https://github.com/ryanbr/noop/tree/2a1de7609843b095505274ad6fc811757210be80",
+      "status": "community_route_and_scope_review_needed",
+      "relevance": "Offline WHOOP interoperability and protocol documentation; source-available PolyForm Noncommercial license.",
+      "next_action": "No GitHub Discussions. Review current Reddit/Discord rules before any community introduction. Preserve clean-room boundaries, platform/strap scope and experimental Oura status. Do not describe the noncommercial license as unrestricted open source. No contact or promotional issue sent."
+    },
+    {
+      "name": "TheMysticle / TH03_ZBPS1.0 port",
+      "source": "https://github.com/pvvx/ATC_MiThermometer/discussions/791#discussioncomment-18199670",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public hardware-tracing report and firmware branch; branch existence/head verified at ee46d1918bf2fb7c51db67ae4dc2c07dd2937b48.",
+      "next_action": "Potential contributor lead. No direct invitation alongside the new ATC community introduction. Do not infer upstream acceptance, tested compatibility or collaboration interest; we did not test hardware."
+    },
+    {
+      "name": "enesbcs / BLE diagnostic app",
+      "source": "https://github.com/pvvx/ATC_MiThermometer/discussions/838",
+      "status": "deferred_contact_route_is_for_beta_testers",
+      "next_action": "No verified public app source/license and no own app or hardware test. Do not use the tester-only published address for a generic directory solicitation; no contact sent."
+    },
+    {
+      "name": "aleksamagicka / Gigabyte Waterforce and ASUS Ryujin drivers",
+      "source": "https://github.com/liquidctl/liquidctl/discussions/942#discussioncomment-19403517",
+      "status": "source_scope_reviewed_additional_catalogue_work_pending",
+      "next_action": "Source suggestion acknowledged in the existing liquidctl thread with Aquacomputer draft PR 28. Gigabyte grouped X240/X280/X360 identity and ASUS newer source variants need their own kernel/feature mapping before a proposal. Do not send a separate solicitation to the same contributor."
+    },
+    {
+      "name": "OpenBikeSensor",
+      "source": "https://www.openbikesensor.org/community/",
+      "community_url": "https://forum.openbikesensor.org/",
+      "status": "excluded_from_automated_promotional_outreach",
+      "next_action": "Inspected official forum terms prohibit advertising/solicitations and automated access. No automated campaign post, registration, promotional issue or fallback administrative contact. Preserve this as a researched exclusion; do not bypass through GitHub.",
+      "policy_source": "https://forum.openbikesensor.org/tos"
+    },
+    {
+      "name": "SlimeVR",
+      "source": "https://github.com/SlimeVR/.github/blob/349be3f98bf4623603aa4cd8342f6ffa1d224464/profile/CONTRIBUTING.md",
+      "status": "no_ai_generated_repository_outreach",
+      "relevance": "Open motion-tracking server, ESP/IMU firmware and protocol ecosystem.",
+      "next_action": "Organization policy forbids content submitted directly from AI in all SlimeVR repositories, including issues/comments and PR text. No generated post, code, promotional issue or alternate-channel bypass; no contact sent. It allows private AI research/debugging when output is not submitted."
+    },
+    {
+      "name": "X-Stuff / XReal One tracker documentation",
+      "source": "https://gist.github.com/X-Stuff/0c21145b07a4baa3012fae8bffbe0577",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "next_action": "Public setup-guide author and fork are linked by opentrack. Keep as a contributor lead; no separate invitation alongside the new opentrack introduction. No inference of model-wide compatibility, employment or collaboration interest."
+    },
+    {
+      "name": "xpadneo",
+      "source": "https://github.com/atar-axis/xpadneo/tree/39625746fff63c997eeb53fe3a6fc1a3de08702e",
+      "community_url": "https://discord.gg/nCqfKa84KA",
+      "status": "manual_community_route_rules_review_needed",
+      "relevance": "Linux Bluetooth gamepad driver, shared HID identities, model/firmware/kernel-specific support.",
+      "next_action": "No GitHub Discussions. Official README links Discord; inspect room rules before an owner introduction. No promotional issue or message. AI-assisted code is allowed with human review/testing/sign-off; agents may not open external PRs, and must not sign on behalf of the owner. These are contribution-workflow requirements, not a claimed universal communication ban."
+    },
+    {
+      "name": "Kai Krakow / kakra",
+      "source": "https://github.com/atar-axis/xpadneo/commit/39625746fff63c997eeb53fe3a6fc1a3de08702e",
+      "status": "contributor_lead_contact_route_pending",
+      "relevance": "Public recent commits document controller firmware, pairing fixes and Bluetooth-adapter variants.",
+      "next_action": "Keep as a public project-based contributor lead. The published profile website was inaccessible during this check; no general contact route verified. No guessed email, solicitation through code credits or inferred collaboration interest."
+    },
+    {
+      "name": "Bluepad32 / Ricardo Quesada",
+      "source": "https://github.com/ricardoquesada/bluepad32/tree/80d6314e46f871719fbb4b721a2cc02227c4f369",
+      "community_url": "https://discord.gg/r5aMn6Cw5q",
+      "status": "manual_community_route_rules_review_needed",
+      "relevance": "Controller-to-host support matrix separates BR/EDR and BLE, chip families, firmware and controller features.",
+      "next_action": "No GitHub Discussions; official docs route support/community to Discord. Review room rules before any owner introduction. Published email examples are for hardware donations/product trades; no unrelated directory solicitation sent there, no promotional issue. No importer or hardware test."
+    },
+    {
+      "name": "Steklorez / MissionControl BLE observations",
+      "source": "https://github.com/ndeadly/MissionControl/discussions/1167",
+      "status": "no_ai_assisted_solicitation_in_this_community",
+      "relevance": "Public report describes 8BitDo Ultimate 2 Wireless 81HE and Xbox 1914 BLE testing on one Switch; the referenced branch exists at 152dd872986a048cc9fc2c7eb03ca34a897958e6.",
+      "next_action": "Maintainer requested non-AI communication in the existing MissionControl introduction. No generated direct invitation to this related contributor or alternate-channel bypass. Public hardware claims remain unverified by us."
+    },
+    {
+      "name": "WLED",
+      "source": "https://github.com/wled/WLED/blob/a0858f71b9640f56e602a2494d0bccd861e14c06/AGENTS.md",
+      "status": "no_agent_posted_outreach",
+      "next_action": "No agent-posted discussion replies/issues. Owner may review the official community rules and participate personally. WLED modifications/PRs require its specific human-review agreement; none requested or performed."
+    },
+    {
+      "name": "OpenBeken",
+      "source": "https://github.com/openshwprojects/OpenBK7231T_App/blob/ce1abad8dc931720167a7628840adae30b92afaf/README.md",
+      "community_url": "https://www.elektroda.com/rtvforum/forum390.html",
+      "policy_source": "https://www.elektroda.com/rtvforum/faq.php",
+      "status": "excluded_from_automated_forum_promotion",
+      "next_action": "Forum prohibits unauthorized advertising and automated access. No signup, promotion, moderator solicitation or alternate-channel bypass. Device-template reuse terms and model/revision scope remain unverified; do not import from the forum."
+    },
+    {
+      "name": "OpenRazer",
+      "source": "https://github.com/openrazer/openrazer/blob/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d/README.md",
+      "community_url": "https://openrazer.github.io/",
+      "status": "published_maintainer_contact_emailed",
+      "next_action": "README, development guidance, policy inventory and source versions reviewed. One email sent/read back to Luca Weiss at his published GitHub contact. Matrix exists but room rules unreviewed and no room post. Await this email; no duplicate issue/team approach, importer or hardware test.",
+      "contact_source": "https://github.com/z3ntu"
+    },
+    {
+      "name": "Solaar",
+      "source": "https://github.com/pwr-Solaar/Solaar/blob/e7304c4c451cc9bb4f206a914844525e67856a28/README.md",
+      "status": "published_contributor_contact_emailed",
+      "next_action": "README, known issues, device docs, policy inventory and current public contributor evidence reviewed. One email sent/read back to Peter F. Patel-Schneider at his published GitHub contact. Await feedback; no promotional bug issue, extra contributor email, importer or hardware test.",
+      "contact_source": "https://github.com/pfps"
+    },
+    {
+      "name": "libratbag / Piper",
+      "source": "https://github.com/libratbag/libratbag/blob/8235b5bb6032dea15901ab58a8218956f4494d08/README.md",
+      "status": "list_scope_and_policy_review_needed",
+      "next_action": "Normal public listinfo read succeeded; page currently describes libevdev/evtest/evemu while libratbag README links it. Verify present scope/activity and freedesktop policy before a proposal. Signup has CAPTCHA; no form, bypass, subscription, message, importer or hardware test."
+    },
+    {
+      "name": "Open Know-How / Internet of Production",
+      "source": "https://github.com/iop-alliance/OpenKnowHow/blob/9b53cecbbbcf40bf3f8b339e4179d4f2cae2aeb9/CODE_OF_CONDUCT.md",
+      "status": "excluded_from_promotional_outreach",
+      "next_action": "Published content policy prohibits posts primarily intended for promotion/backlinks. No campaign email, forum post, contributor solicitation or alternate-channel bypass. Open-hardware design metadata is not interchangeable with reverse-engineered retail-device records."
+    },
+    {
+      "name": "Jo Walsh / metazool",
+      "source": "https://github.com/ResearchCulture/hwidx/issues/12",
+      "profile_source": "https://github.com/metazool",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public OSHWA/hwidx identifier-interoperability question; name verified from public profile. No professional role or interest in OpenDeviceDB inferred.",
+      "next_action": "Keep as a contributor lead without a separate personal invitation alongside the new hwidx question."
+    },
+    {
+      "name": "pid.codes",
+      "source": "https://pid.codes/",
+      "status": "scope_policy_and_contact_review_needed",
+      "relevance": "Registry of USB product identifiers for open-source hardware. Device identifier allocation differs from retail-model catalogue records.",
+      "next_action": "Read current eligibility, contributor guidance, data terms and an appropriate general channel before contact; do not request a PID for this catalogue or infer USB-IF endorsement. No contact or importer."
+    },
+    {
+      "name": "Circuit-Overtime / Oreo Badge",
+      "source": "https://github.com/orgs/micropython/discussions/19847",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public Show and tell describes an ESP32-S3 conference badge with MicroPython software, board definition and hardware-design files. Claims are the author's, not our hardware/source verification.",
+      "next_action": "Retain as a future device/contributor lead. No direct invitation alongside the new MicroPython introduction; verify source/license/hardware scope before a catalogue entry."
+    },
+    {
+      "name": "CircuitPython",
+      "source": "https://github.com/adafruit/circuitpython/tree/66688d5d05613bd60dbf8cb0cd0e6db4f62bb23a",
+      "status": "official_forum_or_discord_rules_review_pending",
+      "next_action": "Full README, AGENTS, CONTRIBUTING, CoC and policy inventory read; official website/board page reviewed. Forum returned 403; Discord room rules not read. No promotional issue, CoC-address email or developer DM as a shortcut. Review the normal community route/rules before a proposal, and verify exact board/release/module support. No contact, import, flash or hardware test.",
+      "community_url": "https://forums.adafruit.com/viewforum.php?f=60"
+    },
+    {
+      "name": "ESPEasy",
+      "source": "https://github.com/letscontrolit/ESPEasy/tree/ebaf41e7fdb2684bc191c06136fae4ed8201b5e5",
+      "status": "community_route_policy_and_device_scope_review_needed",
+      "next_action": "No GitHub Discussions. Read official forum/community rules and board/device support scope before contact. No promotional issue, message, importer or hardware test."
+    },
+    {
+      "name": "Gustavomurta / stereo ADC module documentation",
+      "source": "https://github.com/orgs/tinygo-org/discussions/4944",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public presentation describes documenting an initially undocumented ADC module and developing a schematic. Author-reported work, not our circuit/source/hardware validation.",
+      "next_action": "Retain as a future contributor lead; no direct invitation alongside the new TinyGo community introduction. Verify source/license and exact module identity before any catalogue claim."
+    },
+    {
+      "name": "FluidNC",
+      "source": "https://github.com/bdring/FluidNC/blob/4828e88559293d761c1c03ae09c24cf6eb815a02/README.md",
+      "wiki_source": "https://github.com/bdring/fluidnc-wiki-content",
+      "status": "current_community_route_and_policy_review_needed",
+      "next_action": "No GitHub Discussions. README routes development discussion to invitation-only Discord; wiki fetch failed. Review current wiki source/channel rules before an invitation or cooperation request. AI config helpers do not establish community posting permission or machine-config correctness. No contact, promotional issue, importer, config change or hardware test."
+    },
+    {
+      "name": "chenglianshu / GD32F4xx grblHAL port",
+      "source": "https://github.com/grblHAL/core/discussions/993",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author reports porting a hardware driver and testing it. Those claims are not our source or physical validation.",
+      "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new grblHAL introduction. Verify actual repository, license, controller/release scope and upstream status before any catalogue claim."
+    },
+    {
+      "name": "Awesome Embedded Security / hexsecs",
+      "source": "https://github.com/hexsecs/awesome-embedded-security/tree/87ab521240cab9d40e75b870a9f9d708ab4d4874",
+      "status": "deferred_scope_fit_uncertain",
+      "next_action": "No submission now: list requires embedded-security-specific resources and has no clear device-directory category. OpenDeviceDB was not found in its entry/declined registry, and no prior contact found. This is our fit assessment, not maintainer rejection or an AI ban. Do not change its declined registry or create a promotional issue."
+    },
+    {
+      "name": "Awesome IoT and Hardware Security / kayranfatih",
+      "source": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/blob/4dfa9818769afc8372eb2c5df730c178781e8bef/contributing.md",
+      "status": "pull_request_submitted",
+      "next_action": "Full source/policy/category and duplicate review completed; one-entry PR submitted and independently read back. Await review in the existing PR; no duplicate contact or accepted listing claim.",
+      "url": "https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2"
+    },
+    {
+      "name": "Black Magic Debug",
+      "source": "https://black-magic.org/blog/codeberg-migration/",
+      "repository": "https://codeberg.org/blackmagic-debug/blackmagic",
+      "status": "excluded_from_autonomous_outreach_based_on_maintainer_position",
+      "next_action": "The official April 2026 migration post strongly rejects AI and describes its burden on maintainers. Campaign decision: no AI-assisted introduction, Codeberg/forum/chat contact or alternate-channel bypass. This is an assessment of the stated maintainer position, not a claim that a formal universal communication-ban clause was verified. Old GitHub repository is archived; do not post there."
+    },
+    {
+      "name": "nattgris / pyocd-mpsse",
+      "source": "https://github.com/pyocd/pyOCD/discussions/1701",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author presents an FTDI MPSSE probe plugin, reporting SWD-only limitations, adapter-specific USB and GPIO settings and an OpenOCD background. These are author-reported claims, not our source or hardware validation.",
+      "next_action": "Retain as a potential contributor/source lead without a direct invitation alongside the new pyOCD introduction. Verify current source, license, exact adapter/wiring and upstream state before any catalogue entry; no universal FTDI support claim."
+    },
+    {
+      "name": "Open-CMSIS-Pack / cpackget",
+      "source": "https://github.com/pyocd/pyOCD/blob/0ce0fbd201010d617d7a4e3582c39b8e8561e33d/README.md#cmsis-alignment",
+      "repository": "https://github.com/Open-CMSIS-Pack/cpackget",
+      "status": "source_policy_and_data_terms_review_needed",
+      "relevance": "Current pyOCD direction points to common pack management and vendor device descriptions, potentially useful for source-qualified board/device discovery.",
+      "next_action": "Research canonical metadata, board-versus-MCU identity and third-party pack reuse terms, plus community policy and existing contacts before any submission. No contact or importer; avoid a parallel introduction duplicating the fresh pyOCD source question."
+    },
+    {
+      "name": "OpenHMD",
+      "source": "https://github.com/OpenHMD/OpenHMD/blob/85075b0c7e3c723ded2577edb79d00ee11aac339/README.md",
+      "status": "deferred_upstream_explicitly_unmaintained",
+      "next_action": "Current README says not actively maintained and routes XR driver development to Monado. GitHub repository is not archived, but that does not override its maintenance notice. No introduction or maintainer-recruitment issue. CV1 positional tracking is separately developed in the linked thaytan fork; do not transfer its capabilities to upstream."
+    },
+    {
+      "name": "Monado",
+      "source": "https://monado.freedesktop.org/",
+      "repository": "https://gitlab.freedesktop.org/monado/monado",
+      "community_url": "https://matrix.to/#/#monado:matrix.org",
+      "status": "policy_and_community_rules_review_needed",
+      "next_action": "Official site identifies Matrix/Discord/IRC and freedesktop CoC. Repository access returned Anubis access-denied; CoC fetch timed out. No bypass, account creation, issue or introduction. Verify full current contribution/community policies before contact. Preserve driver/backend, OS, tracking mode and WIP versus merged support; no importer or headset test."
+    },
+    {
+      "name": "libsurvive",
+      "source": "https://github.com/collabora/libsurvive/blob/44b1e2f0cb95e5697bc0b86f58fd8520a813b713/README.md",
+      "community_url": "https://app.element.io/#/room/#libsurvive-main:matrix.org",
+      "status": "community_rules_and_policy_review_needed",
+      "next_action": "Old cntools repository redirects to collabora/libsurvive; canonical repo has no GitHub Discussions. README directs discussion to Discord/Matrix. Review current room and source policy before contact; no promotional issue or guessed email. Tracking/calibration is not a complete HMD display runtime. No importer, local tool run or tracking/hardware test."
+    },
+    {
+      "name": "WiVRn / Linux VR Adventures",
+      "source": "https://github.com/WiVRn/WiVRn/blob/6adb188c154572a27fd6f0d97ba5a732d7095090/README.md",
+      "community_url": "https://vronlinux.org/docs/community/",
+      "status": "community_rules_and_full_policy_review_needed",
+      "next_action": "No GitHub Discussions; README routes community questions to LVRA Matrix/Discord wivrn room. Old lvra.gitlab.io redirects to vronlinux.org. Read room/full source policies before a relevant introduction; no contact or fake issue. Preserve exact headset, client/server version pairing, host/platform and package restrictions; Android VR class alone does not imply tested model support. No importer or streaming/hardware test."
+    },
+    {
+      "name": "Project Babble",
+      "source": "https://github.com/Project-Babble/ProjectBabble",
+      "status": "source_license_policy_and_channel_review_needed",
+      "next_action": "Repository metadata identifies a DIY mouth-tracking project, active/non-archived with no GitHub Discussions. Full README, current licenses, exact hardware and contribution/community policy not yet reviewed. No contact, separate solicitation alongside the new related EyeTrackVR post, importer or physical test."
+    },
+    {
+      "name": "nairol / LighthouseRedox",
+      "source": "https://github.com/collabora/libsurvive/blob/44b1e2f0cb95e5697bc0b86f58fd8520a813b713/README.md#addendum-and-notes",
+      "repository": "https://github.com/nairol/LighthouseRedox",
+      "status": "public_source_lead_current_scope_review_needed",
+      "next_action": "libsurvive credits this project for reverse-engineering documentation. Current activity, license and detailed hardware scope not independently verified; no employment, present collaboration interest or our hardware validation inferred. No personal invitation or guessed contact."
+    },
+    {
+      "name": "HID Remapper / jfedor2",
+      "source": "https://github.com/jfedor2/hid-remapper/blob/51ab8b367b810d1deb0d3e487e9b7fe8c7e9c24e/README.md",
+      "community_url": "https://forum.remapper.org/",
+      "policy_source": "https://forum.remapper.org/guidelines",
+      "status": "full_policy_terms_and_forum_route_review_needed",
+      "next_action": "No GitHub Discussions. Website links an active project forum; general guidelines read, terms could not load and full repository policy not reviewed. No account, post, issue, direct maintainer email or alternate-channel bypass. Keep RP2040/nRF52840/serial families, board-specific binaries, dual-Pico versus custom-board update steps and host-browser configuration requirements separate. No importer, firmware build or hardware test."
+    },
+    {
+      "name": "RIOT",
+      "source": "https://github.com/RIOT-OS/RIOT/blob/4331a82c45ed2df990a7d17cc1badf2dbd1e1ab8/doc/guides/general/ai_policy.md",
+      "status": "no_ai_generated_community_outreach",
+      "next_action": "Policy explicitly forbids LLM-generated communication with humans and autonomous agent actions without human approval; PR/issue descriptions and replies must be written by contributors. No campaign post, drafted copy for the owner, forum/Matrix/issue/email contact or alternate-project/channel bypass. Human-reviewed AI-assisted code can be allowed under its stated constraints; this is not a blanket ban on every private AI use."
+    },
+    {
+      "name": "Shylie / pico-ice USB webcam demonstration",
+      "source": "https://github.com/hathach/tinyusb/discussions/2817",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author describes an RP2040 plus iCE40 FPGA board producing UVC video using TinyUSB, with PIO/DMA transport. These are author-reported results, not our source or hardware validation.",
+      "next_action": "Retain as a potential device/capture contributor lead. No separate invitation alongside the new TinyUSB source question. Verify current implementation, license, board revision and evidence before any catalogue entry; do not infer occupation or collaboration interest."
+    },
+    {
+      "name": "LibreVNA / Groups.io channel",
+      "source": "https://github.com/jankae/LibreVNA/blob/c47781910221ba2b02636229920a7c8d48aeb8f8/README.md",
+      "community_url": "https://groups.io/g/LibreVNA-support/",
+      "policy_source": "https://groups.io/static/tos",
+      "status": "channel_excluded_unsolicited_promotion",
+      "next_action": "Preferred group page is publicly accessible; reader HTTP 402 was not proof of paid membership. Terms prohibit unauthorized promotional solicitation. No subscription, group announcement, owner-email request or switch to GitHub merely to evade the restriction. This is not an AI ban or a prohibition on independent source research. No page/importer, firmware/FPGA build or VNA test."
+    },
+    {
+      "name": "Alexander Bessman / PSLab tools",
+      "source": "https://github.com/bessman",
+      "project_source": "https://github.com/fossasia/pslab-python",
+      "status": "deferred_to_avoid_same_project_duplicate",
+      "relevance": "PSLab website links his public profile; repository contributors list shows PSLab Python work, and profile pins PSLab, mcbootflash and pytest-reserial. Source/license and runtime behavior of the separate tools not reviewed.",
+      "next_action": "Potential future technical collaborator/source lead. FOSSASIA project-partnership contact has received one message; do not send a parallel personal invitation. No inferred occupation, collaboration interest or hardware validation."
+    },
+    {
+      "name": "Awesome Hardware and IoT Hacking / JoasASantos",
+      "source": "https://github.com/JoasASantos/Awesome-Hardware-and-IoT-Hacking/tree/f0584d4320d5bd79d23562dfeab64b7ced51a4d4",
+      "status": "deferred_to_original_resource_list",
+      "next_action": "README introduction links the FKIE list and reuses its category/resource descriptions. Prefer the original FKIE listing proposal rather than submitting a duplicate to this compilation now. No fork, issue, PR or email. Full README and attached PDF/XLSX/XMind contents not reviewed; no broader policy claim."
+    },
+    {
+      "name": "Hamlib",
+      "source": "https://github.com/Hamlib/Hamlib/tree/9199f8a239aed26b5eb0ee9c1a73bf51580483ce",
+      "community_url": "https://github.com/Hamlib/Hamlib/discussions",
+      "status": "introduction_published",
+      "next_action": "Full developer guidance, AI section, channel and duplicate review completed. One Show and tell introduction published and read back; await feedback in that thread. No duplicate list/email/issue, importer, build, radio command or transmission.",
+      "url": "https://github.com/Hamlib/Hamlib/discussions/2310"
+    },
+    {
+      "name": "Petoi / OpenCat quadruped robots",
+      "source": "https://github.com/PetoiCamp/OpenCatEsp32-Quadruped-Robot/tree/f5aba6b9cb7e4f2062f77365fbcd0c388acf32ef",
+      "status": "official_partnership_route_contacted",
+      "next_action": "Legacy/current README, licenses, policy inventories and official partnership route reviewed. One email sent/read back to the published contact; await feedback. No duplicate community post or affiliate signup. Exact robot/controller/release requirements still need selecting before a catalogue page; no hardware test.",
+      "contact_source": "https://www.petoi.com/pages/partnership"
+    },
+    {
+      "name": "Mauro / IZ2BKT — CatBkt2",
+      "source": "https://github.com/Hamlib/Hamlib/discussions/2198",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author announces a planned free Hamlib-based CAT-control application. Current release, source license and implementation have not been independently reviewed; free availability does not establish open source.",
+      "next_action": "Retain as a possible future user/contributor lead without a personal invitation alongside the fresh Hamlib presentation. No guessed contact, inferred full identity or present collaboration interest."
+    },
+    {
+      "name": "Filipe Laíns / FFY00 — libratbag and openinput",
+      "source": "https://ffy00.github.io/",
+      "profile": "https://github.com/FFY00",
+      "status": "deferred_to_avoid_parallel_peripheral_solicitation",
+      "relevance": "Public personal site describes libratbag/openinput maintainership and USB HID/Wireshark work. Separate project sources, current roles/licenses and community guidance have not been fully reviewed.",
+      "next_action": "Retain as a future public source/contributor lead; no personal invitation alongside the new Solaar/OpenRazer contacts. Review exact project scope, policy, channel and duplicates before any approach. Do not infer collaboration interest or treat biography as hardware validation."
+    },
+    {
+      "name": "Red Pitaya",
+      "source": "https://github.com/RedPitaya/RedPitaya/tree/0e46d64396a57752bf97315789d6cc6c9fbddad8",
+      "community_url": "https://forum.redpitaya.com/",
+      "status": "official_forum_registration_terms_access_pending",
+      "next_action": "Official forum home is public and includes project/idea categories. Terms read timed out; registration page returned a verification interstitial. No signup, bypass, post, email or fallback merely to evade access/rules. Not an AI ban or project rejection. Board/app/version source review still needed before catalogue claims."
+    },
+    {
+      "name": "gelanchez / crazy-hand",
+      "source": "https://github.com/orgs/bitcraze/discussions/2249",
+      "repository": "https://github.com/gelanchez/crazy-hand",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public author describes Crazyflie 2.1 plus AI-deck/Crazyradio, Wi-Fi camera images, PC gesture recognition and custom firmware. Relevant to PC/drone/camera interoperability; these are author-reported results, not our code/license/flight validation.",
+      "next_action": "Retain as a future contributor/source lead without a direct invitation alongside the new Bitcraze introduction. Verify current source, licenses and exact hardware/software requirements before a catalogue claim. Do not infer occupation or collaboration interest."
+    },
+    {
+      "name": "builder555 / Pinecil BLE tools",
+      "source": "https://github.com/Ralim/IronOS/discussions/1562",
+      "project_source": "https://github.com/builder555/PineSAM",
+      "status": "deferred_to_avoid_same_community_duplicate",
+      "relevance": "Public Show and tell describes a Pinecil V2 BLE settings page; current IronOS README links PineSAM from this account. Separate source/license and current firmware compatibility not reviewed.",
+      "next_action": "Retain as a future protocol/tool contributor lead without a personal invitation alongside the new IronOS post. No assumed full identity, occupation, current collaboration interest or our hardware validation."
+    },
+    {
+      "name": "Open3D",
+      "source": "https://github.com/isl-org/Open3D/tree/b6c5e196384ad71e75b6e6f9c5da22d046221f1d",
+      "community_url": "https://github.com/isl-org/Open3D/discussions",
+      "status": "deferred_pending_demonstrated_open3d_use",
+      "relevance": "Point-cloud/mesh processing and reconstruction; potential downstream interoperability.",
+      "next_action": "Show and tell explicitly concerns work made with Open3D. No Open3D integration verified in the inspected Spatial Capture README/pyproject. No post, fake issue, Discord or personal invitation; verify a real usage example and any further applicable policy before contact."
+    },
+    {
+      "name": "colmap-wasm / browser SfM tool authors",
+      "source": "https://github.com/colmap/colmap/discussions/4878",
+      "additional_source": "https://github.com/colmap/colmap/discussions/4747",
+      "status": "deferred_fresh_community_presentation",
+      "next_action": "Related public projects found while reading venue examples. Do not send parallel personal invitations alongside the new COLMAP thread. Code, licenses, claimed native equivalence and performance have not been independently reviewed."
+    },
+    {
+      "name": "yeicor / colmap-openmvs-app",
+      "source": "https://github.com/cdcseacave/openMVS/discussions/1281",
+      "additional_source": "https://github.com/yeicor/colmap-openmvs-app",
+      "status": "deferred_fresh_community_presentation",
+      "next_action": "Relevant pipeline/UI author found in the official Show and tell examples. Read selected presentation sections and full returned maintainer/author comments, not the implementation, deployment or full license chain. No inferred identity/occupation, verified platform/performance claim or separate personal invitation alongside the new OpenMVS post."
+    }
+  ],
+  "remaining": [
+    "Reply in the existing threads to hwidx, usb-rea, PyMeasure and Theengs Decoder (substantive responses received 2026-11-05 to 2026-11-10)",
+    "Decide on the REA joint tutorial outline suggested by XinwangTao",
+    "Owner to review the private un0rick reply; MissionControl reply is owner-only, without AI assistance",
+    "Await sigrok list-owner help with subscription; original outreach has not been reposted",
+    "Await NUT moderation; do not resend",
+    "Await gPhoto moderation; do not resend",
+    "Await review of liquidctl PR 943 and the open awesome-list PRs (MCP servers, connected-things, FKIE)",
+    "Continue with the research queue if further outreach is pursued; verify channel and duplicates first"
+  ],
+  "manual_posting_guide": "manual-posting.md"
+}

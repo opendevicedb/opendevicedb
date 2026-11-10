@@ -44,6 +44,9 @@ An [experimental fwupd declaration index](docs/fwupd-index.md) preserves plugin
 identifiers and their source context for future device mapping. It is separate
 from the device catalogue.
 
+Community research, outreach history and outgoing messages are tracked in the
+[outreach journal](docs/outreach/README.md).
+
 ```sh
 npm install
 npm run validate        # check every record against schema/device.schema.json
