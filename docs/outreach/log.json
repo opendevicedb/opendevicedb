@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-10T20:05:00+00:00",
+  "last_verified_at": "2026-11-10T20:40:00+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -517,7 +517,22 @@
       "published_at": "2026-11-04T16:12:33Z",
       "message": "messages/2026-11-04/opentabletdriver.md",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Await corrections on the imported records (360 tablets from v0.6.8.1). No duplicate introduction.",
+      "followups": [
+        {
+          "url": "https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238#discussioncomment-19528386",
+          "published_at": "2026-11-10T20:31:55Z",
+          "message": "messages/2026-11-10/opentabletdriver-import.md",
+          "outgoing_text_verified": true
+        }
+      ],
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/44",
+          "status": "merged_and_deployed",
+          "merged_at": "2026-11-10T20:15:00Z"
+        }
+      ]
     },
     {
       "name": "OpenHantek6022",
@@ -1364,7 +1379,14 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/z3ntu",
       "project_source": "https://github.com/openrazer/openrazer/tree/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d",
-      "next_action": "Await this email about a proposed OpenRazer device index. Keep released/versioned scope, exact USB wired/wireless variants, kernel/daemon/app and distribution requirements. No duplicate Matrix/issue/maintainer contact, page/importer, module load or hardware test."
+      "next_action": "The proposed index is now implemented as an OpenRazer importer (PR 45, README tables at v3.12.4). Owner may mention it in the existing email thread; OpenRazer has no GitHub Discussions. No duplicate introduction.",
+      "catalogue_changes": [
+        {
+          "url": "https://github.com/opendevicedb/opendevicedb/pull/45",
+          "status": "merged",
+          "merged_at": "2026-11-10T20:19:00Z"
+        }
+      ]
     },
     {
       "name": "Solaar / Peter F. Patel-Schneider",
@@ -2257,6 +2279,11 @@
       "additional_source": "https://github.com/yeicor/colmap-openmvs-app",
       "status": "deferred_fresh_community_presentation",
       "next_action": "Relevant pipeline/UI author found in the official Show and tell examples. Read selected presentation sections and full returned maintainer/author comments, not the implementation, deployment or full license chain. No inferred identity/occupation, verified platform/performance claim or separate personal invitation alongside the new OpenMVS post."
+    },
+    {
+      "name": "libratbag",
+      "status": "imported_without_contact",
+      "note": "libratbag importer merged (PR 43). Discussion happens on the input-tools mailing list; the GitHub issue tracker is for bugs. Owner may announce it on the list; no automated post."
     }
   ],
   "remaining": [
