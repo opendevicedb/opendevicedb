@@ -67,6 +67,10 @@ claude mcp add opendevicedb -e ODB_REPO="$PWD" -- node "$PWD/packages/mcp/src/se
       <li><a href="/api/sources.json"><code>/api/sources.json</code></a> — imported sources with licenses, snapshot dates and counts</li>
       <li><a href="/api/wanted.json"><code>/api/wanted.json</code></a> — open device requests: <code>id, vendor, model, category, identifiers, votes, url, issues, opened</code></li>
     </ul>
+    <h3 id="clients">Tools using the API</h3>
+    <ul>
+      <li><a href="https://github.com/emirmrkaljevic/usb-rea">usb-rea</a> (from v0.7.12): <code>usb-rea lookup VID:PID --online</code> and its <code>lookup_device</code> MCP tool check a USB device against OpenDeviceDB before you start a capture. Only the ID is sent, and a match is reported as a hint, not proof.</li>
+    </ul>
     <p class="small muted">The agent skill file shipped with the server (<code>packages/mcp/SKILL.md</code>) is CC0, so other tools can embed it.</p>
   </div>
 </Base>

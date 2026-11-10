@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "OpenDeviceDB",
-  "last_verified_at": "2026-11-10T08:30:00+00:00",
+  "last_verified_at": "2026-11-10T12:25:00+00:00",
   "scope": "Research and outreach recoverable from the current working session, including earlier public introductions and subsequent follow-ups. This is a reconstructed baseline, not a claim of a complete lifetime contact history.",
   "privacy": "Public project contacts and our outgoing professional messages only. No mailbox identifiers, mail headers, confirmation/cancellation tokens, residence details, phone numbers or personal correspondence.",
   "status_semantics": {
@@ -197,13 +197,21 @@
       "published_at": "2026-11-04T07:34:43Z",
       "message": "messages/2026-11-04/zenanythin.md",
       "outgoing_text_verified": true,
-      "next_action": "Owner decision pending on drafting a tutorial outline with one public device case. No tutorial written yet.",
+      "next_action": "Await XinwangTao's feedback on the outline. Offered to draft steps 1 to 3 as a document if the structure works. No tutorial written yet.",
       "responses": [
         {
           "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380",
           "by": "XinwangTao",
           "received_at": "2026-11-05T04:13:46Z",
           "summary": "Supports the joint REA/OpenDeviceDB tutorial idea (pick a device, look up its status, resolve one open question, contribute a scoped finding) and suggests a first outline built on one public device case."
+        }
+      ],
+      "followups": [
+        {
+          "url": "https://github.com/morluto/rea/discussions/5334#discussioncomment-19518373",
+          "published_at": "2026-11-10T12:21:02Z",
+          "message": "messages/2026-11-10/rea-tutorial-outline.md",
+          "outgoing_text_verified": true
         }
       ]
     },
@@ -298,7 +306,7 @@
       "published_at": "2026-11-04T11:49:51Z",
       "message": "messages/2026-11-04/usb-rea.md",
       "outgoing_text_verified": true,
-      "next_action": "Owner reply pending: answer the endpoint and record-field question in the existing thread. The integration is upstream work by the usb-rea maintainer, unreleased at last check; not tested by OpenDeviceDB.",
+      "next_action": "Await the maintainer's release. Offered to list usb-rea in OpenDeviceDB documentation as a static-API client once released; not done yet.",
       "responses": [
         {
           "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19497977",
@@ -311,6 +319,14 @@
           "by": "emirmrkaljevic",
           "received_at": "2026-11-09T18:09:16Z",
           "summary": "Reports a first lookup command and lookup_device MCP tool in usb-rea main at 3bc5f84 (unreleased). Offline by default; --online queries the OpenDeviceDB static API (/api/index.json and the device record), sends only the VID:PID and labels matches as hints. Asks whether to use a different endpoint or show more of the record (status, install routes)."
+        }
+      ],
+      "followups": [
+        {
+          "url": "https://github.com/emirmrkaljevic/usb-rea/discussions/3#discussioncomment-19518369",
+          "published_at": "2026-11-10T12:20:58Z",
+          "message": "messages/2026-11-10/usb-rea-reply.md",
+          "outgoing_text_verified": true
         }
       ]
     },
@@ -614,13 +630,21 @@
       "published_at": "2026-11-04T17:04:55Z",
       "message": "messages/2026-11-04/pymeasure.md",
       "outgoing_text_verified": true,
-      "next_action": "Reply pending to the question of what an importer would need, noting that serial/GPIB instruments cannot be matched by USB identifiers. No importer implemented.",
+      "next_action": "Await the answer on where driver classes and covered models are listed. Committed to bringing a small sample back to the thread for corrections before any full import. No importer implemented.",
       "responses": [
         {
           "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411",
           "by": "BenediktBurger",
           "received_at": "2026-11-05T09:25:42Z",
           "summary": "Welcomes a PyMeasure importer and asks what it would need. Most instruments use serial or GPIB, so USB identifiers do not apply; drivers come from users testing them in their labs. Points to the curated python-lab-automation-landscape catalogue."
+        }
+      ],
+      "followups": [
+        {
+          "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19518370",
+          "published_at": "2026-11-10T12:20:59Z",
+          "message": "messages/2026-11-10/pymeasure-reply.md",
+          "outgoing_text_verified": true
         }
       ]
     },
@@ -862,13 +886,21 @@
       "published_at": "2026-11-04T18:47:10Z",
       "message": "messages/2026-11-04/theengs-decoder.md",
       "outgoing_text_verified": true,
-      "next_action": "Reply pending; assess a device-list importer that keeps decoder-only versus gateway-required properties and decryption requirements distinct. No importer implemented.",
+      "next_action": "Committed to posting a small sample of records in the thread for corrections. No importer implemented.",
       "responses": [
         {
           "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19417668",
           "by": "DigiH",
           "received_at": "2026-11-05T12:01:14Z",
           "summary": "Positive. Points to the decoder device list (decoder.theengs.io/devices/devices.html); some properties and SwitchBot control need OpenMQTTGateway, and encrypted broadcasts (LYWSD03MMC PVVX, BTHome v2, Victron) are decrypted by client apps such as Theengs Gateway."
+        }
+      ],
+      "followups": [
+        {
+          "url": "https://github.com/theengs/decoder/discussions/723#discussioncomment-19518371",
+          "published_at": "2026-11-10T12:21:01Z",
+          "message": "messages/2026-11-10/theengs-decoder-reply.md",
+          "outgoing_text_verified": true
         }
       ]
     },
@@ -1018,13 +1050,21 @@
       "contact_source": "https://m.hwidx.org/",
       "message": "messages/2026-11-04/hardware-index-hwidx.md",
       "outgoing_text_verified": true,
-      "next_action": "Owner reply pending in the existing issue: propose linking through hwidx router URLs and keeping hwidx identifiers distinct, and wait for a settled data licence before any import or metadata republication. No importer, data reuse or licence agreement yet.",
+      "next_action": "Await John Vidler's answer on licence and on hand-written records that reference only hwidx identifiers and router URLs. No import or metadata republication until the licence is settled.",
       "responses": [
         {
           "url": "https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6754941906",
           "by": "JohnVidler",
           "received_at": "2026-11-10T00:07:33Z",
           "summary": "Confirms that several hwidx identifiers may share one canonical documentation URL: identifiers are stable printed revision strings, and only their targets may change, so OpenDeviceDB should keep them distinct. The data licence is not settled yet. Open to downstream use, but asks downstream catalogues to link through hwidx router URLs rather than direct documentation URLs, so its periodic link checks and fallback meta pages keep working. Asks how to integrate cleanly."
+        }
+      ],
+      "followups": [
+        {
+          "url": "https://github.com/ResearchCulture/hwidx/issues/40#issuecomment-6767152583",
+          "published_at": "2026-11-10T12:20:56Z",
+          "message": "messages/2026-11-10/hwidx-reply.md",
+          "outgoing_text_verified": true
         }
       ]
     },
@@ -2189,8 +2229,7 @@
     }
   ],
   "remaining": [
-    "Reply in the existing threads to hwidx, usb-rea, PyMeasure and Theengs Decoder (substantive responses received 2026-11-05 to 2026-11-10)",
-    "Decide on the REA joint tutorial outline suggested by XinwangTao",
+    "Follow up on the 2026-11-10 replies (hwidx, usb-rea, PyMeasure, Theengs Decoder, REA tutorial); PyMeasure and Theengs samples and the REA outline draft were offered",
     "Owner to review the private un0rick reply; MissionControl reply is owner-only, without AI assistance",
     "Await sigrok list-owner help with subscription; original outreach has not been reposted",
     "Await NUT moderation; do not resend",
