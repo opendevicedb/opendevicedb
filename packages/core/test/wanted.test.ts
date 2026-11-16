@@ -48,6 +48,22 @@ test("a request maps to a registry record by id or shared identifier only", () =
   assert.equal(recordForRequest(recs, { ...r, identifiers: [] }), null);
 });
 
+test("a chipset shared with another phone does not satisfy a device request", () => {
+  const records = [{ id: "nokia/1", vendor: "Nokia", model: "1", category: "phone", status: "partial-protocol", identifiers: { chips: ["MT6739"] }, updated: "2026-11-16" }] as DeviceRecord[];
+  assert.equal(recordForRequest(records, { id: "alcatel/5033xr", identifiers: ["5033XR", "Macau", "MT6739"] }), null);
+  assert.equal(recordForRequest(records, { id: "nokia/1", identifiers: ["MT6739"] })?.id, "nokia/1");
+});
+
+test("shared device identifiers and conflicting identifiers leave exact-unit matching unresolved", () => {
+  const a = { id: "acme/one", vendor: "Acme", model: "One", category: "phone", status: "controllable", updated: "2026-11-16", identifiers: { usb: ["1234:5678"], sku: ["ONE1"] } } as DeviceRecord;
+  const b = { ...a, id: "acme/two", model: "Two", identifiers: { usb: ["1234:5678"], sku: ["TWO2"] } };
+  for (const records of [[a, b], [b, a]]) {
+    assert.equal(recordForRequest(records, { id: "acme/unknown", identifiers: ["1234:5678"] }), null);
+    assert.equal(recordForRequest(records, { id: "acme/unknown", identifiers: ["ONE1", "TWO2"] }), null);
+    assert.equal(recordForRequest(records, { id: "acme/unknown", identifiers: ["ONE1"] })?.id, a.id);
+  }
+});
+
 test("the pre-filled issue link carries the template and fields", () => {
   const u = new URL(wantedIssueUrl({ vendor: "DJI", model: "Neo 2", identifiers: ["SS3-NEO2"] }));
   assert.equal(u.pathname, "/opendevicedb/opendevicedb/issues/new");

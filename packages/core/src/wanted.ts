@@ -133,13 +133,18 @@ export function matchWanted(wanted: WantedEntry[], q: WantedQuery, fuzzy = true)
   return best && best.score >= 20 ? wanted.find((w) => w.id === best.id) ?? null : null;
 }
 
-/** The registry record a request is about: same id or a shared identifier (never fuzzy). */
+/** Same id, or a unique match on a device identifier. Shared chips do not identify a product. */
 export function recordForRequest(records: DeviceRecord[], r: Pick<WantedRequest, "id" | "identifiers">): DeviceRecord | null {
   const byId = records.find((x) => x.id === r.id);
   if (byId) return byId;
   const ids = r.identifiers.map(compact).filter((x) => x.length >= 4);
   if (!ids.length) return null;
-  return records.find((x) => Object.values(x.identifiers ?? {}).flat().some((v) => ids.includes(compact(v!)))) ?? null;
+  const matches = records.filter((x) => Object.entries(x.identifiers ?? {})
+    .filter(([kind]) => kind !== "chips")
+    .some(([, values]) => values?.some((v) => ids.includes(compact(v)))));
+  // USB IDs, SKUs and advertised names can cover multiple products. Do not
+  // choose one arbitrarily or close a request using an ambiguous match.
+  return matches.length === 1 ? matches[0] : null;
 }
 
 /** Link to a new request issue, pre-filled (GitHub issue forms read field ids from the query). */
