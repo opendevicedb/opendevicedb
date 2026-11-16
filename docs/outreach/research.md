@@ -1,5 +1,15 @@
 # Community and contributor research
 
+## Five source imports implemented — 2026-11-16
+
+The [source report](../device-source-research-2026-11-16.md) now records implemented Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian importers, their factual-data/licensing approach and exact snapshot counts. Together they add 1,190 catalogue identities and enrich 129 existing entries, yielding 32,130 devices across 42 imported sources. A [news article](../../news/2026-11-16-radios-boards-mobile-linux.md) explains the scope and limitations. No upstream outreach was sent as part of this implementation; existing contact history remains unchanged.
+
+## Additional device sources and Alcatel research — 2026-11-16
+
+[Source assessment and exact-model investigation](../device-source-research-2026-11-16.md) records five candidates not registered in the importers: Meshtastic, Armbian, CircuitPython, Ubuntu Touch/UBports and Droidian. Meshtastic's structured hardware list and Armbian's board configurations are the strongest immediate import candidates; counts, revisions, support states and reuse questions are recorded separately. No upstream contact or new import in this pass, avoiding duplicate introductions to communities already in the journal.
+
+No ready-to-install Linux port was found for Alcatel 5033XR in the checked sources. A Macau Android kernel tree, a WIP TWRP tree explicitly targeting 5033F, and an Alcatel Mobile 5033 source archive are research leads, not proven XR support. The report preserves the exact scope and failed archive-download verification. No hardware test, flash operation, maintainer solicitation or issue closure.
+
 ## Targeted follow-up check — 2026-11-16
 
 Read the existing journal and outgoing archives before checking six active discussions: [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587), [Theengs](https://github.com/theengs/decoder/discussions/723), [usb-rea](https://github.com/emirmrkaljevic/usb-rea/discussions/3), [REA](https://github.com/morluto/rea/discussions/5334), [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) and [QCoDeS](https://github.com/microsoft/Qcodes/discussions/8750). Scope: latest 20 comments and latest 10 replies per returned comment, looking for third-party activity since November 10 at 20:40 UTC. PyMeasure's November 12 response was the new substantive reply in this scope; this does not establish silence in other threads or channels.
