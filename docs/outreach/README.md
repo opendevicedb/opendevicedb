@@ -56,6 +56,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [flashrom developers](messages/2026-11-04/flashrom-developers.md) | email | `sent_and_read_back`; publication unconfirmed | [contact source](https://github.com/flashrom/flashrom/blob/main/doc/contact.rst) |
 | [SANE developers](messages/2026-11-04/sane-subscription-request.md) | administrative email | `subscription_requested`; membership unconfirmed, introduction not sent | [subscription procedure](https://gitlab.com/sane-project/website/-/blob/master/mailing-lists.html) |
 | [PyMeasure](messages/2026-11-04/pymeasure.md) | GitHub discussion | `substantive_response_received` | [public post](https://github.com/pymeasure/pymeasure/discussions/1587) |
+| [QCoDeS](messages/2026-11-10/qcodes.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/microsoft/Qcodes/discussions/8750) |
 | [pyLabLib](messages/2026-11-04/pylablib.md) | email | `sent_and_read_back` | [contact source](https://pylablib.readthedocs.io/en/latest/install.html#support-and-feedback) |
 | [OpenScan](messages/2026-11-04/openscan.md) | email | `sent_and_read_back` | [contact source](https://github.com/OpenScan-org/OpenScan3#contact) |
 | [dji-firmware-tools](messages/2026-11-04/dji-firmware-tools-neo2.md) | GitHub discussion | `published_and_read_back` | [public post](https://github.com/o-gs/dji-firmware-tools/discussions/498) |
