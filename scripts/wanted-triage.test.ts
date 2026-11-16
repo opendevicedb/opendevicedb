@@ -57,6 +57,39 @@ test("identifiers match a record under another name", () => {
   assert.match((a[0] as any).body, /dji\/neo-2/);
 });
 
+test("Alcatel 5033XR cannot be answered or auto-closed using Nokia's shared chipset", () => {
+  const i = issue(47, "Alcatel", "5033xr", "use a Linux mobile OS", "5033XR\nMacau\nMT6739");
+  const unrelated = rec("nokia/1", "partial-protocol", { category: "phone", identifiers: { chips: ["MT6739"] } });
+  const actions = triage(i, [], reqs(i), [unrelated], { on: ON });
+  assert.equal(actions.length, 1);
+  assert.equal(actions[0].kind, "comment");
+  assert.doesNotMatch((actions[0] as any).body, /Nokia|nokia\/1|already in OpenDeviceDB/);
+  assert.deepEqual(lastMarker([bot((actions[0] as any).body)]), { id: "alcatel/5033xr", rank: -1 });
+  assert.equal(triage(i, [bot('<!-- odb-triage id=alcatel/5033xr rank=-1 -->')], reqs(i), [unrelated], { on: ON }).some(a => a.kind === "close"), false);
+});
+
+test("a shared USB ID cannot select an arbitrary product for automatic closure", () => {
+  const i = issue(48, "Acme", "Unknown", "control it", "USB: 1234:5678");
+  const records = ["one", "two"].map(model => rec(`acme/${model}`, "controllable", { identifiers: { usb: ["1234:5678"] } }));
+  const actions = triage(i, [bot('<!-- odb-triage id=acme/unknown rank=-1 -->')], reqs(i), records, { on: ON });
+  assert.deepEqual(actions, []);
+});
+
+test("an invalid previous match is corrected once, resetting the baseline for future real support", () => {
+  const i = issue(47, "Alcatel", "5033xr", "use a Linux mobile OS", "5033XR\nMacau\nMT6739");
+  const unrelated = rec("nokia/1", "partial-protocol", { identifiers: { chips: ["MT6739"] } });
+  const old = bot('Earlier Nokia reply <!-- odb-triage id=alcatel/5033xr rank=2 -->');
+  const correction = triage(i, [old], reqs(i), [unrelated], { on: ON });
+  assert.equal(correction.length, 1);
+  assert.equal(correction[0].kind, "comment");
+  const fixed = bot((correction[0] as any).body);
+  assert.match(fixed.body!, /earlier linked record does not establish compatibility/);
+  assert.deepEqual(lastMarker([old, fixed]), { id: "alcatel/5033xr", rank: -1 });
+  assert.deepEqual(triage(i, [old, fixed], reqs(i), [unrelated], { on: ON }), []);
+  const real = rec("alcatel/5033xr", "partial-protocol");
+  assert.ok(triage(i, [old, fixed], reqs(i), [real], { on: ON }).some(a => a.kind === "close"));
+});
+
 test("policy hits in the goal are labelled for review, not the form's own checkbox text", () => {
   const ok = issue(1, "Acme", "Sky");
   assert.equal(triage(ok, [], reqs(ok), [], { on: ON }).some((x) => x.kind === "label"), false);
