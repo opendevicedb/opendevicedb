@@ -84,6 +84,17 @@ export function triage(
   const rank = status ? statusRank(status) : -1;
   const prev = lastMarker(comments);
   if (prev && prev.id === req.id && opts.event !== "reopened") {
+    if (!record && prev.rank >= 0) {
+      // Repair earlier matches that no longer have sufficient identity evidence.
+      // Reset the baseline once, so a later real result can still be announced.
+      return [{
+        kind: "comment",
+        body: "The earlier automatic catalogue match for this request can no longer be confirmed. " +
+          "A shared chipset does not identify an exact device, and ambiguous identifiers are not enough to select a product. " +
+          "The earlier linked record does not establish compatibility for this device. Your request remains open and is still counted on " +
+          `[Wanted](${SITE}/wanted/).\n\n${marker(req.id, -1)}`,
+      }];
+    }
     // Already seen. Close only when a usable result arrived since.
     if (record && rank >= USABLE && rank > prev.rank) {
       return [
