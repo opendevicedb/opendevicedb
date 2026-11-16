@@ -2,7 +2,7 @@
 
 ## Five source imports implemented — 2026-11-16
 
-The [source report](../device-source-research-2026-11-16.md) now records implemented Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian importers, their factual-data/licensing approach and exact snapshot counts. Together they add 1,190 catalogue identities and enrich 129 existing entries, yielding 32,130 devices across 42 imported sources. A [news article](../../news/2026-11-16-radios-boards-mobile-linux.md) explains the scope and limitations. No upstream outreach was sent as part of this implementation; existing contact history remains unchanged.
+The [source report](../device-source-research-2026-11-16.md) now records implemented Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian importers, their factual-data/licensing approach and exact snapshot counts. Together they add 1,170 catalogue identities and enrich 148 existing entries, yielding 32,110 devices across 42 imported sources. A [news article](../../news/2026-11-16-radios-boards-mobile-linux.md) explains the scope and limitations. No upstream outreach was sent as part of this implementation; existing contact history remains unchanged.
 
 ## Additional device sources and Alcatel research — 2026-11-16
 

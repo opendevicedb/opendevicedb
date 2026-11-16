@@ -62,6 +62,8 @@ test("Armbian preserves community, abandoned and WIP qualifications without inve
   const handheld = parseBoard('declare -g BOARD_NAME="Ayn Odin2"\ndeclare -g BOARD_VENDOR="ayntec"\nif condition; then\nBOARD_NAME="wrong"\nfi');
   assert.equal(armbianBoard("ayn-odin2.csc", handheld, ref)!.category, "game-console");
   assert.equal(armbianBoard("ayn-odin2.csc", handheld, ref)!.vendor, "AYN");
+  assert.equal(armbianBoard("ayn-odin2.csc", handheld, ref)!.id, "ayn/odin-2");
+  assert.equal(armbianBoard("rpi4b.conf", { BOARD_NAME: "Raspberry Pi", BOARD_VENDOR: "rpi-foundation" }, ref), null);
 });
 
 const header = `// SPDX-License-Identifier: MIT\n#define MICROPY_HW_BOARD_NAME "Raspberry Pi Pico W"\n#define MICROPY_HW_MCU_NAME "rp2040"\n`;
@@ -96,6 +98,8 @@ test("CircuitPython reads board-path makers and retains the 4 MB ESP32 UF2 prere
   const s2 = circuitBoard({ path: "ports/espressif/boards/test", header: '#define MICROPY_HW_BOARD_NAME "Adafruit Test"\n#define MICROPY_HW_MCU_NAME "ESP32-S2"', make: 'USB_MANUFACTURER = "Adafruit"\nCIRCUITPY_ESP_FLASH_SIZE = 4MB' }, ref)!;
   assert.match(s2.install![0].firmware_constraints!, /TinyUF2 0\.33\.0/);
   assert.equal(circuitBoard({ path: "ports/renode/boards/renode_cortex_m0plus", header: '#define MICROPY_HW_BOARD_NAME "Renode Cortex-M0+"', make }, ref), null);
+  const same = circuitBoard({ path: "ports/espressif/boards/01space_lcd042_esp32c3", header: '#define MICROPY_HW_BOARD_NAME "01Space 0.42 OLED ESP32C3"', make: '' }, ref)!;
+  assert.equal(same.id, "01space/esp32-c3-0-42lcd");
 });
 
 const html = (attrs: string) => `<li class="device-name" data-name="Google Pixel 3a" data-codename="sargo" data-release="noble" data-deviceType="phone" data-portType="Halium" data-progressStage="5" ${attrs}><a href="/device/sargo">Google Pixel 3a</a></li><footer>License CC-BY-SA-4.0</footer>`;

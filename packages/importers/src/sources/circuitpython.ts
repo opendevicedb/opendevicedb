@@ -23,6 +23,15 @@ const PATH_MAKERS: Record<string, string> = {
   // The canonical Red S2 WROOM download page lists its maker as Generic.
   "red-s2-wroom": "Generic",
 };
+// Exact aliases verified against existing model entries; radio, flash and PCB
+// revisions are never collapsed just because their names are similar.
+const MODELS: Record<string, string> = {
+  "01space_lcd042_esp32c3": "ESP32-C3-0.42LCD",
+  lilygo_tdongle_s3: "TDongle S3", "lilygo_ttgo_t-01c3": "T-01C3", "lilygo_ttgo_t-oi-plus": "T-OI_Plus",
+  m5stack_atoms3_lite: "ATOM S3 Lite", m5stack_core2: "M5Core2",
+  m5stack_stick_c_plus: "M5StickC PLUS", m5stack_stick_c_plus2: "M5StickC PLUS2",
+  raspberrypi_4b: "4",
+};
 
 /** Literal preprocessor/make values only; expressions and interpolations stay unknown. */
 export function boardValues(header: string, make: string): Record<string, string> {
@@ -58,6 +67,8 @@ export function fromBoard(b: CircuitBoard, ref: string, date = today()): DeviceR
   // different physical microcontroller boards and must remain distinct here.
   let model = full;
   for (const prefix of [vendor, rawVendor]) if (model.toLowerCase().startsWith(prefix.toLowerCase() + " ")) model = model.slice(prefix.length + 1).trim();
+  if (vendor.toLowerCase() === "sunton") model = model.replace(/^sunton[-_ ]+/i, "");
+  model = MODELS[boardId] ?? model;
   const revision = boardId.match(/_(pcb\d+|rev[a-z]|\d+\.\d+)$/i)?.[1];
   if (revision) model += ` (${revision})`;
   if (/_(?:no|with)_flash$/.test(boardId)) model += boardId.endsWith("_no_flash") ? " (without external flash)" : " (with external flash)";

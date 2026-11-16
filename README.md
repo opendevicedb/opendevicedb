@@ -18,7 +18,7 @@ so that nobody — human or AI agent — redoes work that already exists.
   vendor cloud is still needed; the directory filters devices that work with no cloud.
 - **Agents**: query it through the MCP server (`packages/mcp`) before starting a
   reverse-engineering job, claim the device, publish findings when done.
-- **Existing databases** (42 today, 32,130 devices: OpenWrt, Zigbee2MQTT, Z-Wave JS, Tasmota, ESPHome,
+- **Existing databases** (42 today, 32,110 devices: OpenWrt, Zigbee2MQTT, Z-Wave JS, Tasmota, ESPHome,
   tuya-local, OpenRGB, libgphoto2, LineageOS, postmarketOS/Nura, coreboot, rtl_433,
   Gadgetbridge, Klipper, Marlin, Rockbox, Valetudo, thingino, tuya-cloudcutter, QMK, SANE,
   OpenPrinting, libwacom, Betaflight, EdgeTX, and for cameras CHDK, Magic Lantern, OpenMemories,

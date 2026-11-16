@@ -13,6 +13,15 @@ const VENDORS: Record<string, string> = {
   olimex: "Olimex", khadas: "Khadas", orangepi: "Orange Pi", nanopi: "FriendlyElec",
   ayntec: "AYN", generic: "Generic",
 };
+// Reviewed spelling aliases already used by other catalogue sources. These are
+// exact board mappings, not fuzzy matches between similar product generations.
+const MODELS: Record<string, string> = {
+  "ayn-odin2.csc": "Odin 2", "ayn-odin2mini.csc": "Odin 2 Mini", "ayn-odin2portal.csc": "Odin 2 Portal", "ayn-odin3.csc": "Odin 3",
+  "pcduino3.csc": "pcDuino3", "lime2.csc": "A20-OLinuXino-LIME2",
+  "rock64.csc": "Rock64", "rockpro64.conf": "RockPro64",
+  "rock-2a.conf": "ROCK 2 A", "rock-2f.conf": "ROCK 2 F",
+  "rockpi-4a.csc": "ROCK Pi 4 A", "rockpi-4cplus.csc": "ROCK 4C+", "rockpi-s.conf": "ROCK Pi S",
+};
 
 /** Only unconditional assignments before the first function/block; no expansions. */
 export function parseBoard(text: string): Record<string, string> {
@@ -27,10 +36,11 @@ export function parseBoard(text: string): Record<string, string> {
 
 export function fromBoard(file: string, d: Record<string, string>, ref: string, date = today()): DeviceRecord | null {
   const name = clean(d.BOARD_NAME), rawVendor = clean(d.BOARD_VENDOR);
-  if (!name || !rawVendor || /generic|uefi|virtual|qemu|^armbian$/i.test(name)) return null;
+  if (!name || !rawVendor || /generic|uefi|virtual|qemu|^armbian$|^raspberry pi$/i.test(name)) return null;
   const vendor = normVendor(VENDORS[rawVendor.toLowerCase()] ?? rawVendor);
   let model = normModel(vendor, name);
   if (vendor === "Hardkernel" && /^ODROID[- ]/i.test(name)) model = name; // same identity as existing phone/SBC sources
+  model = MODELS[file] ?? model;
   const type = file.split(".").pop()!;
   const state: Record<string, string> = { conf: "standard configuration", csc: "community/unmaintained configuration", tvb: "community TV-box configuration", wip: "work in progress", eos: "end of life" };
   if (!state[type]) return null;

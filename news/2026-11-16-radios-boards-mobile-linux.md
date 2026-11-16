@@ -1,19 +1,19 @@
 ---
-title: "LoRa radios, development boards and mobile Linux: 1,190 more devices"
+title: "LoRa radios, development boards and mobile Linux: 1,170 more devices"
 date: 2026-11-16T03:35:00Z
-summary: "Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian add 1,190 devices and enrich 129 existing records. OpenDeviceDB now holds 32,130 unique entries across 42 imported sources, with upstream support levels and installation prerequisites preserved."
+summary: "Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian add 1,170 devices and enrich 148 existing records. OpenDeviceDB now holds 32,110 unique entries across 42 imported sources, with upstream support levels and installation prerequisites preserved."
 tags: [data]
 ---
 
 Five additional sources bring LoRa mesh radios, ARM computers, microcontroller boards
-and mobile Linux adaptations into one search. The directory now holds **32,130 unique
-entries across 42 imported sources**: **1,190 new devices**, plus additional project
-references for **129 devices already in the catalogue**.
+and mobile Linux adaptations into one search. The directory now holds **32,110 unique
+entries across 42 imported sources**: **1,170 new devices**, plus additional project
+references for **148 devices already in the catalogue**.
 
 | Source | Imported records | Examples and source filter |
 | --- | ---: | --- |
 | [Meshtastic](https://meshtastic.org/) | 117 | [Heltec Mesh Node T114](/devices/heltec/mesh-node-t114/), [Seeed Card Tracker T1000-E](/devices/seeed-studio/card-tracker-t1000-e/) · [all Meshtastic records](/devices/?source=meshtastic) |
-| [Armbian](https://www.armbian.com/) | 438 | [Orange Pi 5](/devices/orange-pi/5/), [AYN Odin2](/devices/ayn/odin2/) · [all Armbian records](/devices/?source=armbian) |
+| [Armbian](https://www.armbian.com/) | 437 | [Orange Pi 5](/devices/orange-pi/5/), [AYN Odin2](/devices/ayn/odin-2/) · [all Armbian records](/devices/?source=armbian) |
 | [CircuitPython](https://circuitpython.org/) | 639 | [Raspberry Pi Pico W](/devices/raspberry-pi/pico-w/) · [all CircuitPython records](/devices/?source=circuitpython) |
 | [Ubuntu Touch](https://devices.ubuntu-touch.io/) | 116 | [Google Pixel 3a](/devices/google/pixel-3a/), [Fairphone 3+](/devices/fairphone/3-plus/) · [all Ubuntu Touch records](/devices/?source=ubports) |
 | [Droidian](https://devices.droidian.org/) | 37 | [F(x)tec Pro1-X](/devices/f-x-tec/pro1-x/), [Volla Phone 22](/devices/volla/phone-22/) · [all Droidian records](/devices/?source=droidian) |
