@@ -143,6 +143,17 @@ Substantive responses (all five answered on 2026-11-10, see `messages/2026-11-10
 
 Catalogue corrections from this campaign are now merged and live: PRs 21, 24, 25, 27, 28 and 29, and PR 32 for issues 20 and 23. [Awesome IoT and Hardware Security](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) merged the listing on 2026-11-05. The Awesome MCP Servers, Awesome Connected Things Security and FKIE listing PRs and liquidctl draft PR 943 remain open without review.
 
+## Scoped update 2026-11-16
+
+- [PyMeasure replied on November 12](https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19573501): keep series names and distinguish protocol tests from device-test files whose execution/results are unknown. This informs a future importer; none is implemented yet.
+- phyphox supplied professional feedback about model-specific references and variant markers. A thank-you draft is prepared in the existing email thread, but not sent. Public source: [sensor database](https://phyphox.org/sensordb/). No data import or phone test.
+- OpenRazer's importer is published: 230 source records, 125 new devices and 105 enriched records. An existing-thread update is prepared in Gmail, but not sent. [Published news](https://opendevicedb.org/news/2026-11-10-mice-tablets-razer/).
+- [QCoDeS PR 41](https://github.com/opendevicedb/opendevicedb/pull/41) has its merge conflicts resolved, 171 importer tests passed and CI passed. It remains a draft awaiting upstream scope clarification: 119 proposed records, 118 new devices and one existing record enriched.
+- The three pending listing PRs remain open without submitted reviews. liquidctl PR 943 remains a draft without submitted reviews. No repeat nudge, held-message resend or contact with excluded communities.
+- [PR 48](https://github.com/opendevicedb/opendevicedb/pull/48) fixes request matching by shared chipsets or ambiguous identifiers. The [automatic correction on Alcatel request 47](https://github.com/opendevicedb/opendevicedb/issues/47#issuecomment-6905679343) is published and read back; the request stays open. It establishes no Linux compatibility for that model.
+
+This is a targeted check, not a re-verification of every contact. See the dated research notes and structured log for scope. Draft email contents and account identifiers remain outside the public repository.
+
 ## Pending external steps
 
 - Hacker News: the owner sent the support request on 2026-11-04; sent status verified, awaiting a response. Submission remains unconfirmed.

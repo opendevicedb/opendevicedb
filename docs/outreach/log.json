@@ -651,13 +651,19 @@
       "published_at": "2026-11-04T17:04:55Z",
       "message": "messages/2026-11-04/pymeasure.md",
       "outgoing_text_verified": true,
-      "next_action": "Await corrections on the sample and the earlier question on where covered models are listed. No importer implemented.",
+      "next_action": "Use the November 12 clarification when designing an importer: preserve series scope and interface qualifiers, and do not equate device-test files with hardware validation. No importer implemented and no further reply sent in this check.",
       "responses": [
         {
           "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19415411",
           "by": "BenediktBurger",
           "received_at": "2026-11-05T09:25:42Z",
           "summary": "Welcomes a PyMeasure importer and asks what it would need. Most instruments use serial or GPIB, so USB identifiers do not apply; drivers come from users testing them in their labs. Points to the curated python-lab-automation-landscape catalogue."
+        },
+        {
+          "url": "https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19573501",
+          "by": "BenediktBurger",
+          "received_at": "2026-11-12T19:56:45Z",
+          "summary": "Keep series names: driver naming is inconsistent. Connection types generally share commands, with interface-specific settings where needed. Repository protocol tests verify byte/string exchanges; files suffixed _with_devices are intended for real instruments, but maintainers cannot establish whether they were run or their results."
         }
       ],
       "followups": [
@@ -1379,14 +1385,19 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/z3ntu",
       "project_source": "https://github.com/openrazer/openrazer/tree/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d",
-      "next_action": "The proposed index is now implemented as an OpenRazer importer (PR 45, README tables at v3.12.4). Owner may mention it in the existing email thread; OpenRazer has no GitHub Discussions. No duplicate introduction.",
+      "next_action": "Owner review of the existing-thread follow-up draft; not sent. No repeat introduction or hardware-validation claim.",
       "catalogue_changes": [
         {
           "url": "https://github.com/opendevicedb/opendevicedb/pull/45",
           "status": "merged",
           "merged_at": "2026-11-10T20:19:00Z"
         }
-      ]
+      ],
+      "prepared_followup": {
+        "date": "2026-11-16",
+        "status": "draft_prepared_not_sent",
+        "summary": "Update in the existing thread about the published v3.12.4 importer: 230 source records, 125 new devices and 105 enriched records. Draft independently read back in Gmail; private account evidence retained outside this repository."
+      }
     },
     {
       "name": "Solaar / Peter F. Patel-Schneider",
@@ -1417,7 +1428,7 @@
     {
       "name": "phyphox",
       "channel": "email",
-      "status": "sent_and_read_back",
+      "status": "substantive_response_received",
       "recipient": "contact@phyphox.org",
       "subject": "phyphox sensor references on OpenDeviceDB",
       "sent_at": "2026-11-04T22:21:21.000Z",
@@ -1425,7 +1436,20 @@
       "outgoing_text_verified": true,
       "contact_source": "https://phyphox.org/contact/",
       "project_source": "https://github.com/phyphox/phyphox-android/tree/45fa55a0727653ccce439b86acb69c00cf435436",
-      "next_action": "Await this general-contact email about canonical model/sensor/experiment references. No repeat forum/team/ambassador message, registration, data submission/import, app change or phone test. Preserve Android/iOS, measured/reported and sample/provenance limits; data reuse terms and canonical model links remain to verify."
+      "next_action": "Owner review of the existing-thread draft; not sent. Verify canonical model selection and reuse terms before any import. No duplicate contact.",
+      "responses": [
+        {
+          "received_date": "2026-11-06",
+          "channel": "professional email",
+          "summary": "Project provided model-link guidance and explained that variant markers represent divergent submissions, not verified hardware revisions. Exact API model/brand/manufacturer spellings matter; measured/reported properties and sample limits remain distinct. Private correspondence retained outside this repository.",
+          "public_reference": "https://phyphox.org/sensordb/"
+        }
+      ],
+      "prepared_followup": {
+        "date": "2026-11-16",
+        "status": "draft_prepared_not_sent",
+        "summary": "Thank-you and a proposed source-link-first approach; independently read back in Gmail. No import or phone test."
+      }
     },
     {
       "name": "IronOS",
@@ -1664,7 +1688,8 @@
       "status": "open",
       "ci": "check-submission passed",
       "last_followup": "https://github.com/punkpeye/awesome-mcp-servers/pull/16737#issuecomment-6629859040",
-      "last_checked_at": "2026-11-10T08:30:00+00:00"
+      "last_checked_at": "2026-11-16",
+      "review_state": "Open, unmerged, no submitted reviews returned. No repeat nudge."
     },
     {
       "name": "Official MCP Registry",
@@ -1690,7 +1715,8 @@
       "validation": "Official canonical site HTTP 200; one entry in Search Engines, original README bytes preserved outside added line, git diff --check passed. No runtime change.",
       "checks": "No check runs reported at readback; no CI success claimed.",
       "next_action": "Await maintainer review; do not claim listing acceptance or adoption.",
-      "last_checked_at": "2026-11-10T08:30:00+00:00"
+      "last_checked_at": "2026-11-16",
+      "review_state": "Open, unmerged, no submitted reviews returned. No repeat nudge."
     },
     {
       "name": "Awesome IoT and Hardware Security",
@@ -1717,7 +1743,8 @@
       "checks": "Upstream workflow 41920034405 completed with action_required on exact head; jobs and check runs empty. No upstream CI success claimed.",
       "workflow_url": "https://github.com/fkie-cad/awesome-embedded-and-iot-security/actions/runs/41920034405",
       "next_action": "Await maintainer review and upstream workflow action; do not claim acceptance or merge.",
-      "last_checked_at": "2026-11-10T08:30:00+00:00"
+      "last_checked_at": "2026-11-16",
+      "review_state": "Open, unmerged, no submitted reviews returned. No repeat nudge."
     }
   ],
   "next_research": [
@@ -2008,7 +2035,7 @@
       "source": "https://github.com/openrazer/openrazer/blob/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d/README.md",
       "community_url": "https://openrazer.github.io/",
       "status": "published_maintainer_contact_emailed",
-      "next_action": "README, development guidance, policy inventory and source versions reviewed. One email sent/read back to Luca Weiss at his published GitHub contact. Matrix exists but room rules unreviewed and no room post. Await this email; no duplicate issue/team approach, importer or hardware test.",
+      "next_action": "Importer merged in PR 45 and published. Existing-thread update prepared in Gmail on November 16, not sent. No additional channel or hardware test.",
       "contact_source": "https://github.com/z3ntu"
     },
     {
@@ -2296,5 +2323,19 @@
     "Await review of liquidctl PR 943 and the open awesome-list PRs (MCP servers, connected-things, FKIE)",
     "Continue with the research queue if further outreach is pursued; verify channel and duplicates first"
   ],
-  "manual_posting_guide": "manual-posting.md"
+  "manual_posting_guide": "manual-posting.md",
+  "last_scoped_check": {
+    "date": "2026-11-16",
+    "scope": "Six active GitHub discussions, three pending external listing PRs, liquidctl draft PR 943, and targeted phyphox/OpenRazer email threads. Other contacts were not re-verified; last_verified_at remains the earlier broad check."
+  },
+  "maintenance_actions": [
+    {
+      "date": "2026-11-16T02:32:37Z",
+      "channel": "GitHub issue bot comment",
+      "url": "https://github.com/opendevicedb/opendevicedb/issues/47#issuecomment-6905679343",
+      "status": "published_and_read_back",
+      "message": "messages/2026-11-16/alcatel-triage-correction.md",
+      "next_action": "Request 47 remains open for exact-device evidence; no Linux compatibility established."
+    }
+  ]
 }

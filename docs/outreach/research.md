@@ -1,5 +1,21 @@
 # Community and contributor research
 
+## Targeted follow-up check — 2026-11-16
+
+Read the existing journal and outgoing archives before checking six active discussions: [PyMeasure](https://github.com/pymeasure/pymeasure/discussions/1587), [Theengs](https://github.com/theengs/decoder/discussions/723), [usb-rea](https://github.com/emirmrkaljevic/usb-rea/discussions/3), [REA](https://github.com/morluto/rea/discussions/5334), [OpenTabletDriver](https://github.com/OpenTabletDriver/OpenTabletDriver/discussions/5238) and [QCoDeS](https://github.com/microsoft/Qcodes/discussions/8750). Scope: latest 20 comments and latest 10 replies per returned comment, looking for third-party activity since November 10 at 20:40 UTC. PyMeasure's November 12 response was the new substantive reply in this scope; this does not establish silence in other threads or channels.
+
+[BenediktBurger's response](https://github.com/pymeasure/pymeasure/discussions/1587#discussioncomment-19573501) recommends keeping series names because naming is inconsistent. Connection settings can vary while instrument commands generally remain common. Protocol tests check exchanges; `_with_devices` tests are intended for instruments, but their presence does not establish execution or successful hardware validation. Keep these qualifications in any future importer. No new importer or public reply was made during this check.
+
+Targeted professional-email review found phyphox feedback on model links and divergent submissions. Public reference: [sensor database](https://phyphox.org/sensordb/). A normal HTTP read of the supplied model URL succeeded, but the static response did not establish model selection; canonical parameter behavior and reuse terms still need checking before an import. Android-reported properties, measured values and sample limits remain distinct. A thank-you draft is saved and independently read back in the existing thread, not sent. Private correspondence and mailbox identifiers remain outside this repository.
+
+OpenRazer now has a concrete published importer rather than only the original proposal: [230 records from v3.12.4](https://opendevicedb.org/news/2026-11-10-mice-tablets-razer/), adding 125 new devices and enriching 105 existing ones. The [Viper Ultimate page](https://opendevicedb.org/devices/razer/viper-ultimate/) returned HTTP 200. An update to the original professional-email thread is drafted and read back, not sent. No duplicate introduction or hardware-test claim.
+
+Re-read [Awesome MCP Servers PR 16737](https://github.com/punkpeye/awesome-mcp-servers/pull/16737), [Connected Things Security PR 54](https://github.com/V33RU/awesome-connected-things-sec/pull/54), [FKIE PR 41](https://github.com/fkie-cad/awesome-embedded-and-iot-security/pull/41) and [liquidctl PR 943](https://github.com/liquidctl/liquidctl/pull/943). All remain open with no submitted reviews returned; liquidctl remains a draft. No repeated reminders or new listing proposals. Existing held messages and community exclusions remain in force.
+
+[QCoDeS PR 41](https://github.com/opendevicedb/opendevicedb/pull/41) was updated against main with conflicts resolved; 171 importer tests and CI passed. It stays a draft awaiting upstream clarification. [Redesign PR 13](https://github.com/opendevicedb/opendevicedb/pull/13) already has maintainer approval for the design direction and requests an author update preserving current routes, security and application features; no duplicate reminder or merge of its stale branch.
+
+[Alcatel issue 47](https://github.com/opendevicedb/opendevicedb/issues/47) exposed a shared-chipset false match to Nokia 1. [Merged PR 48](https://github.com/opendevicedb/opendevicedb/pull/48) excludes chipsets and ambiguous record matches, and corrects stale automatic replies. The workflow succeeded and the correction was read back with the request still open. No exact-model Linux support was established.
+
 Research baseline: **2026-11-04**. Sources below are public. Contact status and the text actually sent are in [the register](README.md) and [log.json](log.json). A proposed collaboration or importer is not an implemented integration. These notes reconstruct the research recoverable from this working session; missing earlier notes are not silently treated as completed research.
 
 ## Open medical, scientific and biosensing hardware
