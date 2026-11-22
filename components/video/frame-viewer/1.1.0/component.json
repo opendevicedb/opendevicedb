@@ -1,0 +1,44 @@
+{
+  "format": "odb-component/1",
+  "version": "1.1.0",
+  "status": "available",
+  "license": "AGPL-3.0-or-later",
+  "authors": [
+    "OpenDeviceDB contributors"
+  ],
+  "targets": [
+    "browser"
+  ],
+  "fixtures": [],
+  "evidence": [],
+  "id": "video/frame-viewer",
+  "title": "Video frame display",
+  "description": "Reusable canvas display for PNG streams and in-process RGBA frames, including ultrasound previews and recorded replays.",
+  "roles": [
+    "interface"
+  ],
+  "source": {
+    "path": "components/video/frame-viewer/1.1.0/viewer.js",
+    "sha256": "ff46a6fe4d9ffacb0d173d617b8d289654a2199c9a6488e9f9887f795bbea245",
+    "build": "No compilation; isolated web component JavaScript."
+  },
+  "artifact": {
+    "path": "components/video/frame-viewer/1.1.0/viewer.js",
+    "sha256": "ff46a6fe4d9ffacb0d173d617b8d289654a2199c9a6488e9f9887f795bbea245"
+  },
+  "runtime": {
+    "kind": "web-component",
+    "entry": "odb-video-viewer",
+    "abi": "odb.video-ui/1"
+  },
+  "ports": {
+    "frames": {
+      "direction": "in",
+      "kind": "stream",
+      "contract": "odb.video.frame/1"
+    }
+  },
+  "parameters": {},
+  "permissions": [],
+  "behavior": "Receives PNG ArrayBuffers through a private MessagePort. Decodes one frame, draws it on canvas, releases the bitmap, then acknowledges its session and sequence. No network or device access. Shows replay/live provenance, dimensions and uncalibrated status. No distance or diagnostic interpretation."
+}

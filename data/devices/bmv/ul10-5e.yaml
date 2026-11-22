@@ -12,7 +12,7 @@ status: partial-protocol
 summary: The UL10-5E linear ultrasound probe reports product ID 7 and firmware V1.350 over USB.
   A Rust driver acquired three phantom recordings. A browser-based WebAssembly decoder reproduced
   all 14 images from the one-second recording pixel for pixel against the native Rust reference.
-  A standalone WebUSB viewer supports one-second phantom captures with the Vascular preset at depth
+  A standalone WebUSB viewer supports one-second and continuous phantom capture with the Vascular preset at depth
   index 1. The images are uncalibrated.
 interfaces:
   - name: Vendor-specific USB acquisition interface

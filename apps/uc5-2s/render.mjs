@@ -1,18 +1,9 @@
-import {buildSync} from 'esbuild';
-import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
-
-// Embed the worker and WASM so a saved copy runs offline too.
+import {renderProbe} from '../shared/ultrasound/render.mjs';
 export function standaloneHtml(directory) {
-  const bundle = (entry, define = {}) => buildSync({
-    entryPoints: [join(directory, 'web', entry)], bundle: true,
-    format: 'iife', platform: 'browser', write: false, define,
-  }).outputFiles[0].text;
-  const worker = bundle('worker-direct.ts');
-  const wasm = readFileSync(join(directory, 'probe.wasm'));
-  const app = bundle('app-direct.ts', {
-    WORKER_SOURCE: JSON.stringify(worker), WASM_BASE64: JSON.stringify(wasm.toString('base64')),
-  });
-  return readFileSync(join(directory, 'web/direct.html'), 'utf8')
-    .replace('<!-- APP -->', () => '<script>' + app.replace(/<\/script/gi, '<\\/script') + '</script>');
+  return renderProbe(directory, {
+    model:'UC5-2S', heading:'Sonde convexe UC5-2S', id:'uc5-2s-general-depth-v1',
+    nativePng:true, filePrefix:'uc5-2s', productId:0x4611, depths:[0,1,2,3,4,5,6,7],
+    description:'Fréquence et focus à l’indice 0.',
+  }, 'worker-direct.ts', join(directory,'../../components/ultrasound/usb-capture/1.0.0/source.ts'));
 }
