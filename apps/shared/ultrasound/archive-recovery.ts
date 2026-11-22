@@ -21,7 +21,7 @@ async function existingDatabase(): Promise<IDBDatabase | undefined> {
     };
   });
 }
-export interface StoredSession { id: string; startedAt: string | null; softwareClosed: boolean; storageWarning: boolean }
+export interface StoredSession { id: string; startedAt: string | null; profile: string; softwareClosed: boolean; storageWarning: boolean }
 export async function listStoredSessions(after?: string): Promise<{ sessions: StoredSession[]; next?: string }> {
   const db = await existingDatabase(); if (!db) return { sessions: [] };
   try {
@@ -29,7 +29,7 @@ export async function listStoredSessions(after?: string): Promise<{ sessions: St
     const rows = await result<any[]>(tx.objectStore('sessions').getAll(after === undefined ? undefined : IDBKeyRange.lowerBound(after, true), 21));
     const sessions = rows.slice(0, 20).map(row => {
       if (typeof row?.id !== 'string' || !row.id.length) throw Error('Identifiant de session invalide.');
-      return { id: row.id, startedAt: typeof row.started_at === 'string' && Number.isFinite(Date.parse(row.started_at)) ? row.started_at : null,
+      return { id: row.id, profile: typeof row.profile === "string" ? row.profile : "unknown", startedAt: typeof row.started_at === 'string' && Number.isFinite(Date.parse(row.started_at)) ? row.started_at : null,
         softwareClosed: row.active === false, storageWarning: row.storage_error !== null || row.omitted_bytes !== 0 };
     });
     return { sessions, ...(rows.length > 20 ? { next: sessions.at(-1)!.id } : {}) };
@@ -143,14 +143,14 @@ export function mountArchiveRecovery() {
       for (const item of page.sessions) {
         const row = document.createElement('li'), text = document.createElement('span'), button = document.createElement('button');
         const date = item.startedAt ? new Date(item.startedAt).toLocaleString('fr-FR') : 'Date inconnue';
-        text.textContent = `${date} · ${item.softwareClosed ? 'Clôturée par le logiciel' : 'Fermeture non confirmée'}${item.storageWarning ? ' · Stockage à vérifier' : ''} · ${item.id}`;
+        text.textContent = `${item.profile} · ${date} · ${item.softwareClosed ? 'Clôturée par le logiciel' : 'Fermeture non confirmée'}${item.storageWarning ? ' · Stockage à vérifier' : ''} · ${item.id}`;
         button.textContent = 'Exporter'; button.type = 'button'; button.setAttribute('aria-label', `Exporter la session ${item.id}`);
-        button.onclick = () => void exportSession(item.id); row.append(text, button); list.append(row);
+        button.onclick = () => void exportSession(item.id, item.profile); row.append(text, button); list.append(row);
       }
       next.hidden = !after; status.textContent = page.sessions.length ? `${page.sessions.length} sessions affichées. Aucune connexion à la sonde.` : 'Aucune session enregistrée dans ce profil de navigateur.';
     } catch (e) { status.textContent = String(e); } finally { listing = false; controls(); }
   }
-  async function exportSession(id: string) {
+  async function exportSession(id: string, profile: string) {
     if (exporting || listing) return; exporting = true; controller = new AbortController(); controls(); status.textContent = 'Choisir le fichier d’export…';
     try {
       const signal = controller.signal; let warning = false;
@@ -158,7 +158,7 @@ export function mountArchiveRecovery() {
         if (phase === 'warning') { warning = true; status.textContent = 'Avertissement de stockage : seule la portion disponible sera exportée.'; return; }
         status.textContent = `${phase === 'checking' ? 'Vérification' : 'Export'} : ${current}/${end} entrées.`;
       });
-      await saveRecoveredFile(`uc5-2s-${id.replace(/[^a-zA-Z0-9-]/g, '_').slice(0, 128)}-recupere.odb-stream`, lines, signal);
+      await saveRecoveredFile(`${profile.split("-").slice(0,2).join("-").replace(/[^a-zA-Z0-9-]/g,"_")}-${id.replace(/[^a-zA-Z0-9-]/g, '_').slice(0, 128)}-recupere.odb-stream`, lines, signal);
       status.textContent = warning ? 'Export terminé avec avertissement : données partielles ou stockage à vérifier. Le fichier conserve ce signalement.' : 'Export terminé : portion effectivement conservée. Le fichier garde les avertissements de stockage.';
     } catch (e) { status.textContent = (e as any)?.name === 'AbortError' ? 'Export annulé. Historique stocké inchangé.' : String(e); }
     finally { exporting = false; controller = undefined; controls(); }

@@ -85,7 +85,11 @@ impl Decoder {
         let inspector = linear::Inspector::new(
             processor.assets.configuration().framing(),
             policy,
-            linear::Limits::default(),
+            // A session may stream indefinitely. Per-read, frame and buffer bounds still apply.
+            linear::Limits {
+                max_input_bytes: u64::MAX,
+                ..linear::Limits::default()
+            },
         )?;
         Ok(Self {
             processor,
@@ -93,9 +97,13 @@ impl Decoder {
             next_offset: None,
         })
     }
-    fn receive(&mut self, bytes: &[u8]) -> Result<Option<Vec<u8>>> {
+    fn receive(&mut self, bytes: &[u8], present: bool) -> Result<Option<Vec<u8>>> {
         for s in self.inspector.push(bytes)? {
             if s.kind == "linear_frame" {
+                if !present {
+                    continue;
+                }
+
                 if self.next_offset.is_some_and(|offset| offset != s.offset) {
                     self.processor = Processor::new()?;
                 }
@@ -139,6 +147,13 @@ pub extern "C" fn size() -> usize {
 }
 #[unsafe(no_mangle)]
 pub extern "C" fn push(n: usize) -> i32 {
+    ingest(n, true)
+}
+#[unsafe(no_mangle)]
+pub extern "C" fn advance(n: usize) -> i32 {
+    ingest(n, false)
+}
+fn ingest(n: usize, present: bool) -> i32 {
     if n > 16384 {
         return fail("USB block too large".into());
     }
@@ -147,7 +162,7 @@ pub extern "C" fn push(n: usize) -> i32 {
             s.borrow_mut()
                 .as_mut()
                 .ok_or("Decoder not initialized".to_string())?
-                .receive(&i.borrow()[..n])
+                .receive(&i.borrow()[..n], present)
         })
     });
     match res {
