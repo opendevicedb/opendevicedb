@@ -1,0 +1,79 @@
+{
+  "origin": "Owner-authored Rust probe driver, extracted for browser execution",
+  "upstream_commit": "1bd9d10",
+  "modules": [
+    {
+      "module": "convex_bfsp.rs",
+      "source_sha256": "31b51224bfc5813b7b4c429b3136dda44a05198be9775706149da831f786c3f2"
+    },
+    {
+      "module": "convex_dtgc.rs",
+      "source_sha256": "8dd333970fa7ce5ceb45fd3c04a1d2dbbe3e49e9b1082ebce17b80613ee2adac"
+    },
+    {
+      "module": "convex_compound.rs",
+      "source_sha256": "f39ceed6034eafac78c8d7c16995a4d2534db54211d0a89fa402cc9b3c3980eb"
+    },
+    {
+      "module": "convex_sri.rs",
+      "source_sha256": "49fcb50828b9ac48a000bf8a00ede3b569a1186db3756f9cf4dbb66eefb9e603"
+    },
+    {
+      "module": "convex_sri_plan.rs",
+      "source_sha256": "53578e297399d1a0e0abcb0df4fabc4135fdb94bb729dde9485b25a70b0f15e6"
+    },
+    {
+      "module": "convex_dsc.rs",
+      "source_sha256": "b64867e7b13f2fa4732aeccc2ff25a626e6fb98821c4d500216ce14c17167140"
+    },
+    {
+      "module": "convex_pipeline.rs",
+      "source_sha256": "086f35c11e86709085a6b96e3f583b8ab04db3d2e414a648d7ad0e3a34836513"
+    },
+    {
+      "module": "convex_lifecycle.rs",
+      "source_sha256": "16bad10d43419885d4c4498301bcd2e5c29bd461b1a1494189b97bfcd2379445"
+    },
+    {
+      "module": "convex_group.rs",
+      "source_sha256": "251fe999180ff02b44239fbb0b32fe826a478299b8bf61741cd6d5f279166b2c"
+    },
+    {
+      "module": "rgba_png.rs",
+      "source_sha256": "8c4a5221666fd8e2d20182cffb08ca4f2e88243d1aeb4371f2610bdb93708a07"
+    },
+    {
+      "module": "known_convex_sri_layout.json",
+      "source_sha256": "4cafbc69a11b93c19d04d390aa1989d5a241df0d928d027ebe7632bf1921f396"
+    },
+    {
+      "module": "lib.rs",
+      "source_sha256": "62c14bbdb1c70ccc04854189763fb56e0b3b53268fbf833c918e7812661fc714"
+    },
+    {
+      "module": "convex_parameters.rs",
+      "source_sha256": "95d76b3daea9b4ae718be85c47a9f8ef620a3f1b351cd90f322a6cc1eba4a015"
+    },
+    {
+      "module": "convex_producers.rs",
+      "source_sha256": "44421bbc67e54a2fbbd54bb6eb1179d4f91ff6831f245cf787c026e21a49bab2"
+    },
+    {
+      "module": "convex_configuration.rs",
+      "source_sha256": "00e8f3ee059726d28a7cf3e4d1d4dde458fc0d80b34a13d989522cada6a5b166"
+    },
+    {
+      "module": "convex_command.rs",
+      "source_sha256": "fe379e1a238acc793bced432830c4409c7d7e98368741ece2bacfede9d6a5273"
+    }
+  ],
+  "vendor_resources_included": false,
+  "upstream_commit_scope": "Historical extraction base; per-module source_sha256 values identify upstream inputs, not the current modified files. Current source hashes are locked by component.json.",
+  "original_changes_2026_11_05": [
+    "Shared native/WASM in-memory Session and bounded resource sources",
+    "Reconstruction-only session without exclusively transmission or HV inputs",
+    "Original linear-gray-v1 display generator, no vendor palette payload",
+    "Offline native host and archived-data comparison harness"
+  ],
+  "autonomy_complete": false
+}

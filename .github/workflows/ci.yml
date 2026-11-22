@@ -35,6 +35,8 @@ jobs:
           rustc +1.99.0 --test components/ultrasound/convex-decoder/1.0.0/build/reproducible-rustc.rs -o "$RUNNER_TEMP/odb-rustc-tests"
           "$RUNNER_TEMP/odb-rustc-tests"
       - run: cargo test --manifest-path components/ultrasound/convex-decoder/1.0.0/Cargo.toml --lib --locked
+      - run: cargo test --manifest-path components/ultrasound/convex-decoder/1.0.1/Cargo.toml --lib --locked
+      - run: cargo test --manifest-path apps/uc5-2s/Cargo.toml --lib --locked
       - run: npm run probe:check
       - run: cargo test --manifest-path components/ultrasound/convex-open-image/0.1.0/Cargo.toml --locked
       - run: npm run probe:open:check

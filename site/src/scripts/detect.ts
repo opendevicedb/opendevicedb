@@ -9,6 +9,8 @@ import { STATUS_LABEL, displayName } from "../lib/config.ts";
 import { compatibleApplications } from "@opendevicedb/components/browser";
 import { loadComponentRegistry, openApplication } from "./applications.ts";
 
+import { uc5DeviceId, uc5AppUrl, uc5AppTitle } from "../lib/uc5-app.ts";
+
 const nav = navigator as any;
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const out = $("out"), title = $("out-title"), readEl = $("out-read"), notes = $("out-notes");
@@ -217,6 +219,13 @@ async function showUsbApplications(device: any, deviceId?: string) {
     const section = document.createElement("section"); section.className = "detect-applications card";
     const heading = document.createElement("h3"); heading.textContent = "Use the selected USB device"; section.append(heading);
     const actions = document.createElement("div"); actions.className = "device-app-actions"; section.append(actions);
+    if (deviceId === uc5DeviceId) {
+      const link = document.createElement("a");
+      link.href = uc5AppUrl;
+      link.textContent = uc5AppTitle;
+      link.className = "btn primary";
+      actions.append(link);
+    }
     const examples = document.createElement("details"); const summary = document.createElement("summary"); summary.textContent = "USB technical examples"; examples.append(summary);
     const note = document.createElement("p"); note.textContent = "These examples and utilities demonstrate components or read an existing driver. Check each tool’s requirements."; examples.append(note);
     for (const app of applications) {

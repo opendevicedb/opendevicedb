@@ -1,0 +1,245 @@
+{
+  "schema_version": "convex-configuration-asset-hashes-v1",
+  "profiles": {
+    "ABD": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "721ce3a1564f7e5cd16c3e0899471ab5cc4e29ce01d0845141535e2ec6768e6c"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "Diaphragm": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "721ce3a1564f7e5cd16c3e0899471ab5cc4e29ce01d0845141535e2ec6768e6c"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "General": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "3d6237ef3a139581de03cfc0db5b5c2c5519b48e9afeb6499fdf75c0892c8021"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "bf553725fc08bf50b6c4919ebc38d8cb8d648b8f03072a6d2da6fe32dcd84231"
+      }
+    },
+    "Lung": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "721ce3a1564f7e5cd16c3e0899471ab5cc4e29ce01d0845141535e2ec6768e6c"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "OB": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "3d6237ef3a139581de03cfc0db5b5c2c5519b48e9afeb6499fdf75c0892c8021"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "Renal": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "3d6237ef3a139581de03cfc0db5b5c2c5519b48e9afeb6499fdf75c0892c8021"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "Spine": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "3d6237ef3a139581de03cfc0db5b5c2c5519b48e9afeb6499fdf75c0892c8021"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    },
+    "Uro": {
+      "A_ADC.bin": {
+        "bytes": 20,
+        "sha256": "4e073dd1aabcd1bad16622ad1ca1182ad08e59fa1db5359e25b6b3f089307e7e"
+      },
+      "A_ATGC.bin": {
+        "bytes": 1024,
+        "sha256": "3d6237ef3a139581de03cfc0db5b5c2c5519b48e9afeb6499fdf75c0892c8021"
+      },
+      "A_Apo.bin": {
+        "bytes": 2048,
+        "sha256": "dcde5582467b51f7c82e40bc6306e13d59e71a11bacbd1d808071a208c6fb149"
+      },
+      "A_ApoComp.bin": {
+        "bytes": 2048,
+        "sha256": "b4dc0b8f14671df5c0278ea1c58a92099a3b8a5cb50e6da4cec6677ff98eb3d5"
+      },
+      "A_Probe.bin": {
+        "bytes": 68,
+        "sha256": "9b8e95810fe33a085f2be2e58f082de9915cb3d7f66324d01145e4c211c2efcb"
+      },
+      "A_TxWave.bin": {
+        "bytes": 660,
+        "sha256": "db99ee64fb4185fcb98f1fc21520774dc0c0bb995b4c5bdf88cdce1eb86dd2e3"
+      },
+      "B_PRF.bin": {
+        "bytes": 388,
+        "sha256": "9159defd1ef064c0050ec94ce88936c016e86e22e90e682521672edd53d1e5c3"
+      }
+    }
+  }
+}

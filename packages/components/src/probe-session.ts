@@ -25,7 +25,7 @@ export class ProbeCaptureSession{
   const sources=nodes.filter(n=>n.c.runtime?.entry==="probe-usb"),decoders=nodes.filter(n=>n.c.runtime?.abi==="odb.ultrasound.decode/1"),displays=nodes.filter(n=>n.c.runtime?.abi==="odb.video-ui/1");
   if(sources.length!==1||decoders.length!==1||!displays.length||displays.length>4||nodes.length!==2+displays.length)throw Error("Capture requires one USB source, one probe decoder and one to four frame displays");
   const source=sources[0],decoder=decoders[0];
-  if(decoder.component!=="ultrasound/convex-decoder"||decoder.version!=="1.0.0")throw Error("USB configuration requires the audited UC5-2S core release; arbitrary processors cannot supply device commands");
+  if(decoder.component!=="ultrasound/convex-decoder"||!["1.0.0","1.0.1"].includes(decoder.version))throw Error("USB configuration requires the audited UC5-2S core release; arbitrary processors cannot supply device commands");
   if(!this.composition.connections.some(e=>e.from===`${source.id}.bytes`&&e.to===`${decoder.id}.bytes`)||displays.some(n=>!this.composition.connections.some(e=>e.from===`${decoder.id}.frames`&&e.to===`${n.id}.frames`)))throw Error("Connect USB bytes to the decoder and decoded frames to each display");
   try{
    for(const n of displays){signal.throwIfAborted();const ui=await this.host.prepareInterface(n.c,n.id,signal);if(signal.aborted){ui.close();signal.throwIfAborted();}this.renderers.push(ui);}

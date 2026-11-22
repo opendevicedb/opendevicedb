@@ -5,25 +5,33 @@ import {join,resolve} from "node:path";
 import {homedir} from "node:os";
 import {createHash} from "node:crypto";
 const repository=resolve(import.meta.dirname,"..");
-const root=join(repository,"components/ultrasound/convex-decoder/1.0.0");
-const wrapperSource=join(root,"build/reproducible-rustc.rs");
-const target=join(root,"target",`wasm-repro-v1-${createHash("sha256").update(readFileSync(wrapperSource)).digest("hex").slice(0,16)}`);
-mkdirSync(target,{recursive:true});
-const wrapper=join(target,`odb-reproducible-rustc${process.platform==="win32"?".exe":""}`);
-execFileSync("rustc",["+1.99.0",wrapperSource,"-O","-o",wrapper],{stdio:"inherit"});
-const environment={...process.env};
-delete environment.RUSTFLAGS;
-delete environment.RUSTC_WORKSPACE_WRAPPER;
-environment.RUSTC_WRAPPER=wrapper;
-environment.CARGO_TARGET_DIR=target;
-environment.CARGO_ENCODED_RUSTFLAGS=[
-  "-C","link-arg=--max-memory=268435456",
-  "-C","metadata=odb-convex-decoder-v1",
-  "-C","codegen-units=1",
-  `--remap-path-prefix=${repository}=.`,
-  `--remap-path-prefix=${process.env.CARGO_HOME??join(homedir(),".cargo")}=/cargo`,
-].join("\u001f");
-execFileSync("cargo",["+1.99.0","build","--manifest-path",join(root,"Cargo.toml"),"--lib","--release","--target","wasm32-wasip1","--locked"],{stdio:"inherit",env:environment});
-const built=join(target,"wasm32-wasip1/release/odb_convex_decoder.wasm"),artifact=join(root,"decoder.wasm");
-if(process.argv.includes("--check")){if(!readFileSync(built).equals(readFileSync(artifact)))throw Error("Probe WASM differs from the published artifact; rebuild it and regenerate component locks");console.log("Probe WASM reproducibly matches its sources");}
-else copyFileSync(built,artifact);
+const decoderDir = "components/ultrasound/convex-decoder";
+const builds = [
+  {directory: decoderDir + "/1.0.0", crate: "odb_convex_decoder", artifact: "decoder.wasm", wrapper: "1.0.0"},
+  {directory: decoderDir + "/1.0.1", crate: "odb_convex_decoder", artifact: "decoder.wasm", wrapper: "1.0.1"},
+  {directory: "apps/uc5-2s", crate: "probe_embedded", artifact: "probe.wasm", wrapper: "1.0.1"},
+];
+for (const build of builds) {
+  const root = join(repository, build.directory);
+  const wrapperSource = join(repository, decoderDir, build.wrapper, "build/reproducible-rustc.rs");
+  const target=join(root,"target",`wasm-repro-v1-${createHash("sha256").update(readFileSync(wrapperSource)).digest("hex").slice(0,16)}`);
+  mkdirSync(target,{recursive:true});
+  const wrapper=join(target,`odb-reproducible-rustc${process.platform==="win32"?".exe":""}`);
+  execFileSync("rustc",["+1.99.0",wrapperSource,"-O","-o",wrapper],{stdio:"inherit"});
+  const environment={...process.env};
+  delete environment.RUSTFLAGS;
+  delete environment.RUSTC_WORKSPACE_WRAPPER;
+  environment.RUSTC_WRAPPER=wrapper;
+  environment.CARGO_TARGET_DIR=target;
+  environment.CARGO_ENCODED_RUSTFLAGS=[
+    "-C","link-arg=--max-memory=268435456",
+    "-C","metadata=odb-convex-decoder-v1",
+    "-C","codegen-units=1",
+    `--remap-path-prefix=${repository}=.`,
+    `--remap-path-prefix=${process.env.CARGO_HOME??join(homedir(),".cargo")}=/cargo`,
+  ].join("\u001f");
+  execFileSync("cargo",["+1.99.0","build","--manifest-path",join(root,"Cargo.toml"),"--lib","--release","--target","wasm32-wasip1","--locked"],{stdio:"inherit",env:environment});
+  const built=join(target,"wasm32-wasip1/release",build.crate+".wasm"),artifact=join(root,build.artifact);
+  if(process.argv.includes("--check")){if(!readFileSync(built).equals(readFileSync(artifact)))throw Error("Probe WASM differs from the published artifact; rebuild it and regenerate component locks");console.log("Probe WASM reproducibly matches its sources");}
+  else copyFileSync(built,artifact);
+}
