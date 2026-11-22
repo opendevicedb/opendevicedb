@@ -34,4 +34,3 @@ relevant upstream source would help us correct it.
 Thanks for OpenRazer.
 Sébastien
 Prepared with AI assistance.
-

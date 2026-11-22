@@ -29,4 +29,3 @@ information remaining on phyphox.
 Thanks again for making this possible.
 Sébastien
 Prepared with AI assistance.
-
