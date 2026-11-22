@@ -9,7 +9,7 @@ import { STATUS_LABEL, displayName } from "../lib/config.ts";
 import { compatibleApplications } from "@opendevicedb/components/browser";
 import { loadComponentRegistry, openApplication } from "./applications.ts";
 
-import { uc5DeviceId, uc5AppUrl, uc5AppTitle } from "../lib/uc5-app.ts";
+import { probeAppUrl, probeAppTitle } from "../lib/probe-apps.ts";
 
 const nav = navigator as any;
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -215,14 +215,15 @@ async function showUsbApplications(device: any, deviceId?: string) {
     const registry = await loadComponentRegistry();
     if (currentUsbDevice !== device) return;
     const applications = compatibleApplications(registry, { usb: true, deviceId });
-    if (!applications.length) return;
+    const standalone = probeAppUrl(deviceId);
+    if (!applications.length && !standalone) return;
     const section = document.createElement("section"); section.className = "detect-applications card";
     const heading = document.createElement("h3"); heading.textContent = "Use the selected USB device"; section.append(heading);
     const actions = document.createElement("div"); actions.className = "device-app-actions"; section.append(actions);
-    if (deviceId === uc5DeviceId) {
+    if (standalone) {
       const link = document.createElement("a");
-      link.href = uc5AppUrl;
-      link.textContent = uc5AppTitle;
+      link.href = standalone;
+      link.textContent = probeAppTitle;
       link.className = "btn primary";
       actions.append(link);
     }

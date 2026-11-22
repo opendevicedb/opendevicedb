@@ -29,7 +29,12 @@ jobs:
       - run: npm ci
       - run: rustup toolchain install 1.99.0 --profile minimal
       - run: rustup default 1.99.0
-      - run: rustup target add wasm32-wasip1
+      - run: rustup target add wasm32-wasip1 wasm32-unknown-unknown
+      - name: Verify shipped and rebuilt UL10-5E decoders
+        run: |
+          cargo build --manifest-path apps/ul10-5e/Cargo.toml --locked --release --target wasm32-unknown-unknown
+          node apps/ul10-5e/check.mjs
+          node apps/ul10-5e/check.mjs apps/ul10-5e/target/wasm32-unknown-unknown/release/ul10_browser.wasm
       - name: Test local-crate build identity normalization
         run: |
           rustc +1.99.0 --test components/ultrasound/convex-decoder/1.0.0/build/reproducible-rustc.rs -o "$RUNNER_TEMP/odb-rustc-tests"
