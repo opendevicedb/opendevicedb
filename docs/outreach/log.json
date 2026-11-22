@@ -58,14 +58,26 @@
     {
       "name": "Open Source Imaging Initiative",
       "channel": "email",
-      "status": "sent",
+      "status": "substantive_response_received",
       "recipient": "info@opensourceimaging.org",
       "sent_at": "2026-11-04T08:29:10.000Z",
       "subject": "OpenDeviceDB — exploring links with the Open Source Imaging Initiative",
       "message": "messages/2026-11-04/open-source-imaging-initiative.md",
       "contact_source": "https://www.opensourceimaging.org/2016/05/01/about/",
       "outgoing_text_verified": true,
-      "next_action": "Await a substantive response; do not repeat the introduction."
+      "next_action": "Owner review of the existing-thread reply before sending; no duplicate introduction or separate approach to copied participants.",
+      "responses": [
+        {
+          "received_date": "2026-11-20",
+          "channel": "professional email",
+          "summary": "Substantive replies and a community introduction received. Private correspondence and the proposed device investigation remain outside the public journal; no implemented integration or hardware validation."
+        }
+      ],
+      "prepared_followup": {
+        "date": "2026-11-22",
+        "status": "draft_prepared_not_sent",
+        "summary": "A reply in the existing thread was drafted and read back, distinguishing catalogue discovery from protocol investigation. Held for owner review; no captures received or published."
+      }
     },
     {
       "name": "Glia",
@@ -1385,7 +1397,7 @@
       "outgoing_text_verified": true,
       "contact_source": "https://github.com/z3ntu",
       "project_source": "https://github.com/openrazer/openrazer/tree/477f4d6d3ab7e9deb6310d5bd3742560c5cbe80d",
-      "next_action": "Owner review of the existing-thread follow-up draft; not sent. No repeat introduction or hardware-validation claim.",
+      "next_action": "Await the existing conversation; no repeat introduction or hardware-validation claim.",
       "catalogue_changes": [
         {
           "url": "https://github.com/opendevicedb/opendevicedb/pull/45",
@@ -1393,10 +1405,13 @@
           "merged_at": "2026-11-10T20:19:00Z"
         }
       ],
-      "prepared_followup": {
-        "date": "2026-11-16",
-        "status": "draft_prepared_not_sent",
-        "summary": "Update in the existing thread about the published v3.12.4 importer: 230 source records, 125 new devices and 105 enriched records. Draft independently read back in Gmail; private account evidence retained outside this repository."
+      "followup": {
+        "sent_at": "2026-11-16T02:52:48Z",
+        "status": "sent_and_read_back",
+        "message": "messages/2026-11-16/openrazer-live-index.md",
+        "verified_on": "2026-11-22",
+        "outgoing_text_verified": true,
+        "note": "The previous journal described an unsent draft; current sent-mail evidence confirms the follow-up was sent. This check did not resend it."
       }
     },
     {
@@ -1436,7 +1451,7 @@
       "outgoing_text_verified": true,
       "contact_source": "https://phyphox.org/contact/",
       "project_source": "https://github.com/phyphox/phyphox-android/tree/45fa55a0727653ccce439b86acb69c00cf435436",
-      "next_action": "Owner review of the existing-thread draft; not sent. Verify canonical model selection and reuse terms before any import. No duplicate contact.",
+      "next_action": "Await the existing conversation. Verify exact model-link behavior and reuse terms before any import; no new phone test or duplicate email.",
       "responses": [
         {
           "received_date": "2026-11-06",
@@ -1445,10 +1460,13 @@
           "public_reference": "https://phyphox.org/sensordb/"
         }
       ],
-      "prepared_followup": {
-        "date": "2026-11-16",
-        "status": "draft_prepared_not_sent",
-        "summary": "Thank-you and a proposed source-link-first approach; independently read back in Gmail. No import or phone test."
+      "followup": {
+        "sent_at": "2026-11-16T02:53:20Z",
+        "status": "sent_and_read_back",
+        "message": "messages/2026-11-16/phyphox-followup.md",
+        "verified_on": "2026-11-22",
+        "outgoing_text_verified": true,
+        "note": "The previous journal described an unsent draft; current sent-mail evidence confirms the follow-up was sent. This check did not resend it."
       }
     },
     {
@@ -2325,8 +2343,8 @@
   ],
   "manual_posting_guide": "manual-posting.md",
   "last_scoped_check": {
-    "date": "2026-11-16",
-    "scope": "Six active GitHub discussions, three pending external listing PRs, liquidctl draft PR 943, and targeted phyphox/OpenRazer email threads. Other contacts were not re-verified; last_verified_at remains the earlier broad check."
+    "date": "2026-11-22",
+    "scope": "Targeted personal-mail search for OpenDeviceDB replies after November16 and readback of the OSII, private collaborator, OpenRazer and phyphox threads. OSII draft verified as unsent; two November16 follow-ups verified as sent. Other contacts and listings were not re-audited; last_verified_at retains its earlier broad scope."
   },
   "maintenance_actions": [
     {

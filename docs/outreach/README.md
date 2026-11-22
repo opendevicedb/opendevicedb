@@ -18,7 +18,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 | [Open Healthware / OSHWA](messages/2026-11-04/open-healthware-oshwa.md) | email | `sent` | [contact source](https://oshwa.org/resources/open-healthware-education-guide/) |
 | [Openwater](messages/2026-11-04/openwater.md) | email | `sent` | [contact source](https://openwaterhealth.github.io/openwater-community/) |
 | [OpenBCI](messages/2026-11-04/openbci.md) | email | `sent` | [contact source](https://docs.openbci.com/FAQ/GenFAQ/) |
-| [Open Source Imaging Initiative](messages/2026-11-04/open-source-imaging-initiative.md) | email | `sent` | [contact source](https://www.opensourceimaging.org/2016/05/01/about/) |
+| [Open Source Imaging Initiative](messages/2026-11-04/open-source-imaging-initiative.md) | email | `substantive_response_received`; follow-up draft awaiting owner review | [contact source](https://www.opensourceimaging.org/2016/05/01/about/) |
 | [Glia](messages/2026-11-04/glia.md) | email | `automatic_acknowledgement` | [contact source](https://glia.org/pages/contact) |
 | [Open Source Medical Supplies](messages/2026-11-04/open-source-medical-supplies.md) | email | `sent` | [contact source](https://opensourcemedicalsupplies.org/about/contact/) |
 | Luc Jonveaux / un0rick | private email | `private_response_received` | Private correspondence |
@@ -142,6 +142,12 @@ Substantive responses (all five answered on 2026-11-10, see `messages/2026-11-10
 - [REA joint tutorial](https://github.com/morluto/rea/discussions/5334#discussioncomment-19411380): XinwangTao suggests a first outline built on one public device case.
 
 Catalogue corrections from this campaign are now merged and live: PRs 21, 24, 25, 27, 28 and 29, and PR 32 for issues 20 and 23. [Awesome IoT and Hardware Security](https://github.com/kayranfatih/awesome-iot-and-hardware-security/pull/2) merged the listing on 2026-11-05. The Awesome MCP Servers, Awesome Connected Things Security and FKIE listing PRs and liquidctl draft PR 943 remain open without review.
+
+## Scoped update 2026-11-22
+
+- Open Source Imaging Initiative: substantive professional replies received on November20. A reply is drafted in the existing thread and independently read back, but remains unsent pending owner review. Correspondence and proposed investigation details stay private; no collaboration deliverable, capture analysis or hardware test is claimed.
+- [OpenRazer follow-up](messages/2026-11-16/openrazer-live-index.md) and [phyphox thank-you](messages/2026-11-16/phyphox-followup.md): sent-mail evidence confirms both were sent on November16. The earlier journal still called them drafts. Their exact outgoing text is now archived without quoted incoming correspondence. Neither was resent.
+- This was a targeted mailbox check, not a fresh audit of every contact, listing or source. Excluded communities, moderation holds and owner-review requirements remain in force.
 
 ## Scoped update 2026-11-16
 
