@@ -1,10 +1,9 @@
 import {buildSync} from 'esbuild';
 import {readFileSync} from 'node:fs';
 import {join} from 'node:path';
-import {fileURLToPath} from 'node:url';
 
-const directory = fileURLToPath(new URL('.', import.meta.url));
 export function renderProbe(app, profile, workerEntry, transport, defines = {}) {
+  const directory = join(app, "../shared/ultrasound");
   const bundle = (file, define = {}, alias = {}) => buildSync({
     entryPoints: [file], bundle: true, format: 'iife', platform: 'browser', write: false, define, alias,
   }).outputFiles[0].text;
