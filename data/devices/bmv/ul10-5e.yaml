@@ -9,11 +9,10 @@ identifiers:
   usb:
     - 04b4:00f1
 status: partial-protocol
-summary: BMV linear04b4:00f1 reports UL10-5E/ID7 and V1.350 text. A second Rust-only gulaman-phantom
-  trial with RAM reception preserves5128192data bytes and14strict complete80-line frames; the CPU
-  pipeline produces14uncalibrated candidate phantom images. The first negative trial is retained.
-  USB identity/configuration and targeted DSP/palette ports are documented, while manufacturer/GPU
-  equivalence, target geometry, repeatability and acoustic/electrical validation remain open.
+summary: The UL10-5E linear ultrasound probe reports product ID 7 and firmware V1.350 over USB.
+  A Rust driver acquired three phantom recordings. A browser-based WebAssembly decoder reproduced
+  all 14 images from the one-second recording pixel for pixel against the native Rust reference.
+  The images are uncalibrated.
 interfaces:
   - name: Vendor-specific USB acquisition interface
     transport: usb
@@ -232,6 +231,15 @@ claims:
     expires: 2026-12-04
     agent: Codex + OpenDeviceDB MCP + REA
 verification:
+  - method: manual
+    by: smichea with Codex
+    date: 2026-11-22
+    notes: >-
+      Chromium replayed 5,128,192 bytes recorded from the physical probe on a phantom using the
+      Vascular preset at depth index 1. All 14 decoded 512 × 512 RGBA frames matched the native
+      reconstruction by SHA-256. A separate WebUSB transport simulation exercised all 39 recorded
+      writes including Freeze, and rejected a mismatched identity before the first write.
+      The two ten-second native acquisitions yielded 150 and 149 complete frames on replay.
   - method: hardware-replay
     by: smichea with Codex
     date: 2026-11-04
@@ -471,4 +479,4 @@ provenance:
     - Rust probe-frame0.13 strict memory-journal replay and CPU phantom reconstruction
     - Independent raw length/hash, all-frame source-slice and80-line marker/counter verification;
       ffprobe14-frame playback metadata
-updated: 2026-11-04
+updated: 2026-11-22
