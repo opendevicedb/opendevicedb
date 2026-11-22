@@ -4,13 +4,15 @@ import { readFileSync, readdirSync, lstatSync, writeFileSync } from "node:fs";
 import { resolve, relative, join } from "node:path";
 import { createHash } from "node:crypto";
 const args = process.argv.slice(2), options: Record<string,string> = {};
-for(let i=0;i<args.length;i+=2){if(!["--assets","--hv","--sri","--maps","--settings","--selection","--parameters","--grouping","--output"].includes(args[i])||!args[i+1]||options[args[i]])throw Error("Supply assets, hv, sri, maps, settings, selection, parameters, grouping and an output outside the repository");options[args[i]]=args[i+1];}
-for(const key of ["assets","hv","sri","maps","settings","selection","parameters","grouping","output"])if(!options[`--${key}`])throw Error(`Missing --${key}`);
+for(let i=0;i<args.length;i+=2){if(!["--assets","--hv","--sri","--maps","--settings","--selection","--parameters","--grouping","--output"].includes(args[i])||!args[i+1]||options[args[i]])throw Error("Supply assets, optional hv, sri, maps, settings, selection, parameters, grouping and an output outside the repository");options[args[i]]=args[i+1];}
+for(const key of ["assets","sri","maps","settings","selection","parameters","grouping","output"])if(!options[`--${key}`])throw Error(`Missing --${key}`);
 const repository=resolve(import.meta.dirname,".."), output=resolve(options["--output"]);
 if(!relative(repository,output).startsWith(".."))throw Error("Keep private resource bundles outside the public repository");
 const files: Record<string,{base64:string;sha256:string}>={};let total=0;
 for(const group of ["assets","hv","sri","maps"]){
- const dir=options[`--${group}`]; let count=0;
+ const dir=options[`--${group}`];
+ if(group==="hv"&&!dir)continue;
+ let count=0;
  for(const name of readdirSync(dir).sort()){
   if(!/^[a-zA-Z0-9_.-]+$/.test(name))throw Error("Unexpected resource filename");
   const path=join(dir,name);if(!lstatSync(path).isFile())throw Error("Only regular files are accepted");

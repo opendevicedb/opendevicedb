@@ -12,7 +12,7 @@ export async function validateResources(value:unknown):Promise<ProbeResources>{
  }
  return v;
 }
-export async function createProbeDecoder(bytes:BufferSource,resources?:ProbeResources,options:{purpose?:"acquisition"|"reconstruction";continuous?:boolean}={}){
+export async function createProbeDecoder(bytes:BufferSource,resources?:ProbeResources,options:{purpose?:"acquisition"|"reconstruction";continuous?:boolean;depthIndex?:number}={}){
  // The same Rust Session receives owned byte arrays on Linux and in WASM.
  // No preopened WASI directory, mounted resources, network or host filesystem.
  const files=resources?Object.fromEntries(Object.entries(resources.files).map(([name,file])=>[name,[...Uint8Array.from(atob(file.base64),c=>c.charCodeAt(0))]])):undefined;
@@ -34,7 +34,7 @@ export async function createProbeDecoder(bytes:BufferSource,resources?:ProbeReso
  else {
   if(typeof e.odb_builtin_profile!=="function"||e.odb_builtin_profile()!==1)throw Error("This decoder requires an explicitly supplied profile");
   if(options.continuous&&e.odb_live_api?.()!==1)throw Error("This decoder does not support continuous display");
-  initialized=json(options.continuous?8:7,new TextEncoder().encode(JSON.stringify(options.purpose?{purpose:options.purpose}:{})));
+  initialized=json(options.continuous?8:7,new TextEncoder().encode(JSON.stringify({purpose:options.purpose,depth_index:options.depthIndex})));
  }
  const frames=(operation:number,input:Uint8Array)=>{
   const result=call(operation,input),view=new DataView(result.buffer);if(result.length<4)throw Error("Invalid decoder frame batch");const count=view.getUint32(0,true);if(count>64)throw Error("Frame batch limit exceeded");
