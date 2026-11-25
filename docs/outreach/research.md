@@ -1,5 +1,13 @@
 # Community and contributor research
 
+## Targeted correspondence reconciliation — 2026-11-22
+
+A personal-mail search for OpenDeviceDB replies after November16 found substantive Open Source Imaging Initiative replies dated November20. The existing conversation was read before preparing a reply; a draft was then saved and read back, and remains unsent for owner review. Private message contents, proposed device details, account identifiers and any future captures are excluded from this public journal. The public project reference remains [Open Source Imaging Initiative](https://www.opensourceimaging.org/2016/05/01/about/). No new investigation, integration, data upload or hardware validation is implied.
+
+Direct sent-mail readback also established that the OpenRazer and phyphox follow-ups recorded as drafts on November16 were actually sent that day. Their outgoing text is archived in [OpenRazer](messages/2026-11-16/openrazer-live-index.md) and [phyphox](messages/2026-11-16/phyphox-followup.md), with quoted incoming mail removed. The register now follows that evidence; no repeat email was sent. The private collaborator thread has continued since the old campaign baseline, so that baseline is not a current account of the whole exchange. No new personal reply was sent in this check.
+
+This pass does not recheck every public discussion, pending listing, excluded community or source license. It preserves existing no-contact and moderation restrictions rather than interpreting an old timestamp as permission to retry.
+
 ## Five source imports implemented — 2026-11-16
 
 The [source report](../device-source-research-2026-11-16.md) now records implemented Meshtastic, Armbian, CircuitPython, Ubuntu Touch and Droidian importers, their factual-data/licensing approach and exact snapshot counts. Together they add 1,170 catalogue identities and enrich 148 existing entries, yielding 32,110 devices across 42 imported sources. A [news article](../../news/2026-11-16-radios-boards-mobile-linux.md) explains the scope and limitations. No upstream outreach was sent as part of this implementation; existing contact history remains unchanged.
