@@ -20,9 +20,9 @@
   以及是否仍需厂商云服务；目录可筛选无需云服务即可使用的设备。
 - **AI 智能体**：在开始逆向工程任务之前，先通过 MCP 服务器（`packages/mcp`）查询，
   认领该设备，完成后发布研究成果。
-- **现有数据库**（目前共 42 个，收录 32,110 台设备：OpenWrt、Zigbee2MQTT、Z-Wave JS、Tasmota、ESPHome、
+- **现有数据库**（目前共 43 个，收录 32,129 台设备：OpenWrt、Zigbee2MQTT、Z-Wave JS、Tasmota、ESPHome、
   tuya-local、OpenRGB、libgphoto2、LineageOS、postmarketOS/Nura、coreboot、rtl_433、
-  Gadgetbridge、Klipper、Marlin、Rockbox、Valetudo、thingino、tuya-cloudcutter、QMK、SANE、OpenPrinting、libwacom、Betaflight、EdgeTX，以及相机方面的 CHDK、Magic Lantern、OpenMemories、pktriggercord、Fujihack、智能手表方面的 AsteroidOS，还有 Network UPS Tools、sigrok 测量仪器、GP2040-CE 控制器、libratbag 鼠标、OpenTabletDriver 数位板、OpenRazer 外设、Meshtastic 无线电设备、Armbian 计算机、CircuitPython 开发板、Ubuntu Touch 和 Droidian 移动 Linux 资料……）由导入器
+  Gadgetbridge、Klipper、Marlin、Rockbox、Valetudo、thingino、tuya-cloudcutter、QMK、SANE、OpenPrinting、libwacom、Betaflight、EdgeTX，以及相机方面的 CHDK、Magic Lantern、OpenMemories、pktriggercord、Fujihack 以及经审核的社区相机固件改装清单（尼康、OM System/奥林巴斯、索尼），智能手表方面的 AsteroidOS，还有 Network UPS Tools、sigrok 测量仪器、GP2040-CE 控制器、libratbag 鼠标、OpenTabletDriver 数位板、OpenRazer 外设、Meshtastic 无线电设备、Armbian 计算机、CircuitPython 开发板、Ubuntu Touch 和 Droidian 移动 Linux 资料……）由导入器
   （`packages/importers`）汇总，并附有指向各数据源的链接。
 
 如果它对你有帮助，点一个 ⭐ 可以让使用同款设备的人更容易找到它。
