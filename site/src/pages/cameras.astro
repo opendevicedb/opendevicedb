@@ -1,0 +1,114 @@
+---
+import Base from "../layouts/Base.astro";
+import { deviceUrl } from "../lib/data.ts";
+import { cameraRows, camerasUpdated, STATE_LABEL, STATE_HELP, type CameraState } from "../lib/cameras.ts";
+
+const rows = cameraRows();
+const cameras = new Set(rows.map((r) => r.id)).size;
+const installable = new Set(rows.filter((r) => r.state === "installable").map((r) => r.id)).size;
+const vendors = [...new Set(rows.map((r) => r.vendor))].sort();
+const projects = [...new Set(rows.map((r) => r.project))].sort();
+const updated = camerasUpdated();
+const fmt = (n: number) => n.toLocaleString("en");
+const states: CameraState[] = ["installable", "limited", "untested", "research"];
+const RISK: Record<string, string> = { none: "inst-easy", low: "inst-easy", medium: "inst-medium", high: "inst-hard" };
+---
+<Base
+  title="Which cameras can run custom firmware?"
+  description={`${fmt(cameras)} cameras from ${vendors.slice(0, 6).join(", ")} and more that can run open code: Magic Lantern, CHDK, Wonder Lantern, Nikon-Patch, db firmware, OpenMemories. Firmware version, risk and licence for each.`}
+>
+  <div class="prose">
+    <h1>Which cameras can run custom firmware?</h1>
+    <p class="lede">
+      {fmt(cameras)} cameras can run open code on the camera itself, {fmt(installable)} of them with a build
+      their author has tested. For each one: the project, the exact stock firmware it needs, the risk and the licence.
+    </p>
+    <p>
+      This covers on-camera projects: Magic Lantern and CHDK for Canon, Wonder Lantern, NikonFirmwarePatch and
+      Nikon-Patch for Nikon, db firmware for OM System and Olympus, OpenMemories and the new research projects for
+      Sony, Fujihack for Fujifilm. Remote control from a computer (libgphoto2, pktriggercord) is on each camera's page.
+      Read the <a href="/news/2026-11-27-camera-firmware-mods/">camera firmware mods news</a> for the background.
+    </p>
+    <p class="small muted">
+      <strong>Modified firmware can brick a camera.</strong> Match the firmware version exactly, read the project's
+      own guide, and keep the official firmware at hand. Nothing here was tested by OpenDeviceDB.
+      Updated {updated}. Data: <a href="/api/cameras.json">/api/cameras.json</a> (CC BY-SA 4.0).
+    </p>
+  </div>
+
+  <form class="filters" id="camera-filters" role="search">
+    <div class="directory-search">
+      <label for="cam-q">Search a model</label>
+      <input id="cam-q" type="search" placeholder="e.g. Z30, EOS 5D Mark III, A6000, OM-1" autocomplete="off" />
+    </div>
+    <div><label for="cam-vendor">Brand</label><select id="cam-vendor"><option value="">All brands</option>{vendors.map((v) => <option value={v}>{v}</option>)}</select></div>
+    <div><label for="cam-project">Project</label><select id="cam-project"><option value="">All projects</option>{projects.map((p) => <option value={p}>{p}</option>)}</select></div>
+    <div><label for="cam-state">State</label><select id="cam-state"><option value="">Any</option>{states.map((s) => <option value={s}>{STATE_LABEL[s]}</option>)}</select></div>
+    <div><label>&nbsp;</label><p class="small muted" id="cam-count" aria-live="polite" style="margin:10px 0 0">{fmt(rows.length)} rows</p></div>
+  </form>
+
+  <div class="table-wrap">
+    <table id="camera-table" class="stackable">
+      <thead><tr><th>Camera</th><th>Project</th><th>State</th><th>Stock firmware</th><th>Risk</th><th>Licence</th></tr></thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr data-vendor={r.vendor} data-project={r.project} data-state={r.state} data-q={`${r.vendor} ${r.model} ${r.id}`.toLowerCase()}>
+            <td data-label="Camera"><a href={deviceUrl(r.id)}>{r.vendor} {r.model}</a></td>
+            <td data-label="Project"><a href={r.projectUrl}>{r.project}</a></td>
+            <td data-label="State"><span class:list={["badge", r.state === "installable" ? "s-controllable" : "s-partial-protocol"]} title={STATE_HELP[r.state]}>{STATE_LABEL[r.state]}</span></td>
+            <td data-label="Firmware" class="mono">{r.firmware ?? "—"}</td>
+            <td data-label="Risk">{r.risk ? <span class:list={["badge", RISK[r.risk]]}>{r.risk}</span> : "—"}</td>
+            <td data-label="Licence" class="small">{r.license ?? "—"}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <h2>What the states mean</h2>
+    <ul>{states.map((s) => <li><strong>{STATE_LABEL[s]}</strong>: {STATE_HELP[s]}</li>)}</ul>
+    <p>
+      Ran a build on a camera marked as not tested? A <a href="/contribute/">report</a> helps the next owner decide.
+      Missing a project? Open an issue or a pull request: the list is maintained in
+      <a href="https://github.com/opendevicedb/opendevicedb/blob/main/packages/importers/src/sources/camera-mods.ts"><code>camera-mods.ts</code></a>.
+    </p>
+  </div>
+
+  <style>
+    #cam-q { width: 100%; height: 42px; padding: 8px 12px; border: 1px solid #ffffff3d; border-radius: 12px; background: var(--surface); color: var(--text); font-size: 16px; }
+    @media (min-width: 701px) { #camera-filters { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    /* .stackable sets display:block on rows on phones, which would override [hidden]. */
+    #camera-table tr[hidden] { display: none; }
+    #camera-table td > .badge { justify-self: start; }
+  </style>
+
+  <script>
+    const q = document.getElementById("cam-q") as HTMLInputElement;
+    const vendor = document.getElementById("cam-vendor") as HTMLSelectElement;
+    const project = document.getElementById("cam-project") as HTMLSelectElement;
+    const state = document.getElementById("cam-state") as HTMLSelectElement;
+    const count = document.getElementById("cam-count")!;
+    const rows = [...document.querySelectorAll<HTMLTableRowElement>("#camera-table tbody tr")];
+    const params = new URLSearchParams(location.search);
+    q.value = params.get("q") ?? ""; vendor.value = params.get("brand") ?? ""; project.value = params.get("project") ?? ""; state.value = params.get("state") ?? "";
+    function apply() {
+      const words = q.value.toLowerCase().replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter(Boolean);
+      let n = 0;
+      for (const r of rows) {
+        const hay = r.dataset.q!.replace(/[^a-z0-9 ]+/g, " ") + " " + r.dataset.q!.replace(/[^a-z0-9]+/g, "");
+        const ok = words.every((w) => hay.includes(w)) && (!vendor.value || r.dataset.vendor === vendor.value)
+          && (!project.value || r.dataset.project === project.value) && (!state.value || r.dataset.state === state.value);
+        r.hidden = !ok;
+        if (ok) n++;
+      }
+      count.textContent = `${n.toLocaleString("en")} of ${rows.length.toLocaleString("en")} rows`;
+      const p = new URLSearchParams();
+      if (q.value) p.set("q", q.value); if (vendor.value) p.set("brand", vendor.value); if (project.value) p.set("project", project.value); if (state.value) p.set("state", state.value);
+      history.replaceState(null, "", p.size ? `?${p}` : location.pathname);
+    }
+    for (const el of [q, vendor, project, state]) el.addEventListener("input", apply);
+    document.getElementById("camera-filters")!.addEventListener("submit", (e) => e.preventDefault());
+    apply();
+  </script>
+</Base>
