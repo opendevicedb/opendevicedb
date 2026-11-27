@@ -139,7 +139,7 @@ export const CAMERA_MODS: CameraMod[] = [
     project: "Recipe Lab", repo: "voxivoid/recipe-lab-sony-pmca", rev: "53754b3196495e9d6c0b1f5dccbec3cf1a56fdd7", license: "GPL-3.0", tier: "installable",
     does: "PlayMemories camera app with 76 film-inspired recipes, live preview and QR sharing",
     // Built and tested on the A6000; other PlayMemories bodies are expected but unconfirmed.
-    cameras: [cam("Sony", "ILCE-6000", "PlayMemories app support")],
+    cameras: [cam("Sony", "ILCE-6000", [])], // a camera app: no specific firmware version
     route: { method: "host-software", difficulty: "easy", tools: ["Computer", "USB cable"], opens_device: false, brick_risk: "low", reversible: "yes",
       notes: "Installed as a camera app with Sony-PMCA-RE (or PMCA-RE Reloaded); the firmware is not modified. Uninstall the app to go back." },
   },
@@ -168,8 +168,29 @@ export const CAMERA_MODS: CameraMod[] = [
 
 const projectUrl = (m: CameraMod) => (/^https?:/.test(m.repo) ? m.repo : `https://github.com/${m.repo}${m.rev ? `/tree/${m.rev}` : ""}`);
 
-/** One record per camera and project; records of the same camera merge downstream. */
+/**
+ * One record per camera. A camera that several projects target gets one record carrying every
+ * project, route and summary (joined with " · ", each starting with its project's name), so no
+ * project's firmware or state is lost to the generic merge, which keeps a single summary.
+ */
 export function fromMods(mods: CameraMod[], known = knownCameras(), date = today()): DeviceRecord[] {
+  const byId = new Map<string, DeviceRecord>();
+  for (const r of recordsPerProject(mods, known, date)) {
+    const prev = byId.get(r.id);
+    if (!prev) { byId.set(r.id, r); continue; }
+    byId.set(r.id, {
+      ...prev,
+      aliases: [...new Set([...(prev.aliases ?? []), ...(r.aliases ?? [])])],
+      status: prev.status === "controllable" || r.status === "controllable" ? "controllable" : prev.status,
+      summary: `${prev.summary} · ${r.summary}`,
+      projects: [...(prev.projects ?? []), ...(r.projects ?? [])],
+      install: [...(prev.install ?? []), ...(r.install ?? [])],
+    });
+  }
+  return [...byId.values()];
+}
+
+function recordsPerProject(mods: CameraMod[], known: ReturnType<typeof knownCameras>, date: string): DeviceRecord[] {
   const out: DeviceRecord[] = [];
   for (const m of mods) {
     const url = projectUrl(m);
