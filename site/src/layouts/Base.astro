@@ -13,7 +13,7 @@ const isHome = section === "home";
 const isDevice = section === "devices" && path.split("/").filter(Boolean).length > 1;
 const narrow = !wide && (isDevice || ["agents", "contribute", "policy", "news", "wanted"].includes(section));
 const nav = [["/devices/", "Devices"], ["/contribute/", "Contribute"], ["/wanted/", "Wanted"], ["/news/", "News"]];
-const more = [["/components/", "Components & apps"], ["/agents/", "For agents"], ["/sources/", "Sources"], ["/about/", "About"]];
+const more = [["/cameras/", "Camera firmware"], ["/components/", "Components & apps"], ["/agents/", "For agents"], ["/sources/", "Sources"], ["/about/", "About"]];
 const current = (href: string) => path.startsWith(href) ? "page" as const : undefined;
 const canonical = new URL(path, Astro.site);
 ---
