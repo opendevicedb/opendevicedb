@@ -1515,6 +1515,19 @@
       "proposal_url": "https://github.com/opendevicedb/opendevicedb/pull/41",
       "proposal_status": "draft_open_unmerged",
       "next_action": "Await corrections on the sample (Agilent/Keysight duplicate classes, series driver model lists, DP8xx(A) models) before merging draft PR 41. QCoDeS-contrib not imported. No hardware test; no duplicate introduction."
+    },
+    {
+      "name": "Sony Alpha Rumors",
+      "channel": "email",
+      "status": "sent",
+      "recipient": "sonyalpharumors@gmail.com",
+      "subject": "Tip: a maintained list of which Sony cameras can run custom firmware and apps",
+      "sent_at": "2026-11-27",
+      "message": "messages/2026-11-27/sony-alpha-rumors.md",
+      "outgoing_text_verified": true,
+      "contact_source": "https://www.sonyalpharumors.com/contact/",
+      "project_source": "https://opendevicedb.org/cameras/?brand=Sony",
+      "next_action": "Await a reply; no duplicate send. Nikon Rumors (https://nikonrumors.com/tips/) and 43addict (https://43addict.com/contact-us/) take tips by web form only, to be submitted by the owner and logged then; PetaPixel contact channel not yet verified."
     }
   ],
   "earlier_public_threads_and_contributor_followups": [

@@ -2,7 +2,7 @@
 // project, read from the per-source snapshots (merged records keep one summary and lose which
 // firmware each project needs). Tethering-only sources (libgphoto2, pktriggercord) drive a camera
 // from a computer and are not "running code on the camera", so they are not rows here.
-import { loadSnapshots, type DeviceRecord } from "@opendevicedb/core";
+import { loadSnapshots } from "@opendevicedb/core";
 import { ROOT, db } from "./data.ts";
 
 export const CAMERA_SOURCES = ["magiclantern", "chdk", "openmemories", "fujihack", "camera-mods"] as const;
@@ -56,11 +56,20 @@ export function summaryFirmware(summary?: string): string | undefined {
   return m?.[1].replace(/, development builds$/, "").trim() || undefined;
 }
 
-function stateOf(source: string, r: DeviceRecord): CameraState {
-  if (r.install?.length) return "installable";
+function stateOf(source: string, hasRoute: boolean, summary?: string): CameraState {
+  if (hasRoute) return "installable";
   if (source === "openmemories") return "limited";
-  if (source === "camera-mods") return /Research only/.test(r.summary ?? "") ? "research" : "untested";
+  if (source === "camera-mods") return /Research only/.test(summary ?? "") ? "research" : "untested";
   return "research"; // Magic Lantern ports in development, Fujihack headers without a documented port
+}
+
+/**
+ * The part of a summary about one project: camera-mods joins one summary per project with " · ",
+ * each starting with the project's name. Other sources have one project, hence the whole summary.
+ */
+function projectSummary(summary: string | undefined, project: string, single: boolean): string | undefined {
+  if (single || !summary) return summary;
+  return summary.split(" · ").find((part) => part.startsWith(project));
 }
 
 let cache: CameraRow[] | undefined;
@@ -74,20 +83,25 @@ export function cameraRows(): CameraRow[] {
     for (const r of snap.records) {
       if (r.category !== "camera" && r.category !== "action-camera") continue; // e.g. Sony's RM-LVR remotes
       const merged = byId.get(r.id) ?? r;
-      const p = r.projects?.[0];
-      rows.push({
-        id: r.id,
-        vendor: merged.vendor,
-        model: merged.model,
-        project: PROJECT_NAME[snap.source] ?? p?.name ?? snap.source,
-        projectUrl: p?.url ?? snap.url,
-        source: snap.source,
-        state: stateOf(snap.source, r),
-        // Without a route (untested or research), the summary still names the firmware targeted.
-        firmware: firmwareOf(r.install?.[0]?.firmware_constraints) ?? summaryFirmware(r.summary),
-        risk: r.install?.[0]?.brick_risk,
-        license: p?.license,
-      });
+      // One row per project: a camera two camera-mods projects target appears twice.
+      const projects = r.projects?.length ? r.projects : [undefined];
+      for (const p of projects) {
+        const route = p ? r.install?.find((i) => i.project === p.name) : r.install?.[0];
+        const summary = projectSummary(r.summary, p?.name ?? "", projects.length === 1);
+        rows.push({
+          id: r.id,
+          vendor: merged.vendor,
+          model: merged.model,
+          project: PROJECT_NAME[snap.source] ?? p?.name ?? snap.source,
+          projectUrl: p?.url ?? snap.url,
+          source: snap.source,
+          state: stateOf(snap.source, !!route, summary),
+          // Without a route (untested or research), the summary still names the firmware targeted.
+          firmware: firmwareOf(route?.firmware_constraints) ?? summaryFirmware(summary),
+          risk: route?.brick_risk,
+          license: p?.license,
+        });
+      }
     }
   }
   const order: CameraState[] = ["installable", "limited", "untested", "research"];

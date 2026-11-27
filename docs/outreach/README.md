@@ -15,6 +15,7 @@ An email marked sent is not proof of delivery or adoption. A moderation hold is 
 
 | Community or person / outgoing message | Channel | Last recorded status | Evidence |
 | --- | --- | --- | --- |
+| [Sony Alpha Rumors](messages/2026-11-27/sony-alpha-rumors.md) | email | `sent` | [contact source](https://www.sonyalpharumors.com/contact/) |
 | [Open Healthware / OSHWA](messages/2026-11-04/open-healthware-oshwa.md) | email | `sent` | [contact source](https://oshwa.org/resources/open-healthware-education-guide/) |
 | [Openwater](messages/2026-11-04/openwater.md) | email | `sent` | [contact source](https://openwaterhealth.github.io/openwater-community/) |
 | [OpenBCI](messages/2026-11-04/openbci.md) | email | `sent` | [contact source](https://docs.openbci.com/FAQ/GenFAQ/) |

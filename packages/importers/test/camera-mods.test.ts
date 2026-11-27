@@ -42,12 +42,27 @@ test("camera-mods: research entries and narrow mods never claim control", () => 
   assert.ok(lang.aliases!.includes("Nikon 1 J5"));
 });
 
+test("camera-mods: a camera two projects target keeps both, each with its own summary and route", () => {
+  const rs = fromMods([
+    mod({ project: "App", route: { method: "host-software", difficulty: "easy", brick_risk: "low", reversible: "yes" }, cameras: [{ vendor: "Nikon", model: "Z 30", firmware: [], tested: true }] }),
+    mod({ project: "Decomp", tier: "research", route: undefined, risk: "boot loop once", cameras: [{ vendor: "Nikon", model: "Z30", firmware: ["C 1.20"], tested: false }] }),
+  ], known, D);
+  assert.equal(rs.length, 1);
+  const [r] = rs;
+  assert.equal(r.status, "controllable");
+  assert.deepEqual(r.projects!.map((p) => p.name), ["App", "Decomp"]);
+  assert.deepEqual(r.install!.map((i) => i.project), ["App"]);
+  assert.match(r.summary!, /^App: adds things\. · Decomp: adds things \(firmware C 1\.20\)\. Research only: boot loop once\.$/);
+  assert.equal(r.install![0].firmware_constraints, undefined, "no firmware version, no constraint");
+});
+
 test("camera-mods: the reviewed table is consistent and every record validates", () => {
   for (const m of CAMERA_MODS) {
     assert.ok(/^https?:/.test(m.repo) || m.rev && /^[0-9a-f]{40}$/.test(m.rev), `${m.project}: pinned revision`);
     assert.ok(m.license, `${m.project}: licence stated`);
     if (m.tier === "installable") assert.ok(m.route, `${m.project}: installable needs a route`);
-    for (const c of m.cameras) if (m.tier === "installable" && c.tested !== false) assert.ok(c.firmware.length, `${m.project} ${c.model}: firmware version`);
+    // A firmware patch needs the exact stock version; a camera app installed over USB does not.
+    for (const c of m.cameras) if (m.tier === "installable" && c.tested !== false && m.route?.method !== "host-software") assert.ok(c.firmware.length, `${m.project} ${c.model}: firmware version`);
   }
   for (const r of fromMods(CAMERA_MODS, existingCameras([]), D)) assert.deepEqual(validate(r), [], r.id);
   // Deliberately absent: paid-feature key unlocks, closed executables, taken-down projects.
